@@ -35,6 +35,10 @@ export class SearchService {
     return Math.ceil(this.numberOfAds / this.numberOfAdsPerSection);
   }  
 
+  getNumberOfAdsPerSection() {
+    return this.numberOfAdsPerSection;
+  }
+
   getPaginatedResultArray() {
     // Simple, we only return the result for where we're standing.
     let result = [{
@@ -92,7 +96,7 @@ export class SearchService {
     return !(index <= 1);
   }
 
-  isPreviousSegmentLoaded(index: number) {
+  private isPreviousSegmentLoaded(index: number) {
     return this.resultContainerService.hasResultForIndex(index-1);
   }
 
@@ -136,7 +140,7 @@ export class SearchService {
     });    
   }
 
-  calculateOffsetForIndex(index: number) {
+  private calculateOffsetForIndex(index: number) {
     const offset = (index-1)*this.numberOfAdsPerSection;
     if (offset >= this.numberOfAds) {
       throw new Error('Offset is larger than number of searchable ads');

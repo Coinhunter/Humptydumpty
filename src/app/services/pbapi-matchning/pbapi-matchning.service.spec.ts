@@ -2,6 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { PbapiMatchningService } from './pbapi-matchning.service';
+import { SearchCriterion } from '../../models/SearchCriterion.interface';
 
 describe('PbapiMatchningService', () => {
   beforeEach(() => {
@@ -15,6 +16,14 @@ describe('PbapiMatchningService', () => {
     });
   });
 
+  const criteria: Array<SearchCriterion> = [
+    {
+      'namn': 'Stockholm',
+      'varde': '0180',
+      'typ': 'KOMMUN'
+    }
+  ];
+
   it('should be created', inject([PbapiMatchningService], (service: PbapiMatchningService) => {
     expect(service).toBeTruthy();
   }));
@@ -26,7 +35,7 @@ describe('PbapiMatchningService', () => {
   }));
 
   it('should fill the contract for getMatchingAds', inject([PbapiMatchningService], (service: PbapiMatchningService) => {
-    service.getMatchingAds([]).subscribe((res) => {
+    service.getMatchingAds(criteria, 25, 0).subscribe((res) => {
       expect(res.rekryteringsbehov).toBeDefined();
 
       expect(res.relateradeKriterier).toBeDefined();

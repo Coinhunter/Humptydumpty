@@ -1,5 +1,9 @@
+import { SearchCriterionProperty } from './SearchCriterionProperty.interface';
+
+// Swedish domain-name: "Profilkriterium"
 export interface SearchCriterion {
-  id: string;
+  varde: string;
   namn: string;
   typ: string;
+  egenskaper?: Array<SearchCriterionProperty>;
 }

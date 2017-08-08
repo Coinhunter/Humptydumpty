@@ -3,6 +3,8 @@ import { Http, Response } from '@angular/http';
 
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
+import { SearchService } from '../search-result/search.service';
+import { SearchCriterion } from '../../models/SearchCriterion.interface';
 
 @Injectable()
 export class PbapiMatchningService {
@@ -11,21 +13,8 @@ export class PbapiMatchningService {
   constructor(private http: Http) {
   }
 
-  getMatchingAds(criteria: Array<Object>) {
-    const searchCriteria = {
-      'matchningsprofil': {
-        'profilkriterier': [
-          {
-            'namn': 'Stockholm',
-            'varde': '0180',
-            'typ': 'KOMMUN'
-          }
-        ]
-      },
-      'maxAntal': 2,
-      'startrad': 0
-    };
-
+  getMatchingAds(criteria: Array<SearchCriterion>, numberOfAdsPerSection: number, offset: number) {
+    const searchCriteria = this.getSearchRequestBodyForCriteria(criteria, numberOfAdsPerSection, offset);
     const url = `${this.matchningsUrl}/matchning/matchandeRekryteringsbehov`;
     return this.http.post(url, searchCriteria)
       .map(this.extractData)
@@ -37,6 +26,16 @@ export class PbapiMatchningService {
     return this.http.get(url)
       .map(this.extractData)
       .catch(this.handleError);
+  }
+
+  private getSearchRequestBodyForCriteria(criteria: Array<SearchCriterion>, numberOfAdsPerSection: number, offset: number) {
+    return {
+      'matchningsprofil': {
+        'profilkriterier': criteria
+      },
+      'maxAntal': numberOfAdsPerSection,
+      'startrad': offset
+    };
   }
 
   private extractData(response: Response) {
