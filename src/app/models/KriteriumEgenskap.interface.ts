@@ -1,5 +1,5 @@
 // Swedish domain-name: "KriteriumEgenskap"
-export interface SearchCriterionProperty {
+export interface KriteriumEgenskap {
   varde: string;
   typ: string;
 };

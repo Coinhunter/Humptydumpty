@@ -4,31 +4,33 @@ import { Http, Response } from '@angular/http';
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
 import { SearchService } from '../search-result/search.service';
-import { SearchCriterion } from '../../models/SearchCriterion.interface';
+import { Profilkriterium } from '../../models/Profilkriterium.interface';
 
 @Injectable()
 export class PbapiMatchningService {
-  private matchningsUrl = GlobalVariables.PBAPI_URL;
+  private pbApi = GlobalVariables.PBAPI_URL;
 
   constructor(private http: Http) {
   }
 
-  getMatchingAds(criteria: Array<SearchCriterion>, numberOfAdsPerSection: number, offset: number) {
+  getMatchingAds(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
     const searchCriteria = this.getSearchRequestBodyForCriteria(criteria, numberOfAdsPerSection, offset);
-    const url = `${this.matchningsUrl}/matchning/matchandeRekryteringsbehov`;
+    const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov`;
     return this.http.post(url, searchCriteria)
       .map(this.extractData)
-      .catch(this.handleError);
+      .catch(this.handleError)
+      .toPromise();
   }
 
-  getNumberOfAvailableJobs(): Observable<number> {
-    const url = `${this.matchningsUrl}/matchning/rekryteringsbehov/antal`;
+  getNumberOfAvailableJobs() {
+    const url = `${this.pbApi}/matchning/rekryteringsbehov/antal`;
     return this.http.get(url)
       .map(this.extractData)
-      .catch(this.handleError);
+      .catch(this.handleError)
+      .toPromise();
   }
 
-  private getSearchRequestBodyForCriteria(criteria: Array<SearchCriterion>, numberOfAdsPerSection: number, offset: number) {
+  private getSearchRequestBodyForCriteria(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
     return {
       'matchningsprofil': {
         'profilkriterier': criteria

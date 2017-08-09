@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { ResultContainerMapService } from '../result-container-map/result-container-map.service';
+import { PbapiMatchningService } from '../pbapi-matchning/pbapi-matchning.service';
+import { Profilkriterium } from '../../models/Profilkriterium.interface';
 
 @Injectable()
 export class SearchService {
@@ -12,7 +16,7 @@ export class SearchService {
   // Last loaded segment (this is where the user was most recently browsing.)
   mostRecentlyLoadedSegment: number; // We always start by looking at the first one.
 
-  constructor() {
+  constructor(private pbapiMatchning: PbapiMatchningService) {
   }
 
   // Returns Promise
@@ -27,7 +31,13 @@ export class SearchService {
     return this.fetchSegment(1);
   }
 
-  getNumberOfJobs() { return this.numberOfJobs; }
+  getNumberOfJobs() {
+    if(this.numberOfJobs) {
+      return this.numberOfJobs;      
+    } else {
+      throw new Error('No value available, perform a search first.');
+    }
+  }
   
   getNumberOfAds() { return this.numberOfAds; }
   
@@ -115,29 +125,29 @@ export class SearchService {
 
         // TODO: Implement API functions and fire it off...
         // Return true when the result has been fetched and added.
-        const result = [
+        const criteria: Array<Profilkriterium> = [
           {
-            'key': 1,
-            'value': 'one'
-          },
-          {
-            'key': 2,
-            'value': 'two'
+            'namn': 'Stockholm',
+            'varde': '0180',
+            'typ': 'KOMMUN'
           }
         ];
-        const returnedNumberOfAds = 1337;
-        const returnedNumberOfJobs = 4711;
 
-        this.numberOfAds = returnedNumberOfAds;
-        this.numberOfJobs = returnedNumberOfJobs;
-        this.resultContainerService.addResultForIndex(index, result);
-        this.mostRecentlyLoadedSegment = index;
-        resolve('Fetching completed'); // reject('Failed to load result');
+        var obsAds = this.pbapiMatchning
+          .getMatchingAds(criteria, this.numberOfAdsPerSection, this.calculateOffsetForIndex(index))
+          .then((result) => {
+            this.numberOfAds = result.antalRekryteringsbehov;
+            this.numberOfJobs = result.antalPlatser;
+            this.resultContainerService.addResultForIndex(index, result.rekryteringsbehov);
+            this.mostRecentlyLoadedSegment = index;
+            resolve('Fetching complete');
+          }, (error) => {
+            resolve(error);
+          });
       } else {
-        // We don't have to load this one. It's already been loaded.        
         resolve('Already loaded');
       }
-    });    
+    });
   }
 
   private calculateOffsetForIndex(index: number) {

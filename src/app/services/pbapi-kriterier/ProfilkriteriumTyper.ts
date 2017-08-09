@@ -1,4 +1,4 @@
-export const SearchCriteriaTypes = [
+export const ProfilkriteriumTyper = [
   'YRKEN',
   'YRKESGRUPPER',
   'KOMPETENSER',

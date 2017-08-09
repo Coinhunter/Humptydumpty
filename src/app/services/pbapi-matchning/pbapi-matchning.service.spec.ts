@@ -1,8 +1,8 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject, async } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { PbapiMatchningService } from './pbapi-matchning.service';
-import { SearchCriterion } from '../../models/SearchCriterion.interface';
+import { Profilkriterium } from '../../models/Profilkriterium.interface';
 
 describe('PbapiMatchningService', () => {
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('PbapiMatchningService', () => {
     });
   });
 
-  const criteria: Array<SearchCriterion> = [
+  const criteria: Array<Profilkriterium> = [
     {
       'namn': 'Stockholm',
       'varde': '0180',
@@ -28,14 +28,16 @@ describe('PbapiMatchningService', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return a number from the API when calling getNumberOfAds()', inject([PbapiMatchningService], (service: PbapiMatchningService) => {
-    service.getNumberOfAvailableJobs().subscribe((res) => {
-      expect(res).toBeDefined(); 
-    });
-  }));
 
-  it('should fill the contract for getMatchingAds', inject([PbapiMatchningService], (service: PbapiMatchningService) => {
-    service.getMatchingAds(criteria, 25, 0).subscribe((res) => {
+  it('should return a number from the API when calling getNumberOfAds()', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
+    service.getNumberOfAvailableJobs().then((res) => {
+      expect(res).toBeDefined();
+    });
+  })));
+
+  it('should fill the contract for getMatchingAds', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
+    service.getMatchingAds(criteria, 25, 0).then((res) => {
+      expect(res).toBeDefined();
       expect(res.rekryteringsbehov).toBeDefined();
 
       expect(res.relateradeKriterier).toBeDefined();
@@ -48,5 +50,5 @@ describe('PbapiMatchningService', () => {
       expect(res.antalRekryteringsbehovMatcharExakt).toBeDefined();
       expect(res.antalRekryteringsbehovMatcharDelvis).toBeDefined();
     });
-  }));
+  })));
 });
