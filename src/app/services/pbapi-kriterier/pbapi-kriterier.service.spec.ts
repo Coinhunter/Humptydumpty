@@ -41,22 +41,12 @@ describe('PbapiKriterierService', () => {
     });
   })));
 
-  
-  it('should return an array of search criterias', async(inject([PbapiKriterierService], (service: PbapiKriterierService) => {
-    expect(service.hasKriterierForType('YRKEN')).toBeFalsy();
-    service.getKriterierForType('YRKEN').then((result) => {
-      expect(service.hasKriterierForType('YRKEN')).toBeTruthy();
-      expect(result.length).toBeGreaterThan(0);
-      expect(result).toEqual(jasmine.any(Array));
-    });
-  })));
-
   it('should always have values for all of the different return types of criteria', async(inject([PbapiKriterierService], (service: PbapiKriterierService) => {
     service.getKriterieTyper().then((typer) => {
       typer.forEach((type) => {
         expect(service.hasKriterierForType(type)).toBeFalsy();
         service.getKriterierForType(type).then((criteria) => {
-          //console.log(type + ' hasCriteria: ' + service.hasKriterierForType(type) + ' size: ' + criteria.length);
+          console.log(type + ' hasCriteria: ' + service.hasKriterierForType(type) + ' size: ' + criteria.length);
           expect(service.hasKriterierForType(type)).toBeTruthy();
           expect(criteria.length).toBeGreaterThan(0);
         });

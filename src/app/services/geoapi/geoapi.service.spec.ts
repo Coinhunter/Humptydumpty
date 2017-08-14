@@ -9,9 +9,9 @@ describe('GeoapiService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpModule
-      ],          	
+      ],            
       providers: [
-      	GeoapiService
+        GeoapiService
       ]
     });
   });
@@ -21,7 +21,12 @@ describe('GeoapiService', () => {
   }));
 
   it('should return some data', async(inject([GeoapiService], (service: GeoapiService) => {
-  	service.getOrtByPostnummer('532');
+    service.getOrtByPostnummer('532').then((result) => {
+      expect(result).toBeDefined();
+      expect(result.length).toBeGreaterThan(30);
+    });
   })));
+
+  
 
 });

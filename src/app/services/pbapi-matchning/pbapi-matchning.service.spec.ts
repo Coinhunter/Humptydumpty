@@ -51,10 +51,4 @@ describe('PbapiMatchningService', () => {
     });
   })));
 
-  it('should return a number from the API when calling getAd()', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
-    expect(() => {
-      service.getAd('12344').take(1);
-    }).toThrow(jasmine.any(Error));
-  })));
-
 });
