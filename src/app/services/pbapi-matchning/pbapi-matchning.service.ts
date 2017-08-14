@@ -30,6 +30,13 @@ export class PbapiMatchningService {
       .toPromise();
   }
 
+  getAd(id: string) {
+    const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov/${id}`;
+    return this.http.post(url, {}) // Consider inputting profile information here.. 
+      .catch(this.handleError)
+      .map(this.extractData);
+  } 
+
   private getSearchRequestBodyForCriteria(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
     return {
       'matchningsprofil': {
@@ -41,12 +48,18 @@ export class PbapiMatchningService {
   }
 
   private extractData(response: Response) {
-    const body = response.json();
-    return body || {};
+    // If request fails, throw an Error that will be caught
+    if(response.status < 200 || response.status >= 300) {
+      console.log(response);
+      throw new Error('This request has failed ' + response.status);
+    } 
+    // If everything went fine, return the response
+    else {
+      return response.json();
+    }
   }
 
   private handleError(error: Response | any) {
-    console.error('An error occurred', error);
     return Observable.throw(error);
   }
 

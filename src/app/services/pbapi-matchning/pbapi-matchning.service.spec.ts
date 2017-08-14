@@ -28,7 +28,6 @@ describe('PbapiMatchningService', () => {
     expect(service).toBeTruthy();
   }));
 
-
   it('should return a number from the API when calling getNumberOfAds()', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
     service.getNumberOfAvailableJobs().then((res) => {
       expect(res).toBeDefined();
@@ -51,4 +50,11 @@ describe('PbapiMatchningService', () => {
       expect(res.antalRekryteringsbehovMatcharDelvis).toBeDefined();
     });
   })));
+
+  it('should return a number from the API when calling getAd()', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
+    expect(() => {
+      service.getAd('12344').take(1);
+    }).toThrow(jasmine.any(Error));
+  })));
+
 });
