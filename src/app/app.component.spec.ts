@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { GoogleAnalyticsEventsService } from "./services/google-analytics-events/google-analytics-events.service";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -8,6 +9,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+        GoogleAnalyticsEventsService
+      ]      
     }).compileComponents();
   }));
 

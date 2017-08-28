@@ -1,20 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { GoogleAnalyticsEventsService } from "./services/google-analytics-events/google-analytics-events.service";
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-//import { ResultContainerService } from './services/result-container-map/result-container-map.service';
-//import { SearchResultService } from './services/search-result';
+import { DemopageComponent } from './demopage/demopage.component';
+import { TestcomponentComponent } from './testcomponent/testcomponent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
- //   ResultContainerService,
- //   SearchResultService,
+    DemopageComponent,
+    TestcomponentComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+  	GoogleAnalyticsEventsService
+  ],
   bootstrap: [AppComponent] //, ResultContainerService]
 })
 export class AppModule { }

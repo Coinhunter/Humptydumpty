@@ -46,7 +46,7 @@ describe('PbapiKriterierService', () => {
       typer.forEach((type) => {
         expect(service.hasKriterierForType(type)).toBeFalsy();
         service.getKriterierForType(type).then((criteria) => {
-          console.log(type + ' hasCriteria: ' + service.hasKriterierForType(type) + ' size: ' + criteria.length);
+          //console.log(type + ' hasCriteria: ' + service.hasKriterierForType(type) + ' size: ' + criteria.length);
           expect(service.hasKriterierForType(type)).toBeTruthy();
           expect(criteria.length).toBeGreaterThan(0);
         });
