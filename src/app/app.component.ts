@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { GoogleAnalyticsEventsService } from './services/google-analytics-events/google-analytics-events.service';
 import { Router, NavigationEnd } from "@angular/router";
 
@@ -9,13 +9,16 @@ declare var ga: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(public router: Router, public googleAnalyticsEventsService: GoogleAnalyticsEventsService) {
+
+export class AppComponent implements OnInit {
+  constructor(public router: Router, public googleAnalyticsEventsService: GoogleAnalyticsEventsService) {}
+
+  ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         ga('set', 'page', event.urlAfterRedirects);
         ga('send', 'pageview');
       }
-    });
+    });    
   }
 }

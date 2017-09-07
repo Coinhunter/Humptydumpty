@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { GoogleAnalyticsEventsService } from '../services/google-analytics-events/google-analytics-events.service';
 
 import { DemopageComponent } from './demopage.component';
 
@@ -8,7 +9,10 @@ describe('DemopageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DemopageComponent ]
+      declarations: [ DemopageComponent ],   
+      providers: [
+        GoogleAnalyticsEventsService
+      ]
     })
     .compileComponents();
   }));
