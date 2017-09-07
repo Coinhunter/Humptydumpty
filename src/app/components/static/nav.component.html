@@ -1,0 +1,35 @@
+<nav id="kontextuellmeny" class="spa-menu navbar" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="navbar-header hidden-md-up"><!-- ngRepeat: option in vm.options -->
+        <div ng-repeat="option in vm.options" class="spa-heading ng-binding ng-scope" ng-class="{active: vm.isSelected(option)}">Platsbanken</div><!-- end ngRepeat: option in vm.options -->
+        <div ng-repeat="option in vm.options" class="spa-heading ng-binding ng-scope active" ng-class="{active: vm.isSelected(option)}">Sparade jobb</div><!-- end ngRepeat: option in vm.options -->
+        <div ng-repeat="option in vm.options" class="spa-heading ng-binding ng-scope" ng-class="{active: vm.isSelected(option)}">Förfrågningar</div><!-- end ngRepeat: option in vm.options -->
+        <div ng-repeat="option in vm.options" class="spa-heading ng-binding ng-scope" ng-class="{active: vm.isSelected(option)}">Ansökningar</div><!-- end ngRepeat: option in vm.options -->
+        <div ng-repeat="option in vm.options" class="spa-heading ng-binding ng-scope" ng-class="{active: vm.isSelected(option)}">Mina profiler</div><!-- end ngRepeat: option in vm.options -->
+        <button type="button" class="navbar-toggle" data-ng-click="isCollapsed = !isCollapsed"><span class="sr-only">Meny</span>
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse hidden-sm-down" uib-collapse="!isCollapsed" style="height: 0px;" aria-expanded="false" aria-hidden="true">
+        <ul class="nav navbar-nav"><!-- ngRepeat: option in vm.options -->
+          <li data-ng-repeat="option in vm.options" ng-class="{active: vm.isSelected(option)}" class="ng-scope">
+            <a href="/Tjanster/Arbetssokande/Platsbanken/" ng-class="{linkDisabled:!option.enabled || vm.isSelected(option)}" ng-click="vm.clickOption(option, $index)" class="ng-binding">Platsbanken</a>
+          </li><!-- end ngRepeat: option in vm.options -->
+          <li data-ng-repeat="option in vm.options" ng-class="{active: vm.isSelected(option)}" class="ng-scope active">
+            <a href="/Tjanster/Arbetssokande/Platsbanken/sparadeannonser/" ng-class="{linkDisabled:!option.enabled || vm.isSelected(option)}" ng-click="vm.clickOption(option, $index)" class="ng-binding linkDisabled">Sparade jobb</a>
+          </li><!-- end ngRepeat: option in vm.options -->
+          <li data-ng-repeat="option in vm.options" ng-class="{active: vm.isSelected(option)}" class="ng-scope">
+            <a href="/Tjanster/Arbetssokande/Forfragningar#/" ng-class="{linkDisabled:!option.enabled || vm.isSelected(option)}" ng-click="vm.clickOption(option, $index)" class="ng-binding">Förfrågningar</a>
+          </li><!-- end ngRepeat: option in vm.options -->
+          <li data-ng-repeat="option in vm.options" ng-class="{active: vm.isSelected(option)}" class="ng-scope">
+            <a href="/Tjanster/Arbetssokande/Ansokningar#/" ng-class="{linkDisabled:!option.enabled || vm.isSelected(option)}" ng-click="vm.clickOption(option, $index)" class="ng-binding">Ansökningar</a>
+          </li><!-- end ngRepeat: option in vm.options -->
+          <li data-ng-repeat="option in vm.options" ng-class="{active: vm.isSelected(option)}" class="ng-scope">
+            <a href="/Tjanster/Arbetssokande/Min-profil#/profillista" ng-class="{linkDisabled:!option.enabled || vm.isSelected(option)}" ng-click="vm.clickOption(option, $index)" class="ng-binding">Mina profiler</a>
+          </li><!-- end ngRepeat: option in vm.options -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

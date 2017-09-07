@@ -18,7 +18,17 @@
 </div>
 -->
 
-<a routerLink="demopage" routerLinkActive="active">Demopage</a>
+<!-- <a routerLink="demopage" routerLinkActive="active">Demopage</a>
 <a routerLink="test" routerLinkActive="active">Test</a>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<app-header></app-header>
+<main>
+  <!-- <app-nav></app-nav> -->
+  <div id="MainContent" class="ng-scope">
+      <router-outlet></router-outlet>
+  </div>
+  <app-help></app-help>
+</main>
+<app-footer></app-footer>

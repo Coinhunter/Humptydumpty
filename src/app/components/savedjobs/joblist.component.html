@@ -1,0 +1,450 @@
+<div class="noMoreJobs" *ngIf="jobs?.length == 0">
+ <h2>Du har just nu inga sparade jobb.</h2>
+ <img src="images/images/nomorejobs.png" alt="Bild på diverse arbetare" />
+ <button class="searchButton">
+   <div class="searchIcon"></div>
+   <div class="buttonText">Sök jobb i platsbanken</div>
+ </button>
+</div>
+
+
+<div class="as-matcha-rekryteringsbehov row" *ngIf="!showAnnouncements && jobs?.length > 0">
+  <div id="JoblistContent">
+    <div>Visa:</div>
+
+    <div id="FilterJobs" class="hidden-sm-down">
+      <button id="FilterJobsAll" class="{{joblistParam === 'all' ? 'selected' : ''}}" (click)="joblistParam='all'; setJobNumbers(); resetActiveSlide();">
+        Alla ({{jobs?.length}})
+      </button>
+      <button id="FilterJobsToApplyFor" class="{{joblistParam === 'toApplyFor' ? 'selected' : ''}}" (click)="joblistParam='toApplyFor'; setJobNumbers(); resetActiveSlide();">
+        Jobb att söka ({{numberOfJobsToApplyFor}})
+      </button>
+      <button id="FilterJobsApplied" class="{{joblistParam === 'applied' ? 'selected' : ''}}" (click)="joblistParam='applied'; setJobNumbers(); resetActiveSlide();">
+        Sökta jobb ({{numberOfJobsAppliedFor}})
+      </button>
+      <button id="FilterJobsExpired" class="{{joblistParam === 'expired' ? 'selected' : ''}}" (click)="joblistParam='expired'; setJobNumbers(); resetActiveSlide();">
+        Utgångna jobb ({{numberOfJobsExpired}})
+      </button>
+    </div>
+
+    <div id="RemoveAllJobsContainer" class="">
+      <div id="RemoveAllJobs" class="removeButton textButton icon right removeIcon underline" data-toggle="modal" data-target="#RemoveAllModal" *ngIf="numberOfJobs > 0">
+        <span class="removeText">Glöm bort alla</span>
+      </div>
+    </div>
+
+    <select id="FilterJobsDropdown" [(ngModel)]="joblistParam" class="hidden-md-up col-sm-12">
+      <option value="all" selected="{{joblistParam === 'all' ? 'selected' : ''}}" (click)="setJobNumbers(); resetActiveSlide();">Alla ({{jobs?.length}})</option>
+      <option value="toApplyFor" selected="{{joblistParam === 'toApplyFor' ? 'selected' : ''}}" (click)="setJobNumbers(); resetActiveSlide();">Jobb att söka ({{numberOfJobsToApplyFor}})</option>
+      <option value="applied" selected="{{joblistParam === 'applied' ? 'selected' : ''}}" (click)="setJobNumbers(); resetActiveSlide();">Sökta jobb ({{numberOfJobsAppliedFor}})</option>
+      <option value="expired" selected="{{joblistParam === 'expired' ? 'selected' : ''}}" (click)="setJobNumbers(); resetActiveSlide();">Utgångna jobb ({{numberOfJobsExpired}})</option>
+    </select>
+
+    <ul class="spa-list joblist col-xl-12"><!-- ngRepeat: rekryteringsbehov in vm.sparadeRekryteringsbehov -->
+      <li *ngFor="let job of jobs | JoblistPipe:joblistParam; let i = index">
+        <div class="panel panel-default {{isDateOver90DaysAgo(job.sistaPubliceringsdatum) ? 'unpublished' : ''}}">
+          <div class="panel-body d-md-flex align-items-md-stretch ">
+            <section class="logoSection col-lg-1 col-md-1 hidden-sm-down">
+              <!-- <img ng-if="vm.logoURL" class="arbetsgivarelogo pull-right hidden-xs ng-scope" ng-src="/rest/arbetsgivare/rest/af/v2/organisation/2321000222/logotyper/logo.png" alt="Arbetsgivarens logotyp" onerror="this.style.display = &quot;none&quot;" src="/rest/arbetsgivare/rest/af/v2/organisation/2321000222/logotyper/logo.png"> -->
+              <img ng-if="vm.logoURL" src="https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v2/organisation/{{job.organisationsnummer}}/logotyper/logo.png" onerror="this.style.display = &quot;none&quot;" alt="Arbetsgivarens logotyp" />
+            </section>
+            <section class="infoSection col-lg-9 col-md-9 col-sm-12">
+              <span class="rubrik ng-binding ng-scope link" (click)="openAnnouncement(job.id, i, isDateOver90DaysAgo(job.sistaPubliceringsdatum))">{{job.rubrik}}</span>
+              <div class="company">
+                <span class="foretagsnamn ng-binding">{{job.arbetsgivarenamn}}</span>,
+                <span class="rekryteringsbehov-kommun ng-binding">{{job.erbjudenArbetsplats.kommun.namn}}</span>
+              </div>
+              <div class="applyStatus">
+                <div class="{{(getDateString(job.sistaAnsokningsdatum) === 'today' || getDateString(job.sistaAnsokningsdatum) === 'tomorrow') ? 'hilight' : ''}} applyDateDiv" *ngIf="!isDateBeforeToday(job.sistaAnsokningsdatum) && !job.sokt">
+                  <span class="label">Sök jobbet senast: </span>
+                  <span class="applyDate ng-binding">{{getFormattedDate(job.sistaAnsokningsdatum)}}</span>
+                </div>
+                <div class="notApplicable" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum) && !isDateOver90DaysAgo(job.sistaPubliceringsdatum)">
+                  <span class="label">Ansökningstiden har gått ut</span>
+                </div>
+                <div class="notApplicable" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum) && isDateOver90DaysAgo(job.sistaPubliceringsdatum)">
+                  <span class="label">Ej ansökningsbart och borttaget</span>
+                </div>
+                <div class="jobAppliedFor" *ngIf="job.sokt">
+                  <div class="appliedForText icon left checkIcon">Jobbet är sökt</div>
+                </div>
+                <div class="setApplyStatus">
+                  <div class="jobNotAppliedFor link" *ngIf="!job.sokt" (click)="setSearchedStatus(job.id, true)">
+                    <span class="appliedForText">Markera som sökt</span>
+                  </div>
+                  <div class="jobNotAppliedFor link" *ngIf="job.sokt" (click)="setSearchedStatus(job.id, false)">
+                    <span class="appliedForText">Markera som ej sökt</span>
+                  </div>
+                  <div class="removeJob removeButton hidden-md-up textButton icon right removeIcon underline" (click)="removeJob(job.id)">
+                    <span class="removeText">Glöm bort</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="appliedForRemoveSection col-lg-2 hidden-sm-down">
+              <div class="removeJob removeButton textButton icon right removeIcon underline" (click)="removeJob(job.id)">
+                <span class="removeText">Glöm bort</span>
+              </div>
+            </section>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="RemoveAllModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-md">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h2>Ta bort hela listan med sparade jobb</h2>
+        <p>Är du säker på att du vill ta bort hela listan och därmed ta bort alla annonser från dina sparade jobb?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+        <button id="RemoveAllJobsModal" class="btn btn-default" (click)="removeAllJobs()" data-dismiss="modal">Ta bort</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="AnnouncementsControls" class="carousel slide" data-interval="false" *ngIf="showAnnouncements && jobs?.length > 0">
+  <div id="AnnouncementBackButton" (click)="showAnnouncements = false">
+    <span class="caorusel-control-prev-text icon left chevronLeftIcon textButton underline">Tillbaka</span>
+  </div>
+  <div class="navigation col-lg-8">
+    <!-- <div class="carousel-control-prev" href="#AnnouncementsControls" role="button" data-slide="prev" (click)="updateActiveSlide('prev')"> -->
+    <div class="carousel-control-prev" role="button" data-slide="prev" (click)="updateActiveSlide('prev')">
+      <span class="caorusel-control-prev-text textButton icon left chevronLeftIcon">Föregående</span>
+      <span class="sr-only">Föregående</span>
+    </div>
+    <div class="numbers">{{activeSlide}} av {{numberOfJobs}}</div>
+    <!-- <div class="carousel-control-next" href="#AnnouncementsControls" role="button" data-slide="next" (click)="updateActiveSlide('next')"> -->
+    <div class="carousel-control-next" role="button" data-slide="next" (click)="updateActiveSlide('next')">
+      <span class="caorusel-control-next-text textButton icon right chevronRightIcon">Nästa</span>
+      <span class="sr-only">Nästa</span>
+    </div>
+  </div>
+
+  <ul id="AnnouncementList" class="spa-list col-lg-12">
+    <li *ngFor="let job of jobs | JoblistPipe:joblistParam; let i = index" class="{{i === activeSlide - 1 ? '' : 'hidden'}}">
+      <div class="leftContainer col-lg-8">
+        <div class="jobAppliedFor banner topStatus" *ngIf="job.sokt">
+          <div class="appliedForText icon checkIcon left">Jobbet är sökt</div>
+        </div>
+        <div class="jobNotApplicable banner topStatus {{job.sokt ? 'applied' : '' }}" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum)">
+          <img class="appliedForIcon iconMargin" src="/images/icons/jobnotapplicableicon.png" alt="Ikon för jobb går ej att söka" />
+          <span class="appliedForText">Det här jobbet går inte att söka längre</span>
+        </div>
+        <div class="contentContainer">
+          <div class="announcementTop col-xl-12">
+            <div class="announcementHeading col-lg-10">
+              <h3>{{job.arbetsgivarenamn}}</h3>
+              <h2>{{job.rubrik}}</h2>
+            </div>
+            <div class="companyLogo col-lg-2 hidden-md-down">
+              <img ng-if="vm.logoURL" src="https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v2/organisation/{{job.organisationsnummer}}/logotyper/logo.png" onerror="this.style.display = &quot;none&quot;" alt="Arbetsgivarens logotyp" />
+            </div>
+          </div>
+
+          <div class="propertiesBox col-xl-12">
+            <div class="propertiesBoxTop">
+              <span class="label">Kommun:</span>
+              <span class="text">{{job.erbjudenArbetsplats.kommun.namn}}</span>
+              |
+              <span class="label">Yrkesroll:</span>
+              <span class="text">{{job.yrkesroll.namn}}</span>
+            </div>
+            <div class="propertiesBoxBottom">
+              <div>
+                <span class="label">Publicerad:</span>
+                <span class="text">{{formatDate(job.publiceringsdatum)}}</span>
+                |
+              </div>
+              <div>
+                <span class="label">Sök jobbet senast:</span>
+                <span class="text" *ngIf="!isDateBeforeToday(job.sistaAnsokningsdatum)">{{getFormattedDate(job.sistaAnsokningsdatum)}}</span>
+                <span class="text notApplicable" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum)">Ej ansökningsbar</span>
+                |
+              </div>
+              <div>
+                <span class="label">Anställningsform:</span>
+                <span class="text">{{job.anstallningstyp.namn}}</span>
+                |
+              </div>
+              <div>
+                <span class="label">Lön:</span>
+                <span class="text">{{job.lonetyp}}</span>
+                |
+              </div>
+              <div>
+                <span class="label">Antal platser:</span>
+                <span class="text">{{job.antalPlatser}}</span>
+                |
+              </div>
+              <div>
+                <span class="label">Annons-ID:</span>
+                <span class="text">{{job.id}}</span>
+              </div>
+            </div>
+          </div>
+          <p [innerHTML]="convertToHtml(job.annonstext)"></p>
+          <div class="info">
+
+            <div class="infoType" *ngIf="job.korkortList.length > 0">
+              <h4>Körkort</h4>
+              <div>
+                <ul>
+                  <li *ngFor="let korkort of job.korkortList">
+                    {{korkort.varde}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="infoType">
+              <h4>Arbetslivserfarenhet</h4>
+              <div>
+                <ul *ngIf="job.yrkeErfarenhet.length > 0">
+                  <li *ngFor="let yrke of job.yrkeErfarenhet">
+                    {{yrke.namn}}<span *ngIf="yrke.erfarenhet">{{yrke.erfarenhet.namn ? ': ' + yrke.erfarenhet.namn  : ''}}</span>
+                  </li>
+                </ul>
+                <span *ngIf="job.yrkeErfarenhet.length < 1">
+                  {{job.yrkesroll.namn ? job.yrkesroll.namn + ': ' : ''}}{{job.ingenYrkeserfarenhetKravs ? 'ingen erfarenhet krävs' : 'erfarenhet efterfrågas'}}
+                </span>
+              </div>
+            </div>
+
+            <div class="infoType" *ngIf="job.lonebeskrivning">
+              <h4>Om lön</h4>
+              <div>{{job.lonebeskrivning}}</div>
+            </div>
+
+            <div class="infoType" *ngIf="job.villkorsbeskrivning">
+              <h4>Om anställningsvilkor</h4>
+              <div>{{removeLineBreaks(job.villkorsbeskrivning)}}</div>
+            </div>
+
+            <h3>Kontaktinformation</h3>
+            <div class="contactPersons col-lg-6">
+              <h4>Kontaktpersoner</h4>
+              <div *ngFor="let kontaktperson of job.kontaktpersoner" class="contactPerson">
+                <div>
+                  {{kontaktperson.fornamn}}{{kontaktperson.fornamn.length > 0 ? ' ' : ''}}{{kontaktperson.efternamn}}{{(kontaktperson.fornamn.length > 0 || kontaktperson.efternamn.length > 0) && kontaktperson.befattning.length > 0 ? ', ' : ''}}
+                  {{kontaktperson.befattning}}
+                </div>
+                <div *ngIf="kontaktperson.facklig">Facklig representant</div>
+                <div *ngIf="kontaktperson.info">{{kontaktperson.info}}</div>
+                <a *ngIf="kontaktperson.epost" href="mailto:{{kontaktperson.epost}}?Subject={{job.rubrik}}" target="_top">{{kontaktperson.epost}}</a>
+                <div *ngIf="kontaktperson.mobilnummer">{{kontaktperson.mobilnummer}}</div>
+                <div *ngIf="kontaktperson.telefonnummer">{{kontaktperson.telefonnummer}}</div>
+
+              </div>
+            </div>
+            <div class="companyAddress col-lg-12">
+              <div class="col-lg-6">
+                <h4>Företagets adress</h4>
+                  <div>{{job.besoksadressGatuadress}}</div>
+                  <div>{{job.besoksadressOrt}}</div>
+              </div>
+              <div class="col-lg-6">
+                <h4>Postadress</h4>
+                <div>{{job.arbetsgivarenamn}}</div>
+                <div>{{job.postadressUtdelningsadress}}</div>
+                <div>{{job.postadressPostnummer}} {{job.postadressPostort}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="applyContainer bottom">
+            <div class="time">
+              <div class="heading">
+                Sök jobbet senast:
+              </div>
+              <div class="applyStatus">
+                <div class="{{(getDateString(job.sistaAnsokningsdatum) === 'today' || getDateString(job.sistaAnsokningsdatum) === 'tomorrow') ? 'hilight' : ''}} applyDateDiv text" *ngIf="!isDateBeforeToday(job.sistaAnsokningsdatum)">
+                  <span class="applyDate ng-binding">{{getFormattedDate(job.sistaAnsokningsdatum)}}</span>
+                </div>
+                <div class="text" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum) && !isDateOver90DaysAgo(job.sistaPubliceringsdatum)">
+                  <span class="label">{{getFormattedDate(job.sistaAnsokningsdatum)}}</span>
+                </div>
+                <div class="text" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum) && isDateOver90DaysAgo(job.sistaPubliceringsdatum)">
+                  <span class="label">{{getFormattedDate(job.sistaAnsokningsdatum)}}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="moreInfoAboutApplication" *ngIf="job.ovrigtOmAnsokan">
+              {{job.ovrigtOmAnsokan}}
+            </div>
+            <div class="reference" *ngIf="job.referens && job.ansokningssattEpost">
+              Ange referens <span class="number" >{{job.referens}}</span> i ämnesraden och skicka mailet till <a class="email" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.referens}}" target="_top">{{job.ansokningssattEpost}}</a>.
+            </div>
+            <div class="reference" *ngIf="!job.referens && job.ansokningssattEpost">
+              Maila till <a class="email" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.rubrik}}" target="_top">{{job.ansokningssattEpost}}</a> för att ansöka.
+            </div>
+            <div class="reference" *ngIf="job.referens && !job.ansokningssattEpost">
+              Ange referens <span class="number" >{{job.referens}}</span> i din ansökan.
+            </div>
+
+
+            <div class="applyButtonContainer" *ngIf="job.ansokningssattEpost && !isDateBeforeToday(job.sistaAnsokningsdatum)">
+              <a class="applyButton float-right col-sm-12 col-md-4" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.referens}}" target="_top">
+                <span class="icon">@</span>Ansök via E-post
+              </a>
+            </div>
+
+            <div class="applyButtonContainer" *ngIf="job.ansokningssattWebbadress && !isDateBeforeToday(job.sistaAnsokningsdatum)">
+              <a class="applyButton float-right col-sm-12 col-md-4" href="{{job.ansokningssattWebbadress}}" target="_blank">
+                Ansök via webb
+              </a>
+            </div>
+
+            <div class="applyButtonContainer" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum)">
+              <div class="applyButton float-lg-right float-md-left disabled col-sm-12 col-md-4">
+                Ansökningstiden har gått ut
+              </div>
+            </div>
+            <div class="applyStatusContainer">
+              <div class="setApplyStatus float-md-right hidden-sm-down">
+                <div class="jobNotAppliedFor" *ngIf="!job.sokt" (click)="setSearchedStatus(job.id, true)">
+                  <span class="appliedForText">Markera som sökt</span>
+                </div>
+                <div class="jobNotAppliedFor jobAppliedFor" *ngIf="job.sokt" (click)="setSearchedStatus(job.id, false)">
+                  <span class="appliedForText">Markera som ej sökt</span>
+                </div>
+              </div>
+              <div class="applyStatus float-md-right hidden-sm-down">
+                <div class="jobAppliedFor" *ngIf="job.sokt">
+                  <div class="appliedForText icon left checkIcon">Jobbet är sökt</div>
+                </div>
+              </div>
+
+              <div class="applyStatus float-sm-left col-sm-12 hidden-md-up">
+                <div class="jobAppliedFor" *ngIf="job.sokt">
+                  <div class="appliedForText icon left checkIcon">Jobbet är sökt</div>
+                </div>
+              </div>
+
+              <div class="setApplyStatus float-sm-left col-sm-12 hidden-md-up">
+                <div class="jobNotAppliedFor" *ngIf="!job.sokt" (click)="setSearchedStatus(job.id, true)">
+                  <span class="appliedForText">Markera som sökt</span>
+                </div>
+                <div class="jobNotAppliedFor jobAppliedFor" *ngIf="job.sokt" (click)="setSearchedStatus(job.id, false)">
+                  <span class="appliedForText">Markera som ej sökt</span>
+                </div>
+              </div>
+            </div>
+            <div class="actionButtons col-xl-12 hidden-md-up">
+              <button class="actionButton col-sm-12 textButton icon left removeIcon underline" (click)="removeJob(job.id)">
+                <span class="actionButtonText">Glöm bort sparat jobb</span>
+              </button>
+              <button class="actionButton col-sm-12 textButton icon left shareIcon underline">
+                <span class="actionButtonText">Dela annons</span>
+              </button>
+              <button class="actionButton col-sm-12 textButton icon left printIcon underline">
+                <span class="actionButtonText">Skriv ut annons</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="rightContainer col-lg-3 hidden-md-down">
+        <div class="rightContainerContent applyContainer">
+          <div class="time">
+            <div class="heading">
+              Sök jobbet senast:
+            </div>
+            <div class="applyStatus">
+              <div class="{{(getDateString(job.sistaAnsokningsdatum) === 'today' || getDateString(job.sistaAnsokningsdatum) === 'tomorrow') ? 'hilight' : ''}} applyDateDiv text" *ngIf="!isDateBeforeToday(job.sistaAnsokningsdatum)">
+                <span class="applyDate ng-binding">{{getFormattedDate(job.sistaAnsokningsdatum)}}</span>
+              </div>
+              <div class="text" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum) && !isDateOver90DaysAgo(job.sistaPubliceringsdatum)">
+                <span class="label">{{getFormattedDate(job.sistaAnsokningsdatum)}}</span>
+              </div>
+              <div class="text" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum) && isDateOver90DaysAgo(job.sistaPubliceringsdatum)">
+                <span class="label">Ej ansökningsbart och borttaget</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="moreInfoAboutApplication" *ngIf="job.ovrigtOmAnsokan">
+            {{job.ovrigtOmAnsokan}}
+          </div>
+          <div class="reference" *ngIf="job.referens && job.ansokningssattEpost">
+            Ange referens <span class="number" >{{job.referens}}</span> i ämnesraden och skicka mailet till <a class="email" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.referens}}" target="_top">{{job.ansokningssattEpost}}</a>.
+          </div>
+          <div class="reference" *ngIf="!job.referens && job.ansokningssattEpost">
+            Maila till <a class="email" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.rubrik}}" target="_top">{{job.ansokningssattEpost}}</a> för att ansöka.
+          </div>
+          <div class="reference" *ngIf="job.referens && !job.ansokningssattEpost">
+            Ange referens <span class="number" >{{job.referens}}</span> i din ansökan.
+          </div>
+
+
+          <div class="applyButtonContainer col-xl-12" *ngIf="job.ansokningssattEpost && !isDateBeforeToday(job.sistaAnsokningsdatum)">
+            <a class="applyButton" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.referens}}" target="_top">
+                <span class="icon">@</span>Ansök via E-post
+            </a>
+          </div>
+
+          <div class="applyButtonContainer col-xl-12" *ngIf="job.ansokningssattWebbadress && !isDateBeforeToday(job.sistaAnsokningsdatum)">
+            <a class="applyButton" href="{{job.ansokningssattWebbadress}}" target="_blank">
+              Ansök via webb
+            </a>
+          </div>
+
+          <div class="applyButtonContainer col-xl-12" *ngIf="isDateBeforeToday(job.sistaAnsokningsdatum)">
+            <div class="applyButton disabled">
+              Ansökningstiden har gått ut
+            </div>
+          </div>
+
+          <div class="setApplyStatus">
+            <div class="jobNotAppliedFor" *ngIf="!job.sokt" (click)="setSearchedStatus(job.id, true)">
+              <span class="appliedForText">Markera som sökt</span>
+            </div>
+            <div class="jobNotAppliedFor jobAppliedFor" *ngIf="job.sokt" (click)="setSearchedStatus(job.id, false)">
+              <span class="appliedForText">Markera som ej sökt</span>
+            </div>
+          </div>
+
+          <div class="actionButtons col-xl-12">
+            <button class="actionButton textButton icon left removeIcon underline" (click)="removeJob(job.id)">
+              <span class="actionButtonText">Glöm bort sparat jobb</span>
+            </button>
+            <button class="actionButton textButton icon left shareIcon underline">
+              <span class="actionButtonText">Dela annons</span>
+            </button>
+            <button class="actionButton textButton icon left printIcon underline">
+              <span class="actionButtonText">Skriv ut annons</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="navigation col-lg-8">
+    <div class="carousel-control-prev" role="button" data-slide="prev" (click)="updateActiveSlide('prev')">
+      <span class="caorusel-control-prev-text textButton icon left chevronLeftIcon">Föregående</span>
+      <span class="sr-only">Föregående</span>
+    </div>
+    <div class="numbers">{{activeSlide}} av {{numberOfJobs}}</div>
+    <div class="carousel-control-next" role="button" data-slide="next" (click)="updateActiveSlide('next')">
+      <span class="caorusel-control-next-text textButton icon right chevronRightIcon">Nästa</span>
+      <span class="sr-only">Nästa</span>
+    </div>
+  </div>
+  <div class="topOfPage col-lg-8 textButton underline" (click)="topFunction()">Till toppen av sidan</div>
+</div>

@@ -1,0 +1,201 @@
+[
+  {
+    "id": "1",
+    "namn": "Administration, ekonomi, juridik",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "2",
+    "namn": "Bygg och anläggning",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "20",
+    "namn": "Chefer och verksamhetsledare",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "3",
+    "namn": "Data/IT",
+    "typ": "YRKESOMRADE",
+    "yrkesgrupper": [
+      {
+        "id": "3511",
+        "namn": "Drifttekniker, IT",
+        "typ": "YRKESGRUPP",
+        "yrken": [
+		  {
+		    "id": "6027",
+		    "namn": "Dataoperatör",
+		    "typ": "YRKE"
+		  },
+		  {
+		    "id": "3097",
+		    "namn": "Driftledare, IT",
+		    "typ": "YRKE"
+		  },
+		  {
+		    "id": "5431",
+		    "namn": "Drifttekniker, data",
+		    "typ": "YRKE"
+		  },
+		  {
+		    "id": "6625",
+		    "namn": "IT-tekniker / Datatekniker",
+		    "typ": "YRKE"
+		  },
+		  {
+		    "id": "5428",
+		    "namn": "PC-koordinator",
+		    "typ": "YRKE"
+		  },
+		  {
+		    "id": "5997",
+		    "namn": "PC-samordnare",
+		    "typ": "YRKE"
+		  }
+		]
+      },
+      {
+        "id": "2516",
+        "namn": "IT-säkerhetsspecialister",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2512",
+        "namn": "Mjukvaru- och systemutvecklare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3514",
+        "namn": "Nätverks- och systemtekniker m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3512",
+        "namn": "Supporttekniker, IT",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3513",
+        "namn": "Systemadministratörer",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2511",
+        "namn": "Systemanalytiker och IT-arkitekter m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2515",
+        "namn": "Systemförvaltare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2514",
+        "namn": "Systemtestare och testledare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2513",
+        "namn": "Utvecklare inom spel och digitala media",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3515",
+        "namn": "Webbmaster och webbadministratörer",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2519",
+        "namn": "Övriga IT-specialister",
+        "typ": "YRKESGRUPP"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "namn": "Försäljning, inköp, marknadsföring",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "6",
+    "namn": "Hantverksyrken",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "7",
+    "namn": "Hotell, restaurang, storhushåll",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "8",
+    "namn": "Hälso- och sjukvård",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "9",
+    "namn": "Industriell tillverkning",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "10",
+    "namn": "Installation, drift, underhåll",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "4",
+    "namn": "Kropps- och skönhetsvård",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "11",
+    "namn": "Kultur, media, design",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "22",
+    "namn": "Militärt arbete",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "13",
+    "namn": "Naturbruk",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "14",
+    "namn": "Naturvetenskapligt arbete",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "15",
+    "namn": "Pedagogiskt arbete",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "12",
+    "namn": "Sanering och renhållning",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "16",
+    "namn": "Socialt arbete",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "17",
+    "namn": "Säkerhetsarbete",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "18",
+    "namn": "Tekniskt arbete",
+    "typ": "YRKESOMRADE"
+  },
+  {
+    "id": "19",
+    "namn": "Transport",
+    "typ": "YRKESOMRADE"
+  }
+]

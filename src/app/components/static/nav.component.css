@@ -1,0 +1,14 @@
+#kontextuellmeny .navbar-nav {
+	flex-direction: row;
+}
+
+.spa-menu.navbar {
+	height: 57px;
+}
+
+@media only screen and (max-width: 767px)  {
+	.navbar-header.hidden-md-up,
+	.container {
+		width: 100%;
+	}
+}

@@ -1,0 +1,77 @@
+@import '_settings';
+
+.underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link {
+  color: $link-color;
+  cursor: pointer;
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+}
+
+.textButton {
+  color: $text-button-color;
+  cursor: pointer;
+  font-weight: bold;
+  &:hover {
+    color: $text-button-color-hover;
+  }
+}
+
+.icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: unset;
+  background-size: 12px 12px;
+  &.left {
+    background-position: left;
+    padding-right: 0;
+    padding-left: 17px;
+  }
+  &.right {
+    background-position: right;
+    padding-right: 17px;
+  }
+}
+
+.removeIcon {
+  background-image: url('/images/icons/cross-icon.svg');
+  &:hover {
+    background-image: url('/images/icons/cross-icon-hover.svg');
+  }
+}
+.shareIcon {
+  background-image: url('/images/icons/share-icon.svg');
+  &:hover {
+    background-image: url('/images/icons/share-icon-hover.svg');
+  }
+}
+.printIcon {
+  background-image: url('/images/icons/print-icon.svg');
+  &:hover {
+    background-image: url('/images/icons/print-icon-hover.svg');
+  }
+}
+.chevronLeftIcon {
+  background-image: url('/images/icons/chevron-icon-left.svg');
+  background-size: 8px 12px;
+  &:hover {
+    background-image: url('/images/icons/chevron-icon-left-hover.svg');
+  }
+}
+.chevronRightIcon {
+  background-image: url('/images/icons/chevron-icon-right.svg');
+  background-size: 8px 12px;
+  &:hover {
+    background-image: url('/images/icons/chevron-icon-right-hover.svg');
+  }
+}
+.checkIcon {
+  background-image: url('/images/icons/check-icon.svg');
+}

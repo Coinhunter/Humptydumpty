@@ -1,0 +1,261 @@
+<div class="sv-script-portlet sv-portlet" id="svid12_4d99301a154fd3fb8dfc2ba">
+  <div id="Hjalpslider"><!-- Hjälp-slider --></div>
+  <style>
+
+   .helpSlider{
+       position: fixed;
+       right: 0px;
+       top: 5px;
+       z-index: 1002;
+   }
+
+   .helpSlider a.helpButton {
+      float: left;
+      display: block;
+      padding: 13px 24px 15px 29px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      margin: 110px -27px 0px -26px;
+      width: 99px;
+      -ms-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      background-color: #345468; /*#006490*/
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+      z-index: 1003;
+   }
+
+   .helpSlider .helpContentContainer {
+      display: none;
+      background-color: #ffffff;
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.36);
+      -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.36);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.36);
+      overflow: hidden;
+      border: 4px solid #345468;
+      border-right-width: 0px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      position: relative;
+      z-index: 1003;
+
+   }
+
+   .helpSlider .helpContent {
+      width: 938px;
+      height: calc(100vh - 20px);
+      overflow-y: scroll;
+      margin-left: 29px;
+      padding-right: 30px;
+   }
+
+   .helpModal {
+       display: none;
+       background-color: rgb(0, 0, 0);
+       position: fixed;
+       height: 100%;
+       width: 100%;
+       top: 0px;
+       opacity: 0.3;
+       z-index: 1002;
+   }
+
+   .helpCloseButton {
+      font-size: 19px;
+      text-decoration: none;
+      right: 0px;
+      position: fixed;
+      padding: 12px;
+      margin-right: 20px;
+      background-color: rgba(255,255,255,0.8);
+      transition: background 0.2s ease-in-out;
+      border-bottom-left-radius: 6px;
+   }
+
+    .helpCloseButton:hover,
+    .helpCloseButton:focus {
+      background-color: #ddd;
+    }
+
+
+
+  @media (max-width:991px) {
+   .helpSlider .helpContent {
+      width: calc(100% - 30px);
+   }
+  }
+
+  @media (max-width: 767px) {
+   .helpSlider a.helpButton {
+     font-size: 18px;
+     text-align: center;
+     padding: 2px 0;
+     margin: 6px 0 0 0;
+     width: 30px;
+     font-weight: 600;
+     border-top-left-radius: 4px;
+     border-bottom-left-radius: 4px;
+     border-bottom-right-radius: 0;
+     border-top-right-radius: 0;
+     -ms-transform: initial;
+     -webkit-transform: initial;
+     tranform: initial;
+   }
+   .helpCloseButton {
+    margin-right: 0;
+   }
+  }
+
+  .helpslider--open {
+  overflow-y: hidden;
+  }
+
+  </style>
+
+
+  <div class="helpModal js-close-helpslider"></div>
+  <div class="helpSlider hide-in-print">
+   <a href="#" class="helpButton inverted js-toggle-helpslider"><span class="hidden-xs">Hjälp</span><span class="visible-xs">?</span></a>
+   <div class="helpContentContainer">
+      <a href="#" class="helpCloseButton fa fa-close js-close-helpslider"></a>
+      <div class="helpContent">
+         <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f4143764a"><div id="Text"><!-- Text --></div><div class="sv-text-portlet-content"><h1 class="naf-h1" id="h-Sahittardujobbsompassardig">Så hittar du jobb som passar dig</h1></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f4143764b"><div id="Text1"><!-- Text 1 --></div><div class="sv-text-portlet-content"><h2 class="naf-h2" id="h-1SokiPlatsbanken">1. Sök i Platsbanken</h2></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f4143764c"><div id="Text2"><!-- Text 2 --></div><div class="sv-text-portlet-content"><p class="naf-body">Skriv in vilket slags jobb du söker. Samtliga annonser som matchar visas. Du kan begränsa sökresultatet genom att fylla i var du vill jobba någonstans – antingen genom att fylla i kommun, län eller land, eller genom att ange ett postnummerområde plus en radie. Ditt matchningsresultat kan du sortera efter relevans eller datum.</p><p class="naf-body">Vi ger också förslag på närliggande yrken, orter och kompetenser - välj bland dessa och lägg till i din sökning. Det hjälper dig att få ännu bättre matchningar.</p></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f4143764d"><div id="Text3"><!-- Text 3 --></div><div class="sv-text-portlet-content"><h2 class="naf-h2" id="h-2Matchamotannonser">2. Matcha mot annonser</h2></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f4143764e"><div id="Text4"><!-- Text 4 --></div><div class="sv-text-portlet-content"><p class="naf-body">Komplettera med dina kompetenser och erfarenheter, i vilken omfattning du vill jobba (heltid eller deltid), så matchas du mot det som arbetsgivarna söker. Annonser som passar bäst hamnar högst upp i sökresultatet. Läs mer om jobben som matchar och skicka in din ansökan.</p></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f4143764f"><div id="Text5"><!-- Text 5 --></div><div class="sv-text-portlet-content"><h2 class="naf-h2" id="h-3Saharsokerdujobbetdirektpawebben">3. Så här söker du jobbet direkt på webben</h2></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f41437650"><div id="Text6"><!-- Text 6 --></div><div class="sv-text-portlet-content"><p class="normal">I Platsbankens annonser finns information om&nbsp;på vilket sätt du skickar din ansökan, till exempel via e-post, via arbetsgivarens webbplats eller via arbetsformedlingen.se. När arbetsgivaren har valt att ta emot ansökningar via arbetsformedlingen.se kan du enkelt söka jobbet direkt på webben när du är inloggad. Om det finns en grön knapp med texten Sök jobbet längst ned i annonsen betyder det att du kan&nbsp;söka jobbet direkt på webben Så här gör du:</p><ul class=" normal"><li>Klicka på <strong>Sök jobbet</strong>. Då öppnas ansökningsformuläret som du ska fylla i.</li><li>Skriv en lockande <strong>rubrik</strong>.</li><li>Se till att du har valt <strong>minst en kontaktväg</strong>. Om du behöver ändra någon av dina&nbsp;kontaktuppgifter, klickar du på Uppdatera kontaktuppgift. Då öppnas en nytt fönster där du gör dina ändringar. När du har sparat dina ändringar går du tillbaka till fönstret du kom ifrån, och klickar på Ladda om sidan. Då syns dina uppdaterade uppgifter.</li><li>Fyll i din <strong>arbetslivserfarenhet</strong>.&nbsp;Beskriv de jobb och praktikplatser du har&nbsp;haft som kan vara intressanta för det jobb du söker. Du fyller också i under vilken tidsperiod du har haft jobbet.&nbsp;Har du haft flera jobb lägger du bara till och fyller i fler fält, ett för varje jobb.</li><li>Fyll i&nbsp;din <strong>utbildning</strong>. Beskriv de utbildningar och kurser du har gått som kan vara av värde för arbetsgivaren. Förutom att skriva skolans namn och vilken utbildning du gått, kan du även kort beskriva innehållet i utbildningarna. Du fyller också i under vilken tidsperiod du har studerat. Har du flera utbildningar lägger du bara till och fyller i fler fält, ett för varje utbildning.</li><li>Fyll i om du har några <strong>övriga meriter och uppdrag</strong> som är relevanta för jobbet du söker. Det kan till exempel vara om du har erfarenheter av ideellt arbete, föreningsarbete etc.</li><li>Till sist skriver du en personlig <strong>presentation</strong>. Det är&nbsp;din chans att visa att just du är rätt person för det här jobbet.</li><li>När du har fyllt i alla uppgifter i din ansökan klickar du på <strong>Granska</strong>. Är det något du vill ändra klickar du på Stäng granska och gör dina ändringar. När du känner dig nöjd med din ansökan klickar du på Skicka in.</li></ul><p class="normal">Tänk på att du måste fylla i <strong>en rubrik</strong>, <strong>minst en kontaktuppgift</strong> och en <strong>presentation</strong> för att du ska kunna skicka iväg din ansökan.</p><p class="normal">När du har sökt ett jobb via arbetsformedlingen.se sparas din ansökan under fliken Ansökningar. Du får en överblick över jobb du har sökt och du kan gå tillbaka och titta på dina olika ansökningar.</p></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f41437651"><div id="Text7"><!-- Text 7 --></div><div class="sv-text-portlet-content"><h2 class="naf-h2" id="h-Skapasokprofiler">Skapa sökprofiler</h2></div></div>
+  <div class="sv-text-portlet sv-use-margins" id="svid12_663bc585157d546f41437652"><div id="Text8"><!-- Text 8 --></div><div class="sv-text-portlet-content"><p class="normal">När du är inloggad och sparar en sökning skapas en sökprofil. Då kan du</p><ul class=" normal"><li>gå in och titta efter nya annonser utifrån de val du har lagt in i din sökprofil</li><li>spara intressanta annonser</li><li>bygga på med en personlig presentation, dina utbildningar och tidigare jobb</li><li>göra profilen synlig för arbetsgivare som letar nya medarbetare.</li></ul><p class="naf-body"><a title="" href="/For-arbetssokande/Lediga-jobb/Sa-fungerar-Platsbanken.html" rel="external">För att läsa Frågor och svar om tjänsten klicka här</a></p></div></div>
+      </div>
+   </div>
+  </div>
+
+  <script>
+
+    (function(window, document, jq){
+    window._AF = window._AF || {};
+
+    window._AF.cookieHelper = {
+      listCookies: function() {
+              var theCookies = document.cookie.split(';');
+              var cookieArray = [];
+              for (var i = 0 ; i < theCookies.length; i++) {
+                  var component = theCookies[i].split('=');
+                      component[0] = component[0].split(' ').join('');
+                  cookieArray.push([component.shift(), component.join('=')]);
+              }
+              return cookieArray;
+          },
+      hasCookie: function(cookieName, cookieValue) {
+              if(typeof cookieName !== undefined) {
+                  var cookieArray = this.listCookies();
+                  for (var i = 0 ; i < cookieArray.length; i++) {
+                      if(cookieArray[i][0] === cookieName) {
+                        if(typeof cookieValue !== undefined) {
+                          return (cookieArray[i][1] == cookieValue);
+                        } else {
+                            return true;
+                          }
+                      }
+                  }
+              }
+              return false;
+          },
+          addCookie: function(key, value, cb) {
+              document.cookie = encodeURIComponent(key) + '=' + value + '; expires=Fri, 31 Dec 2021 23:59:59 GMT; path=/';
+              if(cb && typeof cb == "function") {
+                cb();
+              }
+          }
+    };
+
+
+    $body = jq('body');
+    sliderContainer = jq(".helpSlider .helpContentContainer");
+    scrollContainer = jq(".helpSlider .helpContent");
+    background = jq(".helpModal");
+    $helpButton = jq('.js-toggle-helpslider');
+
+    window._AF.helpSlider = {
+
+      saveState: function() {
+        if(sliderContainer.is(":visible")) {
+          $body.addClass('helpslider--open').removeClass('helpslider--closed');
+          _AF.cookieHelper.addCookie('isHelpOpen', 'true');
+        } else {
+          $body.addClass('helpslider--closed').removeClass('helpslider--open');
+          _AF.cookieHelper.addCookie('isHelpOpen', 'false');
+        }
+
+      },
+      open: function(targetId) {
+        var self = this;
+        sliderContainer.animate({width: "toggle"}, 200 , function() {
+          self.saveState();
+          background.fadeToggle( 100, "linear" );
+          jq(this).attr('aria-hidden', 'false');
+          $helpButton.find('.hidden-xs').text('Stäng');
+          $helpButton.find('.visible-xs').text('X');
+
+          if (typeof targetId !== 'undefined') {
+            if(jq(targetId).length) {
+              scrollContainer.animate({ scrollTop: scrollContainer.scrollTop() + jq(targetId).position().top + 'px' });
+            } else {
+              console.log('element not found: ' + targetId);
+            }
+          }
+
+        });
+      },
+      close: function() {
+        var self = this;
+        background.fadeToggle( 100, "linear", function() {
+          sliderContainer.animate({width: "toggle"}, 200 , function() {
+            self.saveState();
+            jq(this).attr('aria-hidden', 'true');
+            $helpButton.find('.hidden-xs').text('Hjälp');
+            $helpButton.find('.visible-xs').text('?');
+          });
+        });
+      },
+      toggle: function() {
+        var self = this;
+        if(sliderContainer.is(":visible")) {
+          self.close();
+        } else {
+          self.open();
+        }
+      },
+      init: function() {
+        var self = this;
+        /*if(_AF.cookieHelper.hasCookie('isHelpOpen', 'true')) {
+          self.open();
+        } else {
+          if(sliderContainer.is(":visible")) {
+            self.close();
+          }
+        }*/
+
+        jq(".js-toggle-helpslider").click(function (e) {
+          e.preventDefault();
+          self.toggle();
+        });
+        jq(".js-close-helpslider").click(function (e) {
+          e.preventDefault();
+          self.toggle();
+        });
+      }
+    };
+
+    jq(function(){
+      _AF.helpSlider.init();
+    });
+
+    })(window, document, $);
+
+  </script>
+</div>
