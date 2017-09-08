@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { GlobalVariables } from '../../global';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/rx';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 import { ProfilkriteriumTyper } from './ProfilkriteriumTyper';
 
@@ -10,7 +10,7 @@ import { ProfilkriteriumTyper } from './ProfilkriteriumTyper';
 export class PbapiKriterierService {
   private pbApi = GlobalVariables.PBAPI_URL;
 
-  private cachedResponses:Object = {};
+  private cachedResponses: Object = {};
 
   constructor(private http: Http) { }
 
@@ -33,7 +33,7 @@ export class PbapiKriterierService {
             throw new Error(err);
           })
           .toPromise().then((result) => {
-            this.cachedResponses[key] = this.parseResponse(key, result);            
+            this.cachedResponses[key] = this.parseResponse(key, result);
             resolve(this.cachedResponses[key]);
           }, (failure) => {
             reject(failure);
@@ -42,10 +42,10 @@ export class PbapiKriterierService {
     });
   }
 
-  private parseResponse(key:string, result) {
+  private parseResponse(key: string, result) {
     const resultArray = [];
     result.forEach((element) => {
-      //Profilkriterium
+      // Profilkriterium
       const kriterium: Profilkriterium = element;
       resultArray.push(kriterium);
     });
@@ -68,6 +68,4 @@ export class PbapiKriterierService {
   private getKeyFromType(type: string) {
     return `searchCriteriaForType:${type}`;
   }
-
-
 }

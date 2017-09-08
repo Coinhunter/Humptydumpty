@@ -2,7 +2,7 @@ import { TestBed, async, inject } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { GoogleAnalyticsEventsService } from "./services/google-analytics-events/google-analytics-events.service";
+import { GoogleAnalyticsEventsService } from './services/google-analytics-events/google-analytics-events.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
@@ -17,7 +17,7 @@ describe('AppComponent', () => {
       ],
       providers: [
         GoogleAnalyticsEventsService
-      ]      
+      ]
     }).compileComponents();
   }));
 

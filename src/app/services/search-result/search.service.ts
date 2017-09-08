@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/rx';
 
 import { ResultContainerMapService } from '../result-container-map/result-container-map.service';
 import { PbapiMatchningService } from '../pbapi-matchning/pbapi-matchning.service';
@@ -9,7 +9,7 @@ import { Profilkriterium } from '../../models/Profilkriterium.interface';
 export class SearchService {
   numberOfJobs: number;
   numberOfAds: number;
-  numberOfAdsPerSection: number = 25;
+  numberOfAdsPerSection: number;
   resultContainerService: ResultContainerMapService = new ResultContainerMapService();
   searchCriteria: Array<Object>;
 
@@ -17,11 +17,12 @@ export class SearchService {
   mostRecentlyLoadedSegment: number; // We always start by looking at the first one.
 
   constructor(private pbapiMatchning: PbapiMatchningService) {
+    this.numberOfAdsPerSection = 25;
   }
 
   // Returns Promise
   newSearch(numberOfAdsPerSection: number, searchCriteria: Array<Object>) {
-    // Clean out the old result. 
+    // Clean out the old result.
     this.resultContainerService.clean();
 
     // Set up the new search, and perform it.
@@ -32,18 +33,18 @@ export class SearchService {
   }
 
   getNumberOfJobs() {
-    if(this.numberOfJobs) {
-      return this.numberOfJobs;      
+    if (this.numberOfJobs) {
+      return this.numberOfJobs;
     } else {
       throw new Error('No value available, perform a search first.');
     }
   }
-  
+
   getNumberOfAds() { return this.numberOfAds; }
-  
+
   getNumberOfSections() {
     return Math.ceil(this.numberOfAds / this.numberOfAdsPerSection);
-  }  
+  }
 
   getNumberOfAdsPerSection() {
     return this.numberOfAdsPerSection;
@@ -51,30 +52,34 @@ export class SearchService {
 
   getPaginatedResultArray() {
     // Simple, we only return the result for where we're standing.
-    let result = [{
+    const result = [{
       'segmentIndex': this.mostRecentlyLoadedSegment,
       'segmentData': this.resultContainerService.getResultForIndex(this.mostRecentlyLoadedSegment)
-    }];    
+    }];
     return result;
   }
 
   getLazyListResultArray() {
-    // Start at the mostRecentlyLoadedSegment. 
-    // If we have loaded later or previous segments, show as many as are available in an unbroken line.
-    let result = [{
+    // Start at the mostRecentlyLoadedSegment.
+    // If we have loaded later or previous segments, show as many as are
+    // available in an unbroken line.
+    const result = [{
       'segmentIndex': this.mostRecentlyLoadedSegment,
       'segmentData': this.resultContainerService.getResultForIndex(this.mostRecentlyLoadedSegment)
     }];
-    // Prepend backwards, until no more segments are available. 
-    // If there are holes in the list, and the first item is not index 1 once all have been appended, the hasPreviousSegment using that index
-    // will indicate that and can be called to determine whether to show a "show previous"-button or something.. if that's what you're into.
+    // Prepend backwards, until no more segments are available.
+    // If there are holes in the list, and the first item is not index 1 once
+    // all have been appended, the hasPreviousSegment using that index
+    // will indicate that and can be called to determine whether to show
+    // a "show previous"-button or something.. if that's what you're into.
     let ourVeryOwnLittleIndexPointer = this.mostRecentlyLoadedSegment;
-    while(this.hasPreviousSegment(ourVeryOwnLittleIndexPointer) && this.isPreviousSegmentLoaded(ourVeryOwnLittleIndexPointer)) {
+    while (this.hasPreviousSegment(ourVeryOwnLittleIndexPointer)
+      && this.isPreviousSegmentLoaded(ourVeryOwnLittleIndexPointer)) {
       ourVeryOwnLittleIndexPointer--;
       result.unshift({
         'segmentIndex': ourVeryOwnLittleIndexPointer,
         'segmentData': this.resultContainerService.getResultForIndex(ourVeryOwnLittleIndexPointer)
-      });      
+      });
     }
     // Do not append forwards. The user will have option to "show more".
     return result;
@@ -85,7 +90,7 @@ export class SearchService {
     if (this.hasNextSegment(index)) {
       return this.fetchSegment(++index);
     } else {
-      throw new Error('No next segment to fetch');            
+      throw new Error('No next segment to fetch');
     }
   }
 
@@ -96,7 +101,7 @@ export class SearchService {
   // Returns Promise : input index is 'where you are now' - previous is the one before current pointer.
   loadPreviousSegment(index: number) {
     if (this.hasPreviousSegment(index)) {
-      return this.fetchSegment(--this.mostRecentlyLoadedSegment);      
+      return this.fetchSegment(--this.mostRecentlyLoadedSegment);
     } else {
       throw new Error('No previous segment to fetch');
     }
@@ -107,7 +112,7 @@ export class SearchService {
   }
 
   private isPreviousSegmentLoaded(index: number) {
-    return this.resultContainerService.hasResultForIndex(index-1);
+    return this.resultContainerService.hasResultForIndex(index - 1);
   }
 
   // Returns a Promise that gets resolved based on how the API call goes ^_^
@@ -133,7 +138,7 @@ export class SearchService {
           }
         ];
 
-        var obsAds = this.pbapiMatchning
+        const obsAds = this.pbapiMatchning
           .getMatchingAds(criteria, this.numberOfAdsPerSection, this.calculateOffsetForIndex(index))
           .then((result) => {
             this.numberOfAds = result.antalRekryteringsbehov;
@@ -151,12 +156,11 @@ export class SearchService {
   }
 
   private calculateOffsetForIndex(index: number) {
-    const offset = (index-1)*this.numberOfAdsPerSection;
+    const offset = (index - 1) * this.numberOfAdsPerSection;
     if (offset >= this.numberOfAds) {
       throw new Error('Offset is larger than number of searchable ads');
     } else {
       return offset;
     }
   }
-
 }

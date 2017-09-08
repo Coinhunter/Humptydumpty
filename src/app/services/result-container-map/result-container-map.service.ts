@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ResultContainerMapService {
-  map: Object; 
+  map: Object;
 
-  constructor() { 
+  constructor() {
     this.map = {};
   }
 
   hasResultForIndex(index: number) {
-    const stringProperty:string = index.toString();
+    const stringProperty: string = index.toString();
     return this.map.hasOwnProperty(stringProperty);
   }
 

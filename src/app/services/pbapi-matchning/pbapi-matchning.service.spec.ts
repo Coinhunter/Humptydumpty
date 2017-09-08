@@ -9,7 +9,7 @@ describe('PbapiMatchningService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpModule
-      ],      
+      ],
       providers: [
         PbapiMatchningService
       ]
@@ -28,7 +28,8 @@ describe('PbapiMatchningService', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return a number from the API when calling getNumberOfAds()', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
+  it('should return a number from the API when calling getNumberOfAds()',
+    async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
     service.getNumberOfAvailableJobs().then((res) => {
       expect(res).toBeDefined();
     });
@@ -40,7 +41,6 @@ describe('PbapiMatchningService', () => {
       expect(res.rekryteringsbehov).toBeDefined();
 
       expect(res.relateradeKriterier).toBeDefined();
-      
       expect(res.antalRekryteringsbehov).toBeDefined();
       expect(res.antalPlatser).toBeDefined();
 
@@ -50,5 +50,4 @@ describe('PbapiMatchningService', () => {
       expect(res.antalRekryteringsbehovMatcharDelvis).toBeDefined();
     });
   })));
-
 });

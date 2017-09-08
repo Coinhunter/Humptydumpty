@@ -5,7 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GlobalVariables } from '../../global';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/rx';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 
 @NgModule({
@@ -22,7 +22,7 @@ export class GeoapiService {
 
   constructor(private http: HttpClient) { }
 
-  // Måste fixa så att man inte måste skicka med ett prefix! :O wtf liksom... 
+  // Måste fixa så att man inte måste skicka med ett prefix! :O wtf liksom...
   getOrtByPostnummer(prefix: string): Promise<any> {
     const url = `${this.geoApi}/postnummer?postnummerPrefix=${encodeURIComponent(prefix)}`;
     return new Promise((resolve, reject) => {

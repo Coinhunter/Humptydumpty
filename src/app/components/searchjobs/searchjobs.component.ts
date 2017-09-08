@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YrkenService } from '../../services/yrken/yrken.service';
+import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 import { Searchparameter } from '../../models/Searchparameter.interface';
 
@@ -7,7 +8,10 @@ import { Searchparameter } from '../../models/Searchparameter.interface';
   selector: 'app-searchjobs',
   templateUrl: './searchjobs.component.html',
   styleUrls: ['./searchjobs.component.scss'],
-  providers: [YrkenService]
+  providers: [
+    YrkenService,
+    PbapiMatchningService
+  ]
 })
 export class SearchjobsComponent implements OnInit {
 
@@ -17,14 +21,19 @@ export class SearchjobsComponent implements OnInit {
   showLicences: boolean;
   showJobAreas: boolean;
 
+  numberOfAvailableJobs: number;
+
   yrkesomraden: Array<Yrkesomrade>;
   searchparameters: Array<Searchparameter>;
-  constructor(private yrkenService: YrkenService) {
+  constructor(private yrkenService: YrkenService, private pbapiMatchningService: PbapiMatchningService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = false;
     this.showJobAreas = false;
     this.searchparameters = new Array<Searchparameter>();
     this.yrkenService.getLocalSelection().subscribe(yrkesomraden => {
         this.yrkesomraden = yrkesomraden;
+    });
+    this.pbapiMatchningService.getNumberOfAvailableJobs().then(data => {
+      this.numberOfAvailableJobs = data;
     });
   }
 

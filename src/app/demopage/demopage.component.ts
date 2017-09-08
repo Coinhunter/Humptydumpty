@@ -14,13 +14,13 @@ export class DemopageComponent implements OnInit {
   }
 
   demoFun() {
-  	console.log('Emittar event av typ1');
-	this.googleAnalyticsEventsService.emitEvent("typ1", "testAction", "testLabel", 10);
+    console.log('Emittar event av typ1');
+    this.googleAnalyticsEventsService.emitEvent('typ1', 'testAction', 'testLabel', 10);
   }
 
   demoFun2() {
-  	console.log('Emittar event av typ2');
-	this.googleAnalyticsEventsService.emitEvent("typ2", "testAction", "testLabel", 10);
+    console.log('Emittar event av typ2');
+    this.googleAnalyticsEventsService.emitEvent('typ2', 'testAction', 'testLabel', 10);
   }
 
 }

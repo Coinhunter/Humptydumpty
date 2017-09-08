@@ -12,5 +12,5 @@ export const ProfilkriteriumTyper = [
   'LANDER',
   'YRKESERFARENHETER',
   'SPRAKNIVAER',
-  'INGA_KVALIFIKATIONER'      
+  'INGA_KVALIFIKATIONER'
 ];

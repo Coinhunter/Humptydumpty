@@ -9,7 +9,7 @@ describe('DemopageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DemopageComponent ],   
+      declarations: [ DemopageComponent ],
       providers: [
         GoogleAnalyticsEventsService
       ]

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { GlobalVariables } from '../../global';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/rx';
 import { SearchService } from '../search-result/search.service';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 
@@ -13,8 +13,10 @@ export class PbapiMatchningService {
   constructor(private http: Http) {
   }
 
-  getMatchingAds(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
-    const searchCriteria = this.getSearchRequestBodyForCriteria(criteria, numberOfAdsPerSection, offset);
+  getMatchingAds(criteria: Array<Profilkriterium>,
+    numberOfAdsPerSection: number, offset: number) {
+    const searchCriteria = this.getSearchRequestBodyForCriteria(criteria,
+       numberOfAdsPerSection, offset);
     const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov`;
     return this.http.post(url, searchCriteria)
       .map(this.extractData)
@@ -32,12 +34,13 @@ export class PbapiMatchningService {
 
   getAd(id: string) {
     const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov/${id}`;
-    return this.http.post(url, {}) // Consider inputting profile information here.. 
+    return this.http.post(url, {}) // Consider inputting profile info here..
       .catch(this.handleError)
       .map(this.extractData);
-  } 
+  }
 
-  private getSearchRequestBodyForCriteria(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
+  private getSearchRequestBodyForCriteria(criteria: Array<Profilkriterium>,
+    numberOfAdsPerSection: number, offset: number) {
     return {
       'matchningsprofil': {
         'profilkriterier': criteria
@@ -49,12 +52,10 @@ export class PbapiMatchningService {
 
   private extractData(response: Response) {
     // If request fails, throw an Error that will be caught
-    if(response.status < 200 || response.status >= 300) {
+    if (response.status < 200 || response.status >= 300) {
       console.log(response);
       throw new Error('This request has failed ' + response.status);
-    } 
-    // If everything went fine, return the response
-    else {
+    } else { // If everything went fine, return the response
       return response.json();
     }
   }
@@ -62,5 +63,4 @@ export class PbapiMatchningService {
   private handleError(error: Response | any) {
     return Observable.throw(error);
   }
-
 }

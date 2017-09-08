@@ -1,5 +1,5 @@
 import { TestBed, inject, async } from '@angular/core/testing';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/rx';
 
 import { SearchService } from './search.service';
 import { PbapiMatchningService } from '../pbapi-matchning/pbapi-matchning.service';
@@ -21,13 +21,13 @@ describe('SearchService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpModule
-      ],      
+      ],
       providers: [
         SearchService,
         PbapiMatchningService
       ]
     });
-  });  
+  });
 
   it('should be created', inject([SearchService], (service: SearchService) => {
     expect(service).toBeTruthy();
@@ -39,7 +39,8 @@ describe('SearchService', () => {
   }));
 
 
-  it('should throw weeo when attempting to get number of jobs without first searching', async(inject([SearchService], (service: SearchService) => {
+  it('should throw weeo when attempting to get number of jobs without first'
+    + 'searching', async(inject([SearchService], (service: SearchService) => {
     expect(() => {
       service.getNumberOfJobs();
     }).toThrow(new Error('No value available, perform a search first.'));
@@ -58,7 +59,8 @@ describe('SearchService', () => {
   })));
 
 
-  it('should have set the ads of the first section when performing a new search', async(inject([SearchService], (service: SearchService) => {
+  it('should have set the ads of the first section when performing a'
+    + 'new search', async(inject([SearchService], (service: SearchService) => {
     service.newSearch(25, criteria).then((result) => {
       expect(service.resultContainerService.getResultForIndex(1).length).toEqual(service.getNumberOfAdsPerSection());
       expect(() => {
@@ -85,7 +87,7 @@ describe('SearchService', () => {
     service.newSearch(25, criteria).then((section1Result) => {
       expect(section1Result).toEqual('Fetching complete');
       // Set the most recently loaded one to one before end of range.
-      service.mostRecentlyLoadedSegment = service.getNumberOfSections()-1;
+      service.mostRecentlyLoadedSegment = service.getNumberOfSections() - 1;
       service.loadNextSegment(service.mostRecentlyLoadedSegment).then((lastWorkingLoadResult) => {
         expect(section1Result).toEqual('Fetching complete');
         // Check that the result for the last set was put into the resultcontainer.
@@ -99,18 +101,19 @@ describe('SearchService', () => {
   })));
 
 
-  it('should have loaded the previous section of ads when calling loadPreviousSegment()', async(inject([SearchService], (service: SearchService) => {
+  it('should have loaded the previous section of ads when calling'
+    + 'loadPreviousSegment()', async(inject([SearchService], (service: SearchService) => {
     service.newSearch(25, criteria).then((result1) => {
       expect(result1).toEqual('Fetching complete');
-      //Fetch the last segment in the series...
+      // Fetch the last segment in the series...
       service.fetchSegment(service.getNumberOfSections()).then((responseMax) => {
         expect(responseMax).toEqual('Fetching complete');
         expect(service.resultContainerService.hasResultForIndex(service.getNumberOfSections())).toBe(true);
-        expect(service.resultContainerService.hasResultForIndex(service.getNumberOfSections()-1)).toBe(false);
+        expect(service.resultContainerService.hasResultForIndex(service.getNumberOfSections() - 1)).toBe(false);
         expect(service.hasPreviousSegment(service.mostRecentlyLoadedSegment)).toBe(true);
         service.loadPreviousSegment(service.mostRecentlyLoadedSegment).then((previous) => {
           expect(previous).toEqual('Fetching complete');
-          expect(service.resultContainerService.hasResultForIndex(service.getNumberOfSections()-1)).toBe(true);
+          expect(service.resultContainerService.hasResultForIndex(service.getNumberOfSections() - 1)).toBe(true);
         });
       });
     });
@@ -119,14 +122,13 @@ describe('SearchService', () => {
   it('should not fire requests for already loaded segments', async(inject([SearchService], (service: SearchService) => {
     service.newSearch(25, criteria).then((result1) => {
       expect(result1).toEqual('Fetching complete');
-      expect(service.resultContainerService.hasResultForIndex(1)).toBe(true);      
+      expect(service.resultContainerService.hasResultForIndex(1)).toBe(true);
       service.fetchSegment(1).then((resultAlreadyFetched) => {
         expect(resultAlreadyFetched).toEqual('Already loaded');
       });
     });
   })));
 
-  
   it('should throw an error if attempting to load segments before index 1', async(inject([SearchService], (service: SearchService) => {
     service.newSearch(25, criteria).then((section1Result) => {
       expect(section1Result).toEqual('Fetching complete');
@@ -137,7 +139,8 @@ describe('SearchService', () => {
   })));
 
 
-  it('should return the resultset for mostRecentlyLoadedSegment when asked for paginated result', async(inject([SearchService], (service: SearchService) => {
+  it('should return the resultset for mostRecentlyLoadedSegment when asked for'
+    + 'paginated result', async(inject([SearchService], (service: SearchService) => {
     // Perform initial search..
     service.newSearch(25, criteria).then((result) => {
       // Expect the result from that search to be returned when asking for the paginated result.
@@ -168,9 +171,10 @@ describe('SearchService', () => {
     });
   })));
 
-  it('should return the correct resultset for getLazyListResultArray when it has holes in it', async(inject([SearchService], (service: SearchService) => {
+  it('should return the correct resultset for getLazyListResultArray when it'
+    + 'has holes in it', async(inject([SearchService], (service: SearchService) => {
     service.newSearch(25, criteria).then((result) => {
-      service.fetchSegment(3).then((result) => {
+      service.fetchSegment(3).then((result2) => {
         expect(service.mostRecentlyLoadedSegment).toEqual(3);
         service.loadNextSegment(service.mostRecentlyLoadedSegment).then((previous) => {
           expect(service.mostRecentlyLoadedSegment).toEqual(4);

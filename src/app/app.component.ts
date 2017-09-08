@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { GoogleAnalyticsEventsService } from './services/google-analytics-events/google-analytics-events.service';
-import { Router, NavigationEnd } from "@angular/router";
+import { Router, NavigationEnd } from '@angular/router';
 
 declare var ga: Function;
 
@@ -19,6 +19,6 @@ export class AppComponent implements OnInit {
         ga('set', 'page', event.urlAfterRedirects);
         ga('send', 'pageview');
       }
-    });    
+    });
   }
 }
