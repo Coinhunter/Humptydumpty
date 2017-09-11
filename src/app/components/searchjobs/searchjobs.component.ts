@@ -44,6 +44,15 @@ export class SearchjobsComponent implements OnInit {
   ngOnInit() {
   }
 
+  formatJobTime(min: number, max: number) {
+    if ((max === min) && (max === 100)) {
+      return 'Heltid, ';
+    } else if ((max === min) && (max !== 100)) {
+      return 'Deltid (' + max + '%), ';
+    } else {
+      return 'Deltid (' + min + '% - ' + max + '%), ';
+    }
+  }
   toggleJobAreas (e) {
     this.showJobAreas = !this.showJobAreas;
     const target = e.target || e.srcElement;

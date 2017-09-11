@@ -462,12 +462,12 @@
                  </div>
                </div>
              </div>
-             <div id="matchningsresultatarea" class="matchningsresultat ng-scope" ng-if="vm.hasProfilkriterier()" style="">
+             <div id="matchningsresultatarea" class="matchningsresultat ng-scope" *ngIf="searchResult.rekryteringsbehov" style="">
               <!--<div id="matchningsresultatarea" class="matchningsresultat" ng-if="vm.kriterier">-->
               <!-- ngIf: vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0 -->
               <div class="matchningsresultatmetadata ng-scope" ng-if="vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0" style="">
                   <h2 class="hittade-annonser" role="status" aria-live="polite" aria-atomic="true">
-          			<span class="antalmatchande ng-binding">2</span> hittade annonser
+          			<span class="antalmatchande ng-binding">{{searchResult.antalRekryteringsbehov}}</span> hittade annonser
           		</h2>
               </div>
               <!-- end ngIf: vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0 -->
@@ -573,53 +573,47 @@
                       </div>
                   </div><a href="" ng-click="vm.toggleCompactView()" class="more-less ng-binding"><i ng-class="{'fa fa-th-list':vm.isCompact, 'fa fa-list': !vm.isCompact}" class="fa fa-list"></i>Visa mindre</a></div>
               <!-- ngRepeat: rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov -->
-              <div ng-class="{sistaresultatrad:($last), compactlist : vm.isCompact}" in-view="vm.lineInView($inview)" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" class="resultatrad ng-scope" ng-repeat="rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov" style="">
+              <div *ngFor="let behov of searchResult.rekryteringsbehov" ng-class="{sistaresultatrad:($last), compactlist : vm.isCompact}" in-view="vm.lineInView($inview)" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" class="resultatrad ng-scope" ng-repeat="rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov" style="">
                   <div class="annons-info">
-                      <h3><a href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" id="annons_21232941" data-ng-href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}"><span class="ng-binding">IT ansvarig med ambitioner till Eurostep Stockholm</span> <span class="sr-only ng-binding">- EUROSTEP AB</span></a></h3>
-                      <div class="arbetsgivarenamn-kommun ng-hide" ng-show="vm.isCompact"><span class="ng-binding">EUROSTEP AB</span> <span>,</span> <span class="rekryteringsbehov-kommun ng-binding">Stockholm</span></div>
-                      <div class="arbetsgivarenamn" ng-show="!vm.isCompact"><span class="label">Företag:</span> <span class="ng-binding">EUROSTEP AB</span></div>
-                      <div class="rekryteringsbehov-kommun-row" ng-show="!vm.isCompact"><span class="label ng-binding">Kommun:</span> <span class="rekryteringsbehov-kommun ng-binding">Stockholm</span></div>
+                      <h3>
+                        <a href="/Tjanster/Arbetssokande/Platsbanken/annonser/{{behov.id}}" id="annons_{{behov.id}}" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}">
+                          <span class="ng-binding">{{behov.rubrik}}</span>
+                          <span class="sr-only ng-binding">- {{behov.arbetsgivarenamn}}</span>
+                        </a>
+                      </h3>
+                      <div class="arbetsgivarenamn-kommun ng-hide" ng-show="vm.isCompact">
+                        <span class="ng-binding">{{behov.arbetsgivarenamn}}</span><span *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">,</span>
+                        <span class="rekryteringsbehov-kommun ng-binding" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
+                      </div>
+                      <div class="arbetsgivarenamn" ng-show="!vm.isCompact"><span class="label">Företag:</span> <span class="ng-binding">{{behov.arbetsgivarenamn}}</span></div>
+                      <div class="rekryteringsbehov-kommun-row" ng-show="!vm.isCompact" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">
+                        <span class="label ng-binding">Kommun:</span>
+                        <span class="rekryteringsbehov-kommun ng-binding">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
+                      </div>
                       <div class="short-list">
-                          <div><span class="label">Yrkesroll:</span> <span class="yrkesroll ng-binding">IT-tekniker / Datatekniker</span></div>
+                          <div><span class="label">Yrkesroll:</span> <span class="yrkesroll ng-binding">{{behov.rubrik}}</span></div>
                           <!-- ngIf: rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0 -->
-                          <div data-ng-if="rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0" class="ng-scope"><span class="label">Anställningsform:</span> <span class="ng-binding">Deltid (80% - 100%), Tillsvidare</span></div>
+                          <div data-ng-if="rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0" class="ng-scope">
+                            <span class="label">Anställningsform:</span>
+                            <span class="ng-binding">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}{{behov.varaktighet.namn}}</span></div>
                           <!-- end ngIf: rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0 -->
                           <!-- ngIf: rekryteringsbehov.getPubliceringsdatumText().length > 0 -->
-                          <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">21 augusti 2017, kl 00:00</span></div>
+                          <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">{{behov.publiceringsdatum}}</span></div>
                           <!-- end ngIf: rekryteringsbehov.getPubliceringsdatumText().length > 0 -->
-                          <!-- ngIf: rekryteringsbehov.sistaAnsokningsdatum --><span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">15 september 2017</span></span>
+                          <!-- ngIf: rekryteringsbehov.sistaAnsokningsdatum --><span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">{{behov.sistaAnsokningsdatum}}</span></span>
                           <!-- end ngIf: rekryteringsbehov.sistaAnsokningsdatum -->
-                      </div><span ng-show="vm.isInloggad" class="spara-annons ng-hide"><button ng-click="vm.toggleSparaAnnons(rekryteringsbehov, $event);" class="spara-annons-btn"><span ng-hide="rekryteringsbehov.stored" class=""><i class="i-star-off"></i>Spara jobbet</span> <span ng-show="rekryteringsbehov.stored" class="sparad ng-hide"><i class="i-star-on"></i>Jobbet är sparat</span></button>
-                      </span>
+                      </div>
+                      <!-- <span ng-show="vm.isInloggad" class="spara-annons ng-hide">
+                        <button ng-click="vm.toggleSparaAnnons(rekryteringsbehov, $event);" class="spara-annons-btn">
+                          <span ng-hide="rekryteringsbehov.stored" class="">
+                            <i class="i-star-off"></i>Spara jobbet
+                          </span>
+                          <span ng-show="rekryteringsbehov.stored" class="sparad ng-hide">
+                            <i class="i-star-on"></i>Jobbet är sparat</span>
+                          </button>
+                      </span> -->
                   </div>
               </div>
-              <!-- end ngRepeat: rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov -->
-              <div ng-class="{sistaresultatrad:($last), compactlist : vm.isCompact}" in-view="vm.lineInView($inview)" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21240256" class="resultatrad ng-scope sistaresultatrad" ng-repeat="rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov" style="">
-                  <div class="annons-info">
-                      <h3><a href="/Tjanster/Arbetssokande/Platsbanken/annonser/21240256" id="annons_21240256" data-ng-href="/Tjanster/Arbetssokande/Platsbanken/annonser/21240256" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}"><span class="ng-binding">.Net Utvecklare C# till spännande IT-företag!</span> <span class="sr-only ng-binding">- EUROSTEP AB</span></a></h3>
-                      <div class="arbetsgivarenamn-kommun ng-hide" ng-show="vm.isCompact"><span class="ng-binding">EUROSTEP AB</span> <span>,</span> <span class="rekryteringsbehov-kommun ng-binding">Stockholm</span></div>
-                      <div class="arbetsgivarenamn" ng-show="!vm.isCompact"><span class="label">Företag:</span> <span class="ng-binding">EUROSTEP AB</span></div>
-                      <div class="rekryteringsbehov-kommun-row" ng-show="!vm.isCompact"><span class="label ng-binding">Kommun:</span> <span class="rekryteringsbehov-kommun ng-binding">Stockholm</span></div>
-                      <div class="short-list">
-                          <div><span class="label">Yrkesroll:</span> <span class="yrkesroll ng-binding">Systemutvecklare / Programmerare</span></div>
-                          <!-- ngIf: rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0 -->
-                          <div data-ng-if="rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0" class="ng-scope"><span class="label">Anställningsform:</span> <span class="ng-binding">Heltid, Tillsvidare</span></div>
-                          <!-- end ngIf: rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0 -->
-                          <!-- ngIf: rekryteringsbehov.getPubliceringsdatumText().length > 0 -->
-                          <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">24 augusti 2017, kl 00:00</span></div>
-                          <!-- end ngIf: rekryteringsbehov.getPubliceringsdatumText().length > 0 -->
-                          <!-- ngIf: rekryteringsbehov.sistaAnsokningsdatum --><span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">24 september 2017</span></span>
-                          <!-- end ngIf: rekryteringsbehov.sistaAnsokningsdatum -->
-                      </div><span ng-show="vm.isInloggad" class="spara-annons ng-hide"><button ng-click="vm.toggleSparaAnnons(rekryteringsbehov, $event);" class="spara-annons-btn"><span ng-hide="rekryteringsbehov.stored" class=""><i class="i-star-off"></i>Spara jobbet</span> <span ng-show="rekryteringsbehov.stored" class="sparad ng-hide"><i class="i-star-on"></i>Jobbet är sparat</span></button>
-                      </span>
-                  </div>
-              </div>
-              <!-- end ngRepeat: rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov -->
-              <!-- ngIf: vm.rekryteringsbehovResultat.rekryteringsbehov.length === 0 && vm.sortVisaChoosen.id > 0 -->
-              <!-- Visa bara den här rubriken om inga annonsen matchade sökningen-->
-              <!-- ngIf: !vm.rekryteringsbehovResultat.isMatchningsresultatLoading && vm.rekryteringsbehovResultat.rekryteringsbehov.length === 0 && vm.sortVisaChoosen.id === 0 -->
-              <!-- ngIf: vm.showVisaFlerButton() -->
-              <!-- ngIf: vm.showGotoTop() -->
               <div ng-if="vm.showGotoTop()" class="ng-scope" style="">
                   <!-- Länk till toppen av sidan --><a href="#" ng-click="vm.gotoTop()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a></div>
               <!-- end ngIf: vm.showGotoTop() -->
