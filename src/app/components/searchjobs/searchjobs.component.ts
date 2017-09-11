@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { YrkenService } from '../../services/yrken/yrken.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
-import { Searchparameter } from '../../models/Searchparameter.interface';
+// import { Searchparameter } from '../../models/Searchparameter.interface';
+import { Profilkriterium } from '../../models/Profilkriterium.interface';
+import { Rekryteringsbehov } from '../../models/Rekryteringsbehov.interface';
 
 @Component({
   selector: 'app-searchjobs',
@@ -24,11 +26,13 @@ export class SearchjobsComponent implements OnInit {
   numberOfAvailableJobs: number;
 
   yrkesomraden: Array<Yrkesomrade>;
-  searchparameters: Array<Searchparameter>;
+  searchparameters: Array<Profilkriterium>;
+  searchResult: Array<any>;
   constructor(private yrkenService: YrkenService, private pbapiMatchningService: PbapiMatchningService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = false;
     this.showJobAreas = false;
-    this.searchparameters = new Array<Searchparameter>();
+    this.searchparameters = new Array<Profilkriterium>();
+    this.searchResult = new Array<any>();
     this.yrkenService.getLocalSelection().subscribe(yrkesomraden => {
         this.yrkesomraden = yrkesomraden;
     });
@@ -93,19 +97,33 @@ export class SearchjobsComponent implements OnInit {
   }
   addToList(id: number, name: string, type: string, toggle: boolean) {
     const found = this.searchparameters.some(function (el) {
-      return el.id === id;
+      return el.varde === id.toString();
     });
 
     if (!found) {
+      if (type.toUpperCase() === 'YRKE') {
+        type = 'YRKESROLL';
+      } else if (type.toUpperCase() === 'YRKESGRUPP') {
+        type = 'YRKESGRUPP_ROLL';
+      } else {
+        type = 'YRKESOMRADE_ROLL';
+      }
       this.searchparameters.push({
-        'id': id,
-        'namn': name,
-        'typ': type
+        'typ': type,
+        'varde': id.toString(),
+        'namn': name
       });
       // this.selectItemInList(id);
+      this.search();
     } else if (toggle) {
       this.removeFromList(id);
     }
+  }
+  search() {
+    this.pbapiMatchningService.getMatchingAds(this.searchparameters, 25, 0).then(data => {
+      this.searchResult = data;
+      console.log(this.searchResult);
+    });
   }
   selectItemInList(id: number) {
     const element = document.querySelectorAll('[data-id="' + id + '"]');
@@ -129,7 +147,8 @@ export class SearchjobsComponent implements OnInit {
     this.removeFromList(id);
   }
   removeFromList(id: number) {
-    this.searchparameters = this.searchparameters.filter(item => item.id !== id);
+    this.searchparameters = this.searchparameters.filter(item => item.varde !== id.toString());
+    this.search();
   }
   emptyList() {
     this.searchparameters.length = 0;
