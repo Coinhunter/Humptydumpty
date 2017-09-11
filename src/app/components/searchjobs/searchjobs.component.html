@@ -432,7 +432,7 @@
          </div>
          <div id="matchningsresultat" class="ng-scope">
            <div htmldocpagetitle="Platsbanken" class="ng-scope ng-isolate-scope ng-hide"></div>
-           <div class="matchningsresultatmetadata ng-scope" ng-if="!vm.hasProfilkriterier()">
+           <div class="matchningsresultatmetadata ng-scope" *ngIf="!searchResult.rekryteringsbehov">
              <div class="empty-state">
                <div class="ingaprofilkriterier" role="status" *ngIf="!searchparameters.length">
                  <div class="welcome-hint-container">
@@ -463,37 +463,27 @@
                </div>
              </div>
              <div id="matchningsresultatarea" class="matchningsresultat ng-scope" *ngIf="searchResult.rekryteringsbehov" style="">
-              <!--<div id="matchningsresultatarea" class="matchningsresultat" ng-if="vm.kriterier">-->
-              <!-- ngIf: vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0 -->
               <div class="matchningsresultatmetadata ng-scope" ng-if="vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0" style="">
                   <h2 class="hittade-annonser" role="status" aria-live="polite" aria-atomic="true">
           			<span class="antalmatchande ng-binding">{{searchResult.antalRekryteringsbehov}}</span> hittade annonser
           		</h2>
               </div>
-              <!-- end ngIf: vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0 -->
               <div class="resultat-sortering" ng-show="vm.sortVisaChoosen.id > 0 || vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0" style="">
                   <div class="row dropdown-regular">
                       <div class="col-md-4 dropdown-right">
                           <label for="sort-ordning">Sortera efter</label>
                           <div uib-dropdown="" keyboard-nav="" class="dropdown">
                               <a href="" id="sort-ordning" class="spa-profile-heading dropdown-toggle" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-                                  <!-- ngIf: !vm.sortOrdningChoosen.namn -->
-                                  <!-- ngIf: vm.sortOrdningChoosen.namn -->
                                   <span data-ng-if="vm.sortOrdningChoosen.namn" class="ng-binding ng-scope">Relevans</span>
-                                  <!-- end ngIf: vm.sortOrdningChoosen.namn -->
                               </a>
                               <div class="spa-dropdown-menu dropdown-menu" uib-dropdown-menu="" role="menu" aria-labelledby="meny-dropdown">
                                   <ul class="list-unstyled spa-dropdown-list">
-                                      <!-- ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                       <li ng-repeat="sort in vm.sortOrdningArr track by sort.id" class="ng-scope">
                                           <a href="" ng-click="vm.sorteraAnnonser(sort)" class="dropdownItem ng-binding selected" data-ng-class="{'selected':sort.namn===vm.sortOrdningChoosen.namn}">Relevans
-          								</a>
+								                          </a>
                                       </li>
-                                      <!-- end ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                       <li ng-repeat="sort in vm.sortOrdningArr track by sort.id" class="ng-scope"><a href="" ng-click="vm.sorteraAnnonser(sort)" class="dropdownItem ng-binding" data-ng-class="{'selected': sort.namn===vm.sortOrdningChoosen.namn}">Publiceringsdatum</a></li>
-                                      <!-- end ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                       <li ng-repeat="sort in vm.sortOrdningArr track by sort.id" class="ng-scope"><a href="" ng-click="vm.sorteraAnnonser(sort)" class="dropdownItem ng-binding" data-ng-class="{'selected': sort.namn===vm.sortOrdningChoosen.namn}">Sista ansökningsdag</a></li>
-                                      <!-- end ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                   </ul>
                               </div>
                           </div>
@@ -502,21 +492,14 @@
                           <label for="meny-dropdown">Visa</label>
                           <div uib-dropdown="" keyboard-nav="" class="dropdown">
                               <a href="" id="meny-dropdown" class="spa-profile-heading dropdown-toggle" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-                                  <!-- ngIf: !vm.sortVisaChoosen.namn -->
-                                  <!-- ngIf: vm.sortVisaChoosen.namn --><span data-ng-if="vm.sortVisaChoosen.namn" class="ng-binding ng-scope">Alla annonser</span>
-                                  <!-- end ngIf: vm.sortVisaChoosen.namn -->
+                                  <span data-ng-if="vm.sortVisaChoosen.namn" class="ng-binding ng-scope">Alla annonser</span>
                               </a>
                               <div class="spa-dropdown-menu dropdown-menu" uib-dropdown-menu="" role="menu" aria-labelledby="meny-dropdown">
                                   <ul class="list-unstyled spa-dropdown-list">
-                                      <!-- ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                       <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" class="dropdownItem ng-binding selected" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Alla annonser</a></li>
-                                      <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                       <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" class="dropdownItem ng-binding" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Publicerade senaste dygnet</a></li>
-                                      <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                       <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" class="dropdownItem ng-binding" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Publicerade senaste veckan</a></li>
-                                      <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                       <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" class="dropdownItem ng-binding" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Publicerade senaste månaden</a></li>
-                                      <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                   </ul>
                               </div>
                           </div>
@@ -530,19 +513,13 @@
                               <label for="sort-ordning-resp">Sortera efter</label>
                               <div uib-dropdown="" keyboard-nav="" class="dropdown">
                                   <a href="" id="sort-ordning-resp" class="spa-profile-heading dropdown-toggle" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-                                      <!-- ngIf: !vm.sortOrdningChoosen.namn -->
-                                      <!-- ngIf: vm.sortOrdningChoosen.namn --><span data-ng-if="vm.sortOrdningChoosen.namn" class="ng-binding ng-scope">Relevans</span>
-                                      <!-- end ngIf: vm.sortOrdningChoosen.namn -->
+                                      <span data-ng-if="vm.sortOrdningChoosen.namn" class="ng-binding ng-scope">Relevans</span>
                                   </a>
                                   <div class="spa-dropdown-menu dropdown-menu" uib-dropdown-menu="" role="menu" aria-labelledby="meny-dropdown">
                                       <ul class="list-unstyled spa-dropdown-list">
-                                          <!-- ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                           <li ng-repeat="sort in vm.sortOrdningArr track by sort.id" class="ng-scope"><a href="" ng-click="vm.sorteraAnnonser(sort)" class="dropdownItem ng-binding selected" data-ng-class="{'selected': sort.namn===vm.sortOrdningChoosen.namn}">Relevans</a></li>
-                                          <!-- end ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                           <li ng-repeat="sort in vm.sortOrdningArr track by sort.id" class="ng-scope"><a href="" ng-click="vm.sorteraAnnonser(sort)" class="dropdownItem ng-binding" data-ng-class="{'selected': sort.namn===vm.sortOrdningChoosen.namn}">Publiceringsdatum</a></li>
-                                          <!-- end ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                           <li ng-repeat="sort in vm.sortOrdningArr track by sort.id" class="ng-scope"><a href="" ng-click="vm.sorteraAnnonser(sort)" class="dropdownItem ng-binding" data-ng-class="{'selected': sort.namn===vm.sortOrdningChoosen.namn}">Sista ansökningsdag</a></li>
-                                          <!-- end ngRepeat: sort in vm.sortOrdningArr track by sort.id -->
                                       </ul>
                                   </div>
                               </div>
@@ -551,83 +528,61 @@
                               <label for="meny-dropdown-resp">Visa</label>
                               <div uib-dropdown="" keyboard-nav="" class="dropdown">
                                   <a href="" id="meny-dropdown-resp" class="spa-profile-heading dropdown-toggle" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-                                      <!-- ngIf: !vm.sortVisaChoosen.namn -->
-                                      <!-- ngIf: vm.sortVisaChoosen.namn --><span data-ng-if="vm.sortVisaChoosen.namn" class="ng-binding ng-scope">Alla annonser</span>
-                                      <!-- end ngIf: vm.sortVisaChoosen.namn -->
+                                      <span data-ng-if="vm.sortVisaChoosen.namn" class="ng-binding ng-scope">Alla annonser</span>
                                   </a>
                                   <div class="spa-dropdown-menu dropdown-menu" uib-dropdown-menu="" role="menu" aria-labelledby="meny-dropdown">
                                       <ul class="list-unstyled spa-dropdown-list">
-                                          <!-- ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                           <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" data-ng-model="vm.sortVisaChoosen" class="dropdownItem ng-pristine ng-untouched ng-valid ng-binding ng-not-empty selected" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Alla annonser</a></li>
-                                          <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                           <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" data-ng-model="vm.sortVisaChoosen" class="dropdownItem ng-pristine ng-untouched ng-valid ng-binding ng-not-empty" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Publicerade senaste dygnet</a></li>
-                                          <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                           <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" data-ng-model="vm.sortVisaChoosen" class="dropdownItem ng-pristine ng-untouched ng-valid ng-binding ng-not-empty" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Publicerade senaste veckan</a></li>
-                                          <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                           <li ng-repeat="datum in vm.sortVisaArr track by datum.id" class="ng-scope"><a href="" ng-click="vm.sortVisa(datum)" data-ng-model="vm.sortVisaChoosen" class="dropdownItem ng-pristine ng-untouched ng-valid ng-binding ng-not-empty" data-ng-class="{'selected': datum.namn===vm.sortVisaChoosen.namn}">Publicerade senaste månaden</a></li>
-                                          <!-- end ngRepeat: datum in vm.sortVisaArr track by datum.id -->
                                       </ul>
                                   </div>
                               </div>
                           </div>
                       </div>
                   </div><a href="" ng-click="vm.toggleCompactView()" class="more-less ng-binding"><i ng-class="{'fa fa-th-list':vm.isCompact, 'fa fa-list': !vm.isCompact}" class="fa fa-list"></i>Visa mindre</a></div>
-              <!-- ngRepeat: rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov -->
-              <div *ngFor="let behov of searchResult.rekryteringsbehov" ng-class="{sistaresultatrad:($last), compactlist : vm.isCompact}" in-view="vm.lineInView($inview)" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" class="resultatrad ng-scope" ng-repeat="rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov" style="">
-                  <div class="annons-info">
-                      <h3>
-                        <a href="/Tjanster/Arbetssokande/Platsbanken/annonser/{{behov.id}}" id="annons_{{behov.id}}" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}">
-                          <span class="ng-binding">{{behov.rubrik}}</span>
-                          <span class="sr-only ng-binding">- {{behov.arbetsgivarenamn}}</span>
-                        </a>
-                      </h3>
-                      <div class="arbetsgivarenamn-kommun ng-hide" ng-show="vm.isCompact">
-                        <span class="ng-binding">{{behov.arbetsgivarenamn}}</span><span *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">,</span>
-                        <span class="rekryteringsbehov-kommun ng-binding" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
-                      </div>
-                      <div class="arbetsgivarenamn" ng-show="!vm.isCompact"><span class="label">Företag:</span> <span class="ng-binding">{{behov.arbetsgivarenamn}}</span></div>
-                      <div class="rekryteringsbehov-kommun-row" ng-show="!vm.isCompact" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">
-                        <span class="label ng-binding">Kommun:</span>
-                        <span class="rekryteringsbehov-kommun ng-binding">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
-                      </div>
-                      <div class="short-list">
-                          <div><span class="label">Yrkesroll:</span> <span class="yrkesroll ng-binding">{{behov.rubrik}}</span></div>
-                          <!-- ngIf: rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0 -->
-                          <div data-ng-if="rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0" class="ng-scope">
-                            <span class="label">Anställningsform:</span>
-                            <span class="ng-binding">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}{{behov.varaktighet.namn}}</span></div>
-                          <!-- end ngIf: rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0 -->
-                          <!-- ngIf: rekryteringsbehov.getPubliceringsdatumText().length > 0 -->
-                          <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">{{behov.publiceringsdatum}}</span></div>
-                          <!-- end ngIf: rekryteringsbehov.getPubliceringsdatumText().length > 0 -->
-                          <!-- ngIf: rekryteringsbehov.sistaAnsokningsdatum --><span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">{{behov.sistaAnsokningsdatum}}</span></span>
-                          <!-- end ngIf: rekryteringsbehov.sistaAnsokningsdatum -->
-                      </div>
-                      <!-- <span ng-show="vm.isInloggad" class="spara-annons ng-hide">
-                        <button ng-click="vm.toggleSparaAnnons(rekryteringsbehov, $event);" class="spara-annons-btn">
-                          <span ng-hide="rekryteringsbehov.stored" class="">
-                            <i class="i-star-off"></i>Spara jobbet
-                          </span>
-                          <span ng-show="rekryteringsbehov.stored" class="sparad ng-hide">
-                            <i class="i-star-on"></i>Jobbet är sparat</span>
-                          </button>
-                      </span> -->
-                  </div>
-              </div>
-              <div ng-if="vm.showGotoTop()" class="ng-scope" style="">
-                  <!-- Länk till toppen av sidan --><a href="#" ng-click="vm.gotoTop()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a></div>
-              <!-- end ngIf: vm.showGotoTop() -->
-          </div>
-             <div id="SearchResults">
-               <ul *ngIf="searchResult">
-                 <li *ngFor="let behov of searchResult.rekryteringsbehov">
-                   <div class="adContent">
+                <div *ngFor="let behov of searchResult.rekryteringsbehov" ng-class="{sistaresultatrad:($last), compactlist : vm.isCompact}" in-view="vm.lineInView($inview)" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" class="resultatrad ng-scope" ng-repeat="rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov" style="">
+                    <div class="annons-info">
+                        <h3>
+                          <a href="/Tjanster/Arbetssokande/Platsbanken/annonser/{{behov.id}}" id="annons_{{behov.id}}" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}">
+                            <span class="ng-binding">{{behov.rubrik}}</span>
+                            <span class="sr-only ng-binding">- {{behov.arbetsgivarenamn}}</span>
+                          </a>
+                        </h3>
+                        <div class="arbetsgivarenamn-kommun ng-hide" ng-show="vm.isCompact">
+                          <span class="ng-binding">{{behov.arbetsgivarenamn}}</span><span *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">,</span>
+                          <span class="rekryteringsbehov-kommun ng-binding" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
+                        </div>
+                        <div class="arbetsgivarenamn" ng-show="!vm.isCompact"><span class="label">Företag:</span> <span class="ng-binding">{{behov.arbetsgivarenamn}}</span></div>
+                        <div class="rekryteringsbehov-kommun-row" ng-show="!vm.isCompact" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">
+                          <span class="label ng-binding">Kommun:</span>
+                          <span class="rekryteringsbehov-kommun ng-binding">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
+                        </div>
+                        <div class="short-list">
+                            <div><span class="label">Yrkesroll:</span> <span class="yrkesroll ng-binding">{{behov.rubrik}}</span></div>
+                            <div data-ng-if="rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0" class="ng-scope">
+                              <span class="label">Anställningsform:</span>
+                              <span class="ng-binding">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}{{behov.varaktighet.namn}}</span></div>
+                            <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">{{getFormattedDate(behov.publiceringsdatum)}}</span></div>
+                            <span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">{{getFormattedDate(behov.sistaAnsokningsdatum)}}</span></span>
+                        </div>
+                        <!-- <span ng-show="vm.isInloggad" class="spara-annons ng-hide">
+                          <button ng-click="vm.toggleSparaAnnons(rekryteringsbehov, $event);" class="spara-annons-btn">
+                            <span ng-hide="rekryteringsbehov.stored" class="">
+                              <i class="i-star-off"></i>Spara jobbet
+                            </span>
+                            <span ng-show="rekryteringsbehov.stored" class="sparad ng-hide">
+                              <i class="i-star-on"></i>Jobbet är sparat</span>
+                            </button>
+                        </span> -->
+                    </div>
+                </div>
+                <div ng-if="vm.showGotoTop()" class="ng-scope" style="">
+                  <a href="#" ng-click="vm.gotoTop()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a>
+                </div>
+            </div>
 
-                   </div>
-                   {{behov.rubrik}}
-                 </li>
-               </ul>
-             </div>
              <div class="matchningsresultatfooter ng-scope"></div>
            </div>
          </div>
