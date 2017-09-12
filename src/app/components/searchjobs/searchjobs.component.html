@@ -432,7 +432,7 @@
          </div>
          <div id="matchningsresultat" class="ng-scope">
            <div htmldocpagetitle="Platsbanken" class="ng-scope ng-isolate-scope ng-hide"></div>
-           <div class="matchningsresultatmetadata ng-scope" *ngIf="!searchResult.rekryteringsbehov">
+           <div class="matchningsresultatmetadata ng-scope" *ngIf="!(searchResult.rekryteringsbehov.length > 0)">
              <div class="empty-state">
                <div class="ingaprofilkriterier" role="status" *ngIf="!searchparameters.length">
                  <div class="welcome-hint-container">
@@ -462,7 +462,7 @@
                  </div>
                </div>
              </div>
-             <div id="matchningsresultatarea" class="matchningsresultat ng-scope" *ngIf="searchResult.rekryteringsbehov" style="">
+             <div id="matchningsresultatarea" class="matchningsresultat ng-scope" *ngIf="searchResult.rekryteringsbehov.length > 0" style="">
               <div class="matchningsresultatmetadata ng-scope" ng-if="vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0" style="">
                   <h2 class="hittade-annonser" role="status" aria-live="polite" aria-atomic="true">
           			<span class="antalmatchande ng-binding">{{searchResult.antalRekryteringsbehov}}</span> hittade annonser
@@ -563,7 +563,7 @@
                             <div><span class="label">Yrkesroll:</span> <span class="yrkesroll ng-binding">{{behov.rubrik}}</span></div>
                             <div data-ng-if="rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0" class="ng-scope">
                               <span class="label">Anställningsform:</span>
-                              <span class="ng-binding">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}{{behov.varaktighet.namn}}</span></div>
+                              <span class="ng-binding"><span *ngIf="behov.arbetsomfattning">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}</span>{{behov.varaktighet.namn}}</span></div>
                             <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">{{getFormattedDate(behov.publiceringsdatum)}}</span></div>
                             <span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">{{getFormattedDate(behov.sistaAnsokningsdatum)}}</span></span>
                         </div>
@@ -578,6 +578,19 @@
                         </span> -->
                     </div>
                 </div>
+
+                <div class="navigation col-lg-12">
+                  <div class="carousel-control-prev {{adsPageNumber > 0 ? '' : 'inactive'}}" role="button" data-slide="prev" (click)="previousAdsPage()">
+                    <span class="caorusel-control-prev-text textButton icon left chevronLeftIcon">Föregående</span>
+                    <span class="sr-only">Föregående</span>
+                  </div>
+                  <div class="numbers">{{adsPageNumber + 1}} av {{numberOfPages}}</div>
+                  <div class="carousel-control-next {{showNextButton ? '' : 'inactive'}}" role="button" data-slide="next" (click)="nextAdsPage()">
+                    <span class="caorusel-control-next-text textButton icon right chevronRightIcon">Nästa</span>
+                    <span class="sr-only">Nästa</span>
+                  </div>
+                </div>
+
                 <div ng-if="vm.showGotoTop()" class="ng-scope" style="">
                   <a href="#" ng-click="vm.gotoTop()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a>
                 </div>

@@ -4,7 +4,7 @@ import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-mat
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
-import { Rekryteringsbehov } from '../../models/Rekryteringsbehov.interface';
+import { Sokresultat } from '../../models/Sokresultat.interface';
 
 @Component({
   selector: 'app-searchjobs',
@@ -22,17 +22,35 @@ export class SearchjobsComponent implements OnInit {
   showExperience: boolean;
   showLicences: boolean;
   showJobAreas: boolean;
+  showPreviousButton: boolean;
+  showNextButton: boolean;
 
   numberOfAvailableJobs: number;
+  adsPageNumber: number;
+  numberOfHitsPerPage: number;
+  numberOfPages: number;
 
   yrkesomraden: Array<Yrkesomrade>;
   searchparameters: Array<Profilkriterium>;
-  searchResult: Array<any>;
+  searchResult: Sokresultat;
   constructor(private yrkenService: YrkenService, private pbapiMatchningService: PbapiMatchningService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = false;
     this.showJobAreas = false;
+    this.showPreviousButton = false;
+    this.showNextButton = true;
     this.searchparameters = new Array<Profilkriterium>();
-    this.searchResult = new Array<any>();
+    this.searchResult = {
+      rekryteringsbehov: [],
+      relateradeKriterier: [],
+      antalRekryteringsbehov: 0,
+      antalRekryteringsbehovMatcharExakt: 0,
+      antalRekryteringsbehovMatcharDelvis: 0,
+      antalPlatser: 0,
+      antalResultatRader: 0,
+      guid: ''
+    };
+    this.adsPageNumber = this.numberOfPages = 0;
+    this.numberOfHitsPerPage = 5;
     this.yrkenService.getLocalSelection().subscribe(yrkesomraden => {
         this.yrkesomraden = yrkesomraden;
     });
@@ -129,10 +147,27 @@ export class SearchjobsComponent implements OnInit {
     }
   }
   search() {
-    this.pbapiMatchningService.getMatchingAds(this.searchparameters, 25, 0).then(data => {
+    const offset = this.adsPageNumber * this.numberOfHitsPerPage;
+    this.pbapiMatchningService.getMatchingAds(this.searchparameters, this.numberOfHitsPerPage, offset).then(data => {
       this.searchResult = data;
       console.log(this.searchResult);
+      this.numberOfPages = Math.floor(this.searchResult.antalRekryteringsbehov / this.numberOfHitsPerPage);
+      if ((this.adsPageNumber + 1) >= this.numberOfPages) {
+        this.showNextButton = false;
+      } else {
+        this.showNextButton = true;
+      }
     });
+  }
+  nextAdsPage() {
+    this.adsPageNumber++;
+    this.search();
+  }
+  previousAdsPage() {
+    if (this.adsPageNumber > 0) {
+      this.adsPageNumber--;
+      this.search();
+    }
   }
   selectItemInList(id: number) {
     const element = document.querySelectorAll('[data-id="' + id + '"]');
