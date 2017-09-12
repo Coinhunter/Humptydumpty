@@ -1,15 +1,15 @@
-@import '../../styles/_globalstyles';
-
+@import '../../styles/globalstyles';
 .row {
   width: 100%;
 }
+
 .af-card {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 #JobOrContainer {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
 #JobAreasContainer {
@@ -25,7 +25,7 @@
     display: inline-block;
   }
   .name {
-    width:calc(100% - 10px);
+    width: calc(100% - 10px);
   }
   .hasChildren {
     height: 10px;
@@ -34,34 +34,35 @@
     font-size: 17px;
     font-weight: bolder;
     text-align: center;
-    &:after {
-      content: "+";
+    &::after {
+      content: '+';
     }
-    &.expanded:after {
-      content: "-";
-      font-size: 25px;
-      line-height: 17px;
-      vertical-align: text-top;
+    &.expanded {
+      &::after {
+        content: '-';
+        font-size: 25px;
+        line-height: 17px;
+        vertical-align: text-top;
+      }
     }
   }
 }
 
 #JobAreas {
-  padding-top: 5px;
   border-top: 1px dashed #C4C9CC;
+  padding-top: 5px;
   > ul {
     padding-left: 0;
-  }
-  .liContent {
+  } .liContent {
     padding: 0 5px;
   }
   .checkbox {
-  	border: 1px solid #000;
-  	border-radius: 5px;
-  	width: 13px;
-  	height: 13px;
-  	vertical-align: top;
-  	margin: 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 13px;
+    height: 13px;
+    vertical-align: top;
+    margin: 0;
     margin-top: 5px;
     &.checked {
       background: #000;
@@ -82,14 +83,16 @@
       font-size: 17px;
       font-weight: bolder;
       text-align: center;
-      &:after {
-        content: "+";
+      &::after {
+        content: '+';
       }
-      &.expanded:after {
-        content: "-";
-        font-size: 25px;
-        line-height: 17px;
-        vertical-align: text-top;
+      &.expanded {
+        &::after {
+          content: '-';
+          font-size: 25px;
+          line-height: 17px;
+          vertical-align: text-top;
+        }
       }
     }
     li {
@@ -102,10 +105,11 @@
   .jobGroup {
     padding-left: 0;
     background: #e9e9e9;
-     > li > div {
+    > li > div {
       padding-left: 10px;
     }
   }
+
   .job {
     background: #d2dee0;
     padding-left: 0;
@@ -115,23 +119,25 @@
   }
 }
 
-.carousel-control-next, .carousel-control-prev {
-	position: relative;
-	top: 0;
-	bottom: 0;
-	display: inline-block;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	width: 125px;
-	color: #1089B0;
-	text-align: center;
-	opacity: 1;
+.dropdown-toggle {
+  &::after {
+    border-top: 0;
+    right: 20px;
+  }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  color: #1089B0;
+  text-align: center;
+  opacity: 1;
   border-radius: 5px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -144,31 +150,35 @@
 }
 
 .carousel-control-prev {
-	float: left;
+  float: left;
   font-weight: normal;
 }
 .caorusel-control-prev-text {
   font-weight: normal;
 }
 .numbers {
-	display: inline-block;
-	margin: 0 auto;
+  display: inline-block;
+  margin: 0 auto;
   margin-top: 7px;
   text-align: center;
   width: calc(100% - 250px);
 }
 
 .carousel-control-next {
-	float: right;
+  float: right;
 }
 
 .caorusel-control-next-text {
-	padding-right: 10px;
+  padding-right: 10px;
   font-weight: normal;
 }
 
 .carousel-item-next,
-.carousel-item-prev,
-.carousel-item.active {
-	display: block;
+.carousel-item-prev {
+  display: block;
+}
+.carousel-item {
+  .active {
+    display: block;
+  }
 }
