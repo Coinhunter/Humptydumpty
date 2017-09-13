@@ -122,7 +122,7 @@
 .dropdown-toggle {
   &::after {
     border-top: 0;
-    right: 20px;
+    right: 20px !important;
   }
 }
 
@@ -138,9 +138,13 @@
   color: #1089B0;
   text-align: center;
   opacity: 1;
+  background-color: #f2f4f5;
   border-radius: 5px;
   padding-top: 7px;
   padding-bottom: 7px;
+  &:hover {
+    background-color: #FFF;
+  }
   &.inactive {
     cursor: default;
     span {

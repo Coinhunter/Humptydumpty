@@ -24,6 +24,7 @@ export class SearchjobsComponent implements OnInit {
   showJobAreas: boolean;
   showPreviousButton: boolean;
   showNextButton: boolean;
+  listIsCompact = false;
 
   numberOfAvailableJobs: number;
   adsPageNumber: number;
@@ -151,7 +152,7 @@ export class SearchjobsComponent implements OnInit {
     this.pbapiMatchningService.getMatchingAds(this.searchparameters, this.numberOfHitsPerPage, offset).then(data => {
       this.searchResult = data;
       console.log(this.searchResult);
-      this.numberOfPages = Math.floor(this.searchResult.antalRekryteringsbehov / this.numberOfHitsPerPage);
+      this.numberOfPages = Math.floor((this.searchResult.antalRekryteringsbehov / this.numberOfHitsPerPage) + 1);
       if ((this.adsPageNumber + 1) >= this.numberOfPages) {
         this.showNextButton = false;
       } else {
@@ -192,7 +193,10 @@ export class SearchjobsComponent implements OnInit {
   }
   removeFromList(id: number) {
     this.searchparameters = this.searchparameters.filter(item => item.varde !== id.toString());
-    this.search();
+    if (this.searchparameters.length > 0) {
+      this.search();
+    }
+    console.log('Remove: ' + id);
   }
   emptyList() {
     this.searchparameters.length = 0;

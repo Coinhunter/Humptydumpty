@@ -45,7 +45,7 @@
                         <div id="JobAreas" *ngIf="showJobAreas">
                           <ul>
                             <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
-                              <div class="liContent" (click)="toggleChild($event); addToList(yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
+                              <div class="liContent" (click)="toggleChild($event); addToList(yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ, true);" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
                                 <div class="checkbox">
 
                                 </div>
@@ -398,7 +398,7 @@
          </div>
        </div>
        <div class="resultatarea col-sm-7 col-md-8 col-lg-8 middle-column">
-         <div class="col-xs-12 ng-scope" *ngIf="searchparameters.length">
+         <div class="col-xs-12 ng-scope" *ngIf="searchparameters.length > 0">
            <div class="af-card heading-main valdakriterier ng-scope ng-hide">
              <div class="card-header">
                <a href="" class="ng-binding">
@@ -413,7 +413,7 @@
                  <ul class="tag-list">
                    <li class="tag-item added repeated-item efterfragat ng-scope" *ngFor="let yrkesomrade of searchparameters">
                      <div class="kriteriumnamn ng-binding">{{yrkesomrade.namn}}</div>
-                     <button (click)="removeFromListAndUnselect(yrkesomrade.id)" class="btn-remove-tag">
+                     <button (click)="removeFromListAndUnselect(yrkesomrade.varde)" class="btn-remove-tag">
                        <span class="sr-only">Ta bort</span> <i class="fa fa-remove" aria-hidden="true"></i>
                      </button>
                    </li>
@@ -430,9 +430,9 @@
              </div>
            </div>
          </div>
-         <div id="matchningsresultat" class="ng-scope">
+         <div id="matchningsresultat" class="ng-scope col-lg-12">
            <div htmldocpagetitle="Platsbanken" class="ng-scope ng-isolate-scope ng-hide"></div>
-           <div class="matchningsresultatmetadata ng-scope" *ngIf="!(searchResult.rekryteringsbehov.length > 0)">
+           <div class="matchningsresultatmetadata ng-scope" *ngIf="!(searchparameters.length > 0)">
              <div class="empty-state">
                <div class="ingaprofilkriterier" role="status" *ngIf="!searchparameters.length">
                  <div class="welcome-hint-container">
@@ -462,7 +462,7 @@
                  </div>
                </div>
              </div>
-             <div id="matchningsresultatarea" class="matchningsresultat ng-scope" *ngIf="searchResult.rekryteringsbehov.length > 0" style="">
+             <div id="matchningsresultatarea" class="matchningsresultat ng-scope" *ngIf="searchResult.rekryteringsbehov.length > 0 && searchparameters.length > 0" style="">
               <div class="matchningsresultatmetadata ng-scope" ng-if="vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0" style="">
                   <h2 class="hittade-annonser" role="status" aria-live="polite" aria-atomic="true">
           			<span class="antalmatchande ng-binding">{{searchResult.antalRekryteringsbehov}}</span> hittade annonser
@@ -541,29 +541,35 @@
                               </div>
                           </div>
                       </div>
-                  </div><a href="" ng-click="vm.toggleCompactView()" class="more-less ng-binding"><i ng-class="{'fa fa-th-list':vm.isCompact, 'fa fa-list': !vm.isCompact}" class="fa fa-list"></i>Visa mindre</a></div>
+                  </div>
+                  <a href="" (click)="$event.preventDefault(); listIsCompact = !listIsCompact;" class="more-less ng-binding">
+                    <i ng-class="{'fa fa-th-list':vm.isCompact, 'fa fa-list': !vm.isCompact}" class="fa fa-list {{listIsCompact ? 'fa-th-list' : 'fa-list'}}"></i>
+                    <span *ngIf="!listIsCompact">Visa mindre</span>
+                    <span *ngIf="listIsCompact">Visa större</span>
+                  </a>
+                </div>
                 <div *ngFor="let behov of searchResult.rekryteringsbehov" ng-class="{sistaresultatrad:($last), compactlist : vm.isCompact}" in-view="vm.lineInView($inview)" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" class="resultatrad ng-scope" ng-repeat="rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov" style="">
                     <div class="annons-info">
                         <h3>
-                          <a href="/Tjanster/Arbetssokande/Platsbanken/annonser/{{behov.id}}" id="annons_{{behov.id}}" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}">
+                          <a href="https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/annonser/{{behov.id}}" target="_blank" id="annons_{{behov.id}}" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}">
                             <span class="ng-binding">{{behov.rubrik}}</span>
                             <span class="sr-only ng-binding">- {{behov.arbetsgivarenamn}}</span>
                           </a>
                         </h3>
-                        <div class="arbetsgivarenamn-kommun ng-hide" ng-show="vm.isCompact">
+                        <div class="arbetsgivarenamn-kommun ng-hide" *ngIf="listIsCompact">
                           <span class="ng-binding">{{behov.arbetsgivarenamn}}</span><span *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">,</span>
                           <span class="rekryteringsbehov-kommun ng-binding" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
                         </div>
-                        <div class="arbetsgivarenamn" ng-show="!vm.isCompact"><span class="label">Företag:</span> <span class="ng-binding">{{behov.arbetsgivarenamn}}</span></div>
-                        <div class="rekryteringsbehov-kommun-row" ng-show="!vm.isCompact" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">
+                        <div class="arbetsgivarenamn" *ngIf="!listIsCompact"><span class="label">Företag:</span> <span class="ng-binding">{{behov.arbetsgivarenamn}}</span></div>
+                        <div class="rekryteringsbehov-kommun-row" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun && !listIsCompact">
                           <span class="label ng-binding">Kommun:</span>
                           <span class="rekryteringsbehov-kommun ng-binding">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
                         </div>
-                        <div class="short-list">
-                            <div><span class="label">Yrkesroll:</span> <span class="yrkesroll ng-binding">{{behov.rubrik}}</span></div>
-                            <div data-ng-if="rekryteringsbehov.hasValue('anstallningstyp.namn') || rekryteringsbehov.getAnstallningsformText().length > 0" class="ng-scope">
+                        <div class="short-list" *ngIf="!listIsCompact">
+                            <div *ngIf="behov.yrkesroll"><span class="label">Yrkesroll:</span><span class="yrkesroll ng-binding">{{behov.yrkesroll.namn}}</span></div>
+                            <div *ngIf="behov.arbetsomfattning || behov.varaktighet" class="ng-scope">
                               <span class="label">Anställningsform:</span>
-                              <span class="ng-binding"><span *ngIf="behov.arbetsomfattning">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}</span>{{behov.varaktighet.namn}}</span></div>
+                              <span class="ng-binding"><span *ngIf="behov.arbetsomfattning">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}</span><span *ngIf="behov.varaktighet">{{behov.varaktighet.namn}}</span></span></div>
                             <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">{{getFormattedDate(behov.publiceringsdatum)}}</span></div>
                             <span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">{{getFormattedDate(behov.sistaAnsokningsdatum)}}</span></span>
                         </div>
