@@ -16,100 +16,174 @@
         <div class="ng-scope">
           <div class="matchningsprofil ng-scope">
             <h2 class="rubrikErbjuder sr-only">Sökverkttyg</h2>
-            <div class="mp-yrke-ort yrke-flikar">
-              <h3 class="panel-title">Jag vill jobba som</h3>
-              <div class="ng-isolate-scope">
+            <div class="af-card mp-yrke-ort yrke-flikar">
+              <a href="javascript:void(0)" (click)="showJobTypes = !showJobTypes">
+                <span id="rubrik-korkort" class="card-rubrik">
+                  <h4>Jag vill jobba som</h4>
+                </span>
+                <i class="pull-right fa {{!showJobTypes ? 'fa-angle-down' : 'fa-angle-up'}}"></i>
+              </a>
+              <div class="ng-isolate-scope card-input" *ngIf="showJobTypes">
                 <div class="ng-isolate-scope">
                   <div class="tab-content">
                     <div class="tab-pane ng-scope active">
                       <div class="mp-input-area ng-scope">
-                        <label for="mp-yrkesroller" class="sr-only">
+
+                        <!-- <label for="mp-yrkesroller" class="sr-only">
                           Jag vill jobba som
-                        </label>
-                        <input id="mp-yrkesroller" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
-                        <ul class="dropdown-menu ng-isolate-scope ng-hide" id="typeahead-38-755">
+                        </label> -->
+                        <div *ngIf="showJobTypes">
+                          <input id="mp-yrkesroller" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
+                          <ul class="dropdown-menu ng-isolate-scope ng-hide" id="typeahead-38-755">
+                          </ul>
+
+                        <div id="JobOrContainer">
+                          Eller
+                        </div>
+                        <div id="JobAreasContainer">
+                          <div id="JobAreasToggle" (click)="toggleJobAreas($event)">
+                            <div class="name">
+                              Välj från kategori
+                            </div>
+                            <div class="hasChildren collapsed">
+
+                            </div>
+                          </div>
+                          <div id="JobAreas" *ngIf="showJobAreas">
+                            <ul>
+                              <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
+                                <div class="liContent" (click)="toggleChild($event); addToList(yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ, true);" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
+                                  <div class="checkbox">
+
+                                  </div>
+                                  <div class="name">
+                                    {{yrkesomrade.namn}}
+                                  </div>
+                                  <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed">
+
+                                  </div>
+                                </div>
+                                <ul *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup">
+                                  <li *ngFor="let yrkesgrupp of yrkesomrade.yrkesgrupper">
+                                    <div class="liContent" (click)="toggleChild($event); addToList(yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ); removeFromList(yrkesomrade.id);" attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
+                                      <div class="checkbox">
+
+                                      </div>
+                                      <div class="name">
+                                        {{yrkesgrupp.namn}}
+                                      </div>
+                                      <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed">
+
+                                      </div>
+                                    </div>
+                                    <ul *ngIf="yrkesgrupp.yrken" class="hidden job">
+                                      <li *ngFor="let yrke of yrkesgrupp.yrken">
+                                        <div class="liContent" (click)="checkSelection($event); addToList(yrke.id, yrke.namn, yrke.typ, true); removeFromList(yrkesgrupp.id);" attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}"attr.data-type="{{yrke.typ}}">
+                                          <div class="checkbox">
+
+                                          </div>
+                                          <div class="name">
+                                            {{yrke.namn}}
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="checkbox ng-scope">
+                          <input id="ingen-erfarenhet" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                          <label for="ingen-erfarenhet">Visa jobb utan krav på arbetslivserfarenhet</label>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ng-isolate-scope">
+                    <div class="af-kriteriumforslag ng-hide">
+                      <div class="clearfix">
+                        <h4 class="rubrik-for-forslag ng-binding">Förslag på yrken</h4>
+                        <ul class="tag-list">
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)" style="">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Systemutvecklare / Programmerare
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Mjukvaruutvecklare
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Systemtestare
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Testledare
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Projektledare, IT
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Butikssäljare, fackhandel
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Elektronikmontör
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Civilingenjör, konstruktion, elektronik
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Civilingenjör, maskin
+                            </button>
+                          </li>
+                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
+                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                              <span class="sr-only">Lägg till</span>
+                              <i class="fa fa-plus" aria-hidden="true"></i> Inköpare
+                            </button>
+                          </li>
+                          <li data-ng-if="!vm.isOspecificeradArbetsortChosen" class="tag-item ng-scope"></li>
                         </ul>
                       </div>
-                      <div id="JobOrContainer">
-                        Eller
-                      </div>
-                      <div id="JobAreasContainer">
-                        <div id="JobAreasToggle" (click)="toggleJobAreas($event)">
-                          <div class="name">
-                            Välj från kategori
-                          </div>
-                          <div class="hasChildren collapsed">
-
-                          </div>
-                        </div>
-                        <div id="JobAreas" *ngIf="showJobAreas">
-                          <ul>
-                            <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
-                              <div class="liContent" (click)="toggleChild($event); addToList(yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ, true);" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
-                                <div class="checkbox">
-
-                                </div>
-                                <div class="name">
-                                  {{yrkesomrade.namn}}
-                                </div>
-                                <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed">
-
-                                </div>
-                              </div>
-                              <ul *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup">
-                                <li *ngFor="let yrkesgrupp of yrkesomrade.yrkesgrupper">
-                                  <div class="liContent" (click)="toggleChild($event); addToList(yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ); removeFromList(yrkesomrade.id);" attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
-                                    <div class="checkbox">
-
-                                    </div>
-                                    <div class="name">
-                                      {{yrkesgrupp.namn}}
-                                    </div>
-                                    <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed">
-
-                                    </div>
-                                  </div>
-                                  <ul *ngIf="yrkesgrupp.yrken" class="hidden job">
-                                    <li *ngFor="let yrke of yrkesgrupp.yrken">
-                                      <div class="liContent" (click)="checkSelection($event); addToList(yrke.id, yrke.namn, yrke.typ, true); removeFromList(yrkesgrupp.id);" attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}"attr.data-type="{{yrke.typ}}">
-                                        <div class="checkbox">
-
-                                        </div>
-                                        <div class="name">
-                                          {{yrke.namn}}
-                                        </div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div class="checkbox ng-scope">
-                        <input id="ingen-erfarenhet" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
-                        <label for="ingen-erfarenhet">Visa jobb utan krav på arbetslivserfarenhet</label>
-                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="ng-isolate-scope hidden">
-                  <div class="af-kriteriumforslag ng-hide">
-                    <div class="clearfix">
-                      <h4 class="rubrik-for-forslag ng-binding">Förslag på yrken</h4>
-                      <ul class="tag-list">
-                        <li class="tag-item ng-scope"></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
-            <div class="mp-yrke-ort arbetsort">
-              <h3 class="panel-title">Jag vill jobba i</h3>
-              <div class="ng-isolate-scope">
+            <div class="af-card mp-yrke-ort arbetsort">
+              <a href="javascript:void(0)" (click)="showJobGeoArea = !showJobGeoArea">
+                <span id="rubrik-korkort" class="card-rubrik">
+                  <h4>Jag vill jobba i</h4>
+                </span>
+                <i class="pull-right fa {{!showJobGeoArea ? 'fa-angle-down' : 'fa-angle-up'}}"></i>
+              </a>
+              <div class="ng-isolate-scope card-input" *ngIf="showJobGeoArea">
                 <div class="mp-input-area mp-arbetsorter">
                   <label for="mp-arbetsorter" class="sr-only">Jag vill jobba i</label>
                   <input id="mp-arbetsorter" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Postnr/Kommun/Län/Land" type="text">
@@ -570,8 +644,8 @@
                             <div *ngIf="behov.arbetsomfattning || behov.varaktighet" class="ng-scope">
                               <span class="label">Anställningsform:</span>
                               <span class="ng-binding"><span *ngIf="behov.arbetsomfattning">{{formatJobTime(behov.arbetsomfattning.min, behov.arbetsomfattning.max)}}</span><span *ngIf="behov.varaktighet">{{behov.varaktighet.namn}}</span></span></div>
-                            <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span> <span class="publiceringsdatum ng-binding">{{getFormattedDate(behov.publiceringsdatum)}}</span></div>
-                            <span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span> <span class="ansokningsdatum ng-binding">{{getFormattedDate(behov.sistaAnsokningsdatum)}}</span></span>
+                            <div data-ng-if="rekryteringsbehov.getPubliceringsdatumText().length > 0" class="ng-scope"><span class="label">Publicerad:</span><span class="publiceringsdatum ng-binding">{{getFormattedDate(behov.publiceringsdatum)}}</span></div>
+                            <span class="sok-senast ng-scope" data-ng-if="rekryteringsbehov.sistaAnsokningsdatum"><span class="label">Sök jobbet senast:</span><span class="ansokningsdatum ng-binding">{{getFormattedDate(behov.sistaAnsokningsdatum)}}</span></span>
                         </div>
                         <!-- <span ng-show="vm.isInloggad" class="spara-annons ng-hide">
                           <button ng-click="vm.toggleSparaAnnons(rekryteringsbehov, $event);" class="spara-annons-btn">

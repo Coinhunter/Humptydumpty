@@ -17,6 +17,8 @@ import { Sokresultat } from '../../models/Sokresultat.interface';
 })
 export class SearchjobsComponent implements OnInit {
 
+  showJobTypes: boolean;
+  showJobGeoArea: boolean;
   showTerms: boolean;
   showCompetences: boolean;
   showExperience: boolean;
@@ -39,6 +41,7 @@ export class SearchjobsComponent implements OnInit {
     this.showJobAreas = false;
     this.showPreviousButton = false;
     this.showNextButton = true;
+    this.showJobTypes = this.showJobGeoArea = true;
     this.searchparameters = new Array<Profilkriterium>();
     this.searchResult = {
       rekryteringsbehov: [],
@@ -196,7 +199,6 @@ export class SearchjobsComponent implements OnInit {
     if (this.searchparameters.length > 0) {
       this.search();
     }
-    console.log('Remove: ' + id);
   }
   emptyList() {
     this.searchparameters.length = 0;
