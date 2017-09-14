@@ -107,64 +107,10 @@
                       <div class="clearfix">
                         <h4 class="rubrik-for-forslag ng-binding">Förslag på yrken</h4>
                         <ul class="tag-list">
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)" style="">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
+                          <li class="tag-item ng-scope" *ngFor="let kriterium of searchResult.relateradeKriterier | RelatedmatchesPipe:'yrke'; let i=index" style="">
+                            <button class="btn-add-tag ng-binding" *ngIf="kriterium.matchningskriterium" (click)="addToList(kriterium.matchningskriterium.id, kriterium.matchningskriterium.namn, kriterium.matchningskriterium.typ)">
                               <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Systemutvecklare / Programmerare
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Mjukvaruutvecklare
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Systemtestare
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Testledare
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Projektledare, IT
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Butikssäljare, fackhandel
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Elektronikmontör
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Civilingenjör, konstruktion, elektronik
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Civilingenjör, maskin
-                            </button>
-                          </li>
-                          <li class="tag-item ng-scope" ng-repeat="relateratkriterium in vm.relateradeKriterierByTyp(vm.kriteriumtyp, vm.relateradtyp)">
-                            <button class="btn-add-tag ng-binding" ng-click="vm.addMatchningskriterium(relateratkriterium.matchningskriterium)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> Inköpare
+                              <i class="fa fa-plus" aria-hidden="true"></i> {{kriterium.matchningskriterium.namn}}
                             </button>
                           </li>
                           <li data-ng-if="!vm.isOspecificeradArbetsortChosen" class="tag-item ng-scope"></li>

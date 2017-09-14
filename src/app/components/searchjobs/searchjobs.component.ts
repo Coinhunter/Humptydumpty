@@ -185,11 +185,13 @@ export class SearchjobsComponent implements OnInit {
   }
   removeFromListAndUnselect(id: number) {
     const element = document.querySelectorAll('[data-id="' + id + '"]');
-    const children = element[0].childNodes;
-    for (let i = 0; i < children.length; i++) {
-      const child: any = children[i];
-      if (child.nodeName === 'DIV' && child.classList.contains('checked')) {
-        child.classList.remove('checked');
+    if (element.length) {
+      const children = element[0].childNodes;
+      for (let i = 0; i < children.length; i++) {
+        const child: any = children[i];
+        if (child.nodeName === 'DIV' && child.classList.contains('checked')) {
+          child.classList.remove('checked');
+        }
       }
     }
     this.removeFromList(id);
