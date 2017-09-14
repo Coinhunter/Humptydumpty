@@ -5,6 +5,7 @@ import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 import { Sokresultat } from '../../models/Sokresultat.interface';
+import { RelateratKriterium } from '../../models/Relateratkriterium.interface';
 
 @Component({
   selector: 'app-searchjobs',
@@ -36,6 +37,7 @@ export class SearchjobsComponent implements OnInit {
   yrkesomraden: Array<Yrkesomrade>;
   searchparameters: Array<Profilkriterium>;
   searchResult: Sokresultat;
+  relatedCriteria: Array<RelateratKriterium>;
   constructor(private yrkenService: YrkenService, private pbapiMatchningService: PbapiMatchningService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = false;
     this.showJobAreas = false;
@@ -43,6 +45,7 @@ export class SearchjobsComponent implements OnInit {
     this.showNextButton = true;
     this.showJobTypes = this.showJobGeoArea = true;
     this.searchparameters = new Array<Profilkriterium>();
+    this.relatedCriteria = new Array<RelateratKriterium>();
     this.searchResult = {
       rekryteringsbehov: [],
       relateradeKriterier: [],
@@ -160,6 +163,21 @@ export class SearchjobsComponent implements OnInit {
         this.showNextButton = false;
       } else {
         this.showNextButton = true;
+      }
+      this.relatedCriteria = this.searchResult.relateradeKriterier;
+      // const id = '2';
+      for (let i = 0; i < this.searchparameters.length; i++) {
+          const parameter = this.searchparameters[i];
+          console.log(parameter.varde);
+          this.relatedCriteria = this.relatedCriteria.filter(function( obj ) {
+            if (parameter.varde === obj.matchningskriterium.id.toString()) {
+              console.log('Removed: ' + obj.matchningskriterium.id + ': ' + obj.matchningskriterium.namn);
+            } else {
+              console.log('Not removed: ' + obj.matchningskriterium.id + ': '
+                + obj.matchningskriterium.namn + ': ' + obj.matchningskriterium.typ);
+            }
+            return obj.matchningskriterium.id.toString() !== parameter.varde;
+          });
       }
     });
   }
