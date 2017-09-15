@@ -139,7 +139,7 @@ export class SearchjobsComponent implements OnInit {
         type = 'YRKESROLL';
       } else if (type.toUpperCase() === 'YRKESGRUPP') {
         type = 'YRKESGRUPP_ROLL';
-      } else {
+      } else if (type.toUpperCase() === 'YRKESOMRADE') {
         type = 'YRKESOMRADE_ROLL';
       }
       this.searchparameters.push({
@@ -163,21 +163,6 @@ export class SearchjobsComponent implements OnInit {
         this.showNextButton = false;
       } else {
         this.showNextButton = true;
-      }
-      this.relatedCriteria = this.searchResult.relateradeKriterier;
-      // const id = '2';
-      for (let i = 0; i < this.searchparameters.length; i++) {
-          const parameter = this.searchparameters[i];
-          console.log(parameter.varde);
-          this.relatedCriteria = this.relatedCriteria.filter(function( obj ) {
-            if (parameter.varde === obj.matchningskriterium.id.toString()) {
-              console.log('Removed: ' + obj.matchningskriterium.id + ': ' + obj.matchningskriterium.namn);
-            } else {
-              console.log('Not removed: ' + obj.matchningskriterium.id + ': '
-                + obj.matchningskriterium.namn + ': ' + obj.matchningskriterium.typ);
-            }
-            return obj.matchningskriterium.id.toString() !== parameter.varde;
-          });
       }
     });
   }

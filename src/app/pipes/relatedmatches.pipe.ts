@@ -9,7 +9,7 @@ export class RelatedmatchesPipe implements PipeTransform {
     if (param === 'yrke') {
       const items = this.sortItems(value).reverse();
       return items.filter(kriterium => {
-        return kriterium.matchningskriterium.typ === 'YRKE';
+        return kriterium.matchningskriterium.typ === 'YRKESROLL';
       });
     } else {
       return value;
