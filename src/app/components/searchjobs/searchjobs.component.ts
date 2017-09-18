@@ -129,7 +129,7 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  addToList(id: number, name: string, type: string, toggle: boolean) {
+  addToList(id: number, name: string, type: string, toggle?: boolean) {
     const found = this.searchparameters.some(function (el) {
       return el.varde === id.toString();
     });
@@ -150,7 +150,7 @@ export class SearchjobsComponent implements OnInit {
       // this.selectItemInList(id);
       this.search();
     } else if (toggle) {
-      this.removeFromList(id);
+      this.removeFromList(id, type);
     }
   }
   search() {
@@ -186,7 +186,7 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  removeFromListAndUnselect(id: number) {
+  removeFromListAndUnselect(id: number, type: string) {
     const element = document.querySelectorAll('[data-id="' + id + '"]');
     if (element.length) {
       const children = element[0].childNodes;
@@ -197,10 +197,17 @@ export class SearchjobsComponent implements OnInit {
         }
       }
     }
-    this.removeFromList(id);
+    if (type.toUpperCase() === 'KORKORT') {
+      const elem = document.getElementById('korkort_' + id);
+      elem['checked'] = false;
+    } else if (type.toUpperCase() === 'ANSTALLNINGSTYP') {
+      const elem = document.getElementById('anstallningstyp-' + id);
+      elem['checked'] = false;
+    }
+    this.removeFromList(id, type);
   }
-  removeFromList(id: number) {
-    this.searchparameters = this.searchparameters.filter(item => item.varde !== id.toString());
+  removeFromList(id: number, type: string) {
+    this.searchparameters = this.searchparameters.filter(item => !(item.varde === id.toString() && item.typ === type));
     if (this.searchparameters.length > 0) {
       this.search();
     }
@@ -289,5 +296,15 @@ export class SearchjobsComponent implements OnInit {
     const expirationDate = new Date(date);
     expirationDate.setDate(expirationDate.getDate() + 9);
     return (today > expirationDate);
+  }
+  checkboxPropertyClick(e, id: number, name: string, type: string) {
+    const target = e.target || e.srcElement;
+    console.log(e);
+    console.log(target.checked);
+    if (target.checked) {
+      this.addToList(id, name, type);
+    } else {
+      this.removeFromList(id, type);
+    }
   }
 }
