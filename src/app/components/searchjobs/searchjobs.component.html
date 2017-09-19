@@ -182,7 +182,7 @@
                    <div class="mp-omfattning">
                      <label class="anstallningsvillkor-label">Önskad omfattning</label>
                      <div class="checkbox">
-                       <input id="villkor-heltid" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                       <input id="villkor-heltid" (change)="fulltimePropertyClick($event)" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                        <label for="villkor-heltid">Heltid</label>
                      </div>
                      <div class="checkbox">

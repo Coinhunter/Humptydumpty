@@ -1,5 +1,5 @@
 export interface Matchningskriterium {
-  id: number;
+  id: string;
   namn: string;
   typ: string;
 }

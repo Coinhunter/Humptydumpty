@@ -2,4 +2,5 @@
 export interface KriteriumEgenskap {
   varde: string;
   typ: string;
+  benamning: string;
 };

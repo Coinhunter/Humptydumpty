@@ -129,9 +129,9 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  addToList(id: number, name: string, type: string, toggle?: boolean) {
+  addToList(id: string, name: string, type: string, toggle?: boolean) {
     const found = this.searchparameters.some(function (el) {
-      return el.varde === id.toString();
+      return el.varde === id.toString() && el.typ === type;
     });
 
     if (!found) {
@@ -186,7 +186,7 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  removeFromListAndUnselect(id: number, type: string) {
+  removeFromListAndUnselect(id: string, type: string) {
     const element = document.querySelectorAll('[data-id="' + id + '"]');
     if (element.length) {
       const children = element[0].childNodes;
@@ -203,11 +203,19 @@ export class SearchjobsComponent implements OnInit {
     } else if (type.toUpperCase() === 'ANSTALLNINGSTYP') {
       const elem = document.getElementById('anstallningstyp-' + id);
       elem['checked'] = false;
+    } else if (type.toUpperCase() === 'ARBETSOMFATTNING') {
+      if (id === 'Endast Heltid') {
+        const elem = document.getElementById('villkor-heltid');
+        elem['checked'] = false;
+      } else {
+        const elem = document.getElementById('villkor-deltid');
+        elem['checked'] = false;
+      }
     }
     this.removeFromList(id, type);
   }
-  removeFromList(id: number, type: string) {
-    this.searchparameters = this.searchparameters.filter(item => !(item.varde === id.toString() && item.typ === type));
+  removeFromList(id: string, type: string) {
+    this.searchparameters = this.searchparameters.filter(item => !(item.varde === id && item.typ === type));
     if (this.searchparameters.length > 0) {
       this.search();
     }
@@ -297,7 +305,7 @@ export class SearchjobsComponent implements OnInit {
     expirationDate.setDate(expirationDate.getDate() + 9);
     return (today > expirationDate);
   }
-  checkboxPropertyClick(e, id: number, name: string, type: string) {
+  checkboxPropertyClick(e, id: string, name: string, type: string) {
     const target = e.target || e.srcElement;
     console.log(e);
     console.log(target.checked);
@@ -305,6 +313,37 @@ export class SearchjobsComponent implements OnInit {
       this.addToList(id, name, type);
     } else {
       this.removeFromList(id, type);
+    }
+  }
+  fulltimePropertyClick(e) {
+    const target = e.target || e.srcElement;
+    if (target.checked) {
+      const found = this.searchparameters.some(function (el) {
+        return el.varde === 'Endast Heltid' && el.typ === 'ARBETSOMFATTNING';
+      });
+      if (!found) {
+        const kriterium = {
+          'typ': 'ARBETSOMFATTNING',
+          'varde': 'Endast Heltid',
+          'namn': 'Endast Heltid',
+          'egenskaper': [
+            {
+              'typ': 'ARBETSOMFATTNING_MIN',
+              'varde': '100',
+              'benamning': '100'
+            },
+            {
+              'typ': 'ARBETSOMFATTNING_MAX',
+              'varde': '100',
+              'benamning': '100'
+            }
+          ]
+        };
+        this.searchparameters.push(kriterium);
+        this.search();
+      }
+    } else {
+      this.removeFromListAndUnselect('Endast Heltid', 'ARBETSOMFATTNING');
     }
   }
 }
