@@ -167,15 +167,15 @@
                    <div class="mp-anstallningstyp">
                      <div class="anstallningsvillkor-label">Anställningstyp</div>
                      <div class="checkbox ng-scope">
-                       <input id="anstallningstyp-1" (change)="checkboxPropertyClick($event, 1, 'Vanlig anställning', 'ANSTALLNINGSTYP')" name="Vanlig anställning" value="1" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                       <input id="anstallningstyp-1" (change)="checkboxPropertyClick($event, '1', 'Vanlig anställning', 'ANSTALLNINGSTYP')" name="Vanlig anställning" value="1" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                        <label for="anstallningstyp-1" class="ng-binding">Vanlig anställning</label>
                      </div>
                      <div class="checkbox ng-scope">
-                       <input id="anstallningstyp-2" (change)="checkboxPropertyClick($event, 2, 'Sommarjobb / feriejobb', 'ANSTALLNINGSTYP')" name="Sommarjobb / feriejobb" value="2" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                       <input id="anstallningstyp-2" (change)="checkboxPropertyClick($event, '2', 'Sommarjobb / feriejobb', 'ANSTALLNINGSTYP')" name="Sommarjobb / feriejobb" value="2" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                        <label for="anstallningstyp-2" class="ng-binding">Sommarjobb / feriejobb</label>
                      </div>
                      <div class="checkbox ng-scope">
-                       <input id="anstallningstyp-4" (change)="checkboxPropertyClick($event, 4, 'Behovsanställning', 'ANSTALLNINGSTYP')" name="Behovsanställning" value="4" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                       <input id="anstallningstyp-4" (change)="checkboxPropertyClick($event, '4', 'Behovsanställning', 'ANSTALLNINGSTYP')" name="Behovsanställning" value="4" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                        <label for="anstallningstyp-4" class="ng-binding">Behovsanställning</label>
                      </div>
                    </div>
@@ -186,29 +186,14 @@
                        <label for="villkor-heltid">Heltid</label>
                      </div>
                      <div class="checkbox">
-                       <input id="villkor-deltid" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                       <input id="villkor-deltid" (change)="parttimePropertyClick($event)" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                        <label for="villkor-deltid">Deltid</label>
                      </div>
                    </div>
-                   <div class="ng-hide">
+                   <div *ngIf="showParttimeSlider" class="ng-hide">
                      <p class="anstallningsvillkorSubLbl">Så här mycket vill jag jobba (%)</p>
                      <div class="arbetsomfattning-slider-container">
-                       <div class="af-slider noUi-target noUi-ltr noUi-horizontal" id="af-villkor-omfattning-slider">
-                         <div class="noUi-base">
-                           <div class="noUi-origin" style="left: 0%;">
-                             <div class="noUi-handle noUi-handle-lower" style="z-index: 5;" tabindex="0" role="slider">
-                               <div class="noUi-tooltip">5</div>
-                             </div>
-                           </div>
-                           <div class="noUi-connect" style="left: 0%; right: 0%;">
-                           </div>
-                           <div class="noUi-origin" style="left: 100%;">
-                             <div class="noUi-handle noUi-handle-upper" data-handle="1" style="z-index: 4;" tabindex="0" role="slider">
-                               <div class="noUi-tooltip">100</div>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
+                       <!-- <nouislider id="af-villkor-omfattning-slider" class="af-slider noUi-target noUi-ltr noUi-horizontal" [tooltips]="[ true, true ]" [connect]="true" [min]="0" [max]="100" [step]="5" [(ngModel)]="someRange" (ngModelChange)="rangeValueChanged($event)"></nouislider> -->
                      </div>
                    </div>
                  </div>
@@ -277,7 +262,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 16, 'Körkort AM', 'KORKORT')" name="korkort_16" id="korkort_16" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '16', 'Körkort AM', 'KORKORT')" name="korkort_16" id="korkort_16" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" for="korkort_16">AM</label>
                            </div>
                          </div>
@@ -285,7 +270,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 2, 'Körkort A1', 'KORKORT')" name="korkort_2" id="korkort_2" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '2', 'Körkort A1', 'KORKORT')" name="korkort_2" id="korkort_2" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" for="korkort_2">A1</label>
                            </div>
                          </div>
@@ -293,7 +278,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 17, 'Körkort A2', 'KORKORT')" name="korkort_17" id="korkort_17" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '17', 'Körkort A2', 'KORKORT')" name="korkort_17" id="korkort_17" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_17">A2</label>
                            </div>
                          </div>
@@ -301,7 +286,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 10, 'Körkort A', 'KORKORT')" name="korkort_10" id="korkort_10" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '10', 'Körkort A', 'KORKORT')" name="korkort_10" id="korkort_10" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_10">A</label>
                            </div>
                          </div>
@@ -314,7 +299,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 3, 'Körkort B', 'KORKORT')" name="korkort_3" id="korkort_3" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '3', 'Körkort B', 'KORKORT')" name="korkort_3" id="korkort_3" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_3">B</label>
                            </div>
                          </div>
@@ -322,7 +307,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 18, 'Körkort Utökad B', 'KORKORT')" name="korkort_18" id="korkort_18" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '18', 'Körkort Utökad B', 'KORKORT')" name="korkort_18" id="korkort_18" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_18">Utökad B</label>
                            </div>
                          </div>
@@ -330,7 +315,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 6, 'Körkort BE', 'KORKORT')" name="korkort_6" id="korkort_6" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '6', 'Körkort BE', 'KORKORT')" name="korkort_6" id="korkort_6" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_6">BE</label>
                            </div>
                          </div>
@@ -343,7 +328,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 4, 'Körkort C', 'KORKORT')" name="korkort_4" id="korkort_4" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '4', 'Körkort C', 'KORKORT')" name="korkort_4" id="korkort_4" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_4">C</label>
                            </div>
                          </div>
@@ -351,7 +336,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 12, 'Körkort C1', 'KORKORT')" name="korkort_12" id="korkort_12" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '12', 'Körkort C1', 'KORKORT')" name="korkort_12" id="korkort_12" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_12">C1</label>
                            </div>
                          </div>
@@ -359,7 +344,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 14, 'Körkort C1E', 'KORKORT')" name="korkort_14" id="korkort_14" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '14', 'Körkort C1E', 'KORKORT')" name="korkort_14" id="korkort_14" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_14">C1E</label>
                            </div>
                          </div>
@@ -367,7 +352,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 7, 'Körkort CE', 'KORKORT')" name="korkort_7" id="korkort_7" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '7', 'Körkort CE', 'KORKORT')" name="korkort_7" id="korkort_7" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_7">CE</label>
                            </div>
                          </div>
@@ -380,7 +365,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 5, 'Körkort D', 'KORKORT')" name="korkort_5" id="korkort_5" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '5', 'Körkort D', 'KORKORT')" name="korkort_5" id="korkort_5" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_5">D</label>
                            </div>
                          </div>
@@ -388,7 +373,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 19, 'Körkort D1', 'KORKORT')" name="korkort_19" id="korkort_19" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '19', 'Körkort D1', 'KORKORT')" name="korkort_19" id="korkort_19" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_19">D1</label>
                            </div>
                          </div>
@@ -396,7 +381,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 15, 'Körkort D1E', 'KORKORT')" name="korkort_15" id="korkort_15" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '15', 'Körkort D1E', 'KORKORT')" name="korkort_15" id="korkort_15" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_15">D1E</label>
                            </div>
                          </div>
@@ -404,7 +389,7 @@
                        <span ng-repeat="item in elem.korkort" class="ng-scope">
                          <div class="col-xs-6 checkbox">
                            <div>
-                             <input (change)="checkboxPropertyClick($event, 8, 'Körkort DE', 'KORKORT')" name="korkort_8" id="korkort_8" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                             <input (change)="checkboxPropertyClick($event, '8', 'Körkort DE', 'KORKORT')" name="korkort_8" id="korkort_8" ng-disabled="model.korkortMap[item].isDisabled" ng-click="handleKorkortChange(model.korkortMap[item])" ng-model="model.korkortMap[item].isChecked" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                              <label class="korkortsklass ng-binding" ng-class="{'markTextOnCheck': model.korkortMap[item].isDisabled === true}" for="korkort_8">DE</label>
                            </div>
                          </div>

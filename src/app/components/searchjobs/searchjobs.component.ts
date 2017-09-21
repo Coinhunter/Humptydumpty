@@ -28,6 +28,7 @@ export class SearchjobsComponent implements OnInit {
   showPreviousButton: boolean;
   showNextButton: boolean;
   listIsCompact = false;
+  showParttimeSlider: boolean;
 
   numberOfAvailableJobs: number;
   adsPageNumber: number;
@@ -38,8 +39,10 @@ export class SearchjobsComponent implements OnInit {
   searchparameters: Array<Profilkriterium>;
   searchResult: Sokresultat;
   relatedCriteria: Array<RelateratKriterium>;
+
+  someRange: number[] = [0, 100];
   constructor(private yrkenService: YrkenService, private pbapiMatchningService: PbapiMatchningService) {
-    this.showTerms = this.showCompetences = this.showExperience = this.showLicences = false;
+    this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
     this.showJobAreas = false;
     this.showPreviousButton = false;
     this.showNextButton = true;
@@ -318,10 +321,14 @@ export class SearchjobsComponent implements OnInit {
   fulltimePropertyClick(e) {
     const target = e.target || e.srcElement;
     if (target.checked) {
+      this.showParttimeSlider = false;
       const found = this.searchparameters.some(function (el) {
         return el.varde === 'Endast Heltid' && el.typ === 'ARBETSOMFATTNING';
       });
       if (!found) {
+        this.searchparameters = this.searchparameters.filter(item => !(item.varde.includes('Deltid') && item.typ === 'ARBETSOMFATTNING'));
+        const elem = document.getElementById('villkor-deltid');
+        elem['checked'] = false;
         const kriterium = {
           'typ': 'ARBETSOMFATTNING',
           'varde': 'Endast Heltid',
@@ -345,5 +352,50 @@ export class SearchjobsComponent implements OnInit {
     } else {
       this.removeFromListAndUnselect('Endast Heltid', 'ARBETSOMFATTNING');
     }
+  }
+  parttimePropertyClick(e) {
+    const target = e.target || e.srcElement;
+    if (target.checked) {
+      this.showParttimeSlider = true;
+      this.removeFromListAndUnselect('Endast Heltid', 'ARBETSOMFATTNING');
+      this.updateSearchParametersWithParttime();
+    } else {
+      this.showParttimeSlider = false;
+      this.removeFromListAndUnselect('Deltid', 'ARBETSOMFATTNING');
+    }
+  }
+  updateSearchParametersWithParttime() {
+    let value = '';
+    let name = '';
+    if (this.someRange[1] === 100) {
+      value = 'Heltid/Deltid ' + this.someRange[0] + '-100%';
+    } else {
+      value = 'Deltid ' + this.someRange[0] + '-' + this.someRange[1] + '%';
+    }
+    name = value;
+    // this.removeFromListAndUnselect(value, 'ARBETSOMFATTNING');
+    this.searchparameters = this.searchparameters.filter(item => !(item.varde.includes('Deltid') && item.typ === 'ARBETSOMFATTNING'));
+    const kriterium = {
+      'typ': 'ARBETSOMFATTNING',
+      'varde': value,
+      'namn': name,
+      'egenskaper': [
+        {
+          'typ': 'ARBETSOMFATTNING_MIN',
+          'varde': this.someRange[0].toString(),
+          'benamning': this.someRange[0].toString()
+        },
+        {
+          'typ': 'ARBETSOMFATTNING_MAX',
+          'varde': this.someRange[1].toString(),
+          'benamning': this.someRange[1].toString()
+        }
+      ]
+    }
+    this.searchparameters.push(kriterium);
+    this.search();
+  }
+  rangeValueChanged(e) {
+    this.updateSearchParametersWithParttime();
   }
 }
