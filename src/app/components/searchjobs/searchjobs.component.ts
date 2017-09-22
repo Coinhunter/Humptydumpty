@@ -96,26 +96,110 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  toggleChild(e): void {
+  // toggleChild(e): void {
+  //   const target = e.target || e.srcElement;
+  //   const children = target.parentNode.parentNode.children;
+  //   for (const child of children) {
+  //     if (child.nodeName === 'UL') {
+  //         child.classList.toggle('hidden');
+  //     } else if (child.nodeName === 'DIV' && child.classList.contains('liContent')) {
+  //       const grandChildren = child.children;
+  //       for (const grandChild of grandChildren) {
+  //         if (grandChild.classList.contains('collapsed')) {
+  //           grandChild.classList.remove('collapsed');
+  //           grandChild.classList.add('expanded');
+  //         } else if (grandChild.classList.contains('expanded')) {
+  //           grandChild.classList.add('collapsed');
+  //           grandChild.classList.remove('expanded');
+  //         } else if (grandChild.classList.contains('checkbox')) {
+  //           grandChild.classList.toggle('checked');
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  yrkesomradeCheck(e, id: string, name: string, type: string) {
     const target = e.target || e.srcElement;
-    const children = target.parentNode.parentNode.children;
-    for (const child of children) {
-      if (child.nodeName === 'UL') {
-          child.classList.toggle('hidden');
-      } else if (child.nodeName === 'DIV' && child.classList.contains('liContent')) {
-        const grandChildren = child.children;
-        for (const grandChild of grandChildren) {
-          if (grandChild.classList.contains('collapsed')) {
-            grandChild.classList.remove('collapsed');
-            grandChild.classList.add('expanded');
-          } else if (grandChild.classList.contains('expanded')) {
-            grandChild.classList.add('collapsed');
-            grandChild.classList.remove('expanded');
-          } else if (grandChild.classList.contains('checkbox')) {
-            grandChild.classList.toggle('checked');
-          }
+    const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
+    if (children.length) {
+      [].forEach.call(children, function(input) {
+        input.checked = target.checked;
+        const grandChildren = document.querySelectorAll('[data-parent-id="' +
+          input.getAttribute('data-type') + '_' + input.getAttribute('data-id') + '"]');
+        if (grandChildren.length) {
+          [].forEach.call(grandChildren, function(input2) {
+            input2.checked = target.checked;
+          });
+        }
+      });
+    }
+  }
+  yrkesgruppCheck(e, id: string, name: string, type: string) {
+    const target = e.target || e.srcElement;
+    const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
+    console.log('children');
+    [].forEach.call(children, function(input) {
+      console.log(input.getAttribute('data-id') + ' ' + input.getAttribute('data-name') + ' ' +  input.getAttribute('data-type'));
+      input.checked = target.checked;
+    });
+    const parentId = target.getAttribute('data-parent-id');
+    const parent = document.getElementById(parentId);
+    if (!target.checked) {
+      parent['checked'] = false;
+    } else {
+      // Check if all siblings are checked
+      if (this.areAllSiblingsChecked(parentId)) {
+        parent['checked'] = true;
+      }
+    }
+  }
+  yrkeCheck(e, id: string, name: string, type: string) {
+    const target = e.target || e.srcElement;
+    const parentId = target.getAttribute('data-parent-id');
+    const parent = document.getElementById(parentId);
+    const grandParentId = parent.getAttribute('data-parent-id');
+    const grandParent = document.getElementById(grandParentId);
+    if (!target.checked) {
+      parent['checked'] = false;
+      if (!this.areAllSiblingsChecked(grandParentId)) {
+        grandParent['checked'] = false;
+      }
+    } else {
+      // Check if all siblings are checked
+      if (this.areAllSiblingsChecked(parentId)) {
+        parent['checked'] = true;
+        if (this.areAllSiblingsChecked(grandParentId)) {
+          grandParent['checked'] = true;
         }
       }
+    }
+  }
+  areAllSiblingsChecked(parentId: string) {
+    let allChecked = true;
+    const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+    if (siblings.length) {
+      [].forEach.call(siblings, function(input) {
+        if (!input.checked) {
+          allChecked = false;
+        }
+      });
+    }
+    return allChecked;
+  }
+  toggleChild(e, id: string, name: string, type: string): void {
+    const target = e.target || e.srcElement;
+    console.log(target);
+    const children = id + '_' + type + '_CHILDREN';
+    console.log(children);
+    const childContainer = document.getElementById(id + '_' + type + '_CHILDREN');
+    if (target.classList.contains('collapsed')) {
+      target.classList.remove('collapsed');
+      target.classList.add('expanded');
+      childContainer.classList.remove('hidden');
+    } else if (target.classList.contains('expanded')) {
+      target.classList.add('collapsed');
+      target.classList.remove('expanded');
+      childContainer.classList.add('hidden');
     }
   }
   checkSelection(e): void {

@@ -52,38 +52,34 @@
                           <div id="JobAreas" *ngIf="showJobAreas">
                             <ul>
                               <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
-                                <div class="liContent" (click)="toggleChild($event); addToList(yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ, true);" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
-                                  <div class="checkbox">
-
-                                  </div>
-                                  <div class="name">
-                                    {{yrkesomrade.namn}}
-                                  </div>
-                                  <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed">
+                                <div class="checkbox" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
+                                  <input (change)="yrkesomradeCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);" name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}"
+                                    id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
+                                  <label class="korkortsklass ng-binding" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
+                                  <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
 
                                   </div>
                                 </div>
-                                <ul *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup">
+                                <ul id="{{yrkesomrade.id}}_{{yrkesomrade.typ}}_CHILDREN" *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup">
                                   <li *ngFor="let yrkesgrupp of yrkesomrade.yrkesgrupper">
-                                    <div class="liContent" (click)="toggleChild($event); addToList(yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ); removeFromList(yrkesomrade.id);" attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
-                                      <div class="checkbox">
-
-                                      </div>
-                                      <div class="name">
-                                        {{yrkesgrupp.namn}}
-                                      </div>
-                                      <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed">
+                                    <div class="liContent checkbox">
+                                      <input (change)="yrkesgruppCheck($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ);" name="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}"
+                                        id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" attr.data-parent-id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox"
+                                        attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
+                                      <label class="korkortsklass ng-binding" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
+                                      <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)">
 
                                       </div>
                                     </div>
-                                    <ul *ngIf="yrkesgrupp.yrken" class="hidden job">
+                                    <ul id="{{yrkesgrupp.id}}_{{yrkesgrupp.typ}}_CHILDREN" *ngIf="yrkesgrupp.yrken" class="hidden job" attr.data-parent-id="{{yrkesgrupp.id}}">
                                       <li *ngFor="let yrke of yrkesgrupp.yrken">
-                                        <div class="liContent" (click)="checkSelection($event); addToList(yrke.id, yrke.namn, yrke.typ, true); removeFromList(yrkesgrupp.id);" attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}"attr.data-type="{{yrke.typ}}">
-                                          <div class="checkbox">
+                                        <div class="liContent checkbox" attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
+                                          <input (change)="yrkeCheck($event, yrke.id, yrke.namn, yrke.typ);" name="{{yrke.typ}}_{{yrke.id}}"
+                                            id="{{yrke.typ}}_{{yrke.id}}" attr.data-parent-id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" class="" type="checkbox"
+                                             attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
+                                          <label class="korkortsklass ng-binding" for="{{yrke.typ}}_{{yrke.id}}">{{yrke.namn}}</label>
+                                          <div *ngIf="yrkesgrupp.yrkesgrupper" class="hasChildren collapsed">
 
-                                          </div>
-                                          <div class="name">
-                                            {{yrke.namn}}
                                           </div>
                                         </div>
                                       </li>

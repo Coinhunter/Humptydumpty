@@ -24,37 +24,37 @@
         "namn": "Drifttekniker, IT",
         "typ": "YRKESGRUPP",
         "yrken": [
-  		  {
-  		    "id": "6027",
-  		    "namn": "Dataoperatör",
-  		    "typ": "YRKE"
-  		  },
-  		  {
-  		    "id": "3097",
-  		    "namn": "Driftledare, IT",
-  		    "typ": "YRKE"
-  		  },
-  		  {
-  		    "id": "5431",
-  		    "namn": "Drifttekniker, data",
-  		    "typ": "YRKE"
-  		  },
-  		  {
-  		    "id": "6625",
-  		    "namn": "IT-tekniker / Datatekniker",
-  		    "typ": "YRKE"
-  		  },
-  		  {
-  		    "id": "5428",
-  		    "namn": "PC-koordinator",
-  		    "typ": "YRKE"
-  		  },
-  		  {
-  		    "id": "5997",
-  		    "namn": "PC-samordnare",
-  		    "typ": "YRKE"
-  		  }
-  		]
+    		  {
+    		    "id": "6027",
+    		    "namn": "Dataoperatör",
+    		    "typ": "YRKE"
+    		  },
+    		  {
+    		    "id": "3097",
+    		    "namn": "Driftledare, IT",
+    		    "typ": "YRKE"
+    		  },
+    		  {
+    		    "id": "5431",
+    		    "namn": "Drifttekniker, data",
+    		    "typ": "YRKE"
+    		  },
+    		  {
+    		    "id": "6625",
+    		    "namn": "IT-tekniker / Datatekniker",
+    		    "typ": "YRKE"
+    		  },
+    		  {
+    		    "id": "5428",
+    		    "namn": "PC-koordinator",
+    		    "typ": "YRKE"
+    		  },
+    		  {
+    		    "id": "5997",
+    		    "namn": "PC-samordnare",
+    		    "typ": "YRKE"
+    		  }
+    		]
       },
       {
         "id": "2516",
