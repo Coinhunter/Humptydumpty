@@ -121,35 +121,86 @@ export class SearchjobsComponent implements OnInit {
   yrkesomradeCheck(e, id: string, name: string, type: string) {
     const target = e.target || e.srcElement;
     const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
-    if (children.length) {
-      [].forEach.call(children, function(input) {
-        input.checked = target.checked;
-        const grandChildren = document.querySelectorAll('[data-parent-id="' +
-          input.getAttribute('data-type') + '_' + input.getAttribute('data-id') + '"]');
-        if (grandChildren.length) {
-          [].forEach.call(grandChildren, function(input2) {
-            input2.checked = target.checked;
-          });
-        }
-      });
+    if (!target.checked) {
+      this.removeFromList(id, type);
+    } else {
+      this.addToList(id, name, type);
     }
+    if (children.length) {
+      for (let i = 0; i < children.length; ++i) {
+        children[i]['checked'] = target.checked;
+        if (target.checked) {
+          this.removeFromList(children[i].getAttribute('data-id'), children[i].getAttribute('data-type'));
+        }
+        const grandChildren = document.querySelectorAll('[data-parent-id="' +
+          children[i].getAttribute('data-type') + '_' + children[i].getAttribute('data-id') + '"]');
+        if (grandChildren.length) {
+          for (let j = 0; j < grandChildren.length; ++j) {
+            grandChildren[j]['checked'] = target.checked;
+            if (target.checked) {
+              this.removeFromList(grandChildren[j].getAttribute('data-id'), grandChildren[j].getAttribute('data-type'));
+            }
+          }
+        }
+      }
+    }
+    this.search();
   }
   yrkesgruppCheck(e, id: string, name: string, type: string) {
     const target = e.target || e.srcElement;
     const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
     console.log('children');
-    [].forEach.call(children, function(input) {
-      console.log(input.getAttribute('data-id') + ' ' + input.getAttribute('data-name') + ' ' +  input.getAttribute('data-type'));
-      input.checked = target.checked;
-    });
+    if (children.length) {
+      for (let i = 0; i < children.length; ++i) {
+        children[i]['checked'] = target.checked;
+        if (target.checked) {
+          this.removeFromList(children[i].getAttribute('data-id'), children[i].getAttribute('data-type'));
+        }
+      }
+    }
     const parentId = target.getAttribute('data-parent-id');
     const parent = document.getElementById(parentId);
     if (!target.checked) {
       parent['checked'] = false;
+      this.removeFromListAndSearch(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
+      const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+      if (siblings.length) {
+        for (let i = 0; i < siblings.length; ++i) {
+          if (siblings[i]['checked']) {
+            this.addToList(siblings[i].getAttribute('data-id'),
+              siblings[i].getAttribute('data-name'),
+              siblings[i].getAttribute('data-type'));
+          } else {
+            this.removeFromList(siblings[i].getAttribute('data-id'),
+              siblings[i].getAttribute('data-type'));
+          }
+        }
+      }
     } else {
       // Check if all siblings are checked
       if (this.areAllSiblingsChecked(parentId)) {
         parent['checked'] = true;
+        this.addToList(parent.getAttribute('data-id'), parent.getAttribute('data-name'), parent.getAttribute('data-type'));
+        const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+        if (siblings.length) {
+          for (let i = 0; i < siblings.length; ++i) {
+            if (siblings[i]['checked']) {
+              this.removeFromList(siblings[i].getAttribute('data-id'),
+                siblings[i].getAttribute('data-type'));
+            }
+          }
+        }
+      } else {
+        const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+        if (siblings.length) {
+          for (let i = 0; i < siblings.length; ++i) {
+            if (siblings[i]['checked']) {
+              this.addToList(siblings[i].getAttribute('data-id'),
+                siblings[i].getAttribute('data-name'),
+                siblings[i].getAttribute('data-type'));
+            }
+          }
+        }
       }
     }
   }
@@ -159,18 +210,59 @@ export class SearchjobsComponent implements OnInit {
     const parent = document.getElementById(parentId);
     const grandParentId = parent.getAttribute('data-parent-id');
     const grandParent = document.getElementById(grandParentId);
+    const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+    const parentSiblings = document.querySelectorAll('[data-parent-id="' + grandParentId + '"]');
     if (!target.checked) {
       parent['checked'] = false;
       if (!this.areAllSiblingsChecked(grandParentId)) {
         grandParent['checked'] = false;
+        this.removeFromList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-type'));
+      }
+      if (siblings.length) {
+        for (let i = 0; i < siblings.length; ++i) {
+          if (siblings[i]['checked']) {
+            this.addToList(siblings[i].getAttribute('data-id'),
+              siblings[i].getAttribute('data-name'),
+              siblings[i].getAttribute('data-type'));
+          } else {
+            this.removeFromList(siblings[i].getAttribute('data-id'),
+              siblings[i].getAttribute('data-type'));
+          }
+        }
+      }
+      if (parentSiblings.length) {
+        for (let i = 0; i < parentSiblings.length; ++i) {
+          if (parentSiblings[i]['checked']) {
+            this.addToList(parentSiblings[i].getAttribute('data-id'),
+              parentSiblings[i].getAttribute('data-name'),
+              parentSiblings[i].getAttribute('data-type'));
+          } else {
+            this.removeFromList(parentSiblings[i].getAttribute('data-id'),
+              parentSiblings[i].getAttribute('data-type'));
+          }
+        }
       }
     } else {
-      // Check if all siblings are checked
       if (this.areAllSiblingsChecked(parentId)) {
         parent['checked'] = true;
+        if (siblings.length) {
+          for (let i = 0; i < siblings.length; ++i) {
+            if (siblings[i]['checked']) {
+              this.removeFromList(siblings[i].getAttribute('data-id'),
+                siblings[i].getAttribute('data-type'));
+            }
+          }
+        }
         if (this.areAllSiblingsChecked(grandParentId)) {
           grandParent['checked'] = true;
+          this.addToList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-name'), grandParent.getAttribute('data-type'));
+          for (let i = 0; i < parentSiblings.length; ++i) {
+            this.removeFromList(parentSiblings[i].getAttribute('data-id'),
+              parentSiblings[i].getAttribute('data-type'));
+          }
         }
+      } else {
+        this.addToList(id, name, type);
       }
     }
   }
@@ -217,18 +309,19 @@ export class SearchjobsComponent implements OnInit {
     }
   }
   addToList(id: string, name: string, type: string, toggle?: boolean) {
+    if (type.toUpperCase() === 'YRKE') {
+      type = 'YRKESROLL';
+    } else if (type.toUpperCase() === 'YRKESGRUPP') {
+      type = 'YRKESGRUPP_ROLL';
+    } else if (type.toUpperCase() === 'YRKESOMRADE') {
+      type = 'YRKESOMRADE_ROLL';
+    }
+
     const found = this.searchparameters.some(function (el) {
-      return el.varde === id.toString() && el.typ === type;
+      return el.varde === id && el.typ === type;
     });
 
     if (!found) {
-      if (type.toUpperCase() === 'YRKE') {
-        type = 'YRKESROLL';
-      } else if (type.toUpperCase() === 'YRKESGRUPP') {
-        type = 'YRKESGRUPP_ROLL';
-      } else if (type.toUpperCase() === 'YRKESOMRADE') {
-        type = 'YRKESOMRADE_ROLL';
-      }
       this.searchparameters.push({
         'typ': type,
         'varde': id.toString(),
@@ -241,17 +334,19 @@ export class SearchjobsComponent implements OnInit {
     }
   }
   search() {
-    const offset = this.adsPageNumber * this.numberOfHitsPerPage;
-    this.pbapiMatchningService.getMatchingAds(this.searchparameters, this.numberOfHitsPerPage, offset).then(data => {
-      this.searchResult = data;
-      console.log(this.searchResult);
-      this.numberOfPages = Math.floor((this.searchResult.antalRekryteringsbehov / this.numberOfHitsPerPage) + 1);
-      if ((this.adsPageNumber + 1) >= this.numberOfPages) {
-        this.showNextButton = false;
-      } else {
-        this.showNextButton = true;
-      }
-    });
+    if (this.searchparameters.length > 0) {
+      const offset = this.adsPageNumber * this.numberOfHitsPerPage;
+      this.pbapiMatchningService.getMatchingAds(this.searchparameters, this.numberOfHitsPerPage, offset).then(data => {
+        this.searchResult = data;
+        console.log(this.searchResult);
+        this.numberOfPages = Math.floor((this.searchResult.antalRekryteringsbehov / this.numberOfHitsPerPage) + 1);
+        if ((this.adsPageNumber + 1) >= this.numberOfPages) {
+          this.showNextButton = false;
+        } else {
+          this.showNextButton = true;
+        }
+      });
+    }
   }
   nextAdsPage() {
     this.adsPageNumber++;
@@ -299,13 +394,24 @@ export class SearchjobsComponent implements OnInit {
         elem['checked'] = false;
       }
     }
-    this.removeFromList(id, type);
+    this.removeFromListAndSearch(id, type);
   }
-  removeFromList(id: string, type: string) {
-    this.searchparameters = this.searchparameters.filter(item => !(item.varde === id && item.typ === type));
+  removeFromListAndSearch(id: string, type: string) {
+    this.removeFromList(id, type);
     if (this.searchparameters.length > 0) {
       this.search();
     }
+  }
+  removeFromList(id: string, type: string) {
+    console.log(id + ' ' + type);
+    if (type.toUpperCase() === 'YRKE') {
+      type = 'YRKESROLL';
+    } else if (type.toUpperCase() === 'YRKESGRUPP') {
+      type = 'YRKESGRUPP_ROLL';
+    } else if (type.toUpperCase() === 'YRKESOMRADE') {
+      type = 'YRKESOMRADE_ROLL';
+    }
+    this.searchparameters = this.searchparameters.filter(item => !(item.varde === id && item.typ === type));
   }
   emptyList() {
     this.searchparameters.length = 0;
@@ -399,7 +505,7 @@ export class SearchjobsComponent implements OnInit {
     if (target.checked) {
       this.addToList(id, name, type);
     } else {
-      this.removeFromList(id, type);
+      this.removeFromListAndSearch(id, type);
     }
   }
   fulltimePropertyClick(e) {

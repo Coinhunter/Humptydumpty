@@ -53,7 +53,8 @@
                             <ul>
                               <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
                                 <div class="checkbox" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
-                                  <input (change)="yrkesomradeCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);" name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}"
+                                  <input (change)="yrkesomradeCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);"
+                                  name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}"
                                     id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
                                   <label class="korkortsklass ng-binding" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
                                   <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
