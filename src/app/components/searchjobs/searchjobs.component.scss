@@ -78,6 +78,13 @@
   // }
   .checkbox {
     margin-left: 10px;
+    label.minus {
+      &::before {
+        content: '-';
+        font-size: 49px;
+        line-height: 6px;
+      }
+    }
   }
   .name {
     max-width: calc(100% - 30px);
