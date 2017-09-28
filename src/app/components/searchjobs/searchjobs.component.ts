@@ -123,17 +123,21 @@ export class SearchjobsComponent implements OnInit {
     const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
     if (!target.checked) {
       this.removeFromList(id, type);
+      this.removeHilightInList(id, type);
     } else {
       this.addToList(id, name, type);
+      this.addHilightInList(id, type);
       label.classList.remove('minus');
     }
     if (children.length) {
       for (let i = 0; i < children.length; ++i) {
         children[i]['checked'] = target.checked;
-        document.getElementById(children[i].getAttribute('data-type') + '_' +
-         children[i].getAttribute('data-id') + '_LABEL').classList.remove('minus');
+        const childType = children[i].getAttribute('data-type');
+        const childId = children[i].getAttribute('data-id');
+        document.getElementById(childType + '_' + childId + '_LABEL').classList.remove('minus');
         if (target.checked) {
-          this.removeFromList(children[i].getAttribute('data-id'), children[i].getAttribute('data-type'));
+          this.removeFromList(childId, childType);
+          this.removeHilightInList(childId, childType);
         }
         const grandChildren = document.querySelectorAll('[data-parent-id="' +
           children[i].getAttribute('data-type') + '_' + children[i].getAttribute('data-id') + '"]');
@@ -141,7 +145,10 @@ export class SearchjobsComponent implements OnInit {
           for (let j = 0; j < grandChildren.length; ++j) {
             grandChildren[j]['checked'] = target.checked;
             if (target.checked) {
-              this.removeFromList(grandChildren[j].getAttribute('data-id'), grandChildren[j].getAttribute('data-type'));
+              const grandChildId = grandChildren[j].getAttribute('data-id');
+              const grandChildType = grandChildren[j].getAttribute('data-type');
+              this.removeFromList(grandChildId, grandChildType);
+              this.removeHilightInList(grandChildId, grandChildType);
             }
           }
         }
@@ -157,7 +164,10 @@ export class SearchjobsComponent implements OnInit {
       for (let i = 0; i < children.length; ++i) {
         children[i]['checked'] = target.checked;
         if (target.checked) {
-          this.removeFromList(children[i].getAttribute('data-id'), children[i].getAttribute('data-type'));
+          const childType = children[i].getAttribute('data-type');
+          const childId = children[i].getAttribute('data-id');
+          this.removeFromList(childId, childType);
+          this.removeHilightInList(childId, childType);
         }
       }
     }
@@ -168,21 +178,25 @@ export class SearchjobsComponent implements OnInit {
     if (!target.checked) {
       parent['checked'] = false;
       this.removeFromListAndSearch(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
+      this.removeHilightInList(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
       const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
       let siblingHasMinus = false;
       if (siblings.length) {
         for (let i = 0; i < siblings.length; ++i) {
+          const siblingId = siblings[i].getAttribute('data-id');
+          const siblingName = siblings[i].getAttribute('data-name');
+          const siblingType = siblings[i].getAttribute('data-type');
           if (siblings[i]['checked']) {
-            this.addToList(siblings[i].getAttribute('data-id'),
-              siblings[i].getAttribute('data-name'),
-              siblings[i].getAttribute('data-type'));
-              siblingsChecked = true;
+            this.addToList(siblingId,
+              siblingName,
+              siblingType);
+              siblingsChecked = true
+            this.addHilightInList(siblingId, siblingType);
           } else {
-            this.removeFromList(siblings[i].getAttribute('data-id'),
-              siblings[i].getAttribute('data-type'));
+            this.removeFromList(siblingId, siblingType);
+            this.removeHilightInList(siblingId, siblingType);
             const siblingLabel = document.getElementById(
-              siblings[i].getAttribute('data-type') + '_' +
-              siblings[i].getAttribute('data-id') + '_LABEL');
+              siblingType + '_' + siblingId + '_LABEL');
             if (siblingLabel.classList.contains('minus')) {
               siblingHasMinus = true;
             }
@@ -203,12 +217,15 @@ export class SearchjobsComponent implements OnInit {
         parent['checked'] = true;
         parentLabel.classList.remove('minus');
         this.addToList(parent.getAttribute('data-id'), parent.getAttribute('data-name'), parent.getAttribute('data-type'));
+        this.addHilightInList(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
         const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {
-              this.removeFromList(siblings[i].getAttribute('data-id'),
-                siblings[i].getAttribute('data-type'));
+              const siblingId = siblings[i].getAttribute('data-id');
+              const siblingType = siblings[i].getAttribute('data-type');
+              this.removeFromList(siblingId, siblingType);
+              this.removeHilightInList(siblingId, siblingType);
             }
           }
         }
@@ -218,9 +235,11 @@ export class SearchjobsComponent implements OnInit {
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {
-              this.addToList(siblings[i].getAttribute('data-id'),
-                siblings[i].getAttribute('data-name'),
-                siblings[i].getAttribute('data-type'));
+              const siblingId = siblings[i].getAttribute('data-id');
+              const siblingName = siblings[i].getAttribute('data-name');
+              const siblingType = siblings[i].getAttribute('data-type');
+              this.addToList(siblingId, siblingName, siblingType);
+              this.addHilightInList(siblingId, siblingType);
             }
           }
         }
@@ -243,17 +262,20 @@ export class SearchjobsComponent implements OnInit {
       if (!this.areAllSiblingsChecked(grandParentId)) {
         grandParent['checked'] = false;
         this.removeFromList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-type'));
+        this.removeHilightInList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-type'));
       }
       if (siblings.length) {
         for (let i = 0; i < siblings.length; ++i) {
+          const siblingId = siblings[i].getAttribute('data-id');
+          const siblingName = siblings[i].getAttribute('data-name');
+          const siblingType = siblings[i].getAttribute('data-type');
           if (siblings[i]['checked']) {
-            this.addToList(siblings[i].getAttribute('data-id'),
-              siblings[i].getAttribute('data-name'),
-              siblings[i].getAttribute('data-type'));
-              siblingChecked = true;
+            this.addToList(siblingId, siblingName, siblingType);
+            this.addHilightInList(siblingId, siblingType);
+            siblingChecked = true;
           } else {
-            this.removeFromList(siblings[i].getAttribute('data-id'),
-              siblings[i].getAttribute('data-type'));
+            this.removeFromList(siblingId, siblingType);
+            this.removeHilightInList(siblingId, siblingType);
           }
         }
         if (siblingChecked) {
@@ -265,14 +287,16 @@ export class SearchjobsComponent implements OnInit {
       if (parentSiblings.length) {
         let parentSiblingChecked = false;
         for (let i = 0; i < parentSiblings.length; ++i) {
+          const parentSiblingId = parentSiblings[i].getAttribute('data-id');
+          const parentSiblingName = parentSiblings[i].getAttribute('data-name');
+          const parentSiblingType = parentSiblings[i].getAttribute('data-type');
           if (parentSiblings[i]['checked']) {
-            this.addToList(parentSiblings[i].getAttribute('data-id'),
-              parentSiblings[i].getAttribute('data-name'),
-              parentSiblings[i].getAttribute('data-type'));
-              parentSiblingChecked = true;
+            this.addToList(parentSiblingId, parentSiblingName, parentSiblingType);
+            this.addHilightInList(parentSiblingId, parentSiblingType);
+            parentSiblingChecked = true;
           } else {
-            this.removeFromList(parentSiblings[i].getAttribute('data-id'),
-              parentSiblings[i].getAttribute('data-type'));
+            this.removeFromList(parentSiblingId, parentSiblingType);
+            this.removeHilightInList(parentSiblingId, parentSiblingType);
           }
         }
         if (parentSiblingChecked) {
@@ -287,11 +311,15 @@ export class SearchjobsComponent implements OnInit {
       if (this.areAllSiblingsChecked(parentId)) {
         parent['checked'] = true;
         parentLabel.classList.remove('minus');
+        this.addToList(parent.getAttribute('data-id'), parent.getAttribute('data-name'), parent.getAttribute('data-type'));
+        this.addHilightInList(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {
-              this.removeFromList(siblings[i].getAttribute('data-id'),
-                siblings[i].getAttribute('data-type'));
+              const siblingId = siblings[i].getAttribute('data-id');
+              const siblingType = siblings[i].getAttribute('data-type');
+              this.removeFromList(siblingId, siblingType);
+              this.removeHilightInList(siblingId, siblingType);
             }
           }
         }
@@ -299,9 +327,12 @@ export class SearchjobsComponent implements OnInit {
           grandParent['checked'] = true;
           grandParentLabel.classList.remove('minus');
           this.addToList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-name'), grandParent.getAttribute('data-type'));
+          this.addHilightInList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-type'));
           for (let i = 0; i < parentSiblings.length; ++i) {
-            this.removeFromList(parentSiblings[i].getAttribute('data-id'),
-              parentSiblings[i].getAttribute('data-type'));
+            const parentSiblingId = parentSiblings[i].getAttribute('data-id');
+            const parentSiblingType = parentSiblings[i].getAttribute('data-type');
+            this.removeFromList(parentSiblingId, parentSiblingType);
+            this.removeHilightInList(parentSiblingId, parentSiblingType);
           }
         } else {
           for (let i = 0; i < parentSiblings.length; ++i) {
@@ -322,6 +353,12 @@ export class SearchjobsComponent implements OnInit {
         grandParentLabel.classList.add('minus');
       }
     }
+  }
+  addHilightInList(id: string, type: string) {
+    document.getElementById(type + '_' + id + '_CONTAINER').classList.add('hilight');
+  }
+  removeHilightInList(id: string, type: string) {
+    document.getElementById(type + '_' + id + '_CONTAINER').classList.remove('hilight');
   }
   areAllSiblingsChecked(parentId: string) {
     let allChecked = true;
