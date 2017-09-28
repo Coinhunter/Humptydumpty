@@ -117,7 +117,7 @@ export class SearchjobsComponent implements OnInit {
   //     }
   //   }
   // }
-  yrkesomradeCheck(e, id: string, name: string, type: string) {
+  levelOneCheck(e, id: string, name: string, type: string) {
     const target = e.target || e.srcElement;
     const label = document.getElementById(type + '_' + id + '_LABEL');
     const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
@@ -156,7 +156,7 @@ export class SearchjobsComponent implements OnInit {
     }
     this.search();
   }
-  yrkesgruppCheck(e, id: string, name: string, type: string) {
+  levelTwoCheck(e, id: string, name: string, type: string) {
     const target = e.target || e.srcElement;
     const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
     const label = document.getElementById(type + '_' + id + '_LABEL');
@@ -246,7 +246,7 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  yrkeCheck(e, id: string, name: string, type: string) {
+  levelThreeCheck(e, id: string, name: string, type: string) {
     const target = e.target || e.srcElement;
     const parentId = target.getAttribute('data-parent-id');
     const parent = document.getElementById(parentId);
@@ -343,6 +343,7 @@ export class SearchjobsComponent implements OnInit {
         }
       } else {
         this.addToList(id, name, type);
+        this.addHilightInList(id, type);
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {

@@ -49,11 +49,11 @@
 
                             </div>
                           </div>
-                          <div id="JobAreas" *ngIf="showJobAreas">
+                          <div id="JobAreas" class="list-level-1" *ngIf="showJobAreas">
                             <ul>
                               <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
                                 <div class="checkbox" id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_CONTAINER" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
-                                  <input (change)="yrkesomradeCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);"
+                                  <input (change)="levelOneCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);"
                                   name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}"
                                     id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
                                   <label id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_LABEL" class="korkortsklass ng-binding" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
@@ -61,10 +61,10 @@
 
                                   </div>
                                 </div>
-                                <ul id="{{yrkesomrade.id}}_{{yrkesomrade.typ}}_CHILDREN" *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup">
+                                <ul id="{{yrkesomrade.id}}_{{yrkesomrade.typ}}_CHILDREN" *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup list-level-2">
                                   <li *ngFor="let yrkesgrupp of yrkesomrade.yrkesgrupper">
                                     <div class="liContent checkbox" id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_CONTAINER">
-                                      <input (change)="yrkesgruppCheck($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ);" name="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}"
+                                      <input (change)="levelTwoCheck($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ);" name="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}"
                                         id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" attr.data-parent-id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox"
                                         attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
                                       <label id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_LABEL" class="korkortsklass ng-binding" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
@@ -72,10 +72,10 @@
 
                                       </div>
                                     </div>
-                                    <ul id="{{yrkesgrupp.id}}_{{yrkesgrupp.typ}}_CHILDREN" *ngIf="yrkesgrupp.yrken" class="hidden job" attr.data-parent-id="{{yrkesgrupp.id}}">
+                                    <ul id="{{yrkesgrupp.id}}_{{yrkesgrupp.typ}}_CHILDREN" *ngIf="yrkesgrupp.yrken" class="hidden job list-level-3" attr.data-parent-id="{{yrkesgrupp.id}}">
                                       <li *ngFor="let yrke of yrkesgrupp.yrken">
                                         <div class="liContent checkbox" id="{{yrke.typ}}_{{yrke.id}}_CONTAINER" attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
-                                          <input (change)="yrkeCheck($event, yrke.id, yrke.namn, yrke.typ);" name="{{yrke.typ}}_{{yrke.id}}"
+                                          <input (change)="levelThreeCheck($event, yrke.id, yrke.namn, yrke.typ);" name="{{yrke.typ}}_{{yrke.id}}"
                                             id="{{yrke.typ}}_{{yrke.id}}" attr.data-parent-id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" class="" type="checkbox"
                                              attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
                                           <label class="korkortsklass ng-binding" for="{{yrke.typ}}_{{yrke.id}}">{{yrke.namn}}</label>
