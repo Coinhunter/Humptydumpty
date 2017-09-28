@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { GlobalVariables } from '../../global';
-import { Observable } from 'rxjs/rx';
+import { Observable } from 'rxjs';
 import { SearchService } from '../search-result/search.service';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 

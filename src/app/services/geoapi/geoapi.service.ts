@@ -5,7 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GlobalVariables } from '../../global';
-import { Observable } from 'rxjs/rx';
+import { Observable } from 'rxjs';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 
 @NgModule({

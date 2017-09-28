@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/rx';
+import { Observable } from 'rxjs';
 
 import { ResultContainerMapService } from '../result-container-map/result-container-map.service';
 import { PbapiMatchningService } from '../pbapi-matchning/pbapi-matchning.service';

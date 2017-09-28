@@ -5,7 +5,7 @@ import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 import { Sokresultat } from '../../models/Sokresultat.interface';
-import { RelateratKriterium } from '../../models/Relateratkriterium.interface';
+import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
 
 @Component({
   selector: 'app-searchjobs',

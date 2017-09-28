@@ -1,5 +1,5 @@
 import { TestBed, inject, async } from '@angular/core/testing';
-import { Observable } from 'rxjs/rx';
+import { Observable } from 'rxjs';
 
 import { SearchService } from './search.service';
 import { PbapiMatchningService } from '../pbapi-matchning/pbapi-matchning.service';
