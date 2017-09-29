@@ -45,7 +45,7 @@
                             <div class="name">
                               Välj från kategori
                             </div>
-                            <div class="hasChildren collapsed">
+                            <div class="hasChildren collapsed fa">
 
                             </div>
                           </div>
@@ -57,8 +57,7 @@
                                   name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}"
                                     id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
                                   <label id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_LABEL" class="korkortsklass ng-binding" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
-                                  <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
-
+                                  <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
                                   </div>
                                 </div>
                                 <ul id="{{yrkesomrade.id}}_{{yrkesomrade.typ}}_CHILDREN" *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup list-level-2">
@@ -68,7 +67,7 @@
                                         id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" attr.data-parent-id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox"
                                         attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
                                       <label id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_LABEL" class="korkortsklass ng-binding" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
-                                      <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)">
+                                      <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)">
 
                                       </div>
                                     </div>

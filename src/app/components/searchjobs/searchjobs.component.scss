@@ -22,6 +22,26 @@
   border-radius: 5px;
 }
 
+.hasChildren {
+  float: right;
+  font-size: 17px;
+  font-weight: bolder;
+  text-align: center;
+  &::after {
+    content: '\f107';
+    color: #057aa9;
+    font-size: 20px;
+  }
+  &.expanded {
+    &::after {
+      content: '\f106';
+      // font-size: 25px;
+      line-height: 17px;
+      vertical-align: text-top;
+    }
+  }
+}
+
 #JobAreasToggle {
   padding: 5px;
   cursor: pointer;
@@ -35,19 +55,9 @@
     height: 30px;
     width: 30px;
     float: right;
-    font-size: 17px;
-    font-weight: bolder;
-    text-align: center;
+    padding-top: 2px;
     &::after {
-      content: '+';
-    }
-    &.expanded {
-      &::after {
-        content: '-';
-        font-size: 25px;
-        line-height: 17px;
-        vertical-align: text-top;
-      }
+      color: #000;
     }
   }
 }
@@ -57,7 +67,7 @@
 }
 
 .list-level-1 {
-  border-top: 1px dashed #C4C9CC;
+  border-top: #b5b5b5 solid 1px;
   padding-top: 0;
   > ul {
     padding-left: 0;
@@ -71,14 +81,18 @@
     padding: 0 5px;
   }
   .checkbox {
-    padding: 10px;
-    padding-right: 0;
+    // padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 0;
     margin-top: 1px;
+    position: relative;
     &.hilight {
-      background: #ADD8E6;
+      background: #c1e4f6;
     }
     label {
+      margin-top: 10px;
+      margin-bottom: 10px;
       &::before {
         width: 18px;
         height: 18px;
@@ -113,23 +127,15 @@
       display: inline-block;
     }
     .hasChildren {
-      height: 30px;
+      height: 100%;
       width: 40px;
-      float: right;
-      font-size: 17px;
-      font-weight: bolder;
-      text-align: center;
-      &::after {
-        content: '+';
-      }
-      &.expanded {
-        &::after {
-          content: '-';
-          font-size: 25px;
-          line-height: 17px;
-          vertical-align: text-top;
-        }
-      }
+      background-color: #FFF;
+      padding-top: 10px;
+      padding-bottom: 7px;
+      display: inline-block;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
     }
     li {
       cursor: pointer;
@@ -137,18 +143,17 @@
   }
   .list-level-2 {
     padding: 0;
-    border-top: #000 solid 1px;
-    border-bottom: #000 solid 1px;
+    border-top: #b5b5b5 solid 1px;
+    border-bottom: #b5b5b5 solid 1px;
     > li {
       > .checkbox {
-        padding-left: 15px;
-        padding-right: 0;
+        padding-left: 20px;
         > label {
           &::before {
-            left: 15px;
+            left: 20px;
           }
           &::after {
-            left: 19px;
+            left: 24px;
           }
         }
       }
@@ -156,10 +161,8 @@
   }
 
   .list-level-3 {
-    // background: #d2dee0;
-    padding: 0;
-    border-top: #000 solid 1px;
-    border-bottom: #000 solid 1px;
+    background: #f2f4f5;
+    padding: 10px 0;
     > li {
       > .checkbox {
         padding-left: 20px;
