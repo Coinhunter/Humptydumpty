@@ -415,7 +415,7 @@
                  <ul class="tag-list">
                    <li class="tag-item added repeated-item efterfragat ng-scope" *ngFor="let yrkesomrade of searchparameters">
                      <div class="kriteriumnamn ng-binding">{{yrkesomrade.namn}}</div>
-                     <button (click)="removeFromListAndUnselect(yrkesomrade.varde, yrkesomrade.typ)" class="btn-remove-tag">
+                     <button (click)="removeFromListAndUnselect(yrkesomrade.varde, yrkesomrade.namn, yrkesomrade.typ)" class="btn-remove-tag">
                        <span class="sr-only">Ta bort</span> <i class="fa fa-remove" aria-hidden="true"></i>
                      </button>
                    </li>

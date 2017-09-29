@@ -5,7 +5,7 @@ import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 import { Sokresultat } from '../../models/Sokresultat.interface';
-import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
+import { RelateratKriterium } from '../../models/Relateratkriterium.interface';
 
 @Component({
   selector: 'app-searchjobs',
@@ -95,30 +95,14 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  // toggleChild(e): void {
-  //   const target = e.target || e.srcElement;
-  //   const children = target.parentNode.parentNode.children;
-  //   for (const child of children) {
-  //     if (child.nodeName === 'UL') {
-  //         child.classList.toggle('hidden');
-  //     } else if (child.nodeName === 'DIV' && child.classList.contains('liContent')) {
-  //       const grandChildren = child.children;
-  //       for (const grandChild of grandChildren) {
-  //         if (grandChild.classList.contains('collapsed')) {
-  //           grandChild.classList.remove('collapsed');
-  //           grandChild.classList.add('expanded');
-  //         } else if (grandChild.classList.contains('expanded')) {
-  //           grandChild.classList.add('collapsed');
-  //           grandChild.classList.remove('expanded');
-  //         } else if (grandChild.classList.contains('checkbox')) {
-  //           grandChild.classList.toggle('checked');
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   levelOneCheck(e, id: string, name: string, type: string) {
-    const target = e.target || e.srcElement;
+    let target = e.target || e.srcElement;
+    if (target == null) {
+      if (type.toUpperCase() === 'YRKESOMRADE_ROLL') {
+        type = 'YRKESOMRADE';
+      }
+      target = document.getElementById(type + '_' + id);
+    }
     const label = document.getElementById(type + '_' + id + '_LABEL');
     const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
     if (!target.checked) {
@@ -157,7 +141,13 @@ export class SearchjobsComponent implements OnInit {
     this.search();
   }
   levelTwoCheck(e, id: string, name: string, type: string) {
-    const target = e.target || e.srcElement;
+    let target = e.target || e.srcElement;
+    if (target == null) {
+      if (type.toUpperCase() === 'YRKESGRUPP_ROLL') {
+        type = 'YRKESGRUPP';
+      }
+      target = document.getElementById(type + '_' + id);
+    }
     const children = document.querySelectorAll('[data-parent-id="' + type + '_' + id + '"]');
     const label = document.getElementById(type + '_' + id + '_LABEL');
     if (children.length) {
@@ -171,15 +161,18 @@ export class SearchjobsComponent implements OnInit {
         }
       }
     }
-    const parentId = target.getAttribute('data-parent-id');
-    const parent = document.getElementById(parentId);
-    const parentLabel = document.getElementById(parentId + '_LABEL');
+    const parentTagId = target.getAttribute('data-parent-id');
+    const parent = document.getElementById(parentTagId);
+    const parentLabel = document.getElementById(parentTagId + '_LABEL');
+    const parentId = parent.getAttribute('data-id');
+    const parentName = parent.getAttribute('data-name');
+    const parentType = parent.getAttribute('data-type');
     let siblingsChecked = false;
     if (!target.checked) {
       parent['checked'] = false;
-      this.removeFromListAndSearch(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
-      this.removeHilightInList(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
-      const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+      this.removeFromListAndSearch(parentId, parentType);
+      this.removeHilightInList(parentId, parentType);
+      const siblings = document.querySelectorAll('[data-parent-id="' + parentTagId + '"]');
       let siblingHasMinus = false;
       if (siblings.length) {
         for (let i = 0; i < siblings.length; ++i) {
@@ -213,12 +206,12 @@ export class SearchjobsComponent implements OnInit {
     } else {
       // Check if all siblings are checked
       label.classList.remove('minus');
-      if (this.areAllSiblingsChecked(parentId)) {
+      if (this.areAllSiblingsChecked(parentTagId)) {
         parent['checked'] = true;
         parentLabel.classList.remove('minus');
-        this.addToList(parent.getAttribute('data-id'), parent.getAttribute('data-name'), parent.getAttribute('data-type'));
-        this.addHilightInList(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
-        const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+        this.addToList(parentId, parentName, parentType);
+        this.addHilightInList(parentId, parentType);
+        const siblings = document.querySelectorAll('[data-parent-id="' + parentTagId + '"]');
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {
@@ -231,7 +224,7 @@ export class SearchjobsComponent implements OnInit {
         }
       } else {
         parentLabel.classList.add('minus');
-        const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
+        const siblings = document.querySelectorAll('[data-parent-id="' + parentTagId + '"]');
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {
@@ -247,22 +240,34 @@ export class SearchjobsComponent implements OnInit {
     }
   }
   levelThreeCheck(e, id: string, name: string, type: string) {
-    const target = e.target || e.srcElement;
-    const parentId = target.getAttribute('data-parent-id');
-    const parent = document.getElementById(parentId);
-    const parentLabel = document.getElementById(parentId + '_LABEL');
-    const grandParentId = parent.getAttribute('data-parent-id');
-    const grandParent = document.getElementById(grandParentId);
-    const grandParentLabel = document.getElementById(grandParentId + '_LABEL');
-    const siblings = document.querySelectorAll('[data-parent-id="' + parentId + '"]');
-    const parentSiblings = document.querySelectorAll('[data-parent-id="' + grandParentId + '"]');
+    let target = e.target || e.srcElement;
+    if (target == null) {
+      if (type.toUpperCase() === 'YRKESROLL') {
+        type = 'YRKE';
+      }
+      target = document.getElementById(type + '_' + id);
+    }
+    const parentTagId = target.getAttribute('data-parent-id');
+    const parent = document.getElementById(parentTagId);
+    const parentLabel = document.getElementById(parentTagId + '_LABEL');
+    const parentId = parent.getAttribute('data-id');
+    const parentName = parent.getAttribute('data-name');
+    const parentType = parent.getAttribute('data-type');
+    const grandParentTagId = parent.getAttribute('data-parent-id');
+    const grandParent = document.getElementById(grandParentTagId);
+    const grandParentLabel = document.getElementById(grandParentTagId + '_LABEL');
+    const grandParentId = grandParent.getAttribute('data-id');
+    const grandParentName = grandParent.getAttribute('data-name');
+    const grandParentType = grandParent.getAttribute('data-type');
+    const siblings = document.querySelectorAll('[data-parent-id="' + parentTagId + '"]');
+    const parentSiblings = document.querySelectorAll('[data-parent-id="' + grandParentTagId + '"]');
     let siblingChecked = false;
     if (!target.checked) {
       parent['checked'] = false;
-      if (!this.areAllSiblingsChecked(grandParentId)) {
+      if (!this.areAllSiblingsChecked(grandParentTagId)) {
         grandParent['checked'] = false;
-        this.removeFromList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-type'));
-        this.removeHilightInList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-type'));
+        this.removeFromList(grandParentId, grandParentType);
+        this.removeHilightInList(grandParentId, grandParentType);
       }
       if (siblings.length) {
         for (let i = 0; i < siblings.length; ++i) {
@@ -308,11 +313,11 @@ export class SearchjobsComponent implements OnInit {
         }
       }
     } else {
-      if (this.areAllSiblingsChecked(parentId)) {
+      if (this.areAllSiblingsChecked(parentTagId)) {
         parent['checked'] = true;
         parentLabel.classList.remove('minus');
-        this.addToList(parent.getAttribute('data-id'), parent.getAttribute('data-name'), parent.getAttribute('data-type'));
-        this.addHilightInList(parent.getAttribute('data-id'), parent.getAttribute('data-type'));
+        this.addToList(parentId, parentName, parentType);
+        this.addHilightInList(parentId, parentType);
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {
@@ -323,11 +328,11 @@ export class SearchjobsComponent implements OnInit {
             }
           }
         }
-        if (this.areAllSiblingsChecked(grandParentId)) {
+        if (this.areAllSiblingsChecked(grandParentTagId)) {
           grandParent['checked'] = true;
           grandParentLabel.classList.remove('minus');
-          this.addToList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-name'), grandParent.getAttribute('data-type'));
-          this.addHilightInList(grandParent.getAttribute('data-id'), grandParent.getAttribute('data-type'));
+          this.addToList(grandParentId, grandParentName, grandParentType);
+          this.addHilightInList(grandParentId, grandParentType);
           for (let i = 0; i < parentSiblings.length; ++i) {
             const parentSiblingId = parentSiblings[i].getAttribute('data-id');
             const parentSiblingType = parentSiblings[i].getAttribute('data-type');
@@ -461,7 +466,7 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  removeFromListAndUnselect(id: string, type: string) {
+  removeFromListAndUnselect(id: string, name: string, type: string) {
     const element = document.querySelectorAll('[data-id="' + id + '"]');
     if (element.length) {
       const children = element[0].childNodes;
@@ -486,6 +491,18 @@ export class SearchjobsComponent implements OnInit {
         const elem = document.getElementById('villkor-deltid');
         elem['checked'] = false;
       }
+    } else if (type.toUpperCase() === 'YRKESOMRADE_ROLL') {
+      const elem = document.getElementById('YRKESOMRADE_' + id);
+      elem['checked'] = false;
+      this.levelOneCheck(elem, id, name, type);
+    } else if (type.toUpperCase() === 'YRKESGRUPP_ROLL') {
+      const elem = document.getElementById('YRKESGRUPP_' + id);
+      elem['checked'] = false;
+      this.levelTwoCheck(elem, id, name, type);
+    } else if (type.toUpperCase() === 'YRKESROLL') {
+      const elem = document.getElementById('YRKE_' + id);
+      elem['checked'] = false;
+      this.levelThreeCheck(elem, id, name, type);
     }
     this.removeFromListAndSearch(id, type);
   }
@@ -629,18 +646,18 @@ export class SearchjobsComponent implements OnInit {
         this.search();
       }
     } else {
-      this.removeFromListAndUnselect('Endast Heltid', 'ARBETSOMFATTNING');
+      this.removeFromListAndUnselect('Endast Heltid', '', 'ARBETSOMFATTNING');
     }
   }
   parttimePropertyClick(e) {
     const target = e.target || e.srcElement;
     if (target.checked) {
       this.showParttimeSlider = true;
-      this.removeFromListAndUnselect('Endast Heltid', 'ARBETSOMFATTNING');
+      this.removeFromListAndUnselect('Endast Heltid', '', 'ARBETSOMFATTNING');
       this.updateSearchParametersWithParttime();
     } else {
       this.showParttimeSlider = false;
-      this.removeFromListAndUnselect('Deltid', 'ARBETSOMFATTNING');
+      this.removeFromListAndUnselect('Deltid', '', 'ARBETSOMFATTNING');
     }
   }
   updateSearchParametersWithParttime() {
