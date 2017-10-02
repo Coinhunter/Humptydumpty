@@ -2,17 +2,750 @@
   {
     "id": "1",
     "namn": "Administration, ekonomi, juridik",
-    "typ": "YRKESOMRADE"
+    "typ": "YRKESOMRADE",
+    "yrkesgrupper": [
+      {
+        "id": "2611",
+        "namn": "Advokater",
+        "typ": "YRKESGRUPP",
+        "yrken": [
+          {
+            "id": "6032",
+            "namn": "Advokat",
+            "typ": "YRKE"
+          },
+          {
+            "id": "3156",
+            "namn": "Brottmålsadvokat",
+            "typ": "YRKE"
+          },
+          {
+            "id": "3158",
+            "namn": "Tvistemålsadvokat",
+            "typ": "YRKE"
+          }
+        ]
+      },
+      {
+        "id": "2614",
+        "namn": "Affärs- och företagsjurister",
+        "typ": "YRKESGRUPP",
+        "yrken": [
+          {
+            "id": "4004",
+            "namn": "Affärsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6254",
+            "namn": "Arbetsrättsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6178",
+            "namn": "Bankjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6181",
+            "namn": "Bolagsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6251",
+            "namn": "Familjerättsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "4005",
+            "namn": "Fastighetsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "4006",
+            "namn": "Företagsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "3990",
+            "namn": "Försäkringsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6180",
+            "namn": "Immaterialrättsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "4002",
+            "namn": "Patentjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6029",
+            "namn": "Skattejurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "4003",
+            "namn": "Upphovsrättsjurist",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6559",
+            "namn": "Varumärkesjurist",
+            "typ": "YRKE"
+          }
+        ]
+      },
+      {
+        "id": "3333",
+        "namn": "Arbetsförmedlare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2623",
+        "namn": "Arkeologer och specialister inom humaniora m.m.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4410",
+        "namn": "Arkiv- och biblioteksassistenter m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4113",
+        "namn": "Backofficepersonal m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3343",
+        "namn": "Chefssekreterare och VD-assistenter m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2412",
+        "namn": "Controller",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2612",
+        "namn": "Domare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3342",
+        "namn": "Domstols- och juristsekreterare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4111",
+        "namn": "Ekonomiassistenter m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2413",
+        "namn": "Finansanalytiker och investeringsrådgivare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3321",
+        "namn": "Försäkringssäljare och försäkringsrådgivare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2615",
+        "namn": "Förvaltnings- och organisationsjurister",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3341",
+        "namn": "Gruppledare för kontorspersonal",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2432",
+        "namn": "Informatörer, kommunikatörer och PR-specialister",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4212",
+        "namn": "Inkasserare och pantlånare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4225",
+        "namn": "Kontorsreceptionister",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2421",
+        "namn": "Lednings- och organisationsutvecklare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4112",
+        "namn": "Löne- och personaladministratörer",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4117",
+        "namn": "Medicinska sekreterare, vårdadministratörer m fl",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3311",
+        "namn": "Mäklare inom finans",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2415",
+        "namn": "Nationalekonomer och makroanalytiker m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2423",
+        "namn": "Personal- och HR-specialister",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2422",
+        "namn": "Planerare och utredare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3313",
+        "namn": "Redovisningsekonomer",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2411",
+        "namn": "Revisorer m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3314",
+        "namn": "Skadereglerare och värderare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3352",
+        "namn": "Skattehandläggare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4116",
+        "namn": "Skolassistenter m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3353",
+        "namn": "Socialförsäkringshandläggare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2122",
+        "namn": "Statistiker",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4223",
+        "namn": "Telefonister",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2414",
+        "namn": "Traders och fondförvaltare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2613",
+        "namn": "Åklagare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2419",
+        "namn": "Övriga ekonomer",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3359",
+        "namn": "Övriga handläggare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2619",
+        "namn": "Övriga jurister",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4119",
+        "namn": "Övriga kontorsassistenter och sekreterare",
+        "typ": "YRKESGRUPP"
+      }
+    ]
   },
   {
     "id": "2",
     "namn": "Bygg och anläggning",
-    "typ": "YRKESOMRADE"
+    "typ": "YRKESOMRADE",
+    "yrkesgrupper": [
+      {
+        "id": "7114",
+        "namn": "Anläggningsarbetare",
+        "typ": "YRKESGRUPP",
+        "yrken": [
+          {
+            "id": "7170",
+            "namn": "Banarbetare, utan behörighetsbevis",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2319",
+            "namn": "Bantekniker",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2325",
+            "namn": "Beläggningsarbetare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "7169",
+            "namn": "Beläggningsarbetare, utan yrkesbevis",
+            "typ": "YRKE"
+          },
+          {
+            "id": "7114",
+            "namn": "Drift- och vägunderhållsarbetare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6916",
+            "namn": "Lärling, beläggningsarbete",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6917",
+            "namn": "Lärling, väg- och anläggningsarbetare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "5868",
+            "namn": "Stensättare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "5871",
+            "namn": "Väg-och anläggningsarbetare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "7168",
+            "namn": "Väg- och anläggningsarbetare, utan yrkesbevis",
+            "typ": "YRKE"
+          }
+        ]
+      },
+      {
+        "id": "7115",
+        "namn": "Anläggningsdykare",
+        "typ": "YRKESGRUPP",
+        "yrken": [
+          {
+            "id": "2855",
+            "namn": "Anläggningsdykare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2856",
+            "namn": "Bärgningsdykare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "5979",
+            "namn": "Dykare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2857",
+            "namn": "Inspektionsdykare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6918",
+            "namn": "Lärling, anläggningsdykare",
+            "typ": "YRKE"
+          }
+        ]
+      },
+      {
+        "id": "8342",
+        "namn": "Anläggningsmaskinförare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3121",
+        "namn": "Arbetsledare inom bygg, anläggning och gruva",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7113",
+        "namn": "Betongarbetare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "8113",
+        "namn": "Brunnsborrare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7213",
+        "namn": "Byggnads- och ventilationsplåtslagare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2142",
+        "namn": "Civilingenjörsyrken inom bygg och anläggning",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7122",
+        "namn": "Golvläggare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "9310",
+        "namn": "Grovarbetare inom bygg och anläggning",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "8111",
+        "namn": "Gruv- och stenbrottsarbetare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3112",
+        "namn": "Ingenjörer och tekniker inom bygg och anläggning",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7123",
+        "namn": "Isoleringsmontörer",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "8343",
+        "namn": "Kranförare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7126",
+        "namn": "Kyl- och värmepumpstekniker m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7112",
+        "namn": "Murare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7131",
+        "namn": "Målare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7116",
+        "namn": "Ställningsbyggare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7121",
+        "namn": "Takmontörer",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7111",
+        "namn": "Träarbetare, snickare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7125",
+        "namn": "VVS-montörer m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "7119",
+        "namn": "Övriga byggnads- och anläggningsarbetare",
+        "typ": "YRKESGRUPP"
+      }
+    ]
   },
   {
     "id": "20",
     "namn": "Chefer och verksamhetsledare",
-    "typ": "YRKESOMRADE"
+    "typ": "YRKESOMRADE",
+      "yrkesgrupper": [
+        {
+          "id": "1410",
+          "namn": "Chefer, grund- o gymnasieskola o vuxenutbildning",
+          "typ": "YRKESGRUPP",
+          "yrken": [
+            {
+              "id": "6654",
+              "namn": "Antagningschef, utbildning",
+              "typ": "YRKE"
+            },
+            {
+              "id": "7297",
+              "namn": "Biträdande rektor",
+              "typ": "YRKE"
+            },
+            {
+              "id": "7116",
+              "namn": "Prorektor",
+              "typ": "YRKE"
+            },
+            {
+              "id": "3422",
+              "namn": "Rektor",
+              "typ": "YRKE"
+            },
+            {
+              "id": "3423",
+              "namn": "Skolchef",
+              "typ": "YRKE"
+            },
+            {
+              "id": "3424",
+              "namn": "Skoldirektör",
+              "typ": "YRKE"
+            },
+            {
+              "id": "6073",
+              "namn": "Skolledare",
+              "typ": "YRKE"
+            },
+            {
+              "id": "3427",
+              "namn": "Studierektor",
+              "typ": "YRKE"
+            },
+            {
+              "id": "5245",
+              "namn": "Utbildningschef",
+              "typ": "YRKE"
+            },
+            {
+              "id": "3428",
+              "namn": "Utbildningsintendent",
+              "typ": "YRKE"
+            }
+          ]
+        },
+        {
+          "id": "1340",
+          "namn": "Chefer inom arkitekt- och ingenjörsverksamhet",
+          "typ": "YRKESGRUPP",
+          "yrken": [
+            {
+              "id": "4468",
+              "namn": "Byråchef",
+              "typ": "YRKE"
+            },
+            {
+              "id": "5229",
+              "namn": "Gatuchef",
+              "typ": "YRKE"
+            },
+            {
+              "id": "4477",
+              "namn": "Lantmäteridirektör",
+              "typ": "YRKE"
+            },
+            {
+              "id": "4480",
+              "namn": "Länsarkitekt",
+              "typ": "YRKE"
+            },
+            {
+              "id": "5236",
+              "namn": "Stadsbyggnadschef",
+              "typ": "YRKE"
+            },
+            {
+              "id": "5237",
+              "namn": "Stadsbyggnadsdirektör",
+              "typ": "YRKE"
+            },
+            {
+              "id": "5238",
+              "namn": "Teknisk chef, kommun",
+              "typ": "YRKE"
+            },
+            {
+              "id": "5239",
+              "namn": "Teknisk direktör, kommun",
+              "typ": "YRKE"
+            },
+            {
+              "id": "4491",
+              "namn": "Vägdirektör",
+              "typ": "YRKE"
+            }
+          ]
+        },
+        {
+          "id": "1610",
+          "namn": "Chefer inom bank, finans och försäkring",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1740",
+          "namn": "Chefer inom friskvård, sport och fritid",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1420",
+          "namn": "Chefer inom förskoleverksamhet",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1730",
+          "namn": "Chefer inom handel",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1510",
+          "namn": "Chefer inom hälso- och sjukvård",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1520",
+          "namn": "Chefer inom socialt och kurativt arbete",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1530",
+          "namn": "Chefer inom äldreomsorg",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1540",
+          "namn": "Chefer och ledare inom trossamfund",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1113",
+          "namn": "Chefstjänstemän i intresseorganisationer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1360",
+          "namn": "Driftchefer inom bygg, anläggning och gruva",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1210",
+          "namn": "Ekonomi- och finanschefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1350",
+          "namn": "Fastighets- och förvaltningschefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1330",
+          "namn": "Forsknings- och utvecklingschefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1250",
+          "namn": "Försäljnings- och marknadschefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1380",
+          "namn": "Förvaltare inom skogsbruk och lantbruk m.fl.",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1230",
+          "namn": "Förvaltnings- och planeringschefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1112",
+          "namn": "General-, landstings- och kommundirektörer m.fl.",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1710",
+          "namn": "Hotell- och konferenschefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1240",
+          "namn": "Informations-, kommunikations- och PR-chefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1320",
+          "namn": "Inköps-, logistik- och transportchefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1310",
+          "namn": "IT-chefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1220",
+          "namn": "Personal- och HR-chefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1111",
+          "namn": "Politiker",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1370",
+          "namn": "Produktionschefer inom tillverkning",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1720",
+          "namn": "Restaurang- och kökschefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1120",
+          "namn": "Verkställande direktörer m.fl.",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1290",
+          "namn": "Övriga administrations- och servicechefer",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1590",
+          "namn": "Övriga chefer inom samhällsservice",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1490",
+          "namn": "Övriga chefer inom utbildning",
+          "typ": "YRKESGRUPP"
+        },
+        {
+          "id": "1790",
+          "namn": "Övriga chefer inom övrig servicenäring",
+          "typ": "YRKESGRUPP"
+        }
+      ]
   },
   {
     "id": "3",
@@ -59,7 +792,44 @@
       {
         "id": "2516",
         "namn": "IT-säkerhetsspecialister",
-        "typ": "YRKESGRUPP"
+        "typ": "YRKESGRUPP",
+        "yrken": [
+          {
+            "id": "5944",
+            "namn": "Datasäkerhetsansvarig",
+            "typ": "YRKE"
+          },
+          {
+            "id": "7590",
+            "namn": "IT-forensiker",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2910",
+            "namn": "IT-metodansvarig",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2717",
+            "namn": "IT-säkerhetschef",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2718",
+            "namn": "Säkerhetsadministratör, IT",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2719",
+            "namn": "Säkerhetsanalytiker, IT",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2720",
+            "namn": "Säkerhetsansvarig, IT",
+            "typ": "YRKE"
+          }
+        ]
       },
       {
         "id": "2512",
@@ -116,7 +886,208 @@
   {
     "id": "5",
     "namn": "Försäljning, inköp, marknadsföring",
-    "typ": "YRKESOMRADE"
+    "typ": "YRKESOMRADE",
+    "yrkesgrupper": [
+      {
+        "id": "5227",
+        "namn": "Apotekstekniker",
+        "typ": "YRKESGRUPP",
+        "yrken": [
+          {
+            "id": "5056",
+            "namn": "Apoteksassistent",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6359",
+            "namn": "Apotekstekniker",
+            "typ": "YRKE"
+          }
+        ]
+      },
+      {
+        "id": "3312",
+        "namn": "Banktjänstemän",
+        "typ": "YRKESGRUPP",
+        "yrken": [
+          {
+            "id": "2962",
+            "namn": "Avdelningschef, bank",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2963",
+            "namn": "Gruppföreståndare, bank",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2738",
+            "namn": "Kreditberedare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2739",
+            "namn": "Kreditbevakare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "5948",
+            "namn": "Kredithandläggare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2741",
+            "namn": "Kreditman",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2742",
+            "namn": "Kreditrådgivare",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2967",
+            "namn": "Notariatchef, bank",
+            "typ": "YRKE"
+          },
+          {
+            "id": "2968",
+            "namn": "Notariattjänsteman, bank",
+            "typ": "YRKE"
+          },
+          {
+            "id": "428",
+            "namn": "Privatekonom",
+            "typ": "YRKE"
+          },
+          {
+            "id": "6008",
+            "namn": "Privatekonomisk rådgivare",
+            "typ": "YRKE"
+          }
+        ]
+      },
+      {
+        "id": "5225",
+        "namn": "Bensinstationspersonal",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5222",
+        "namn": "Butikssäljare, dagligvaror",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5223",
+        "namn": "Butikssäljare, fackhandel",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3332",
+        "namn": "Evenemangs- och reseproducenter m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5241",
+        "namn": "Eventsäljare och butiksdemonstratörer m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3334",
+        "namn": "Fastighetsmäklare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3322",
+        "namn": "Företagssäljare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5113",
+        "namn": "Guider och reseledare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3323",
+        "namn": "Inköpare och upphandlare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4115",
+        "namn": "Inköps- och orderassistenter",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5230",
+        "namn": "Kassapersonal m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4222",
+        "namn": "Kundtjänstpersonal",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "2431",
+        "namn": "Marknadsanalytiker och marknadsförare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4114",
+        "namn": "Marknads- och försäljningsassistenter",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4226",
+        "namn": "Marknadsundersökare och intervjuare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5224",
+        "namn": "Optikerassistenter",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3324",
+        "namn": "Ordersamordnare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "4221",
+        "namn": "Resesäljare och trafikassistenter m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3331",
+        "namn": "Speditörer och transportmäklare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5221",
+        "namn": "Säljande butikschefer o avdelningschefer i butik",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5242",
+        "namn": "Telefonförsäljare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "9520",
+        "namn": "Torg- och marknadsförsäljare m.fl.",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "5226",
+        "namn": "Uthyrare",
+        "typ": "YRKESGRUPP"
+      },
+      {
+        "id": "3339",
+        "namn": "Övriga förmedlare",
+        "typ": "YRKESGRUPP"
+      }
+    ]
   },
   {
     "id": "6",

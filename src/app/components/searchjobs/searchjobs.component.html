@@ -56,7 +56,7 @@
                                   <input (change)="levelOneCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);"
                                   name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}"
                                     id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
-                                  <label id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_LABEL" class="korkortsklass ng-binding" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
+                                  <label id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_LABEL" class="" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
                                   <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
                                   </div>
                                 </div>
@@ -66,7 +66,7 @@
                                       <input (change)="levelTwoCheck($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ);" name="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}"
                                         id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" attr.data-parent-id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox"
                                         attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
-                                      <label id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_LABEL" class="korkortsklass ng-binding" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
+                                      <label id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_LABEL" class="" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
                                       <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)">
 
                                       </div>
@@ -77,7 +77,7 @@
                                           <input (change)="levelThreeCheck($event, yrke.id, yrke.namn, yrke.typ);" name="{{yrke.typ}}_{{yrke.id}}"
                                             id="{{yrke.typ}}_{{yrke.id}}" attr.data-parent-id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" class="" type="checkbox"
                                              attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
-                                          <label class="korkortsklass ng-binding" for="{{yrke.typ}}_{{yrke.id}}">{{yrke.namn}}</label>
+                                          <label class="" for="{{yrke.typ}}_{{yrke.id}}">{{yrke.namn}}</label>
                                           <div *ngIf="yrkesgrupp.yrkesgrupper" class="hasChildren collapsed">
 
                                           </div>
@@ -549,7 +549,7 @@
                     <span *ngIf="listIsCompact">Visa större</span>
                   </a>
                 </div>
-                <div *ngFor="let behov of searchResult.rekryteringsbehov" ng-class="{sistaresultatrad:($last), compactlist : vm.isCompact}" in-view="vm.lineInView($inview)" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" class="resultatrad ng-scope" ng-repeat="rekryteringsbehov in vm.rekryteringsbehovResultat.rekryteringsbehov" style="">
+                <div *ngFor="let behov of searchResult.rekryteringsbehov" ui-sref="rekryteringsbehov.visarekryteringsbehov({id: rekryteringsbehov.id})" ng-click="vm.setVisited(rekryteringsbehov.id); vm.setUpResultatIndexForList(rekryteringsbehov.id)" href="/Tjanster/Arbetssokande/Platsbanken/annonser/21232941" class="resultatrad ng-scope">
                     <div class="annons-info">
                         <h3>
                           <a href="https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/annonser/{{behov.id}}" target="_blank" id="annons_{{behov.id}}" ng-click="vm.setVisited(rekryteringsbehov.id)" class="rubrik" ng-class="{'visited': vm.checkVisited(rekryteringsbehov.id)}">

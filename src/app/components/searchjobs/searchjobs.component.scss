@@ -93,6 +93,7 @@
     label {
       margin-top: 10px;
       margin-bottom: 10px;
+      padding-right: 28px;
       &::before {
         width: 18px;
         height: 18px;
@@ -169,6 +170,7 @@
         padding-right: 0;
         margin-top: 1px;
         > label {
+          padding-right: 0;
           &::before {
             left: 20px;
           }
