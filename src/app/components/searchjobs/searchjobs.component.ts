@@ -3,9 +3,9 @@ import { YrkenService } from '../../services/yrken/yrken.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
-import { Profilkriterium } from '../../models/ProfilKriterium.interface';
+import { Profilkriterium } from '../../models/Profilkriterium.interface';
 import { Sokresultat } from '../../models/Sokresultat.interface';
-import { RelateratKriterium } from '../../models/Relateratkriterium.interface';
+import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
 
 @Component({
   selector: 'app-searchjobs',
