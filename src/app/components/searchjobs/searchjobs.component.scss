@@ -73,6 +73,10 @@
     padding-left: 0;
     margin-bottom: 0;
     > li {
+      &:first-child > .checkbox > .hasChildren {
+        margin-top: -2px;
+        padding-top: 15px;
+      }
       &:last-child .checkbox {
         border-radius: 0 0 5px 5px;
       }
@@ -81,7 +85,6 @@
     padding: 0 5px;
   }
   .checkbox {
-    // padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
     margin: 0;
@@ -94,6 +97,7 @@
       margin-top: 10px;
       margin-bottom: 10px;
       padding-right: 28px;
+      max-width: calc(100% - 5px);
       &::before {
         width: 18px;
         height: 18px;
@@ -114,11 +118,6 @@
       }
     }
   }
-  li {
-    &:first-child .checkbox {
-      margin-top: 0;
-    }
-  }
   .name {
     max-width: calc(100% - 30px);
   }
@@ -131,12 +130,12 @@
       height: 100%;
       width: 40px;
       background-color: #FFF;
-      padding-top: 10px;
-      padding-bottom: 7px;
+      padding-top: 14px;
       display: inline-block;
       overflow: hidden;
       position: absolute;
       right: 0;
+      margin-top: 0;
     }
     li {
       cursor: pointer;
@@ -157,6 +156,10 @@
             left: 24px;
           }
         }
+      }
+      .hasChildren {
+        margin-top: 0;
+        padding-top: 12px;
       }
     }
   }
