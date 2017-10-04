@@ -1,56 +1,56 @@
 {
-  "rekryteringsbehovdetaljer":[
+  "rekryteringsbehovdetaljer": [
     {
-      "id":"7235810",
-      "externAnnonsId":"46-556242-1718-201059953",
-      "sokt":true,
-      "status":{
-        "id":"1",
-        "namn":"Godkänd för publicering",
-        "statusTyp":"GODKAND_FOR_PUBLICERING",
-        "publicerad":true
+      "id": "72358101",
+      "externAnnonsId": "46-556242-1718-201059953",
+      "sokt": true,
+      "status": {
+        "id": "1",
+        "namn": "Godkänd för publicering",
+        "statusTyp": "GODKAND_FOR_PUBLICERING",
+        "publicerad": true
       },
-      "arbetsgivareId":"10820448",
-      "organisationsnummer":"5562421718",
-      "arbetsplatsId":"0",
-      "annonsversion":"1.0",
-      "senastModifierad":1497007251188,
-      "publiceringsdatum":1497014134000,
-      "sistaPubliceringsdatum":1502755200000,
-      "sistaAnsokningsdatum":1502755200000,
-      "dagarTillSistaAnsokningsdatum":87,
-      "rubrik":"Onsitetekniker till ett globalt företag inom Telecom",
-      "yrkesroll":{
-        "id":"7020",
-        "namn":"Helpdesktekniker / Supporttekniker"
+      "arbetsgivareId": "10820448",
+      "organisationsnummer": "5562421718",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1497007251188,
+      "publiceringsdatum": 1497014134000,
+      "sistaPubliceringsdatum": 1514678400000,
+      "sistaAnsokningsdatum": 1514678400000,
+      "dagarTillSistaAnsokningsdatum": 87,
+      "rubrik": "Onsitetekniker till ett globalt företag inom Telecom",
+      "yrkesroll": {
+        "id": "7020",
+        "namn": "Helpdesktekniker / Supporttekniker"
       },
-      "yrkesgrupp":{
-        "id":"3512",
-        "namn":"Supporttekniker, IT"
+      "yrkesgrupp": {
+        "id": "3512",
+        "namn": "Supporttekniker, IT"
       },
-      "yrkesomrade":{
-        "id":"3",
-        "namn":"Data/IT"
+      "yrkesomrade": {
+        "id": "3",
+        "namn": "Data/IT"
       },
-      "arbetsomfattning":{
-        "max":100,
-        "min":100
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
       },
-      "anstallningstyp":{
-        "id":"1",
-        "namn":"Vanlig anställning"
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
       },
-      "varaktighet":{
-        "id":"1",
-        "namn":"Tillsvidare"
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
       },
-      "kompetenser":[
+      "kompetenser": [
         {
-          "id":"605533",
-          "namn":"Användarsupport, mjukvara"
+          "id": "605533",
+          "namn": "Användarsupport, mjukvara"
         }
       ],
-      "yrkeErfarenhet":[
+      "yrkeErfarenhet": [
         {
           "erfarenhet": {
             "namn": "erfarenhet efterfrågas",
@@ -70,32 +70,32 @@
           "varde": "IT"
         }
       ],
-      "utbildningsinriktning":[],
-      "erbjudenArbetsplats":{
-        "land":{
-          "id":"199",
-          "namn":"Sverige"
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
         },
-        "lan":{
-          "id":"01",
-          "namn":"Stockholms län"
+        "lan": {
+          "id": "01",
+          "namn": "Stockholms län"
         },
-        "kommun":{
-          "id":"0180",
-          "namn":"Stockholm"
+        "kommun": {
+          "id": "0180",
+          "namn": "Stockholm"
         },
-        "geoPosition":{
-          "id":null,
-          "namn":null,
-          "distans":null,
-          "longitud":18.071496744,
-          "latitud":59.3279493
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 18.071496744,
+          "latitud": 59.3279493
         }
       },
-      "logotypurl":null,
-      "arbetsgivarenamn":"Randstad AB",
-      "postadressArbetsplatsNamn":"Dfind IT",
-      "korkortList":[
+      "logotypurl": null,
+      "arbetsgivarenamn": "Randstad AB",
+      "postadressArbetsplatsNamn": "Dfind IT",
+      "korkortList": [
         {
           "namn": "A",
           "varde": "A"
@@ -109,72 +109,1620 @@
           "varde": "C"
         }
       ],
-      "kalla":"VIA_PLATSBANKEN_DXA",
-      "annonstext":"Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig <a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a> [ <a href=\"http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/\" target=\"_blank\" >http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/</a> ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion &amp; Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n ",
-      "fritext":null,
-      "foretagsinformation":"",
-      "lonetyp":"Fast månads- vecko- eller timlön",
-      "lonebeskrivning":"Fast lön",
-      "antalPlatser":1,
-      "visaAntalPlatser":true,
-      "beskrivningKrav":"",
-      "beskrivningBehov":"Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig tilda.stenmark@dfind.se [ http://tilda.stenmark@dfind.se/ ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion & Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n",
-      "egenbil":false,
-      "referens":"201059953",
-      "tilltrade":"",
-      "ansokningssattPost":"",
-      "ansokningssattEpost":"ansokfake@dfind.com",
-      "ansokningssattWebbadress":"https://www.randstad.se/JobPageRedirect.ashx?Reference=201059953&Jobsite=AMS&Brand=RandstadSE",
-      "ansokningssattAnnat":"",
-      "ansokningssattViaAf":false,
-      "ovrigtOmAnsokan":"För information om tjänsten är du välkommen att kontakta Test på tel. 074 28 954 alternativt Loffe på tel. 074 28 954. Gå in på länken och sök. Vi ser fram emot din ansökan!"
-      ,
-      "postadressUtdelningsadress":"Regeringsgatan 65",
-      "postadressPostnummer":"10724",
-      "postadressPostort":"STOCKHOLM",
-      "postadressLand":"SE",
-      "besoksadressGatuadress":"Regeringsgatan 65, 10724 STOCKHOLM",
-      "besoksadressOrt":"",
-      "telefonnummer":"",
-      "epost":"",
-      "webbplats":"",
-      "villkorsbeskrivning":"Heltid\r\nTillsvidare",
-      "ingenYrkeserfarenhetKravs":true,
-      "kontaktpersoner":[
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig <a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a> [ <a href=\"http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/\" target=\"_blank\" >http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/</a> ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion &amp; Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Fast lön",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig tilda.stenmark@dfind.se [ http://tilda.stenmark@dfind.se/ ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion & Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n",
+      "egenbil": false,
+      "referens": "201059953",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "ansokfake@dfind.com",
+      "ansokningssattWebbadress": "https://www.randstad.se/JobPageRedirect.ashx?Reference=201059953&Jobsite=AMS&Brand=RandstadSE",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "För information om tjänsten är du välkommen att kontakta Test på tel. 074 28 954 alternativt Loffe på tel. 074 28 954. Gå in på länken och sök. Vi ser fram emot din ansökan!",
+      "postadressUtdelningsadress": "Regeringsgatan 65",
+      "postadressPostnummer": "10724",
+      "postadressPostort": "STOCKHOLM",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Regeringsgatan 65, 10724 STOCKHOLM",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": "Heltid\r\nTillsvidare",
+      "ingenYrkeserfarenhetKravs": true,
+      "kontaktpersoner": [
         {
-          "fornamn":"Test",
-          "efternamn":"Testson",
-          "befattning":"Testare",
-          "mobilnummer":"070123456",
-          "telefonnummer":"08-123 4567",
-          "info":"tilda.stenmark@dfind.se",
-          "epost":"test@test.test",
-          "facklig":true
+          "fornamn": "Test",
+          "efternamn": "Testson",
+          "befattning": "Testare",
+          "mobilnummer": "070123456",
+          "telefonnummer": "08-123 4567",
+          "info": "tilda.stenmark@dfind.se",
+          "epost": "test@test.test",
+          "facklig": true
         },
         {
-          "fornamn":"Janne",
-          "efternamn":"Carlsson",
-          "befattning":"Loffare",
-          "mobilnummer":"",
-          "telefonnummer":"",
-          "info":"",
-          "epost":"loffe@test.test",
-          "facklig":false
+          "fornamn": "Janne",
+          "efternamn": "Carlsson",
+          "befattning": "Chef",
+          "mobilnummer": "",
+          "telefonnummer": "",
+          "info": "",
+          "epost": "loffe@test.test",
+          "facklig": false
         }
       ],
-      "matchningsresultat":null
+      "matchningsresultat": null
     },
     {
-      "id":"7235820",
-      "externAnnonsId":"46-212000-0142-156479",
-      "sokt":false,"status":{"id":"1","namn":"Godkänd för publicering","statusTyp":"GODKAND_FOR_PUBLICERING","publicerad":true},"arbetsgivareId":"10819876","organisationsnummer":"2120000142","arbetsplatsId":"0","annonsversion":"1.0","senastModifierad":1497007241464,"publiceringsdatum":1497014270000,"sistaPubliceringsdatum":1514678400000,"sistaAnsokningsdatum":1499759245248,"dagarTillSistaAnsokningsdatum":11,"rubrik":"Bibliotekarie till Farstaenheten 100%","yrkesroll":{"id":"5899","namn":"Bibliotekarie"},"yrkesgrupp":{"id":"2622","namn":"Bibliotekarier och arkivarier"},"yrkesomrade":{"id":"11","namn":"Kultur, media, design"},"arbetsomfattning":{"max":100,"min":100},"anstallningstyp":{"id":"1","namn":"Vanlig anställning"},"varaktighet":{"id":"1","namn":"Tillsvidare"},"kompetenser":[],
-      "yrkeErfarenhet":[
+      "id": "72358202",
+      "externAnnonsId": "46-212000-0142-156479",
+      "sokt": false,
+      "status": {
+        "id": "1",
+        "namn": "Godkänd för publicering",
+        "statusTyp": "GODKAND_FOR_PUBLICERING",
+        "publicerad": true
+      },
+      "arbetsgivareId": "10819876",
+      "organisationsnummer": "2120000142",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1497007241464,
+      "publiceringsdatum": 1497014270000,
+      "sistaPubliceringsdatum": 1513296000000,
+      "sistaAnsokningsdatum": 1513296000000,
+      "dagarTillSistaAnsokningsdatum": 11,
+      "rubrik": "Bibliotekarie till Farstaenheten 100%",
+      "yrkesroll": {
+        "id": "5899",
+        "namn": "Bibliotekarie"
+      },
+      "yrkesgrupp": {
+        "id": "2622",
+        "namn": "Bibliotekarier och arkivarier"
+      },
+      "yrkesomrade": {
+        "id": "11",
+        "namn": "Kultur, media, design"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [],
+      "yrkeErfarenhet": [
         {
-          "id":"5899",
-          "namn":"Bibliotekarie",
-          "erfarenhet":{
-            "id":"2",
-            "namn":"Mindre än 1 års erfarenhet"
-            }
-            }
-          ],"utbildningsinriktning":[],"erbjudenArbetsplats":{"land":{"id":"199","namn":"Sverige"},"lan":{"id":"01","namn":"Stockholms län"},"kommun":{"id":"0180","namn":"Stockholm"},"geoPosition":{"id":null,"namn":null,"distans":null,"longitud":18.042904336,"latitud":59.328456043}},"logotypurl":null,"arbetsgivarenamn":"Stockholms kommun","postadressArbetsplatsNamn":"Stockholms Stad, Kulturförvaltningen, Stockholms stadsbibliotek","korkortList":[],"kalla":"VIA_PLATSBANKEN_DXA","annonstext":"Stockholm växer som aldrig förr. Våra ambitioner är höga. Nu söker vi dig som vill vara med och forma morgondagens Stockholm.\n\n\r\n\r\nArbetsplatsbeskrivning\nKulturförvaltningen arbetar på uppdrag av kulturnämnden.\r\n\r\nVerksamheten omfattar Kulturskolan,Liljevalchs konsthall, Stadsbiblioteket samt Stadsmuseet med Medeltidsmuseet och Stockholmia. Vi svarar också för stadens kulturstöd, Ungdomsfestivalen ”We Are STHLM”, kulturfestivalen, medborgarskapsceremonin och för en rad projekt mm. Kulturförvaltningen har ca 900 anställda. Vi eftersträvar jämställdhet och mångfald och ser gärna sökanden med olika bakgrund och erfarenheter.\n\nStockholms stadsbibliotek består av Stadsbiblioteket, Internationella biblioteket, Regionbiblioteket Stockholm, 40 stadsdelsbibliotek samt drygt 50 bibliotek på sjukhus och andra vårdinstitutioner. Stockholms stadsbibliotek har ca 420 anställda. Vi förutsätter att du liksom vi sätter besökaren i centrum. Ditt uppdrag är att med fantasi och kunskap medverka till att forma ett bibliotek som är tillgängligt och angeläget för alla. Du kommer till ett stadsbibliotek i stark utveckling och med goda utvecklingsmöjligheter för den enskilde medarbetaren.\n\nFarstaenheten består av 4 bibliotek; Farsta, Enskede och Gubbängens bibliotek utmed linje 18 på gröna linjen samt Sköndal. Sköndals bibliotek är sedan ombyggnaden 2013 ett väl fungerande meröppet bibliotek. Enskede bibliotek är ett medelstort familjebibliotek som totalrenoverades 2014. Planering pågår för flytt av Gubbängens bibliotek till nya lokaler och med en ny verksamhetsidé. Farsta bibliotek ligger i kulturhuset Fanfaren och är enhetens största bibliotek och också ett programbibliotek med många besökare en omfattande programverksamhet. I strukturplanen är Farsta utpekat som ett nodbibliotek som när Farsta växer behöver större mer ändamålsenliga lokaler. Inom enheten arbetar idag 23 personer. Farsta bibliotek finns sedan ombyggnad 2011 i kulturhuset Fanfaren.\n\nArbetsbeskrivning\nDu blir en nyckelperson i enhetens verksamhet genom att vara ansvarig för bemanningsfrågor och scheman inom hela enheten. Du kommer också att vara kontaktperson för Farsta bibliotek och ansvara för lokala kontakter av olika slag. I din tjänst kommer du att tjänstgöra mycket ute i biblioteket. Beroende av kompetens och intressen finns stora möjligheter att påverka innehåller i tjänsten\n\nKvalifikationer\nVi söker dig som:\n\nHar högskoleutbildning – bibliotekarieexamen, magisterexamen i biblioteks- och informationsvetenskap eller annan utbildning som arbetsgivaren bedömer vara likvärdig.\n\nHar ett utpräglat användarperspektiv och stor förmåga att bidra till goda möten med bibliotekets besökare.\n\nHar intresse för bemanningsfrågor och schemaläggning\n\nHar stor social kompetens och mycket god samarbetsförmåga\n\nÖvrigt\n\nTjänsten är en tillsvidareanställning på heltid.\n\nTillträde 2017-09-01 eller enligt överenskommelse.\n\nVisst helg och kvällsarbete ingår i tjänsten.\n\nStockholms stad arbetar med kompetensbaserad rekrytering som syftar till att se till varje persons kompetens och därmed motverka diskriminering.\n\nInför rekryteringsarbetet har vi tagit ställning till rekryteringskanaler och marknadsföring. Vi undanber oss därför kontakt med mediesäljare, rekryteringssajter och liknande.\n ","fritext":null,"foretagsinformation":"","lonetyp":"Fast månads- vecko- eller timlön","lonebeskrivning":"Månadslön","antalPlatser":1,"visaAntalPlatser":true,"beskrivningKrav":"","beskrivningBehov":"Stockholm växer som aldrig förr. Våra ambitioner är höga. Nu söker vi dig som vill vara med och forma morgondagens Stockholm.\n\n\r\n\r\nArbetsplatsbeskrivning\nKulturförvaltningen arbetar på uppdrag av kulturnämnden.\r\n\r\nVerksamheten omfattar Kulturskolan,Liljevalchs konsthall, Stadsbiblioteket samt Stadsmuseet med Medeltidsmuseet och Stockholmia. Vi svarar också för stadens kulturstöd, Ungdomsfestivalen ”We Are STHLM”, kulturfestivalen, medborgarskapsceremonin och för en rad projekt mm. Kulturförvaltningen har ca 900 anställda. Vi eftersträvar jämställdhet och mångfald och ser gärna sökanden med olika bakgrund och erfarenheter.\n\nStockholms stadsbibliotek består av Stadsbiblioteket, Internationella biblioteket, Regionbiblioteket Stockholm, 40 stadsdelsbibliotek samt drygt 50 bibliotek på sjukhus och andra vårdinstitutioner. Stockholms stadsbibliotek har ca 420 anställda. Vi förutsätter att du liksom vi sätter besökaren i centrum. Ditt uppdrag är att med fantasi och kunskap medverka till att forma ett bibliotek som är tillgängligt och angeläget för alla. Du kommer till ett stadsbibliotek i stark utveckling och med goda utvecklingsmöjligheter för den enskilde medarbetaren.\n\nFarstaenheten består av 4 bibliotek; Farsta, Enskede och Gubbängens bibliotek utmed linje 18 på gröna linjen samt Sköndal. Sköndals bibliotek är sedan ombyggnaden 2013 ett väl fungerande meröppet bibliotek. Enskede bibliotek är ett medelstort familjebibliotek som totalrenoverades 2014. Planering pågår för flytt av Gubbängens bibliotek till nya lokaler och med en ny verksamhetsidé. Farsta bibliotek ligger i kulturhuset Fanfaren och är enhetens största bibliotek och också ett programbibliotek med många besökare en omfattande programverksamhet. I strukturplanen är Farsta utpekat som ett nodbibliotek som när Farsta växer behöver större mer ändamålsenliga lokaler. Inom enheten arbetar idag 23 personer. Farsta bibliotek finns sedan ombyggnad 2011 i kulturhuset Fanfaren.\n\nArbetsbeskrivning\nDu blir en nyckelperson i enhetens verksamhet genom att vara ansvarig för bemanningsfrågor och scheman inom hela enheten. Du kommer också att vara kontaktperson för Farsta bibliotek och ansvara för lokala kontakter av olika slag. I din tjänst kommer du att tjänstgöra mycket ute i biblioteket. Beroende av kompetens och intressen finns stora möjligheter att påverka innehåller i tjänsten\n\nKvalifikationer\nVi söker dig som:\n\nHar högskoleutbildning – bibliotekarieexamen, magisterexamen i biblioteks- och informationsvetenskap eller annan utbildning som arbetsgivaren bedömer vara likvärdig.\n\nHar ett utpräglat användarperspektiv och stor förmåga att bidra till goda möten med bibliotekets besökare.\n\nHar intresse för bemanningsfrågor och schemaläggning\n\nHar stor social kompetens och mycket god samarbetsförmåga\n\nÖvrigt\n\nTjänsten är en tillsvidareanställning på heltid.\n\nTillträde 2017-09-01 eller enligt överenskommelse.\n\nVisst helg och kvällsarbete ingår i tjänsten.\n\nStockholms stad arbetar med kompetensbaserad rekrytering som syftar till att se till varje persons kompetens och därmed motverka diskriminering.\n\nInför rekryteringsarbetet har vi tagit ställning till rekryteringskanaler och marknadsföring. Vi undanber oss därför kontakt med mediesäljare, rekryteringssajter och liknande.\n","egenbil":false,"referens":"2017/4305","tilltrade":"","ansokningssattPost":"","ansokningssattEpost":"","ansokningssattWebbadress":"https://stockholmsstad.mynetworkglobal.com/what:job/jobID:156479/type:job/where:1/apply:1","ansokningssattAnnat":"","ansokningssattViaAf":false,"ovrigtOmAnsokan":"","postadressUtdelningsadress":"Ragnar östbergs plan 1","postadressPostnummer":"11221","postadressPostort":"Stockholm","postadressLand":"SE","besoksadressGatuadress":"Ragnar östbergs plan 1","besoksadressOrt":"","telefonnummer":"","epost":"","webbplats":"","villkorsbeskrivning":" 100%. Tillträde: Enligt överenskommelse\r\ntillsvidareanställning","ingenYrkeserfarenhetKravs":false,"kontaktpersoner":[{"fornamn":"","efternamn":"","befattning":"","mobilnummer":"","telefonnummer":"08-50830575","info":"Telefonnummer: 08-50830575, Ranka Klincov","epost":"","facklig":false}],"matchningsresultat":null},{"id":"7233338","externAnnonsId":"46-232100-0032-13080","sokt":true,"status":{"id":"1","namn":"Godkänd för publicering","statusTyp":"GODKAND_FOR_PUBLICERING","publicerad":true},"arbetsgivareId":"10820079","organisationsnummer":"2321000032","arbetsplatsId":"0","annonsversion":"1.0","senastModifierad":1496914527035,"publiceringsdatum":1496921688000,"sistaPubliceringsdatum":1514678400000,"sistaAnsokningsdatum":1514678400000,"dagarTillSistaAnsokningsdatum":20,"rubrik":"Legitimerad Psykolog till Barn- och ungdomsteamet!","yrkesroll":{"id":"5709","namn":"Psykolog"},"yrkesgrupp":{"id":"2241","namn":"Psykologer"},"yrkesomrade":{"id":"8","namn":"Hälso- och sjukvård"},"arbetsomfattning":{"max":100,"min":100},"anstallningstyp":{"id":"1","namn":"Vanlig anställning"},"varaktighet":{"id":"1","namn":"Tillsvidare"},"kompetenser":[{"id":"3427","namn":"Legitimation som psykolog"}],"yrkeErfarenhet":[],"utbildningsinriktning":[],"erbjudenArbetsplats":{"land":{"id":"199","namn":"Sverige"},"lan":{"id":"04","namn":"Södermanlands län"},"kommun":{"id":"0480","namn":"Nyköping"},"geoPosition":{"id":null,"namn":null,"distans":null,"longitud":17.01059234,"latitud":58.787385546}},"logotypurl":null,"arbetsgivarenamn":"Södermanlands Läns Landsting","postadressArbetsplatsNamn":"Landstinget Sörmland","korkortList":[],"kalla":"VIA_PLATSBANKEN_DXA","annonstext":"Habiliteringsmottagningen Nyköping\r\n\r\nVälkommen att skapa Sveriges friskaste län tillsammans med oss.\n\nHabiliteringsverksamheten arbetar för att skapa förutsättningar för självständighet och ett aktivt liv genom utvecklande, stödjande och kompenserande insatser. Vårt uppdrag innebär att utreda och att ge habiliterande insatser till barn, ungdomar och vuxna personer med varaktiga funktionsnedsättningar såsom rörelsehinder, flerfunktionshinder, intellektuell funktionsnedsättning eller autismspektrumtillstånd. \n\nArbetet sker i tvärprofessionella team bestående av arbetsterapeut, kurator, logoped, läkare, psykolog, sjukgymnast/fysioterapeut, sjuksköterska samt specialpedagog. Insatser ges ofta i samverkan med personal inom kommun och andra landstingsverksamheter. Arbetet är varierande och mångsidigt och anpassas utifrån patientens behov vilket är en kreativ utmaning som gör arbetet flexibelt och spännande.  \n\nArbetsplats\nNeuropsykologisk utredning av misstänkt intellektuell funktionsnedsättning och/eller autismspektrumtillstånd. \n\nHabiliteringsarbete som innefattar kompenserande åtgärder, behandling och råd och stöd utifrån intellektuell funktionsnedsättning och autismspektrumtillstånd.\nInsatserna ges till patienter och anhöriga, både i grupp och individuellt. \nBedömning och insatser i komplexa ärenden samt handleda och ge konsultation i psykologiska frågor till övriga i teamet. Vara ett stöd i ärenden då teamet arbetar utifrån Tillämpad Beteendeanalys, TBA.\n\nInformation och rådgivning till nätverk och personal kring patienter. Kunskapsöverföring rörande olika diagnoser och funktionsnedsättningar till andra verksamheter ingår.\n\nDina huvudsakliga arbetsuppgifter\nInom psykologtjänsten finns även möjlighet till fördjupade uppdrag:\nHandledning och kunskapsstöd inom särskilt kunskapsområde till yrkesgruppen eller övrig personal. \nIntensiv Beteendeträning, IBT, med små barn som har diagnosen Autism. \nSakkunnig kompetens inom Habiliteringsverksamhetens länsövergripande remissgrupp.\n\nVi erbjuder dig\nNära samarbete med fyra psykologkollegor på habiliteringsmottagningen\nKontinuerlig extern handledning med psykologkollegor i länet\nBreddutbildning inom tillämpad beteendeanalys, TBA, samt intern handledning av psykolog med specialistkompetens inom TBA. \nMöjlighet att ingå arbetsgrupper för utveckling av verksamheten.\n\nDin kompetens\nVi söker dig som är legitimerad psykolog. \nErfarenhet av arbete med barn och ungdomar och/eller arbete med habiliteringens målgrupper är önskvärt. Utredningskompetens och fördjupad kunskap inom neuropsykologi och neuropsykiatri samt KBT-kompetens, är meriterande. \n\nVi lägger stor vikt vid personlig lämplighet. För att trivas med vårt arbetssätt behöver du ha en god samarbetsförmåga, vara lyhörd, flexibel och tycka om att arbeta i team, samtidigt som du uppskattar att arbeta med stort egenansvar.\nKörkort erfordras.\n\nAnställningsform och sysselsättningsgrad \nTillsvidareanställning på heltid. Tillträde enligt överenskommelse.\n\nInformation om tjänsten lämnas av\nVerksamhetschef Eva-Charlotte Bernthson, 0155-24 58 04.  \nLegitimerad psykolog Fredrik Ivarsson, 0155-24 76 43.\nFackliga företrädare nås via vxl, 0155-24 50 00.\n\nKom och jobba hos oss på Barn- och ungdomsteamet.\n\nVälkommen med din ansökan, inklusive CV, senast 2017-07-02.\nIntervjuer kommer att ske löpande.\n\nFölj oss gärna på\n<a href=\"https://www.facebook.com/lstsormlandJobbahososs\" target=\"_blank\" >https://www.facebook.com/lstsormlandJobbahososs</a>\n\nSe våra förmåner\n<a href=\"http://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/\" target=\"_blank\" >http://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/</a>\n\n\r\n\n\nVi har i vissa fall skyldighet att kontrollera om en person förekommer i misstanke- och eller belastningsregistret. Det kan ske på två sätt, endera begär landstinget ut uppgiften själv eller också uppmanas du att begära ut utdrag för att kunna visa upp innan anställning. Vi begär i undantagsfall att du visar upp registerutdrag även vid tillsättning av andra tjänster än de som avses ovan. Blir du aktuell för anställning kommer du att informeras om vad som gäller för den tjänst du sökt.\n\nVi gör aktiva val vid exponering och rekryteringsstöd och undanber oss därför direktkontakt av bemannings- och rekryteringsföretag. ","fritext":null,"foretagsinformation":"","lonetyp":"Fast månads- vecko- eller timlön","lonebeskrivning":"Fast lön. Kollektivavtal finns.","antalPlatser":1,"visaAntalPlatser":true,"beskrivningKrav":"","beskrivningBehov":"Habiliteringsmottagningen Nyköping\r\n\r\nVälkommen att skapa Sveriges friskaste län tillsammans med oss.\n\nHabiliteringsverksamheten arbetar för att skapa förutsättningar för självständighet och ett aktivt liv genom utvecklande, stödjande och kompenserande insatser. Vårt uppdrag innebär att utreda och att ge habiliterande insatser till barn, ungdomar och vuxna personer med varaktiga funktionsnedsättningar såsom rörelsehinder, flerfunktionshinder, intellektuell funktionsnedsättning eller autismspektrumtillstånd. \n\nArbetet sker i tvärprofessionella team bestående av arbetsterapeut, kurator, logoped, läkare, psykolog, sjukgymnast/fysioterapeut, sjuksköterska samt specialpedagog. Insatser ges ofta i samverkan med personal inom kommun och andra landstingsverksamheter. Arbetet är varierande och mångsidigt och anpassas utifrån patientens behov vilket är en kreativ utmaning som gör arbetet flexibelt och spännande.  \n\nArbetsplats\nNeuropsykologisk utredning av misstänkt intellektuell funktionsnedsättning och/eller autismspektrumtillstånd. \n\nHabiliteringsarbete som innefattar kompenserande åtgärder, behandling och råd och stöd utifrån intellektuell funktionsnedsättning och autismspektrumtillstånd.\nInsatserna ges till patienter och anhöriga, både i grupp och individuellt. \nBedömning och insatser i komplexa ärenden samt handleda och ge konsultation i psykologiska frågor till övriga i teamet. Vara ett stöd i ärenden då teamet arbetar utifrån Tillämpad Beteendeanalys, TBA.\n\nInformation och rådgivning till nätverk och personal kring patienter. Kunskapsöverföring rörande olika diagnoser och funktionsnedsättningar till andra verksamheter ingår.\n\nDina huvudsakliga arbetsuppgifter\nInom psykologtjänsten finns även möjlighet till fördjupade uppdrag:\nHandledning och kunskapsstöd inom särskilt kunskapsområde till yrkesgruppen eller övrig personal. \nIntensiv Beteendeträning, IBT, med små barn som har diagnosen Autism. \nSakkunnig kompetens inom Habiliteringsverksamhetens länsövergripande remissgrupp.\n\nVi erbjuder dig\nNära samarbete med fyra psykologkollegor på habiliteringsmottagningen\nKontinuerlig extern handledning med psykologkollegor i länet\nBreddutbildning inom tillämpad beteendeanalys, TBA, samt intern handledning av psykolog med specialistkompetens inom TBA. \nMöjlighet att ingå arbetsgrupper för utveckling av verksamheten.\n\nDin kompetens\nVi söker dig som är legitimerad psykolog. \nErfarenhet av arbete med barn och ungdomar och/eller arbete med habiliteringens målgrupper är önskvärt. Utredningskompetens och fördjupad kunskap inom neuropsykologi och neuropsykiatri samt KBT-kompetens, är meriterande. \n\nVi lägger stor vikt vid personlig lämplighet. För att trivas med vårt arbetssätt behöver du ha en god samarbetsförmåga, vara lyhörd, flexibel och tycka om att arbeta i team, samtidigt som du uppskattar att arbeta med stort egenansvar.\nKörkort erfordras.\n\nAnställningsform och sysselsättningsgrad \nTillsvidareanställning på heltid. Tillträde enligt överenskommelse.\n\nInformation om tjänsten lämnas av\nVerksamhetschef Eva-Charlotte Bernthson, 0155-24 58 04.  \nLegitimerad psykolog Fredrik Ivarsson, 0155-24 76 43.\nFackliga företrädare nås via vxl, 0155-24 50 00.\n\nKom och jobba hos oss på Barn- och ungdomsteamet.\n\nVälkommen med din ansökan, inklusive CV, senast 2017-07-02.\nIntervjuer kommer att ske löpande.\n\nFölj oss gärna på\nhttps://www.facebook.com/lstsormlandJobbahososs\n\nSe våra förmåner\nhttp://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/\n\n\r\n\n\nVi har i vissa fall skyldighet att kontrollera om en person förekommer i misstanke- och eller belastningsregistret. Det kan ske på två sätt, endera begär landstinget ut uppgiften själv eller också uppmanas du att begära ut utdrag för att kunna visa upp innan anställning. Vi begär i undantagsfall att du visar upp registerutdrag även vid tillsättning av andra tjänster än de som avses ovan. Blir du aktuell för anställning kommer du att informeras om vad som gäller för den tjänst du sökt.\n\nVi gör aktiva val vid exponering och rekryteringsstöd och undanber oss därför direktkontakt av bemannings- och rekryteringsföretag.","egenbil":false,"referens":"RNLN-17-112","tilltrade":"","ansokningssattPost":"","ansokningssattEpost":"","ansokningssattWebbadress":"https://sormland.powerinit.com/Modules/Recruitments/Public/?JobPositionId=13080&RefNo=RNLN-17-112&Source=[JobPositionSource]","ansokningssattAnnat":"","ansokningssattViaAf":false,"ovrigtOmAnsokan":"","postadressUtdelningsadress":"Repslagaregatan 19","postadressPostnummer":"61188","postadressPostort":"Nyköping","postadressLand":"SE","besoksadressGatuadress":"Repslagaregatan 19","besoksadressOrt":"","telefonnummer":"","epost":"","webbplats":"","villkorsbeskrivning":"Tillsvidare, 100%, Tillträde Enligt överenskommelse\r\n\n-","ingenYrkeserfarenhetKravs":true,"kontaktpersoner":[],"matchningsresultat":null},{"id":"10458469","externAnnonsId":"0017-258568","sokt":false,"status":{"id":"2","namn":"Avpublicerad","statusTyp":"AVPUBLICERAD","publicerad":false},"arbetsgivareId":"0","organisationsnummer":"5565288791","arbetsplatsId":"10108232","annonsversion":"2.0","senastModifierad":1493806001604,"publiceringsdatum":1493726636000,"sistaPubliceringsdatum":1514678400000,"sistaAnsokningsdatum":1514678400000,"dagarTillSistaAnsokningsdatum":-12,"rubrik":"Bagare & Konditor sökes","yrkesroll":{"id":"5504","namn":"Bagare / Konditor"},"yrkesgrupp":{"id":"7612","namn":"Bagare och konditorer"},"yrkesomrade":{"id":"6","namn":"Hantverksyrken"},"arbetsomfattning":{"max":50,"min":50},"anstallningstyp":{"id":"2","namn":"Sommarjobb / feriejobb"},"varaktighet":{"id":"1","namn":"Tillsvidare"},"kompetenser":[],"yrkeErfarenhet":[{"id":"5504","namn":"Bagare / Konditor","erfarenhet":{"id":"2","namn":"Mindre än 1 års erfarenhet"}}],"utbildningsinriktning":[],"erbjudenArbetsplats":{"land":{"id":"199","namn":"Sverige"},"lan":{"id":"13","namn":"Hallands län"},"kommun":{"id":"1384","namn":"Kungsbacka"},"geoPosition":{"id":null,"namn":null,"distans":null,"longitud":12.020591814,"latitud":57.405042535}},"logotypurl":null,"arbetsgivarenamn":"Majgårdens Bageri & Konditori","postadressArbetsplatsNamn":"Majgårdens Bageri & Konditori","korkortList":[],"kalla":"VIA_PLATSBANKEN_AIS","annonstext":"Majgården Bageri i Onsala -ett riktigt bageri - bakat sedan 1933.\r\n\r\nMajgården Bageri, Konditori, har funnits i Onsala sedan början på 1930-talet.Recepten som fanns då följs även idag med samma kvalitetsråvaror, vilket gör oss smått unika och så uppskattade. \r\nÅr 2000 öppnade vårt bageri/konditori/café i Kungsbacka. \r\n \r\nMajgården söker bagare till vårt tradionella bageri, du bakar allt från bröd till bullar. Vi vill att du har ugnsvana.\r\n\r\nVi söker även konditor. Viss erfarenhet krävs. \r\n\r\nDet är viktigt att du har körkort och bil om du inte bor i närheten eftersom vi börjar vid 04-05 på morgonen.\r\n\r\nVälkommen med din ansökan via mail, har du frågor är du välkommen att ringa 0300-60053 fråga efter Viktoria ","fritext":null,"foretagsinformation":"","lonetyp":"Fast månads- vecko- eller timlön","lonebeskrivning":"","antalPlatser":1,"visaAntalPlatser":true,"beskrivningKrav":"","beskrivningBehov":"Majgården Bageri i Onsala -ett riktigt bageri - bakat sedan 1933.\r\n\r\nMajgården Bageri, Konditori, har funnits i Onsala sedan början på 1930-talet.Recepten som fanns då följs även idag med samma kvalitetsråvaror, vilket gör oss smått unika och så uppskattade. \r\nÅr 2000 öppnade vårt bageri/konditori/café i Kungsbacka. \r\n \r\nMajgården söker bagare till vårt tradionella bageri, du bakar allt från bröd till bullar. Vi vill att du har ugnsvana.\r\n\r\nVi söker även konditor. Viss erfarenhet krävs. \r\n\r\nDet är viktigt att du har körkort och bil om du inte bor i närheten eftersom vi börjar vid 04-05 på morgonen.\r\n\r\nVälkommen med din ansökan via mail, har du frågor är du välkommen att ringa 0300-60053 fråga efter Viktoria","egenbil":false,"referens":"","tilltrade":"Maj/Juni","ansokningssattPost":"","ansokningssattEpost":"majgardensbageri@telia.com","ansokningssattWebbadress":"","ansokningssattAnnat":"","ansokningssattViaAf":false,"ovrigtOmAnsokan":"Maila din ansökan eller ring butiken och fråga efter Viktoria","postadressUtdelningsadress":"","postadressPostnummer":"43931","postadressPostort":"ONSALA","postadressLand":"","besoksadressGatuadress":"Gottskärsvägen 42","besoksadressOrt":"","telefonnummer":"0300-60053","epost":"majgardensbageri@telia.com","webbplats":"","villkorsbeskrivning":"","ingenYrkeserfarenhetKravs":false,"kontaktpersoner":[{"fornamn":"","efternamn":"","befattning":"","mobilnummer":"","telefonnummer":"","info":"Viktoria Frederiksen, ägare 0300-60053","epost":"majgardensbageri@telia.com","facklig":false}],"matchningsresultat":null},{"id":"10458475","externAnnonsId":"0017-258639","sokt":true,"status":{"id":"2","namn":"Avpublicerad","statusTyp":"AVPUBLICERAD","publicerad":false},"arbetsgivareId":"0","organisationsnummer":"5590052402","arbetsplatsId":"20969423","annonsversion":"1.0","senastModifierad":1493719516467,"publiceringsdatum":1493726636000,"sistaPubliceringsdatum":1496267999000,"sistaAnsokningsdatum":1496267999000,"dagarTillSistaAnsokningsdatum":-12,"rubrik":"Bagare och Konditor","yrkesroll":{"id":"5504","namn":"Bagare / Konditor"},"yrkesgrupp":{"id":"7612","namn":"Bagare och konditorer"},"yrkesomrade":{"id":"6","namn":"Hantverksyrken"},"arbetsomfattning":{"max":100,"min":100},"anstallningstyp":{"id":"1","namn":"Vanlig anställning"},"varaktighet":{"id":"2","namn":"6 månader eller längre"},"kompetenser":[],"yrkeErfarenhet":[{"id":"5504","namn":"Bagare / Konditor","erfarenhet":{"id":"2","namn":"Mindre än 1 års erfarenhet"}}],"utbildningsinriktning":[],"erbjudenArbetsplats":{"land":{"id":"199","namn":"Sverige"},"lan":{"id":"01","namn":"Stockholms län"},"kommun":{"id":"0163","namn":"Sollentuna"},"geoPosition":{"id":null,"namn":null,"distans":null,"longitud":17.944565555,"latitud":59.428491188}},"logotypurl":null,"arbetsgivarenamn":"TaVi Brödkällaren i Stockholm AB","postadressArbetsplatsNamn":"TaVi Brödkällaren i Stockholm AB","korkortList":[],"kalla":"VIA_PLATSBANKEN_AIS","annonstext":"Verksamhetsbeskrivning\r\nBageri med butikdel.\r\n\r\nArbetsuppgifter\r\nBagare som även kan konditoridelen.\r\n\r\nUtbildning/Erfarenhet\r\nErfarenhet krävs. Du ska helst kunna både bageri- och konditoridelen. ","fritext":null,"foretagsinformation":"","lonetyp":"Rörlig ackords- eller provisionslön","lonebeskrivning":"","antalPlatser":1,"visaAntalPlatser":true,"beskrivningKrav":"","beskrivningBehov":"Verksamhetsbeskrivning\r\nBageri med butikdel.\r\n\r\nArbetsuppgifter\r\nBagare som även kan konditoridelen.\r\n\r\nUtbildning/Erfarenhet\r\nErfarenhet krävs. Du ska helst kunna både bageri- och konditoridelen.","egenbil":false,"referens":"","tilltrade":"Omgående","ansokningssattPost":"","ansokningssattEpost":"info@brodkallaren.se","ansokningssattWebbadress":"","ansokningssattAnnat":"","ansokningssattViaAf":false,"ovrigtOmAnsokan":"Vi tar emot ansökan med CV och Ansökningsbrev via E-post.","postadressUtdelningsadress":"","postadressPostnummer":"19160","postadressPostort":"SOLLENTUNA","postadressLand":"","besoksadressGatuadress":"Tingsvägen 29 B","besoksadressOrt":"","telefonnummer":"072-1795511","epost":"info@brodkallaren.se","webbplats":"","villkorsbeskrivning":"Heltidsanställning på 6 månader eller längre.","ingenYrkeserfarenhetKravs":false,"kontaktpersoner":[{"fornamn":"","efternamn":"","befattning":"","mobilnummer":"","telefonnummer":"","info":"Vincent Tsai, 072-179 55 11","epost":"info@brodkallaren.se","facklig":false}],"matchningsresultat":null},{"id":"7151594","externAnnonsId":"46-202100-2064-00132558","sokt":false,"status":{"id":"2","namn":"Avpublicerad","statusTyp":"AVPUBLICERAD","publicerad":false},"arbetsgivareId":"10800030","organisationsnummer":"2021002064","arbetsplatsId":"0","annonsversion":"1.0","senastModifierad":1492065386716,"publiceringsdatum":1492071877000,"sistaPubliceringsdatum":1493848799000,"sistaAnsokningsdatum":1493848799000,"dagarTillSistaAnsokningsdatum":-40,"rubrik":"Interaktionsdesigner","yrkesroll":{"id":"7575","namn":"Interaktionsdesigner"},"yrkesgrupp":{"id":"2512","namn":"Mjukvaru- och systemutvecklare m.fl."},"yrkesomrade":{"id":"3","namn":"Data/IT"},"arbetsomfattning":{"max":100,"min":100},"anstallningstyp":{"id":"1","namn":"Vanlig anställning"},"varaktighet":{"id":"1","namn":"Tillsvidare"},"kompetenser":[{"id":"607287","namn":"Interaktionsdesign"}],"yrkeErfarenhet":[{"id":"7575","namn":"Interaktionsdesigner","erfarenhet":{"id":"2","namn":"Mindre än 1 års erfarenhet"}}],"utbildningsinriktning":[],"erbjudenArbetsplats":{"land":{"id":"199","namn":"Sverige"},"lan":{"id":"17","namn":"Värmlands län"},"kommun":{"id":"1780","namn":"Karlstad"},"geoPosition":{"id":null,"namn":null,"distans":null,"longitud":13.400489952,"latitud":59.364530009}},"logotypurl":null,"arbetsgivarenamn":"Konsumentverket","postadressArbetsplatsNamn":"Konsumentverket","korkortList":[],"kalla":"VIA_PLATSBANKEN_DXA","annonstext":"Konsumentverket har högst anseende bland Sveriges myndigheter och konsumentverket.se utsågs 2017 till en av de fem bästa myndighetswebbplatserna. \nNu satsar vi ännu mer på digital utveckling och har skapat en enhet som fokuserar på digitala tjänster. Vi behöver dig som är riktigt duktig på interaktionsdesign som vill förstärka vår digitala satsning. För att få en känsla för hur vi jobbar kan du kolla in den här korta filmen <a href=\"https://youtu.be/5yz-6iD49XI\" target=\"_blank\" >https://youtu.be/5yz-6iD49XI</a>\n\nDina arbetsuppgifter \nSom interaktionsdesigner arbetar du på Enheten för digitala tjänster med utveckling av myndighetens webbtjänster och webbplatser. Du översätter idéer, krav och användarnas behovtill skisser och prototyper.\n\n\nVi jobbar i små, agila utvecklingsteam så du har nära samarbete med både kollegor ochexterna konsulter. Ditt fokus är interaktionsdesign men du har en viktig roll i alla steg i utvecklingsprocessen. Tillsammans kartlägger vi användarnas behov och beteenden genom användartester, intervjuer och workshops. Du omsätter sedan resultaten till idéer och skisser på hur användargränssnittet ska se ut och följer upp med prototyper och tester. Den röda tråden för oss är att skapa användarvänliga tjänster och att ständigt förbättra flöden och användarupplevelser i våra digitala kanaler.\n\n\nDet händer mycket på Konsumentverket just nu och du som kompletterar vårt team får bland annat chansen att jobba med ett par nya, spännande regeringsuppdrag inom hållbar konsumtion. Under de närmaste åren vill vi att du bidrar med idéer kring smarta digitala tjänster som ligger i framkant och kan underlätta för konsumenter att handla miljösmart. Du kommer också att vara med i den fortsatta utvecklingen av vårt arbetssätt med användarcentrerad utveckling.\n\nDin bakgrund \nDu har relevant utbildning inom interaktionsdesign eller UX design, meriterande är högskoleutbildning. Det är ett krav att du tidigare har arbetat med interaktionsdesign och gränssnittsutveckling. Vi utvecklar tjänster för alla, så du har självklart bra koll på tillgänglighet och webb-standards. Du drivs av att skapa innovativa och användarvänliga digitala lösningar och du har ett genuint intresse för användarnas beteenden. Du har goda kunskaper i relevanta verktyg för att skapa prototyper, trådskisser och designskisser.\n\n\nDu är driven, kreativ och vågar prova nya vägar. Du har mycket god kommunikationsförmåga,är engagerad och jobbar lika gärna självständigt som i grupp, men alltid med fokus på resultatoch användarnytta. Självklart bemöter du andra med prestigelöshet, respekt och omtanke.Vi strävar efter en arbetsplats där medarbetarnas olikheter berikar verksamheten.\n\n\nAnställningsform \nTillsvidareanställning med 6 månaders provanställning. Tillträde enligt överenskommelse.\n\n\nVill du få mer information? \nMer information om anställningen får du av enhetschef Katja Stjernlöf.Fackliga representanter är Joacim Malmström för OFR vid Konsumentverket och Bo Lång för Saco–S-föreningen vid Konsumentverket. Du når samtliga genom att ringa vår växel på telefonnummer 0771-42 33 00.\n\n\nSå här ansöker du \nDu söker tjänsten i vårt rekryteringsverktyg. Det är viktigt att du i ditt personliga brev anger dnr. 2017/433.\n\nSenast den 3 maj 2017 vill vi ha din ansökan. ","fritext":null,"foretagsinformation":"","lonetyp":"Fast månads- vecko- eller timlön","lonebeskrivning":"Månadslön","antalPlatser":1,"visaAntalPlatser":true,"beskrivningKrav":"","beskrivningBehov":"Konsumentverket har högst anseende bland Sveriges myndigheter och konsumentverket.se utsågs 2017 till en av de fem bästa myndighetswebbplatserna. \nNu satsar vi ännu mer på digital utveckling och har skapat en enhet som fokuserar på digitala tjänster. Vi behöver dig som är riktigt duktig på interaktionsdesign som vill förstärka vår digitala satsning. För att få en känsla för hur vi jobbar kan du kolla in den här korta filmen https://youtu.be/5yz-6iD49XI\n\nDina arbetsuppgifter \nSom interaktionsdesigner arbetar du på Enheten för digitala tjänster med utveckling av myndighetens webbtjänster och webbplatser. Du översätter idéer, krav och användarnas behovtill skisser och prototyper.\n\n\nVi jobbar i små, agila utvecklingsteam så du har nära samarbete med både kollegor ochexterna konsulter. Ditt fokus är interaktionsdesign men du har en viktig roll i alla steg i utvecklingsprocessen. Tillsammans kartlägger vi användarnas behov och beteenden genom användartester, intervjuer och workshops. Du omsätter sedan resultaten till idéer och skisser på hur användargränssnittet ska se ut och följer upp med prototyper och tester. Den röda tråden för oss är att skapa användarvänliga tjänster och att ständigt förbättra flöden och användarupplevelser i våra digitala kanaler.\n\n\nDet händer mycket på Konsumentverket just nu och du som kompletterar vårt team får bland annat chansen att jobba med ett par nya, spännande regeringsuppdrag inom hållbar konsumtion. Under de närmaste åren vill vi att du bidrar med idéer kring smarta digitala tjänster som ligger i framkant och kan underlätta för konsumenter att handla miljösmart. Du kommer också att vara med i den fortsatta utvecklingen av vårt arbetssätt med användarcentrerad utveckling.\n\nDin bakgrund \nDu har relevant utbildning inom interaktionsdesign eller UX design, meriterande är högskoleutbildning. Det är ett krav att du tidigare har arbetat med interaktionsdesign och gränssnittsutveckling. Vi utvecklar tjänster för alla, så du har självklart bra koll på tillgänglighet och webb-standards. Du drivs av att skapa innovativa och användarvänliga digitala lösningar och du har ett genuint intresse för användarnas beteenden. Du har goda kunskaper i relevanta verktyg för att skapa prototyper, trådskisser och designskisser.\n\n\nDu är driven, kreativ och vågar prova nya vägar. Du har mycket god kommunikationsförmåga,är engagerad och jobbar lika gärna självständigt som i grupp, men alltid med fokus på resultatoch användarnytta. Självklart bemöter du andra med prestigelöshet, respekt och omtanke.Vi strävar efter en arbetsplats där medarbetarnas olikheter berikar verksamheten.\n\n\nAnställningsform \nTillsvidareanställning med 6 månaders provanställning. Tillträde enligt överenskommelse.\n\n\nVill du få mer information? \nMer information om anställningen får du av enhetschef Katja Stjernlöf.Fackliga representanter är Joacim Malmström för OFR vid Konsumentverket och Bo Lång för Saco–S-föreningen vid Konsumentverket. Du når samtliga genom att ringa vår växel på telefonnummer 0771-42 33 00.\n\n\nSå här ansöker du \nDu söker tjänsten i vårt rekryteringsverktyg. Det är viktigt att du i ditt personliga brev anger dnr. 2017/433.\n\nSenast den 3 maj 2017 vill vi ha din ansökan.","egenbil":false,"referens":"Dnr. 2017/433","tilltrade":"","ansokningssattPost":"","ansokningssattEpost":"","ansokningssattWebbadress":"https://candidate.hr-manager.net/ApplicationInit.aspx?cid=222&ProjectId=175534&DepartmentId=5164&MediaId=4&SkipAdvertisement=true","ansokningssattAnnat":"","ansokningssattViaAf":false,"ovrigtOmAnsokan":"","postadressUtdelningsadress":"Box 48","postadressPostnummer":"65102","postadressPostort":"KARLSTAD","postadressLand":"SE","besoksadressGatuadress":"Box 48","besoksadressOrt":"","telefonnummer":"","epost":"","webbplats":"http://www.konsumentverket.se/","villkorsbeskrivning":"Heltid\r\nTillsvidareanställning som inleds med sex månaders provanställning.","ingenYrkeserfarenhetKravs":false,"kontaktpersoner":[{"fornamn":"","efternamn":"","befattning":"","mobilnummer":"","telefonnummer":"0771-42 33 00","info":"Telefonnummer: 0771-42 33 00, Katja Stjernlöf","epost":"","facklig":false}],"matchningsresultat":null},{"id":"7170489","externAnnonsId":"46-556816-7935-88322","sokt":true,"status":{"id":"2","namn":"Avpublicerad","statusTyp":"AVPUBLICERAD","publicerad":false},"arbetsgivareId":"20613890","organisationsnummer":"5568167935","arbetsplatsId":"0","annonsversion":"1.0","senastModifierad":1493283937259,"publiceringsdatum":1493291037000,"sistaPubliceringsdatum":1495922399000,"sistaAnsokningsdatum":1495922399000,"dagarTillSistaAnsokningsdatum":-16,"rubrik":"Man i Trosa söker flexibel personlig assistent!","yrkesroll":{"id":"5798","namn":"Personlig assistent"},"yrkesgrupp":{"id":"5343","namn":"Personliga assistenter"},"yrkesomrade":{"id":"16","namn":"Socialt arbete"},"arbetsomfattning":{"max":100,"min":100},"anstallningstyp":{"id":"1","namn":"Vanlig anställning"},"varaktighet":{"id":"1","namn":"Tillsvidare"},"kompetenser":[],"yrkeErfarenhet":[],"utbildningsinriktning":[],"erbjudenArbetsplats":{"land":{"id":"199","namn":"Sverige"},"lan":{"id":"01","namn":"Stockholms län"},"kommun":{"id":"0180","namn":"Stockholm"},"geoPosition":{"id":null,"namn":null,"distans":null,"longitud":18.042027378,"latitud":59.346763521}},"logotypurl":null,"arbetsgivarenamn":"Assistans i Balans i Sverige AB","postadressArbetsplatsNamn":"ASSISTANS I BALANS I SVERIGE AB","korkortList":[],"kalla":"VIA_PLATSBANKEN_DXA","annonstext":"Jag är en 63-årig positiv, glad och social man som behöver Din assistans i min vardag. Innan jag drabbades av den progressiva muskelsjukdomen ALS var jag snickare med eget företag. Jag har alltid levt ett aktivt liv och tycker om att umgås med min fru, barn, barnbarn och vänner, ta hand om hemmet och pyssla med t.ex. bakning och snickeri.\r\n\r\nMin funktionsnedsättning gör det svårt för mig att på egen hand ägna mig åt mina intressen och behov, men tillsammans med dig blir det lättare! Du ska vara lyhörd och inkännande i alla situationer, samt självgående och förstående kring mig och min familj. Jag spenderar mestadels tid i Trosa och har även lägenhet i Hägersten, Stockholm. För att assistansen ska fungera önskas flexibilitet och körvana från din sida, då jag har egen bil. \n \n Positiv energi och bra planering hjälper mig mot riktningen att frigöra livskraft, så att jag kan leva mitt liv på bästa möjliga sätt! Ditt engagemang och kreativa tänkande skapar möjligheter i min vardag.\nTjänsten är timanställning, med möjlighet till fast tjänstgöringsgrad framöver, utefter ett rullande schema. Passen är varierande tider under mina vakna timmar, med enstaka journätter.\nMina assistenter är anställda av Balans, vilket innebär en nära kommunikation med arbetsledare, en noggrann och tydlig introduktion, personlig handledning samt ut- och fortbildning, så att Du får det stöd Du behöver för att vara trygg i ditt uppdrag som min personliga assistent.\n \n Icke rökare under arbetstid, B-körkort, att du behärskar svenska språket samt att du inte är kattallergiker är krav jag har på mina blivande assistenter.\nAnsök via länken nedan, bifoga gärna cv och personligt brev.\n \n ","fritext":null,"foretagsinformation":"","lonetyp":"Fast månads- vecko- eller timlön","lonebeskrivning":"Fast månads- vecko- eller timlön","antalPlatser":1,"visaAntalPlatser":true,"beskrivningKrav":"","beskrivningBehov":"Jag är en 63-årig positiv, glad och social man som behöver Din assistans i min vardag. Innan jag drabbades av den progressiva muskelsjukdomen ALS var jag snickare med eget företag. Jag har alltid levt ett aktivt liv och tycker om att umgås med min fru, barn, barnbarn och vänner, ta hand om hemmet och pyssla med t.ex. bakning och snickeri.\r\n\r\nMin funktionsnedsättning gör det svårt för mig att på egen hand ägna mig åt mina intressen och behov, men tillsammans med dig blir det lättare! Du ska vara lyhörd och inkännande i alla situationer, samt självgående och förstående kring mig och min familj. Jag spenderar mestadels tid i Trosa och har även lägenhet i Hägersten, Stockholm. För att assistansen ska fungera önskas flexibilitet och körvana från din sida, då jag har egen bil. \n \n Positiv energi och bra planering hjälper mig mot riktningen att frigöra livskraft, så att jag kan leva mitt liv på bästa möjliga sätt! Ditt engagemang och kreativa tänkande skapar möjligheter i min vardag.\nTjänsten är timanställning, med möjlighet till fast tjänstgöringsgrad framöver, utefter ett rullande schema. Passen är varierande tider under mina vakna timmar, med enstaka journätter.\nMina assistenter är anställda av Balans, vilket innebär en nära kommunikation med arbetsledare, en noggrann och tydlig introduktion, personlig handledning samt ut- och fortbildning, så att Du får det stöd Du behöver för att vara trygg i ditt uppdrag som min personliga assistent.\n \n Icke rökare under arbetstid, B-körkort, att du behärskar svenska språket samt att du inte är kattallergiker är krav jag har på mina blivande assistenter.\nAnsök via länken nedan, bifoga gärna cv och personligt brev.\n \n","egenbil":false,"referens":"","tilltrade":"","ansokningssattPost":"","ansokningssattEpost":"","ansokningssattWebbadress":"http://www.staffrec.se/viewjob.php?source=AMS&id=88322","ansokningssattAnnat":"","ansokningssattViaAf":false,"ovrigtOmAnsokan":"","postadressUtdelningsadress":"Sankt Eriksgatan 117","postadressPostnummer":"11343","postadressPostort":"Stockholm","postadressLand":"SE","besoksadressGatuadress":"Sankt Eriksgatan 117 11343 Stockholm","besoksadressOrt":"","telefonnummer":"","epost":"","webbplats":"http://assistansibalans.se","villkorsbeskrivning":"Heltid\r\nTillsvidare","ingenYrkeserfarenhetKravs":true,"kontaktpersoner":[],"matchningsresultat":null},{"id":"7169960","externAnnonsId":"46-212000-1231-B9BDBDF214284357BECDFB08D45B932B","sokt":true,"status":{"id":"2","namn":"Avpublicerad","statusTyp":"AVPUBLICERAD","publicerad":false},"arbetsgivareId":"10819946","organisationsnummer":"2120001231","arbetsplatsId":"0","annonsversion":"1.0","senastModifierad":1493274050416,"publiceringsdatum":1493280612000,"sistaPubliceringsdatum":1494453599000,"sistaAnsokningsdatum":1494453599000,"dagarTillSistaAnsokningsdatum":-33,"rubrik":"Lärare, Falkenbergs gymnasieskola","yrkesroll":{"id":"7127","namn":"Lärare i gymnasiet"},"yrkesgrupp":{"id":"2330","namn":"Gymnasielärare"},"yrkesomrade":{"id":"15","namn":"Pedagogiskt arbete"},"arbetsomfattning":{"max":100,"min":100},"anstallningstyp":{"id":"1","namn":"Vanlig anställning"},"varaktighet":{"id":"3","namn":"3 - 6 månader"},"kompetenser":[{"id":"608921","namn":"Lärarlegitimation"}],"yrkeErfarenhet":[{"id":"7127","namn":"Lärare i gymnasiet","erfarenhet":{"id":"2","namn":"Mindre än 1 års erfarenhet"}}],"utbildningsinriktning":[],"erbjudenArbetsplats":{"land":{"id":"199","namn":"Sverige"},"lan":{"id":"13","namn":"Hallands län"},"kommun":{"id":"1382","namn":"Falkenberg"},"geoPosition":{"id":null,"namn":null,"distans":null,"longitud":12.495243812,"latitud":56.894944888}},"logotypurl":null,"arbetsgivarenamn":"Falkenbergs kommun","postadressArbetsplatsNamn":"Falkenbergs kommun, Gymnasieskolan","korkortList":[],"kalla":"VIA_PLATSBANKEN_DXA","annonstext":"Vill du jobba på en plats med optimism och framåtanda? Där saker och ting händer och där du som medarbetare kan trivas och utvecklas? Då är Falkenbergs kommun något för dig.\n \nFalkenberg är en stad på attraktiva västkusten som befinner sig i ständig utveckling. Vi bygger nya bostadsområden, utvecklar våra verksamheter och fler och fler väljer att flytta hit. Det finns också goda möjligheter att pendla till Falkenberg. \n \nAtt vara anställd hos oss innebär många möjligheter med chans att kunna växa och utvecklas oberoende av yrkesval. Vi vill skapa en hållbar framtid för vår miljö, våra medarbetare, för våra barn, ungdomar och gamla. \n \nVi tycker att Falkenbergs kommun som arbetsplats blir bättre av mångfald och söker därför människor med olika bakgrund och erfarenhet. \n\nVill du vara med och utveckla vår verksamhet?\n\r\n\r\nARBETSUPPGIFTER\nFalkenbergs gymnasieskola söker lärare med olika ämneskombinationer. Framförallt i Matematik, Idrott &amp; Hälsa samt Fotboll.” Olika kombinationer kan komma i fråga. Underlag varierar beroende på vilka utbildningar som kommer att starta, ca 40-80% Idrott &amp; Hälsa, 30-70 % Matematik samt 20% Fotboll. För Fotboll ser vi gärna att du har UEFA A diplom”.\n\r\n\r\nKVALIFIKATIONER\nLärarlegitimation \n\nVi lägger stor vikt vid personlig lämplighet för tjänsten.\r\n\nÖVRIGT\nTjänsten tillsätts under förutsättning att den inte behöver tas i anspråk av redan befintlig personal.\n\nLegitimation ska bifogas i ansökan, alt behörighetsgivande examen som berättigar dig till en legitimation. \n\nInom våra verksamheter gäller lagen om registerkontroll (SFS 2000:873). Ytterligare information ges i samband med eventuellt anställningserbjudande.\n\nI samband med denna rekrytering undanber vi oss kontakter från rekryteringsföretag och andra annonsörer. ","fritext":null,"foretagsinformation":"","lonetyp":"Fast månads- vecko- eller timlön","lonebeskrivning":"Enligt avtal.","antalPlatser":1,"visaAntalPlatser":true,"beskrivningKrav":"","beskrivningBehov":"Vill du jobba på en plats med optimism och framåtanda? Där saker och ting händer och där du som medarbetare kan trivas och utvecklas? Då är Falkenbergs kommun något för dig.\n \nFalkenberg är en stad på attraktiva västkusten som befinner sig i ständig utveckling. Vi bygger nya bostadsområden, utvecklar våra verksamheter och fler och fler väljer att flytta hit. Det finns också goda möjligheter att pendla till Falkenberg. \n \nAtt vara anställd hos oss innebär många möjligheter med chans att kunna växa och utvecklas oberoende av yrkesval. Vi vill skapa en hållbar framtid för vår miljö, våra medarbetare, för våra barn, ungdomar och gamla. \n \nVi tycker att Falkenbergs kommun som arbetsplats blir bättre av mångfald och söker därför människor med olika bakgrund och erfarenhet. \n\nVill du vara med och utveckla vår verksamhet?\n\r\n\r\nARBETSUPPGIFTER\nFalkenbergs gymnasieskola söker lärare med olika ämneskombinationer. Framförallt i Matematik, Idrott & Hälsa samt Fotboll.” Olika kombinationer kan komma i fråga. Underlag varierar beroende på vilka utbildningar som kommer att starta, ca 40-80% Idrott & Hälsa, 30-70 % Matematik samt 20% Fotboll. För Fotboll ser vi gärna att du har UEFA A diplom”.\n\r\n\r\nKVALIFIKATIONER\nLärarlegitimation \n\nVi lägger stor vikt vid personlig lämplighet för tjänsten.\r\n\nÖVRIGT\nTjänsten tillsätts under förutsättning att den inte behöver tas i anspråk av redan befintlig personal.\n\nLegitimation ska bifogas i ansökan, alt behörighetsgivande examen som berättigar dig till en legitimation. \n\nInom våra verksamheter gäller lagen om registerkontroll (SFS 2000:873). Ytterligare information ges i samband med eventuellt anställningserbjudande.\n\nI samband med denna rekrytering undanber vi oss kontakter från rekryteringsföretag och andra annonsörer.","egenbil":false,"referens":"Gy 17/18-14","tilltrade":"","ansokningssattPost":"","ansokningssattEpost":"","ansokningssattWebbadress":"https://recruit.visma.com/Public/Apply.aspx?guidAssignment=b9bdbdf2-1428-4357-becd-fb08d45b932b&TK=3ec2e75e-e223-4ea6-b748-9196053768b6","ansokningssattAnnat":"","ansokningssattViaAf":false,"ovrigtOmAnsokan":"","postadressUtdelningsadress":"Nygatan 34","postadressPostnummer":"31180","postadressPostort":"FALKENBERG","postadressLand":"SE","besoksadressGatuadress":"31180 Falkenberg","besoksadressOrt":"","telefonnummer":"","epost":"","webbplats":"","villkorsbeskrivning":"Heltid. \r\nTidsbegränsad anställning, tillträde: 2017-08-07  , upphör: 2018-06-13  .","ingenYrkeserfarenhetKravs":false,"kontaktpersoner":[{"fornamn":"","efternamn":"","befattning":"Rektor","mobilnummer":"","telefonnummer":"0705-93 15 07","info":"Rektor, Telefonnummer: 0705-93 15 07, Fredrik Ogell","epost":"","facklig":false},{"fornamn":"","efternamn":"","befattning":"","mobilnummer":"","telefonnummer":"0346-88 60 00","info":"Telefonnummer: 0346-88 60 00, Fackliga företrädare nås via kontaktcenter","epost":"","facklig":true}],"matchningsresultat":null}]}
+          "id": "5899",
+          "namn": "Bibliotekarie",
+          "erfarenhet": {
+            "id": "2",
+            "namn": "Mindre än 1 års erfarenhet"
+          }
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "01",
+          "namn": "Stockholms län"
+        },
+        "kommun": {
+          "id": "0180",
+          "namn": "Stockholm"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 18.042904336,
+          "latitud": 59.328456043
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Stockholms kommun",
+      "postadressArbetsplatsNamn": "Stockholms Stad, Kulturförvaltningen, Stockholms stadsbibliotek",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Stockholm växer som aldrig förr. Våra ambitioner är höga. Nu söker vi dig som vill vara med och forma morgondagens Stockholm.\n\n\r\n\r\nArbetsplatsbeskrivning\nKulturförvaltningen arbetar på uppdrag av kulturnämnden.\r\n\r\nVerksamheten omfattar Kulturskolan,Liljevalchs konsthall, Stadsbiblioteket samt Stadsmuseet med Medeltidsmuseet och Stockholmia. Vi svarar också för stadens kulturstöd, Ungdomsfestivalen ”We Are STHLM”, kulturfestivalen, medborgarskapsceremonin och för en rad projekt mm. Kulturförvaltningen har ca 900 anställda. Vi eftersträvar jämställdhet och mångfald och ser gärna sökanden med olika bakgrund och erfarenheter.\n\nStockholms stadsbibliotek består av Stadsbiblioteket, Internationella biblioteket, Regionbiblioteket Stockholm, 40 stadsdelsbibliotek samt drygt 50 bibliotek på sjukhus och andra vårdinstitutioner. Stockholms stadsbibliotek har ca 420 anställda. Vi förutsätter att du liksom vi sätter besökaren i centrum. Ditt uppdrag är att med fantasi och kunskap medverka till att forma ett bibliotek som är tillgängligt och angeläget för alla. Du kommer till ett stadsbibliotek i stark utveckling och med goda utvecklingsmöjligheter för den enskilde medarbetaren.\n\nFarstaenheten består av 4 bibliotek; Farsta, Enskede och Gubbängens bibliotek utmed linje 18 på gröna linjen samt Sköndal. Sköndals bibliotek är sedan ombyggnaden 2013 ett väl fungerande meröppet bibliotek. Enskede bibliotek är ett medelstort familjebibliotek som totalrenoverades 2014. Planering pågår för flytt av Gubbängens bibliotek till nya lokaler och med en ny verksamhetsidé. Farsta bibliotek ligger i kulturhuset Fanfaren och är enhetens största bibliotek och också ett programbibliotek med många besökare en omfattande programverksamhet. I strukturplanen är Farsta utpekat som ett nodbibliotek som när Farsta växer behöver större mer ändamålsenliga lokaler. Inom enheten arbetar idag 23 personer. Farsta bibliotek finns sedan ombyggnad 2011 i kulturhuset Fanfaren.\n\nArbetsbeskrivning\nDu blir en nyckelperson i enhetens verksamhet genom att vara ansvarig för bemanningsfrågor och scheman inom hela enheten. Du kommer också att vara kontaktperson för Farsta bibliotek och ansvara för lokala kontakter av olika slag. I din tjänst kommer du att tjänstgöra mycket ute i biblioteket. Beroende av kompetens och intressen finns stora möjligheter att påverka innehåller i tjänsten\n\nKvalifikationer\nVi söker dig som:\n\nHar högskoleutbildning – bibliotekarieexamen, magisterexamen i biblioteks- och informationsvetenskap eller annan utbildning som arbetsgivaren bedömer vara likvärdig.\n\nHar ett utpräglat användarperspektiv och stor förmåga att bidra till goda möten med bibliotekets besökare.\n\nHar intresse för bemanningsfrågor och schemaläggning\n\nHar stor social kompetens och mycket god samarbetsförmåga\n\nÖvrigt\n\nTjänsten är en tillsvidareanställning på heltid.\n\nTillträde 2017-09-01 eller enligt överenskommelse.\n\nVisst helg och kvällsarbete ingår i tjänsten.\n\nStockholms stad arbetar med kompetensbaserad rekrytering som syftar till att se till varje persons kompetens och därmed motverka diskriminering.\n\nInför rekryteringsarbetet har vi tagit ställning till rekryteringskanaler och marknadsföring. Vi undanber oss därför kontakt med mediesäljare, rekryteringssajter och liknande.\n ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Månadslön",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Stockholm växer som aldrig förr. Våra ambitioner är höga. Nu söker vi dig som vill vara med och forma morgondagens Stockholm.\n\n\r\n\r\nArbetsplatsbeskrivning\nKulturförvaltningen arbetar på uppdrag av kulturnämnden.\r\n\r\nVerksamheten omfattar Kulturskolan,Liljevalchs konsthall, Stadsbiblioteket samt Stadsmuseet med Medeltidsmuseet och Stockholmia. Vi svarar också för stadens kulturstöd, Ungdomsfestivalen ”We Are STHLM”, kulturfestivalen, medborgarskapsceremonin och för en rad projekt mm. Kulturförvaltningen har ca 900 anställda. Vi eftersträvar jämställdhet och mångfald och ser gärna sökanden med olika bakgrund och erfarenheter.\n\nStockholms stadsbibliotek består av Stadsbiblioteket, Internationella biblioteket, Regionbiblioteket Stockholm, 40 stadsdelsbibliotek samt drygt 50 bibliotek på sjukhus och andra vårdinstitutioner. Stockholms stadsbibliotek har ca 420 anställda. Vi förutsätter att du liksom vi sätter besökaren i centrum. Ditt uppdrag är att med fantasi och kunskap medverka till att forma ett bibliotek som är tillgängligt och angeläget för alla. Du kommer till ett stadsbibliotek i stark utveckling och med goda utvecklingsmöjligheter för den enskilde medarbetaren.\n\nFarstaenheten består av 4 bibliotek; Farsta, Enskede och Gubbängens bibliotek utmed linje 18 på gröna linjen samt Sköndal. Sköndals bibliotek är sedan ombyggnaden 2013 ett väl fungerande meröppet bibliotek. Enskede bibliotek är ett medelstort familjebibliotek som totalrenoverades 2014. Planering pågår för flytt av Gubbängens bibliotek till nya lokaler och med en ny verksamhetsidé. Farsta bibliotek ligger i kulturhuset Fanfaren och är enhetens största bibliotek och också ett programbibliotek med många besökare en omfattande programverksamhet. I strukturplanen är Farsta utpekat som ett nodbibliotek som när Farsta växer behöver större mer ändamålsenliga lokaler. Inom enheten arbetar idag 23 personer. Farsta bibliotek finns sedan ombyggnad 2011 i kulturhuset Fanfaren.\n\nArbetsbeskrivning\nDu blir en nyckelperson i enhetens verksamhet genom att vara ansvarig för bemanningsfrågor och scheman inom hela enheten. Du kommer också att vara kontaktperson för Farsta bibliotek och ansvara för lokala kontakter av olika slag. I din tjänst kommer du att tjänstgöra mycket ute i biblioteket. Beroende av kompetens och intressen finns stora möjligheter att påverka innehåller i tjänsten\n\nKvalifikationer\nVi söker dig som:\n\nHar högskoleutbildning – bibliotekarieexamen, magisterexamen i biblioteks- och informationsvetenskap eller annan utbildning som arbetsgivaren bedömer vara likvärdig.\n\nHar ett utpräglat användarperspektiv och stor förmåga att bidra till goda möten med bibliotekets besökare.\n\nHar intresse för bemanningsfrågor och schemaläggning\n\nHar stor social kompetens och mycket god samarbetsförmåga\n\nÖvrigt\n\nTjänsten är en tillsvidareanställning på heltid.\n\nTillträde 2017-09-01 eller enligt överenskommelse.\n\nVisst helg och kvällsarbete ingår i tjänsten.\n\nStockholms stad arbetar med kompetensbaserad rekrytering som syftar till att se till varje persons kompetens och därmed motverka diskriminering.\n\nInför rekryteringsarbetet har vi tagit ställning till rekryteringskanaler och marknadsföring. Vi undanber oss därför kontakt med mediesäljare, rekryteringssajter och liknande.\n",
+      "egenbil": false,
+      "referens": "2017/4305",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "https://stockholmsstad.mynetworkglobal.com/what:job/jobID:156479/type:job/where:1/apply:1",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Ragnar östbergs plan 1",
+      "postadressPostnummer": "11221",
+      "postadressPostort": "Stockholm",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Ragnar östbergs plan 1",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": " 100%. Tillträde: Enligt överenskommelse\r\ntillsvidareanställning",
+      "ingenYrkeserfarenhetKravs": false,
+      "kontaktpersoner": [
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "",
+          "mobilnummer": "",
+          "telefonnummer": "08-50830575",
+          "info": "Telefonnummer: 08-50830575, Ranka Klincov",
+          "epost": "",
+          "facklig": false
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "72333383",
+      "externAnnonsId": "46-232100-0032-13080",
+      "sokt": true,
+      "status": {
+        "id": "1",
+        "namn": "Godkänd för publicering",
+        "statusTyp": "GODKAND_FOR_PUBLICERING",
+        "publicerad": true
+      },
+      "arbetsgivareId": "10820079",
+      "organisationsnummer": "2321000032",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1496914527035,
+      "publiceringsdatum": 1496921688000,
+      "sistaPubliceringsdatum": 1512086400000,
+      "sistaAnsokningsdatum": 1512086400000,
+      "dagarTillSistaAnsokningsdatum": 20,
+      "rubrik": "Legitimerad Psykolog till Barn- och ungdomsteamet!",
+      "yrkesroll": {
+        "id": "5709",
+        "namn": "Psykolog"
+      },
+      "yrkesgrupp": {
+        "id": "2241",
+        "namn": "Psykologer"
+      },
+      "yrkesomrade": {
+        "id": "8",
+        "namn": "Hälso- och sjukvård"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [
+        {
+          "id": "3427",
+          "namn": "Legitimation som psykolog"
+        }
+      ],
+      "yrkeErfarenhet": [],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "04",
+          "namn": "Södermanlands län"
+        },
+        "kommun": {
+          "id": "0480",
+          "namn": "Nyköping"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 17.01059234,
+          "latitud": 58.787385546
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Södermanlands Läns Landsting",
+      "postadressArbetsplatsNamn": "Landstinget Sörmland",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Habiliteringsmottagningen Nyköping\r\n\r\nVälkommen att skapa Sveriges friskaste län tillsammans med oss.\n\nHabiliteringsverksamheten arbetar för att skapa förutsättningar för självständighet och ett aktivt liv genom utvecklande, stödjande och kompenserande insatser. Vårt uppdrag innebär att utreda och att ge habiliterande insatser till barn, ungdomar och vuxna personer med varaktiga funktionsnedsättningar såsom rörelsehinder, flerfunktionshinder, intellektuell funktionsnedsättning eller autismspektrumtillstånd. \n\nArbetet sker i tvärprofessionella team bestående av arbetsterapeut, kurator, logoped, läkare, psykolog, sjukgymnast/fysioterapeut, sjuksköterska samt specialpedagog. Insatser ges ofta i samverkan med personal inom kommun och andra landstingsverksamheter. Arbetet är varierande och mångsidigt och anpassas utifrån patientens behov vilket är en kreativ utmaning som gör arbetet flexibelt och spännande.  \n\nArbetsplats\nNeuropsykologisk utredning av misstänkt intellektuell funktionsnedsättning och/eller autismspektrumtillstånd. \n\nHabiliteringsarbete som innefattar kompenserande åtgärder, behandling och råd och stöd utifrån intellektuell funktionsnedsättning och autismspektrumtillstånd.\nInsatserna ges till patienter och anhöriga, både i grupp och individuellt. \nBedömning och insatser i komplexa ärenden samt handleda och ge konsultation i psykologiska frågor till övriga i teamet. Vara ett stöd i ärenden då teamet arbetar utifrån Tillämpad Beteendeanalys, TBA.\n\nInformation och rådgivning till nätverk och personal kring patienter. Kunskapsöverföring rörande olika diagnoser och funktionsnedsättningar till andra verksamheter ingår.\n\nDina huvudsakliga arbetsuppgifter\nInom psykologtjänsten finns även möjlighet till fördjupade uppdrag:\nHandledning och kunskapsstöd inom särskilt kunskapsområde till yrkesgruppen eller övrig personal. \nIntensiv Beteendeträning, IBT, med små barn som har diagnosen Autism. \nSakkunnig kompetens inom Habiliteringsverksamhetens länsövergripande remissgrupp.\n\nVi erbjuder dig\nNära samarbete med fyra psykologkollegor på habiliteringsmottagningen\nKontinuerlig extern handledning med psykologkollegor i länet\nBreddutbildning inom tillämpad beteendeanalys, TBA, samt intern handledning av psykolog med specialistkompetens inom TBA. \nMöjlighet att ingå arbetsgrupper för utveckling av verksamheten.\n\nDin kompetens\nVi söker dig som är legitimerad psykolog. \nErfarenhet av arbete med barn och ungdomar och/eller arbete med habiliteringens målgrupper är önskvärt. Utredningskompetens och fördjupad kunskap inom neuropsykologi och neuropsykiatri samt KBT-kompetens, är meriterande. \n\nVi lägger stor vikt vid personlig lämplighet. För att trivas med vårt arbetssätt behöver du ha en god samarbetsförmåga, vara lyhörd, flexibel och tycka om att arbeta i team, samtidigt som du uppskattar att arbeta med stort egenansvar.\nKörkort erfordras.\n\nAnställningsform och sysselsättningsgrad \nTillsvidareanställning på heltid. Tillträde enligt överenskommelse.\n\nInformation om tjänsten lämnas av\nVerksamhetschef Eva-Charlotte Bernthson, 0155-24 58 04.  \nLegitimerad psykolog Fredrik Ivarsson, 0155-24 76 43.\nFackliga företrädare nås via vxl, 0155-24 50 00.\n\nKom och jobba hos oss på Barn- och ungdomsteamet.\n\nVälkommen med din ansökan, inklusive CV, senast 2017-07-02.\nIntervjuer kommer att ske löpande.\n\nFölj oss gärna på\n<a href=\"https://www.facebook.com/lstsormlandJobbahososs\" target=\"_blank\" >https://www.facebook.com/lstsormlandJobbahososs</a>\n\nSe våra förmåner\n<a href=\"http://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/\" target=\"_blank\" >http://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/</a>\n\n\r\n\n\nVi har i vissa fall skyldighet att kontrollera om en person förekommer i misstanke- och eller belastningsregistret. Det kan ske på två sätt, endera begär landstinget ut uppgiften själv eller också uppmanas du att begära ut utdrag för att kunna visa upp innan anställning. Vi begär i undantagsfall att du visar upp registerutdrag även vid tillsättning av andra tjänster än de som avses ovan. Blir du aktuell för anställning kommer du att informeras om vad som gäller för den tjänst du sökt.\n\nVi gör aktiva val vid exponering och rekryteringsstöd och undanber oss därför direktkontakt av bemannings- och rekryteringsföretag. ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Fast lön. Kollektivavtal finns.",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Habiliteringsmottagningen Nyköping\r\n\r\nVälkommen att skapa Sveriges friskaste län tillsammans med oss.\n\nHabiliteringsverksamheten arbetar för att skapa förutsättningar för självständighet och ett aktivt liv genom utvecklande, stödjande och kompenserande insatser. Vårt uppdrag innebär att utreda och att ge habiliterande insatser till barn, ungdomar och vuxna personer med varaktiga funktionsnedsättningar såsom rörelsehinder, flerfunktionshinder, intellektuell funktionsnedsättning eller autismspektrumtillstånd. \n\nArbetet sker i tvärprofessionella team bestående av arbetsterapeut, kurator, logoped, läkare, psykolog, sjukgymnast/fysioterapeut, sjuksköterska samt specialpedagog. Insatser ges ofta i samverkan med personal inom kommun och andra landstingsverksamheter. Arbetet är varierande och mångsidigt och anpassas utifrån patientens behov vilket är en kreativ utmaning som gör arbetet flexibelt och spännande.  \n\nArbetsplats\nNeuropsykologisk utredning av misstänkt intellektuell funktionsnedsättning och/eller autismspektrumtillstånd. \n\nHabiliteringsarbete som innefattar kompenserande åtgärder, behandling och råd och stöd utifrån intellektuell funktionsnedsättning och autismspektrumtillstånd.\nInsatserna ges till patienter och anhöriga, både i grupp och individuellt. \nBedömning och insatser i komplexa ärenden samt handleda och ge konsultation i psykologiska frågor till övriga i teamet. Vara ett stöd i ärenden då teamet arbetar utifrån Tillämpad Beteendeanalys, TBA.\n\nInformation och rådgivning till nätverk och personal kring patienter. Kunskapsöverföring rörande olika diagnoser och funktionsnedsättningar till andra verksamheter ingår.\n\nDina huvudsakliga arbetsuppgifter\nInom psykologtjänsten finns även möjlighet till fördjupade uppdrag:\nHandledning och kunskapsstöd inom särskilt kunskapsområde till yrkesgruppen eller övrig personal. \nIntensiv Beteendeträning, IBT, med små barn som har diagnosen Autism. \nSakkunnig kompetens inom Habiliteringsverksamhetens länsövergripande remissgrupp.\n\nVi erbjuder dig\nNära samarbete med fyra psykologkollegor på habiliteringsmottagningen\nKontinuerlig extern handledning med psykologkollegor i länet\nBreddutbildning inom tillämpad beteendeanalys, TBA, samt intern handledning av psykolog med specialistkompetens inom TBA. \nMöjlighet att ingå arbetsgrupper för utveckling av verksamheten.\n\nDin kompetens\nVi söker dig som är legitimerad psykolog. \nErfarenhet av arbete med barn och ungdomar och/eller arbete med habiliteringens målgrupper är önskvärt. Utredningskompetens och fördjupad kunskap inom neuropsykologi och neuropsykiatri samt KBT-kompetens, är meriterande. \n\nVi lägger stor vikt vid personlig lämplighet. För att trivas med vårt arbetssätt behöver du ha en god samarbetsförmåga, vara lyhörd, flexibel och tycka om att arbeta i team, samtidigt som du uppskattar att arbeta med stort egenansvar.\nKörkort erfordras.\n\nAnställningsform och sysselsättningsgrad \nTillsvidareanställning på heltid. Tillträde enligt överenskommelse.\n\nInformation om tjänsten lämnas av\nVerksamhetschef Eva-Charlotte Bernthson, 0155-24 58 04.  \nLegitimerad psykolog Fredrik Ivarsson, 0155-24 76 43.\nFackliga företrädare nås via vxl, 0155-24 50 00.\n\nKom och jobba hos oss på Barn- och ungdomsteamet.\n\nVälkommen med din ansökan, inklusive CV, senast 2017-07-02.\nIntervjuer kommer att ske löpande.\n\nFölj oss gärna på\nhttps://www.facebook.com/lstsormlandJobbahososs\n\nSe våra förmåner\nhttp://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/\n\n\r\n\n\nVi har i vissa fall skyldighet att kontrollera om en person förekommer i misstanke- och eller belastningsregistret. Det kan ske på två sätt, endera begär landstinget ut uppgiften själv eller också uppmanas du att begära ut utdrag för att kunna visa upp innan anställning. Vi begär i undantagsfall att du visar upp registerutdrag även vid tillsättning av andra tjänster än de som avses ovan. Blir du aktuell för anställning kommer du att informeras om vad som gäller för den tjänst du sökt.\n\nVi gör aktiva val vid exponering och rekryteringsstöd och undanber oss därför direktkontakt av bemannings- och rekryteringsföretag.",
+      "egenbil": false,
+      "referens": "RNLN-17-112",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "https://sormland.powerinit.com/Modules/Recruitments/Public/?JobPositionId=13080&RefNo=RNLN-17-112&Source=[JobPositionSource]",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Repslagaregatan 19",
+      "postadressPostnummer": "61188",
+      "postadressPostort": "Nyköping",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Repslagaregatan 19",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": "Tillsvidare, 100%, Tillträde Enligt överenskommelse\r\n\n-",
+      "ingenYrkeserfarenhetKravs": true,
+      "kontaktpersoner": [],
+      "matchningsresultat": null
+    },
+    {
+      "id": "104584694",
+      "externAnnonsId": "0017-258568",
+      "sokt": false,
+      "status": {
+        "id": "2",
+        "namn": "Avpublicerad",
+        "statusTyp": "AVPUBLICERAD",
+        "publicerad": false
+      },
+      "arbetsgivareId": "0",
+      "organisationsnummer": "5565288791",
+      "arbetsplatsId": "10108232",
+      "annonsversion": "2.0",
+      "senastModifierad": 1493806001604,
+      "publiceringsdatum": 1493726636000,
+      "sistaPubliceringsdatum": 1511136000000,
+      "sistaAnsokningsdatum": 1511136000000,
+      "dagarTillSistaAnsokningsdatum": -12,
+      "rubrik": "Bagare & Konditor sökes",
+      "yrkesroll": {
+        "id": "5504",
+        "namn": "Bagare / Konditor"
+      },
+      "yrkesgrupp": {
+        "id": "7612",
+        "namn": "Bagare och konditorer"
+      },
+      "yrkesomrade": {
+        "id": "6",
+        "namn": "Hantverksyrken"
+      },
+      "arbetsomfattning": {
+        "max": 50,
+        "min": 50
+      },
+      "anstallningstyp": {
+        "id": "2",
+        "namn": "Sommarjobb / feriejobb"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [],
+      "yrkeErfarenhet": [
+        {
+          "id": "5504",
+          "namn": "Bagare / Konditor",
+          "erfarenhet": {
+            "id": "2",
+            "namn": "Mindre än 1 års erfarenhet"
+          }
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "13",
+          "namn": "Hallands län"
+        },
+        "kommun": {
+          "id": "1384",
+          "namn": "Kungsbacka"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 12.020591814,
+          "latitud": 57.405042535
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Majgårdens Bageri & Konditori",
+      "postadressArbetsplatsNamn": "Majgårdens Bageri & Konditori",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_AIS",
+      "annonstext": "Majgården Bageri i Onsala -ett riktigt bageri - bakat sedan 1933.\r\n\r\nMajgården Bageri, Konditori, har funnits i Onsala sedan början på 1930-talet.Recepten som fanns då följs även idag med samma kvalitetsråvaror, vilket gör oss smått unika och så uppskattade. \r\nÅr 2000 öppnade vårt bageri/konditori/café i Kungsbacka. \r\n \r\nMajgården söker bagare till vårt tradionella bageri, du bakar allt från bröd till bullar. Vi vill att du har ugnsvana.\r\n\r\nVi söker även konditor. Viss erfarenhet krävs. \r\n\r\nDet är viktigt att du har körkort och bil om du inte bor i närheten eftersom vi börjar vid 04-05 på morgonen.\r\n\r\nVälkommen med din ansökan via mail, har du frågor är du välkommen att ringa 0300-60053 fråga efter Viktoria ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Majgården Bageri i Onsala -ett riktigt bageri - bakat sedan 1933.\r\n\r\nMajgården Bageri, Konditori, har funnits i Onsala sedan början på 1930-talet.Recepten som fanns då följs även idag med samma kvalitetsråvaror, vilket gör oss smått unika och så uppskattade. \r\nÅr 2000 öppnade vårt bageri/konditori/café i Kungsbacka. \r\n \r\nMajgården söker bagare till vårt tradionella bageri, du bakar allt från bröd till bullar. Vi vill att du har ugnsvana.\r\n\r\nVi söker även konditor. Viss erfarenhet krävs. \r\n\r\nDet är viktigt att du har körkort och bil om du inte bor i närheten eftersom vi börjar vid 04-05 på morgonen.\r\n\r\nVälkommen med din ansökan via mail, har du frågor är du välkommen att ringa 0300-60053 fråga efter Viktoria",
+      "egenbil": false,
+      "referens": "",
+      "tilltrade": "Maj/Juni",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "majgardensbageri@telia.com",
+      "ansokningssattWebbadress": "",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "Maila din ansökan eller ring butiken och fråga efter Viktoria",
+      "postadressUtdelningsadress": "",
+      "postadressPostnummer": "43931",
+      "postadressPostort": "ONSALA",
+      "postadressLand": "",
+      "besoksadressGatuadress": "Gottskärsvägen 42",
+      "besoksadressOrt": "",
+      "telefonnummer": "0300-60053",
+      "epost": "majgardensbageri@telia.com",
+      "webbplats": "",
+      "villkorsbeskrivning": "",
+      "ingenYrkeserfarenhetKravs": false,
+      "kontaktpersoner": [
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "",
+          "mobilnummer": "",
+          "telefonnummer": "",
+          "info": "Viktoria Frederiksen, ägare 0300-60053",
+          "epost": "majgardensbageri@telia.com",
+          "facklig": false
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "104584755",
+      "externAnnonsId": "0017-258639",
+      "sokt": true,
+      "status": {
+        "id": "2",
+        "namn": "Avpublicerad",
+        "statusTyp": "AVPUBLICERAD",
+        "publicerad": false
+      },
+      "arbetsgivareId": "0",
+      "organisationsnummer": "5590052402",
+      "arbetsplatsId": "20969423",
+      "annonsversion": "1.0",
+      "senastModifierad": 1493719516467,
+      "publiceringsdatum": 1493726636000,
+      "sistaPubliceringsdatum": 1510704000000,
+      "sistaAnsokningsdatum": 1510704000000,
+      "dagarTillSistaAnsokningsdatum": -12,
+      "rubrik": "Bagare och Konditor",
+      "yrkesroll": {
+        "id": "5504",
+        "namn": "Bagare / Konditor"
+      },
+      "yrkesgrupp": {
+        "id": "7612",
+        "namn": "Bagare och konditorer"
+      },
+      "yrkesomrade": {
+        "id": "6",
+        "namn": "Hantverksyrken"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "2",
+        "namn": "6 månader eller längre"
+      },
+      "kompetenser": [],
+      "yrkeErfarenhet": [
+        {
+          "id": "5504",
+          "namn": "Bagare / Konditor",
+          "erfarenhet": {
+            "id": "2",
+            "namn": "Mindre än 1 års erfarenhet"
+          }
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "01",
+          "namn": "Stockholms län"
+        },
+        "kommun": {
+          "id": "0163",
+          "namn": "Sollentuna"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 17.944565555,
+          "latitud": 59.428491188
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "TaVi Brödkällaren i Stockholm AB",
+      "postadressArbetsplatsNamn": "TaVi Brödkällaren i Stockholm AB",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_AIS",
+      "annonstext": "Verksamhetsbeskrivning\r\nBageri med butikdel.\r\n\r\nArbetsuppgifter\r\nBagare som även kan konditoridelen.\r\n\r\nUtbildning/Erfarenhet\r\nErfarenhet krävs. Du ska helst kunna både bageri- och konditoridelen. ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Rörlig ackords- eller provisionslön",
+      "lonebeskrivning": "",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Verksamhetsbeskrivning\r\nBageri med butikdel.\r\n\r\nArbetsuppgifter\r\nBagare som även kan konditoridelen.\r\n\r\nUtbildning/Erfarenhet\r\nErfarenhet krävs. Du ska helst kunna både bageri- och konditoridelen.",
+      "egenbil": false,
+      "referens": "",
+      "tilltrade": "Omgående",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "info@brodkallaren.se",
+      "ansokningssattWebbadress": "",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "Vi tar emot ansökan med CV och Ansökningsbrev via E-post.",
+      "postadressUtdelningsadress": "",
+      "postadressPostnummer": "19160",
+      "postadressPostort": "SOLLENTUNA",
+      "postadressLand": "",
+      "besoksadressGatuadress": "Tingsvägen 29 B",
+      "besoksadressOrt": "",
+      "telefonnummer": "072-1795511",
+      "epost": "info@brodkallaren.se",
+      "webbplats": "",
+      "villkorsbeskrivning": "Heltidsanställning på 6 månader eller längre.",
+      "ingenYrkeserfarenhetKravs": false,
+      "kontaktpersoner": [
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "",
+          "mobilnummer": "",
+          "telefonnummer": "",
+          "info": "Vincent Tsai, 072-179 55 11",
+          "epost": "info@brodkallaren.se",
+          "facklig": false
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "71515946",
+      "externAnnonsId": "46-202100-2064-00132558",
+      "sokt": false,
+      "status": {
+        "id": "2",
+        "namn": "Avpublicerad",
+        "statusTyp": "AVPUBLICERAD",
+        "publicerad": false
+      },
+      "arbetsgivareId": "10800030",
+      "organisationsnummer": "2021002064",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1492065386716,
+      "publiceringsdatum": 1492071877000,
+      "sistaPubliceringsdatum": 1505865600000,
+      "sistaAnsokningsdatum": 1505865600000,
+      "dagarTillSistaAnsokningsdatum": -40,
+      "rubrik": "Interaktionsdesigner",
+      "yrkesroll": {
+        "id": "7575",
+        "namn": "Interaktionsdesigner"
+      },
+      "yrkesgrupp": {
+        "id": "2512",
+        "namn": "Mjukvaru- och systemutvecklare m.fl."
+      },
+      "yrkesomrade": {
+        "id": "3",
+        "namn": "Data/IT"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [
+        {
+          "id": "607287",
+          "namn": "Interaktionsdesign"
+        }
+      ],
+      "yrkeErfarenhet": [
+        {
+          "id": "7575",
+          "namn": "Interaktionsdesigner",
+          "erfarenhet": {
+            "id": "2",
+            "namn": "Mindre än 1 års erfarenhet"
+          }
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "17",
+          "namn": "Värmlands län"
+        },
+        "kommun": {
+          "id": "1780",
+          "namn": "Karlstad"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 13.400489952,
+          "latitud": 59.364530009
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Konsumentverket",
+      "postadressArbetsplatsNamn": "Konsumentverket",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Konsumentverket har högst anseende bland Sveriges myndigheter och konsumentverket.se utsågs 2017 till en av de fem bästa myndighetswebbplatserna. \nNu satsar vi ännu mer på digital utveckling och har skapat en enhet som fokuserar på digitala tjänster. Vi behöver dig som är riktigt duktig på interaktionsdesign som vill förstärka vår digitala satsning. För att få en känsla för hur vi jobbar kan du kolla in den här korta filmen <a href=\"https://youtu.be/5yz-6iD49XI\" target=\"_blank\" >https://youtu.be/5yz-6iD49XI</a>\n\nDina arbetsuppgifter \nSom interaktionsdesigner arbetar du på Enheten för digitala tjänster med utveckling av myndighetens webbtjänster och webbplatser. Du översätter idéer, krav och användarnas behovtill skisser och prototyper.\n\n\nVi jobbar i små, agila utvecklingsteam så du har nära samarbete med både kollegor ochexterna konsulter. Ditt fokus är interaktionsdesign men du har en viktig roll i alla steg i utvecklingsprocessen. Tillsammans kartlägger vi användarnas behov och beteenden genom användartester, intervjuer och workshops. Du omsätter sedan resultaten till idéer och skisser på hur användargränssnittet ska se ut och följer upp med prototyper och tester. Den röda tråden för oss är att skapa användarvänliga tjänster och att ständigt förbättra flöden och användarupplevelser i våra digitala kanaler.\n\n\nDet händer mycket på Konsumentverket just nu och du som kompletterar vårt team får bland annat chansen att jobba med ett par nya, spännande regeringsuppdrag inom hållbar konsumtion. Under de närmaste åren vill vi att du bidrar med idéer kring smarta digitala tjänster som ligger i framkant och kan underlätta för konsumenter att handla miljösmart. Du kommer också att vara med i den fortsatta utvecklingen av vårt arbetssätt med användarcentrerad utveckling.\n\nDin bakgrund \nDu har relevant utbildning inom interaktionsdesign eller UX design, meriterande är högskoleutbildning. Det är ett krav att du tidigare har arbetat med interaktionsdesign och gränssnittsutveckling. Vi utvecklar tjänster för alla, så du har självklart bra koll på tillgänglighet och webb-standards. Du drivs av att skapa innovativa och användarvänliga digitala lösningar och du har ett genuint intresse för användarnas beteenden. Du har goda kunskaper i relevanta verktyg för att skapa prototyper, trådskisser och designskisser.\n\n\nDu är driven, kreativ och vågar prova nya vägar. Du har mycket god kommunikationsförmåga,är engagerad och jobbar lika gärna självständigt som i grupp, men alltid med fokus på resultatoch användarnytta. Självklart bemöter du andra med prestigelöshet, respekt och omtanke.Vi strävar efter en arbetsplats där medarbetarnas olikheter berikar verksamheten.\n\n\nAnställningsform \nTillsvidareanställning med 6 månaders provanställning. Tillträde enligt överenskommelse.\n\n\nVill du få mer information? \nMer information om anställningen får du av enhetschef Katja Stjernlöf.Fackliga representanter är Joacim Malmström för OFR vid Konsumentverket och Bo Lång för Saco–S-föreningen vid Konsumentverket. Du når samtliga genom att ringa vår växel på telefonnummer 0771-42 33 00.\n\n\nSå här ansöker du \nDu söker tjänsten i vårt rekryteringsverktyg. Det är viktigt att du i ditt personliga brev anger dnr. 2017/433.\n\nSenast den 3 maj 2017 vill vi ha din ansökan. ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Månadslön",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Konsumentverket har högst anseende bland Sveriges myndigheter och konsumentverket.se utsågs 2017 till en av de fem bästa myndighetswebbplatserna. \nNu satsar vi ännu mer på digital utveckling och har skapat en enhet som fokuserar på digitala tjänster. Vi behöver dig som är riktigt duktig på interaktionsdesign som vill förstärka vår digitala satsning. För att få en känsla för hur vi jobbar kan du kolla in den här korta filmen https://youtu.be/5yz-6iD49XI\n\nDina arbetsuppgifter \nSom interaktionsdesigner arbetar du på Enheten för digitala tjänster med utveckling av myndighetens webbtjänster och webbplatser. Du översätter idéer, krav och användarnas behovtill skisser och prototyper.\n\n\nVi jobbar i små, agila utvecklingsteam så du har nära samarbete med både kollegor ochexterna konsulter. Ditt fokus är interaktionsdesign men du har en viktig roll i alla steg i utvecklingsprocessen. Tillsammans kartlägger vi användarnas behov och beteenden genom användartester, intervjuer och workshops. Du omsätter sedan resultaten till idéer och skisser på hur användargränssnittet ska se ut och följer upp med prototyper och tester. Den röda tråden för oss är att skapa användarvänliga tjänster och att ständigt förbättra flöden och användarupplevelser i våra digitala kanaler.\n\n\nDet händer mycket på Konsumentverket just nu och du som kompletterar vårt team får bland annat chansen att jobba med ett par nya, spännande regeringsuppdrag inom hållbar konsumtion. Under de närmaste åren vill vi att du bidrar med idéer kring smarta digitala tjänster som ligger i framkant och kan underlätta för konsumenter att handla miljösmart. Du kommer också att vara med i den fortsatta utvecklingen av vårt arbetssätt med användarcentrerad utveckling.\n\nDin bakgrund \nDu har relevant utbildning inom interaktionsdesign eller UX design, meriterande är högskoleutbildning. Det är ett krav att du tidigare har arbetat med interaktionsdesign och gränssnittsutveckling. Vi utvecklar tjänster för alla, så du har självklart bra koll på tillgänglighet och webb-standards. Du drivs av att skapa innovativa och användarvänliga digitala lösningar och du har ett genuint intresse för användarnas beteenden. Du har goda kunskaper i relevanta verktyg för att skapa prototyper, trådskisser och designskisser.\n\n\nDu är driven, kreativ och vågar prova nya vägar. Du har mycket god kommunikationsförmåga,är engagerad och jobbar lika gärna självständigt som i grupp, men alltid med fokus på resultatoch användarnytta. Självklart bemöter du andra med prestigelöshet, respekt och omtanke.Vi strävar efter en arbetsplats där medarbetarnas olikheter berikar verksamheten.\n\n\nAnställningsform \nTillsvidareanställning med 6 månaders provanställning. Tillträde enligt överenskommelse.\n\n\nVill du få mer information? \nMer information om anställningen får du av enhetschef Katja Stjernlöf.Fackliga representanter är Joacim Malmström för OFR vid Konsumentverket och Bo Lång för Saco–S-föreningen vid Konsumentverket. Du når samtliga genom att ringa vår växel på telefonnummer 0771-42 33 00.\n\n\nSå här ansöker du \nDu söker tjänsten i vårt rekryteringsverktyg. Det är viktigt att du i ditt personliga brev anger dnr. 2017/433.\n\nSenast den 3 maj 2017 vill vi ha din ansökan.",
+      "egenbil": false,
+      "referens": "Dnr. 2017/433",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "https://candidate.hr-manager.net/ApplicationInit.aspx?cid=222&ProjectId=175534&DepartmentId=5164&MediaId=4&SkipAdvertisement=true",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Box 48",
+      "postadressPostnummer": "65102",
+      "postadressPostort": "KARLSTAD",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Box 48",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "http://www.konsumentverket.se/",
+      "villkorsbeskrivning": "Heltid\r\nTillsvidareanställning som inleds med sex månaders provanställning.",
+      "ingenYrkeserfarenhetKravs": false,
+      "kontaktpersoner": [
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "",
+          "mobilnummer": "",
+          "telefonnummer": "0771-42 33 00",
+          "info": "Telefonnummer: 0771-42 33 00, Katja Stjernlöf",
+          "epost": "",
+          "facklig": false
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "71704897",
+      "externAnnonsId": "46-556816-7935-88322",
+      "sokt": true,
+      "status": {
+        "id": "2",
+        "namn": "Avpublicerad",
+        "statusTyp": "AVPUBLICERAD",
+        "publicerad": false
+      },
+      "arbetsgivareId": "20613890",
+      "organisationsnummer": "5568167935",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1493283937259,
+      "publiceringsdatum": 1493291037000,
+      "sistaPubliceringsdatum": 1506038400000,
+      "sistaAnsokningsdatum": 1506038400000,
+      "dagarTillSistaAnsokningsdatum": -16,
+      "rubrik": "Man i Trosa söker flexibel personlig assistent!",
+      "yrkesroll": {
+        "id": "5798",
+        "namn": "Personlig assistent"
+      },
+      "yrkesgrupp": {
+        "id": "5343",
+        "namn": "Personliga assistenter"
+      },
+      "yrkesomrade": {
+        "id": "16",
+        "namn": "Socialt arbete"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [],
+      "yrkeErfarenhet": [],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "01",
+          "namn": "Stockholms län"
+        },
+        "kommun": {
+          "id": "0180",
+          "namn": "Stockholm"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 18.042027378,
+          "latitud": 59.346763521
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Assistans i Balans i Sverige AB",
+      "postadressArbetsplatsNamn": "ASSISTANS I BALANS I SVERIGE AB",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Jag är en 63-årig positiv, glad och social man som behöver Din assistans i min vardag. Innan jag drabbades av den progressiva muskelsjukdomen ALS var jag snickare med eget företag. Jag har alltid levt ett aktivt liv och tycker om att umgås med min fru, barn, barnbarn och vänner, ta hand om hemmet och pyssla med t.ex. bakning och snickeri.\r\n\r\nMin funktionsnedsättning gör det svårt för mig att på egen hand ägna mig åt mina intressen och behov, men tillsammans med dig blir det lättare! Du ska vara lyhörd och inkännande i alla situationer, samt självgående och förstående kring mig och min familj. Jag spenderar mestadels tid i Trosa och har även lägenhet i Hägersten, Stockholm. För att assistansen ska fungera önskas flexibilitet och körvana från din sida, då jag har egen bil. \n \n Positiv energi och bra planering hjälper mig mot riktningen att frigöra livskraft, så att jag kan leva mitt liv på bästa möjliga sätt! Ditt engagemang och kreativa tänkande skapar möjligheter i min vardag.\nTjänsten är timanställning, med möjlighet till fast tjänstgöringsgrad framöver, utefter ett rullande schema. Passen är varierande tider under mina vakna timmar, med enstaka journätter.\nMina assistenter är anställda av Balans, vilket innebär en nära kommunikation med arbetsledare, en noggrann och tydlig introduktion, personlig handledning samt ut- och fortbildning, så att Du får det stöd Du behöver för att vara trygg i ditt uppdrag som min personliga assistent.\n \n Icke rökare under arbetstid, B-körkort, att du behärskar svenska språket samt att du inte är kattallergiker är krav jag har på mina blivande assistenter.\nAnsök via länken nedan, bifoga gärna cv och personligt brev.\n \n ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Fast månads- vecko- eller timlön",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Jag är en 63-årig positiv, glad och social man som behöver Din assistans i min vardag. Innan jag drabbades av den progressiva muskelsjukdomen ALS var jag snickare med eget företag. Jag har alltid levt ett aktivt liv och tycker om att umgås med min fru, barn, barnbarn och vänner, ta hand om hemmet och pyssla med t.ex. bakning och snickeri.\r\n\r\nMin funktionsnedsättning gör det svårt för mig att på egen hand ägna mig åt mina intressen och behov, men tillsammans med dig blir det lättare! Du ska vara lyhörd och inkännande i alla situationer, samt självgående och förstående kring mig och min familj. Jag spenderar mestadels tid i Trosa och har även lägenhet i Hägersten, Stockholm. För att assistansen ska fungera önskas flexibilitet och körvana från din sida, då jag har egen bil. \n \n Positiv energi och bra planering hjälper mig mot riktningen att frigöra livskraft, så att jag kan leva mitt liv på bästa möjliga sätt! Ditt engagemang och kreativa tänkande skapar möjligheter i min vardag.\nTjänsten är timanställning, med möjlighet till fast tjänstgöringsgrad framöver, utefter ett rullande schema. Passen är varierande tider under mina vakna timmar, med enstaka journätter.\nMina assistenter är anställda av Balans, vilket innebär en nära kommunikation med arbetsledare, en noggrann och tydlig introduktion, personlig handledning samt ut- och fortbildning, så att Du får det stöd Du behöver för att vara trygg i ditt uppdrag som min personliga assistent.\n \n Icke rökare under arbetstid, B-körkort, att du behärskar svenska språket samt att du inte är kattallergiker är krav jag har på mina blivande assistenter.\nAnsök via länken nedan, bifoga gärna cv och personligt brev.\n \n",
+      "egenbil": false,
+      "referens": "",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "http://www.staffrec.se/viewjob.php?source=AMS&id=88322",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Sankt Eriksgatan 117",
+      "postadressPostnummer": "11343",
+      "postadressPostort": "Stockholm",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Sankt Eriksgatan 117 11343 Stockholm",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "http://assistansibalans.se",
+      "villkorsbeskrivning": "Heltid\r\nTillsvidare",
+      "ingenYrkeserfarenhetKravs": true,
+      "kontaktpersoner": [],
+      "matchningsresultat": null
+    },
+    {
+      "id": "71699608",
+      "externAnnonsId": "46-212000-1231-B9BDBDF214284357BECDFB08D45B932B",
+      "sokt": true,
+      "status": {
+        "id": "2",
+        "namn": "Avpublicerad",
+        "statusTyp": "AVPUBLICERAD",
+        "publicerad": false
+      },
+      "arbetsgivareId": "10819946",
+      "organisationsnummer": "2120001231",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1493274050416,
+      "publiceringsdatum": 1493280612000,
+      "sistaPubliceringsdatum": 1505347200000,
+      "sistaAnsokningsdatum": 1505347200000,
+      "dagarTillSistaAnsokningsdatum": -33,
+      "rubrik": "Lärare, Falkenbergs gymnasieskola",
+      "yrkesroll": {
+        "id": "7127",
+        "namn": "Lärare i gymnasiet"
+      },
+      "yrkesgrupp": {
+        "id": "2330",
+        "namn": "Gymnasielärare"
+      },
+      "yrkesomrade": {
+        "id": "15",
+        "namn": "Pedagogiskt arbete"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "3",
+        "namn": "3 - 6 månader"
+      },
+      "kompetenser": [
+        {
+          "id": "608921",
+          "namn": "Lärarlegitimation"
+        }
+      ],
+      "yrkeErfarenhet": [
+        {
+          "id": "7127",
+          "namn": "Lärare i gymnasiet",
+          "erfarenhet": {
+            "id": "2",
+            "namn": "Mindre än 1 års erfarenhet"
+          }
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "13",
+          "namn": "Hallands län"
+        },
+        "kommun": {
+          "id": "1382",
+          "namn": "Falkenberg"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 12.495243812,
+          "latitud": 56.894944888
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Falkenbergs kommun",
+      "postadressArbetsplatsNamn": "Falkenbergs kommun, Gymnasieskolan",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Vill du jobba på en plats med optimism och framåtanda? Där saker och ting händer och där du som medarbetare kan trivas och utvecklas? Då är Falkenbergs kommun något för dig.\n \nFalkenberg är en stad på attraktiva västkusten som befinner sig i ständig utveckling. Vi bygger nya bostadsområden, utvecklar våra verksamheter och fler och fler väljer att flytta hit. Det finns också goda möjligheter att pendla till Falkenberg. \n \nAtt vara anställd hos oss innebär många möjligheter med chans att kunna växa och utvecklas oberoende av yrkesval. Vi vill skapa en hållbar framtid för vår miljö, våra medarbetare, för våra barn, ungdomar och gamla. \n \nVi tycker att Falkenbergs kommun som arbetsplats blir bättre av mångfald och söker därför människor med olika bakgrund och erfarenhet. \n\nVill du vara med och utveckla vår verksamhet?\n\r\n\r\nARBETSUPPGIFTER\nFalkenbergs gymnasieskola söker lärare med olika ämneskombinationer. Framförallt i Matematik, Idrott &amp; Hälsa samt Fotboll.” Olika kombinationer kan komma i fråga. Underlag varierar beroende på vilka utbildningar som kommer att starta, ca 40-80% Idrott &amp; Hälsa, 30-70 % Matematik samt 20% Fotboll. För Fotboll ser vi gärna att du har UEFA A diplom”.\n\r\n\r\nKVALIFIKATIONER\nLärarlegitimation \n\nVi lägger stor vikt vid personlig lämplighet för tjänsten.\r\n\nÖVRIGT\nTjänsten tillsätts under förutsättning att den inte behöver tas i anspråk av redan befintlig personal.\n\nLegitimation ska bifogas i ansökan, alt behörighetsgivande examen som berättigar dig till en legitimation. \n\nInom våra verksamheter gäller lagen om registerkontroll (SFS 2000:873). Ytterligare information ges i samband med eventuellt anställningserbjudande.\n\nI samband med denna rekrytering undanber vi oss kontakter från rekryteringsföretag och andra annonsörer. ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Enligt avtal.",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Vill du jobba på en plats med optimism och framåtanda? Där saker och ting händer och där du som medarbetare kan trivas och utvecklas? Då är Falkenbergs kommun något för dig.\n \nFalkenberg är en stad på attraktiva västkusten som befinner sig i ständig utveckling. Vi bygger nya bostadsområden, utvecklar våra verksamheter och fler och fler väljer att flytta hit. Det finns också goda möjligheter att pendla till Falkenberg. \n \nAtt vara anställd hos oss innebär många möjligheter med chans att kunna växa och utvecklas oberoende av yrkesval. Vi vill skapa en hållbar framtid för vår miljö, våra medarbetare, för våra barn, ungdomar och gamla. \n \nVi tycker att Falkenbergs kommun som arbetsplats blir bättre av mångfald och söker därför människor med olika bakgrund och erfarenhet. \n\nVill du vara med och utveckla vår verksamhet?\n\r\n\r\nARBETSUPPGIFTER\nFalkenbergs gymnasieskola söker lärare med olika ämneskombinationer. Framförallt i Matematik, Idrott & Hälsa samt Fotboll.” Olika kombinationer kan komma i fråga. Underlag varierar beroende på vilka utbildningar som kommer att starta, ca 40-80% Idrott & Hälsa, 30-70 % Matematik samt 20% Fotboll. För Fotboll ser vi gärna att du har UEFA A diplom”.\n\r\n\r\nKVALIFIKATIONER\nLärarlegitimation \n\nVi lägger stor vikt vid personlig lämplighet för tjänsten.\r\n\nÖVRIGT\nTjänsten tillsätts under förutsättning att den inte behöver tas i anspråk av redan befintlig personal.\n\nLegitimation ska bifogas i ansökan, alt behörighetsgivande examen som berättigar dig till en legitimation. \n\nInom våra verksamheter gäller lagen om registerkontroll (SFS 2000:873). Ytterligare information ges i samband med eventuellt anställningserbjudande.\n\nI samband med denna rekrytering undanber vi oss kontakter från rekryteringsföretag och andra annonsörer.",
+      "egenbil": false,
+      "referens": "Gy 17/18-14",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "https://recruit.visma.com/Public/Apply.aspx?guidAssignment=b9bdbdf2-1428-4357-becd-fb08d45b932b&TK=3ec2e75e-e223-4ea6-b748-9196053768b6",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Nygatan 34",
+      "postadressPostnummer": "31180",
+      "postadressPostort": "FALKENBERG",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "31180 Falkenberg",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": "Heltid. \r\nTidsbegränsad anställning, tillträde: 2017-08-07  , upphör: 2018-06-13  .",
+      "ingenYrkeserfarenhetKravs": false,
+      "kontaktpersoner": [
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "Rektor",
+          "mobilnummer": "",
+          "telefonnummer": "0705-93 15 07",
+          "info": "Rektor, Telefonnummer: 0705-93 15 07, Fredrik Ogell",
+          "epost": "",
+          "facklig": false
+        },
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "",
+          "mobilnummer": "",
+          "telefonnummer": "0346-88 60 00",
+          "info": "Telefonnummer: 0346-88 60 00, Fackliga företrädare nås via kontaktcenter",
+          "epost": "",
+          "facklig": true
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "72358109",
+      "externAnnonsId": "46-556242-1718-201059953",
+      "sokt": true,
+      "status": {
+        "id": "1",
+        "namn": "Godkänd för publicering",
+        "statusTyp": "GODKAND_FOR_PUBLICERING",
+        "publicerad": true
+      },
+      "arbetsgivareId": "10820448",
+      "organisationsnummer": "5562421718",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1497007251188,
+      "publiceringsdatum": 1497014134000,
+      "sistaPubliceringsdatum": 1505347200000,
+      "sistaAnsokningsdatum": 1505347200000,
+      "dagarTillSistaAnsokningsdatum": 87,
+      "rubrik": "Onsitetekniker till ett globalt företag inom Telecom",
+      "yrkesroll": {
+        "id": "7020",
+        "namn": "Helpdesktekniker / Supporttekniker"
+      },
+      "yrkesgrupp": {
+        "id": "3512",
+        "namn": "Supporttekniker, IT"
+      },
+      "yrkesomrade": {
+        "id": "3",
+        "namn": "Data/IT"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [
+        {
+          "id": "605533",
+          "namn": "Användarsupport, mjukvara"
+        }
+      ],
+      "yrkeErfarenhet": [
+        {
+          "erfarenhet": {
+            "namn": "erfarenhet efterfrågas",
+            "varde": "erfarenhet efterfrågas"
+          },
+          "vikt": 0,
+          "namn": "Helpdesktekniker / Supporttekniker",
+          "varde": "Helpdesktekniker / Supporttekniker"
+        },
+        {
+          "erfarenhet": {
+            "namn": "erfarenhet efterfrågas",
+            "varde": "erfarenhet efterfrågas"
+          },
+          "vikt": 0,
+          "namn": "IT",
+          "varde": "IT"
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "01",
+          "namn": "Stockholms län"
+        },
+        "kommun": {
+          "id": "0180",
+          "namn": "Stockholm"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 18.071496744,
+          "latitud": 59.3279493
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Randstad AB",
+      "postadressArbetsplatsNamn": "Dfind IT",
+      "korkortList": [
+        {
+          "namn": "A",
+          "varde": "A"
+        },
+        {
+          "namn": "B",
+          "varde": "B"
+        },
+        {
+          "namn": "C",
+          "varde": "C"
+        }
+      ],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig <a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a> [ <a href=\"http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/\" target=\"_blank\" >http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/</a> ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion &amp; Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Fast lön",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig tilda.stenmark@dfind.se [ http://tilda.stenmark@dfind.se/ ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion & Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n",
+      "egenbil": false,
+      "referens": "201059953",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "ansokfake@dfind.com",
+      "ansokningssattWebbadress": "https://www.randstad.se/JobPageRedirect.ashx?Reference=201059953&Jobsite=AMS&Brand=RandstadSE",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "För information om tjänsten är du välkommen att kontakta Test på tel. 074 28 954 alternativt Loffe på tel. 074 28 954. Gå in på länken och sök. Vi ser fram emot din ansökan!",
+      "postadressUtdelningsadress": "Regeringsgatan 65",
+      "postadressPostnummer": "10724",
+      "postadressPostort": "STOCKHOLM",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Regeringsgatan 65, 10724 STOCKHOLM",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": "Heltid\r\nTillsvidare",
+      "ingenYrkeserfarenhetKravs": true,
+      "kontaktpersoner": [
+        {
+          "fornamn": "Test",
+          "efternamn": "Testson",
+          "befattning": "Testare",
+          "mobilnummer": "070123456",
+          "telefonnummer": "08-123 4567",
+          "info": "tilda.stenmark@dfind.se",
+          "epost": "test@test.test",
+          "facklig": true
+        },
+        {
+          "fornamn": "Janne",
+          "efternamn": "Carlsson",
+          "befattning": "Chef",
+          "mobilnummer": "",
+          "telefonnummer": "",
+          "info": "",
+          "epost": "loffe@test.test",
+          "facklig": false
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "723582010",
+      "externAnnonsId": "46-212000-0142-156479",
+      "sokt": false,
+      "status": {
+        "id": "1",
+        "namn": "Godkänd för publicering",
+        "statusTyp": "GODKAND_FOR_PUBLICERING",
+        "publicerad": true
+      },
+      "arbetsgivareId": "10819876",
+      "organisationsnummer": "2120000142",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1497007241464,
+      "publiceringsdatum": 1497014270000,
+      "sistaPubliceringsdatum": 1505347200000,
+      "sistaAnsokningsdatum": 1505347200000,
+      "dagarTillSistaAnsokningsdatum": 11,
+      "rubrik": "Bibliotekarie till Farstaenheten 100%",
+      "yrkesroll": {
+        "id": "5899",
+        "namn": "Bibliotekarie"
+      },
+      "yrkesgrupp": {
+        "id": "2622",
+        "namn": "Bibliotekarier och arkivarier"
+      },
+      "yrkesomrade": {
+        "id": "11",
+        "namn": "Kultur, media, design"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [],
+      "yrkeErfarenhet": [
+        {
+          "id": "5899",
+          "namn": "Bibliotekarie",
+          "erfarenhet": {
+            "id": "2",
+            "namn": "Mindre än 1 års erfarenhet"
+          }
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "01",
+          "namn": "Stockholms län"
+        },
+        "kommun": {
+          "id": "0180",
+          "namn": "Stockholm"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 18.042904336,
+          "latitud": 59.328456043
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Stockholms kommun",
+      "postadressArbetsplatsNamn": "Stockholms Stad, Kulturförvaltningen, Stockholms stadsbibliotek",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Stockholm växer som aldrig förr. Våra ambitioner är höga. Nu söker vi dig som vill vara med och forma morgondagens Stockholm.\n\n\r\n\r\nArbetsplatsbeskrivning\nKulturförvaltningen arbetar på uppdrag av kulturnämnden.\r\n\r\nVerksamheten omfattar Kulturskolan,Liljevalchs konsthall, Stadsbiblioteket samt Stadsmuseet med Medeltidsmuseet och Stockholmia. Vi svarar också för stadens kulturstöd, Ungdomsfestivalen ”We Are STHLM”, kulturfestivalen, medborgarskapsceremonin och för en rad projekt mm. Kulturförvaltningen har ca 900 anställda. Vi eftersträvar jämställdhet och mångfald och ser gärna sökanden med olika bakgrund och erfarenheter.\n\nStockholms stadsbibliotek består av Stadsbiblioteket, Internationella biblioteket, Regionbiblioteket Stockholm, 40 stadsdelsbibliotek samt drygt 50 bibliotek på sjukhus och andra vårdinstitutioner. Stockholms stadsbibliotek har ca 420 anställda. Vi förutsätter att du liksom vi sätter besökaren i centrum. Ditt uppdrag är att med fantasi och kunskap medverka till att forma ett bibliotek som är tillgängligt och angeläget för alla. Du kommer till ett stadsbibliotek i stark utveckling och med goda utvecklingsmöjligheter för den enskilde medarbetaren.\n\nFarstaenheten består av 4 bibliotek; Farsta, Enskede och Gubbängens bibliotek utmed linje 18 på gröna linjen samt Sköndal. Sköndals bibliotek är sedan ombyggnaden 2013 ett väl fungerande meröppet bibliotek. Enskede bibliotek är ett medelstort familjebibliotek som totalrenoverades 2014. Planering pågår för flytt av Gubbängens bibliotek till nya lokaler och med en ny verksamhetsidé. Farsta bibliotek ligger i kulturhuset Fanfaren och är enhetens största bibliotek och också ett programbibliotek med många besökare en omfattande programverksamhet. I strukturplanen är Farsta utpekat som ett nodbibliotek som när Farsta växer behöver större mer ändamålsenliga lokaler. Inom enheten arbetar idag 23 personer. Farsta bibliotek finns sedan ombyggnad 2011 i kulturhuset Fanfaren.\n\nArbetsbeskrivning\nDu blir en nyckelperson i enhetens verksamhet genom att vara ansvarig för bemanningsfrågor och scheman inom hela enheten. Du kommer också att vara kontaktperson för Farsta bibliotek och ansvara för lokala kontakter av olika slag. I din tjänst kommer du att tjänstgöra mycket ute i biblioteket. Beroende av kompetens och intressen finns stora möjligheter att påverka innehåller i tjänsten\n\nKvalifikationer\nVi söker dig som:\n\nHar högskoleutbildning – bibliotekarieexamen, magisterexamen i biblioteks- och informationsvetenskap eller annan utbildning som arbetsgivaren bedömer vara likvärdig.\n\nHar ett utpräglat användarperspektiv och stor förmåga att bidra till goda möten med bibliotekets besökare.\n\nHar intresse för bemanningsfrågor och schemaläggning\n\nHar stor social kompetens och mycket god samarbetsförmåga\n\nÖvrigt\n\nTjänsten är en tillsvidareanställning på heltid.\n\nTillträde 2017-09-01 eller enligt överenskommelse.\n\nVisst helg och kvällsarbete ingår i tjänsten.\n\nStockholms stad arbetar med kompetensbaserad rekrytering som syftar till att se till varje persons kompetens och därmed motverka diskriminering.\n\nInför rekryteringsarbetet har vi tagit ställning till rekryteringskanaler och marknadsföring. Vi undanber oss därför kontakt med mediesäljare, rekryteringssajter och liknande.\n ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Månadslön",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Stockholm växer som aldrig förr. Våra ambitioner är höga. Nu söker vi dig som vill vara med och forma morgondagens Stockholm.\n\n\r\n\r\nArbetsplatsbeskrivning\nKulturförvaltningen arbetar på uppdrag av kulturnämnden.\r\n\r\nVerksamheten omfattar Kulturskolan,Liljevalchs konsthall, Stadsbiblioteket samt Stadsmuseet med Medeltidsmuseet och Stockholmia. Vi svarar också för stadens kulturstöd, Ungdomsfestivalen ”We Are STHLM”, kulturfestivalen, medborgarskapsceremonin och för en rad projekt mm. Kulturförvaltningen har ca 900 anställda. Vi eftersträvar jämställdhet och mångfald och ser gärna sökanden med olika bakgrund och erfarenheter.\n\nStockholms stadsbibliotek består av Stadsbiblioteket, Internationella biblioteket, Regionbiblioteket Stockholm, 40 stadsdelsbibliotek samt drygt 50 bibliotek på sjukhus och andra vårdinstitutioner. Stockholms stadsbibliotek har ca 420 anställda. Vi förutsätter att du liksom vi sätter besökaren i centrum. Ditt uppdrag är att med fantasi och kunskap medverka till att forma ett bibliotek som är tillgängligt och angeläget för alla. Du kommer till ett stadsbibliotek i stark utveckling och med goda utvecklingsmöjligheter för den enskilde medarbetaren.\n\nFarstaenheten består av 4 bibliotek; Farsta, Enskede och Gubbängens bibliotek utmed linje 18 på gröna linjen samt Sköndal. Sköndals bibliotek är sedan ombyggnaden 2013 ett väl fungerande meröppet bibliotek. Enskede bibliotek är ett medelstort familjebibliotek som totalrenoverades 2014. Planering pågår för flytt av Gubbängens bibliotek till nya lokaler och med en ny verksamhetsidé. Farsta bibliotek ligger i kulturhuset Fanfaren och är enhetens största bibliotek och också ett programbibliotek med många besökare en omfattande programverksamhet. I strukturplanen är Farsta utpekat som ett nodbibliotek som när Farsta växer behöver större mer ändamålsenliga lokaler. Inom enheten arbetar idag 23 personer. Farsta bibliotek finns sedan ombyggnad 2011 i kulturhuset Fanfaren.\n\nArbetsbeskrivning\nDu blir en nyckelperson i enhetens verksamhet genom att vara ansvarig för bemanningsfrågor och scheman inom hela enheten. Du kommer också att vara kontaktperson för Farsta bibliotek och ansvara för lokala kontakter av olika slag. I din tjänst kommer du att tjänstgöra mycket ute i biblioteket. Beroende av kompetens och intressen finns stora möjligheter att påverka innehåller i tjänsten\n\nKvalifikationer\nVi söker dig som:\n\nHar högskoleutbildning – bibliotekarieexamen, magisterexamen i biblioteks- och informationsvetenskap eller annan utbildning som arbetsgivaren bedömer vara likvärdig.\n\nHar ett utpräglat användarperspektiv och stor förmåga att bidra till goda möten med bibliotekets besökare.\n\nHar intresse för bemanningsfrågor och schemaläggning\n\nHar stor social kompetens och mycket god samarbetsförmåga\n\nÖvrigt\n\nTjänsten är en tillsvidareanställning på heltid.\n\nTillträde 2017-09-01 eller enligt överenskommelse.\n\nVisst helg och kvällsarbete ingår i tjänsten.\n\nStockholms stad arbetar med kompetensbaserad rekrytering som syftar till att se till varje persons kompetens och därmed motverka diskriminering.\n\nInför rekryteringsarbetet har vi tagit ställning till rekryteringskanaler och marknadsföring. Vi undanber oss därför kontakt med mediesäljare, rekryteringssajter och liknande.\n",
+      "egenbil": false,
+      "referens": "2017/4305",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "https://stockholmsstad.mynetworkglobal.com/what:job/jobID:156479/type:job/where:1/apply:1",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Ragnar östbergs plan 1",
+      "postadressPostnummer": "11221",
+      "postadressPostort": "Stockholm",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Ragnar östbergs plan 1",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": " 100%. Tillträde: Enligt överenskommelse\r\ntillsvidareanställning",
+      "ingenYrkeserfarenhetKravs": false,
+      "kontaktpersoner": [
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "",
+          "mobilnummer": "",
+          "telefonnummer": "08-50830575",
+          "info": "Telefonnummer: 08-50830575, Ranka Klincov",
+          "epost": "",
+          "facklig": false
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "723333811",
+      "externAnnonsId": "46-232100-0032-13080",
+      "sokt": true,
+      "status": {
+        "id": "1",
+        "namn": "Godkänd för publicering",
+        "statusTyp": "GODKAND_FOR_PUBLICERING",
+        "publicerad": true
+      },
+      "arbetsgivareId": "10820079",
+      "organisationsnummer": "2321000032",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1496914527035,
+      "publiceringsdatum": 1496921688000,
+      "sistaPubliceringsdatum": 1501545600000,
+      "sistaAnsokningsdatum": 1501545600000,
+      "dagarTillSistaAnsokningsdatum": 20,
+      "rubrik": "Legitimerad Psykolog till Barn- och ungdomsteamet!",
+      "yrkesroll": {
+        "id": "5709",
+        "namn": "Psykolog"
+      },
+      "yrkesgrupp": {
+        "id": "2241",
+        "namn": "Psykologer"
+      },
+      "yrkesomrade": {
+        "id": "8",
+        "namn": "Hälso- och sjukvård"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [
+        {
+          "id": "3427",
+          "namn": "Legitimation som psykolog"
+        }
+      ],
+      "yrkeErfarenhet": [],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "04",
+          "namn": "Södermanlands län"
+        },
+        "kommun": {
+          "id": "0480",
+          "namn": "Nyköping"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 17.01059234,
+          "latitud": 58.787385546
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Södermanlands Läns Landsting",
+      "postadressArbetsplatsNamn": "Landstinget Sörmland",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Habiliteringsmottagningen Nyköping\r\n\r\nVälkommen att skapa Sveriges friskaste län tillsammans med oss.\n\nHabiliteringsverksamheten arbetar för att skapa förutsättningar för självständighet och ett aktivt liv genom utvecklande, stödjande och kompenserande insatser. Vårt uppdrag innebär att utreda och att ge habiliterande insatser till barn, ungdomar och vuxna personer med varaktiga funktionsnedsättningar såsom rörelsehinder, flerfunktionshinder, intellektuell funktionsnedsättning eller autismspektrumtillstånd. \n\nArbetet sker i tvärprofessionella team bestående av arbetsterapeut, kurator, logoped, läkare, psykolog, sjukgymnast/fysioterapeut, sjuksköterska samt specialpedagog. Insatser ges ofta i samverkan med personal inom kommun och andra landstingsverksamheter. Arbetet är varierande och mångsidigt och anpassas utifrån patientens behov vilket är en kreativ utmaning som gör arbetet flexibelt och spännande.  \n\nArbetsplats\nNeuropsykologisk utredning av misstänkt intellektuell funktionsnedsättning och/eller autismspektrumtillstånd. \n\nHabiliteringsarbete som innefattar kompenserande åtgärder, behandling och råd och stöd utifrån intellektuell funktionsnedsättning och autismspektrumtillstånd.\nInsatserna ges till patienter och anhöriga, både i grupp och individuellt. \nBedömning och insatser i komplexa ärenden samt handleda och ge konsultation i psykologiska frågor till övriga i teamet. Vara ett stöd i ärenden då teamet arbetar utifrån Tillämpad Beteendeanalys, TBA.\n\nInformation och rådgivning till nätverk och personal kring patienter. Kunskapsöverföring rörande olika diagnoser och funktionsnedsättningar till andra verksamheter ingår.\n\nDina huvudsakliga arbetsuppgifter\nInom psykologtjänsten finns även möjlighet till fördjupade uppdrag:\nHandledning och kunskapsstöd inom särskilt kunskapsområde till yrkesgruppen eller övrig personal. \nIntensiv Beteendeträning, IBT, med små barn som har diagnosen Autism. \nSakkunnig kompetens inom Habiliteringsverksamhetens länsövergripande remissgrupp.\n\nVi erbjuder dig\nNära samarbete med fyra psykologkollegor på habiliteringsmottagningen\nKontinuerlig extern handledning med psykologkollegor i länet\nBreddutbildning inom tillämpad beteendeanalys, TBA, samt intern handledning av psykolog med specialistkompetens inom TBA. \nMöjlighet att ingå arbetsgrupper för utveckling av verksamheten.\n\nDin kompetens\nVi söker dig som är legitimerad psykolog. \nErfarenhet av arbete med barn och ungdomar och/eller arbete med habiliteringens målgrupper är önskvärt. Utredningskompetens och fördjupad kunskap inom neuropsykologi och neuropsykiatri samt KBT-kompetens, är meriterande. \n\nVi lägger stor vikt vid personlig lämplighet. För att trivas med vårt arbetssätt behöver du ha en god samarbetsförmåga, vara lyhörd, flexibel och tycka om att arbeta i team, samtidigt som du uppskattar att arbeta med stort egenansvar.\nKörkort erfordras.\n\nAnställningsform och sysselsättningsgrad \nTillsvidareanställning på heltid. Tillträde enligt överenskommelse.\n\nInformation om tjänsten lämnas av\nVerksamhetschef Eva-Charlotte Bernthson, 0155-24 58 04.  \nLegitimerad psykolog Fredrik Ivarsson, 0155-24 76 43.\nFackliga företrädare nås via vxl, 0155-24 50 00.\n\nKom och jobba hos oss på Barn- och ungdomsteamet.\n\nVälkommen med din ansökan, inklusive CV, senast 2017-07-02.\nIntervjuer kommer att ske löpande.\n\nFölj oss gärna på\n<a href=\"https://www.facebook.com/lstsormlandJobbahososs\" target=\"_blank\" >https://www.facebook.com/lstsormlandJobbahososs</a>\n\nSe våra förmåner\n<a href=\"http://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/\" target=\"_blank\" >http://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/</a>\n\n\r\n\n\nVi har i vissa fall skyldighet att kontrollera om en person förekommer i misstanke- och eller belastningsregistret. Det kan ske på två sätt, endera begär landstinget ut uppgiften själv eller också uppmanas du att begära ut utdrag för att kunna visa upp innan anställning. Vi begär i undantagsfall att du visar upp registerutdrag även vid tillsättning av andra tjänster än de som avses ovan. Blir du aktuell för anställning kommer du att informeras om vad som gäller för den tjänst du sökt.\n\nVi gör aktiva val vid exponering och rekryteringsstöd och undanber oss därför direktkontakt av bemannings- och rekryteringsföretag. ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Fast lön. Kollektivavtal finns.",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Habiliteringsmottagningen Nyköping\r\n\r\nVälkommen att skapa Sveriges friskaste län tillsammans med oss.\n\nHabiliteringsverksamheten arbetar för att skapa förutsättningar för självständighet och ett aktivt liv genom utvecklande, stödjande och kompenserande insatser. Vårt uppdrag innebär att utreda och att ge habiliterande insatser till barn, ungdomar och vuxna personer med varaktiga funktionsnedsättningar såsom rörelsehinder, flerfunktionshinder, intellektuell funktionsnedsättning eller autismspektrumtillstånd. \n\nArbetet sker i tvärprofessionella team bestående av arbetsterapeut, kurator, logoped, läkare, psykolog, sjukgymnast/fysioterapeut, sjuksköterska samt specialpedagog. Insatser ges ofta i samverkan med personal inom kommun och andra landstingsverksamheter. Arbetet är varierande och mångsidigt och anpassas utifrån patientens behov vilket är en kreativ utmaning som gör arbetet flexibelt och spännande.  \n\nArbetsplats\nNeuropsykologisk utredning av misstänkt intellektuell funktionsnedsättning och/eller autismspektrumtillstånd. \n\nHabiliteringsarbete som innefattar kompenserande åtgärder, behandling och råd och stöd utifrån intellektuell funktionsnedsättning och autismspektrumtillstånd.\nInsatserna ges till patienter och anhöriga, både i grupp och individuellt. \nBedömning och insatser i komplexa ärenden samt handleda och ge konsultation i psykologiska frågor till övriga i teamet. Vara ett stöd i ärenden då teamet arbetar utifrån Tillämpad Beteendeanalys, TBA.\n\nInformation och rådgivning till nätverk och personal kring patienter. Kunskapsöverföring rörande olika diagnoser och funktionsnedsättningar till andra verksamheter ingår.\n\nDina huvudsakliga arbetsuppgifter\nInom psykologtjänsten finns även möjlighet till fördjupade uppdrag:\nHandledning och kunskapsstöd inom särskilt kunskapsområde till yrkesgruppen eller övrig personal. \nIntensiv Beteendeträning, IBT, med små barn som har diagnosen Autism. \nSakkunnig kompetens inom Habiliteringsverksamhetens länsövergripande remissgrupp.\n\nVi erbjuder dig\nNära samarbete med fyra psykologkollegor på habiliteringsmottagningen\nKontinuerlig extern handledning med psykologkollegor i länet\nBreddutbildning inom tillämpad beteendeanalys, TBA, samt intern handledning av psykolog med specialistkompetens inom TBA. \nMöjlighet att ingå arbetsgrupper för utveckling av verksamheten.\n\nDin kompetens\nVi söker dig som är legitimerad psykolog. \nErfarenhet av arbete med barn och ungdomar och/eller arbete med habiliteringens målgrupper är önskvärt. Utredningskompetens och fördjupad kunskap inom neuropsykologi och neuropsykiatri samt KBT-kompetens, är meriterande. \n\nVi lägger stor vikt vid personlig lämplighet. För att trivas med vårt arbetssätt behöver du ha en god samarbetsförmåga, vara lyhörd, flexibel och tycka om att arbeta i team, samtidigt som du uppskattar att arbeta med stort egenansvar.\nKörkort erfordras.\n\nAnställningsform och sysselsättningsgrad \nTillsvidareanställning på heltid. Tillträde enligt överenskommelse.\n\nInformation om tjänsten lämnas av\nVerksamhetschef Eva-Charlotte Bernthson, 0155-24 58 04.  \nLegitimerad psykolog Fredrik Ivarsson, 0155-24 76 43.\nFackliga företrädare nås via vxl, 0155-24 50 00.\n\nKom och jobba hos oss på Barn- och ungdomsteamet.\n\nVälkommen med din ansökan, inklusive CV, senast 2017-07-02.\nIntervjuer kommer att ske löpande.\n\nFölj oss gärna på\nhttps://www.facebook.com/lstsormlandJobbahososs\n\nSe våra förmåner\nhttp://www.landstingetsormland.se/extra-ingang/Jobba-hos-oss/Jobba-hos-oss/Vara-formaner/\n\n\r\n\n\nVi har i vissa fall skyldighet att kontrollera om en person förekommer i misstanke- och eller belastningsregistret. Det kan ske på två sätt, endera begär landstinget ut uppgiften själv eller också uppmanas du att begära ut utdrag för att kunna visa upp innan anställning. Vi begär i undantagsfall att du visar upp registerutdrag även vid tillsättning av andra tjänster än de som avses ovan. Blir du aktuell för anställning kommer du att informeras om vad som gäller för den tjänst du sökt.\n\nVi gör aktiva val vid exponering och rekryteringsstöd och undanber oss därför direktkontakt av bemannings- och rekryteringsföretag.",
+      "egenbil": false,
+      "referens": "RNLN-17-112",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "https://sormland.powerinit.com/Modules/Recruitments/Public/?JobPositionId=13080&RefNo=RNLN-17-112&Source=[JobPositionSource]",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Repslagaregatan 19",
+      "postadressPostnummer": "61188",
+      "postadressPostort": "Nyköping",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Repslagaregatan 19",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": "Tillsvidare, 100%, Tillträde Enligt överenskommelse\r\n\n-",
+      "ingenYrkeserfarenhetKravs": true,
+      "kontaktpersoner": [],
+      "matchningsresultat": null
+    },
+    {
+      "id": "716996012",
+      "externAnnonsId": "46-212000-1231-B9BDBDF214284357BECDFB08D45B932B",
+      "sokt": false,
+      "status": {
+        "id": "2",
+        "namn": "Avpublicerad",
+        "statusTyp": "AVPUBLICERAD",
+        "publicerad": false
+      },
+      "arbetsgivareId": "10819946",
+      "organisationsnummer": "2120001231",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1493274050416,
+      "publiceringsdatum": 1493280612000,
+      "sistaPubliceringsdatum": 1501545600000,
+      "sistaAnsokningsdatum": 1501545600000,
+      "dagarTillSistaAnsokningsdatum": -33,
+      "rubrik": "Lärare, Falkenbergs gymnasieskola",
+      "yrkesroll": {
+        "id": "7127",
+        "namn": "Lärare i gymnasiet"
+      },
+      "yrkesgrupp": {
+        "id": "2330",
+        "namn": "Gymnasielärare"
+      },
+      "yrkesomrade": {
+        "id": "15",
+        "namn": "Pedagogiskt arbete"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "3",
+        "namn": "3 - 6 månader"
+      },
+      "kompetenser": [
+        {
+          "id": "608921",
+          "namn": "Lärarlegitimation"
+        }
+      ],
+      "yrkeErfarenhet": [
+        {
+          "id": "7127",
+          "namn": "Lärare i gymnasiet",
+          "erfarenhet": {
+            "id": "2",
+            "namn": "Mindre än 1 års erfarenhet"
+          }
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "13",
+          "namn": "Hallands län"
+        },
+        "kommun": {
+          "id": "1382",
+          "namn": "Falkenberg"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 12.495243812,
+          "latitud": 56.894944888
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Falkenbergs kommun",
+      "postadressArbetsplatsNamn": "Falkenbergs kommun, Gymnasieskolan",
+      "korkortList": [],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Vill du jobba på en plats med optimism och framåtanda? Där saker och ting händer och där du som medarbetare kan trivas och utvecklas? Då är Falkenbergs kommun något för dig.\n \nFalkenberg är en stad på attraktiva västkusten som befinner sig i ständig utveckling. Vi bygger nya bostadsområden, utvecklar våra verksamheter och fler och fler väljer att flytta hit. Det finns också goda möjligheter att pendla till Falkenberg. \n \nAtt vara anställd hos oss innebär många möjligheter med chans att kunna växa och utvecklas oberoende av yrkesval. Vi vill skapa en hållbar framtid för vår miljö, våra medarbetare, för våra barn, ungdomar och gamla. \n \nVi tycker att Falkenbergs kommun som arbetsplats blir bättre av mångfald och söker därför människor med olika bakgrund och erfarenhet. \n\nVill du vara med och utveckla vår verksamhet?\n\r\n\r\nARBETSUPPGIFTER\nFalkenbergs gymnasieskola söker lärare med olika ämneskombinationer. Framförallt i Matematik, Idrott &amp; Hälsa samt Fotboll.” Olika kombinationer kan komma i fråga. Underlag varierar beroende på vilka utbildningar som kommer att starta, ca 40-80% Idrott &amp; Hälsa, 30-70 % Matematik samt 20% Fotboll. För Fotboll ser vi gärna att du har UEFA A diplom”.\n\r\n\r\nKVALIFIKATIONER\nLärarlegitimation \n\nVi lägger stor vikt vid personlig lämplighet för tjänsten.\r\n\nÖVRIGT\nTjänsten tillsätts under förutsättning att den inte behöver tas i anspråk av redan befintlig personal.\n\nLegitimation ska bifogas i ansökan, alt behörighetsgivande examen som berättigar dig till en legitimation. \n\nInom våra verksamheter gäller lagen om registerkontroll (SFS 2000:873). Ytterligare information ges i samband med eventuellt anställningserbjudande.\n\nI samband med denna rekrytering undanber vi oss kontakter från rekryteringsföretag och andra annonsörer. ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Enligt avtal.",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Vill du jobba på en plats med optimism och framåtanda? Där saker och ting händer och där du som medarbetare kan trivas och utvecklas? Då är Falkenbergs kommun något för dig.\n \nFalkenberg är en stad på attraktiva västkusten som befinner sig i ständig utveckling. Vi bygger nya bostadsområden, utvecklar våra verksamheter och fler och fler väljer att flytta hit. Det finns också goda möjligheter att pendla till Falkenberg. \n \nAtt vara anställd hos oss innebär många möjligheter med chans att kunna växa och utvecklas oberoende av yrkesval. Vi vill skapa en hållbar framtid för vår miljö, våra medarbetare, för våra barn, ungdomar och gamla. \n \nVi tycker att Falkenbergs kommun som arbetsplats blir bättre av mångfald och söker därför människor med olika bakgrund och erfarenhet. \n\nVill du vara med och utveckla vår verksamhet?\n\r\n\r\nARBETSUPPGIFTER\nFalkenbergs gymnasieskola söker lärare med olika ämneskombinationer. Framförallt i Matematik, Idrott & Hälsa samt Fotboll.” Olika kombinationer kan komma i fråga. Underlag varierar beroende på vilka utbildningar som kommer att starta, ca 40-80% Idrott & Hälsa, 30-70 % Matematik samt 20% Fotboll. För Fotboll ser vi gärna att du har UEFA A diplom”.\n\r\n\r\nKVALIFIKATIONER\nLärarlegitimation \n\nVi lägger stor vikt vid personlig lämplighet för tjänsten.\r\n\nÖVRIGT\nTjänsten tillsätts under förutsättning att den inte behöver tas i anspråk av redan befintlig personal.\n\nLegitimation ska bifogas i ansökan, alt behörighetsgivande examen som berättigar dig till en legitimation. \n\nInom våra verksamheter gäller lagen om registerkontroll (SFS 2000:873). Ytterligare information ges i samband med eventuellt anställningserbjudande.\n\nI samband med denna rekrytering undanber vi oss kontakter från rekryteringsföretag och andra annonsörer.",
+      "egenbil": false,
+      "referens": "Gy 17/18-14",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "",
+      "ansokningssattWebbadress": "https://recruit.visma.com/Public/Apply.aspx?guidAssignment=b9bdbdf2-1428-4357-becd-fb08d45b932b&TK=3ec2e75e-e223-4ea6-b748-9196053768b6",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "",
+      "postadressUtdelningsadress": "Nygatan 34",
+      "postadressPostnummer": "31180",
+      "postadressPostort": "FALKENBERG",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "31180 Falkenberg",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": "Heltid. \r\nTidsbegränsad anställning, tillträde: 2017-08-07  , upphör: 2018-06-13  .",
+      "ingenYrkeserfarenhetKravs": false,
+      "kontaktpersoner": [
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "Rektor",
+          "mobilnummer": "",
+          "telefonnummer": "0705-93 15 07",
+          "info": "Rektor, Telefonnummer: 0705-93 15 07, Fredrik Ogell",
+          "epost": "",
+          "facklig": false
+        },
+        {
+          "fornamn": "",
+          "efternamn": "",
+          "befattning": "",
+          "mobilnummer": "",
+          "telefonnummer": "0346-88 60 00",
+          "info": "Telefonnummer: 0346-88 60 00, Fackliga företrädare nås via kontaktcenter",
+          "epost": "",
+          "facklig": true
+        }
+      ],
+      "matchningsresultat": null
+    },
+    {
+      "id": "72358109",
+      "externAnnonsId": "46-556242-1718-201059953",
+      "sokt": true,
+      "status": {
+        "id": "1",
+        "namn": "Godkänd för publicering",
+        "statusTyp": "GODKAND_FOR_PUBLICERING",
+        "publicerad": true
+      },
+      "arbetsgivareId": "10820448",
+      "organisationsnummer": "5562421718",
+      "arbetsplatsId": "0",
+      "annonsversion": "1.0",
+      "senastModifierad": 1497007251188,
+      "publiceringsdatum": 1497014134000,
+      "sistaPubliceringsdatum": 1501545600000,
+      "sistaAnsokningsdatum": 1501545600000,
+      "dagarTillSistaAnsokningsdatum": 87,
+      "rubrik": "Onsitetekniker till ett globalt företag inom Telecom",
+      "yrkesroll": {
+        "id": "7020",
+        "namn": "Helpdesktekniker / Supporttekniker"
+      },
+      "yrkesgrupp": {
+        "id": "3512",
+        "namn": "Supporttekniker, IT"
+      },
+      "yrkesomrade": {
+        "id": "3",
+        "namn": "Data/IT"
+      },
+      "arbetsomfattning": {
+        "max": 100,
+        "min": 100
+      },
+      "anstallningstyp": {
+        "id": "1",
+        "namn": "Vanlig anställning"
+      },
+      "varaktighet": {
+        "id": "1",
+        "namn": "Tillsvidare"
+      },
+      "kompetenser": [
+        {
+          "id": "605533",
+          "namn": "Användarsupport, mjukvara"
+        }
+      ],
+      "yrkeErfarenhet": [
+        {
+          "erfarenhet": {
+            "namn": "erfarenhet efterfrågas",
+            "varde": "erfarenhet efterfrågas"
+          },
+          "vikt": 0,
+          "namn": "Helpdesktekniker / Supporttekniker",
+          "varde": "Helpdesktekniker / Supporttekniker"
+        },
+        {
+          "erfarenhet": {
+            "namn": "erfarenhet efterfrågas",
+            "varde": "erfarenhet efterfrågas"
+          },
+          "vikt": 0,
+          "namn": "IT",
+          "varde": "IT"
+        }
+      ],
+      "utbildningsinriktning": [],
+      "erbjudenArbetsplats": {
+        "land": {
+          "id": "199",
+          "namn": "Sverige"
+        },
+        "lan": {
+          "id": "01",
+          "namn": "Stockholms län"
+        },
+        "kommun": {
+          "id": "0180",
+          "namn": "Stockholm"
+        },
+        "geoPosition": {
+          "id": null,
+          "namn": null,
+          "distans": null,
+          "longitud": 18.071496744,
+          "latitud": 59.3279493
+        }
+      },
+      "logotypurl": null,
+      "arbetsgivarenamn": "Randstad AB",
+      "postadressArbetsplatsNamn": "Dfind IT",
+      "korkortList": [
+        {
+          "namn": "A",
+          "varde": "A"
+        },
+        {
+          "namn": "B",
+          "varde": "B"
+        },
+        {
+          "namn": "C",
+          "varde": "C"
+        }
+      ],
+      "kalla": "VIA_PLATSBANKEN_DXA",
+      "annonstext": "Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig <a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a> [ <a href=\"http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/\" target=\"_blank\" >http://<a href=\"mailto:tilda.stenmark@dfind.se\">tilda.stenmark@dfind.se</a>/</a> ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion &amp; Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n ",
+      "fritext": null,
+      "foretagsinformation": "",
+      "lonetyp": "Fast månads- vecko- eller timlön",
+      "lonebeskrivning": "Fast lön",
+      "antalPlatser": 1,
+      "visaAntalPlatser": true,
+      "beskrivningKrav": "",
+      "beskrivningBehov": "Onsitetekniker till ett globalt företag inom Telecom\r\nSom konsult hos Dfind IT har du fantastiska karriärmöjligheter. Vi erbjuder dig en stabil tillsvidareanställning med goda utvecklingsmöjligheter för dig som visar driv och intresse. Att jobba som konsult hos Dfind IT är ett utmärkt sätt att bygga på sitt CV med olika kompetenser inom IT. Vi jobbar med både stora som små kunder inom många olika branscher vilket gör att vi kan erbjuda våra konsulter spännande och varierade uppdrag på olika platser i Stockholm.\n\nHos vår kund pågår bygget av ett nytt spännande IT service koncept. Företaget är ett globalt Telecom bolag i Stockholm. \n\nVi söker nu en erfaren Onsitetekniker för en spännande och viktigt roll i företagets IT-supportfunktion.\n\nDu kommer dels att supportera en grupp användare om ca 12 personer som arbetar med finansiella transaktioner där höga krav ställs på tillgänglighet och service, och dels vara en del av ett team som supporterar ca 1500 användare med hård och mjukvarusupport och utbildar användare i teknisk utrustning och applikationer.\n\nI din roll som onsitetekniker för användarna som arbetar med finansiella transaktioner så har du en viktig roll i att se till att användarnas miljö fungerar problemfritt, här ställs höga krav på en snabb inställelsetid  och hög servicegrad. Du kommer att felsöka och ge support på hård och mjukvara, samarbeta med externa supportteam för support på bank/marknadsapplikationer, installera och leverera nya datorer. \n\nI den andra delen av rollen kommer du tillsammans med kollegor att ge support på användares hård och mjukvara, sköta den tekniska utrustningen i konferensrum och utbilda användare i hur de ska använda sin tekniska utrustning. \n\nFör att du ska passa i rollen och trivas på jobbet så behöver du ha erfarenhet av liknande arbetsuppgifter, tidigare erfarenhet av IT-support onsite med många användare där höga krav ställts på tekniska kunskaper, att du är en god kommunikatör, kan koordinera och har ett pedagogiskt sinne. \n\nDu kommer att ha dina egna ansvarsområden men samtidigt samarbeta med kollegor både internt och från externa leverantörer.  \n\nSom person är du flexibel och hjälper till där det behövs.\n\n• Du har erfarenhet av arbete som onsite- och supporttekniker \n• Installation, konfiguration och felsökning av klienter\n• Nätverkskunskaper\n• Kontakt med leverantörer\n• Mycket goda kunskeper inom Windows 7 och 10 samt Office365\n• Har du tidigare erfarenhet av support inom bank/finans är det meriterande\nFör att passa i rollen vill vi att Du \n\n• Är serviceminded\n• Brinner för IT support\n• Stresstålig\n\n\nAnsökan\n\nÄr du personen vi söker? Tveka inte att skicka in din ansökan redan idag! Ansökningar och intervjuer sker löpande.\n\n\n\nHar du frågor om tjänsten är du välkommen att kontakta rekryteringsansvarig tilda.stenmark@dfind.se [ http://tilda.stenmark@dfind.se/ ]\n\n\n\nStart: enligt överenskommelse\n\nOrt: Kista\n\nOmfattning: Heltid\n\nUppdragsgivare: Dfind IT\n\nOrganisations-/företagsbeskrivning \n\nDfind IT är ett rekryterings- och konsultföretag specialiserat på IT. Vi jobbar för att andra ska lyckas. Vår målsättning är att våra kandidater hittar det perfekta uppdraget och att våra kunder hittar just den kompetens de behöver. Alla som arbetar hos oss är specialister på IT-kompetens. Vi anställer enbart engagerade människor med rätt attityd som stöder våra värderingar: Passion & Simplicity. Vi tror att engagemang och enkelhet är vägen till en bra framtid för våra kandidater och våra kunder - en framtid där vi kan hjälpa fler att lyckas. Keep Improving. \n\nKeywords: On-site, on site, Onsite, onsitetekniker, on site tekniker, on-sitetekniker\n",
+      "egenbil": false,
+      "referens": "201059953",
+      "tilltrade": "",
+      "ansokningssattPost": "",
+      "ansokningssattEpost": "ansokfake@dfind.com",
+      "ansokningssattWebbadress": "https://www.randstad.se/JobPageRedirect.ashx?Reference=201059953&Jobsite=AMS&Brand=RandstadSE",
+      "ansokningssattAnnat": "",
+      "ansokningssattViaAf": false,
+      "ovrigtOmAnsokan": "För information om tjänsten är du välkommen att kontakta Test på tel. 074 28 954 alternativt Loffe på tel. 074 28 954. Gå in på länken och sök. Vi ser fram emot din ansökan!",
+      "postadressUtdelningsadress": "Regeringsgatan 65",
+      "postadressPostnummer": "10724",
+      "postadressPostort": "STOCKHOLM",
+      "postadressLand": "SE",
+      "besoksadressGatuadress": "Regeringsgatan 65, 10724 STOCKHOLM",
+      "besoksadressOrt": "",
+      "telefonnummer": "",
+      "epost": "",
+      "webbplats": "",
+      "villkorsbeskrivning": "Heltid\r\nTillsvidare",
+      "ingenYrkeserfarenhetKravs": true,
+      "kontaktpersoner": [
+        {
+          "fornamn": "Test",
+          "efternamn": "Testson",
+          "befattning": "Testare",
+          "mobilnummer": "070123456",
+          "telefonnummer": "08-123 4567",
+          "info": "tilda.stenmark@dfind.se",
+          "epost": "test@test.test",
+          "facklig": true
+        },
+        {
+          "fornamn": "Janne",
+          "efternamn": "Carlsson",
+          "befattning": "Chef",
+          "mobilnummer": "",
+          "telefonnummer": "",
+          "info": "",
+          "epost": "loffe@test.test",
+          "facklig": false
+        }
+      ],
+      "matchningsresultat": null
+    }
+  ]
+}
