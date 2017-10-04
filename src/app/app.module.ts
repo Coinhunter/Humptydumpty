@@ -19,6 +19,7 @@ import { SavedJobsComponent } from './components/savedjobs/savedjobs.component';
 import { StartPageComponent } from './components/startpage/startpage.component';
 import { SearchjobsComponent } from './components/searchjobs/searchjobs.component';
 import { RelatedmatchesPipe } from './pipes/relatedmatches.pipe';
+import { GeneratejobareasComponent } from './components/generatejobareas/generatejobareas.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RelatedmatchesPipe } from './pipes/relatedmatches.pipe';
     SavedJobsComponent,
     StartPageComponent,
     SearchjobsComponent,
-    RelatedmatchesPipe
+    RelatedmatchesPipe,
+    GeneratejobareasComponent
   ],
   imports: [
     BrowserModule,

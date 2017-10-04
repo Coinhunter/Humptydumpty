@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import {StartPageComponent} from './components/startpage/startpage.component';
 import {SavedJobsComponent} from './components/savedjobs/savedjobs.component';
 import {SearchjobsComponent} from './components/searchjobs/searchjobs.component';
+import { GeneratejobareasComponent } from './components/generatejobareas/generatejobareas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/SearchJobs', pathMatch: 'full' },
@@ -24,6 +25,10 @@ const routes: Routes = [
     {
         path: 'SearchJobs',
         component: SearchjobsComponent
+    },
+    {
+        path: 'GenerateJobAreas',
+        component: GeneratejobareasComponent
     }
 ];
 
