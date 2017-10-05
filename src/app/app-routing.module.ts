@@ -9,6 +9,7 @@ import {StartPageComponent} from './components/startpage/startpage.component';
 import {SavedJobsComponent} from './components/savedjobs/savedjobs.component';
 import {SearchjobsComponent} from './components/searchjobs/searchjobs.component';
 import { GeneratejobareasComponent } from './components/generatejobareas/generatejobareas.component';
+import { GeneratecountriesComponent } from './components/generatecountries/generatecountries.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/SearchJobs', pathMatch: 'full' },
@@ -29,6 +30,10 @@ const routes: Routes = [
     {
         path: 'GenerateJobAreas',
         component: GeneratejobareasComponent
+    },
+    {
+        path: 'GenerateCountries',
+        component: GeneratecountriesComponent
     }
 ];
 

@@ -20,6 +20,7 @@ import { StartPageComponent } from './components/startpage/startpage.component';
 import { SearchjobsComponent } from './components/searchjobs/searchjobs.component';
 import { RelatedmatchesPipe } from './pipes/relatedmatches.pipe';
 import { GeneratejobareasComponent } from './components/generatejobareas/generatejobareas.component';
+import { GeneratecountriesComponent } from './components/generatecountries/generatecountries.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { GeneratejobareasComponent } from './components/generatejobareas/generat
     StartPageComponent,
     SearchjobsComponent,
     RelatedmatchesPipe,
-    GeneratejobareasComponent
+    GeneratejobareasComponent,
+    GeneratecountriesComponent
   ],
   imports: [
     BrowserModule,

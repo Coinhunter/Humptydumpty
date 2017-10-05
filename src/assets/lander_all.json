@@ -1,0 +1,2857 @@
+[
+  {
+    "id": "00",
+    "namn": "Sverige",
+    "typ": "LAN",
+    "lan": [
+      {
+        "id": "10",
+        "namn": "Blekinge län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "1082",
+            "namn": "Karlshamn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1080",
+            "namn": "Karlskrona",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1060",
+            "namn": "Olofström",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1081",
+            "namn": "Ronneby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1083",
+            "namn": "Sölvesborg",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "20",
+        "namn": "Dalarnas län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "2084",
+            "namn": "Avesta",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2081",
+            "namn": "Borlänge",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2080",
+            "namn": "Falun",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2026",
+            "namn": "Gagnef",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2083",
+            "namn": "Hedemora",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2029",
+            "namn": "Leksand",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2085",
+            "namn": "Ludvika",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2023",
+            "namn": "Malung-Sälen",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2062",
+            "namn": "Mora",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2034",
+            "namn": "Orsa",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2031",
+            "namn": "Rättvik",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2061",
+            "namn": "Smedjebacken",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2082",
+            "namn": "Säter",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2021",
+            "namn": "Vansbro",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2039",
+            "namn": "Älvdalen",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "09",
+        "namn": "Gotlands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0980",
+            "namn": "Gotland",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "21",
+        "namn": "Gävleborgs län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "2183",
+            "namn": "Bollnäs",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2180",
+            "namn": "Gävle",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2104",
+            "namn": "Hofors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2184",
+            "namn": "Hudiksvall",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2161",
+            "namn": "Ljusdal",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2132",
+            "namn": "Nordanstig",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2101",
+            "namn": "Ockelbo",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2121",
+            "namn": "Ovanåker",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2181",
+            "namn": "Sandviken",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2182",
+            "namn": "Söderhamn",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "namn": "Hallands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "1382",
+            "namn": "Falkenberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1380",
+            "namn": "Halmstad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1315",
+            "namn": "Hylte",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1384",
+            "namn": "Kungsbacka",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1381",
+            "namn": "Laholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1383",
+            "namn": "Varberg",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "23",
+        "namn": "Jämtlands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "2326",
+            "namn": "Berg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2305",
+            "namn": "Bräcke",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2361",
+            "namn": "Härjedalen",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2309",
+            "namn": "Krokom",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2303",
+            "namn": "Ragunda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2313",
+            "namn": "Strömsund",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2321",
+            "namn": "Åre",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2380",
+            "namn": "Östersund",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "06",
+        "namn": "Jönköpings län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0604",
+            "namn": "Aneby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0686",
+            "namn": "Eksjö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0662",
+            "namn": "Gislaved",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0617",
+            "namn": "Gnosjö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0643",
+            "namn": "Habo",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0680",
+            "namn": "Jönköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0642",
+            "namn": "Mullsjö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0682",
+            "namn": "Nässjö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0684",
+            "namn": "Sävsjö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0687",
+            "namn": "Tranås",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0665",
+            "namn": "Vaggeryd",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0685",
+            "namn": "Vetlanda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0683",
+            "namn": "Värnamo",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "08",
+        "namn": "Kalmar län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0885",
+            "namn": "Borgholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0862",
+            "namn": "Emmaboda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0860",
+            "namn": "Hultsfred",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0821",
+            "namn": "Högsby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0880",
+            "namn": "Kalmar",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0861",
+            "namn": "Mönsterås",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0840",
+            "namn": "Mörbylånga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0881",
+            "namn": "Nybro",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0882",
+            "namn": "Oskarshamn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0834",
+            "namn": "Torsås",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0884",
+            "namn": "Vimmerby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0883",
+            "namn": "Västervik",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "07",
+        "namn": "Kronobergs län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0764",
+            "namn": "Alvesta",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0761",
+            "namn": "Lessebo",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0781",
+            "namn": "Ljungby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0767",
+            "namn": "Markaryd",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0763",
+            "namn": "Tingsryd",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0760",
+            "namn": "Uppvidinge",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0780",
+            "namn": "Växjö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0765",
+            "namn": "Älmhult",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "25",
+        "namn": "Norrbottens län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "2506",
+            "namn": "Arjeplog",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2505",
+            "namn": "Arvidsjaur",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2582",
+            "namn": "Boden",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2523",
+            "namn": "Gällivare",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2583",
+            "namn": "Haparanda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2510",
+            "namn": "Jokkmokk",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2514",
+            "namn": "Kalix",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2584",
+            "namn": "Kiruna",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2580",
+            "namn": "Luleå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2521",
+            "namn": "Pajala",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2581",
+            "namn": "Piteå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2560",
+            "namn": "Älvsbyn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2513",
+            "namn": "Överkalix",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2518",
+            "namn": "Övertorneå",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "90",
+        "namn": "Ospecificerad Arbetsort",
+        "typ": "LAN",
+        "kommuner": []
+      },
+      {
+        "id": "12",
+        "namn": "Skåne län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "1260",
+            "namn": "Bjuv",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1272",
+            "namn": "Bromölla",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1231",
+            "namn": "Burlöv",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1278",
+            "namn": "Båstad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1285",
+            "namn": "Eslöv",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1283",
+            "namn": "Helsingborg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1293",
+            "namn": "Hässleholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1284",
+            "namn": "Höganäs",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1266",
+            "namn": "Hörby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1267",
+            "namn": "Höör",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1276",
+            "namn": "Klippan",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1290",
+            "namn": "Kristianstad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1261",
+            "namn": "Kävlinge",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1282",
+            "namn": "Landskrona",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1262",
+            "namn": "Lomma",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1281",
+            "namn": "Lund",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1280",
+            "namn": "Malmö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1273",
+            "namn": "Osby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1275",
+            "namn": "Perstorp",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1291",
+            "namn": "Simrishamn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1265",
+            "namn": "Sjöbo",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1264",
+            "namn": "Skurup",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1230",
+            "namn": "Staffanstorp",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1214",
+            "namn": "Svalöv",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1263",
+            "namn": "Svedala",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1270",
+            "namn": "Tomelilla",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1287",
+            "namn": "Trelleborg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1233",
+            "namn": "Vellinge",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1286",
+            "namn": "Ystad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1277",
+            "namn": "Åstorp",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1292",
+            "namn": "Ängelholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1257",
+            "namn": "Örkelljunga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1256",
+            "namn": "Östra Göinge",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "01",
+        "namn": "Stockholms län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0127",
+            "namn": "Botkyrka",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0162",
+            "namn": "Danderyd",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0125",
+            "namn": "Ekerö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0136",
+            "namn": "Haninge",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0126",
+            "namn": "Huddinge",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0123",
+            "namn": "Järfälla",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0186",
+            "namn": "Lidingö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0182",
+            "namn": "Nacka",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0188",
+            "namn": "Norrtälje",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0140",
+            "namn": "Nykvarn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0192",
+            "namn": "Nynäshamn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0128",
+            "namn": "Salem",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0191",
+            "namn": "Sigtuna",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0163",
+            "namn": "Sollentuna",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0184",
+            "namn": "Solna",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0180",
+            "namn": "Stockholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0183",
+            "namn": "Sundbyberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0181",
+            "namn": "Södertälje",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0138",
+            "namn": "Tyresö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0160",
+            "namn": "Täby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0139",
+            "namn": "Upplands-Bro",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0114",
+            "namn": "Upplands Väsby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0115",
+            "namn": "Vallentuna",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0187",
+            "namn": "Vaxholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0120",
+            "namn": "Värmdö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0117",
+            "namn": "Österåker",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "04",
+        "namn": "Södermanlands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0484",
+            "namn": "Eskilstuna",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0482",
+            "namn": "Flen",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0461",
+            "namn": "Gnesta",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0483",
+            "namn": "Katrineholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0480",
+            "namn": "Nyköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0481",
+            "namn": "Oxelösund",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0486",
+            "namn": "Strängnäs",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0488",
+            "namn": "Trosa",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0428",
+            "namn": "Vingåker",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "03",
+        "namn": "Uppsala län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0381",
+            "namn": "Enköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0331",
+            "namn": "Heby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0305",
+            "namn": "Håbo",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0330",
+            "namn": "Knivsta",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0360",
+            "namn": "Tierp",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0380",
+            "namn": "Uppsala",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0319",
+            "namn": "Älvkarleby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0382",
+            "namn": "Östhammar",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "17",
+        "namn": "Värmlands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "1784",
+            "namn": "Arvika",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1730",
+            "namn": "Eda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1782",
+            "namn": "Filipstad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1763",
+            "namn": "Forshaga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1764",
+            "namn": "Grums",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1783",
+            "namn": "Hagfors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1761",
+            "namn": "Hammarö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1780",
+            "namn": "Karlstad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1715",
+            "namn": "Kil",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1781",
+            "namn": "Kristinehamn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1762",
+            "namn": "Munkfors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1760",
+            "namn": "Storfors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1766",
+            "namn": "Sunne",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1785",
+            "namn": "Säffle",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1737",
+            "namn": "Torsby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1765",
+            "namn": "Årjäng",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "24",
+        "namn": "Västerbottens län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "2403",
+            "namn": "Bjurholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2425",
+            "namn": "Dorotea",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2481",
+            "namn": "Lycksele",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2418",
+            "namn": "Malå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2401",
+            "namn": "Nordmaling",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2417",
+            "namn": "Norsjö",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2409",
+            "namn": "Robertsfors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2482",
+            "namn": "Skellefteå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2422",
+            "namn": "Sorsele",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2421",
+            "namn": "Storuman",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2480",
+            "namn": "Umeå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2462",
+            "namn": "Vilhelmina",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2404",
+            "namn": "Vindeln",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2460",
+            "namn": "Vännäs",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2463",
+            "namn": "Åsele",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "22",
+        "namn": "Västernorrlands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "2280",
+            "namn": "Härnösand",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2282",
+            "namn": "Kramfors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2283",
+            "namn": "Sollefteå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2281",
+            "namn": "Sundsvall",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2262",
+            "namn": "Timrå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2260",
+            "namn": "Ånge",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "2284",
+            "namn": "Örnsköldsvik",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "19",
+        "namn": "Västmanlands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "1984",
+            "namn": "Arboga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1982",
+            "namn": "Fagersta",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1961",
+            "namn": "Hallstahammar",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1960",
+            "namn": "Kungsör",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1983",
+            "namn": "Köping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1962",
+            "namn": "Norberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1981",
+            "namn": "Sala",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1904",
+            "namn": "Skinnskatteberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1907",
+            "namn": "Surahammar",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1980",
+            "namn": "Västerås",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "namn": "Västra Götalands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "1440",
+            "namn": "Ale",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1489",
+            "namn": "Alingsås",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1460",
+            "namn": "Bengtsfors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1443",
+            "namn": "Bollebygd",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1490",
+            "namn": "Borås",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1438",
+            "namn": "Dals-Ed",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1445",
+            "namn": "Essunga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1499",
+            "namn": "Falköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1439",
+            "namn": "Färgelanda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1444",
+            "namn": "Grästorp",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1447",
+            "namn": "Gullspång",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1480",
+            "namn": "Göteborg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1471",
+            "namn": "Götene",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1466",
+            "namn": "Herrljunga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1497",
+            "namn": "Hjo",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1401",
+            "namn": "Härryda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1446",
+            "namn": "Karlsborg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1482",
+            "namn": "Kungälv",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1441",
+            "namn": "Lerum",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1494",
+            "namn": "Lidköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1462",
+            "namn": "Lilla Edet",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1484",
+            "namn": "Lysekil",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1493",
+            "namn": "Mariestad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1463",
+            "namn": "Mark",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1461",
+            "namn": "Mellerud",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1430",
+            "namn": "Munkedal",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1481",
+            "namn": "Mölndal",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1421",
+            "namn": "Orust",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1402",
+            "namn": "Partille",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1495",
+            "namn": "Skara",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1496",
+            "namn": "Skövde",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1427",
+            "namn": "Sotenäs",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1415",
+            "namn": "Stenungsund",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1486",
+            "namn": "Strömstad",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1465",
+            "namn": "Svenljunga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1435",
+            "namn": "Tanum",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1472",
+            "namn": "Tibro",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1498",
+            "namn": "Tidaholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1419",
+            "namn": "Tjörn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1452",
+            "namn": "Tranemo",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1488",
+            "namn": "Trollhättan",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1473",
+            "namn": "Töreboda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1485",
+            "namn": "Uddevalla",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1491",
+            "namn": "Ulricehamn",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1470",
+            "namn": "Vara",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1442",
+            "namn": "Vårgårda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1487",
+            "namn": "Vänersborg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1492",
+            "namn": "Åmål",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1407",
+            "namn": "Öckerö",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "18",
+        "namn": "Örebro län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "1882",
+            "namn": "Askersund",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1862",
+            "namn": "Degerfors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1861",
+            "namn": "Hallsberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1863",
+            "namn": "Hällefors",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1883",
+            "namn": "Karlskoga",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1881",
+            "namn": "Kumla",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1860",
+            "namn": "Laxå",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1814",
+            "namn": "Lekeberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1885",
+            "namn": "Lindesberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1864",
+            "namn": "Ljusnarsberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1884",
+            "namn": "Nora",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "1880",
+            "namn": "Örebro",
+            "typ": "KOMMUN"
+          }
+        ]
+      },
+      {
+        "id": "05",
+        "namn": "Östergötlands län",
+        "typ": "LAN",
+        "kommuner": [
+          {
+            "id": "0560",
+            "namn": "Boxholm",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0562",
+            "namn": "Finspång",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0513",
+            "namn": "Kinda",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0580",
+            "namn": "Linköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0586",
+            "namn": "Mjölby",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0583",
+            "namn": "Motala",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0581",
+            "namn": "Norrköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0582",
+            "namn": "Söderköping",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0584",
+            "namn": "Vadstena",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0563",
+            "namn": "Valdemarsvik",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0512",
+            "namn": "Ydre",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0561",
+            "namn": "Åtvidaberg",
+            "typ": "KOMMUN"
+          },
+          {
+            "id": "0509",
+            "namn": "Ödeshög",
+            "typ": "KOMMUN"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "namn": "Afghanistan",
+    "typ": "LAND"
+  },
+  {
+    "id": "2",
+    "namn": "Albanien",
+    "typ": "LAND"
+  },
+  {
+    "id": "3",
+    "namn": "Algeriet",
+    "typ": "LAND"
+  },
+  {
+    "id": "5",
+    "namn": "Amerikanska, mindre uteliggande öar",
+    "typ": "LAND"
+  },
+  {
+    "id": "4",
+    "namn": "Amerikanska Samoa",
+    "typ": "LAND"
+  },
+  {
+    "id": "220",
+    "namn": "Amerikas Förenta stater/USA",
+    "typ": "LAND"
+  },
+  {
+    "id": "6",
+    "namn": "Andorra",
+    "typ": "LAND"
+  },
+  {
+    "id": "242",
+    "namn": "Angola",
+    "typ": "LAND"
+  },
+  {
+    "id": "8",
+    "namn": "Anguilla",
+    "typ": "LAND"
+  },
+  {
+    "id": "9",
+    "namn": "Antarktis",
+    "typ": "LAND"
+  },
+  {
+    "id": "10",
+    "namn": "Antigua och Barbuda",
+    "typ": "LAND"
+  },
+  {
+    "id": "11",
+    "namn": "Arabemiraten, Förenade",
+    "typ": "LAND"
+  },
+  {
+    "id": "12",
+    "namn": "Argentina",
+    "typ": "LAND"
+  },
+  {
+    "id": "13",
+    "namn": "Armenien",
+    "typ": "LAND"
+  },
+  {
+    "id": "14",
+    "namn": "Aruba",
+    "typ": "LAND"
+  },
+  {
+    "id": "15",
+    "namn": "Australien",
+    "typ": "LAND"
+  },
+  {
+    "id": "16",
+    "namn": "Azerbajdzjan",
+    "typ": "LAND"
+  },
+  {
+    "id": "17",
+    "namn": "Bahamas",
+    "typ": "LAND"
+  },
+  {
+    "id": "18",
+    "namn": "Bahrain",
+    "typ": "LAND"
+  },
+  {
+    "id": "19",
+    "namn": "Bangladesh",
+    "typ": "LAND"
+  },
+  {
+    "id": "20",
+    "namn": "Barbados",
+    "typ": "LAND"
+  },
+  {
+    "id": "21",
+    "namn": "Belgien",
+    "typ": "LAND"
+  },
+  {
+    "id": "22",
+    "namn": "Belize",
+    "typ": "LAND"
+  },
+  {
+    "id": "23",
+    "namn": "Benin",
+    "typ": "LAND"
+  },
+  {
+    "id": "24",
+    "namn": "Bermuda",
+    "typ": "LAND"
+  },
+  {
+    "id": "25",
+    "namn": "Bhutan",
+    "typ": "LAND"
+  },
+  {
+    "id": "26",
+    "namn": "Bolivia",
+    "typ": "LAND"
+  },
+  {
+    "id": "254",
+    "namn": "Bonaire, Sint Eustatius och Saba",
+    "typ": "LAND"
+  },
+  {
+    "id": "27",
+    "namn": "Bosnien och Hercegovina",
+    "typ": "LAND"
+  },
+  {
+    "id": "28",
+    "namn": "Botswana",
+    "typ": "LAND"
+  },
+  {
+    "id": "29",
+    "namn": "Bouvetön",
+    "typ": "LAND"
+  },
+  {
+    "id": "30",
+    "namn": "Brasilien",
+    "typ": "LAND"
+  },
+  {
+    "id": "31",
+    "namn": "Brittiska Indiska Oceanöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "32",
+    "namn": "Brunei Darussalam",
+    "typ": "LAND"
+  },
+  {
+    "id": "33",
+    "namn": "Bulgarien",
+    "typ": "LAND"
+  },
+  {
+    "id": "34",
+    "namn": "Burkina Faso",
+    "typ": "LAND"
+  },
+  {
+    "id": "35",
+    "namn": "Burundi",
+    "typ": "LAND"
+  },
+  {
+    "id": "36",
+    "namn": "Caymanöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "37",
+    "namn": "Centralafrikanska Republiken",
+    "typ": "LAND"
+  },
+  {
+    "id": "38",
+    "namn": "Chile",
+    "typ": "LAND"
+  },
+  {
+    "id": "39",
+    "namn": "Colombia",
+    "typ": "LAND"
+  },
+  {
+    "id": "40",
+    "namn": "Comorerna",
+    "typ": "LAND"
+  },
+  {
+    "id": "41",
+    "namn": "Cooköarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "42",
+    "namn": "Costa Rica",
+    "typ": "LAND"
+  },
+  {
+    "id": "255",
+    "namn": "Curaçao",
+    "typ": "LAND"
+  },
+  {
+    "id": "43",
+    "namn": "Cypern",
+    "typ": "LAND"
+  },
+  {
+    "id": "44",
+    "namn": "Danmark",
+    "typ": "LAND"
+  },
+  {
+    "id": "45",
+    "namn": "Djibouti",
+    "typ": "LAND"
+  },
+  {
+    "id": "46",
+    "namn": "Dominica",
+    "typ": "LAND"
+  },
+  {
+    "id": "47",
+    "namn": "Dominikanska republiken",
+    "typ": "LAND"
+  },
+  {
+    "id": "48",
+    "namn": "Ecuador",
+    "typ": "LAND"
+  },
+  {
+    "id": "49",
+    "namn": "Egypten",
+    "typ": "LAND"
+  },
+  {
+    "id": "50",
+    "namn": "Ekvatorialguinea",
+    "typ": "LAND"
+  },
+  {
+    "id": "52",
+    "namn": "Elfenbenskusten",
+    "typ": "LAND"
+  },
+  {
+    "id": "51",
+    "namn": "El Salvador",
+    "typ": "LAND"
+  },
+  {
+    "id": "53",
+    "namn": "Eritrea",
+    "typ": "LAND"
+  },
+  {
+    "id": "54",
+    "namn": "Estland",
+    "typ": "LAND"
+  },
+  {
+    "id": "55",
+    "namn": "Etiopien",
+    "typ": "LAND"
+  },
+  {
+    "id": "56",
+    "namn": "Falklandsöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "57",
+    "namn": "Fijiöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "58",
+    "namn": "Filippinerna",
+    "typ": "LAND"
+  },
+  {
+    "id": "59",
+    "namn": "Finland",
+    "typ": "LAND"
+  },
+  {
+    "id": "60",
+    "namn": "Frankrike",
+    "typ": "LAND"
+  },
+  {
+    "id": "243",
+    "namn": "Franska Guyana",
+    "typ": "LAND"
+  },
+  {
+    "id": "63",
+    "namn": "Franska Polynesien",
+    "typ": "LAND"
+  },
+  {
+    "id": "64",
+    "namn": "Franska Sydterritorierna",
+    "typ": "LAND"
+  },
+  {
+    "id": "65",
+    "namn": "Färöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "66",
+    "namn": "Gabon",
+    "typ": "LAND"
+  },
+  {
+    "id": "67",
+    "namn": "Gambia",
+    "typ": "LAND"
+  },
+  {
+    "id": "68",
+    "namn": "Georgien",
+    "typ": "LAND"
+  },
+  {
+    "id": "69",
+    "namn": "Ghana",
+    "typ": "LAND"
+  },
+  {
+    "id": "70",
+    "namn": "Gibraltar",
+    "typ": "LAND"
+  },
+  {
+    "id": "71",
+    "namn": "Grekland",
+    "typ": "LAND"
+  },
+  {
+    "id": "72",
+    "namn": "Grenada",
+    "typ": "LAND"
+  },
+  {
+    "id": "73",
+    "namn": "Grönland",
+    "typ": "LAND"
+  },
+  {
+    "id": "74",
+    "namn": "Guadeloupe",
+    "typ": "LAND"
+  },
+  {
+    "id": "75",
+    "namn": "Guam",
+    "typ": "LAND"
+  },
+  {
+    "id": "76",
+    "namn": "Guatemala",
+    "typ": "LAND"
+  },
+  {
+    "id": "247",
+    "namn": "Guernsey",
+    "typ": "LAND"
+  },
+  {
+    "id": "77",
+    "namn": "Guinea",
+    "typ": "LAND"
+  },
+  {
+    "id": "78",
+    "namn": "Guinea-Bissau",
+    "typ": "LAND"
+  },
+  {
+    "id": "62",
+    "namn": "Guyana",
+    "typ": "LAND"
+  },
+  {
+    "id": "80",
+    "namn": "Haiti",
+    "typ": "LAND"
+  },
+  {
+    "id": "81",
+    "namn": "Heardön och McDonaldöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "227",
+    "namn": "Heliga stolen (Vatikanstaten)",
+    "typ": "LAND"
+  },
+  {
+    "id": "82",
+    "namn": "Honduras",
+    "typ": "LAND"
+  },
+  {
+    "id": "83",
+    "namn": "Hongkong",
+    "typ": "LAND"
+  },
+  {
+    "id": "84",
+    "namn": "Indien",
+    "typ": "LAND"
+  },
+  {
+    "id": "85",
+    "namn": "Indonesien",
+    "typ": "LAND"
+  },
+  {
+    "id": "86",
+    "namn": "Irak",
+    "typ": "LAND"
+  },
+  {
+    "id": "87",
+    "namn": "Iran",
+    "typ": "LAND"
+  },
+  {
+    "id": "88",
+    "namn": "Irland",
+    "typ": "LAND"
+  },
+  {
+    "id": "89",
+    "namn": "Island",
+    "typ": "LAND"
+  },
+  {
+    "id": "248",
+    "namn": "Isle of Man",
+    "typ": "LAND"
+  },
+  {
+    "id": "90",
+    "namn": "Israel",
+    "typ": "LAND"
+  },
+  {
+    "id": "91",
+    "namn": "Italien",
+    "typ": "LAND"
+  },
+  {
+    "id": "92",
+    "namn": "Jamaica",
+    "typ": "LAND"
+  },
+  {
+    "id": "93",
+    "namn": "Japan",
+    "typ": "LAND"
+  },
+  {
+    "id": "232",
+    "namn": "Jemen",
+    "typ": "LAND"
+  },
+  {
+    "id": "249",
+    "namn": "Jersey",
+    "typ": "LAND"
+  },
+  {
+    "id": "94",
+    "namn": "Jordanien",
+    "typ": "LAND"
+  },
+  {
+    "id": "96",
+    "namn": "Julön",
+    "typ": "LAND"
+  },
+  {
+    "id": "97",
+    "namn": "Jungfruöarna, Brittiska",
+    "typ": "LAND"
+  },
+  {
+    "id": "98",
+    "namn": "Jungfruöarna, Förenta Staternas",
+    "typ": "LAND"
+  },
+  {
+    "id": "99",
+    "namn": "Kambodja",
+    "typ": "LAND"
+  },
+  {
+    "id": "100",
+    "namn": "Kamerun",
+    "typ": "LAND"
+  },
+  {
+    "id": "101",
+    "namn": "Kanada",
+    "typ": "LAND"
+  },
+  {
+    "id": "102",
+    "namn": "Kap Verde",
+    "typ": "LAND"
+  },
+  {
+    "id": "103",
+    "namn": "Kazakstan",
+    "typ": "LAND"
+  },
+  {
+    "id": "104",
+    "namn": "Kenya",
+    "typ": "LAND"
+  },
+  {
+    "id": "105",
+    "namn": "Kina",
+    "typ": "LAND"
+  },
+  {
+    "id": "106",
+    "namn": "Kirgizistan",
+    "typ": "LAND"
+  },
+  {
+    "id": "107",
+    "namn": "Kiribati",
+    "typ": "LAND"
+  },
+  {
+    "id": "108",
+    "namn": "Kokosöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "238",
+    "namn": "Kongo, demokratiska republiken",
+    "typ": "LAND"
+  },
+  {
+    "id": "109",
+    "namn": "Kongo, republiken",
+    "typ": "LAND"
+  },
+  {
+    "id": "251",
+    "namn": "Kosovo",
+    "typ": "LAND"
+  },
+  {
+    "id": "112",
+    "namn": "Kroatien",
+    "typ": "LAND"
+  },
+  {
+    "id": "113",
+    "namn": "Kuba",
+    "typ": "LAND"
+  },
+  {
+    "id": "114",
+    "namn": "Kuwait",
+    "typ": "LAND"
+  },
+  {
+    "id": "115",
+    "namn": "Laos",
+    "typ": "LAND"
+  },
+  {
+    "id": "116",
+    "namn": "Lesotho",
+    "typ": "LAND"
+  },
+  {
+    "id": "117",
+    "namn": "Lettland",
+    "typ": "LAND"
+  },
+  {
+    "id": "118",
+    "namn": "Libanon",
+    "typ": "LAND"
+  },
+  {
+    "id": "119",
+    "namn": "Liberia",
+    "typ": "LAND"
+  },
+  {
+    "id": "120",
+    "namn": "Libyen",
+    "typ": "LAND"
+  },
+  {
+    "id": "121",
+    "namn": "Liechtenstein",
+    "typ": "LAND"
+  },
+  {
+    "id": "122",
+    "namn": "Litauen",
+    "typ": "LAND"
+  },
+  {
+    "id": "123",
+    "namn": "Luxemburg",
+    "typ": "LAND"
+  },
+  {
+    "id": "124",
+    "namn": "Macao",
+    "typ": "LAND"
+  },
+  {
+    "id": "125",
+    "namn": "Madagaskar",
+    "typ": "LAND"
+  },
+  {
+    "id": "239",
+    "namn": "Makedonien",
+    "typ": "LAND"
+  },
+  {
+    "id": "126",
+    "namn": "Malawi",
+    "typ": "LAND"
+  },
+  {
+    "id": "127",
+    "namn": "Malaysia",
+    "typ": "LAND"
+  },
+  {
+    "id": "128",
+    "namn": "Maldiverna",
+    "typ": "LAND"
+  },
+  {
+    "id": "129",
+    "namn": "Mali",
+    "typ": "LAND"
+  },
+  {
+    "id": "130",
+    "namn": "Malta",
+    "typ": "LAND"
+  },
+  {
+    "id": "131",
+    "namn": "Marocko",
+    "typ": "LAND"
+  },
+  {
+    "id": "132",
+    "namn": "Marshallöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "133",
+    "namn": "Martinique",
+    "typ": "LAND"
+  },
+  {
+    "id": "134",
+    "namn": "Mauretanien",
+    "typ": "LAND"
+  },
+  {
+    "id": "135",
+    "namn": "Mauritius",
+    "typ": "LAND"
+  },
+  {
+    "id": "136",
+    "namn": "Mayotte",
+    "typ": "LAND"
+  },
+  {
+    "id": "137",
+    "namn": "Mexiko/Mexikos förenta stater",
+    "typ": "LAND"
+  },
+  {
+    "id": "138",
+    "namn": "Mikronesiska federationen",
+    "typ": "LAND"
+  },
+  {
+    "id": "139",
+    "namn": "Moçambique",
+    "typ": "LAND"
+  },
+  {
+    "id": "140",
+    "namn": "Moldavien",
+    "typ": "LAND"
+  },
+  {
+    "id": "141",
+    "namn": "Monaco",
+    "typ": "LAND"
+  },
+  {
+    "id": "142",
+    "namn": "Mongoliet",
+    "typ": "LAND"
+  },
+  {
+    "id": "250",
+    "namn": "Montenegro",
+    "typ": "LAND"
+  },
+  {
+    "id": "143",
+    "namn": "Montserrat",
+    "typ": "LAND"
+  },
+  {
+    "id": "144",
+    "namn": "Myanmar (Burma)",
+    "typ": "LAND"
+  },
+  {
+    "id": "145",
+    "namn": "Namibia",
+    "typ": "LAND"
+  },
+  {
+    "id": "146",
+    "namn": "Nauru",
+    "typ": "LAND"
+  },
+  {
+    "id": "147",
+    "namn": "Nederländerna",
+    "typ": "LAND"
+  },
+  {
+    "id": "149",
+    "namn": "Nepal",
+    "typ": "LAND"
+  },
+  {
+    "id": "150",
+    "namn": "Nicaragua",
+    "typ": "LAND"
+  },
+  {
+    "id": "151",
+    "namn": "Niger",
+    "typ": "LAND"
+  },
+  {
+    "id": "152",
+    "namn": "Nigeria",
+    "typ": "LAND"
+  },
+  {
+    "id": "153",
+    "namn": "Niue",
+    "typ": "LAND"
+  },
+  {
+    "id": "110",
+    "namn": "Nordkorea",
+    "typ": "LAND"
+  },
+  {
+    "id": "154",
+    "namn": "Norfolkön",
+    "typ": "LAND"
+  },
+  {
+    "id": "155",
+    "namn": "Norge",
+    "typ": "LAND"
+  },
+  {
+    "id": "156",
+    "namn": "Norra Marianaöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "157",
+    "namn": "Nya Kaledonien",
+    "typ": "LAND"
+  },
+  {
+    "id": "158",
+    "namn": "Nya Zeeland",
+    "typ": "LAND"
+  },
+  {
+    "id": "159",
+    "namn": "Oman",
+    "typ": "LAND"
+  },
+  {
+    "id": "160",
+    "namn": "Pakistan",
+    "typ": "LAND"
+  },
+  {
+    "id": "161",
+    "namn": "Palau",
+    "typ": "LAND"
+  },
+  {
+    "id": "240",
+    "namn": "Palestina",
+    "typ": "LAND"
+  },
+  {
+    "id": "162",
+    "namn": "Panama",
+    "typ": "LAND"
+  },
+  {
+    "id": "163",
+    "namn": "Papua Nya Guinea",
+    "typ": "LAND"
+  },
+  {
+    "id": "164",
+    "namn": "Paraguay",
+    "typ": "LAND"
+  },
+  {
+    "id": "165",
+    "namn": "Peru",
+    "typ": "LAND"
+  },
+  {
+    "id": "166",
+    "namn": "Pitcairn",
+    "typ": "LAND"
+  },
+  {
+    "id": "167",
+    "namn": "Polen",
+    "typ": "LAND"
+  },
+  {
+    "id": "168",
+    "namn": "Portugal",
+    "typ": "LAND"
+  },
+  {
+    "id": "169",
+    "namn": "Puerto Rico",
+    "typ": "LAND"
+  },
+  {
+    "id": "170",
+    "namn": "Qatar",
+    "typ": "LAND"
+  },
+  {
+    "id": "171",
+    "namn": "Reunion",
+    "typ": "LAND"
+  },
+  {
+    "id": "172",
+    "namn": "Rumänien",
+    "typ": "LAND"
+  },
+  {
+    "id": "173",
+    "namn": "Rwanda",
+    "typ": "LAND"
+  },
+  {
+    "id": "174",
+    "namn": "Ryssland/Ryska Federationen",
+    "typ": "LAND"
+  },
+  {
+    "id": "252",
+    "namn": "Saint Barthélemy",
+    "typ": "LAND"
+  },
+  {
+    "id": "175",
+    "namn": "Saint Helena",
+    "typ": "LAND"
+  },
+  {
+    "id": "176",
+    "namn": "Saint Kitts och Nevis",
+    "typ": "LAND"
+  },
+  {
+    "id": "177",
+    "namn": "Saint Lucia",
+    "typ": "LAND"
+  },
+  {
+    "id": "253",
+    "namn": "Saint Martin (franska delen)",
+    "typ": "LAND"
+  },
+  {
+    "id": "178",
+    "namn": "Saint Pierre och Miquelon",
+    "typ": "LAND"
+  },
+  {
+    "id": "179",
+    "namn": "Saint Vincent och Grenadinerna",
+    "typ": "LAND"
+  },
+  {
+    "id": "181",
+    "namn": "Salomonöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "244",
+    "namn": "Samoa",
+    "typ": "LAND"
+  },
+  {
+    "id": "182",
+    "namn": "San Marino",
+    "typ": "LAND"
+  },
+  {
+    "id": "183",
+    "namn": "São Tomé och Príncipe",
+    "typ": "LAND"
+  },
+  {
+    "id": "184",
+    "namn": "Saudiarabien",
+    "typ": "LAND"
+  },
+  {
+    "id": "185",
+    "namn": "Schweiz",
+    "typ": "LAND"
+  },
+  {
+    "id": "186",
+    "namn": "Senegal",
+    "typ": "LAND"
+  },
+  {
+    "id": "245",
+    "namn": "Serbien",
+    "typ": "LAND"
+  },
+  {
+    "id": "187",
+    "namn": "Seychellerna",
+    "typ": "LAND"
+  },
+  {
+    "id": "188",
+    "namn": "Sierra Leone",
+    "typ": "LAND"
+  },
+  {
+    "id": "189",
+    "namn": "Singapore",
+    "typ": "LAND"
+  },
+  {
+    "id": "256",
+    "namn": "Sint Maarten (nederländska delen)",
+    "typ": "LAND"
+  },
+  {
+    "id": "190",
+    "namn": "Slovakien",
+    "typ": "LAND"
+  },
+  {
+    "id": "191",
+    "namn": "Slovenien",
+    "typ": "LAND"
+  },
+  {
+    "id": "192",
+    "namn": "Somalia",
+    "typ": "LAND"
+  },
+  {
+    "id": "193",
+    "namn": "Spanien",
+    "typ": "LAND"
+  },
+  {
+    "id": "194",
+    "namn": "Sri Lanka",
+    "typ": "LAND"
+  },
+  {
+    "id": "195",
+    "namn": "Storbritannien och Nordirland",
+    "typ": "LAND"
+  },
+  {
+    "id": "196",
+    "namn": "Sudan",
+    "typ": "LAND"
+  },
+  {
+    "id": "197",
+    "namn": "Surinam",
+    "typ": "LAND"
+  },
+  {
+    "id": "198",
+    "namn": "Svalbard och Jan Mayen",
+    "typ": "LAND"
+  },
+  {
+    "id": "200",
+    "namn": "Swaziland",
+    "typ": "LAND"
+  },
+  {
+    "id": "201",
+    "namn": "Sydafrika",
+    "typ": "LAND"
+  },
+  {
+    "id": "202",
+    "namn": "Sydgeorgien och Södra Sandwichöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "111",
+    "namn": "Sydkorea",
+    "typ": "LAND"
+  },
+  {
+    "id": "257",
+    "namn": "Sydsudan",
+    "typ": "LAND"
+  },
+  {
+    "id": "203",
+    "namn": "Syrien",
+    "typ": "LAND"
+  },
+  {
+    "id": "204",
+    "namn": "Tadzjikistan",
+    "typ": "LAND"
+  },
+  {
+    "id": "205",
+    "namn": "Taiwan",
+    "typ": "LAND"
+  },
+  {
+    "id": "206",
+    "namn": "Tanzania",
+    "typ": "LAND"
+  },
+  {
+    "id": "207",
+    "namn": "Tchad",
+    "typ": "LAND"
+  },
+  {
+    "id": "208",
+    "namn": "Thailand",
+    "typ": "LAND"
+  },
+  {
+    "id": "209",
+    "namn": "Tjeckien",
+    "typ": "LAND"
+  },
+  {
+    "id": "210",
+    "namn": "Togo",
+    "typ": "LAND"
+  },
+  {
+    "id": "211",
+    "namn": "Tokelau",
+    "typ": "LAND"
+  },
+  {
+    "id": "212",
+    "namn": "Tonga",
+    "typ": "LAND"
+  },
+  {
+    "id": "213",
+    "namn": "Trinidad och Tobago",
+    "typ": "LAND"
+  },
+  {
+    "id": "214",
+    "namn": "Tunisien",
+    "typ": "LAND"
+  },
+  {
+    "id": "215",
+    "namn": "Turkiet",
+    "typ": "LAND"
+  },
+  {
+    "id": "216",
+    "namn": "Turkmenistan",
+    "typ": "LAND"
+  },
+  {
+    "id": "217",
+    "namn": "Turks- och Caicosöarna",
+    "typ": "LAND"
+  },
+  {
+    "id": "218",
+    "namn": "Tuvalu",
+    "typ": "LAND"
+  },
+  {
+    "id": "219",
+    "namn": "Tyskland",
+    "typ": "LAND"
+  },
+  {
+    "id": "221",
+    "namn": "Uganda",
+    "typ": "LAND"
+  },
+  {
+    "id": "222",
+    "namn": "Ukraina",
+    "typ": "LAND"
+  },
+  {
+    "id": "223",
+    "namn": "Ungern",
+    "typ": "LAND"
+  },
+  {
+    "id": "224",
+    "namn": "Uruguay",
+    "typ": "LAND"
+  },
+  {
+    "id": "225",
+    "namn": "Uzbekistan",
+    "typ": "LAND"
+  },
+  {
+    "id": "241",
+    "namn": "Wallis och Futuna",
+    "typ": "LAND"
+  },
+  {
+    "id": "226",
+    "namn": "Vanuatu",
+    "typ": "LAND"
+  },
+  {
+    "id": "228",
+    "namn": "Venezuela",
+    "typ": "LAND"
+  },
+  {
+    "id": "229",
+    "namn": "Vietnam",
+    "typ": "LAND"
+  },
+  {
+    "id": "230",
+    "namn": "Vitryssland",
+    "typ": "LAND"
+  },
+  {
+    "id": "180",
+    "namn": "Västsahara",
+    "typ": "LAND"
+  },
+  {
+    "id": "234",
+    "namn": "Zambia",
+    "typ": "LAND"
+  },
+  {
+    "id": "235",
+    "namn": "Zimbabwe",
+    "typ": "LAND"
+  },
+  {
+    "id": "246",
+    "namn": "Åland (tillhör Finland)",
+    "typ": "LAND"
+  },
+  {
+    "id": "236",
+    "namn": "Österrike",
+    "typ": "LAND"
+  },
+  {
+    "id": "237",
+    "namn": "Östtimor",
+    "typ": "LAND"
+  }
+]
