@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { YrkenService } from '../../services/yrken/yrken.service';
+import { LanderService } from '../../services/lander/lander.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
+import { Land } from '../../models/Land.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 import { Sokresultat } from '../../models/Sokresultat.interface';
@@ -13,7 +15,8 @@ import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
   styleUrls: ['./searchjobs.component.scss'],
   providers: [
     YrkenService,
-    PbapiMatchningService
+    PbapiMatchningService,
+    LanderService
   ]
 })
 export class SearchjobsComponent implements OnInit {
@@ -25,6 +28,7 @@ export class SearchjobsComponent implements OnInit {
   showExperience: boolean;
   showLicences: boolean;
   showJobAreas: boolean;
+  showLandAreas: boolean;
   showPreviousButton: boolean;
   showNextButton: boolean;
   listIsCompact = false;
@@ -36,14 +40,16 @@ export class SearchjobsComponent implements OnInit {
   numberOfPages: number;
 
   yrkesomraden: Array<Yrkesomrade>;
+  lander: Array<Land>;
   searchparameters: Array<Profilkriterium>;
   searchResult: Sokresultat;
   relatedCriteria: Array<RelateratKriterium>;
 
   someRange: number[] = [0, 100];
-  constructor(private yrkenService: YrkenService, private pbapiMatchningService: PbapiMatchningService) {
+  constructor(private yrkenService: YrkenService,
+    private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
-    this.showJobAreas = false;
+    this.showJobAreas = this.showLandAreas = false;
     this.showPreviousButton = false;
     this.showNextButton = true;
     this.showJobTypes = this.showJobGeoArea = true;
@@ -64,6 +70,9 @@ export class SearchjobsComponent implements OnInit {
     this.yrkenService.getLocalSelection().subscribe(yrkesomraden => {
         this.yrkesomraden = yrkesomraden;
     });
+    this.landerService.getLocalSelection().subscribe(lander => {
+        this.lander = lander;
+    });
     this.pbapiMatchningService.getNumberOfAvailableJobs().then(data => {
       this.numberOfAvailableJobs = data;
     });
@@ -81,10 +90,15 @@ export class SearchjobsComponent implements OnInit {
       return 'Deltid (' + min + '% - ' + max + '%), ';
     }
   }
-  toggleJobAreas (e) {
-    this.showJobAreas = !this.showJobAreas;
+  toggleAreas (e, type: string) {
     const target = e.target || e.srcElement;
     const children = target.parentNode.children;
+    if (type === 'job') {
+      this.showJobAreas = !this.showJobAreas;
+    } else {
+      this.showLandAreas = !this.showLandAreas;
+    }
+
     for (const child of children) {
       if (child.nodeName === 'DIV' && child.classList.contains('collapsed')) {
         child.classList.remove('collapsed');
@@ -138,7 +152,7 @@ export class SearchjobsComponent implements OnInit {
         }
       }
     }
-    this.search();
+    // this.search();
   }
   levelTwoCheck(e, id: string, name: string, type: string) {
     let target = e.target || e.srcElement;
@@ -209,8 +223,6 @@ export class SearchjobsComponent implements OnInit {
       if (this.areAllSiblingsChecked(parentTagId)) {
         parent['checked'] = true;
         parentLabel.classList.remove('minus');
-        this.addToList(parentId, parentName, parentType);
-        this.addHilightInList(parentId, parentType);
         const siblings = document.querySelectorAll('[data-parent-id="' + parentTagId + '"]');
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
@@ -222,6 +234,8 @@ export class SearchjobsComponent implements OnInit {
             }
           }
         }
+        this.addToList(parentId, parentName, parentType);
+        this.addHilightInList(parentId, parentType);
       } else {
         parentLabel.classList.add('minus');
         const siblings = document.querySelectorAll('[data-parent-id="' + parentTagId + '"]');
@@ -316,8 +330,6 @@ export class SearchjobsComponent implements OnInit {
       if (this.areAllSiblingsChecked(parentTagId)) {
         parent['checked'] = true;
         parentLabel.classList.remove('minus');
-        this.addToList(parentId, parentName, parentType);
-        this.addHilightInList(parentId, parentType);
         if (siblings.length) {
           for (let i = 0; i < siblings.length; ++i) {
             if (siblings[i]['checked']) {
@@ -331,15 +343,17 @@ export class SearchjobsComponent implements OnInit {
         if (this.areAllSiblingsChecked(grandParentTagId)) {
           grandParent['checked'] = true;
           grandParentLabel.classList.remove('minus');
-          this.addToList(grandParentId, grandParentName, grandParentType);
-          this.addHilightInList(grandParentId, grandParentType);
           for (let i = 0; i < parentSiblings.length; ++i) {
             const parentSiblingId = parentSiblings[i].getAttribute('data-id');
             const parentSiblingType = parentSiblings[i].getAttribute('data-type');
             this.removeFromList(parentSiblingId, parentSiblingType);
             this.removeHilightInList(parentSiblingId, parentSiblingType);
           }
+          this.addToList(grandParentId, grandParentName, grandParentType);
+          this.addHilightInList(grandParentId, grandParentType);
         } else {
+          this.addToList(parentId, parentName, parentType);
+          this.addHilightInList(parentId, parentType);
           for (let i = 0; i < parentSiblings.length; ++i) {
             if (parentSiblings[i]['checked']) {
               grandParentLabel.classList.add('minus');
@@ -433,6 +447,7 @@ export class SearchjobsComponent implements OnInit {
   }
   search() {
     if (this.searchparameters.length > 0) {
+      console.log(this.searchparameters);
       const offset = this.adsPageNumber * this.numberOfHitsPerPage;
       this.pbapiMatchningService.getMatchingAds(this.searchparameters, this.numberOfHitsPerPage, offset).then(data => {
         this.searchResult = data;
@@ -466,7 +481,7 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
-  removeFromListAndUnselect(id: string, name: string, type: string) {
+  removeFromListAndUnselect(id: string, name: string, type: string, skipSearch?: boolean) {
     const element = document.querySelectorAll('[data-id="' + id + '"]');
     if (element.length) {
       const children = element[0].childNodes;
@@ -503,8 +518,26 @@ export class SearchjobsComponent implements OnInit {
       const elem = document.getElementById('YRKE_' + id);
       elem['checked'] = false;
       this.levelThreeCheck(elem, id, name, type);
+    } else if (type.toUpperCase() === 'LAND') {
+      const elem = document.getElementById('LAND_' + id);
+      elem['checked'] = false;
+      this.levelOneCheck(elem, id, name, type);
+    } else if (type.toUpperCase() === 'LAN') {
+      const elem = document.getElementById('LAN_' + id);
+      elem['checked'] = false;
+      if (id !== '00') {
+        this.levelTwoCheck(elem, id, name, type);
+      } else {
+        this.levelOneCheck(elem, id, name, type);
+      }
+    } else if (type.toUpperCase() === 'KOMMUN') {
+      const elem = document.getElementById('KOMMUN_' + id);
+      elem['checked'] = false;
+      this.levelThreeCheck(elem, id, name, type);
     }
-    this.removeFromListAndSearch(id, type);
+    if (!skipSearch) {
+      this.removeFromListAndSearch(id, type);
+    }
   }
   removeFromListAndSearch(id: string, type: string) {
     this.removeFromList(id, type);
@@ -523,7 +556,6 @@ export class SearchjobsComponent implements OnInit {
     this.searchparameters = this.searchparameters.filter(item => !(item.varde === id && item.typ === type));
   }
   emptyList() {
-    this.searchparameters.length = 0;
     const elements = document.getElementsByClassName('checkbox checked');
     const children = new Array<any>();
     for (let i = 0; i < elements.length; i++) {
@@ -532,6 +564,10 @@ export class SearchjobsComponent implements OnInit {
     for (const child of children) {
       child.classList.remove('checked');
     }
+    for (const parameter of this.searchparameters) {
+      this.removeFromListAndUnselect(parameter.varde, parameter.namn, parameter.typ, true);
+    }
+    this.searchparameters.length = 0;
   }
 
   formatDate(dateNumber: number) {

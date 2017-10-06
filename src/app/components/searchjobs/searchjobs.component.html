@@ -37,11 +37,11 @@
                           <ul class="dropdown-menu ng-isolate-scope ng-hide" id="typeahead-38-755">
                           </ul>
 
-                        <div id="JobOrContainer">
+                        <div id="JobOrContainer" class="areaOr">
                           Eller
                         </div>
-                        <div id="JobAreasContainer">
-                          <div id="JobAreasToggle" (click)="toggleJobAreas($event)">
+                        <div id="JobAreasContainer" class="areaContainer">
+                          <div id="JobAreasToggle" class="areaToggle" (click)="toggleAreas($event, 'job')">
                             <div class="name">
                               Välj från kategori
                             </div>
@@ -131,7 +131,7 @@
                   <input id="mp-arbetsorter" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Postnr/Kommun/Län/Land" type="text">
                   <ul class="dropdown-menu ng-isolate-scope ng-hide" role="listbox" id="typeahead-18-5967" style="">
                   </ul>
-                  <div kriteriumtyp="KOMMUN" class="ng-isolate-scope">
+                  <!-- <div kriteriumtyp="KOMMUN" class="ng-isolate-scope">
                     <div class="af-kriteriumforslag ng-hide">
                       <div class="clearfix">
                         <h4 class="rubrik-for-forslag ng-binding">Förslag på orter</h4>
@@ -145,6 +145,59 @@
                            </li>
                          </ul>
                        </div>
+                     </div>
+                   </div> -->
+                   <div id="LandOrContainer" class="areaOr">
+                     Eller
+                   </div>
+                   <div id="LandAreasContainer" class="areaContainer">
+                     <div id="LandAreasToggle" class="areaToggle" (click)="toggleAreas($event, 'land')">
+                       <div class="name">
+                         Välj område
+                       </div>
+                       <div class="hasChildren collapsed fa">
+
+                       </div>
+                     </div>
+                     <div id="LandAreas" class="list-level-1" *ngIf="showLandAreas">
+                       <ul>
+                         <li *ngFor="let land of lander" class="jobArea">
+                           <div class="checkbox" id="{{land.typ}}_{{land.id}}_CONTAINER" attr.data-id="{{land.id}}" attr.data-name="{{land.namn}}" attr.data-type="{{land.typ}}">
+                             <input (change)="levelOneCheck($event, land.id, land.namn, land.typ);"
+                             name="{{land.typ}}_{{land.id}}" attr.data-id="{{land.id}}" attr.data-name="{{land.namn}}" attr.data-type="{{land.typ}}"
+                               id="{{land.typ}}_{{land.id}}" class="" type="checkbox">
+                             <label id="{{land.typ}}_{{land.id}}_LABEL" class="" for="{{land.typ}}_{{land.id}}">{{land.namn}}</label>
+                             <div *ngIf="land.lan" class="hasChildren collapsed fa" (click)="toggleChild($event, land.id, land.namn, land.typ)">
+                             </div>
+                           </div>
+                           <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lan" class="hidden jobGroup list-level-2">
+                             <li *ngFor="let lanet of land.lan">
+                               <div class="liContent checkbox" id="{{lanet.typ}}_{{lanet.id}}_CONTAINER">
+                                 <input (change)="levelTwoCheck($event, lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
+                                   id="{{lanet.typ}}_{{lanet.id}}" attr.data-parent-id="{{land.typ}}_{{land.id}}" class="" type="checkbox"
+                                   attr.data-id="{{lanet.id}}" attr.data-name="{{lanet.namn}}" attr.data-type="{{lanet.typ}}">
+                                 <label id="{{lanet.typ}}_{{lanet.id}}_LABEL" class="" for="{{lanet.typ}}_{{lanet.id}}">{{lanet.namn}}</label>
+                                 <div *ngIf="lanet.kommuner" class="hasChildren collapsed fa" (click)="toggleChild($event, lanet.id, lanet.namn, lanet.typ)">
+
+                                 </div>
+                               </div>
+                               <ul id="{{lanet.id}}_{{lanet.typ}}_CHILDREN" *ngIf="lanet.kommuner" class="hidden job list-level-3" attr.data-parent-id="{{lanet.id}}">
+                                 <li *ngFor="let kommun of lanet.kommuner">
+                                   <div class="liContent checkbox" id="{{kommun.typ}}_{{kommun.id}}_CONTAINER" attr.data-id="{{kommun.id}}" attr.data-name="{{kommun.namn}}" attr.data-type="{{kommun.typ}}">
+                                     <input (change)="levelThreeCheck($event, kommun.id, kommun.namn, kommun.typ);" name="{{kommun.typ}}_{{kommun.id}}"
+                                       id="{{kommun.typ}}_{{kommun.id}}" attr.data-parent-id="{{lanet.typ}}_{{lanet.id}}" class="" type="checkbox"
+                                        attr.data-id="{{kommun.id}}" attr.data-name="{{kommun.namn}}" attr.data-type="{{kommun.typ}}">
+                                     <label class="" for="{{kommun.typ}}_{{kommun.id}}">{{kommun.namn}}</label>
+                                     <!-- <div *ngIf="yrkesgrupp.yrkesgrupper" class="hasChildren collapsed">
+
+                                     </div> -->
+                                   </div>
+                                 </li>
+                               </ul>
+                             </li>
+                           </ul>
+                         </li>
+                       </ul>
                      </div>
                    </div>
                  </div>

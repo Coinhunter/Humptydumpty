@@ -11,15 +11,24 @@
   padding: 0;
 }
 
-#JobOrContainer {
+.areaOr {
   text-align: center;
   margin: 20px 0;
 }
 
-#JobAreasContainer {
+.areaContainer {
   background: #FFF;
   border: 1px solid #666;
   border-radius: 5px;
+}
+
+#LandAreasContainer {
+  margin-bottom: 5px;
+  .list-level-1 > ul > li {
+    &:first-child > .checkbox > .hasChildren {
+      margin-top: 0;
+    }
+  }
 }
 
 .hasChildren {
@@ -42,7 +51,7 @@
   }
 }
 
-#JobAreasToggle {
+.areaToggle {
   padding: 5px;
   cursor: pointer;
   > div {
