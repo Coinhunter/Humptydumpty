@@ -4,7 +4,7 @@
     <div class="row heading-area">
       <div class="col-xs-12 col-sm-7 heading-left">
         <h1 class="as-matcha__header">Platsbanken</h1>
-        <h2 class="hittade-annonser ng-scope">Just nu finns det <span class="antalmatchande ng-binding">{{numberOfAvailableJobs}}</span> lediga jobb</h2>
+        <!-- <h2 class="hittade-annonser ng-scope">Just nu finns det <span class="antalmatchande ng-binding">{{numberOfAvailableJobs}}</span> lediga jobb</h2> -->
       </div>
       <div class="col-xs-12 col-sm-5 heading-right">
         <div class="ng-isolate-scope">
@@ -38,7 +38,11 @@
                           </ul>
 
                         <div id="JobOrContainer" class="areaOr">
-                          Eller
+                          <div class="areaOrBackGround">
+                            <div class="areaOrText">
+                              Eller
+                            </div>
+                          </div>
                         </div>
                         <div id="JobAreasContainer" class="areaContainer">
                           <div id="JobAreasToggle" class="areaToggle" (click)="toggleAreas($event, 'job')">
@@ -147,8 +151,12 @@
                        </div>
                      </div>
                    </div> -->
-                   <div id="LandOrContainer" class="areaOr">
-                     Eller
+                   <div id="JobOrContainer" class="areaOr">
+                     <div class="areaOrBackGround">
+                       <div class="areaOrText">
+                         Eller
+                       </div>
+                     </div>
                    </div>
                    <div id="LandAreasContainer" class="areaContainer">
                      <div id="LandAreasToggle" class="areaToggle" (click)="toggleAreas($event, 'land')">
@@ -454,16 +462,14 @@
        <div class="resultatarea col-sm-7 col-md-8 col-lg-8 middle-column">
          <div class="col-xs-12 ng-scope" *ngIf="searchparameters.length > 0">
            <div class="af-card heading-main valdakriterier ng-scope ng-hide">
-             <div class="card-header">
-               <a href="" class="ng-binding">
-                 <span class="antal-valdakriterier ng-binding">{{searchparameters.length}}</span>
-                 gjorda val
-                 <i class="pull-right fa fa-angle-up"></i>
+             <div class="card-header card-header-style">
+               <a href="javascript:void(0)" (click)="showSearchCriteria = !showSearchCriteria" class="ng-binding">
+                 Du har sökt på
+                 <i class="pull-right fa {{showSearchCriteria ? 'fa-angle-up' : 'fa-angle-down'}}"></i>
                </a>
              </div>
-             <div class="card-block clearfix in collapse">
+             <div class="card-block clearfix in collapse" *ngIf="showSearchCriteria">
                <div class="col-xs-12 contentgroup ng-scope" *ngIf="searchparameters.length" style="">
-                 <span class="label">Vad du söker</span>
                  <ul class="tag-list">
                    <li class="tag-item added repeated-item efterfragat ng-scope" *ngFor="let yrkesomrade of searchparameters">
                      <div class="kriteriumnamn ng-binding">{{yrkesomrade.namn}}</div>
@@ -474,7 +480,7 @@
                  </ul>
                </div>
              </div>
-             <div class="card-footer clearfix ng-hide">
+             <div class="card-footer clearfix ng-hide" *ngIf="showSearchCriteria">
                <div class="pull-right">
                  <a href="javascript:void(0)" id="rensaminaval" class="rensa" (click)="emptyList()">
                    <i class="fa fa-remove rensa-alla-val-text"></i>

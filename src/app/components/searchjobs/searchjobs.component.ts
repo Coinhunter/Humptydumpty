@@ -29,6 +29,7 @@ export class SearchjobsComponent implements OnInit {
   showLicences: boolean;
   showJobAreas: boolean;
   showLandAreas: boolean;
+  showSearchCriteria: boolean;
   showPreviousButton: boolean;
   showNextButton: boolean;
   listIsCompact = false;
@@ -52,6 +53,7 @@ export class SearchjobsComponent implements OnInit {
     this.showJobAreas = this.showLandAreas = false;
     this.showPreviousButton = false;
     this.showNextButton = true;
+    this.showSearchCriteria = true;
     this.showJobTypes = this.showJobGeoArea = true;
     this.searchparameters = new Array<Profilkriterium>();
     this.relatedCriteria = new Array<RelateratKriterium>();
@@ -73,9 +75,9 @@ export class SearchjobsComponent implements OnInit {
     this.landerService.getLocalSelection().subscribe(lander => {
         this.lander = lander;
     });
-    this.pbapiMatchningService.getNumberOfAvailableJobs().then(data => {
-      this.numberOfAvailableJobs = data;
-    });
+    // this.pbapiMatchningService.getNumberOfAvailableJobs().then(data => {
+    //   this.numberOfAvailableJobs = data;
+    // });
   }
 
   ngOnInit() {

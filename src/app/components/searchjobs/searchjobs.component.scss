@@ -3,6 +3,11 @@
   width: 100%;
 }
 
+.card-header-style {
+  font-size: 19px;
+  font-weight: 600;
+}
+
 .af-card {
   overflow: hidden;
 }
@@ -11,9 +16,32 @@
   padding: 0;
 }
 
+.as-matcha .matchningsprofil .af-card .card-rubrik h4 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
 .areaOr {
   text-align: center;
   margin: 20px 0;
+  .areaOrBackGround {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      border-top: 1px solid #FFF;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+    .areaOrText {
+      background: #d2dee0;
+      position: relative;
+      width: 65px;
+      margin: 0 auto;
+    }
+  }
 }
 
 .areaContainer {
@@ -203,6 +231,32 @@
     border-top: 0;
     right: 20px !important;
   }
+}
+
+.af-card.valdakriterier {
+  margin-bottom: 25px;
+  .card-header {
+    background-color: #D2DBE0;
+    height: 51px;
+    a {
+      font-weight: 700;
+      padding: 4px 0;
+    }
+  }
+  .card-block {
+    background-color: #FFF;
+    padding-bottom: .8rem;
+    .contentgroup {
+      padding: 2px;
+    }
+  }
+  li.tag-item {
+    background-color: #c1e4f6;
+  }
+}
+
+.hittade-annonser .antalmatchande {
+  color: #000;
 }
 
 .carousel-control-next,
