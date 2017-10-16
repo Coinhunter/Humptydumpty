@@ -253,10 +253,17 @@
   li.tag-item {
     background-color: #c1e4f6;
   }
+  .card-footer {
+    padding: 10px 15px;
+  }
 }
 
 .hittade-annonser .antalmatchande {
   color: #000;
+}
+
+.as-matcha .resultatarea .resultat-sortering {
+  margin-bottom: 15px;
 }
 
 .carousel-control-next,
