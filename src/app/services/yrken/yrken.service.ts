@@ -6,12 +6,8 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class YrkenService {
-    matchingLink: string;
     private pbApi = GlobalVariables.PBAPI_URL;
     constructor(private http: Http) {
-        // console.log('YrkenService Initialized...');
-        // this.matchingLink = 'http://matchning.arbetsformedlingen.se/matchning/rest/af/v1/matchning/matchningskriterier/';
-        this.matchingLink = this.pbApi;
     }
 
     getLocalSelection() {

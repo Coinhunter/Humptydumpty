@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { YrkenService } from '../../services/yrken/yrken.service';
 import { LanderService } from '../../services/lander/lander.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
+import { FreetextSearchService } from '../../services/freetext-search/freetext-search.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 import { Land } from '../../models/Land.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
@@ -16,7 +17,8 @@ import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
   providers: [
     YrkenService,
     PbapiMatchningService,
-    LanderService
+    LanderService,
+    FreetextSearchService
   ]
 })
 export class SearchjobsComponent implements OnInit {
@@ -45,10 +47,14 @@ export class SearchjobsComponent implements OnInit {
   searchparameters: Array<Profilkriterium>;
   searchResult: Sokresultat;
   relatedCriteria: Array<RelateratKriterium>;
+  freetextSearchResults: Array<Yrkesomrade>;
+
+  searchTimeout = null;
 
   someRange: number[] = [0, 100];
   constructor(private yrkenService: YrkenService,
-    private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService) {
+    private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
+    private freetextSearchService: FreetextSearchService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
     this.showJobAreas = this.showLandAreas = false;
     this.showPreviousButton = false;
@@ -78,6 +84,7 @@ export class SearchjobsComponent implements OnInit {
     // this.pbapiMatchningService.getNumberOfAvailableJobs().then(data => {
     //   this.numberOfAvailableJobs = data;
     // });
+    // this.getFreetextResults('test');
   }
 
   ngOnInit() {
@@ -111,6 +118,42 @@ export class SearchjobsComponent implements OnInit {
       }
     }
   }
+
+  getFreetextResults(freetext: string) {
+    this.freetextSearchService.getMatchingJobs(freetext).then(yrken => {
+        this.freetextSearchResults = yrken;
+        this.freetextSearchService.getMatchingJobGroups(freetext).then(yrkesgrupper => {
+          this.freetextSearchResults = this.freetextSearchResults.concat(yrkesgrupper);
+          this.freetextSearchService.getMatchingJobAreas(freetext).then(yrkesomraden => {
+            this.freetextSearchResults = this.freetextSearchResults.concat(yrkesomraden);
+            console.log(this.freetextSearchResults);
+          });
+        });
+    });
+  }
+
+  highlightText(text: string) {
+    const inputText = document.getElementById('mp-yrkesroller');
+    const value = inputText.getAttribute('value');
+    console.log(value);
+    const newText = text.replace(/value/g, '<strong>' + value + '</strong>');
+    console.log(newText);
+    return newText;
+  }
+
+  searchInputTimeout (e) {
+    const target = e.target || e.srcElement;
+    const value = target.value;
+    clearTimeout(this.searchTimeout);
+    const self = this;
+    this.searchTimeout = setTimeout(function () {
+      if (value.length > 2) {
+        console.log('Input Value:', value);
+        self.getFreetextResults(value);
+      }
+    }, 500);
+  }
+
   levelOneCheck(e, id: string, name: string, type: string) {
     let target = e.target || e.srcElement;
     if (target == null) {
