@@ -32,6 +32,7 @@ export class SearchjobsComponent implements OnInit {
   showJobAreas: boolean;
   showLandAreas: boolean;
   showSearchCriteria: boolean;
+  showFreetextSearchResults: boolean;
   showPreviousButton: boolean;
   showNextButton: boolean;
   listIsCompact = false;
@@ -41,6 +42,8 @@ export class SearchjobsComponent implements OnInit {
   adsPageNumber: number;
   numberOfHitsPerPage: number;
   numberOfPages: number;
+
+  freetextJob: string;
 
   yrkesomraden: Array<Yrkesomrade>;
   lander: Array<Land>;
@@ -57,6 +60,7 @@ export class SearchjobsComponent implements OnInit {
     private freetextSearchService: FreetextSearchService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
     this.showJobAreas = this.showLandAreas = false;
+    this.showFreetextSearchResults = false;
     this.showPreviousButton = false;
     this.showNextButton = true;
     this.showSearchCriteria = true;
@@ -81,6 +85,7 @@ export class SearchjobsComponent implements OnInit {
     this.landerService.getLocalSelection().subscribe(lander => {
         this.lander = lander;
     });
+    this.freetextJob = 'sasasa';
     // this.pbapiMatchningService.getNumberOfAvailableJobs().then(data => {
     //   this.numberOfAvailableJobs = data;
     // });
@@ -126,6 +131,11 @@ export class SearchjobsComponent implements OnInit {
           this.freetextSearchResults = this.freetextSearchResults.concat(yrkesgrupper);
           this.freetextSearchService.getMatchingJobAreas(freetext).then(yrkesomraden => {
             this.freetextSearchResults = this.freetextSearchResults.concat(yrkesomraden);
+            this.freetextSearchResults.unshift({
+              id: 0,
+              namn: freetext,
+              typ: 'FRITEXT'
+            });
             console.log(this.freetextSearchResults);
           });
         });
@@ -134,11 +144,44 @@ export class SearchjobsComponent implements OnInit {
 
   highlightText(text: string) {
     const inputText = document.getElementById('mp-yrkesroller');
-    const value = inputText.getAttribute('value');
-    console.log(value);
-    const newText = text.replace(/value/g, '<strong>' + value + '</strong>');
-    console.log(newText);
-    return newText;
+    const value = inputText['value'];
+    const re = new RegExp(value, 'gi'); // 'gi' for case insensitive and can use 'g' if you want the search to be case sensitive.
+    return text.replace(re, '<strong>' + value + '</strong>');
+    // console.log('Highlight: ' + value);
+    // return '<strong>' + this.freetextJob + '</strong>';
+  }
+
+  checkIfFreetextSearchResults() {
+    const inputText = document.getElementById('mp-yrkesroller')['value'];
+    if (this.freetextSearchResults && this.freetextSearchResults.length && inputText.length > 2) {
+      this.showFreetextSearchResults = true;
+    } else {
+      this.showFreetextSearchResults = false;
+    }
+  }
+
+  freetextLostFocus(e) {
+    const target = e.target || e.srcElement;
+    console.log(target);
+  }
+
+  selectFreetextResult(e, id: string, name: string, type: string) {
+    // console.log('Add to list: ' + id + ', ' + name + ', ' + type);
+    this.addToList(id, name, type);
+    const elem = type + '_' + id;
+    const target = document.getElementById(type + '_' + id);
+    this.showFreetextSearchResults = false;
+    if (target !== null) {
+      target['checked'] = true;
+      console.log(target);
+      if (type.toLowerCase() === 'yrke') {
+        this.levelThreeCheck(null, id, name, type);
+      } else if (type.toLowerCase() === 'yrkesgrupp') {
+        this.levelTwoCheck(null, id, name, type);
+      } else if (type.toLowerCase() === 'yrkesomrade') {
+        this.levelOneCheck(null, id, name, type);
+      }
+    }
   }
 
   searchInputTimeout (e) {
@@ -149,13 +192,21 @@ export class SearchjobsComponent implements OnInit {
     this.searchTimeout = setTimeout(function () {
       if (value.length > 2) {
         console.log('Input Value:', value);
+        this.freetextJob = value;
+        console.log('freetextJob: ' + this.freetextJob);
+        self.showFreetextSearchResults = true;
         self.getFreetextResults(value);
+      } else {
+        self.showFreetextSearchResults = false;
       }
     }, 500);
   }
 
   levelOneCheck(e, id: string, name: string, type: string) {
-    let target = e.target || e.srcElement;
+    let target;
+    if (e != null) {
+      target = e.target || e.srcElement;
+    }
     if (target == null) {
       if (type.toUpperCase() === 'YRKESOMRADE_ROLL') {
         type = 'YRKESOMRADE';
@@ -200,7 +251,10 @@ export class SearchjobsComponent implements OnInit {
     // this.search();
   }
   levelTwoCheck(e, id: string, name: string, type: string) {
-    let target = e.target || e.srcElement;
+    let target;
+    if (e != null) {
+      target = e.target || e.srcElement;
+    }
     if (target == null) {
       if (type.toUpperCase() === 'YRKESGRUPP_ROLL') {
         type = 'YRKESGRUPP';
@@ -299,7 +353,10 @@ export class SearchjobsComponent implements OnInit {
     }
   }
   levelThreeCheck(e, id: string, name: string, type: string) {
-    let target = e.target || e.srcElement;
+    let target;
+    if (e != null) {
+      target = e.target || e.srcElement;
+    }
     if (target == null) {
       if (type.toUpperCase() === 'YRKESROLL') {
         type = 'YRKE';
