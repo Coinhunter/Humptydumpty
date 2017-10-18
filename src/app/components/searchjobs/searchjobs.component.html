@@ -32,23 +32,23 @@
                         <!-- <label for="mp-yrkesroller" class="sr-only">
                           Jag vill jobba som
                         </label> -->
-                        <div *ngIf="showJobTypes">
-                          <div>
-                            <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" on-focusout="freetextLostFocus($event)" on-focus="checkIfFreetextSearchResults()" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
-                            <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextSearchResults" on-focusout="showFreetextSearchResults = false;" on-focus="showFreetextSearchResults = true;" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
+                        <!-- <div *ngIf="showJobTypes"> -->
+                          <!-- <div> -->
+                            <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
+                            <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
                             id="typeahead-39-8211" matches="matches" move-in-progress="moveInProgress" query="query" position="position"
                             debounce="debounceUpdate" style="top: 43px; left: 0px;display:block;">
                               <!-- ngRepeat: match in matches track by $index -->
                               <li class="uib-typeahead-match ng-scope" *ngFor="let result of freetextSearchResults" (click)="selectFreetextResult($event, result.id, result.namn, result.typ)" ng-class="{active: isActive($index) }" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index, $event)" role="option">
-                                <a class="template-typeahead ng-scope">
-                                  <span ng-bind-html="match.label | uibTypeaheadHighlight:query" class="ng-binding" innerHTML="{{ highlightText(result.namn) }}">
+                                <a class="template-typeahead ng-scope" data-type-name="freetextJobOption">
+                                  <span ng-bind-html="match.label | uibTypeaheadHighlight:query" class="ng-binding" data-type-name="freetextJobOption" innerHTML="{{ highlightText(result.namn) }}">
 
                                   </span>
                                   <span class="typ-typeahead ng-binding" ng-bind="match.model.typ | lowercase">{{result.typ.toLowerCase()}}</span>
                                 </a>
                               </li>
                             </ul>
-                          </div>
+                          <!-- </div> -->
                         <div id="JobOrContainer" class="areaOr">
                           <div class="areaOrBackGround">
                             <div class="areaOrText">
@@ -110,7 +110,7 @@
                           <input id="ingen-erfarenhet" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                           <label for="ingen-erfarenhet">Visa jobb utan krav på arbetslivserfarenhet</label>
                         </div>
-                        </div>
+                        <!-- </div> -->
                       </div>
                     </div>
                   </div>

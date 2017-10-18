@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { YrkenService } from '../../services/yrken/yrken.service';
 import { LanderService } from '../../services/lander/lander.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
@@ -55,6 +55,7 @@ export class SearchjobsComponent implements OnInit {
   searchTimeout = null;
 
   someRange: number[] = [0, 100];
+
   constructor(private yrkenService: YrkenService,
     private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
     private freetextSearchService: FreetextSearchService) {
@@ -85,11 +86,6 @@ export class SearchjobsComponent implements OnInit {
     this.landerService.getLocalSelection().subscribe(lander => {
         this.lander = lander;
     });
-    this.freetextJob = 'sasasa';
-    // this.pbapiMatchningService.getNumberOfAvailableJobs().then(data => {
-    //   this.numberOfAvailableJobs = data;
-    // });
-    // this.getFreetextResults('test');
   }
 
   ngOnInit() {
@@ -124,6 +120,23 @@ export class SearchjobsComponent implements OnInit {
     }
   }
 
+  @HostListener('document:click', ['$event'])
+  public documentClick(event: Event): void {
+    const target = <HTMLElement>event.target;
+    if (target['id'] === 'mp-yrkesroller' ||
+      target.getAttribute('data-type-name') === 'freetextJobOption' ||
+      target.parentElement.getAttribute('data-type-name') === 'freetextJobOption' ) {
+      const inputText = document.getElementById('mp-yrkesroller')['value'];
+      if (this.freetextSearchResults && this.freetextSearchResults.length && inputText.length > 1) {
+        this.showFreetextSearchResults = true;
+      } else {
+        this.showFreetextSearchResults = false;
+      }
+    } else {
+      this.showFreetextSearchResults = false;
+    }
+  }
+
   getFreetextResults(freetext: string) {
     this.freetextSearchService.getMatchingJobs(freetext).then(yrken => {
         this.freetextSearchResults = yrken;
@@ -132,11 +145,10 @@ export class SearchjobsComponent implements OnInit {
           this.freetextSearchService.getMatchingJobAreas(freetext).then(yrkesomraden => {
             this.freetextSearchResults = this.freetextSearchResults.concat(yrkesomraden);
             this.freetextSearchResults.unshift({
-              id: 0,
+              id: 999999,
               namn: freetext,
               typ: 'FRITEXT'
             });
-            console.log(this.freetextSearchResults);
           });
         });
     });
@@ -146,23 +158,10 @@ export class SearchjobsComponent implements OnInit {
     const inputText = document.getElementById('mp-yrkesroller');
     const value = inputText['value'];
     const re = new RegExp(value, 'gi'); // 'gi' for case insensitive and can use 'g' if you want the search to be case sensitive.
-    return text.replace(re, '<strong>' + value + '</strong>');
-    // console.log('Highlight: ' + value);
-    // return '<strong>' + this.freetextJob + '</strong>';
-  }
-
-  checkIfFreetextSearchResults() {
-    const inputText = document.getElementById('mp-yrkesroller')['value'];
-    if (this.freetextSearchResults && this.freetextSearchResults.length && inputText.length > 2) {
-      this.showFreetextSearchResults = true;
-    } else {
-      this.showFreetextSearchResults = false;
-    }
-  }
-
-  freetextLostFocus(e) {
-    const target = e.target || e.srcElement;
-    console.log(target);
+    // return text.replace(re, '<strong>' + value + '</strong>');
+    return text.replace(re, function (match) {
+      return '<strong>' + match + '</strong>'  ;
+    });
   }
 
   selectFreetextResult(e, id: string, name: string, type: string) {
@@ -170,10 +169,9 @@ export class SearchjobsComponent implements OnInit {
     this.addToList(id, name, type);
     const elem = type + '_' + id;
     const target = document.getElementById(type + '_' + id);
-    this.showFreetextSearchResults = false;
+    // this.freetextSearchResults = this.freetextSearchResults.filter(item => !(item.id.toString() === id && item.typ === type));
     if (target !== null) {
       target['checked'] = true;
-      console.log(target);
       if (type.toLowerCase() === 'yrke') {
         this.levelThreeCheck(null, id, name, type);
       } else if (type.toLowerCase() === 'yrkesgrupp') {
@@ -190,10 +188,7 @@ export class SearchjobsComponent implements OnInit {
     clearTimeout(this.searchTimeout);
     const self = this;
     this.searchTimeout = setTimeout(function () {
-      if (value.length > 2) {
-        console.log('Input Value:', value);
-        this.freetextJob = value;
-        console.log('freetextJob: ' + this.freetextJob);
+      if (value.length > 1) {
         self.showFreetextSearchResults = true;
         self.getFreetextResults(value);
       } else {
@@ -531,9 +526,17 @@ export class SearchjobsComponent implements OnInit {
       type = 'YRKESOMRADE_ROLL';
     }
 
-    const found = this.searchparameters.some(function (el) {
-      return el.varde === id && el.typ === type;
-    });
+    let found = false;
+
+    if (id.toString() !== '999999') {
+      found = this.searchparameters.some(function (el) {
+        return el.varde === id && el.typ === type;
+      });
+    } else {
+      found = this.searchparameters.some(function (el) {
+        return el.namn === name;
+      });
+    }
 
     if (!found) {
       this.searchparameters.push({

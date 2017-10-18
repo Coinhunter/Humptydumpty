@@ -12,13 +12,18 @@
   overflow: hidden;
 }
 
-.as-matcha .matchningsprofil .mp-yrke-ort {
-  padding: 0;
-}
-
-.as-matcha .matchningsprofil .af-card .card-rubrik h4 {
-  font-size: 19px;
-  font-weight: 700;
+.as-matcha .matchningsprofil {
+  .mp-yrke-ort {
+    padding: 0;
+    overflow: visible;
+  }
+  .af-card .card-rubrik h4 {
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .dropdown-menu {
+    cursor: pointer;
+  }
 }
 
 .areaOr {
