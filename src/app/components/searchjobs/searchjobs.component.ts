@@ -32,7 +32,8 @@ export class SearchjobsComponent implements OnInit {
   showJobAreas: boolean;
   showLandAreas: boolean;
   showSearchCriteria: boolean;
-  showFreetextSearchResults: boolean;
+  showFreetextJobSearchResults: boolean;
+  showFreetextAreaSearchResults: boolean;
   showPreviousButton: boolean;
   showNextButton: boolean;
   listIsCompact = false;
@@ -44,13 +45,15 @@ export class SearchjobsComponent implements OnInit {
   numberOfPages: number;
 
   freetextJob: string;
+  freetextArea: string;
 
   yrkesomraden: Array<Yrkesomrade>;
   lander: Array<Land>;
   searchparameters: Array<Profilkriterium>;
   searchResult: Sokresultat;
   relatedCriteria: Array<RelateratKriterium>;
-  freetextSearchResults: Array<Yrkesomrade>;
+  freetextJobSearchResults: Array<Yrkesomrade>;
+  freetextAreaSearchResults: Array<Land>;
 
   searchTimeout = null;
 
@@ -61,7 +64,7 @@ export class SearchjobsComponent implements OnInit {
     private freetextSearchService: FreetextSearchService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
     this.showJobAreas = this.showLandAreas = false;
-    this.showFreetextSearchResults = false;
+    this.showFreetextJobSearchResults = this.showFreetextAreaSearchResults = false;
     this.showPreviousButton = false;
     this.showNextButton = true;
     this.showSearchCriteria = true;
@@ -126,25 +129,37 @@ export class SearchjobsComponent implements OnInit {
     if (target['id'] === 'mp-yrkesroller' ||
       target.getAttribute('data-type-name') === 'freetextJobOption' ||
       target.parentElement.getAttribute('data-type-name') === 'freetextJobOption' ) {
+      this.showFreetextAreaSearchResults = false;
       const inputText = document.getElementById('mp-yrkesroller')['value'];
-      if (this.freetextSearchResults && this.freetextSearchResults.length && inputText.length > 1) {
-        this.showFreetextSearchResults = true;
+      if (this.freetextJobSearchResults && this.freetextJobSearchResults.length && inputText.length > 0) {
+        this.showFreetextJobSearchResults = true;
       } else {
-        this.showFreetextSearchResults = false;
+        this.showFreetextJobSearchResults = false;
+      }
+    } else if (target['id'] === 'mp-arbetsorter' ||
+      target.getAttribute('data-type-name') === 'freetextAreaOption' ||
+      target.parentElement.getAttribute('data-type-name') === 'freetextAreaOption' ) {
+      this.showFreetextJobSearchResults = false;
+      const inputText = document.getElementById('mp-arbetsorter')['value'];
+      if (this.freetextAreaSearchResults && this.freetextAreaSearchResults.length && inputText.length > 0) {
+        this.showFreetextAreaSearchResults = true;
+      } else {
+        this.showFreetextAreaSearchResults = false;
       }
     } else {
-      this.showFreetextSearchResults = false;
+      this.showFreetextJobSearchResults = false;
+      this.showFreetextAreaSearchResults = false;
     }
   }
 
-  getFreetextResults(freetext: string) {
+  getFreetextJobResults(freetext: string) {
     this.freetextSearchService.getMatchingJobs(freetext).then(yrken => {
-        this.freetextSearchResults = yrken;
+        this.freetextJobSearchResults = yrken;
         this.freetextSearchService.getMatchingJobGroups(freetext).then(yrkesgrupper => {
-          this.freetextSearchResults = this.freetextSearchResults.concat(yrkesgrupper);
+          this.freetextJobSearchResults = this.freetextJobSearchResults.concat(yrkesgrupper);
           this.freetextSearchService.getMatchingJobAreas(freetext).then(yrkesomraden => {
-            this.freetextSearchResults = this.freetextSearchResults.concat(yrkesomraden);
-            this.freetextSearchResults.unshift({
+            this.freetextJobSearchResults = this.freetextJobSearchResults.concat(yrkesomraden);
+            this.freetextJobSearchResults.unshift({
               id: 999999,
               namn: freetext,
               typ: 'FRITEXT'
@@ -154,11 +169,22 @@ export class SearchjobsComponent implements OnInit {
     });
   }
 
-  highlightText(text: string) {
+  getFreetextAreaResults(freetext: string) {
+    this.freetextSearchService.getMatchingMuncipalities(freetext).then(kommuner => {
+        this.freetextAreaSearchResults = kommuner;
+        this.freetextSearchService.getMatchingCounties(freetext).then(lan => {
+          this.freetextAreaSearchResults = this.freetextAreaSearchResults.concat(lan);
+          this.freetextSearchService.getMatchingCountries(freetext).then(land => {
+            this.freetextAreaSearchResults = this.freetextAreaSearchResults.concat(land);
+          });
+        });
+    });
+  }
+
+  highlightText(text: string, value: string) {
     const inputText = document.getElementById('mp-yrkesroller');
-    const value = inputText['value'];
+    // const value = inputText['value'];
     const re = new RegExp(value, 'gi'); // 'gi' for case insensitive and can use 'g' if you want the search to be case sensitive.
-    // return text.replace(re, '<strong>' + value + '</strong>');
     return text.replace(re, function (match) {
       return '<strong>' + match + '</strong>'  ;
     });
@@ -172,27 +198,46 @@ export class SearchjobsComponent implements OnInit {
     // this.freetextSearchResults = this.freetextSearchResults.filter(item => !(item.id.toString() === id && item.typ === type));
     if (target !== null) {
       target['checked'] = true;
-      if (type.toLowerCase() === 'yrke') {
+      if (type.toLowerCase() === 'yrke' ||
+          type.toLowerCase() === 'kommun') {
         this.levelThreeCheck(null, id, name, type);
-      } else if (type.toLowerCase() === 'yrkesgrupp') {
+      } else if (type.toLowerCase() === 'yrkesgrupp' ||
+                  type.toLowerCase() === 'lan') {
         this.levelTwoCheck(null, id, name, type);
-      } else if (type.toLowerCase() === 'yrkesomrade') {
+      } else if (type.toLowerCase() === 'yrkesomrade' ||
+                  type.toLowerCase() === 'lan') {
         this.levelOneCheck(null, id, name, type);
       }
     }
   }
 
-  searchInputTimeout (e) {
+  jobSearchInputTimeout (e) {
     const target = e.target || e.srcElement;
     const value = target.value;
     clearTimeout(this.searchTimeout);
     const self = this;
     this.searchTimeout = setTimeout(function () {
-      if (value.length > 1) {
-        self.showFreetextSearchResults = true;
-        self.getFreetextResults(value);
+      if (value.length > 0) {
+        self.showFreetextJobSearchResults = true;
+        self.freetextJob = value;
+        self.getFreetextJobResults(value);
       } else {
-        self.showFreetextSearchResults = false;
+        self.showFreetextJobSearchResults = false;
+      }
+    }, 500);
+  }
+  areaSearchInputTimeout (e) {
+    const target = e.target || e.srcElement;
+    const value = target.value;
+    clearTimeout(this.searchTimeout);
+    const self = this;
+    this.searchTimeout = setTimeout(function () {
+      if (value.length > 0) {
+        self.showFreetextAreaSearchResults = true;
+        self.freetextArea = value;
+        self.getFreetextAreaResults(value);
+      } else {
+        self.showFreetextAreaSearchResults = false;
       }
     }, 500);
   }

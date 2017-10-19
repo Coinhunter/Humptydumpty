@@ -33,6 +33,30 @@ export class FreetextSearchService {
       .toPromise();
   }
 
+  getMatchingCountries (freetext: string) {
+    const url = `${this.pbApi}/matchning/matchningskriterier?typer=LANDER&namnfilter=` + freetext;
+    return this.http.get(url)
+      .map(this.extractData)
+      .catch(this.handleError)
+      .toPromise();
+  }
+
+  getMatchingCounties (freetext: string) {
+    const url = `${this.pbApi}/matchning/matchningskriterier?typer=LAN&namnfilter=` + freetext;
+    return this.http.get(url)
+      .map(this.extractData)
+      .catch(this.handleError)
+      .toPromise();
+  }
+
+  getMatchingMuncipalities (freetext: string) {
+    const url = `${this.pbApi}/matchning/matchningskriterier?typer=KOMMUNER&namnfilter=` + freetext;
+    return this.http.get(url)
+      .map(this.extractData)
+      .catch(this.handleError)
+      .toPromise();
+  }
+
   private extractData(response: Response) {
     // If request fails, throw an Error that will be caught
     if (response.status < 200 || response.status >= 300) {
