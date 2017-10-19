@@ -160,7 +160,7 @@ export class SearchjobsComponent implements OnInit {
           this.freetextSearchService.getMatchingJobAreas(freetext).then(yrkesomraden => {
             this.freetextJobSearchResults = this.freetextJobSearchResults.concat(yrkesomraden);
             this.freetextJobSearchResults.unshift({
-              id: 999999,
+              id: freetext,
               namn: freetext,
               typ: 'FRITEXT'
             });
@@ -182,8 +182,6 @@ export class SearchjobsComponent implements OnInit {
   }
 
   highlightText(text: string, value: string) {
-    const inputText = document.getElementById('mp-yrkesroller');
-    // const value = inputText['value'];
     const re = new RegExp(value, 'gi'); // 'gi' for case insensitive and can use 'g' if you want the search to be case sensitive.
     return text.replace(re, function (match) {
       return '<strong>' + match + '</strong>'  ;
@@ -211,32 +209,25 @@ export class SearchjobsComponent implements OnInit {
     }
   }
 
-  jobSearchInputTimeout (e) {
+  searchInputTimeout (e) {
     const target = e.target || e.srcElement;
     const value = target.value;
     clearTimeout(this.searchTimeout);
     const self = this;
     this.searchTimeout = setTimeout(function () {
       if (value.length > 0) {
-        self.showFreetextJobSearchResults = true;
-        self.freetextJob = value;
-        self.getFreetextJobResults(value);
+        const id = target['id'];
+        if (id === 'mp-yrkesroller') {
+          self.showFreetextJobSearchResults = true;
+          self.freetextJob = value;
+          self.getFreetextJobResults(value);
+        } else if (id === 'mp-arbetsorter') {
+          self.showFreetextAreaSearchResults = true;
+          self.freetextArea = value;
+          self.getFreetextAreaResults(value);
+        }
       } else {
         self.showFreetextJobSearchResults = false;
-      }
-    }, 500);
-  }
-  areaSearchInputTimeout (e) {
-    const target = e.target || e.srcElement;
-    const value = target.value;
-    clearTimeout(this.searchTimeout);
-    const self = this;
-    this.searchTimeout = setTimeout(function () {
-      if (value.length > 0) {
-        self.showFreetextAreaSearchResults = true;
-        self.freetextArea = value;
-        self.getFreetextAreaResults(value);
-      } else {
         self.showFreetextAreaSearchResults = false;
       }
     }, 500);
@@ -571,17 +562,9 @@ export class SearchjobsComponent implements OnInit {
       type = 'YRKESOMRADE_ROLL';
     }
 
-    let found = false;
-
-    if (id.toString() !== '999999') {
-      found = this.searchparameters.some(function (el) {
-        return el.varde === id && el.typ === type;
-      });
-    } else {
-      found = this.searchparameters.some(function (el) {
-        return el.namn === name;
-      });
-    }
+    const found = this.searchparameters.some(function (el) {
+      return el.varde === id && el.typ === type;
+    });
 
     if (!found) {
       this.searchparameters.push({

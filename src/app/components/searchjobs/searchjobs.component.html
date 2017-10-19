@@ -34,7 +34,7 @@
                         </label> -->
                         <!-- <div *ngIf="showJobTypes"> -->
                           <!-- <div> -->
-                            <input id="mp-yrkesroller" (keyup)="jobSearchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
+                            <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
                             <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextJobSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
                             id="typeahead-39-8211" matches="matches" move-in-progress="moveInProgress" query="query" position="position"
                             debounce="debounceUpdate" style="top: 43px; left: 0px;display:block;">
@@ -114,7 +114,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="ng-isolate-scope">
+                  <div class="ng-isolate-scope" *ngIf="searchparameters.length">
                     <div class="af-kriteriumforslag ng-hide">
                       <div class="clearfix">
                         <h4 class="rubrik-for-forslag ng-binding">Förslag på yrken</h4>
@@ -146,7 +146,7 @@
                   <label for="mp-arbetsorter" class="sr-only">Jag vill jobba i</label>
                   <input id="mp-arbetsorter" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
                     autocomplete="off" placeholder="Postnr/Kommun/Län/Land" type="text"
-                    (keyup)="areaSearchInputTimeout($event)" >
+                    (keyup)="searchInputTimeout($event)" >
                   <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextAreaSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress"
                   role="listbox" aria-hidden="false" uib-typeahead-popup="" id="typeahead-19-9320" matches="matches"
                   active="activeIdx" select="select(activeIdx, evt)" move-in-progress="moveInProgress" query="query"

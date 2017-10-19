@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class FreetextSearchService {
 
   private pbApi = GlobalVariables.PBAPI_URL;
+  private geoApi = GlobalVariables.GEOAPI_URL;
   constructor(private http: Http) {
   }
 
@@ -51,6 +52,14 @@ export class FreetextSearchService {
 
   getMatchingMuncipalities (freetext: string) {
     const url = `${this.pbApi}/matchning/matchningskriterier?typer=KOMMUNER&namnfilter=` + freetext;
+    return this.http.get(url)
+      .map(this.extractData)
+      .catch(this.handleError)
+      .toPromise();
+  }
+
+  getMatchingPostalCodes(freetext: string) {
+    const url = `${this.geoApi}/postnummer?postnummerPrefix=` + freetext;
     return this.http.get(url)
       .map(this.extractData)
       .catch(this.handleError)

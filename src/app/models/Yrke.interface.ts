@@ -1,5 +1,5 @@
 export interface Yrke {
-  id: number;
+  id: string;
   namn: string;
   typ: string;
 };

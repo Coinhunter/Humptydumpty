@@ -1,6 +1,6 @@
 import { Yrkesgrupp } from './Yrkesgrupp.interface';
 export interface Yrkesomrade {
-  id: number;
+  id: string;
   namn: string;
   typ: string;
   yrkesgrupper?: Array<Yrkesgrupp>;
