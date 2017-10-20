@@ -9,6 +9,8 @@ import { Land } from '../../models/Land.interface';
 import { Profilkriterium } from '../../models/Profilkriterium.interface';
 import { Sokresultat } from '../../models/Sokresultat.interface';
 import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
+import { Postnummer } from '../../models/Postnummer.interface';
+import { Fritextsokresultat } from '../../models/Fritextsokresultat.interface';
 
 @Component({
   selector: 'app-searchjobs',
@@ -53,7 +55,7 @@ export class SearchjobsComponent implements OnInit {
   searchResult: Sokresultat;
   relatedCriteria: Array<RelateratKriterium>;
   freetextJobSearchResults: Array<Yrkesomrade>;
-  freetextAreaSearchResults: Array<Land>;
+  freetextAreaSearchResults: Array<Fritextsokresultat>;
 
   searchTimeout = null;
 
@@ -170,7 +172,8 @@ export class SearchjobsComponent implements OnInit {
   }
 
   getFreetextAreaResults(freetext: string) {
-    this.freetextSearchService.getMatchingMuncipalities(freetext).then(kommuner => {
+    if (!parseInt(freetext, 10)) {
+      this.freetextSearchService.getMatchingMuncipalities(freetext).then(kommuner => {
         this.freetextAreaSearchResults = kommuner;
         this.freetextSearchService.getMatchingCounties(freetext).then(lan => {
           this.freetextAreaSearchResults = this.freetextAreaSearchResults.concat(lan);
@@ -178,7 +181,37 @@ export class SearchjobsComponent implements OnInit {
             this.freetextAreaSearchResults = this.freetextAreaSearchResults.concat(land);
           });
         });
-    });
+      });
+    } else if (freetext.length > 2) {
+      this.freetextSearchService.getMatchingPostalCodes(freetext).then(koder => {
+        // this.freetextAreaSearchResults = koder;
+        const self = this;
+        this.freetextAreaSearchResults = koder.map(function(item, index){
+            console.log(item.koordinater.WGS84);
+            const result = {
+              'typ': 'GEOADRESS',
+              'id': [item.postnummer, item.ortnamn].join(', '),
+              'namn': [item.postnummer, item.ortnamn].join(', '),
+              'egenskaper': [
+                {
+                  'typ': 'LATITUD',
+                  'varde': item.koordinater.WGS84.y
+                },
+                {
+                  'typ': 'LONGITUD',
+                  'varde': item.koordinater.WGS84.x
+                },
+                {
+                  'typ': 'RADIE',
+                  'varde': '5'
+                }
+              ]
+            }
+            return result;
+        });
+        console.log(this.freetextAreaSearchResults);
+      });
+    }
   }
 
   highlightText(text: string, value: string) {
@@ -190,9 +223,18 @@ export class SearchjobsComponent implements OnInit {
 
   selectFreetextResult(e, id: string, name: string, type: string) {
     // console.log('Add to list: ' + id + ', ' + name + ', ' + type);
-    this.addToList(id, name, type);
-    const elem = type + '_' + id;
-    const target = document.getElementById(type + '_' + id);
+    let target = null;
+    if (type !== 'GEOADRESS') {
+      this.addToList(id, name, type);
+      target = document.getElementById(type + '_' + id);
+    } else {
+      const geoAddress = this.freetextAreaSearchResults.find( function (address) {
+        return address.id === id;
+      });
+      console.log(id);
+      console.log(geoAddress);
+      this.addGeoaddressToList(geoAddress);
+    }
     // this.freetextSearchResults = this.freetextSearchResults.filter(item => !(item.id.toString() === id && item.typ === type));
     if (target !== null) {
       target['checked'] = true;
@@ -205,6 +247,24 @@ export class SearchjobsComponent implements OnInit {
       } else if (type.toLowerCase() === 'yrkesomrade' ||
                   type.toLowerCase() === 'lan') {
         this.levelOneCheck(null, id, name, type);
+      }
+    }
+  }
+
+  addGeoaddressToList(address: Fritextsokresultat) {
+    if (address !== null) {
+      const found = this.searchparameters.some(function (el) {
+        return el.varde === address.id && el.typ === address.typ;
+      });
+
+      if (!found) {
+        this.searchparameters.push({
+          'typ': address.typ,
+          'varde': address.id,
+          'namn': address.namn,
+          'egenskaper': address.egenskaper
+        });
+        this.search();
       }
     }
   }
