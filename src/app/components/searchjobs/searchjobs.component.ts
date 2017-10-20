@@ -54,7 +54,7 @@ export class SearchjobsComponent implements OnInit {
   searchparameters: Array<Profilkriterium>;
   searchResult: Sokresultat;
   relatedCriteria: Array<RelateratKriterium>;
-  freetextJobSearchResults: Array<Yrkesomrade>;
+  freetextJobSearchResults: Array<Fritextsokresultat>;
   freetextAreaSearchResults: Array<Fritextsokresultat>;
 
   searchTimeout = null;
@@ -184,32 +184,29 @@ export class SearchjobsComponent implements OnInit {
       });
     } else if (freetext.length > 2) {
       this.freetextSearchService.getMatchingPostalCodes(freetext).then(koder => {
-        // this.freetextAreaSearchResults = koder;
         const self = this;
         this.freetextAreaSearchResults = koder.map(function(item, index){
-            console.log(item.koordinater.WGS84);
-            const result = {
-              'typ': 'GEOADRESS',
-              'id': [item.postnummer, item.ortnamn].join(', '),
-              'namn': [item.postnummer, item.ortnamn].join(', '),
-              'egenskaper': [
-                {
-                  'typ': 'LATITUD',
-                  'varde': item.koordinater.WGS84.y
-                },
-                {
-                  'typ': 'LONGITUD',
-                  'varde': item.koordinater.WGS84.x
-                },
-                {
-                  'typ': 'RADIE',
-                  'varde': '5'
-                }
-              ]
-            }
-            return result;
+          const result = {
+            'typ': 'GEOADRESS',
+            'id': [item.postnummer, item.ortnamn].join(', '),
+            'namn': [item.postnummer, item.ortnamn].join(', '),
+            'egenskaper': [
+              {
+                'typ': 'LATITUD',
+                'varde': item.koordinater.WGS84.y
+              },
+              {
+                'typ': 'LONGITUD',
+                'varde': item.koordinater.WGS84.x
+              },
+              {
+                'typ': 'RADIE',
+                'varde': '5'
+              }
+            ]
+          }
+          return result;
         });
-        console.log(this.freetextAreaSearchResults);
       });
     }
   }
@@ -231,8 +228,6 @@ export class SearchjobsComponent implements OnInit {
       const geoAddress = this.freetextAreaSearchResults.find( function (address) {
         return address.id === id;
       });
-      console.log(id);
-      console.log(geoAddress);
       this.addGeoaddressToList(geoAddress);
     }
     // this.freetextSearchResults = this.freetextSearchResults.filter(item => !(item.id.toString() === id && item.typ === type));
@@ -267,6 +262,13 @@ export class SearchjobsComponent implements OnInit {
         this.search();
       }
     }
+  }
+
+  onPostalCodeDistanceChange(value: string, parameter: Profilkriterium) {
+    parameter.egenskaper.find( function (egenskap) {
+      return egenskap.typ.toLowerCase() === 'radie';
+    }).varde = value;
+    this.search();
   }
 
   searchInputTimeout (e) {
