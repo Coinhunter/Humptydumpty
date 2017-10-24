@@ -99,7 +99,7 @@
                           </div>
                         </div>
                         <div class="checkbox ng-scope">
-                          <input id="ingen-erfarenhet" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
+                          <input id="ingen-erfarenhet" (change)="checkboxPropertyClick($event, '1', 'Ingen erfarenhet', 'INGEN_EFTERFRAGAD_YRKESERFARENHET')" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                           <label for="ingen-erfarenhet">Visa jobb utan krav på arbetslivserfarenhet</label>
                         </div>
                       </div>
@@ -111,7 +111,7 @@
                         <h4 class="rubrik-for-forslag ng-binding">Förslag på yrken</h4>
                         <ul class="tag-list">
                           <li class="tag-item ng-scope" *ngFor="let kriterium of searchResult.relateradeKriterier | RelatedmatchesPipe:'yrke'; let i=index" style="">
-                            <button class="btn-add-tag ng-binding" *ngIf="kriterium.matchningskriterium" (click)="addToList(kriterium.matchningskriterium.id, kriterium.matchningskriterium.namn, kriterium.matchningskriterium.typ)">
+                            <button class="btn-add-tag ng-binding" *ngIf="kriterium.matchningskriterium" (click)="selectFreetextResult($event, kriterium.matchningskriterium.id, kriterium.matchningskriterium.namn, kriterium.matchningskriterium.typ)">
                               <span class="sr-only">Lägg till</span>
                               <i class="fa fa-plus" aria-hidden="true"></i> {{kriterium.matchningskriterium.namn}}
                             </button>
@@ -462,7 +462,7 @@
          </div>
        </div>
        <div class="resultatarea col-sm-7 col-md-8 col-lg-8 middle-column">
-         <div class="col-xs-12 ng-scope" *ngIf="searchparameters.length > 0">
+         <div id="ValdaKriterierContainer" class="col-xs-12 ng-scope" *ngIf="searchparameters.length > 0">
            <div class="af-card heading-main valdakriterier ng-scope ng-hide">
              <div class="card-header card-header-style">
                <a href="javascript:void(0)" (click)="showSearchCriteria = !showSearchCriteria" class="ng-binding">

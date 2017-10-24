@@ -84,7 +84,7 @@ export class SearchjobsComponent implements OnInit {
       guid: ''
     };
     this.adsPageNumber = this.numberOfPages = 0;
-    this.numberOfHitsPerPage = 5;
+    this.numberOfHitsPerPage = 25;
     this.yrkenService.getLocalSelection().subscribe(yrkesomraden => {
         this.yrkesomraden = yrkesomraden;
     });
@@ -222,6 +222,9 @@ export class SearchjobsComponent implements OnInit {
     // console.log('Add to list: ' + id + ', ' + name + ', ' + type);
     let target = null;
     if (type !== 'GEOADRESS') {
+      if (type.toLowerCase() === 'yrkesroll') {
+        type = 'YRKE';
+      }
       this.addToList(id, name, type);
       target = document.getElementById(type + '_' + id);
     } else {
@@ -601,20 +604,6 @@ export class SearchjobsComponent implements OnInit {
       childContainer.classList.add('hidden');
     }
   }
-  checkSelection(e): void {
-    const target = e.target || e.srcElement;
-    const children = target.parentNode.parentNode.children;
-    for (const child of children) {
-      if (child.nodeName === 'DIV' && child.classList.contains('liContent')) {
-        const grandChildren = child.children;
-        for (const grandChild of grandChildren) {
-          if (grandChild.classList.contains('checkbox')) {
-            grandChild.classList.toggle('checked');
-          }
-        }
-      }
-    }
-  }
   addToList(id: string, name: string, type: string, toggle?: boolean) {
     if (type.toUpperCase() === 'YRKE') {
       type = 'YRKESROLL';
@@ -701,6 +690,9 @@ export class SearchjobsComponent implements OnInit {
         const elem = document.getElementById('villkor-deltid');
         elem['checked'] = false;
       }
+    } else if (type.toUpperCase() === 'INGEN_EFTERFRAGAD_YRKESERFARENHET') {
+      const elem = document.getElementById('ingen-erfarenhet');
+      elem['checked'] = false;
     } else if (type.toUpperCase() === 'YRKESOMRADE_ROLL') {
       const elem = document.getElementById('YRKESOMRADE_' + id);
       elem['checked'] = false;
