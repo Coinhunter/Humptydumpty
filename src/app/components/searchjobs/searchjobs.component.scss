@@ -135,7 +135,7 @@
     margin-bottom: 0;
     > li {
       &:first-child > .checkbox > .hasChildren {
-        margin-top: -1px;
+        margin-top: 0;
         padding-top: 12px;
       }
       &:last-child .checkbox {
@@ -366,5 +366,16 @@
 .carousel-item {
   .active {
     display: block;
+  }
+}
+
+.resultatarea > div {
+  padding: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .row.resultat-area {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
