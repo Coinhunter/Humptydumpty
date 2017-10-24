@@ -3,7 +3,7 @@
   <div class="as-matcha">
     <div class="row heading-area">
       <div class="col-xs-12 col-sm-7 heading-left">
-        <h1 class="as-matcha__header">Platsbanken</h1>
+        <h1 class="as-matcha__header" (click)="showAlternativeListDesign = !showAlternativeListDesign">Platsbanken</h1>
         <!-- <h2 class="hittade-annonser ng-scope">Just nu finns det <span class="antalmatchande ng-binding">{{numberOfAvailableJobs}}</span> lediga jobb</h2> -->
       </div>
       <div class="col-xs-12 col-sm-5 heading-right">
@@ -48,12 +48,12 @@
                             </div>
                           </div>
                         </div>
-                        <div id="JobAreasContainer" class="areaContainer">
-                          <div id="JobAreasToggle" class="areaToggle" (click)="toggleAreas($event, 'job')">
+                        <div id="JobAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
+                          <div id="JobAreasToggle" class="areaToggle" (click)="showJobAreas = !showJobAreas">
                             <div class="name">
                               Välj från kategori
                             </div>
-                            <div class="hasChildren collapsed fa">
+                            <div class="hasChildren {{ !showJobAreas ? 'collapsed' : 'expanded' }} fa">
 
                             </div>
                           </div>
@@ -96,6 +96,11 @@
                                 </ul>
                               </li>
                             </ul>
+                          </div>
+                          <div id="JobAreasClose" class="areaMinimize {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">
+                            <div class="name">
+                              Minimera
+                            </div>
                           </div>
                         </div>
                         <div class="checkbox ng-scope">
@@ -160,12 +165,12 @@
                        </div>
                      </div>
                    </div>
-                   <div id="LandAreasContainer" class="areaContainer">
-                     <div id="LandAreasToggle" class="areaToggle" (click)="toggleAreas($event, 'land')">
+                   <div id="LandAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
+                     <div id="LandAreasToggle" class="areaToggle" (click)="showLandAreas = !showLandAreas">
                        <div class="name">
                          Välj område
                        </div>
-                       <div class="hasChildren collapsed fa">
+                       <div class="hasChildren {{ !showLandAreas ? 'collapsed' : 'expanded' }} fa">
 
                        </div>
                      </div>
@@ -208,6 +213,11 @@
                            </ul>
                          </li>
                        </ul>
+                     </div>
+                     <div id="LandAreasClose" class="areaMinimize {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">
+                       <div class="name">
+                         Minimera
+                       </div>
                      </div>
                    </div>
                  </div>
@@ -669,7 +679,7 @@
                 </div>
 
                 <div ng-if="vm.showGotoTop()" class="ng-scope" style="">
-                  <a href="#" ng-click="vm.gotoTop()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a>
+                  <a href="javascript:void(0)" (click)="topFunction()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a>
                 </div>
             </div>
 

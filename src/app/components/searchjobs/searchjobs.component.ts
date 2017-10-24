@@ -61,6 +61,8 @@ export class SearchjobsComponent implements OnInit {
 
   someRange: number[] = [0, 100];
 
+  showAlternativeListDesign = false;
+
   constructor(private yrkenService: YrkenService,
     private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
     private freetextSearchService: FreetextSearchService) {
@@ -71,6 +73,7 @@ export class SearchjobsComponent implements OnInit {
     this.showNextButton = true;
     this.showSearchCriteria = true;
     this.showJobTypes = this.showJobGeoArea = true;
+    this.showAlternativeListDesign = false;
     this.searchparameters = new Array<Profilkriterium>();
     this.relatedCriteria = new Array<RelateratKriterium>();
     this.searchResult = {
@@ -103,25 +106,6 @@ export class SearchjobsComponent implements OnInit {
       return 'Deltid (' + max + '%), ';
     } else {
       return 'Deltid (' + min + '% - ' + max + '%), ';
-    }
-  }
-  toggleAreas (e, type: string) {
-    const target = e.target || e.srcElement;
-    const children = target.parentNode.children;
-    if (type === 'job') {
-      this.showJobAreas = !this.showJobAreas;
-    } else {
-      this.showLandAreas = !this.showLandAreas;
-    }
-
-    for (const child of children) {
-      if (child.nodeName === 'DIV' && child.classList.contains('collapsed')) {
-        child.classList.remove('collapsed');
-        child.classList.add('expanded');
-      } else if (child.nodeName === 'DIV' && child.classList.contains('expanded')) {
-        child.classList.add('collapsed');
-        child.classList.remove('expanded');
-      }
     }
   }
 
@@ -916,5 +900,10 @@ export class SearchjobsComponent implements OnInit {
   }
   rangeValueChanged(e) {
     this.updateSearchParametersWithParttime();
+  }
+
+  topFunction() {
+      document.body.scrollTop = 0; // For Chrome, Safari and Opera
+      document.documentElement.scrollTop = 0; // For IE and Firefox
   }
 }

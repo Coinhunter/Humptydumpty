@@ -51,8 +51,9 @@
 
 .areaContainer {
   background: #FFF;
-  border: 1px solid #666;
+  border: solid 1px #b5b5b5;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 #LandAreasContainer {
@@ -84,8 +85,26 @@
   }
 }
 
+.alternative .hasChildren {
+  &::after {
+    content: '+';
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 16px;
+  }
+  &.expanded {
+    &::after {
+      content: '—';
+      // content: '-';
+      line-height: 18px;
+      font-size: 17px;
+      font-weight: 400;
+    }
+  }
+}
+
 .areaToggle {
-  padding: 5px;
+  padding: 10px 5px 10px 10px;
   cursor: pointer;
   > div {
     display: inline-block;
@@ -116,8 +135,8 @@
     margin-bottom: 0;
     > li {
       &:first-child > .checkbox > .hasChildren {
-        margin-top: -2px;
-        padding-top: 15px;
+        margin-top: -1px;
+        padding-top: 12px;
       }
       &:last-child .checkbox {
         border-radius: 0 0 5px 5px;
@@ -228,6 +247,19 @@
         margin-top: 0;
       }
     }
+  }
+}
+
+.areaMinimize {
+  padding: 10px 15px 10px 10px;
+  overflow: hidden;
+  border-top: solid 1px #b5b5b5;
+  margin-top: 10px;
+  cursor: pointer;
+  .name {
+    float: right;
+    display: block;
+    color: #0073a1;
   }
 }
 
