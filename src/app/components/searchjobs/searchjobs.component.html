@@ -27,6 +27,7 @@
                   <div class="tab-content">
                     <div class="tab-pane ng-scope active">
                       <div class="mp-input-area ng-scope">
+                        <label id="mp-yrkesroller_LABEL" class="input-instruction" for="mp-yrkesroller">Skriv in sökord</label>
                         <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
                         <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextJobSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
                         id="typeahead-39-8211" matches="matches" move-in-progress="moveInProgress" query="query" position="position"
@@ -138,6 +139,7 @@
               <div class="ng-isolate-scope card-input" *ngIf="showJobGeoArea">
                 <div class="mp-input-area mp-arbetsorter">
                   <label for="mp-arbetsorter" class="sr-only">Jag vill jobba i</label>
+                  <label id="mp-yrkesorter_LABEL" class="input-instruction" for="mp-yrkesorter">Skriv in sökord</label>
                   <input id="mp-arbetsorter" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
                     autocomplete="off" placeholder="Postnr/Kommun/Län/Land" type="text"
                     (keyup)="searchInputTimeout($event)" >
