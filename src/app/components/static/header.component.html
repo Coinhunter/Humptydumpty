@@ -29,10 +29,14 @@
             <div id="svid30_4d99301a154fd3fb8df1dc70">
               <div id="Kontomenylankas"><!-- Kontomeny (länkas) --></div>
               <div class="sv-script-portlet sv-portlet" id="svid12_4d99301a154fd3fb8df1db36">
-                <div id="Kontomeny"><!-- Kontomeny --></div>
-                <div class="naf-header-user-menu">
+                <div id="Kontomeny">
+                  <div class="btn-holder" *ngIf="!isLoggedIn">
+                    <a id="aLoginKontomenyn" href="javascript:_AF.Auth.Login();" class="btn btn-primary btn-sm">Logga in</a>
+                  </div>
+                </div>
+                <div class="naf-header-user-menu" *ngIf="isLoggedIn">
                   <a href="javascript:;" aria-expanded="false" class="naf-header-user js-open-user-menu">
-                    <i class="icon-avatar-2 naf-header-user-avatar"></i> Svea {{isLoggedIn}}<i class="naf-header-user-angle-down fa fa-angle-down"></i>
+                    <i class="icon-avatar-2 naf-header-user-avatar"></i> Svea <i class="naf-header-user-angle-down fa fa-angle-down"></i>
                   </a>
                   <nav class="naf-header-user-list js-user-menu">
 			                 <a class="naf-header-user-list-item" style="cursor:pointer;" onclick="_AF.Auth.Logout()">

@@ -124,11 +124,11 @@ export class SearchjobsComponent implements OnInit {
     }
   }
 
-  changeLoggedIn() {
-    this.isLoggedInTest = !this.isLoggedInTest;
-    console.log('ChangeLoggedIn');
-    this.commonVariablesService.changeLoggedIn(this.isLoggedInTest);
-  }
+  // changeLoggedIn() {
+  //   this.isLoggedInTest = !this.isLoggedInTest;
+  //   console.log('ChangeLoggedIn');
+  //   this.commonVariablesService.changeLoggedIn(this.isLoggedInTest);
+  // }
 
   @HostListener('document:click', ['$event'])
   public documentClick(event: Event): void {
