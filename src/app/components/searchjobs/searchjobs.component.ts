@@ -3,6 +3,7 @@ import { YrkenService } from '../../services/yrken/yrken.service';
 import { LanderService } from '../../services/lander/lander.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
 import { FreetextSearchService } from '../../services/freetext-search/freetext-search.service';
+import { CommonVariablesService } from '../../services/common-variables/common-variables.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 import { Land } from '../../models/Land.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
@@ -12,6 +13,8 @@ import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
 import { Postnummer } from '../../models/Postnummer.interface';
 import { Fritextsokresultat } from '../../models/Fritextsokresultat.interface';
 
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'app-searchjobs',
   templateUrl: './searchjobs.component.html',
@@ -20,10 +23,18 @@ import { Fritextsokresultat } from '../../models/Fritextsokresultat.interface';
     YrkenService,
     PbapiMatchningService,
     LanderService,
-    FreetextSearchService
+    FreetextSearchService,
+    CommonVariablesService
   ]
 })
 export class SearchjobsComponent implements OnInit {
+
+  // get isLoggedIn(): boolean {
+  //   return this.commonVariablesService.isLoggedIn;
+  // }
+  // set isLoggedIn(value: boolean) {
+  //   this.commonVariablesService.isLoggedIn = value;
+  // }
 
   showJobTypes: boolean;
   showJobGeoArea: boolean;
@@ -63,9 +74,12 @@ export class SearchjobsComponent implements OnInit {
 
   showAlternativeListDesign = false;
 
+  isLoggedInTest = false;
+  isLoggedIn: boolean;
+
   constructor(private yrkenService: YrkenService,
     private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
-    private freetextSearchService: FreetextSearchService) {
+    private freetextSearchService: FreetextSearchService, private commonVariablesService: CommonVariablesService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
     this.showJobAreas = this.showLandAreas = false;
     this.showFreetextJobSearchResults = this.showFreetextAreaSearchResults = false;
@@ -97,6 +111,8 @@ export class SearchjobsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commonVariablesService.isloggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
+    this.commonVariablesService.changeLoggedIn(true);
   }
 
   formatJobTime(min: number, max: number) {
@@ -107,6 +123,12 @@ export class SearchjobsComponent implements OnInit {
     } else {
       return 'Deltid (' + min + '% - ' + max + '%), ';
     }
+  }
+
+  changeLoggedIn() {
+    this.isLoggedInTest = !this.isLoggedInTest;
+    console.log('ChangeLoggedIn');
+    this.commonVariablesService.changeLoggedIn(this.isLoggedInTest);
   }
 
   @HostListener('document:click', ['$event'])
