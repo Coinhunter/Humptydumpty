@@ -516,23 +516,30 @@
            <div htmldocpagetitle="Platsbanken" class="ng-scope ng-isolate-scope ng-hide"></div>
            <div class="matchningsresultatmetadata ng-scope" *ngIf="!(searchparameters.length > 0)">
              <div class="empty-state">
-               <div class="ingaprofilkriterier" role="status" *ngIf="!searchparameters.length">
+               <div class="ingaprofilkriterier" role="status" aria-live="polite" aria-atomic="true" *ngIf="!searchparameters.length">
                  <div class="welcome-hint-container">
                    <div class="row">
-                     <div class="col-md-12">
-                       <h2>Sök jobb i Platsbanken</h2>
+                     <div class="col-lg-7">
+                       <div>
+                         <h2>Sök jobb i Platsbanken</h2>
+                       </div>
+                       <div>
+                         <p>Skriv vad du vill jobba med och var i Sverige du söker jobb. Du kan söka flera yrken samtidigt. Lägg till dina kompetenser och erfarenheter så matchas du mot lediga jobb som passar just din profil.</p>
+                         <p>Du kan även kryssa i rutan "Visa jobb utan krav på arbetslivserfarenhet" om du endast vill se lediga jobb som inte kräver någon arbetslivserfarenhet.</p>
+                       </div>
                      </div>
-                   </div>
-                   <div class="row">
-                     <div class="col-md-12">
-                       <p>Skriv vad du vill jobba med och var i Sverige du söker jobb. Du kan söka flera yrken samtidigt. Lägg till dina kompetenser och erfarenheter så matchas du mot lediga jobb som passar just din profil.</p>
-                       <p>Du kan även kryssa i rutan "Visa jobb utan krav på arbetslivserfarenhet" om du endast vill se lediga jobb som inte kräver någon arbetslivserfarenhet.</p>
+                     <div class="col-lg-5 img-person-start">
+                       <div class="text-center">
+                         <img src="/images/hittaledigtarbete/person_start.svg" alt="Person med dator" class="welcome-hint-container-image img-person-start">
+                       </div>
                      </div>
                    </div>
                  </div><!-- ngIf: !vm.isInloggad -->
                  <div class="welcome-hint-tips-container row ng-scope" data-ng-if="!vm.isInloggad">
-                   <div class="col-md-12">
-                     <p><strong>TIPS!</strong> Platsbanken är bäst när du är inloggad. Då kan du:</p>
+                   <div class="col-lg-7">
+                     <p>
+                       <strong>TIPS!</strong> Platsbanken är bäst när du är inloggad. Då kan du:
+                     </p>
                      <ul>
                        <li>Spara din sökning</li>
                        <li>Titta efter nya annonser utifrån de val du lagt in</li>
@@ -540,9 +547,26 @@
                      </ul>
                      <a class="link" onclick="_AF.Auth.Login();" href="javascript:void(0)">Logga in</a>
                    </div>
-                  </div>
+                   <div class="col-lg-5">
+                     <div class="text-center">
+                       <img src="/images/hittaledigtarbete/nyckel.svg" alt="Nyckel" class="welcome-hint-container-image img-nyckel">
+                     </div>
+                   </div>
+                 </div><!-- end ngIf: !vm.isInloggad -->
+                 <div class="testers-tips-container">
+                   <div class="row">
+                     <div class="col-md-12">
+                       <h2>Vill du hjälpa oss att förbättra Platsbanken?</h2>
+                     </div>
+                   </div>
+                   <div class="row">
+                     <div class="col-md-12">
+                       <p>Vill du vara med att testa nya tjänster och funktioner på Arbetsförmedlingens webbplats? Befinner du dig i Stockholm? Skicka dina kontaktuppgifter till <a href="mailto:anvandartester@arbetsformedlingen.se?subject=Jag vill bidra">anvandartester@arbetsformedlingen.se</a> med rubriken "Jag vill bidra" senast den 15e oktober.</p>
+                     </div>
+                   </div>
                  </div>
                </div>
+             </div>
              </div>
              <div id="matchningsresultatarea" class="matchningsresultat ng-scope" *ngIf="searchResult.rekryteringsbehov.length > 0 && searchparameters.length > 0" style="">
               <div class="matchningsresultatmetadata ng-scope" ng-if="vm.rekryteringsbehovResultat.rekryteringsbehov.length > 0 || vm.sortVisaChoosen.value > 0" style="">
