@@ -23,8 +23,7 @@ import { Observable } from 'rxjs/Observable';
     YrkenService,
     PbapiMatchningService,
     LanderService,
-    FreetextSearchService,
-    CommonVariablesService
+    FreetextSearchService
   ]
 })
 export class SearchjobsComponent implements OnInit {
@@ -112,7 +111,7 @@ export class SearchjobsComponent implements OnInit {
 
   ngOnInit() {
     this.commonVariablesService.isloggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
-    this.commonVariablesService.changeLoggedIn(true);
+    this.commonVariablesService.changeLoggedIn(false);
   }
 
   formatJobTime(min: number, max: number) {

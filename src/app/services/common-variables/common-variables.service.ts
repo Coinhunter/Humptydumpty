@@ -6,11 +6,11 @@ export class CommonVariablesService {
   private isLoggedInSource = new BehaviorSubject<boolean>(false);
   isloggedIn = this.isLoggedInSource.asObservable();
 
-  constructor() { }
+  constructor() {
+    this.changeLoggedIn(true);
+  }
 
   changeLoggedIn(value: boolean) {
-    console.log('ServiceChangeLogegdIn: ' + value);
     this.isLoggedInSource.next(value);
-    console.log(this.isLoggedInSource);
   }
 }

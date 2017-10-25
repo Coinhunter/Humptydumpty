@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { GoogleAnalyticsEventsService } from './services/google-analytics-events/google-analytics-events.service';
+import { CommonVariablesService } from './services/common-variables/common-variables.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ import { GeneratecountriesComponent } from './components/generatecountries/gener
     FormsModule
   ],
   providers: [
-    GoogleAnalyticsEventsService
+    GoogleAnalyticsEventsService,
+    CommonVariablesService
   ],
   bootstrap: [AppComponent] // ResultContainerService]
 })
