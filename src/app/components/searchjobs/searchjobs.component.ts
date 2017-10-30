@@ -76,6 +76,8 @@ export class SearchjobsComponent implements OnInit {
   isLoggedInTest = false;
   isLoggedIn: boolean;
 
+  kategorierOrder: Array<string>;
+
   constructor(private yrkenService: YrkenService,
     private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
     private freetextSearchService: FreetextSearchService, private commonVariablesService: CommonVariablesService) {
@@ -107,6 +109,8 @@ export class SearchjobsComponent implements OnInit {
     this.landerService.getLocalSelection().subscribe(lander => {
         this.lander = lander;
     });
+
+    this.kategorierOrder = ['YRKESOMRADE_ROLL', 'YRKESOMRADE', 'YRKESGRUPP_ROLL', 'YRKESGRUPP', 'YRKESROLL', 'YRKE', 'FRITEXT'];
   }
 
   ngOnInit() {
@@ -160,6 +164,7 @@ export class SearchjobsComponent implements OnInit {
           this.freetextJobSearchResults = this.freetextJobSearchResults.concat(yrkesgrupper);
           this.freetextSearchService.getMatchingJobAreas(freetext).then(yrkesomraden => {
             this.freetextJobSearchResults = this.freetextJobSearchResults.concat(yrkesomraden);
+            this.freetextJobSearchResults = this.sortMatchningskriterierYrkesroller(this.freetextJobSearchResults, freetext);
             const exists = this.freetextJobSearchResults.some(function (el) {
               return el.namn.toLowerCase() === freetext.toLowerCase();
             });
@@ -175,7 +180,49 @@ export class SearchjobsComponent implements OnInit {
     });
   }
 
+  sortMatchningskriterierYrkesroller(response, filter) {
+    const lowerCaseFilter = filter.toLowerCase();
+    const result = response.sort((a, b) => {
+      const compareResult = a.namn.toLowerCase().indexOf(lowerCaseFilter) - b.namn.toLowerCase().indexOf(lowerCaseFilter);
+      if (compareResult === 0) {
+        return this.kategoriComparator(a, b);
+      }
+      return compareResult;
+    });
+    return result;
+  }
+
+  kategoriComparator(a, b) {
+    // Specialfall för att vi är mongo som skiljer på de här kategorierna..
+    if (a.typ === 'YRKESOMRADE_ROLL' && b.typ === 'YRKESOMRADE' || b.typ === 'YRKESOMRADE_ROLL' && a.typ === 'YRKESOMRADE') {
+      return 0;
+    } else if (a.typ === 'YRKESGRUPP_ROLL' && b.typ === 'YRKESGRUPP' || b.typ === 'YRKESGRUPP_ROLL' && a.typ === 'YRKESGRUPP') {
+      return 0;
+    } else if (a.typ === 'YRKESROLL' && b.typ === 'YRKE' || b.typ === 'YRKESROLL' && a.typ === 'YRKE') {
+      return 0;
+    } else {
+      return this.kategorierOrder.indexOf(a.typ) - this.kategorierOrder.indexOf(b.typ);
+    }
+  }
+
+  fritextToTop(result) {
+    // Om vi bara har ett resultat ska vi inte göra detta eftersom det då är perfect match.
+    if (result.length > 1) {
+      const fritext = result.find(this.findFritext);
+      if (fritext) { // Gör bara detta om vi hittar fritext (om vi träffat rätt kommer det inte finnas med..)
+        result.splice(result.indexOf(fritext), 1);
+        result.unshift(fritext);
+      }
+    }
+    return result;
+  }
+
+  findFritext(fruit) {
+    return fruit.typ === 'FRITEXT';
+  }
+
   getFreetextAreaResults(freetext: string) {
+    const lowerCaseFilter = freetext.toLowerCase();
     if (!parseInt(freetext, 10)) {
       this.freetextSearchService.getMatchingMuncipalities(freetext).then(kommuner => {
         this.freetextAreaSearchResults = kommuner;
@@ -183,6 +230,9 @@ export class SearchjobsComponent implements OnInit {
           this.freetextAreaSearchResults = this.freetextAreaSearchResults.concat(lan);
           this.freetextSearchService.getMatchingCountries(freetext).then(land => {
             this.freetextAreaSearchResults = this.freetextAreaSearchResults.concat(land);
+            this.freetextAreaSearchResults.sort((a, b) => {
+              return a.namn.toLowerCase().indexOf(lowerCaseFilter) - b.namn.toLowerCase().indexOf(lowerCaseFilter);
+            });
           });
         });
       });
@@ -211,6 +261,9 @@ export class SearchjobsComponent implements OnInit {
           }
           return result;
         });
+      });
+      this.freetextAreaSearchResults.sort((a, b) => {
+        return a.namn.toLowerCase().indexOf(lowerCaseFilter) - b.namn.toLowerCase().indexOf(lowerCaseFilter);
       });
     }
   }
