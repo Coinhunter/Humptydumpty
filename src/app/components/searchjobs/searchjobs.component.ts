@@ -68,6 +68,7 @@ export class SearchjobsComponent implements OnInit {
   freetextAreaSearchResults: Array<Fritextsokresultat>;
 
   searchTimeout = null;
+  loadTimeout = null;
 
   someRange: number[] = [0, 100];
 
@@ -106,6 +107,11 @@ export class SearchjobsComponent implements OnInit {
     });
     this.landerService.getLocalSelection().subscribe(lander => {
         this.lander = lander;
+        clearTimeout(this.loadTimeout);
+        const self = this;
+        this.loadTimeout = setTimeout(function () {
+          self.toggleChild(null, '00', 'Sverige', 'LAN');
+        }, 3000);
     });
   }
 
@@ -166,11 +172,16 @@ export class SearchjobsComponent implements OnInit {
           this.freetextJobSearchResults = this.freetextJobSearchResults.concat(yrkesgrupper);
           this.freetextSearchService.getMatchingJobAreas(freetext).then(yrkesomraden => {
             this.freetextJobSearchResults = this.freetextJobSearchResults.concat(yrkesomraden);
-            this.freetextJobSearchResults.unshift({
-              id: freetext,
-              namn: freetext,
-              typ: 'FRITEXT'
+            const exists = this.freetextJobSearchResults.some(function (el) {
+              return el.namn.toLowerCase() === freetext.toLowerCase();
             });
+            if (!exists) {
+              this.freetextJobSearchResults.unshift({
+                id: freetext,
+                namn: freetext,
+                typ: 'FRITEXT'
+              });
+            }
           });
         });
     });
@@ -223,8 +234,19 @@ export class SearchjobsComponent implements OnInit {
     });
   }
 
-  selectFreetextResult(e, id: string, name: string, type: string) {
+  selectFreetextResult(e, id: string, name: string, type: string, category: string) {
     // console.log('Add to list: ' + id + ', ' + name + ', ' + type);
+
+    if (category === 'job') {
+      this.showFreetextJobSearchResults = false;
+      this.freetextJobSearchResults.length = 0;
+      document.getElementById('mp-yrkesroller')['value'] = '';
+    } else if (category === 'area') {
+      this.showFreetextAreaSearchResults = false;
+      this.freetextAreaSearchResults.length = 0;
+      document.getElementById('mp-arbetsorter')['value'] = '';
+    }
+
     let target = null;
     if (type !== 'GEOADRESS') {
       if (type.toLowerCase() === 'yrkesroll') {
@@ -300,7 +322,7 @@ export class SearchjobsComponent implements OnInit {
         self.showFreetextJobSearchResults = false;
         self.showFreetextAreaSearchResults = false;
       }
-    }, 500);
+    }, 300);
   }
 
   levelOneCheck(e, id: string, name: string, type: string) {
@@ -596,17 +618,28 @@ export class SearchjobsComponent implements OnInit {
     return allChecked;
   }
   toggleChild(e, id: string, name: string, type: string): void {
-    const target = e.target || e.srcElement;
+    let target;
+    if (e != null) {
+      target = e.target || e.srcElement;
+    }
+    if (target == null) {
+      const targetid = type + '_' + id + '_TOGGLE';
+      console.log(targetid);
+      target = document.getElementById(targetid);
+    }
     const children = id + '_' + type + '_CHILDREN';
     const childContainer = document.getElementById(id + '_' + type + '_CHILDREN');
+    const label = document.getElementById(type + '_' + id + '_LABEL');
     if (target.classList.contains('collapsed')) {
       target.classList.remove('collapsed');
       target.classList.add('expanded');
       childContainer.classList.remove('hidden');
+      label.classList.add('bold');
     } else if (target.classList.contains('expanded')) {
       target.classList.add('collapsed');
       target.classList.remove('expanded');
       childContainer.classList.add('hidden');
+      label.classList.remove('bold');
     }
   }
   addToList(id: string, name: string, type: string, toggle?: boolean) {

@@ -31,8 +31,8 @@
                         <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Skriv t.ex. &quot;Gymnasielärare&quot;" type="text">
                         <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextJobSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
                         id="typeahead-39-8211" matches="matches" move-in-progress="moveInProgress" query="query" position="position"
-                        debounce="debounceUpdate" style="top: 43px; left: 0px;display:block;">
-                          <li class="uib-typeahead-match ng-scope" *ngFor="let result of freetextJobSearchResults | slice:0:12;" (click)="selectFreetextResult($event, result.id, result.namn, result.typ)" ng-class="{active: isActive($index) }" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index, $event)" role="option">
+                        debounce="debounceUpdate" style="top: 72px; left: 0px;display:block;">
+                          <li class="uib-typeahead-match ng-scope" *ngFor="let result of freetextJobSearchResults | slice:0:12;" (click)="selectFreetextResult($event, result.id, result.namn, result.typ, 'job')" ng-class="{active: isActive($index) }" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index, $event)" role="option">
                             <a class="template-typeahead ng-scope" data-type-name="freetextJobOption">
                               <span ng-bind-html="match.label | uibTypeaheadHighlight:query" class="ng-binding" data-type-name="freetextJobOption" innerHTML="{{ highlightText(result.namn, freetextJob) }}">
 
@@ -145,9 +145,9 @@
                     (keyup)="searchInputTimeout($event)" >
                   <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextAreaSearchResults"
                     role="listbox" id="typeahead-19-9320"
-                    style="top: 43px; left: 0px;display:block;">
+                    style="top: 72px; left: 0px;display:block;">
                       <li class="uib-typeahead-match ng-scope" *ngFor="let result of freetextAreaSearchResults | slice:0:11;"
-                        (click)="selectFreetextResult($event, result.id, result.namn, result.typ)"
+                        (click)="selectFreetextResult($event, result.id, result.namn, result.typ, 'area')"
                         ng-class="{active: isActive($index) }"
                         ng-mouseenter="selectActive($index)" ng-click="selectMatch($index, $event)" role="option"
                         id="typeahead-19-9320-option-0" style="">
@@ -183,7 +183,7 @@
                              name="{{land.typ}}_{{land.id}}" attr.data-id="{{land.id}}" attr.data-name="{{land.namn}}" attr.data-type="{{land.typ}}"
                                id="{{land.typ}}_{{land.id}}" class="" type="checkbox">
                              <label id="{{land.typ}}_{{land.id}}_LABEL" class="" for="{{land.typ}}_{{land.id}}">{{land.namn}}</label>
-                             <div *ngIf="land.lan" class="hasChildren collapsed fa" (click)="toggleChild($event, land.id, land.namn, land.typ)">
+                             <div id="{{land.typ}}_{{land.id}}_TOGGLE" *ngIf="land.lan" class="hasChildren collapsed fa" (click)="toggleChild($event, land.id, land.namn, land.typ)">
                              </div>
                            </div>
                            <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lan" class="hidden jobGroup list-level-2">
