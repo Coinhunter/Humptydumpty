@@ -68,7 +68,6 @@ export class SearchjobsComponent implements OnInit {
   freetextAreaSearchResults: Array<Fritextsokresultat>;
 
   searchTimeout = null;
-  loadTimeout = null;
 
   someRange: number[] = [0, 100];
 
@@ -107,11 +106,6 @@ export class SearchjobsComponent implements OnInit {
     });
     this.landerService.getLocalSelection().subscribe(lander => {
         this.lander = lander;
-        clearTimeout(this.loadTimeout);
-        const self = this;
-        this.loadTimeout = setTimeout(function () {
-          self.toggleChild(null, '00', 'Sverige', 'LAN');
-        }, 3000);
     });
   }
 
@@ -129,12 +123,6 @@ export class SearchjobsComponent implements OnInit {
       return 'Deltid (' + min + '% - ' + max + '%), ';
     }
   }
-
-  // changeLoggedIn() {
-  //   this.isLoggedInTest = !this.isLoggedInTest;
-  //   console.log('ChangeLoggedIn');
-  //   this.commonVariablesService.changeLoggedIn(this.isLoggedInTest);
-  // }
 
   @HostListener('document:click', ['$event'])
   public documentClick(event: Event): void {
@@ -624,7 +612,6 @@ export class SearchjobsComponent implements OnInit {
     }
     if (target == null) {
       const targetid = type + '_' + id + '_TOGGLE';
-      console.log(targetid);
       target = document.getElementById(targetid);
     }
     const children = id + '_' + type + '_CHILDREN';
@@ -751,14 +738,14 @@ export class SearchjobsComponent implements OnInit {
       const elem = document.getElementById('LAN_' + id);
       elem['checked'] = false;
       if (id !== '00') {
-        this.levelTwoCheck(elem, id, name, type);
+        this.levelOneCheck(elem, id, name, type);
       } else {
         this.levelOneCheck(elem, id, name, type);
       }
     } else if (type.toUpperCase() === 'KOMMUN') {
       const elem = document.getElementById('KOMMUN_' + id);
       elem['checked'] = false;
-      this.levelThreeCheck(elem, id, name, type);
+      this.levelTwoCheck(elem, id, name, type);
     }
     if (!skipSearch) {
       this.removeFromListAndSearch(id, type);

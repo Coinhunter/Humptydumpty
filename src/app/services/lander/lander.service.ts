@@ -12,7 +12,7 @@ export class LanderService {
   }
 
   getLocalSelection() {
-      return this.http.get('./assets/lander_all.json')
+      return this.http.get('./assets/generated_countries.json')
           .map(res => res.json());
   }
 

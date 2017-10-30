@@ -131,12 +131,14 @@
     padding-left: 0;
     margin-bottom: 0;
     > li {
-      &:first-child > .checkbox > .hasChildren {
-        margin-top: 0;
-        padding-top: 12px;
-      }
-      &:last-child .checkbox {
-        border-radius: 0 0 5px 5px;
+      &:first-child > .checkbox {
+        > .hasChildren {
+          margin-top: 0;
+          padding-top: 12px;
+        }
+        &:last-child .checkbox {
+          border-radius: 0 0 5px 5px;
+        }
       }
     }
   } .liContent {
@@ -150,6 +152,21 @@
     position: relative;
     &.hilight {
       background: #c1e4f6;
+    }
+    &.no-box {
+      label {
+        padding-left: 0;
+        &::before {
+          border: 0;
+          background: transparent;
+        }
+      }
+      .hasChildren {
+        cursor: pointer;
+        &:hover {
+          background: #FFF;
+        }
+      }
     }
     label {
       margin-top: 10px;
