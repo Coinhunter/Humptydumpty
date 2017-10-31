@@ -18,6 +18,8 @@ import { Job } from '../../types/job.type';
 
 import { Observable } from 'rxjs/Observable';
 
+import { ShowadComponent } from './showad/showad.component';
+
 @Component({
   selector: 'app-searchjobs',
   templateUrl: './searchjobs.component.html',
@@ -82,6 +84,7 @@ export class SearchjobsComponent implements OnInit {
   kategorierOrder: Array<string>;
 
   currentJob: Job;
+  showAdView: boolean;
 
   constructor(private yrkenService: YrkenService,
     private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
@@ -123,6 +126,7 @@ export class SearchjobsComponent implements OnInit {
     this.commonVariablesService.isloggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.commonVariablesService.changeLoggedIn(false);
     this.sjcvs.currentJob.subscribe(currentJob => this.currentJob = currentJob);
+    this.sjcvs.showAdView.subscribe(showAdView => this.showAdView = showAdView);
   }
 
   formatJobTime(min: number, max: number) {
@@ -168,6 +172,7 @@ export class SearchjobsComponent implements OnInit {
     this.adService.getMatchingAdById(id, this.searchparameters).then(annons => {
       this.sjcvs.setCurrentJob(annons);
       console.log(this.currentJob);
+      this.sjcvs.setShowAdView(true);
     });
   }
 

@@ -24,6 +24,7 @@ import { SearchjobsComponent } from './components/searchjobs/searchjobs.componen
 import { RelatedmatchesPipe } from './pipes/relatedmatches.pipe';
 import { GeneratejobareasComponent } from './components/generatejobareas/generatejobareas.component';
 import { GeneratecountriesComponent } from './components/generatecountries/generatecountries.component';
+import { ShowadComponent } from './components/searchjobs/showad/showad.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { GeneratecountriesComponent } from './components/generatecountries/gener
     SearchjobsComponent,
     RelatedmatchesPipe,
     GeneratejobareasComponent,
-    GeneratecountriesComponent
+    GeneratecountriesComponent,
+    ShowadComponent
   ],
   imports: [
     BrowserModule,

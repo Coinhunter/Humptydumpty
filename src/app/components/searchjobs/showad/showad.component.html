@@ -1,0 +1,388 @@
+<!-- <p (click)="hideAd();">
+  showad works!
+</p> -->
+
+<div class="container">
+    <div class="row header-field"></div>
+    <div class="as-matcha-rekryteringsbehov row">
+        <!-- <div class="col-sm-4 hidden-xs left-column">
+         <div data-ui-view="viewMatchningsresultatLista"></div>
+       </div> -->
+        <div class="col-xs-12 col-md-10 col-lg-8 middle-column">
+            <!-- uiView: viewRekryteringsbehov -->
+            <div id="rekryteringsbehov-uiview" data-ui-view="viewRekryteringsbehov" class="ng-scope" style="">
+                <!-- <af-set-html-doc-page-title ng-show="false" htmldocpagetitle="Mobile Software Engineer - Nuvoair AB - Platsbanken" class="ng-scope ng-isolate-scope ng-hide"></af-set-html-doc-page-title> -->
+                <!-- Laddningsindikator specialdirektiv vi inte har kontroll över. -->
+                <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/backtosearch.html' -->
+                <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/backtosearch.html'" class="ng-scope">
+                    <div class="navigation ng-scope">
+                        <div class="navigation-container back clearfix row">
+                            <div class="col-xs-4 col-md-3 no-padding-left"><span class="tosearch-wrapper"><a href="javascript:void(0);" class="tosearch" (click)="hideAd();"><i class="fa fa-angle-left"></i>Till sök</a></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ngIf: !vm.directLink && !vm.errorStatus -->
+                <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/navigation.html' -->
+                <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/navigation.html'" ng-if="!vm.directLink &amp;&amp; !vm.errorStatus" class="ng-scope">
+                    <div class="navigation ng-scope">
+                        <div class="navigation-container clearfix row">
+                            <div class="col-xs-4 col-md-3 no-padding-left">
+                                <!-- ngIf: !vm.isFirstRekryteringsbehov() -->
+                                <button class="prev nav-btn ng-scope" ng-if="!vm.isFirstRekryteringsbehov()" ng-click="vm.prevRekryteringsbehov()" ng-disabled="vm.loadingSpinner"><i class="fa fa-angle-left"></i> <span class="hidden-xs">Föregående</span></button>
+                                <!-- end ngIf: !vm.isFirstRekryteringsbehov() -->
+                                <!--
+        <a href="" class="prev" ng-if="!vm.isFirstRekryteringsbehov()" ng-click="vm.prevRekryteringsbehov()">
+          <i class="fa fa-angle-left"></i>
+          <span class="hidden-xs">Föregående</span>
+        </a>
+      --></div>
+                            <div class="col-xs-4 col-md-6 navigationinfo ng-binding">2 av 413</div>
+                            <div class="col-xs-4 col-md-3 no-padding-right">
+                                <!--
+      <a href="" class="next" ng-if="!vm.isLastRekryteringsbehov()" ng-click="vm.nextRekryteringsbehov()">
+        <span class="hidden-xs">Nästa</span>
+        <i class="fa fa-angle-right"></i>
+      </a>
+      -->
+                                <!-- ngIf: !vm.isLastRekryteringsbehov() -->
+                                <button class="next nav-btn ng-scope" ng-if="!vm.isLastRekryteringsbehov()" ng-click="vm.nextRekryteringsbehov()" ng-disabled="vm.loadingSpinner"><span class="hidden-xs">Nästa</span> <i class="fa fa-angle-right"></i></button>
+                                <!-- end ngIf: !vm.isLastRekryteringsbehov() -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end ngIf: !vm.directLink && !vm.errorStatus -->
+                <div class="row ng-scope">
+                    <!-- ngIf: vm.loadingSpinner -->
+                </div>
+                <!-- Possible error messages -->
+                <!-- ngIf: !vm.loadingSpinner -->
+                <div data-ng-if="!vm.loadingSpinner" class="ng-scope" style="">
+                    <!-- ngIf: vm.aktuelltRekryteringsbehov.presentationStatus !== 'PUBLICERAD_ANSOKNINGSBAR' && !vm.errorStatus -->
+                    <!-- ngIf: vm.errorStatus === 410 -->
+                    <!-- ngIf: vm.errorStatus === 404 -->
+                </div>
+                <!-- end ngIf: !vm.loadingSpinner -->
+                <div id="rekryteringsbehovarea" ng-show="vm.aktuelltRekryteringsbehov.presentationStatus ==='PUBLICERAD_ANSOKNINGSBAR'" class="ng-scope" style="">
+                    <!-- ngIf: vm.isAnnonsPublicerad && vm.ansokningsbar -->
+                    <div class="rekryteringsbehov ng-scope" data-ng-if="vm.isAnnonsPublicerad &amp;&amp; vm.ansokningsbar" style="">
+                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/logoandheadline.html' -->
+                        <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/logoandheadline.html'" class="ng-scope">
+                            <!-- Logo och rubrik för små skärmar, positionerad över namnet på gruppen -->
+                            <!-- <div class="hidden-sm hidden-md hidden-lg hidden-xl"> -->
+                            <div class="pb-hidden-sm pb-hidden-md pb-hidden-lg pb-hidden-xl ng-scope">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <!-- ngIf: vm.logoURL -->
+                                        <img ng-if="vm.logoURL" *ngIf="currentJob.logotyp" class="arbetsgivarelogo centerBlock ng-scope" alt="Arbetsgivarens logotyp" onerror="this.style.display = &quot;none&quot;" src="{{currentJob.logotyp}}">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12"><span class="arbetsgivarenamn centerBlock ng-binding">{{currentJob.arbetsgivarenamn}}</span></div>
+                                </div>
+                            </div>
+                            <!-- Logo och rubrik för vanliga skärmar, positionerad över namnet på gruppen -->
+                            <div class="pb-hidden-xs ng-scope"><span class="arbetsgivarenamn ng-binding">{{currentJob.arbetsgivarenamn}}</span>
+                              <img ng-if="vm.logoURL" *ngIf="currentJob.logotyp" class="arbetsgivarelogo pull-right ng-scope" alt="Arbetsgivarens logotyp" onerror="this.style.display = &quot;none&quot;" src="{{currentJob.logotyp}}">
+                                <!-- ngIf: vm.logoURL -->
+                            </div>
+                            <div class="row ng-scope" tabindex="0" id="hla-detalj-rubrik">
+                                <h1 class="rekryteringsbehov-rubrik col-md-9 ng-binding" ng-bind-html="vm.aktuelltRekryteringsbehov.rubrik" [innerHTML]="currentJob.rubrik"></h1></div>
+                        </div>
+                        <!-- Sammanfattningen högst upp i annonsen, med publicerad, senaste sökdatum, anställningsform, lön, etc.. -->
+                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/summaryheader.html' -->
+                        <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/summaryheader.html'" class="ng-scope">
+                            <div class="rekryteringsbehov-information ng-scope">
+                                <h2 class="sr-only">Sammanfattning</h2>
+                                <div class="row btnPrintSaveShare">
+                                    <!--För mindre skärmar-->
+                                    <div class="col-xs-12 spara-annons visible-xs visible-sm hidden-md hidden-lg hidden-xl">
+                                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html' --><span data-ng-include="'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html'" class="ng-scope"><!-- ngIf: vm.saveLoadingSpinner --><!-- ngIf: !vm.saveLoadingSpinner --><span ng-if="!vm.saveLoadingSpinner" class="ng-scope"><button ng-show="vm.isInloggad" ng-click="vm.toggleSparaAnnons(vm.aktuelltRekryteringsbehov, $event);" class="spara-annons-btn ng-hide"><span ng-hide="vm.aktuelltRekryteringsbehov.stored" class=""><i class="i-star-off"></i>Spara jobbet</span> <span ng-show="vm.aktuelltRekryteringsbehov.stored" class="ng-hide"><i class="i-star-on"></i>Ta bort från mina sparade jobb</span></button>
+                                        </span>
+                                        <!-- end ngIf: !vm.saveLoadingSpinner -->
+                                        </span>
+                                        <button ng-click="vm.printAnnons();" class="skriv-ut-annons-btn"><i class="fa fa-print"></i>Skriv ut annons</button>
+                                    </div>
+                                    <!--För större skärmar-->
+                                    <div class="col-md-8 spara-annons hidden-xs hidden-sm visible-md visible-lg visible-xl">
+                                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html' --><span data-ng-include="'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html'" class="ng-scope"><!-- ngIf: vm.saveLoadingSpinner --><!-- ngIf: !vm.saveLoadingSpinner --><span ng-if="!vm.saveLoadingSpinner" class="ng-scope"><button ng-show="vm.isInloggad" ng-click="vm.toggleSparaAnnons(vm.aktuelltRekryteringsbehov, $event);" class="spara-annons-btn ng-hide"><span ng-hide="vm.aktuelltRekryteringsbehov.stored" class=""><i class="i-star-off"></i>Spara jobbet</span> <span ng-show="vm.aktuelltRekryteringsbehov.stored" class="ng-hide"><i class="i-star-on"></i>Ta bort från mina sparade jobb</span></button>
+                                        </span>
+                                        <!-- end ngIf: !vm.saveLoadingSpinner -->
+                                        </span>
+                                        <button ng-click="vm.printAnnons();" class="skriv-ut-annons-btn"><i class="fa fa-print"></i>Skriv ut annons</button>
+                                    </div>
+                                    <!-- Share-grejer -->
+                                    <div ng-click="vm.delaAnnons();" class="col-xs-12 col-md-4 dela-annons">
+                                        <!-- Temporär fix för att dela på facebook i.s.f. via modal-interface -->
+                                        <a href="http://www.facebook.com/sharer.php?u=https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/annonser/{{currentJob.id}}" class="modal-button-padding" target="_blank" title="Dela på Facebook" href="http://www.facebook.com/sharer.php?u=https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/annonser/21857972">
+                                            <button class="dela-annons-btn"><i class="fa fa-share-square-o"></i>Dela annons på Facebook</button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="erbjudande"><span class="kommun ng-binding" *ngIf="currentJob.erbjudenArbetsplats.kommun"><span class="bold ng-binding">Kommun:</span> {{currentJob.erbjudenArbetsplats.kommun.namn}} <span>|</span> </span><span class="yrkesroll ng-binding"><span class="bold">Yrkesroll:</span> {{currentJob.yrkesroll.namn}}</span>
+                                </div>
+                                <div class="annonsInformation">
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.publiceringsdatum --><span data-ng-if="vm.aktuelltRekryteringsbehov.publiceringsdatum" class="ng-binding ng-scope"><label>Publicerad:</label>{{getFormattedDate(currentJob.publiceringsdatum, true)}}<span class="separeraText">|</span></span>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.publiceringsdatum -->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.sistaAnsokningsdatum --><span data-ng-if="vm.aktuelltRekryteringsbehov.sistaAnsokningsdatum" class="ng-binding ng-scope"><label>Sök jobbet senast:</label>{{getFormattedDate(currentJob.sistaAnsokningsdatum, true)}}<span class="separeraText">|</span></span>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.sistaAnsokningsdatum --><span class="anstallningsform" *ngIf="currentJob.anstallningstyp"><label>Anställningsform:</label><span class="ng-binding">{{currentJob.anstallningstyp.namn}}</span> <span class="separeraText">|</span> </span>
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.lonetyp --><span data-ng-if="vm.aktuelltRekryteringsbehov.lonetyp" class="ng-binding ng-scope" *ngIf="currentJob.lonetyp"><label>Lön:</label>{{currentJob.lonetyp}} <span class="separeraText">|</span> </span>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.lonetyp -->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.visaAntalPlatser --><span data-ng-if="vm.aktuelltRekryteringsbehov.visaAntalPlatser" class="ng-binding ng-scope"><label>Antal platser:</label>{{currentJob.antalPlatser}}<span class="separeraText">|</span></span>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.visaAntalPlatser --><span class="ng-binding"><label>Annons-ID:</label>{{currentJob.id}}</span></div>
+                            </div>
+                        </div>
+                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/visa-mer-accordion.html' -->
+                        <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/visa-mer-accordion.html'" class="ng-scope">
+                            <div id="annonstext-sizewrapper" ng-class="vm.sizewrapperClass()" class="ng-scope annonstext-sizelimiter" style="">
+                                <div id="annonstext-container">
+                                    <!--Annonstext, DXA, AIS, AD annonser-->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla !== 'VIA_AF_FORMULAR' -->
+                                    <!--Beskrivningkrav annonstext, annonser från publicera ledigtarbete-->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                    <div class="rekryteringsbehov-text-beskrivningKrav ng-scope" data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'" *ngIf="currentJob.kalla === 'VIA_AF_FORMULAR'">
+                                        <h2>Om dig</h2>
+                                        <p ng-bind-html="vm.aktuelltRekryteringsbehov.beskrivningKrav" class="ng-binding" [innerHTML]="currentJob.beskrivningKrav"></p>
+                                    </div>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                    <div>
+                                        <!--Kriterier med Vikt, annonser från nyaplatsbanken-->
+                                        <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/nyaplatsbankenannonser/kriterierMedVikt.html' -->
+                                        <div data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'" *ngIf="currentJob.kalla === 'VIA_AF_FORMULAR'" data-ng-include="'areas/matcha/rekryteringsbehov/templates/nyaplatsbankenannonser/kriterierMedVikt.html'" class="ng-scope">
+                                            <!-- ngIf: vm.hasEfterfragadeKriterier -->
+                                        </div>
+                                        <!-- end ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                        <!--Kriterier utan vikt, DXA annonser-->
+                                        <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla !== 'VIA_AF_FORMULAR' -->
+                                        <!-- ngIf: vm.aktuelltRekryteringsbehov.ingenYrkeserfarenhetKravs -->
+                                    </div>
+                                    <!--BeskrivningBehov annonstext, annonser från nyaplatsbanken-->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                    <div class="rekryteringsbehov-text-beskrivningBehov ng-scope" data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'">
+                                        <h2>Dina arbetsuppgifter</h2>
+                                        <p ng-bind-html="vm.aktuelltRekryteringsbehov.beskrivningBehov" class="ng-binding" [innerHTML]="currentJob.beskrivningBehov">
+                                        </p>
+                                    </div>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                    <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/nyaplatsbankenannonser/ovrigt.html' -->
+                                    <div data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'" *ngIf="currentJob.kalla === 'VIA_AF_FORMULAR'" data-ng-include="'areas/matcha/rekryteringsbehov/templates/nyaplatsbankenannonser/ovrigt.html'" class="ng-scope">
+                                        <div class="ovrigtContainer-PLA ng-scope">
+                                            <div class="row">
+                                                <!-- ngIf: vm.aktuelltRekryteringsbehov.lonebeskrivning || vm.aktuelltRekryteringsbehov.villkorsbeskrivning || vm.aktuelltRekryteringsbehov.calculateErbjudenArbetsplatsNamn() -->
+                                                <div class="col-xs-12 ng-scope" *ngIf="currentJob.lonebeskrivning || currentJob.villkorsbeskrivning || currentJob.erbjudenArbetsplats" data-ng-if="vm.aktuelltRekryteringsbehov.lonebeskrivning || vm.aktuelltRekryteringsbehov.villkorsbeskrivning || vm.aktuelltRekryteringsbehov.calculateErbjudenArbetsplatsNamn()">
+                                                    <h2>Övrigt</h2>
+                                                </div>
+                                                <!-- end ngIf: vm.aktuelltRekryteringsbehov.lonebeskrivning || vm.aktuelltRekryteringsbehov.villkorsbeskrivning || vm.aktuelltRekryteringsbehov.calculateErbjudenArbetsplatsNamn() -->
+                                                <!-- ngIf: vm.aktuelltRekryteringsbehov.lonebeskrivning -->
+                                                <!-- ngIf: vm.aktuelltRekryteringsbehov.villkorsbeskrivning -->
+                                                <!-- ngIf: vm.aktuelltRekryteringsbehov.calculateErbjudenArbetsplatsNamn() -->
+                                                <div class="col-xs-12 arbetsplats ng-scope" *ngIf="currentJob.erbjudenArbetsplats && currentJob.erbjudenArbetsplats.kommun" data-ng-if="vm.aktuelltRekryteringsbehov.calculateErbjudenArbetsplatsNamn()">
+                                                    <h3>Arbetsplats</h3>
+                                                    <p class="ng-binding">{{currentJob.erbjudenArbetsplats.kommun.namn}}</p>
+                                                </div>
+                                                <!-- end ngIf: vm.aktuelltRekryteringsbehov.calculateErbjudenArbetsplatsNamn() -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla !== 'VIA_AF_FORMULAR' -->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                    <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/nyaplatsbankenannonser/omOss.html' -->
+                                    <div *ngIf="currentJob.kalla === 'VIA_AF_FORMULAR'" data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'" data-ng-include="'areas/matcha/rekryteringsbehov/templates/nyaplatsbankenannonser/omOss.html'" class="ng-scope">
+                                        <!-- ngIf: vm.aktuelltRekryteringsbehov.foretagsinformation -->
+                                        <div class="row omOssContainer ng-scope" data-ng-if="vm.aktuelltRekryteringsbehov.foretagsinformation" *ngIf="currentJob.foretagsinformation">
+                                            <div class="col-xs-12">
+                                                <!-- <uib-accordion class="accordion-foretagsinformation"> -->
+                                                    <div role="tablist" class="panel-group" ng-transclude="">
+                                                        <div uib-accordion-group="" class="accordiongroup-foretagsinformation ng-scope ng-isolate-scope panel panel-open" is-open="vm.isForetagsinformationAccordianOpen">
+                                                            <div role="tab" id="accordiongroup-18813-9573-tab" aria-selected="true" class="panel-heading" ng-keypress="toggleOpen($event)">
+                                                                <h4 class="panel-title">
+                                                                  <a role="button" data-toggle="collapse" href="" aria-expanded="true" aria-controls="accordiongroup-18813-9573-panel" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading" ng-disabled="isDisabled" uib-tabindex-toggle="">
+                                                                    <span uib-accordion-header="" ng-class="{'text-muted': isDisabled}" class="ng-binding">
+                                                                      <span class="accordion-rubrik ng-scope">Om oss</span>
+                                                                      <i class="pull-right ng-scope fa fa-angle-up" data-ng-class="{'fa fa-angle-up': vm.isForetagsinformationAccordianOpen, 'fa fa-angle-down': !vm.isForetagsinformationAccordianOpen}"></i>
+                                                                    </span>
+                                                                  </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="accordiongroup-18813-9573-panel" aria-labelledby="accordiongroup-18813-9573-tab" aria-hidden="false" role="tabpanel" class="panel-collapse collapse in" uib-collapse="!isOpen" aria-expanded="true">
+                                                                <div class="panel-body" ng-transclude="">
+                                                                    <!-- <uib-accordion-heading class="ng-scope"></uib-accordion-heading> -->
+                                                                    <p style="word-wrap: break-word" ng-bind-html="vm.aktuelltRekryteringsbehov.foretagsinformation" class="ng-binding ng-scope" [innerHTML]="currentJob.foretagsinforamtion"></p>
+                                                                    <div class="webbplats icons__item ng-scope" data-name="external">
+                                                                        <!-- ngIf: vm.aktuelltRekryteringsbehov.webbplats -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <!-- </uib-accordion> -->
+                                            </div>
+                                        </div>
+                                        <!-- end ngIf: vm.aktuelltRekryteringsbehov.foretagsinformation -->
+                                    </div>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
+                                </div>
+                                <!-- /annonstext-container  -->
+                            </div>
+                            <div id="visa-mer-content-fader" ng-class="vm.showButtonAndContentFader()" class="ng-scope" style="">
+                                <div id="annonstext-fadeout" class="fadeout visible-xs visible-sm hidden-md hidden-lg hidden-xl"></div>
+                                <button id="visa-mer-knapp" class="btn btn-default visible-xs visible-sm hidden-md hidden-lg hidden-xl visa-mer-knapp" ng-click="vm.toggleVisaMerMindre()">
+                                    <!-- ngIf: vm.showFullAnnonstext -->
+                                    <div ng-if="vm.showFullAnnonstext" class="ng-scope">Visa mer <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                                    <!-- end ngIf: vm.showFullAnnonstext -->
+                                    <!-- ngIf: !vm.showFullAnnonstext -->
+                                </button>
+                            </div>
+                        </div>
+                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/kontaktinformation.html' -->
+                        <div data-ng-include="'areas/matcha/rekryteringsbehov/kontaktinformation.html'" class="ng-scope">
+                            <div class="kontaktinformation-container ng-scope">
+                                <h2>Kontaktinformation</h2>
+                                <div data-ng-show="vm.aktuelltRekryteringsbehov.kontaktpersoner" class="">
+                                    <div class="kontaktpersonLista">
+                                        <!-- ngIf: vm.getKontaktpersoner(!vm.fackligaKontaktpersoner).length > 0 && vm.aktuelltRekryteringsbehov.kalla !== 'VIA_AF_FORMULAR' || vm.aktuelltRekryteringsbehov.kalla !== 'VIA_PLATSBANKEN_AD' && vm.getKontaktpersoner(!vm.fackligaKontaktpersoner).length > 0 -->
+                                        <!-- ngRepeat: kontaktperson in vm.getKontaktpersoner(!vm.fackligaKontaktpersoner) -->
+                                        <!-- ngIf: vm.getKontaktpersoner(vm.fackligaKontaktpersoner).length > 0 && vm.aktuelltRekryteringsbehov.kalla !== 'VIA_AF_FORMULAR' || vm.aktuelltRekryteringsbehov.kalla !== 'VIA_PLATSBANKEN_AD' && vm.getKontaktpersoner(vm.fackligaKontaktpersoner).length > 0 -->
+                                        <!-- ngRepeat: kontaktperson in vm.getKontaktpersoner(vm.fackligaKontaktpersoner) -->
+                                    </div>
+                                </div>
+                                <div class="row kontaktinformation-adress">
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.besoksadressGatuadress || vm.aktuelltRekryteringsbehov.besoksadressGatuadress -->
+                                    <div *ngIf="currentJob.besoksadressGatuadress || currentJob.besoksadressOrt" data-ng-if="vm.aktuelltRekryteringsbehov.besoksadressGatuadress || vm.aktuelltRekryteringsbehov.besoksadressGatuadress" class="kontaktinformation col-sm-6 ng-scope">
+                                        <div class="rubrik">
+                                            <h3>Företagets adress</h3></div><span class="ng-binding">{{currentJob.besoksadressGatuadress}}</span> <span class="ng-binding">{{currentJob.besoksadressOrt}}</span></div>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.besoksadressGatuadress || vm.aktuelltRekryteringsbehov.besoksadressGatuadress -->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.postadressUtdelningsadress || vm.aktuelltRekryteringsbehov.postadressPostort ||
+    vm.aktuelltRekryteringsbehov.postadressPostnummer -->
+                                    <div *ngIf="currentJob.postadressUtdelningsadress || currentJob.postadressPostort ||
+                                        currentJob.postadressPostnummer"
+                                        data-ng-if="vm.aktuelltRekryteringsbehov.postadressUtdelningsadress || vm.aktuelltRekryteringsbehov.postadressPostort ||
+                                        vm.aktuelltRekryteringsbehov.postadressPostnummer" class="kontaktinformation col-sm-6 ng-scope">
+                                        <div class="rubrik">
+                                            <h3>Postadress</h3></div>
+                                        <div class="ng-binding">{{currentJob.postadressArbetsplatsNamn}}</div>
+                                        <div class="ng-binding">{{currentJob.postadressUtdelningsadress}}</div>
+                                        <div class="ng-binding">{{currentJob.postadressPostnummer}} {{currentJob.postadressPostort}}</div>
+                                    </div>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.postadressUtdelningsadress || vm.aktuelltRekryteringsbehov.postadressPostort ||
+    vm.aktuelltRekryteringsbehov.postadressPostnummer -->
+                                </div>
+                                <div class="row">
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.telefonnummer -->
+                                    <div *ngIf="currentJob.telefonnummer" data-ng-if="vm.aktuelltRekryteringsbehov.telefonnummer" class="kontaktinformation col-sm-6 ng-scope">
+                                        <div class="rubrik">
+                                            <h3>Telefonnummer</h3></div><span class="ng-binding">{{currentJob.telefonnummer}}</span></div>
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.telefonnummer -->
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.epost -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/ansok-print-area.html' -->
+                        <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/ansok-print-area.html'" class="ng-scope">
+                            <div class="ansok-print-area ng-scope">
+                                <!-- ngIf: vm.aktuelltRekryteringsbehov.ovrigtOmAnsokan.length > 0 -->
+                                <div>
+                                    <!-- ngIf: !vm.aktuelltRekryteringsbehov.ansokningssattViaAf -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/ansok-senast.html' -->
+                        <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/ansok-senast.html'" class="ng-scope">
+                            <div *ngIf="currentJob.sistaAnsokningsdatum" data-ng-show="vm.aktuelltRekryteringsbehov.sistaAnsokningsdatum" class="ansoksenast ng-scope">
+                                <h2>Sök jobbet senast <span class="ansokningsdatum nowrap ng-binding">{{getFormattedDate(currentJob.sistaAnsokningsdatum)}}</span></h2></div>
+                        </div>
+                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/ansok.html' -->
+                        <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/ansok.html'" class="ng-scope">
+                            <div class="ansokContainer row ng-scope">
+                                <div class="col-xs-12">
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.ovrigtOmAnsokan.length > 0 -->
+                                    <!-- ngIf: vm.antalAnsokningssatt()==1 && !vm.aktuelltRekryteringsbehov.ansokningssattViaAf -->
+                                    <!-- ngIf: vm.antalAnsokningssatt()>1 && !vm.aktuelltRekryteringsbehov.ansokningssattViaAf -->
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- ngIf: vm.aktuelltRekryteringsbehov.ansokningssattViaAf -->
+                                    <!-- <button ng-disabled="!vm.ansokningsbar" data-ng-if="vm.aktuelltRekryteringsbehov.ansokningssattViaAf" data-ng-click="vm.ansok()" class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">Ansök</button> -->
+                                    <!-- end ngIf: vm.aktuelltRekryteringsbehov.ansokningssattViaAf -->
+                                </div>
+
+                                <!-- <div class="reference" *ngIf="job.referens && job.ansokningssattEpost">
+                                  Ange referens <span class="number" >{{job.referens}}</span> i ämnesraden och skicka mailet till <a class="email" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.referens}}" target="_top">{{job.ansokningssattEpost}}</a>.
+                                </div>
+                                <div class="reference" *ngIf="!job.referens && job.ansokningssattEpost">
+                                  Maila till <a class="email" href="mailto:{{job.ansokningssattEpost}}?Subject={{job.rubrik}}" target="_top">{{job.ansokningssattEpost}}</a> för att ansöka.
+                                </div>
+                                <div class="reference" *ngIf="job.referens && !job.ansokningssattEpost">
+                                  Ange referens <span class="number" >{{job.referens}}</span> i din ansökan.
+                                </div> -->
+
+                                <div class="col-xs-12 apply-button">
+                                    <button *ngIf="currentJob.ansokningssattViaAf && !isDateBeforeToday(job.sistaAnsokningsdatum)" data-ng-if="vm.aktuelltRekryteringsbehov.ansokningssattViaAf"
+                                      data-ng-click="vm.ansok()"
+                                      class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">Ansök
+                                    </button>
+
+                                    <button *ngIf="currentJob.ansokningssattEpost && !isDateBeforeToday(currentJob.sistaAnsokningsdatum)"
+                                      data-ng-click="vm.ansok()"
+                                      class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">
+                                      <a class="" href="mailto:{{currentJob.ansokningssattEpost}}?Subject={{currentJob.referens}}" target="_top">
+                                        <span class="icon">@</span>Ansök via E-post
+                                      </a>
+                                    </button>
+
+                                    <button *ngIf="currentJob.ansokningssattWebbadress && !isDateBeforeToday(currentJob.sistaAnsokningsdatum)"
+                                      data-ng-click="vm.ansok()"
+                                      class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">
+                                      <a class="" href="{{currentJob.ansokningssattWebbadress}}" target="_blank">
+                                        Ansök via webb
+                                      </a>
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end ngIf: vm.isAnnonsPublicerad && vm.ansokningsbar -->
+                    <!-- ngIf: !vm.directLink -->
+                    <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/navigation.html' -->
+                    <div data-ng-include="'areas/matcha/rekryteringsbehov/templates/navigation.html'" ng-if="!vm.directLink" class="ng-scope">
+                        <div class="navigation ng-scope">
+                            <div class="navigation-container clearfix row">
+                                <div class="col-xs-4 col-md-3 no-padding-left">
+                                    <!-- ngIf: !vm.isFirstRekryteringsbehov() -->
+                                    <button class="prev nav-btn ng-scope" ng-if="!vm.isFirstRekryteringsbehov()" ng-click="vm.prevRekryteringsbehov()" ng-disabled="vm.loadingSpinner"><i class="fa fa-angle-left"></i> <span class="hidden-xs">Föregående</span></button>
+                                    <!-- end ngIf: !vm.isFirstRekryteringsbehov() -->
+                                    <!--
+        <a href="" class="prev" ng-if="!vm.isFirstRekryteringsbehov()" ng-click="vm.prevRekryteringsbehov()">
+          <i class="fa fa-angle-left"></i>
+          <span class="hidden-xs">Föregående</span>
+        </a>
+      --></div>
+                                <div class="col-xs-4 col-md-6 navigationinfo ng-binding">2 av 413</div>
+                                <div class="col-xs-4 col-md-3 no-padding-right">
+                                    <!--
+      <a href="" class="next" ng-if="!vm.isLastRekryteringsbehov()" ng-click="vm.nextRekryteringsbehov()">
+        <span class="hidden-xs">Nästa</span>
+        <i class="fa fa-angle-right"></i>
+      </a>
+      -->
+                                    <!-- ngIf: !vm.isLastRekryteringsbehov() -->
+                                    <button class="next nav-btn ng-scope" ng-if="!vm.isLastRekryteringsbehov()" ng-click="vm.nextRekryteringsbehov()" ng-disabled="vm.loadingSpinner"><span class="hidden-xs">Nästa</span> <i class="fa fa-angle-right"></i></button>
+                                    <!-- end ngIf: !vm.isLastRekryteringsbehov() -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end ngIf: !vm.directLink -->
+                    <!-- back to top -->
+                    <div class="navigation-container">
+                        <div class="col-xs-12 col-md-12"><a href="#" ng-click="vm.gotoTop()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
