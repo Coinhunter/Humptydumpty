@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { GoogleAnalyticsEventsService } from './services/google-analytics-events/google-analytics-events.service';
 import { CommonVariablesService } from './services/common-variables/common-variables.service';
+import { AdService } from './services/ad/ad.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -50,7 +51,8 @@ import { GeneratecountriesComponent } from './components/generatecountries/gener
   ],
   providers: [
     GoogleAnalyticsEventsService,
-    CommonVariablesService
+    CommonVariablesService,
+    AdService
   ],
   bootstrap: [AppComponent] // ResultContainerService]
 })

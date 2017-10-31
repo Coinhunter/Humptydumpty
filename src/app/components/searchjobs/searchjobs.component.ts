@@ -4,6 +4,7 @@ import { LanderService } from '../../services/lander/lander.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
 import { FreetextSearchService } from '../../services/freetext-search/freetext-search.service';
 import { CommonVariablesService } from '../../services/common-variables/common-variables.service';
+import { AdService } from '../../services/ad/ad.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 import { Land } from '../../models/Land.interface';
 // import { Searchparameter } from '../../models/Searchparameter.interface';
@@ -12,6 +13,7 @@ import { Sokresultat } from '../../models/Sokresultat.interface';
 import { RelateratKriterium } from '../../models/RelateratKriterium.interface';
 import { Postnummer } from '../../models/Postnummer.interface';
 import { Fritextsokresultat } from '../../models/Fritextsokresultat.interface';
+import { Job } from '../../types/job.type';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -78,9 +80,12 @@ export class SearchjobsComponent implements OnInit {
 
   kategorierOrder: Array<string>;
 
+  currentJob: Job;
+
   constructor(private yrkenService: YrkenService,
     private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
-    private freetextSearchService: FreetextSearchService, private commonVariablesService: CommonVariablesService) {
+    private freetextSearchService: FreetextSearchService, private commonVariablesService: CommonVariablesService,
+    private adService: AdService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
     this.showJobAreas = this.showLandAreas = false;
     this.showFreetextJobSearchResults = this.showFreetextAreaSearchResults = false;
@@ -155,6 +160,13 @@ export class SearchjobsComponent implements OnInit {
       this.showFreetextJobSearchResults = false;
       this.showFreetextAreaSearchResults = false;
     }
+  }
+
+  getAdById(id: string) {
+    this.adService.getMatchingAdById(id, this.searchparameters).then(annons => {
+        this.currentJob = annons;
+        console.log(this.currentJob);
+    });
   }
 
   getFreetextJobResults(freetext: string) {
