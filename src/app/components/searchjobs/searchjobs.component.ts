@@ -4,6 +4,7 @@ import { LanderService } from '../../services/lander/lander.service';
 import { PbapiMatchningService } from '../../services//pbapi-matchning/pbapi-matchning.service';
 import { FreetextSearchService } from '../../services/freetext-search/freetext-search.service';
 import { CommonVariablesService } from '../../services/common-variables/common-variables.service';
+import { SearchJobsCommonVariablesService } from '../../services/search-jobs-common-variables/search-jobs-common-variables.service';
 import { AdService } from '../../services/ad/ad.service';
 import { Yrkesomrade } from '../../models/Yrkesomrade.interface';
 import { Land } from '../../models/Land.interface';
@@ -85,7 +86,7 @@ export class SearchjobsComponent implements OnInit {
   constructor(private yrkenService: YrkenService,
     private landerService: LanderService, private pbapiMatchningService: PbapiMatchningService,
     private freetextSearchService: FreetextSearchService, private commonVariablesService: CommonVariablesService,
-    private adService: AdService) {
+    private adService: AdService, private sjcvs: SearchJobsCommonVariablesService) {
     this.showTerms = this.showCompetences = this.showExperience = this.showLicences = this.showParttimeSlider = false;
     this.showJobAreas = this.showLandAreas = false;
     this.showFreetextJobSearchResults = this.showFreetextAreaSearchResults = false;
@@ -121,6 +122,7 @@ export class SearchjobsComponent implements OnInit {
   ngOnInit() {
     this.commonVariablesService.isloggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.commonVariablesService.changeLoggedIn(false);
+    this.sjcvs.currentJob.subscribe(currentJob => this.currentJob = currentJob);
   }
 
   formatJobTime(min: number, max: number) {
@@ -164,8 +166,8 @@ export class SearchjobsComponent implements OnInit {
 
   getAdById(id: string) {
     this.adService.getMatchingAdById(id, this.searchparameters).then(annons => {
-        this.currentJob = annons;
-        console.log(this.currentJob);
+      this.sjcvs.setCurrentJob(annons);
+      console.log(this.currentJob);
     });
   }
 
