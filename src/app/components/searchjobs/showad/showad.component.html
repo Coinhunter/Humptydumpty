@@ -97,19 +97,46 @@
                                 <div class="row btnPrintSaveShare">
                                     <!--För mindre skärmar-->
                                     <div class="col-xs-12 spara-annons visible-xs visible-sm hidden-md hidden-lg hidden-xl">
-                                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html' --><span data-ng-include="'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html'" class="ng-scope"><!-- ngIf: vm.saveLoadingSpinner --><!-- ngIf: !vm.saveLoadingSpinner --><span ng-if="!vm.saveLoadingSpinner" class="ng-scope"><button ng-show="vm.isInloggad" ng-click="vm.toggleSparaAnnons(vm.aktuelltRekryteringsbehov, $event);" class="spara-annons-btn ng-hide"><span ng-hide="vm.aktuelltRekryteringsbehov.stored" class=""><i class="i-star-off"></i>Spara jobbet</span> <span ng-show="vm.aktuelltRekryteringsbehov.stored" class="ng-hide"><i class="i-star-on"></i>Ta bort från mina sparade jobb</span></button>
-                                        </span>
+                                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html' -->
+                                        <span data-ng-include="'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html'" class="ng-scope hidden">
+                                          <!-- ngIf: vm.saveLoadingSpinner --><!-- ngIf: !vm.saveLoadingSpinner -->
+                                          <span ng-if="!vm.saveLoadingSpinner" class="ng-scope">
+                                            <button ng-show="vm.isInloggad" ng-click="vm.toggleSparaAnnons(vm.aktuelltRekryteringsbehov, $event);" class="spara-annons-btn ng-hide">
+                                              <span ng-hide="vm.aktuelltRekryteringsbehov.stored" class="">
+                                                <i class="i-star-off"></i>Spara jobbet
+                                              </span>
+                                              <span ng-show="vm.aktuelltRekryteringsbehov.stored" class="ng-hide">
+                                                <i class="i-star-on"></i>
+                                                Ta bort från mina sparade jobb
+                                              </span>
+                                            </button>
+                                          </span>
                                         <!-- end ngIf: !vm.saveLoadingSpinner -->
                                         </span>
-                                        <button ng-click="vm.printAnnons();" class="skriv-ut-annons-btn"><i class="fa fa-print"></i>Skriv ut annons</button>
+                                        <button ng-click="vm.printAnnons();" class="skriv-ut-annons-btn">
+                                          <i class="fa fa-print"></i>Skriv ut annons
+                                        </button>
                                     </div>
                                     <!--För större skärmar-->
                                     <div class="col-md-8 spara-annons hidden-xs hidden-sm visible-md visible-lg visible-xl">
-                                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html' --><span data-ng-include="'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html'" class="ng-scope"><!-- ngIf: vm.saveLoadingSpinner --><!-- ngIf: !vm.saveLoadingSpinner --><span ng-if="!vm.saveLoadingSpinner" class="ng-scope"><button ng-show="vm.isInloggad" ng-click="vm.toggleSparaAnnons(vm.aktuelltRekryteringsbehov, $event);" class="spara-annons-btn ng-hide"><span ng-hide="vm.aktuelltRekryteringsbehov.stored" class=""><i class="i-star-off"></i>Spara jobbet</span> <span ng-show="vm.aktuelltRekryteringsbehov.stored" class="ng-hide"><i class="i-star-on"></i>Ta bort från mina sparade jobb</span></button>
+                                        <!-- ngInclude: 'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html' -->
+                                        <span data-ng-include="'areas/matcha/rekryteringsbehov/templates/saverekryteringsbehovbutton.html'" class="ng-scope hidden">
+                                          <!-- ngIf: vm.saveLoadingSpinner --><!-- ngIf: !vm.saveLoadingSpinner -->
+                                          <span ng-if="!vm.saveLoadingSpinner" class="ng-scope">
+                                            <button ng-show="vm.isInloggad" ng-click="vm.toggleSparaAnnons(vm.aktuelltRekryteringsbehov, $event);" class="spara-annons-btn ng-hide">
+                                              <span ng-hide="vm.aktuelltRekryteringsbehov.stored" class="">
+                                                <i class="i-star-off"></i>Spara jobbet
+                                              </span>
+                                              <span ng-show="vm.aktuelltRekryteringsbehov.stored" class="ng-hide">
+                                                <i class="i-star-on"></i>Ta bort från mina sparade jobb
+                                              </span>
+                                            </button>
+                                          </span>
+                                          <!-- end ngIf: !vm.saveLoadingSpinner -->
                                         </span>
-                                        <!-- end ngIf: !vm.saveLoadingSpinner -->
-                                        </span>
-                                        <button ng-click="vm.printAnnons();" class="skriv-ut-annons-btn"><i class="fa fa-print"></i>Skriv ut annons</button>
+                                        <button ng-click="vm.printAnnons();" class="skriv-ut-annons-btn">
+                                          <i class="fa fa-print"></i>Skriv ut annons
+                                        </button>
                                     </div>
                                     <!-- Share-grejer -->
                                     <div ng-click="vm.delaAnnons();" class="col-xs-12 col-md-4 dela-annons">
@@ -138,6 +165,11 @@
                                 <div id="annonstext-container">
                                     <!--Annonstext, DXA, AIS, AD annonser-->
                                     <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla !== 'VIA_AF_FORMULAR' -->
+                                    <div *ngIf="currentJob.kalla !== 'VIA_AF_FORMULAR'" data-ng-if="vm.aktuelltRekryteringsbehov.kalla !== 'VIA_AF_FORMULAR'" class="ng-scope">
+                                      <h2 class="sr-only">Beskrivning av jobbet</h2>
+                                      <p class="rekryteringsbehov-text ng-binding" data-ng-bind-html="vm.aktuelltRekryteringsbehov.annonstext" [innerHTML]="currentJob.annonstext">
+                                      </p>
+                                    </div>
                                     <!--Beskrivningkrav annonstext, annonser från publicera ledigtarbete-->
                                     <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
                                     <div class="rekryteringsbehov-text-beskrivningKrav ng-scope" data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'" *ngIf="currentJob.kalla === 'VIA_AF_FORMULAR'">
@@ -159,7 +191,7 @@
                                     </div>
                                     <!--BeskrivningBehov annonstext, annonser från nyaplatsbanken-->
                                     <!-- ngIf: vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR' -->
-                                    <div class="rekryteringsbehov-text-beskrivningBehov ng-scope" data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'">
+                                    <div class="rekryteringsbehov-text-beskrivningBehov ng-scope" *ngIf="currentJob.kalla === 'VIA_AF_FORMULAR'" data-ng-if="vm.aktuelltRekryteringsbehov.kalla === 'VIA_AF_FORMULAR'">
                                         <h2>Dina arbetsuppgifter</h2>
                                         <p ng-bind-html="vm.aktuelltRekryteringsbehov.beskrivningBehov" class="ng-binding" [innerHTML]="currentJob.beskrivningBehov">
                                         </p>
@@ -319,26 +351,26 @@
                                 </div> -->
 
                                 <div class="col-xs-12 apply-button">
-                                    <button *ngIf="currentJob.ansokningssattViaAf && !isDateBeforeToday(job.sistaAnsokningsdatum)" data-ng-if="vm.aktuelltRekryteringsbehov.ansokningssattViaAf"
+                                    <div *ngIf="currentJob.ansokningssattViaAf && !isDateBeforeToday(job.sistaAnsokningsdatum)" data-ng-if="vm.aktuelltRekryteringsbehov.ansokningssattViaAf"
                                       data-ng-click="vm.ansok()"
                                       class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">Ansök
-                                    </button>
+                                    </div>
 
-                                    <button *ngIf="currentJob.ansokningssattEpost && !isDateBeforeToday(currentJob.sistaAnsokningsdatum)"
+                                    <div *ngIf="currentJob.ansokningssattEpost && !isDateBeforeToday(currentJob.sistaAnsokningsdatum)"
                                       data-ng-click="vm.ansok()"
                                       class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">
                                       <a class="" href="mailto:{{currentJob.ansokningssattEpost}}?Subject={{currentJob.referens}}" target="_top">
                                         <span class="icon">@</span>Ansök via E-post
                                       </a>
-                                    </button>
+                                    </div>
 
-                                    <button *ngIf="currentJob.ansokningssattWebbadress && !isDateBeforeToday(currentJob.sistaAnsokningsdatum)"
+                                    <div *ngIf="currentJob.ansokningssattWebbadress && !isDateBeforeToday(currentJob.sistaAnsokningsdatum)"
                                       data-ng-click="vm.ansok()"
                                       class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">
                                       <a class="" href="{{currentJob.ansokningssattWebbadress}}" target="_blank">
                                         Ansök via webb
                                       </a>
-                                    </button>
+                                    </div>
 
                                 </div>
 

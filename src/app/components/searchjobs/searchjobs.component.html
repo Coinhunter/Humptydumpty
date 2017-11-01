@@ -677,7 +677,7 @@
                           <span class="ng-binding">{{behov.arbetsgivarenamn}}</span><span *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">,</span>
                           <span class="rekryteringsbehov-kommun ng-binding" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
                         </div>
-                        <div class="arbetsgivarenamn" *ngIf="!listIsCompact"><span class="label" (click)="getAdById(behov.id);">Företag:</span> <span class="ng-binding">{{behov.arbetsgivarenamn}}</span></div>
+                        <div class="arbetsgivarenamn" *ngIf="!listIsCompact"><span class="label">Företag:</span> <span class="ng-binding">{{behov.arbetsgivarenamn}}</span></div>
                         <div class="rekryteringsbehov-kommun-row" *ngIf="behov.erbjudenArbetsplats && behov.erbjudenArbetsplats.kommun && !listIsCompact">
                           <span class="label ng-binding">Kommun:</span>
                           <span class="rekryteringsbehov-kommun ng-binding">{{behov.erbjudenArbetsplats.kommun.namn}}</span>
