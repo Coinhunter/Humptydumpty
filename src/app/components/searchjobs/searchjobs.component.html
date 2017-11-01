@@ -111,7 +111,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="ng-isolate-scope" *ngIf="searchparameters.length">
+                  <div class="ng-isolate-scope" *ngIf="searchparameters.length && searchResult.relateradeKriterier.length">
                     <div class="af-kriteriumforslag ng-hide">
                       <div class="clearfix">
                         <h4 class="rubrik-for-forslag ng-binding">Förslag på yrken</h4>
@@ -213,7 +213,7 @@
                            <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lander" class="hidden jobGroup list-level-2">
                              <li *ngFor="let lanet of land.lander">
                                <div class="liContent checkbox" id="{{lanet.typ}}_{{lanet.id}}_CONTAINER">
-                                 <input (change)="addToList(lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
+                                 <input (change)="otherCountryCheck($event, lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
                                    id="{{lanet.typ}}_{{lanet.id}}" attr.data-parent-id="{{land.typ}}_{{land.id}}" class="" type="checkbox"
                                    attr.data-id="{{lanet.id}}" attr.data-name="{{lanet.namn}}" attr.data-type="{{lanet.typ}}">
                                  <label id="{{lanet.typ}}_{{lanet.id}}_LABEL" class="" for="{{lanet.typ}}_{{lanet.id}}">{{lanet.namn}}</label>

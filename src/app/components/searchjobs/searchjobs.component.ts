@@ -385,6 +385,17 @@ export class SearchjobsComponent implements OnInit {
     }, 300);
   }
 
+  otherCountryCheck(e, id: string, name: string, type: string) {
+    const target = e.target || e.srcElement;
+    if (!target.checked) {
+      this.removeFromList(id, type);
+      this.removeHilightInList(id, type);
+    } else {
+      this.addToList(id, name, type);
+      this.addHilightInList(id, type);
+    }
+  }
+
   levelOneCheck(e, id: string, name: string, type: string) {
     let target;
     if (e != null) {
