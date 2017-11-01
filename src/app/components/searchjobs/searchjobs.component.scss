@@ -152,6 +152,17 @@
     position: relative;
     &.hilight {
       background: #c1e4f6;
+      .hasChildren {
+        background: #FFF;
+      }
+      &:hover {
+        .hasChildren {
+          background: #e8ebee;
+        }
+      }
+    }
+    &:hover {
+      background: #e8ebee;
     }
     &.no-box {
       label {
@@ -163,9 +174,6 @@
       }
       .hasChildren {
         cursor: pointer;
-        &:hover {
-          background: #FFF;
-        }
       }
     }
     label {
@@ -189,16 +197,11 @@
           font-size: 49px;
           line-height: 6px;
           text-align: center;
-          font-weight: normal;
+          font-weight: normal !important;
         }
       }
       &.bold {
         font-weight: bold;
-      }
-    }
-    .hasChildren {
-      &:hover {
-        background-color: #e8ebee;
       }
     }
   }
@@ -213,7 +216,7 @@
     .hasChildren {
       height: 100%;
       width: 40px;
-      background-color: #FFF;
+      // background-color: #FFF;
       padding-top: 14px;
       display: inline-block;
       overflow: hidden;

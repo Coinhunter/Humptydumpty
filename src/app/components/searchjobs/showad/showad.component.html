@@ -351,7 +351,7 @@
                                 </div> -->
 
                                 <div class="col-xs-12 apply-button">
-                                    <div *ngIf="currentJob.ansokningssattViaAf && !isDateBeforeToday(job.sistaAnsokningsdatum)" data-ng-if="vm.aktuelltRekryteringsbehov.ansokningssattViaAf"
+                                    <div *ngIf="currentJob.ansokningssattViaAf && !isDateBeforeToday(currentJob.sistaAnsokningsdatum)" data-ng-if="vm.aktuelltRekryteringsbehov.ansokningssattViaAf"
                                       data-ng-click="vm.ansok()"
                                       class="pull-right btn spa-btn-primary btn-responsive btn-ansok btn-float-mobil ng-scope">Ansök
                                     </div>

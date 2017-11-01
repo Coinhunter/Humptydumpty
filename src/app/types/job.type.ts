@@ -37,7 +37,9 @@ export interface Job {
     epost?: string,
     webbplats?: string,
     villkorsbeskrivning?: string,
-    kontaktpersoner?: Kontaktperson[];
+    kontaktpersoner?: Kontaktperson[],
+    logotyp?: string,
+    kalla?: string;
 }
 
 export interface Kommun {
