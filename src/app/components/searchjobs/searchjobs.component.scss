@@ -10,6 +10,10 @@
 }
 
 .as-matcha .matchningsprofil {
+  .input-instruction {
+    font-weight: normal;
+    margin-top: 5px;
+  }
   .mp-yrke-ort {
     //padding: 0;
     overflow: visible;
@@ -22,30 +26,12 @@
   .dropdown-menu {
     cursor: pointer;
   }
-}
 
-.areaOr {
-  text-align: center;
-  margin: 20px 0;
-  .areaOrBackGround {
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      border-top: 1px solid #FFF;
-      width: 100%;
-      transform: translateY(-50%);
-    }
-    .areaOrText {
-      background: #d2dee0;
-      position: relative;
-      width: 65px;
-      margin: 0 auto;
-    }
+  label.area-container-label {
+    margin-top: 20px;
   }
 }
+
 
 .areaContainer {
   background: $color-white;
@@ -398,12 +384,7 @@
   }
 }
 
-.mp-input-area {
-  label.input-instruction {
-    font-weight: normal;
-    margin-top: 5px;
-  }
-}
+
 
 
 .resultatarea > div {
