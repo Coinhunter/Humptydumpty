@@ -101,22 +101,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="ng-isolate-scope" *ngIf="searchparameters.length && searchResult.relateradeKriterier.length">
-                    <div class="af-kriteriumforslag ng-hide">
-                      <div class="clearfix">
-                        <h4 class="rubrik-for-forslag ng-binding">Förslag på yrken</h4>
-                        <ul class="tag-list">
-                          <li class="tag-item ng-scope" *ngFor="let kriterium of searchResult.relateradeKriterier | RelatedmatchesPipe:'yrke'; let i=index" style="">
-                            <button class="btn-add-tag ng-binding" *ngIf="kriterium.matchningskriterium" (click)="selectFreetextResult($event, kriterium.matchningskriterium.id, kriterium.matchningskriterium.namn, kriterium.matchningskriterium.typ)">
-                              <span class="sr-only">Lägg till</span>
-                              <i class="fa fa-plus" aria-hidden="true"></i> {{kriterium.matchningskriterium.namn}}
-                            </button>
-                          </li>
-                          <li data-ng-if="!vm.isOspecificeradArbetsortChosen" class="tag-item ng-scope"></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
