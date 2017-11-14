@@ -16,14 +16,9 @@
         <div class="ng-scope">
           <div class="matchningsprofil ng-scope">
             <h2 class="rubrikErbjuder sr-only">Sökverkttyg</h2>
-            <div class="af-card mp-yrke-ort yrke-flikar">
-              <a href="javascript:void(0)" (click)="showJobTypes = !showJobTypes">
-                <span id="rubrik-korkort" class="card-rubrik">
-                  <h4>Jag vill jobba som</h4>
-                </span>
-                <i class="pull-right fa {{!showJobTypes ? 'fa-angle-down' : 'fa-angle-up'}}"></i>
-              </a>
-              <div class="ng-isolate-scope card-input" *ngIf="showJobTypes">
+            <div class="mp-yrke-ort yrke-flikar">
+              <h3 class="panel-title">Jag vill jobba som</h3>
+              <div class="ng-isolate-scope mp-input-area" *ngIf="showJobTypes">
                 <div class="ng-isolate-scope">
                   <div class="tab-content">
                     <div class="tab-pane ng-scope active">
@@ -130,14 +125,9 @@
                 </div>
               </div>
             </div>
-            <div class="af-card mp-yrke-ort arbetsort">
-              <a href="javascript:void(0)" (click)="showJobGeoArea = !showJobGeoArea">
-                <span id="rubrik-korkort" class="card-rubrik">
-                  <h4>Jag vill jobba i</h4>
-                </span>
-                <i class="pull-right fa {{!showJobGeoArea ? 'fa-angle-down' : 'fa-angle-up'}}"></i>
-              </a>
-              <div class="ng-isolate-scope card-input" *ngIf="showJobGeoArea">
+            <div class="mp-yrke-ort arbetsort">
+              <h3 class="panel-title">Jag vill jobba i</h3>
+              <div class="ng-isolate-scope" *ngIf="showJobGeoArea">
                 <div class="mp-input-area mp-arbetsorter">
                   <label for="mp-arbetsorter" class="sr-only">Jag vill jobba i</label>
                   <label id="mp-yrkesorter_LABEL" class="input-instruction" for="mp-yrkesorter">Skriv in plats</label>
