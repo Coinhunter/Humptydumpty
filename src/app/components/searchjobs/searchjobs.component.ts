@@ -416,6 +416,9 @@ export class SearchjobsComponent implements OnInit {
       this.addToList(id, name, type);
       this.addHilightInList(id, type);
       label.classList.remove('minus');
+      if (!this.childIsExpanded(null, id, name, type)) {
+        this.toggleChild(null, id, name, type)
+      }
     }
     if (children.length) {
       for (let i = 0; i < children.length; ++i) {
@@ -540,6 +543,10 @@ export class SearchjobsComponent implements OnInit {
               const siblingType = siblings[i].getAttribute('data-type');
               this.addToList(siblingId, siblingName, siblingType);
               this.addHilightInList(siblingId, siblingType);
+              // Om sibling är samma som det klickade objektet, expandera
+              if (siblingId === id && !this.childIsExpanded(null, id, name, type)) {
+                this.toggleChild(null, id, name, type)
+              }
             }
           }
         }
@@ -710,6 +717,21 @@ export class SearchjobsComponent implements OnInit {
       target.classList.remove('expanded');
       childContainer.classList.add('hidden');
       label.classList.remove('bold');
+    }
+  }
+  childIsExpanded(e, id: string, name: string, type: string): Boolean {
+    let target;
+    if (e != null) {
+      target = e.target || e.srcElement;
+    }
+    if (target == null) {
+      const targetid = type + '_' + id + '_TOGGLE';
+      target = document.getElementById(targetid);
+    }
+    if (target.classList.contains('expanded')) {
+      return true;
+    } else if (target.classList.contains('collapsed')) {
+      return false;
     }
   }
   addToList(id: string, name: string, type: string, toggle?: boolean) {

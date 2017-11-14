@@ -66,7 +66,7 @@
                                   name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}"
                                     id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
                                   <label id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_LABEL" class="" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
-                                  <div *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
+                                  <div id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_TOGGLE" *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
                                   </div>
                                 </div>
                                 <ul id="{{yrkesomrade.id}}_{{yrkesomrade.typ}}_CHILDREN" *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup list-level-2">
@@ -76,7 +76,7 @@
                                         id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" attr.data-parent-id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox"
                                         attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
                                       <label id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_LABEL" class="" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
-                                      <div *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)">
+                                      <div id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_TOGGLE" *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)">
 
                                       </div>
                                     </div>
@@ -87,7 +87,7 @@
                                             id="{{yrke.typ}}_{{yrke.id}}" attr.data-parent-id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" class="" type="checkbox"
                                              attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
                                           <label class="" for="{{yrke.typ}}_{{yrke.id}}">{{yrke.namn}}</label>
-                                          <div *ngIf="yrkesgrupp.yrkesgrupper" class="hasChildren collapsed">
+                                          <div id="{{yrke.typ}}_{{yrke.id}}_TOGGLE" *ngIf="yrkesgrupp.yrkesgrupper" class="hasChildren collapsed">
 
                                           </div>
                                         </div>
