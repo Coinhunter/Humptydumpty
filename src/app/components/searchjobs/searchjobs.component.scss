@@ -10,45 +10,32 @@
 }
 
 .as-matcha .matchningsprofil {
+  .input-instruction {
+    font-weight: normal;
+    margin-top: 5px;
+  }
   .mp-yrke-ort {
-    padding: 0;
+    //padding: 0;
     overflow: visible;
+    background-color: $card-background;
   }
   .af-card .card-rubrik h4 {
     font-size: 19px;
-    font-weight: 700;
+    //font-weight: 700;
   }
   .dropdown-menu {
     cursor: pointer;
   }
-}
 
-.areaOr {
-  text-align: center;
-  margin: 20px 0;
-  .areaOrBackGround {
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      border-top: 1px solid #FFF;
-      width: 100%;
-      transform: translateY(-50%);
-    }
-    .areaOrText {
-      background: #d2dee0;
-      position: relative;
-      width: 65px;
-      margin: 0 auto;
-    }
+  label.area-container-label {
+    margin-top: 20px;
   }
 }
 
+
 .areaContainer {
-  background: #FFF;
-  border: solid 1px #b5b5b5;
+  background: $color-white;
+  border: solid 1px $color-gray-outline;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -102,12 +89,14 @@
 
 .areaToggle {
   padding: 10px 5px 10px 10px;
+  background: $color-background;
   cursor: pointer;
   > div {
     display: inline-block;
   }
   .name {
     width: calc(100% - 30px);
+    color: $link-color;
   }
   .hasChildren {
     height: 30px;
@@ -115,7 +104,7 @@
     float: right;
     padding-top: 2px;
     &::after {
-      color: #000;
+      color: $link-color;
     }
   }
 }
@@ -125,7 +114,7 @@
 }
 
 .list-level-1 {
-  border-top: #b5b5b5 solid 1px;
+  border-top: $color-gray-outline solid 1px;
   padding-top: 0;
   > ul {
     padding-left: 0;
@@ -148,7 +137,7 @@
     padding-left: 10px;
     padding-right: 10px;
     margin: 0;
-    margin-top: 1px;
+    padding-bottom: 1px;
     position: relative;
     &.hilight {
       background: #c1e4f6;
@@ -230,8 +219,8 @@
   }
   .list-level-2 {
     padding: 0;
-    border-top: #b5b5b5 solid 1px;
-    border-bottom: #b5b5b5 solid 1px;
+    border-top: $color-gray-outline solid 1px;
+    border-bottom: $color-gray-outline solid 1px;
     > li {
       > .checkbox {
         padding-left: 20px;
@@ -279,7 +268,7 @@
 .areaMinimize {
   padding: 10px 15px 10px 10px;
   overflow: hidden;
-  border-top: solid 1px #b5b5b5;
+  border-top: solid 1px $color-gray-outline;
   margin-top: 10px;
   cursor: pointer;
   .name {
@@ -395,12 +384,7 @@
   }
 }
 
-.mp-input-area {
-  label.input-instruction {
-    font-weight: normal;
-    margin-top: 5px;
-  }
-}
+
 
 
 .resultatarea > div {
