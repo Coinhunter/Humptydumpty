@@ -151,18 +151,18 @@
                                  id="{{land.typ}}_{{land.id}}" class="" type="checkbox"> -->
                                <label id="{{land.typ}}_{{land.id}}_LABEL" class="{{ land.id === '00' ? 'bold' : '' }}" for="{{land.typ}}_{{land.id}}">{{land.namn}}</label>
                              </div>
-                             <div id="{{land.typ}}_{{land.id}}_TOGGLE" *ngIf="land.lan || land.lander" class="hasChildren {{ land.id === '00' ? 'expanded' : 'collapsed' }} fa"></div>
+                             <div id="{{land.typ}}_{{land.id}}_TOGGLE" *ngIf="land.lan || land.lander" class="hasChildren {{ land.id === '00' ? 'expanded' : 'collapsed' }} fa" (click)="toggleChild($event, land.id, land.namn, land.typ)"></div>
                            </div>
                            <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lan" class="{{ land.id === '00' ? '' : 'hidden'}} jobGroup list-level-2">
                              <li *ngFor="let lanet of land.lan">
-                               <div class="checkbox-wrapper">
+                               <div class="checkbox-wrapper" *ngIf="lanet.id != 90">
                                  <div class="liContent checkbox" id="{{lanet.typ}}_{{lanet.id}}_CONTAINER">
                                    <input (change)="levelOneCheck($event, lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
                                      id="{{lanet.typ}}_{{lanet.id}}" attr.data-parent-id="{{land.typ}}_{{land.id}}" class="" type="checkbox"
                                      attr.data-id="{{lanet.id}}" attr.data-name="{{lanet.namn}}" attr.data-type="{{lanet.typ}}">
                                    <label id="{{lanet.typ}}_{{lanet.id}}_LABEL" class="" for="{{lanet.typ}}_{{lanet.id}}">{{lanet.namn}}</label>
                                  </div>
-                                 <div id="{{lanet.typ}}_{{lanet.id}}_TOGGLE" *ngIf="lanet.kommuner" class="hasChildren collapsed fa" (click)="toggleChild($event, lanet.id, lanet.namn, lanet.typ)"></div>
+                                 <div id="{{lanet.typ}}_{{lanet.id}}_TOGGLE" *ngIf="lanet.kommuner.length > 0" class="hasChildren collapsed fa" (click)="toggleChild($event, lanet.id, lanet.namn, lanet.typ)"></div>
                                </div>
                                <ul id="{{lanet.id}}_{{lanet.typ}}_CHILDREN" *ngIf="lanet.kommuner" class="hidden job list-level-3" attr.data-parent-id="{{lanet.id}}">
                                  <li *ngFor="let kommun of lanet.kommuner">
