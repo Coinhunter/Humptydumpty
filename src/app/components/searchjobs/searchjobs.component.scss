@@ -133,12 +133,20 @@
   } .liContent {
     padding: 0 5px;
   }
+  $hasChildren-width: 42px;
+
+  .checkbox-wrapper {
+    position: relative;
+  }
   .checkbox {
     padding-left: 10px;
     padding-right: 10px;
     margin: 0;
     padding-bottom: 1px;
+    width: calc(100% - #{$hasChildren-width});
+    display: inline-block;
     position: relative;
+
     &.hilight {
       background: #c1e4f6;
       .hasChildren {
@@ -149,6 +157,9 @@
           background: #e8ebee;
         }
       }
+    }
+    .hasChildren {
+
     }
     &:hover {
       background: #e8ebee;
@@ -170,15 +181,16 @@
       margin-bottom: 10px;
       padding-right: 28px;
       max-width: calc(100% - 5px);
+      position: relative;
       &::before {
         width: 18px;
         height: 18px;
-        top: 12px;
-        left: 10px;
+        //top: 12px;
+        //left: 10px;
       }
       &::after {
-        top: 17px;
-        left: 14px;
+        //top: 17px;
+        //left: 14px;
       }
       &.minus {
         &::before {
@@ -194,6 +206,33 @@
       }
     }
   }
+  .no-children .checkbox {
+    width: 100%;
+  }
+  .hasChildren {
+    width: $hasChildren-width;
+    height: 100%;
+    padding-top: 12px;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    margin-top: 0;
+  }
+  // Hover state for accordion, activated when checkbox hover AND hover over itself.
+  .checkbox:hover + .hasChildren, .hasChildren:hover {
+    background-color: $link-color-hover;
+    &:after {
+      color: $color-white;
+    }
+  }
+  .checkbox:hover + .hasChildren.expanded {
+    background-color: $color-white;
+    &:after {
+      color: $link-color;
+    }
+  }
   .name {
     max-width: calc(100% - 30px);
   }
@@ -201,17 +240,6 @@
     list-style-type: none;
     > li > div > div {
       display: inline-block;
-    }
-    .hasChildren {
-      height: 100%;
-      width: 40px;
-      // background-color: #FFF;
-      padding-top: 14px;
-      display: inline-block;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      margin-top: 0;
     }
     li {
       cursor: pointer;
@@ -222,14 +250,14 @@
     border-top: $color-gray-outline solid 1px;
     border-bottom: $color-gray-outline solid 1px;
     > li {
-      > .checkbox {
+       .checkbox {
         padding-left: 20px;
-        > label {
+        label {
           &::before {
-            left: 20px;
+            //left: 20px;
           }
           &::after {
-            left: 24px;
+            //left: 24px;
           }
         }
       }
@@ -242,24 +270,28 @@
 
   .list-level-3 {
     background: #f2f4f5;
-    padding: 10px 0;
+    padding: 0;
     > li {
-      > .checkbox {
+      .checkbox {
         padding-left: 20px;
         padding-right: 0;
         margin-top: 1px;
-        > label {
+        label {
           padding-right: 0;
           &::before {
-            left: 20px;
+            //left: 20px;
           }
           &::after {
-            left: 24px;
+            //left: 24px;
           }
         }
       }
       &:first-child .checkbox {
+        padding-top: 5px;
         margin-top: 0;
+      }
+      &:last-child .checkbox {
+        padding-bottom: 5px;
       }
     }
   }
