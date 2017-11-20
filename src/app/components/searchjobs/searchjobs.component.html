@@ -677,7 +677,9 @@
                   <a href="javascript:void(0)" (click)="topFunction()" class="top-of-page"><span aria-hidden="true"></span>Till toppen av sidan</a>
                 </div>
             </div>
-
+            <div class="resultat-sortering" *ngIf="searchResult.rekryteringsbehov.length == 0 && searchparameters.length > 0">
+              <h2>Inga annonser matchade din sökning</h2>
+            </div>
              <div class="matchningsresultatfooter ng-scope"></div>
            </div>
          </div>
