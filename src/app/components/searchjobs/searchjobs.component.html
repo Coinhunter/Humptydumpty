@@ -37,64 +37,6 @@
                             </a>
                           </li>
                         </ul>
-                        <div class="area-header">
-                          <label id="JobAreasContainer_LABEL" class="input-instruction area-container-label" for="JobAreasContainer">Välj från kategorier</label>
-                          <a href="#" id="JobAreasClose" class="minimize-area {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">Minimera</a>
-                        </div>
-                        <div id="JobAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
-                          <div id="JobAreas" class="list-level-1 {{ !showJobAreas ? 'hidden' : '' }}">
-                            <ul>
-                              <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
-                                <div class="checkbox-wrapper">
-                                  <div class="checkbox" id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_CONTAINER" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
-                                    <input (change)="levelOneCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);"
-                                    name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}"
-                                      id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
-                                    <label id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_LABEL" class="" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
-                                  </div>
-                                  <div id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_TOGGLE" *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
-                                </div>
-                                </div>
-                                <ul id="{{yrkesomrade.id}}_{{yrkesomrade.typ}}_CHILDREN" *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup list-level-2">
-                                  <li *ngFor="let yrkesgrupp of yrkesomrade.yrkesgrupper">
-                                    <div class="checkbox-wrapper">
-                                      <div class="liContent checkbox" id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_CONTAINER">
-                                        <input (change)="levelTwoCheck($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ);" name="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}"
-                                          id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" attr.data-parent-id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox"
-                                          attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
-                                        <label id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_LABEL" class="" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
-                                      </div>
-                                      <div id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_TOGGLE" *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)"></div>
-                                    </div>
-                                    <ul id="{{yrkesgrupp.id}}_{{yrkesgrupp.typ}}_CHILDREN" *ngIf="yrkesgrupp.yrken" class="hidden job list-level-3" attr.data-parent-id="{{yrkesgrupp.id}}">
-                                      <li *ngFor="let yrke of yrkesgrupp.yrken">
-                                        <div class="checkbox-wrapper no-children">
-                                          <div class="liContent checkbox" id="{{yrke.typ}}_{{yrke.id}}_CONTAINER" attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
-                                            <input (change)="levelThreeCheck($event, yrke.id, yrke.namn, yrke.typ);" name="{{yrke.typ}}_{{yrke.id}}"
-                                              id="{{yrke.typ}}_{{yrke.id}}" attr.data-parent-id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" class="" type="checkbox"
-                                               attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
-                                            <label class="" for="{{yrke.typ}}_{{yrke.id}}">{{yrke.namn}}</label>
-                                          </div>
-                                          <div id="{{yrke.typ}}_{{yrke.id}}_TOGGLE" *ngIf="yrkesgrupp.yrkesgrupper" class="hasChildren collapsed"></div>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                          <div id="JobAreasToggle" class="areaToggle" (click)="showJobAreas = !showJobAreas">
-                            <div class="name">
-                              {{!showJobAreas ? 'Visa fler kategorier': 'Visa färre kategorier'}} <i class="fa {{ !showJobAreas ? 'fa-chevron-down' : 'fa-chevron-up'}}"></i>
-                            </div>
-                          </div>
-                          <!--<div id="JobAreasClose" class="areaMinimize {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">
-                            <div class="name">
-                              Minimera
-                            </div>
-                          </div>-->
-                        </div>
                         <div class="checkbox ng-scope">
                           <input id="ingen-erfarenhet" (change)="checkboxPropertyClick($event, '1', 'Ingen erfarenhet', 'INGEN_EFTERFRAGAD_YRKESERFARENHET')" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
                           <label for="ingen-erfarenhet">Visa jobb utan krav på arbetslivserfarenhet</label>
@@ -130,79 +72,139 @@
                           </a>
                       </li>
                   </ul>
-                  <div class="area-header">
-                    <label id="LandAreasContainer_LABEL" class="input-instruction area-container-label" for="LandAreasContainer">Välj från område</label>
-                    <a href="#" id="LandAreasClose" class="minimize-area {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">Minimera</a>
-                  </div>
-                  <!--<div id="LandAreasClose" class="areaMinimize {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">
-                    <div class="name">
-                      Minimera
-                    </div>
-                  </div>-->
-                   <div id="LandAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
-                     <div id="LandAreas" class="list-level-1 {{ !showLandAreas ? 'hidden' : '' }}">
-                       <ul>
-                         <li *ngFor="let land of lander" class="jobArea">
-                           <div class="checkbox-wrapper">
-                             <div class="checkbox no-box" (click)="toggleChild(null, land.id, land.namn, land.typ)" id="{{land.typ}}_{{land.id}}_CONTAINER" attr.data-id="{{land.id}}" attr.data-name="{{land.namn}}" attr.data-type="{{land.typ}}">
-                               <!-- <input (change)="levelOneCheck($event, land.id, land.namn, land.typ);"
-                               name="{{land.typ}}_{{land.id}}" attr.data-id="{{land.id}}" attr.data-name="{{land.namn}}" attr.data-type="{{land.typ}}"
-                                 id="{{land.typ}}_{{land.id}}" class="" type="checkbox"> -->
-                               <label id="{{land.typ}}_{{land.id}}_LABEL" class="{{ land.id === '00' ? 'bold' : '' }}" for="{{land.typ}}_{{land.id}}">{{land.namn}}</label>
-                             </div>
-                             <div id="{{land.typ}}_{{land.id}}_TOGGLE" *ngIf="land.lan || land.lander" class="hasChildren {{ land.id === '00' ? 'expanded' : 'collapsed' }} fa" (click)="toggleChild($event, land.id, land.namn, land.typ)"></div>
-                           </div>
-                           <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lan" class="{{ land.id === '00' ? '' : 'hidden'}} jobGroup list-level-2">
-                             <li *ngFor="let lanet of land.lan">
-                               <div class="checkbox-wrapper" *ngIf="lanet.id != 90">
-                                 <div class="liContent checkbox" id="{{lanet.typ}}_{{lanet.id}}_CONTAINER">
-                                   <input (change)="levelOneCheck($event, lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
-                                     id="{{lanet.typ}}_{{lanet.id}}" attr.data-parent-id="{{land.typ}}_{{land.id}}" class="" type="checkbox"
-                                     attr.data-id="{{lanet.id}}" attr.data-name="{{lanet.namn}}" attr.data-type="{{lanet.typ}}">
-                                   <label id="{{lanet.typ}}_{{lanet.id}}_LABEL" class="" for="{{lanet.typ}}_{{lanet.id}}">{{lanet.namn}}</label>
-                                 </div>
-                                 <div id="{{lanet.typ}}_{{lanet.id}}_TOGGLE" *ngIf="lanet.kommuner.length > 0" class="hasChildren collapsed fa" (click)="toggleChild($event, lanet.id, lanet.namn, lanet.typ)"></div>
-                               </div>
-                               <ul id="{{lanet.id}}_{{lanet.typ}}_CHILDREN" *ngIf="lanet.kommuner" class="hidden job list-level-3" attr.data-parent-id="{{lanet.id}}">
-                                 <li *ngFor="let kommun of lanet.kommuner">
-                                   <div class="checkbox-wrapper no-children">
-                                     <div class="liContent checkbox" id="{{kommun.typ}}_{{kommun.id}}_CONTAINER" attr.data-id="{{kommun.id}}" attr.data-name="{{kommun.namn}}" attr.data-type="{{kommun.typ}}">
-                                       <input (change)="levelTwoCheck($event, kommun.id, kommun.namn, kommun.typ);" name="{{kommun.typ}}_{{kommun.id}}"
-                                         id="{{kommun.typ}}_{{kommun.id}}" attr.data-parent-id="{{lanet.typ}}_{{lanet.id}}" class="" type="checkbox"
-                                          attr.data-id="{{kommun.id}}" attr.data-name="{{kommun.namn}}" attr.data-type="{{kommun.typ}}">
-                                       <label id="{{kommun.typ}}_{{kommun.id}}_TOGGLE" id="{{kommun.typ}}_{{kommun.id}}_LABEL"class="" for="{{kommun.typ}}_{{kommun.id}}">{{kommun.namn}}</label>
-                                     </div>
-                                   </div>
-                                 </li>
-                               </ul>
-                             </li>
-                           </ul>
-                           <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lander" class="hidden jobGroup list-level-2">
-                             <li *ngFor="let lanet of land.lander">
-                               <div class="checkbox-wrapper" [ngClass]="{'no-children': !lanet.kommuner}">
-                                 <div class="liContent checkbox" id="{{lanet.typ}}_{{lanet.id}}_CONTAINER">
-                                   <input (change)="otherCountryCheck($event, lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
-                                     id="{{lanet.typ}}_{{lanet.id}}" attr.data-parent-id="{{land.typ}}_{{land.id}}" class="" type="checkbox"
-                                     attr.data-id="{{lanet.id}}" attr.data-name="{{lanet.namn}}" attr.data-type="{{lanet.typ}}">
-                                   <label id="{{lanet.typ}}_{{lanet.id}}_LABEL" class="" for="{{lanet.typ}}_{{lanet.id}}">{{lanet.namn}}</label>
-                                   <div id="{{lanet.typ}}_{{lanet.id}}_TOGGLE" *ngIf="lanet.kommuner" class="hasChildren collapsed fa" (click)="toggleChild($event, lanet.id, lanet.namn, lanet.typ)">
-                                   </div>
-                                 </div>
-                               </div>
-                             </li>
-                           </ul>
-                         </li>
-                       </ul>
-                     </div>
-                     <div id="LandAreasToggle" class="areaToggle" (click)="showLandAreas = !showLandAreas">
-                       <div class="name">
-                         {{!showLandAreas ? 'Visa fler län, kommuner och länder': 'Visa färre län, kommuner och länder'}} <i class="fa {{ !showLandAreas ? 'fa-chevron-down' : 'fa-chevron-up'}}"></i>
-                       </div>
-                     </div>
-                   </div>
+
                  </div>
                </div>
              </div>
+             <h3 class="list-title">Utforska och välj</h3>
+             <div class="area-header">
+               <label id="JobAreasContainer_LABEL" class="input-instruction area-container-label" for="JobAreasContainer">Välj från kategorier</label>
+               <a href="#" id="JobAreasClose" class="minimize-area {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">Minimera</a>
+             </div>
+             <div id="JobAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
+               <div id="JobAreas" class="list-level-1 {{ !showJobAreas ? 'hidden' : '' }}">
+                 <ul>
+                   <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
+                     <div class="checkbox-wrapper">
+                       <div class="checkbox" id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_CONTAINER" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}">
+                         <input (change)="levelOneCheck($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ);"
+                         name="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" attr.data-id="{{yrkesomrade.id}}" attr.data-name="{{yrkesomrade.namn}}" attr.data-type="{{yrkesomrade.typ}}"
+                           id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox">
+                         <label id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_LABEL" class="" for="{{yrkesomrade.typ}}_{{yrkesomrade.id}}">{{yrkesomrade.namn}}</label>
+                       </div>
+                       <div id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}_TOGGLE" *ngIf="yrkesomrade.yrkesgrupper" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesomrade.id, yrkesomrade.namn, yrkesomrade.typ)">
+                     </div>
+                     </div>
+                     <ul id="{{yrkesomrade.id}}_{{yrkesomrade.typ}}_CHILDREN" *ngIf="yrkesomrade.yrkesgrupper" class="hidden jobGroup list-level-2">
+                       <li *ngFor="let yrkesgrupp of yrkesomrade.yrkesgrupper">
+                         <div class="checkbox-wrapper">
+                           <div class="liContent checkbox" id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_CONTAINER">
+                             <input (change)="levelTwoCheck($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ);" name="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}"
+                               id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" attr.data-parent-id="{{yrkesomrade.typ}}_{{yrkesomrade.id}}" class="" type="checkbox"
+                               attr.data-id="{{yrkesgrupp.id}}" attr.data-name="{{yrkesgrupp.namn}}" attr.data-type="{{yrkesgrupp.typ}}">
+                             <label id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_LABEL" class="" for="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}">{{yrkesgrupp.namn}}</label>
+                           </div>
+                           <div id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}_TOGGLE" *ngIf="yrkesgrupp.yrken" class="hasChildren collapsed fa" (click)="toggleChild($event, yrkesgrupp.id, yrkesgrupp.namn, yrkesgrupp.typ)"></div>
+                         </div>
+                         <ul id="{{yrkesgrupp.id}}_{{yrkesgrupp.typ}}_CHILDREN" *ngIf="yrkesgrupp.yrken" class="hidden job list-level-3" attr.data-parent-id="{{yrkesgrupp.id}}">
+                           <li *ngFor="let yrke of yrkesgrupp.yrken">
+                             <div class="checkbox-wrapper no-children">
+                               <div class="liContent checkbox" id="{{yrke.typ}}_{{yrke.id}}_CONTAINER" attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
+                                 <input (change)="levelThreeCheck($event, yrke.id, yrke.namn, yrke.typ);" name="{{yrke.typ}}_{{yrke.id}}"
+                                   id="{{yrke.typ}}_{{yrke.id}}" attr.data-parent-id="{{yrkesgrupp.typ}}_{{yrkesgrupp.id}}" class="" type="checkbox"
+                                    attr.data-id="{{yrke.id}}" attr.data-name="{{yrke.namn}}" attr.data-type="{{yrke.typ}}">
+                                 <label class="" for="{{yrke.typ}}_{{yrke.id}}">{{yrke.namn}}</label>
+                               </div>
+                               <div id="{{yrke.typ}}_{{yrke.id}}_TOGGLE" *ngIf="yrkesgrupp.yrkesgrupper" class="hasChildren collapsed"></div>
+                             </div>
+                           </li>
+                         </ul>
+                       </li>
+                     </ul>
+                   </li>
+                 </ul>
+               </div>
+               <div id="JobAreasToggle" class="areaToggle" (click)="showJobAreas = !showJobAreas">
+                 <div class="name">
+                   {{!showJobAreas ? 'Visa fler kategorier': 'Visa färre kategorier'}} <i class="fa {{ !showJobAreas ? 'fa-chevron-down' : 'fa-chevron-up'}}"></i>
+                 </div>
+               </div>
+               <!--<div id="JobAreasClose" class="areaMinimize {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">
+                 <div class="name">
+                   Minimera
+                 </div>
+               </div>-->
+             </div>
+             <div class="area-header">
+               <label id="LandAreasContainer_LABEL" class="input-instruction area-container-label" for="LandAreasContainer">Välj från område</label>
+               <a href="#" id="LandAreasClose" class="minimize-area {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">Minimera</a>
+             </div>
+             <!--<div id="LandAreasClose" class="areaMinimize {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">
+               <div class="name">
+                 Minimera
+               </div>
+             </div>-->
+              <div id="LandAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
+                <div id="LandAreas" class="list-level-1 {{ !showLandAreas ? 'hidden' : '' }}">
+                  <ul>
+                    <li *ngFor="let land of lander" class="jobArea">
+                      <div class="checkbox-wrapper">
+                        <div class="checkbox no-box" (click)="toggleChild(null, land.id, land.namn, land.typ)" id="{{land.typ}}_{{land.id}}_CONTAINER" attr.data-id="{{land.id}}" attr.data-name="{{land.namn}}" attr.data-type="{{land.typ}}">
+                          <!-- <input (change)="levelOneCheck($event, land.id, land.namn, land.typ);"
+                          name="{{land.typ}}_{{land.id}}" attr.data-id="{{land.id}}" attr.data-name="{{land.namn}}" attr.data-type="{{land.typ}}"
+                            id="{{land.typ}}_{{land.id}}" class="" type="checkbox"> -->
+                          <label id="{{land.typ}}_{{land.id}}_LABEL" class="{{ land.id === '00' ? 'bold' : '' }}" for="{{land.typ}}_{{land.id}}">{{land.namn}}</label>
+                        </div>
+                        <div id="{{land.typ}}_{{land.id}}_TOGGLE" *ngIf="land.lan || land.lander" class="hasChildren {{ land.id === '00' ? 'expanded' : 'collapsed' }} fa" (click)="toggleChild($event, land.id, land.namn, land.typ)"></div>
+                      </div>
+                      <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lan" class="{{ land.id === '00' ? '' : 'hidden'}} jobGroup list-level-2">
+                        <li *ngFor="let lanet of land.lan">
+                          <div class="checkbox-wrapper" *ngIf="lanet.id != 90">
+                            <div class="liContent checkbox" id="{{lanet.typ}}_{{lanet.id}}_CONTAINER">
+                              <input (change)="levelOneCheck($event, lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
+                                id="{{lanet.typ}}_{{lanet.id}}" attr.data-parent-id="{{land.typ}}_{{land.id}}" class="" type="checkbox"
+                                attr.data-id="{{lanet.id}}" attr.data-name="{{lanet.namn}}" attr.data-type="{{lanet.typ}}">
+                              <label id="{{lanet.typ}}_{{lanet.id}}_LABEL" class="" for="{{lanet.typ}}_{{lanet.id}}">{{lanet.namn}}</label>
+                            </div>
+                            <div id="{{lanet.typ}}_{{lanet.id}}_TOGGLE" *ngIf="lanet.kommuner.length > 0" class="hasChildren collapsed fa" (click)="toggleChild($event, lanet.id, lanet.namn, lanet.typ)"></div>
+                          </div>
+                          <ul id="{{lanet.id}}_{{lanet.typ}}_CHILDREN" *ngIf="lanet.kommuner" class="hidden job list-level-3" attr.data-parent-id="{{lanet.id}}">
+                            <li *ngFor="let kommun of lanet.kommuner">
+                              <div class="checkbox-wrapper no-children">
+                                <div class="liContent checkbox" id="{{kommun.typ}}_{{kommun.id}}_CONTAINER" attr.data-id="{{kommun.id}}" attr.data-name="{{kommun.namn}}" attr.data-type="{{kommun.typ}}">
+                                  <input (change)="levelTwoCheck($event, kommun.id, kommun.namn, kommun.typ);" name="{{kommun.typ}}_{{kommun.id}}"
+                                    id="{{kommun.typ}}_{{kommun.id}}" attr.data-parent-id="{{lanet.typ}}_{{lanet.id}}" class="" type="checkbox"
+                                     attr.data-id="{{kommun.id}}" attr.data-name="{{kommun.namn}}" attr.data-type="{{kommun.typ}}">
+                                  <label id="{{kommun.typ}}_{{kommun.id}}_TOGGLE" id="{{kommun.typ}}_{{kommun.id}}_LABEL"class="" for="{{kommun.typ}}_{{kommun.id}}">{{kommun.namn}}</label>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <ul id="{{land.id}}_{{land.typ}}_CHILDREN" *ngIf="land.lander" class="hidden jobGroup list-level-2">
+                        <li *ngFor="let lanet of land.lander">
+                          <div class="checkbox-wrapper" [ngClass]="{'no-children': !lanet.kommuner}">
+                            <div class="liContent checkbox" id="{{lanet.typ}}_{{lanet.id}}_CONTAINER">
+                              <input (change)="otherCountryCheck($event, lanet.id, lanet.namn, lanet.typ);" name="{{lanet.typ}}_{{lanet.id}}"
+                                id="{{lanet.typ}}_{{lanet.id}}" attr.data-parent-id="{{land.typ}}_{{land.id}}" class="" type="checkbox"
+                                attr.data-id="{{lanet.id}}" attr.data-name="{{lanet.namn}}" attr.data-type="{{lanet.typ}}">
+                              <label id="{{lanet.typ}}_{{lanet.id}}_LABEL" class="" for="{{lanet.typ}}_{{lanet.id}}">{{lanet.namn}}</label>
+                              <div id="{{lanet.typ}}_{{lanet.id}}_TOGGLE" *ngIf="lanet.kommuner" class="hasChildren collapsed fa" (click)="toggleChild($event, lanet.id, lanet.namn, lanet.typ)">
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div id="LandAreasToggle" class="areaToggle" (click)="showLandAreas = !showLandAreas">
+                  <div class="name">
+                    {{!showLandAreas ? 'Visa fler län, kommuner och länder': 'Visa färre län, kommuner och länder'}} <i class="fa {{ !showLandAreas ? 'fa-chevron-down' : 'fa-chevron-up'}}"></i>
+                  </div>
+                </div>
+              </div>
              <h3 class="rubrikKraver">Förfina din sökning</h3>
              <div class="af-card mp-anstallningsvillkor">
                <a href="javascript:void(0)" id="villkor" (click)="showTerms = !showTerms">

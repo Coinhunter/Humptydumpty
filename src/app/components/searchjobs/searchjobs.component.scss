@@ -45,11 +45,11 @@
       padding-top: 10px;
       padding-bottom: 10px;
       right: 0;
-      top:10px;
+      top:5px;
     }
   }
   label.area-container-label {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 }
 
@@ -130,7 +130,9 @@
 #af-villkor-omfattning-slider {
   margin-top: 50px;
 }
-
+.list-title {
+  margin-bottom: 0px;
+}
 .list-level-1 {
   padding-top: 0;
   > ul {
