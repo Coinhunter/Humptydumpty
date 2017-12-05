@@ -4,7 +4,7 @@
     <div class="row heading-area">
       <div class="col-xs-12 col-sm-7 heading-left">
         <h1 class="as-matcha__header" (click)="showAlternativeListDesign = !showAlternativeListDesign;">Platsbanken</h1>
-        <h2 class="hittade-annonser ng-scope">Just nu finns det <span class="antalmatchande ng-binding">{{numberOfAvailableJobs}}</span> lediga jobb</h2>
+        <h2 class="hittade-annonser ng-scope" *ngIf="searchparameters.length <= 0">Just nu finns det <span class="antalmatchande ng-binding">{{numberOfAvailableJobs}}</span> lediga jobb</h2>
       </div>
       <div class="col-xs-12 col-sm-5 heading-right">
         <div class="ng-isolate-scope">
@@ -37,17 +37,11 @@
                             </a>
                           </li>
                         </ul>
-
-                        <label id="JobAreasContainer_LABEL" class="input-instruction area-container-label" for="JobAreasContainer">Välj från kategorier</label>
+                        <div class="area-header">
+                          <label id="JobAreasContainer_LABEL" class="input-instruction area-container-label" for="JobAreasContainer">Välj från kategorier</label>
+                          <a href="#" id="JobAreasClose" class="minimize-area {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">Minimera</a>
+                        </div>
                         <div id="JobAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
-                          <div id="JobAreasToggle" class="areaToggle" (click)="showJobAreas = !showJobAreas">
-                            <div class="name">
-                              Välj från kategori
-                            </div>
-                            <div class="hasChildren {{ !showJobAreas ? 'collapsed' : 'expanded' }} fa">
-
-                            </div>
-                          </div>
                           <div id="JobAreas" class="list-level-1 {{ !showJobAreas ? 'hidden' : '' }}">
                             <ul>
                               <li *ngFor="let yrkesomrade of yrkesomraden" class="jobArea">
@@ -90,11 +84,16 @@
                               </li>
                             </ul>
                           </div>
-                          <div id="JobAreasClose" class="areaMinimize {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">
+                          <div id="JobAreasToggle" class="areaToggle" (click)="showJobAreas = !showJobAreas">
+                            <div class="name">
+                              {{!showJobAreas ? 'Visa fler kategorier': 'Visa färre kategorier'}} <i class="fa {{ !showJobAreas ? 'fa-chevron-down' : 'fa-chevron-up'}}"></i>
+                            </div>
+                          </div>
+                          <!--<div id="JobAreasClose" class="areaMinimize {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">
                             <div class="name">
                               Minimera
                             </div>
-                          </div>
+                          </div>-->
                         </div>
                         <div class="checkbox ng-scope">
                           <input id="ingen-erfarenhet" (change)="checkboxPropertyClick($event, '1', 'Ingen erfarenhet', 'INGEN_EFTERFRAGAD_YRKESERFARENHET')" class="ng-pristine ng-untouched ng-valid ng-empty" type="checkbox">
@@ -131,16 +130,16 @@
                           </a>
                       </li>
                   </ul>
-                  <label id="LandAreasContainer_LABEL" class="input-instruction area-container-label" for="LandAreasContainer">Välj från område</label>
+                  <div class="area-header">
+                    <label id="LandAreasContainer_LABEL" class="input-instruction area-container-label" for="LandAreasContainer">Välj från område</label>
+                    <a href="#" id="LandAreasClose" class="minimize-area {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">Minimera</a>
+                  </div>
+                  <!--<div id="LandAreasClose" class="areaMinimize {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">
+                    <div class="name">
+                      Minimera
+                    </div>
+                  </div>-->
                    <div id="LandAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
-                     <div id="LandAreasToggle" class="areaToggle" (click)="showLandAreas = !showLandAreas">
-                       <div class="name">
-                         Välj område
-                       </div>
-                       <div class="hasChildren {{ !showLandAreas ? 'collapsed' : 'expanded' }} fa">
-
-                       </div>
-                     </div>
                      <div id="LandAreas" class="list-level-1 {{ !showLandAreas ? 'hidden' : '' }}">
                        <ul>
                          <li *ngFor="let land of lander" class="jobArea">
@@ -195,9 +194,9 @@
                          </li>
                        </ul>
                      </div>
-                     <div id="LandAreasClose" class="areaMinimize {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">
+                     <div id="LandAreasToggle" class="areaToggle" (click)="showLandAreas = !showLandAreas">
                        <div class="name">
-                         Minimera
+                         {{!showLandAreas ? 'Visa fler län, kommuner och länder': 'Visa färre län, kommuner och länder'}} <i class="fa {{ !showLandAreas ? 'fa-chevron-down' : 'fa-chevron-up'}}"></i>
                        </div>
                      </div>
                    </div>
