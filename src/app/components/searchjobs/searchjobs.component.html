@@ -17,13 +17,13 @@
           <div class="matchningsprofil ng-scope">
             <h2 class="rubrikErbjuder sr-only">Sökverkttyg</h2>
             <div class="mp-yrke-ort yrke-flikar">
-              <h3 class="panel-title">Jag vill jobba som</h3>
+              <h3 class="panel-title">Skriv din sökning</h3>
               <div class="ng-isolate-scope mp-input-area" *ngIf="showJobTypes">
                 <div class="ng-isolate-scope">
                   <div class="tab-content">
                     <div class="tab-pane ng-scope active">
                       <div class="mp-input-area ng-scope">
-                        <label id="mp-yrkesroller_LABEL" class="input-instruction" for="mp-yrkesroller">Skriv in sökord</label>
+                        <label id="mp-yrkesroller_LABEL" class="input-instruction" for="mp-yrkesroller">Jag vill jobba som</label>
                         <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Ex. yrke, annons-ID, företag" type="text">
                         <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextJobSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
                         id="typeahead-39-8211" matches="matches" move-in-progress="moveInProgress" query="query" position="position"
@@ -46,13 +46,11 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="mp-yrke-ort arbetsort">
-              <h3 class="panel-title">Jag vill jobba i</h3>
+              <hr class="search-box-divider"/>
               <div class="ng-isolate-scope" *ngIf="showJobGeoArea">
                 <div class="mp-input-area mp-arbetsorter">
-                  <label for="mp-arbetsorter" class="sr-only">Jag vill jobba i</label>
-                  <label id="mp-yrkesorter_LABEL" class="input-instruction" for="mp-yrkesorter">Skriv in plats</label>
+                  <label id="mp-yrkesorter_LABEL" class="input-instruction" for="mp-yrkesorter">Jag vill jobba i</label>
+                  <label for="mp-arbetsorter" class="sr-only">Skriv in plats alltså, kommun, län, land eller postnummer</label>
                   <input id="mp-arbetsorter" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
                     autocomplete="off" placeholder="Ex. kommun, län, land, postnummer" type="text"
                     (keyup)="searchInputTimeout($event)" >
@@ -75,7 +73,7 @@
 
                  </div>
                </div>
-             </div>
+            </div>
              <h3 class="list-title">Utforska och välj</h3>
              <div class="area-header">
                <label id="JobAreasContainer_LABEL" class="input-instruction area-container-label" for="JobAreasContainer">Välj från kategorier</label>
