@@ -27,7 +27,7 @@
                         <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Ex. yrke, annons-ID, företag" type="text">
                         <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextJobSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
                         id="typeahead-39-8211" matches="matches" move-in-progress="moveInProgress" query="query" position="position"
-                        debounce="debounceUpdate" style="top: 72px; left: 0px;display:block;">
+                        debounce="debounceUpdate" style="top: 68px !important; left: 0px;display:block;">
                           <li class="uib-typeahead-match ng-scope" *ngFor="let result of freetextJobSearchResults | slice:0:12;" (click)="selectFreetextResult($event, result.id, result.namn, result.typ, 'job')" ng-class="{active: isActive($index) }" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index, $event)" role="option">
                             <a class="template-typeahead ng-scope" data-type-name="freetextJobOption">
                               <span ng-bind-html="match.label | uibTypeaheadHighlight:query" class="ng-binding" data-type-name="freetextJobOption" innerHTML="{{ highlightText(result.namn, freetextJob) }}">
@@ -56,7 +56,7 @@
                     (keyup)="searchInputTimeout($event)" >
                   <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextAreaSearchResults"
                     role="listbox" id="typeahead-19-9320"
-                    style="top: 72px; left: 0px;display:block;">
+                    style="top: 68px !important; left: 0px;display:block;">
                       <li class="uib-typeahead-match ng-scope" *ngFor="let result of freetextAreaSearchResults | slice:0:11;"
                         (click)="selectFreetextResult($event, result.id, result.namn, result.typ, 'area')"
                         ng-class="{active: isActive($index) }"
