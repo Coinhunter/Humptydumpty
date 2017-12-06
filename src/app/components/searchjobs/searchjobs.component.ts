@@ -714,6 +714,7 @@ export class SearchjobsComponent implements OnInit {
       target.classList.add('expanded');
       childContainer.classList.remove('hidden');
       label.classList.add('bold');
+      this.expandSelectBox(type);
     } else if (target.classList.contains('expanded')) {
       target.classList.add('collapsed');
       target.classList.remove('expanded');
@@ -736,6 +737,17 @@ export class SearchjobsComponent implements OnInit {
       return false;
     }
   }
+  expandSelectBox(type: string): void {
+   switch (type) {
+     case 'YRKESOMRADE':
+     case 'YRKESGRUPP':
+       this.showJobAreas = true;
+       break;
+     case 'LAN':
+       this.showLandAreas = true;
+       break;
+   }
+ }
   addToList(id: string, name: string, type: string, toggle?: boolean) {
     if (type.toUpperCase() === 'YRKE') {
       type = 'YRKESROLL';
