@@ -119,6 +119,8 @@ export class SearchjobsComponent implements OnInit {
         this.lander = lander;
     });
 
+    this.numberOfAvailableJobs = Math.floor(75000 + Math.random() * 10000);
+
     this.kategorierOrder = ['YRKESOMRADE_ROLL', 'YRKESOMRADE', 'YRKESGRUPP_ROLL', 'YRKESGRUPP', 'YRKESROLL', 'YRKE', 'FRITEXT'];
   }
 
