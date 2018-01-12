@@ -17,14 +17,14 @@
           <div class="matchningsprofil ng-scope">
             <h2 class="rubrikErbjuder sr-only">Sökverkttyg</h2>
             <div class="mp-yrke-ort yrke-flikar">
-              <h3 class="panel-title">Skriv din sökning</h3>
+              <h3 class="panel-title">Skriv ett sökord</h3>
               <div class="ng-isolate-scope mp-input-area" *ngIf="showJobTypes">
                 <div class="ng-isolate-scope">
                   <div class="tab-content">
                     <div class="tab-pane ng-scope active">
                       <div class="mp-input-area ng-scope">
                         <label id="mp-yrkesroller_LABEL" class="input-instruction" for="mp-yrkesroller">Jag vill jobba som</label>
-                        <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Ex. yrke, annons-ID, företag" type="text">
+                        <input id="mp-yrkesroller" (keyup)="searchInputTimeout($event)" class="form-control ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" placeholder="Ex. yrke, annons-ID, företag..." type="text">
                         <ul class="dropdown-menu ng-isolate-scope" *ngIf="showFreetextJobSearchResults" ng-show="isOpen() &amp;&amp; !moveInProgress" role="listbox" aria-hidden="false"
                         id="typeahead-39-8211" matches="matches" move-in-progress="moveInProgress" query="query" position="position"
                         debounce="debounceUpdate" style="top: 68px !important; left: 0px;display:block;">
@@ -76,7 +76,7 @@
             </div>
              <h3 class="list-title">Utforska och välj</h3>
              <div class="area-header">
-               <label id="JobAreasContainer_LABEL" class="input-instruction area-container-label" for="JobAreasContainer">Välj från kategorier</label>
+               <label id="JobAreasContainer_LABEL" class="input-instruction area-container-label" for="JobAreasContainer">Yrkeskategorier</label>
                <a href="#" id="JobAreasClose" class="minimize-area {{ !showJobAreas ? 'hidden' : '' }}" (click)="showJobAreas = false">Minimera</a>
              </div>
              <div id="JobAreasContainer" class="areaContainer {{showAlternativeListDesign ? 'alternative' : ''}}">
@@ -134,7 +134,7 @@
                </div>-->
              </div>
              <div class="area-header">
-               <label id="LandAreasContainer_LABEL" class="input-instruction area-container-label" for="LandAreasContainer">Välj från område</label>
+               <label id="LandAreasContainer_LABEL" class="input-instruction area-container-label" for="LandAreasContainer">Geografiska områden</label>
                <a href="#" id="LandAreasClose" class="minimize-area {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">Minimera</a>
              </div>
              <!--<div id="LandAreasClose" class="areaMinimize {{ !showLandAreas ? 'hidden' : '' }}" (click)="showLandAreas = false">
@@ -446,7 +446,7 @@
            <div class="af-card heading-main valdakriterier ng-scope ng-hide">
              <div class="card-header card-header-style">
                <a href="javascript:void(0)" (click)="showSearchCriteria = !showSearchCriteria" class="ng-binding">
-                 Du har sökt på
+                 <h3 class="panel-title">Mina sökord</h3>
                  <i class="pull-right fa {{showSearchCriteria ? 'fa-angle-up' : 'fa-angle-down'}}"></i>
                </a>
              </div>
@@ -493,8 +493,8 @@
                          <h2>Sök jobb i Platsbanken</h2>
                        </div>
                        <div>
-                         <p>Skriv vad du vill jobba med och var i Sverige du söker jobb. Du kan söka flera yrken samtidigt. Lägg till dina kompetenser och erfarenheter så matchas du mot lediga jobb som passar just din profil.</p>
-                         <p>Du kan även kryssa i rutan "Visa jobb utan krav på arbetslivserfarenhet" om du endast vill se lediga jobb som inte kräver någon arbetslivserfarenhet.</p>
+                         <p>Skriv vad du vill jobba med och var i Sverige du söker jobb. Du kan söka efter flera olika yrken och områden samtidigt. Lägg även till dina kompetenser och erfarenheter så matchas du mot lediga jobb som passar just din profil.</p>
+                         <p>Klicka i rutan "Visa jobb utan krav på arbetslivserfarenhet" om du bara vill se lediga jobb som inte kräver någon tidigare erfarenhet.</p>
                        </div>
                      </div>
                      <div class="col-lg-5 img-person-start">
@@ -507,12 +507,15 @@
                  <div class="welcome-hint-tips-container row ng-scope" data-ng-if="!vm.isInloggad">
                    <div class="col-lg-7">
                      <p>
-                       <strong>TIPS!</strong> Platsbanken är bäst när du är inloggad. Då kan du:
+                       <strong>Extra funktioner för dig med dator.</strong>
+                     </p>
+                     <p>
+                       Är du inloggad på Platsbanken har du möjlighet att:
                      </p>
                      <ul>
                        <li>Spara din sökning</li>
-                       <li>Titta efter nya annonser utifrån de val du lagt in</li>
-                       <li>Skapa en eller flera profiler som du kan göra sökbara för arbetsgivare som letar nya medarbetare</li>
+                       <li>Titta efter nya lediga jobb utifrån de val du lagt in</li>
+                       <li>Skapa en eller flera profiler som är sökbara för arbetsgivare som letar efter nya medarbetare</li>
                      </ul>
                      <a class="link" onclick="_AF.Auth.Login();" href="javascript:void(0)">Logga in</a>
                    </div>
