@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestcomponentComponent } from './testcomponent.component';
+import { ComponentQuicklinksComponent } from './component-quicklinks.component';
 
-describe('TestcomponentComponent', () => {
-  let component: TestcomponentComponent;
-  let fixture: ComponentFixture<TestcomponentComponent>;
+describe('ComponentQuicklinksComponent', () => {
+  let component: ComponentQuicklinksComponent;
+  let fixture: ComponentFixture<ComponentQuicklinksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestcomponentComponent ]
+      declarations: [ ComponentQuicklinksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TestcomponentComponent);
+    fixture = TestBed.createComponent(ComponentQuicklinksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,14 +5,16 @@ import { GoogleAnalyticsEventsService } from "./services/google-analytics-events
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { DemopageComponent } from './demopage/demopage.component';
-import { TestcomponentComponent } from './testcomponent/testcomponent.component';
+import { ComponentDirectedcommunicationComponent } from './component-directedcommunication/component-directedcommunication.component';
+import { ComponentSearchpackagesComponent } from './component-searchpackages/component-searchpackages.component';
+import { ComponentQuicklinksComponent } from './component-quicklinks/component-quicklinks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemopageComponent,
-    TestcomponentComponent,
+    ComponentDirectedcommunicationComponent,
+    ComponentSearchpackagesComponent,
+    ComponentQuicklinksComponent,
   ],
   imports: [
     BrowserModule,

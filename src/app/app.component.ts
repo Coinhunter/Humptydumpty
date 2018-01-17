@@ -14,11 +14,13 @@ export class AppComponent implements OnInit {
   constructor(public router: Router, public googleAnalyticsEventsService: GoogleAnalyticsEventsService) {}
 
   ngOnInit() {
+    /*
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         ga('set', 'page', event.urlAfterRedirects);
         ga('send', 'pageview');
       }
-    });    
+    });
+    */
   }
 }
