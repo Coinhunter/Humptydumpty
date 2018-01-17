@@ -1,3 +1,33 @@
-<section class="container quicklinks" style="background-color:rgb(27, 180, 73)">
-  component-quicklinks works!
+<section class="quicklinks">
+  <div class="container">
+    <div class="row">
+    
+      <!-- Box for quicklinkcategories small -->
+      <div class="col-sm-12 col-md-6">
+        
+        <!-- Headlines for the quicklink-categories -->
+        <div class="row">
+          <div class="col" *ngFor="let quicklinkcategory of quicklinks">
+            <h3 class="rubrik">{{ quicklinkcategory.headline }}</h3>            
+          </div>
+        </div>
+
+        <!-- Lists with the quicklinks for respective headline-->
+        <div class="row">
+          <div class="col" *ngFor="let quicklinkcategory of quicklinks">
+              <ul *ngFor="let item of quicklinkcategory.items">
+                  <li><p><a href="#">{{ item.name }}</a></p></li>
+              </ul>            
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Box for hero element -->
+      <div class="col-sm-12 col-md-6" style="background-color:blueviolet; min-height: 100px;">
+        Some content goes here eventually.
+      </div>
+    
+    </div>
+  </div>
 </section>
