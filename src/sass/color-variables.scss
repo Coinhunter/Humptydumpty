@@ -1,0 +1,65 @@
+//== Master colors 2018
+$black-base: 	#000000;
+$black-10: 		#333333;
+
+$gray-base: 	#F2F4F5;
+$gray-5:		#F9F9F9;
+$gray-10: 		#EBEEF0;
+$gray-30: 		#D2DEE0;
+$gray-35: 		#959FA4;
+$gray-40: 		#737679;
+
+$transparent:	transparent;
+
+$white-base:	#FFF;
+
+$blue-base:		#13769D;
+$blue-10:		#F2FAF9;
+$blue-20:		#E1F5FB;
+$blue-30:		#C1E4F6;
+$blue-70:		#016C96;
+$blue-80:		#255476;
+$blue-90:		#234157;
+
+$green-base:	#2D860A;
+$green-10:		#E7F9D8;
+$green-40:		#157C02;
+$green-50:		#0D6118;
+$green-60:		#1D4F10;
+
+$yellow-base:	#F7D75C;
+$yellow-10:		#FFF8D6;
+$orange-20:		#FEDCAB;
+
+$red-base:		#B53B3B;
+$red-10:		#F9EBEE;
+$red-20:		#EEACB8;
+
+:root {
+	--black-base: $black-base;
+	--black-10: $black-10;
+	--gray-base: $gray-base;
+	--gray-10: $gray-10;
+	--gray-30: $gray-30;
+	--gray-35: $gray-35;
+	--gray-40: $gray-40;
+	--white-base: $white-base;
+	--blue-base: $blue-base;
+	--blue-10: $blue-10;
+	--blue-20: $blue-20;
+	--blue-30: $blue-30;
+	--blue-70: $blue-70;
+	--blue-80: $blue-80;
+	--blue-90: $blue-90;
+	--green-base: $green-base;
+	--green-10: $green-10;
+	--green-40: $green-40;
+	--green-50: $green-50;
+	--green-60: $green-60;
+	--yellow-base: $yellow-base;
+	--yellow-10: $yellow-10;
+	--orange-20: $orange-20;
+	--red-base: $red-base;
+	--red-10: $red-10;
+	--red-20: $red-20;
+}

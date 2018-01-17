@@ -1,0 +1,225 @@
+//== Media queries breakpoints
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+//== Grid system
+$grid-gutter-width:         30px !default;
+
+//== Container sizes
+$container-tablet:             (720px + $grid-gutter-width) !default;
+$container-sm:                 $container-tablet !default;
+$container-desktop:            (940px + $grid-gutter-width) !default;
+$container-md:                 $container-desktop !default;
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+$container-lg:                 $container-large-desktop !default;
+
+//== Master colors, Deprecated moved to _color-variables.scss
+$profile-blue: 				#06769f; // Knappar, Lankar, Anslagsytor
+$white: 					#fff; // Bakgrund
+$grey-ultra-bright1: 		#ebeef0; // Bakgrunder, Avskiljare, Plattor
+$grey-ultra-bright2: 		#f2f4f5; // Bakgrunder, Plattor
+$grey-bright: 				#c4c9cc; // Ramar, Falt, Steg
+$grey-medium: 				#6f7578; // Metainformation
+$almost-black:				#333; //Brodtext
+$black:				 		#000; // Rubriker och brodtext
+$green-dark: 				#478500; // Matchning
+$orange: 					#f27b24; // Signal for aktiv, Notifikationer, Nya handelser
+$red: 						#cc0022; // Varning, Obligatorisk
+
+//== Form states and alerts
+
+// Gr�n
+$state-success-bg:               #dff0d8 !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+// Bl�
+$state-info-bg:                  #d9edf7 !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+// Gul
+$state-warning-bg:               #fcf8e3 !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+// R�d
+$state-danger-bg:                #f2dede !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+//== Typography variables
+$font-family-headings:  	"Open sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-text: 			"Open sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-button:        "Open sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+//$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          	15px;
+$font-size-ingress:         floor(($font-size-base * 1.1)); // ~16px
+$font-size-ingress-h1:      floor(($font-size-base * 1.3)); // ~19px
+$font-size-metadata:        floor(($font-size-base * 0.9)); // ~13px
+
+$font-size-h1:              floor(($font-size-base * 3.15)); // ~47px
+$font-size-h2:              floor(($font-size-base * 1.95)); // ~29px
+$font-size-h3:            	ceil(($font-size-base * 1.25)); // ~19px
+$font-size-h4:              ceil(($font-size-base * 0.8)); // ~12px
+
+$font-weight-base:			400;
+$font-weight-ingress:		600;
+$font-weight-ingress-h1:	400;
+$font-weight-h1:			300;
+$font-weight-h2:			300;
+$font-weight-h3:			400;
+$font-weight-h4:			700;
+
+$font-letter-spacing-h4: 	0.2px;
+
+$font-size-mobile-base:			floor(($font-size-base * 1.1)); // ~16px
+$font-size-mobile-ingress:		floor(($font-size-ingress * 1.1)); // ~17px
+$font-size-mobile-ingress-h1:	floor(($font-size-ingress * 1.3)); // ~20px
+
+$font-size-mobile-h1:		floor(($font-size-h1 * 0.64)); // ~30px
+$font-size-mobile-h2:		floor(($font-size-h2 * 0.87)); // ~25px
+$font-size-mobile-h3:		ceil(($font-size-h3 * 1.1)); // ~21px
+$font-size-mobile-h4:       ceil(($font-size-h4 * 1.1)); // ~14px
+
+$font-letter-spacing-mobile-h4: 	0.3px;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        	1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    	floor(($font-size-base * $line-height-base)); // ~20px
+
+//Used for headings
+$headings-line-height:    	$line-height-base * 0.91;
+
+$line-height-mobile-h1:		$headings-line-height * 0.805;
+$line-height-mobile-h2h3:	$headings-line-height;
+$line-height-mobile-h4:		$line-height-base;
+
+
+$gray-base:              	#000;
+$gray-light:             	lighten($gray-base, 46.7%); // #777
+$text-muted:             	$gray-light;
+
+//** Global textual link color.
+$link-color:            $profile-blue;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 5%);
+//** Link hover decoration.
+$link-hover-decoration: underline;
+
+//== Button variables
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-size:					 13px;
+$btn-font-weight:                600;
+$btn-text-transform:			 uppercase;
+
+//Default btn
+$btn-default-color:              #2f383d;
+$btn-default-top-bg:             #ffffff;
+$btn-default-bottom-bg:          #ffffff;
+
+$btn-default-hover-color:		 #333;
+$btn-default-hover-top-bg:       #f2f4f5;
+$btn-default-hover-bottom-bg:    #f2f4f5;
+
+$btn-default-active-top-bg:		 #e4e4e4;
+$btn-default-active-bottom-bg:	 #e4e4e4;
+
+$btn-default-border:             #c4c9cc;
+$btn-default-border-bottom:      #b9bbbe;
+
+//Primary btn bottom 06729a profile-blue: #06769f top 0e7aa2 
+$btn-primary-color:              #fff;
+$btn-primary-top-bg:             $profile-blue;
+$btn-primary-bottom-bg:          $profile-blue;
+
+$btn-primary-hover-top-bg:       #258fb5;
+$btn-primary-hover-bottom-bg:    $btn-primary-hover-top-bg;
+$btn-primary-hover-color:		 $btn-primary-color;
+
+$btn-primary-active-top-bg:		 #056183;
+$btn-primary-active-bottom-bg:	 $btn-primary-active-top-bg;
+
+$btn-primary-border:             $btn-primary-top-bg;
+$btn-primary-border-bottom:      #045573;
+
+// Large btn
+$btn-lg-font-size:					 14px;
+
+//Success btn
+$btn-success-color:              #fff;
+$btn-success-top-bg:             #478500;
+$btn-success-bottom-bg:          $btn-success-top-bg;
+
+$btn-success-hover-top-bg:       #58990e;
+$btn-success-hover-bottom-bg:    $btn-success-hover-top-bg;
+$btn-success-hover-color:		 $btn-success-color;
+
+$btn-success-active-top-bg:		 #3B6D02;
+$btn-success-active-bottom-bg:	 $btn-success-active-top-bg;
+
+$btn-success-border:             $btn-success-top-bg;
+$btn-success-border-bottom:      $btn-success-top-bg;
+
+
+$btn-disabled-top-bg:             #c4c9cc;
+$btn-disabled-bottom-bg:          #c4c9cc;
+$btn-disabled-border:             #c4c9cc;
+$btn-disabled-border-bottom:      #919294;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed !default;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     10px;
+$padding-base-horizontal:   20px;
+
+$padding-large-vertical:    15px;
+$padding-large-horizontal:  20px;
+
+$padding-small-vertical:    7px;
+$padding-small-horizontal:  10px;
+
+$padding-xs-vertical:       1px;
+$padding-xs-horizontal:     5px;
+
+$line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5;
+
+$border-radius-base:        4px;
+$border-radius-large:       4px;
+$border-radius-small:       3px;
+
+//== Forms
+//
+//## Define form variables
+
+$input-border-color:			$grey-bright !default;
+$input-bg-disabled-color:		#f2f4f5 !default;
+$input-bg-error-color: 			#F9EBEE !default;
+$input-bg-warning-color:		#FEF7E0 !default;
+$input-disabled-color:			#6e7478 !default;
+$search-container-bg-color:		#ebeef0 !default;
+$input-border-active-color: 	#17191a;
+$input-text-active-color:		#17191a;
