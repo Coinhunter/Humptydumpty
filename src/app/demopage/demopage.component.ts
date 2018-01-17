@@ -4,7 +4,7 @@ import { GoogleAnalyticsEventsService } from '../services/google-analytics-event
 @Component({
   selector: 'app-demopage',
   templateUrl: './demopage.component.html',
-  styleUrls: ['./demopage.component.css']
+  styleUrls: ['./demopage.component.scss']
 })
 export class DemopageComponent implements OnInit {
 
