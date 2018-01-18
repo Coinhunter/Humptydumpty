@@ -4,7 +4,7 @@ import { Http, Response } from '@angular/http';
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
 import { SearchService } from '../search-result/search.service';
-import { Profilkriterium } from '../../models/Profilkriterium.interface';
+import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
 
 @Injectable()
 export class PbapiMatchningService {
@@ -13,7 +13,7 @@ export class PbapiMatchningService {
   constructor(private http: Http) {
   }
 
-  getMatchingAds(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
+  getMatchingAds(criteria: Array<IProfilkriterium>, numberOfAdsPerSection: number, offset: number) {
     const searchCriteria = this.getSearchRequestBodyForCriteria(criteria, numberOfAdsPerSection, offset);
     const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov`;
     return this.http.post(url, searchCriteria)
@@ -37,7 +37,7 @@ export class PbapiMatchningService {
       .map(this.extractData);
   } 
 
-  private getSearchRequestBodyForCriteria(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
+  private getSearchRequestBodyForCriteria(criteria: Array<IProfilkriterium>, numberOfAdsPerSection: number, offset: number) {
     return {
       'matchningsprofil': {
         'profilkriterier': criteria

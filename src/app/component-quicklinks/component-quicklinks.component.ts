@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Profilkriterium } from '../models/Profilkriterium';
 
 @Component({
   selector: 'app-component-quicklinks',
@@ -7,26 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentQuicklinksComponent implements OnInit {
 
+  baseUrl = 'https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/';
+
   quicklinks = [
     {
       headline: 'Populära jobbplaceringar',
       items: [
         {
           name: 'Göteborg',
-          tags: [1235],
+          url: this.getUrlForCriteria([new Profilkriterium('1480', 'Göteborg', 'KOMMUN')]),
         },
         {
           name: 'Stockholm',
-          tags: [1234],
+          url: this.getUrlForCriteria([new Profilkriterium('0180', 'Stockholm', 'KOMMUN')]),
         },
         {
           name: 'Malmö',
-          tags: [1233],
+          url: this.getUrlForCriteria([new Profilkriterium('1280', 'Malmö', 'KOMMUN')]),
         },
+        /*
         {
           name: 'Hela Sverige',
-          tags: [],
+          url: this.getUrlForCriteria([new Profilkriterium('0180', 'Sverige', 'LAND')]),
+          hardcoded: "/?LAND=1"
         },
+        */
       ]
     },
     {
@@ -53,6 +59,48 @@ export class ComponentQuicklinksComponent implements OnInit {
   ];
 
   constructor() { }
+
+  getUrlForCriteria(profilkriterier: Array<Profilkriterium>):string {
+    // Sort the kriterium according to type
+    profilkriterier.sort(function(a, b) {
+      var nameA = a.typ.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.typ.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+
+    let url = '';
+    let currenttype = undefined;
+    profilkriterier.forEach(profilkriterie => {
+      if (profilkriterie.typ !== currenttype) {
+        // New category.
+        currenttype = profilkriterie.typ;
+
+        // Look at the current last sign and if it's a semicolon - remove it.
+        if (url !== '' && url[url.length - 1] === ';') {
+          url = url.slice(0, url.length - 1);
+        }
+
+        // Append &TYPE= to it.
+        url += ('&' + profilkriterie.typ + '=');
+      }
+      // Add the value of the kriterie with a semicolon.
+      url += (profilkriterie.varde + ';');
+    });
+
+    // Finally, replace the first '&' with a '?'
+    // It will always be the first character in the url string.
+    // then remove the last semicolon.
+    url = url.slice(1, url.length - 1);
+    url = '?' + url;
+
+    return url;
+  }
 
   ngOnInit() {
   }

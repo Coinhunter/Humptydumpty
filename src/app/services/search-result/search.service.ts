@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { ResultContainerMapService } from '../result-container-map/result-container-map.service';
 import { PbapiMatchningService } from '../pbapi-matchning/pbapi-matchning.service';
-import { Profilkriterium } from '../../models/Profilkriterium.interface';
+import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
 
 @Injectable()
 export class SearchService {
@@ -125,7 +125,7 @@ export class SearchService {
 
         // TODO: Implement API functions and fire it off...
         // Return true when the result has been fetched and added.
-        const criteria: Array<Profilkriterium> = [
+        const criteria: Array<IProfilkriterium> = [
           {
             'namn': 'Stockholm',
             'varde': '0180',

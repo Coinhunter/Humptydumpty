@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
-import { Profilkriterium } from '../../models/Profilkriterium.interface';
+import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
 import { ProfilkriteriumTyper } from './ProfilkriteriumTyper';
 
 @Injectable()
@@ -20,7 +20,7 @@ export class PbapiKriterierService {
     return Promise.resolve(ProfilkriteriumTyper);
   }
 
-  getKriterierForType(type: string): Promise<Array<Profilkriterium>> {
+  getKriterierForType(type: string): Promise<Array<IProfilkriterium>> {
     const key = this.getKeyFromType(type);
     return new Promise((resolve, reject) => {
       if (this.hasCachedValue(key)) {
@@ -46,7 +46,7 @@ export class PbapiKriterierService {
     const resultArray = [];
     result.forEach((element) => {
       //Profilkriterium
-      const kriterium: Profilkriterium = element;
+      const kriterium: IProfilkriterium = element;
       resultArray.push(kriterium);
     });
     return resultArray;

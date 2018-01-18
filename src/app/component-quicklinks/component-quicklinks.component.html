@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col" *ngFor="let quicklinkcategory of quicklinks">
               <ul *ngFor="let item of quicklinkcategory.items">
-                  <li><p><a href="#">{{ item.name }}</a></p></li>
+                  <li><p><a href="{{ item.url }}">{{ item.name }}</a></p></li>
               </ul>            
           </div>
         </div>

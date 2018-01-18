@@ -2,7 +2,7 @@ import { TestBed, inject, async } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { PbapiMatchningService } from './pbapi-matchning.service';
-import { Profilkriterium } from '../../models/Profilkriterium.interface';
+import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
 
 describe('PbapiMatchningService', () => {
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('PbapiMatchningService', () => {
     });
   });
 
-  const criteria: Array<Profilkriterium> = [
+  const criteria: Array<IProfilkriterium> = [
     {
       'namn': 'Stockholm',
       'varde': '0180',

@@ -3,7 +3,7 @@ import { TestBed, inject, async } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GeoapiService } from './geoapi.service';
-import { Profilkriterium } from '../../models/Profilkriterium.interface';
+import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
 
 describe('GeoapiService', () => {
   beforeEach(() => {
