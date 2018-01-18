@@ -25,7 +25,7 @@ describe('UrlparserService', () => {
       new Profilkriterium('8', '1', 'YRKEN'),
       new Profilkriterium('9', '1', 'SPRAK'),
     ]);
-    expect(resultString).toEqual('?KOMMUNER=3;7&LAN=1;4&LANDER=2&SPRAK=6;9&YRKEN=5;8');
+    expect(resultString).toEqual('https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/?KOMMUNER=3;7&LAN=1;4&LANDER=2&SPRAK=6;9&YRKEN=5;8');
   }));
 
 });

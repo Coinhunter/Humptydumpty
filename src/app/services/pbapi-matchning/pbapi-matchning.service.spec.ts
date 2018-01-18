@@ -37,6 +37,7 @@ describe('PbapiMatchningService', () => {
   it('should fill the contract for getMatchingAds', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
     service.getMatchingAds(criteria, 25, 0).then((res) => {
       expect(res).toBeDefined();
+
       expect(res.rekryteringsbehov).toBeDefined();
 
       expect(res.relateradeKriterier).toBeDefined();
@@ -45,9 +46,6 @@ describe('PbapiMatchningService', () => {
       expect(res.antalPlatser).toBeDefined();
 
       expect(res.antalResultatRader).toBeDefined();
-
-      expect(res.antalRekryteringsbehovMatcharExakt).toBeDefined();
-      expect(res.antalRekryteringsbehovMatcharDelvis).toBeDefined();
     });
   })));
 

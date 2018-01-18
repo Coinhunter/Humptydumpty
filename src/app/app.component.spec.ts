@@ -5,6 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { GoogleAnalyticsEventsService } from "./services/google-analytics-events/google-analytics-events.service";
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { ComponentDirectedcommunicationComponent } from './component-directedcommunication/component-directedcommunication.component';
+import { ComponentSearchpackagesComponent } from './component-searchpackages/component-searchpackages.component';
+import { ComponentQuicklinksComponent } from './component-quicklinks/component-quicklinks.component';
+import { ComponentSearchComponent } from './component-search/component-search.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -13,7 +18,11 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        ComponentDirectedcommunicationComponent,
+        ComponentSearchpackagesComponent,
+        ComponentQuicklinksComponent,
+        ComponentSearchComponent,
       ],
       providers: [
         GoogleAnalyticsEventsService

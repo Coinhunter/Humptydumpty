@@ -41,6 +41,8 @@ describe('PbapiKriterierService', () => {
     });
   })));
 
+  // Can't run these tests until the API is publicly available. Then do this with an access token.
+  /*
   it('should always have values for all of the different return types of criteria', async(inject([PbapiKriterierService], (service: PbapiKriterierService) => {
     service.getKriterieTyper().then((typer) => {
       typer.forEach((type) => {
@@ -52,6 +54,7 @@ describe('PbapiKriterierService', () => {
         });
       });
     });
-  }))); 
+  })));
+  */
   
 });
