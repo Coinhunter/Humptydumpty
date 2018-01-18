@@ -6,38 +6,24 @@
 
       <!-- First a hero package -->
       <div class="col-sm-12 col-md-6 searchpack">
-        <img src="./assets/img/halso_sjukvard.jpg" class="searchpack-image">
-        <p>Sjuk och hälsovård för dig som gillar fysiskt arbete som inte kräver lång erfarenhet, these violent delights.</p>
+        <img src="{{ heroPackage.imgUrl }}" class="searchpack-image">
+        <p><a href="{{ heroPackage.searchUrl }}">{{ heroPackage.text }}</a></p>
       </div>
 
-      <!-- Then two more packages -->
-      <div class="col-sm-12 col-md-3 searchpack">
-        <img src="./assets/img/restaurang_och_cafe.jpg" class="searchpack-image">
-        <p>Restaurang och sådant som handlar om att laga mat med händerna. För sig som vill vara som ernst men inte vill vara på teve. have violent ends.</p>
-      </div>
-      <div class="col-sm-12 col-md-3 searchpack">
-        <img src="./assets/img/byggbranchen.jpg" class="searchpack-image">
-        <p>Byggbranchen söker dig med gymnasieutbildning</p>
+      <!-- Then two more packages, herocompanions -->
+      <div class="col-sm-12 col-md-3 searchpack" *ngFor="let herocompanionpack of heroCompanionPackages">
+        <a href="{{ herocompanionpack.searchUrl }}">
+          <img src="{{ herocompanionpack.imgUrl }}" class="searchpack-image">
+          <p><a href="{{ herocompanionpack.searchUrl }}">{{ herocompanionpack.text }}</a></p>
+        </a>
       </div>
 
     </div>
     <div class="row">
-      <!-- Then 4 more packages -->
-      <div class="col-sm-12 col-md-3 searchpack">
-        <img src="./assets/img/admin_assistent_service.jpg" class="searchpack-image">
-        <p>Finansbranchen - kvalificerade jobb inom många områden</p>
-      </div>
-      <div class="col-sm-12 col-md-3 searchpack">
-        <img src="./assets/img/fysiskt_ej_lang_erfarenhet.jpg" class="searchpack-image">
-        <p>För dig som gillar fysiskt arbete som inte kräver lång erfarenhet</p>
-      </div>
-      <div class="col-sm-12 col-md-3 searchpack">
-        <img src="./assets/img/utlandsjobb.jpg" class="searchpack-image">
-        <p>Jobb för dig som längtar utomlands</p>
-      </div>
-      <div class="col-sm-12 col-md-3 searchpack">
-        <img src="./assets/img/ej_gymnasieutbildning.jpg" class="searchpack-image">
-        <p>Jobb som inte kräver gymnasieutbildning</p>
+      <!-- Then however many more packages we have -->
+      <div class="col-sm-12 col-md-3 searchpack" *ngFor="let foldoutpack of foldoutPackages">
+        <img src="{{ foldoutpack.imgUrl }}" class="searchpack-image">
+        <p><a href="{{ foldoutpack.searchUrl }}">{{ foldoutpack.text }}</a></p>
       </div>
     </div>
   </div>

@@ -14,6 +14,10 @@
     a {
         color: $blue-base;
         text-decoration: none;
+
+        // What it looks like in zeplin... ?
+        font-size: 18px;
+        font-weight: 300;        
     }
     a:hover {
         text-decoration: underline;

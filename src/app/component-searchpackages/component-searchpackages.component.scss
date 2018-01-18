@@ -3,7 +3,12 @@
 .searchpackages {
     background-color: $gray-10;
 
-    min-height: 100px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    h2 {
+        margin-bottom: 40px;
+    }
 
     .searchpack {
         margin-bottom: 20px;
@@ -17,6 +22,19 @@
         p {
             margin-top: 0.5rem;
             margin-bottom: 1rem;
+        }
+
+        a {
+            color: $blue-base;
+            text-decoration: none;
+
+            // What it looks like in zeplin... ?
+            font-size: 18px;
+            font-weight: 300;        
+            
+        }
+        a:hover {
+            text-decoration: underline;
         }        
 
     }

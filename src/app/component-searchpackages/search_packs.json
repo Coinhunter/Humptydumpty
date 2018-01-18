@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Restaurang",
+        "url": "./assets/restaurang_och_cafe.jpg",
+        "text": "Restaurang och sådant som handlar om att laga mat med händerna. För sig som vill vara som ernst men inte vill vara på teve. have violent ends."
+    },
+    {
+        "name": "Sjukvård",
+        "url": "./assets/halso_sjukvard.jpg",
+        "text": "Sjuk och hälsovård för dig som gillar fysiskt arbete som inte kräver lång erfarenhet, these violent delights."
+    },
+    {
+        "name": "Byggbranchen",
+        "url": "./assets/byggbranchen.jpg",
+        "text": "Byggbranchen söker dig med gymnasieutbildning"
+    },
+    {
+        "name": "Ej gymnasieutbildad",
+        "url": "./assets/ej_gymnasieutbildning.jpg",
+        "text": "Jobb som inte kräver gymnasieutbildning"
+    },
+    {
+        "name": "Fysiskt arbete med begränsad erfarenhet",
+        "url": "./assets/fysiskt_ej_lang_erfarenhet.jpg",
+        "text": "För dig som gillar fysiskt arbete som inte kräver lång erfarenhet"
+    },
+    {
+        "name": "Pedagogiskt arbete",
+        "url": "./assets/pedagogik.jpg",
+        "text": "Pedagogiskt arbete lorem ipsum have violent ends"
+    },
+    {
+        "name": "Utlandsjobb",
+        "url": "./assets/utlandsjobb.jpg",
+        "text": "Jobb för dig som längtar utomlands"
+    },
+    {
+        "name": "Administatör/Assistent",
+        "url": "./assets/admin_assistent_service",
+        "text": "Är du en fena på Office-paketet? Här är jobben för dig"
+    }    
+]
