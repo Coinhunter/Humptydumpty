@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Profilkriterium } from '../models/Profilkriterium';
+import { UrlparserService } from '../services/urlparser/urlparser.service';
 
 @Component({
   selector: 'app-component-quicklinks',
@@ -8,7 +9,7 @@ import { Profilkriterium } from '../models/Profilkriterium';
 })
 export class ComponentQuicklinksComponent implements OnInit {
 
-  baseUrl = 'https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/';
+  urlParserService: UrlparserService = new UrlparserService();
 
   quicklinks = [
     {
@@ -16,15 +17,15 @@ export class ComponentQuicklinksComponent implements OnInit {
       items: [
         {
           name: 'Göteborg',
-          url: this.getUrlForCriteria([new Profilkriterium('1480', 'Göteborg', 'KOMMUN')]),
+          url: this.urlParserService.getUrlForCriteria([new Profilkriterium('1480', 'Göteborg', 'KOMMUN')]),
         },
         {
           name: 'Stockholm',
-          url: this.getUrlForCriteria([new Profilkriterium('0180', 'Stockholm', 'KOMMUN')]),
+          url: this.urlParserService.getUrlForCriteria([new Profilkriterium('0180', 'Stockholm', 'KOMMUN')]),
         },
         {
           name: 'Malmö',
-          url: this.getUrlForCriteria([new Profilkriterium('1280', 'Malmö', 'KOMMUN')]),
+          url: this.urlParserService.getUrlForCriteria([new Profilkriterium('1280', 'Malmö', 'KOMMUN')]),
         },
         /*
         {
@@ -40,7 +41,7 @@ export class ComponentQuicklinksComponent implements OnInit {
       items: [
         {
           name: 'Hotell & Restaurang',
-          url: this.getUrlForCriteria([
+          url: this.urlParserService.getUrlForCriteria([
             new Profilkriterium('5132', 'Bartendrar', 'YRKESGRUPP_ROLL'),
             new Profilkriterium('5131', 'Hovmästare och servitörer', 'YRKESGRUPP_ROLL'),
             new Profilkriterium('9413', 'Kafé- och konditoribiträden', 'YRKESGRUPP_ROLL'),
@@ -53,11 +54,13 @@ export class ComponentQuicklinksComponent implements OnInit {
         },
         {
           name: 'Administration',
-          url: '',
+          url: this.urlParserService.getUrlForCriteria([
+            new Profilkriterium('1', 'Administration, ekonomi, juridik', 'YRKESOMRADE_ROLL'),           
+          ]),
         },
         {
           name: 'Hälsa och Sjukvård',
-          url: this.getUrlForCriteria([
+          url: this.urlParserService.getUrlForCriteria([
             new Profilkriterium('5326', 'Ambulanssjukvårdare', 'yrkesgrupper'),
             new Profilkriterium('5325', 'Barnsköterskor', 'yrkesgrupper'),
             new Profilkriterium('5341', 'Skötare', 'yrkesgrupper'),
@@ -93,55 +96,15 @@ export class ComponentQuicklinksComponent implements OnInit {
         },
         {
           name: 'Data och IT',
-          url: '',
+          url: this.urlParserService.getUrlForCriteria([
+            new Profilkriterium('3', 'Data/IT', 'YRKESOMRADE_ROLL'),
+          ]),
         },                        
       ]
     }
   ];
 
   constructor() { }
-
-  getUrlForCriteria(profilkriterier: Array<Profilkriterium>):string {
-    // Sort the kriterium according to type
-    profilkriterier.sort(function(a, b) {
-      var nameA = a.typ.toUpperCase(); // ignore upper and lowercase
-      var nameB = b.typ.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      return 0;
-    });
-
-    let url = '';
-    let currenttype = undefined;
-    profilkriterier.forEach(profilkriterie => {
-      if (profilkriterie.typ !== currenttype) {
-        // New category.
-        currenttype = profilkriterie.typ;
-
-        // Look at the current last sign and if it's a semicolon - remove it.
-        if (url !== '' && url[url.length - 1] === ';') {
-          url = url.slice(0, url.length - 1);
-        }
-
-        // Append &TYPE= to it.
-        url += ('&' + profilkriterie.typ + '=');
-      }
-      // Add the value of the kriterie with a semicolon.
-      url += (profilkriterie.varde + ';');
-    });
-
-    // Finally, replace the first '&' with a '?'
-    // It will always be the first character in the url string.
-    // then remove the last semicolon.
-    url = url.slice(1, url.length - 1);
-    url = '?' + url;
-
-    return this.baseUrl + url;
-  }
 
   ngOnInit() {
   }
