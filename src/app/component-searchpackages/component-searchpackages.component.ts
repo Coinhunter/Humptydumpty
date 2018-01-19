@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchPackage } from '../models/SearchPackage';
 import { UrlparserService } from '../services/urlparser/urlparser.service';
-import { Profilkriterium } from "../models/Profilkriterium";
+import { Profilkriterium } from '../models/Profilkriterium';
 
 @Component({
   selector: 'app-component-searchpackages',
@@ -10,11 +10,11 @@ import { Profilkriterium } from "../models/Profilkriterium";
 })
 export class ComponentSearchpackagesComponent implements OnInit {
 
-  urlParser:UrlparserService = new UrlparserService();
-  searchPacks:Array<SearchPackage>;
-  heroPackage:SearchPackage;
-  heroCompanionPackages:Array<SearchPackage>;
-  foldoutPackages:Array<SearchPackage>;
+  urlParser: UrlparserService = new UrlparserService();
+  searchPacks: Array<SearchPackage>;
+  heroPackage: SearchPackage;
+  heroCompanionPackages: Array<SearchPackage>;
+  foldoutPackages: Array<SearchPackage>;
 
   constructor() {}
 
@@ -28,16 +28,16 @@ export class ComponentSearchpackagesComponent implements OnInit {
     this.foldoutPackages = this.getFoldoutPackages();
   }
 
-  getHeroPackage():SearchPackage {
+  getHeroPackage(): SearchPackage {
     return this.searchPacks[0];
   }
 
-  getHeroCompanionPackages():Array<SearchPackage> {
-    return this.searchPacks.slice(1,3);
+  getHeroCompanionPackages(): Array<SearchPackage> {
+    return this.searchPacks.slice(1, 3);
   }
 
-  getFoldoutPackages():Array<SearchPackage> {
-    return this.searchPacks.slice(3, this.searchPacks.length-1);
+  getFoldoutPackages(): Array<SearchPackage> {
+    return this.searchPacks.slice(3, this.searchPacks.length - 1);
   }
 
   getSearchUrl(kriterier) {
@@ -45,11 +45,11 @@ export class ComponentSearchpackagesComponent implements OnInit {
     return this.urlParser.getUrlForCriteria(kriterier);
   }
 
-  getJsonData():Array<SearchPackage> {    
+  getJsonData(): Array<SearchPackage> {
     return [
       new SearchPackage(
-        'Sjukvård', 
-        './assets/img/halso_sjukvard.jpg', 
+        'Sjukvård',
+        './assets/img/halso_sjukvard.jpg',
         'Sjuk och hälsovård för dig som gillar fysiskt arbete som inte kräver lång erfarenhet.',
         [
           new Profilkriterium('5326', 'Ambulanssjukvårdare', 'yrkesgrupper'),
@@ -83,10 +83,10 @@ export class ComponentSearchpackagesComponent implements OnInit {
           new Profilkriterium('2223', 'Anestesisjuksköterskor', 'yrkesgrupper'),
           new Profilkriterium('2226', 'Ambulanssjuksköterskor m.fl.', 'yrkesgrupper'),
           new Profilkriterium('2227', 'Geriatriksjuksköterskor', 'yrkesgrupper')
-        ]),        
+        ]),
       new SearchPackage(
-          'Restaurang', 
-          './assets/img/restaurang_och_cafe.jpg', 
+          'Restaurang',
+          './assets/img/restaurang_och_cafe.jpg',
           'Restaurang och sådant som handlar om att laga mat med händerna. För sig som vill vara som Ernst men inte vill vara på teve. Varning för vassa föremål.',
           [
             new Profilkriterium('5132', 'Bartendrar', 'YRKESGRUPP_ROLL'),
@@ -100,7 +100,7 @@ export class ComponentSearchpackagesComponent implements OnInit {
           ]
         ),
         new SearchPackage(
-          'Byggbranchen', 
+          'Byggbranchen',
           './assets/img/byggbranchen.jpg',
           'Byggbranchen söker dig med gymnasieutbildning. Du kan behöva tycka om höjder och blå tummar.',
           [
@@ -119,8 +119,8 @@ export class ComponentSearchpackagesComponent implements OnInit {
           ]
         ),
         new SearchPackage(
-          'Ej gymnasieutbildad', 
-          './assets/img/ej_gymnasieutbildning.jpg', 
+          'Ej gymnasieutbildad',
+          './assets/img/ej_gymnasieutbildning.jpg',
           'Jobb som inte kräver gymnasieutbildning',
           [
             new Profilkriterium('9111', 'Städare', 'YRKESGRUPP_ROLL'),
@@ -142,8 +142,8 @@ export class ComponentSearchpackagesComponent implements OnInit {
           ]
         ),
         new SearchPackage(
-          'Fysiskt arbete med begränsad erfarenhet', 
-          './assets/img/fysiskt_ej_lang_erfarenhet.jpg', 
+          'Fysiskt arbete med begränsad erfarenhet',
+          './assets/img/fysiskt_ej_lang_erfarenhet.jpg',
           'För dig som gillar fysiskt arbete som inte kräver lång erfarenhet',
           [
             new Profilkriterium('4322', 'Lager- och terminalpersonal', 'YRKESGRUPP_ROLL'),
@@ -154,8 +154,8 @@ export class ComponentSearchpackagesComponent implements OnInit {
             new Profilkriterium('2199', 'God fysik (tunga lyft)', 'KOMPETENS'),
           ]),
         new SearchPackage(
-          'Pedagogiskt arbete', 
-          './assets/img/pedagogik.jpg', 
+          'Pedagogiskt arbete',
+          './assets/img/pedagogik.jpg',
           'Pedagogiskt arbete med barn å sånt.',
           [
             new Profilkriterium('5312', 'Elevassistenter m.fl.', 'YRKESGRUPP_ROLL'),
@@ -170,17 +170,17 @@ export class ComponentSearchpackagesComponent implements OnInit {
           ]
         ),
         new SearchPackage(
-          'Utlandsjobb', 
-          './assets/img/utlandsjobb.jpg', 
-          'Jobb för dig som längtar utomlands, för vem gör inte det?', 
+          'Utlandsjobb',
+          './assets/img/utlandsjobb.jpg',
+          'Jobb för dig som längtar utomlands, för vem gör inte det?',
           [
             new Profilkriterium('3', 'Arbete utomlands', 'ANSTALLNINGSTYP'),
           ]
         ),
         new SearchPackage(
-          'Administatör/Assistent', 
-          './assets/img/admin_assistent_service', 
-          'Är du en fena på Office-paketet? Här är jobben för dig', 
+          'Administatör/Assistent',
+          './assets/img/admin_assistent_service',
+          'Är du en fena på Office-paketet? Här är jobben för dig',
           [
             new Profilkriterium('608378', 'MS Word', 'KOMPETENS'),
             new Profilkriterium('608767', 'MS Office', 'KOMPETENS'),
