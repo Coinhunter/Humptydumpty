@@ -2,28 +2,40 @@
   <div class="container">
     <h2>Pröva våra sökpaket</h2>
 
-    <div class="row">
+    <div class="searchpackages-desktop">
+      <div class="row">
 
-      <!-- First a hero package -->
-      <div class="col-sm-12 col-md-6 searchpack">
-        <img src="{{ heroPackage.imgUrl }}" class="searchpack-image">
-        <p><a href="{{ heroPackage.searchUrl }}">{{ heroPackage.text }}</a></p>
+        <!-- First a hero package -->
+        <div class="col-sm-12 col-md-6 searchpack">
+          <img src="{{ heroPackage.imgUrl }}" class="searchpack-image">
+          <p><a href="{{ heroPackage.searchUrl }}">{{ heroPackage.text }}</a></p>
+        </div>
+
+        <!-- Then two more packages, herocompanions -->
+        <div class="col-sm-12 col-md-3 searchpack" *ngFor="let herocompanionpack of heroCompanionPackages">
+          <a href="{{ herocompanionpack.searchUrl }}">
+            <img src="{{ herocompanionpack.imgUrl }}" class="searchpack-image">
+            <p><a href="{{ herocompanionpack.searchUrl }}">{{ herocompanionpack.text }}</a></p>
+          </a>
+        </div>
+
       </div>
-
-      <!-- Then two more packages, herocompanions -->
-      <div class="col-sm-12 col-md-3 searchpack" *ngFor="let herocompanionpack of heroCompanionPackages">
-        <a href="{{ herocompanionpack.searchUrl }}">
-          <img src="{{ herocompanionpack.imgUrl }}" class="searchpack-image">
-          <p><a href="{{ herocompanionpack.searchUrl }}">{{ herocompanionpack.text }}</a></p>
-        </a>
+      <div class="row">
+        <!-- Then however many more packages we have -->
+        <div class="col-sm-12 col-md-3 searchpack" *ngFor="let foldoutpack of foldoutPackages">
+          <img src="{{ foldoutpack.imgUrl }}" class="searchpack-image">
+          <p><a href="{{ foldoutpack.searchUrl }}">{{ foldoutpack.text }}</a></p>
+        </div>
       </div>
-
     </div>
-    <div class="row">
-      <!-- Then however many more packages we have -->
-      <div class="col-sm-12 col-md-3 searchpack" *ngFor="let foldoutpack of foldoutPackages">
-        <img src="{{ foldoutpack.imgUrl }}" class="searchpack-image">
-        <p><a href="{{ foldoutpack.searchUrl }}">{{ foldoutpack.text }}</a></p>
+    <div class="searchpackages-mobile">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 searchpack" *ngFor="let searchPack of searchPacks">
+          <a href="{{ searchPack.searchUrl }}">
+            <img src="{{ searchPack.imgUrl }}" class="searchpack-image">
+            <p><a href="{{ searchPack.searchUrl }}">{{ searchPack.text }}</a></p>
+          </a>
+        </div>
       </div>
     </div>
   </div>
