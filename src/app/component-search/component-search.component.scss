@@ -1,3 +1,67 @@
 .search {
-    min-height: 300px;
+    background-color:white;
+
+    .alwaysvisible {
+        min-height: 150px;
+        background-color: white;
+    }
+
+    .foldout-wrapper {
+        position: relative;
+        margin-bottom: 1px;
+        width: 100%;
+        color: #000;
+
+        .foldout {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            -webkit-transition: ease 1s;
+            -o-transition: ease 1s;
+            transition: ease 1s;
+
+            .foldout-content {
+                min-height: 100px;
+                background-color: white;
+                margin-bottom:40px;
+            }
+        }
+
+        .search-expand-label {
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            // border: 1px dashed grey;
+            background-color: white;
+
+            position:absolute;
+            right: 15px;
+            bottom: -30px;
+            z-index: 1;
+
+            .search-expand-label-text {
+                text-align: center;
+                padding-top: 25px;
+            }
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+    
+        label {
+            position: relative;
+            display: block;
+            padding: 0em;
+        }
+    
+        /* :checked */
+        input:checked ~ .foldout {
+            max-height: 40em;
+        }        
+
+    }
+    
 }
