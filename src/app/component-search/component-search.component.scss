@@ -16,19 +16,19 @@
                 display: block;
                 margin: auto;
             }
-    
+
             h1:first-of-type {
                 margin-top: 1em;
             }
-    
+
             h1 {
                 margin-top: 0px;
                 font-size: 45px;
                 .bold {
                     font-weight: 400;
-                }    
+                }
             }
-    
+
             p {
                 margin-top: 2em;
                 font-size: 21px;
@@ -61,6 +61,7 @@
                 width: 20%;
                 display: inline-block;
                 height: 60px;
+                padding-bottom: 1px;
 
                 i.fa {
                     position: relative;
@@ -74,7 +75,7 @@
                     background-color: transparent;
                     transform: rotate(-360deg);
                     cursor: pointer;
-                    box-shadow: none;                    
+                    box-shadow: none;
                 }
                 p {
                     color: $blue-base;
@@ -83,7 +84,7 @@
                       -o-transition: color .2s ease-in-out;
                          transition: color .2s ease-in-out;
                 }
-            }            
+            }
 
 
             .pb-search-field {
@@ -114,8 +115,9 @@
                 font-weight: normal;
                 color: white;
                 text-align: center;
-                background-color: rgb(46, 172, 34);                
+                background-color: rgb(46, 172, 34);
                 margin-left: -5px;
+                padding-bottom: 1px;
                 height: 60px;
 
                 p {
@@ -170,18 +172,18 @@
             opacity: 0;
             z-index: -1;
         }
-    
+
         label {
             position: relative;
             display: block;
             padding: 0em;
         }
-    
+
         /* :checked */
         input:checked ~ .foldout {
             max-height: 40em;
-        }        
+        }
 
     }
-    
+
 }
