@@ -36,6 +36,15 @@
             }
         }
 
+        .searchlabels {
+            .pb-search-list-label-width {
+                width: 20%;
+            }
+            .pb-search-field-label-width {
+                width: 31%;
+            }
+        }
+
         .searchfields {
             margin-bottom: 20px;
 
@@ -128,62 +137,27 @@
 
     }
 
-    .foldout-wrapper {
-        position: relative;
-        margin-bottom: 1px;
-        width: 100%;
-        color: #000;
+    .search-expand-button {
+        height: 40px;
+        width: 250px;
+        border-radius: 5px;
+        border: 0px;
+        background-color: $gray-10;
 
-        .foldout {
-            background-color: $gray-10;
-            max-height: 0;
-            overflow: hidden;
-            -webkit-transition: ease 1s;
-            -o-transition: ease 1s;
-            transition: ease 1s;
+        position: absolute;
+        right: 15px;
+        bottom: -20px;
+        z-index: 1;
 
-            .foldout-content {
-                min-height: 100px;
-                background-color: $gray-10;
-                margin-bottom:40px;
+        .search-expand-button-text {
+            color: rgb(46, 172, 34);
+            padding-top: 3px;
+
+            i {
+                font-weight: bolder;
+                margin-right: 20px;
             }
         }
-
-        .search-expand-label {
-            height: 50px;
-            width: 150px;
-            border-radius: 5px;
-            // border: 1px dashed grey;
-            background-color: $gray-10;
-
-            position:absolute;
-            right: 15px;
-            bottom: -30px;
-            z-index: 1;
-
-            .search-expand-label-text {
-                text-align: center;
-                padding-top: 25px;
-            }
-        }
-
-        input {
-            position: absolute;
-            opacity: 0;
-            z-index: -1;
-        }
-
-        label {
-            position: relative;
-            display: block;
-            padding: 0em;
-        }
-
-        /* :checked */
-        input:checked ~ .foldout {
-            max-height: 40em;
-        }
-
     }
 
 }
