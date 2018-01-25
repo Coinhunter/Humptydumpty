@@ -10,21 +10,28 @@ import { ComponentSearchpackagesComponent } from './component-searchpackages/com
 import { ComponentQuicklinksComponent } from './component-quicklinks/component-quicklinks.component';
 import { ComponentSearchComponent } from './component-search/component-search.component';
 
+import { FormsModule } from '@angular/forms';
+import { AutoCompleteModule } from 'primeng/components/autocomplete/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     ComponentDirectedcommunicationComponent,
     ComponentSearchpackagesComponent,
     ComponentQuicklinksComponent,
-    ComponentSearchComponent,
+    ComponentSearchComponent,    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AutoCompleteModule,
+    HttpClientModule,
   ],
   providers: [
-  	GoogleAnalyticsEventsService
+    GoogleAnalyticsEventsService
   ],
-  bootstrap: [AppComponent] //, ResultContainerService]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

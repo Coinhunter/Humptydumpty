@@ -42,6 +42,12 @@
           
       </div>
 
+      <p-autoComplete 
+        [(ngModel)]="val" 
+        [suggestions]="results" 
+        (completeMethod)="search($event)" 
+        field="namn">
+      </p-autoComplete>
 
       <div class="row">
         <div class="col-md-12">

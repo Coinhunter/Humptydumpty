@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
 import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
 import { ProfilkriteriumTyper } from './ProfilkriteriumTyper';
+import { SynonymSearchResultDTO } from 'app/models/SynonymSearchResultDTO';
+import { KriterieSearch } from 'app/models/KriterieSearch';
 
 @Injectable()
 export class PbapiKriterierService {
@@ -12,7 +14,7 @@ export class PbapiKriterierService {
 
   private cachedResponses:Object = {};
 
-  constructor(private http: Http) { }
+  constructor(private httpClient: HttpClient) {}
 
   getKriterieTyper(): Promise<Array<string>> {
     // This should probably be a backend-service, depends a litle on how it's implemented in matchning component.
@@ -22,23 +24,28 @@ export class PbapiKriterierService {
 
   getKriterierForType(type: string): Promise<Array<IProfilkriterium>> {
     const key = this.getKeyFromType(type);
+    console.log(key);
+
     return new Promise((resolve, reject) => {
       if (this.hasCachedValue(key)) {
         resolve(this.cachedResponses[key]);
       } else {
         const url = `${this.pbApi}/matchning/matchningskriterier?typer=${type}`;
-        this.http.get(url)
-          .map(this.extractData)
-          .catch((err, caught) => {
-            throw new Error(err);
-          })
-          .toPromise().then((result) => {
-            this.cachedResponses[key] = this.parseResponse(key, result);            
-            resolve(this.cachedResponses[key]);
-          }, (failure) => {
-            reject(failure);
-          });
+        this.httpClient.get(url).subscribe(data => {
+          const result = data as Array<IProfilkriterium>;
+          resolve(result);
+        });
       }
+    });
+  }
+
+  getKriterierForTypeAndFilter(type: string, filter: string): Promise<KriterieSearch> {
+    return new Promise((resolve, reject) => {
+      const url = `${this.pbApi}/matchning/matchningskriterierSynonym?typer=${type}&namnfilter=${filter}`;
+      this.httpClient.get(url).subscribe(data => {
+        const result = data as KriterieSearch;
+        resolve(result);
+      });
     });
   }
 
