@@ -26,7 +26,17 @@
                 <button class="pb-search-list-accordion" type="button" data-toggle="collapse" data-target="#valjFranLista" aria-expanded="false" aria-controls="valjFranLista">
                   <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
                 </button>
-                <input type="text" class="pb-search-field" placeholder="Skriv t.ex. 'Sandwhichman'.." aria-describedby="sizing-addon1">
+
+                <p-autoComplete 
+                  [(ngModel)]="val" 
+                  [suggestions]="results" 
+                  (completeMethod)="search($event)" 
+                  field="namn"
+                  styleClass="pb-prime-searchfield">
+                </p-autoComplete>
+
+                <!-- <input type="text" class="pb-search-field" placeholder="Skriv t.ex. 'Sandwhichman'.." aria-describedby="sizing-addon1"> -->
+
                 <input type="text" class="pb-search-field" placeholder="Skriv t.ex. 'Västerås'.." aria-describedby="sizing-addon1">
                 <button class="pb-search-button pb-search-button-width">
                   <p class="text-center">Sök</p>
@@ -41,13 +51,6 @@
           </div>
           
       </div>
-
-      <p-autoComplete 
-        [(ngModel)]="val" 
-        [suggestions]="results" 
-        (completeMethod)="search($event)" 
-        field="namn">
-      </p-autoComplete>
 
       <div class="row">
         <div class="col-md-12">

@@ -4,3 +4,32 @@
 @import './mixins';
 @import './color-variables.scss';
 @import './bootstrap/bootstrap.min.css';
+
+.pb-prime-searchfield {
+    height: 60px;
+    width: 31%;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0px;
+
+    padding: 0px;
+    font-size: 19px;
+
+    input {
+        width: 100%;
+        border: 1px solid #ccc;
+        height: 60px;
+        border-radius: 0px;
+        padding-left: 10px;
+    }
+
+    input:focus {
+        outline-style: solid;
+        outline-color: orange;
+        outline-width: 1px;
+    }
+}
+
+.pb-prime-searchfield:focus {
+    outline: none;
+}
