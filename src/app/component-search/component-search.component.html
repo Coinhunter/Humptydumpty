@@ -64,16 +64,32 @@
                   <button class="pb-search-button pb-search-button-width">
                     <p class="text-center">Sök</p>
                   </button>
-  
-                  <div class="collapse" id="valjFranLista">
-                    <h2>Darkness has come.</h2>
-                    <p>And we are the only way out!</p>
-                  </div>
                   
                 </div>          
-
               </div>
           </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div style="width: 51%;" *ngIf="chosenYrken.length > 0 && !showCriteria">
+                <div class="float-right active-yrken-pill">
+                  <span>{{ chosenYrken[0].namn }}</span>
+                  <span class="active-yrken-pill-number" *ngIf="chosenYrken.length > 1">+ {{ chosenYrken.length - 1 }}</span>
+                  <i class="fa fa-close" (click)="removeFromChosenYrken()"></i>
+                </div>
+              </div>                      
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="collapse" id="valjFranLista">
+                <h2>Darkness has come.</h2>
+                <p>And we are the only way out!</p>
+              </div>
+            </div>
+          </div>
+
       </div>
 
       <div class="row">

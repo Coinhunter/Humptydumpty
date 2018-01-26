@@ -54,7 +54,20 @@ export class ComponentSearchComponent implements OnInit {
     }
 
     this.val = undefined;
-    document.getElementById('search-yrken').focus();
+    this.focusYrkenSearchInput();
+  }
+
+  removeFromChosenYrken() {
+    if (this.chosenYrken.length > 1) {
+      this.focusYrkenSearchInput();
+    } else {
+      this.removeCriteria(this.chosenYrken[0]);
+      this.focusYrkenSearchInput();
+    }
+  }
+
+  focusYrkenSearchInput() {
+    document.getElementById('search-yrken').getElementsByTagName("input")[0].focus();
   }
 
   removeCriteria(profilkriterium) {
