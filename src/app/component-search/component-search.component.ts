@@ -30,17 +30,29 @@ export class ComponentSearchComponent implements OnInit {
   }
 
   search(event) {
+    this.results = [];
+    this.results.push(new Profilkriterium(event.query, event.query, 'fritext'));
+
     this.pbKriterier.getKriterierForTypeAndFilter('YRKEN', event.query).then((data => {
-      this.results = [];
+            
       data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();
         this.results.push(kriterium);
       });
+
     }));
   }
 
   yrkenAddValue(value) {
-    this.chosenYrken.push(new Profilkriterium(value.id, value.namn, value.typ));
+    // Avoid adding the same thing multiple times.
+    var found = this.chosenYrken.find((profilkriterium) => {
+      return profilkriterium.varde === value.id;
+    });
+
+    if (!found) {
+      this.chosenYrken.push(new Profilkriterium(value.id, value.namn, value.typ));
+    }
+
     this.val = undefined;
     document.getElementById('search-yrken').focus();
   }

@@ -30,9 +30,9 @@
                     <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
                   </button>                  
 
-                  <p-autoComplete 
-                    [(ngModel)]="val" 
-                    [suggestions]="results" 
+                  <p-autoComplete
+                    [(ngModel)]="val"
+                    [suggestions]="results"
                     (completeMethod)="search($event)"
                     field="namn"
                     id="search-yrken"
@@ -52,9 +52,11 @@
                   </p-autoComplete>
                   
                   <div *ngIf="showCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
-                    <div *ngFor="let profilkriterium of chosenYrken" class="chosenCriteriaTag"> 
-                      {{ profilkriterium.namn }}
-                      <i class="fa fa-close" (click)="removeCriteria(profilkriterium)"></i>
+                    <div *ngFor="let profilkriterium of chosenYrken" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }"> 
+                      <div data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                          {{ profilkriterium.namn }}
+                          <i class="fa fa-close" (click)="removeCriteria(profilkriterium)"></i>    
+                      </div>
                     </div>
                   </div>
 
@@ -72,7 +74,6 @@
 
               </div>
           </div>
-          
       </div>
 
       <div class="row">
