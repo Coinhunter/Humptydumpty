@@ -16,9 +16,14 @@ import { SynonymSearchResultDTO } from 'app/models/SynonymSearchResultDTO';
 export class ComponentSearchComponent implements OnInit {
 
   antalLedigaJobb: string;
+  showCriteria: boolean = false;
 
   val: Profilkriterium;
   results: Array<Profilkriterium>;
+
+  chosenYrken: Array<Profilkriterium> = [];
+
+  timeout: any; 
 
   constructor(private pbKriterier: PbapiKriterierService) {
     this.antalLedigaJobb = '85 323';
@@ -26,9 +31,40 @@ export class ComponentSearchComponent implements OnInit {
 
   search(event) {
     this.pbKriterier.getKriterierForTypeAndFilter('YRKEN', event.query).then((data => {
-      console.log(data.matchningskriteriumList);
-      this.results = data.matchningskriteriumList;
+      this.results = [];
+      data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
+        kriterium.typ = kriterium.typ.toLowerCase();
+        this.results.push(kriterium);
+      });
     }));
+  }
+
+  yrkenAddValue(value) {
+    this.chosenYrken.push(new Profilkriterium(value.id, value.namn, value.typ));
+    this.val = undefined;
+    document.getElementById('search-yrken').focus();
+  }
+
+  removeCriteria(profilkriterium) {
+    const index = this.chosenYrken.indexOf(profilkriterium);
+    console.log(index);
+
+    if (index > -1) {
+      this.chosenYrken.splice(index, 1);
+    }
+    clearTimeout(this.timeout);
+  }
+
+  focusSearch(event) {
+    this.val = undefined;
+    this.showCriteria = true;
+  }
+
+  blurSearch(event) {
+    this.timeout = setTimeout(() => {
+      this.showCriteria = false;
+      // this.val = new Profilkriterium(4444, 'Exempel', 'Fritext');
+    }, 100);
   }
 
   ngOnInit() {

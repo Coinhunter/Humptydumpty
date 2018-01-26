@@ -5,31 +5,53 @@
 @import './color-variables.scss';
 @import './bootstrap/bootstrap.min.css';
 
-.pb-prime-searchfield {
-    height: 60px;
-    width: 31%;
-    display: inline-block;
+.pb-search {
     margin-left: -5px;
     border-radius: 0px;
-
-    padding: 0px;
+    height: 60px;
+    width: 31%;
     font-size: 19px;
+    
+    .ui-corner-all {
+        border-radius: 0px;
+    }
 
     input {
         width: 100%;
-        border: 1px solid #ccc;
         height: 60px;
-        border-radius: 0px;
-        padding-left: 10px;
     }
 
-    input:focus {
-        outline-style: solid;
-        outline-color: orange;
-        outline-width: 1px;
+    .ui-inputtext {
+        padding: 0px;
+        padding-left: 15px;
     }
-}
+    
+    .ui-autocomplete-input-token {
+        padding: 0px;
+    }
+    
+    .ui-autocomplete-panel .ui-autocomplete-list {
+        padding: 0px;
+    }
 
-.pb-prime-searchfield:focus {
-    outline: none;
+    .ui-widget-content {
+        box-shadow: none;
+    }
+
+    .ui-autocomplete-list-item {
+    }
+
+    .ui-state-highlight {
+        background-color: $gray-5;
+        color: $black-10;
+    }
+
+    .pb-search-suggestion {
+        font-size: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
 }

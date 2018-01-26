@@ -23,29 +23,52 @@
 
           <div class="row searchfields">
               <div class="col-md-12">
-                <button class="pb-search-list-accordion" type="button" data-toggle="collapse" data-target="#valjFranLista" aria-expanded="false" aria-controls="valjFranLista">
-                  <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
-                </button>
+                
+                <div style="position: relative;">
 
-                <p-autoComplete 
-                  [(ngModel)]="val" 
-                  [suggestions]="results" 
-                  (completeMethod)="search($event)" 
-                  field="namn"
-                  styleClass="pb-prime-searchfield">
-                </p-autoComplete>
+                  <button class="pb-search-list-accordion" type="button" data-toggle="collapse" data-target="#valjFranLista" aria-expanded="false" aria-controls="valjFranLista">
+                    <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
+                  </button>                  
 
-                <!-- <input type="text" class="pb-search-field" placeholder="Skriv t.ex. 'Sandwhichman'.." aria-describedby="sizing-addon1"> -->
+                  <p-autoComplete 
+                    [(ngModel)]="val" 
+                    [suggestions]="results" 
+                    (completeMethod)="search($event)"
+                    field="namn"
+                    id="search-yrken"
+                    styleClass="pb-search"
+                    (onSelect)="yrkenAddValue($event)"
+                    (onFocus)="focusSearch($event)"
+                    (onBlur)="blurSearch($event)"
+                    placeholder="Skriv t.ex. 'Sandwhichman'..">
 
-                <input type="text" class="pb-search-field" placeholder="Skriv t.ex. 'Västerås'.." aria-describedby="sizing-addon1">
-                <button class="pb-search-button pb-search-button-width">
-                  <p class="text-center">Sök</p>
-                </button>
+                    <ng-template let-val pTemplate="item">
+                      <div class="ui-helper-clearfix pb-search-suggestion">
+                        <span class="float-left">{{ val.namn }}</span>
+                        <span class="float-right">{{ val.typ }}</span>
+                      </div>
+                    </ng-template>
 
-                <div class="collapse" id="valjFranLista">
-                  <h2>Darkness has come.</h2>
-                  <p>And we are the only way out!</p>
-                </div>
+                  </p-autoComplete>
+                  
+                  <div *ngIf="showCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
+                    <div *ngFor="let profilkriterium of chosenYrken" class="chosenCriteriaTag"> 
+                      {{ profilkriterium.namn }}
+                      <i class="fa fa-close" (click)="removeCriteria(profilkriterium)"></i>
+                    </div>
+                  </div>
+
+                  <input type="text" class="pb-search-field" placeholder="Skriv t.ex. 'Västerås'.." aria-describedby="sizing-addon1">
+                  <button class="pb-search-button pb-search-button-width">
+                    <p class="text-center">Sök</p>
+                  </button>
+  
+                  <div class="collapse" id="valjFranLista">
+                    <h2>Darkness has come.</h2>
+                    <p>And we are the only way out!</p>
+                  </div>
+                  
+                </div>          
 
               </div>
           </div>
