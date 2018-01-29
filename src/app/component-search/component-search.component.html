@@ -30,37 +30,68 @@
                     <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
                   </button>                  
 
+                  <!-- Yrken search : ) -->
                   <p-autoComplete
-                    [(ngModel)]="val"
-                    [suggestions]="results"
-                    (completeMethod)="search($event)"
+                    [(ngModel)]="valYrken"
+                    [suggestions]="yrkenResults"
+                    (completeMethod)="searchYrken($event)"
                     field="namn"
                     id="search-yrken"
                     styleClass="pb-search"
                     (onSelect)="yrkenAddValue($event)"
-                    (onFocus)="focusSearch($event)"
-                    (onBlur)="blurSearch($event)"
+                    (onFocus)="focusYrkenSearch($event)"
+                    (onBlur)="blurYrkenSearch($event)"
                     placeholder="Skriv t.ex. 'Sandwhichman'..">
 
-                    <ng-template let-val pTemplate="item">
+                    <ng-template let-valYrken pTemplate="item">
                       <div class="ui-helper-clearfix pb-search-suggestion">
-                        <span class="float-left">{{ val.namn }}</span>
-                        <span class="float-right">{{ val.typ }}</span>
+                        <span class="float-left">{{ valYrken.namn }}</span>
+                        <span class="float-right">{{ valYrken.typ }}</span>
                       </div>
                     </ng-template>
 
                   </p-autoComplete>
                   
-                  <div *ngIf="showCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
+                  <div *ngIf="showYrkenCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
                     <div *ngFor="let profilkriterium of chosenYrken" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }"> 
                       <div data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                           {{ profilkriterium.namn }}
-                          <i class="fa fa-close" (click)="removeCriteria(profilkriterium)"></i>    
+                          <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>    
                       </div>
                     </div>
                   </div>
 
-                  <input type="text" class="pb-search-field" placeholder="Skriv t.ex. 'Västerås'.." aria-describedby="sizing-addon1">
+                  <!-- Ort search -->
+                  <p-autoComplete
+                    [(ngModel)]="valOrter"
+                    [suggestions]="orterResults"
+                    (completeMethod)="searchOrter($event)"
+                    field="namn"
+                    id="search-orter"
+                    styleClass="pb-search"
+                    (onSelect)="orterAddValue($event)"
+                    (onFocus)="focusOrterSearch($event)"
+                    (onBlur)="blurOrterSearch($event)"
+                    placeholder="Skriv t.ex. 'Västerås'..">
+
+                    <ng-template let-valOrter pTemplate="item">
+                      <div class="ui-helper-clearfix pb-search-suggestion">
+                        <span class="float-left">{{ valOrter.namn }}</span>
+                        <span class="float-right">{{ valOrter.typ }}</span>
+                      </div>
+                    </ng-template>
+
+                  </p-autoComplete>
+
+                  <div *ngIf="showOrterCriteria && chosenOrter.length > 0" id="chosenOrterCriteria">
+                    <div *ngFor="let profilkriterium of chosenOrter" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }"> 
+                      <div data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                        {{ profilkriterium.namn }}
+                        <i class="fa fa-close" (click)="removeOrterCriteria(profilkriterium)"></i>    
+                      </div>
+                    </div>
+                  </div>
+
                   <button class="pb-search-button pb-search-button-width">
                     <p class="text-center">Sök</p>
                   </button>
@@ -69,15 +100,24 @@
               </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <div style="width: 51%;" *ngIf="chosenYrken.length > 0 && !showCriteria">
-                <div class="float-right active-yrken-pill">
+          <div class="row chosen-criteria-tags">
+            <div class="col-md-6">
+              <div class="chosenYrkenContainer" *ngIf="chosenYrken.length > 0 && !showYrkenCriteria">
+                <div class="float-left active-yrken-pill">
                   <span>{{ chosenYrken[0].namn }}</span>
-                  <span class="active-yrken-pill-number" *ngIf="chosenYrken.length > 1">+ {{ chosenYrken.length - 1 }}</span>
+                  <span class="active-yrken-pill-number" *ngIf="chosenYrken.length > 1">+{{ chosenYrken.length - 1 }}</span>
                   <i class="fa fa-close" (click)="removeFromChosenYrken()"></i>
                 </div>
-              </div>                      
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="chosenOrterContainer" *ngIf="chosenOrter.length > 0 && !showOrterCriteria" style="background-color:aquamarine;">
+                <div class="float-left active-yrken-pill">
+                  <span>{{ chosenOrter[0].namn }}</span>
+                  <span class="active-yrken-pill-number" *ngIf="chosenOrter.length > 1">+{{ chosenOrter.length - 1 }}</span>
+                  <i class="fa fa-close" (click)="removeFromChosenOrter()"></i>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -98,7 +138,7 @@
                 <p class="text-center search-expand-button-text"><i class="fa fa-angle-down"></i>Se fler sökkriterier</p>
             </button>
 
-            <div class="collapse " id="expandSearch">
+            <div class="collapse" id="expandSearch">
               <h2>All of the unfolding content</h2>
               <p>Bacon ipsum dolor amet frankfurter short ribs corned beef, meatloaf filet mignon doner landjaeger swine biltong chuck. Pork loin kielbasa rump, biltong tenderloin spare ribs buffalo doner beef pork belly porchetta prosciutto. Sausage venison prosciutto picanha brisket cupim spare ribs, cow pork chop tail sirloin. Landjaeger kielbasa venison spare ribs. Rump meatloaf flank, jowl tenderloin shank shoulder brisket leberkas strip steak ribeye biltong hamburger cow short ribs.</p>
               <p>Chicken landjaeger short loin tail. Pork belly shoulder tongue salami buffalo, bresaola t-bone kevin. Tail chuck turducken, pancetta turkey ground round burgdoggen kielbasa pork swine boudin. Porchetta jowl leberkas, swine pork boudin hamburger filet mignon chuck shank. Cupim hamburger landjaeger shank picanha. Landjaeger turducken andouille, buffalo biltong bacon kielbasa strip steak filet mignon ribeye short ribs corned beef flank sausage turkey.</p>

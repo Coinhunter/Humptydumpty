@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PbapiKriterierService } from '../services/pbapi-kriterier/pbapi-kriterier.service';
+import { PbapiMatchningService } from '../services/pbapi-matchning/pbapi-matchning.service';
+import { UtilService } from '../services/util/util.service';
+
 import { Profilkriterium } from 'app/models/Profilkriterium';
 import { IProfilkriterium } from 'app/models/IProfilkriterium.interface';
 import { HttpClient } from '@angular/common/http';
@@ -11,36 +14,54 @@ import { SynonymSearchResultDTO } from 'app/models/SynonymSearchResultDTO';
   selector: 'app-component-search',
   templateUrl: './component-search.component.html',
   styleUrls: ['./component-search.component.scss'],
-  providers: [ PbapiKriterierService ],
+  providers: [ PbapiKriterierService, PbapiMatchningService, UtilService ],
 })
 export class ComponentSearchComponent implements OnInit {
 
   antalLedigaJobb: string;
-  showCriteria: boolean = false;
 
-  val: Profilkriterium;
-  results: Array<Profilkriterium>;
-
+  // Yrken, yrkesgrupper, yrkesområden..
+  showYrkenCriteria: boolean = false;
+  valYrken: Profilkriterium;
+  yrkenResults: Array<Profilkriterium>;
   chosenYrken: Array<Profilkriterium> = [];
+  yrkenTimeout: any;
 
-  timeout: any; 
+  // Orter, kommun, länder..
+  showOrterCriteria: boolean = false;
+  valOrter: Profilkriterium;
+  orterResults: Array<Profilkriterium>;
+  chosenOrter: Array<Profilkriterium> = [];
+  orterTimeout: any;
 
-  constructor(private pbKriterier: PbapiKriterierService) {
-    this.antalLedigaJobb = '85 323';
-  }
+  constructor(private pbKriterier: PbapiKriterierService,
+      private pbMatchning: PbapiMatchningService,
+      private util: UtilService) {}
 
-  search(event) {
-    this.results = [];
-    this.results.push(new Profilkriterium(event.query, event.query, 'fritext'));
+  searchYrken(event) {
+    this.yrkenResults = [];
+    this.yrkenResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
 
-    this.pbKriterier.getKriterierForTypeAndFilter('YRKEN', event.query).then((data => {
+    this.pbKriterier.getKriterierForTypeAndFilter('YRKEN', event.query).then((data) => {
             
       data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();
-        this.results.push(kriterium);
+        this.yrkenResults.push(kriterium);
       });
 
-    }));
+    });
+  }
+
+  searchOrter(event) {
+    this.orterResults = [];
+    this.orterResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
+
+    this.pbKriterier.getJobbaIKriterier(event.query).then((data) => {
+      data.slice(0,5).forEach((kriterium) => {
+        kriterium.typ = kriterium.typ.toLowerCase();
+        this.orterResults.push(kriterium);
+      });
+    });
   }
 
   yrkenAddValue(value) {
@@ -53,46 +74,93 @@ export class ComponentSearchComponent implements OnInit {
       this.chosenYrken.push(new Profilkriterium(value.id, value.namn, value.typ));
     }
 
-    this.val = undefined;
+    this.valYrken = undefined;
     this.focusYrkenSearchInput();
+  }
+
+  orterAddValue(value) {
+    // Avoid adding the same thing multiple times.
+    var found = this.chosenOrter.find((profilkriterium) => {
+      return profilkriterium.varde === value.id;
+    });
+
+    if (!found) {
+      this.chosenOrter.push(new Profilkriterium(value.id, value.namn, value.typ));
+    }
+
+    this.valOrter = undefined;
+    this.focusOrterSearchInput();
   }
 
   removeFromChosenYrken() {
     if (this.chosenYrken.length > 1) {
       this.focusYrkenSearchInput();
     } else {
-      this.removeCriteria(this.chosenYrken[0]);
+      this.removeYrkenCriteria(this.chosenYrken[0]);
       this.focusYrkenSearchInput();
+    }
+  }
+
+  removeFromChosenOrter() {
+    if (this.chosenOrter.length > 1) {
+      this.focusOrterSearchInput();
+    } else {
+      this.removeYrkenCriteria(this.chosenOrter[0]);
+      this.focusOrterSearchInput();
     }
   }
 
   focusYrkenSearchInput() {
     document.getElementById('search-yrken').getElementsByTagName("input")[0].focus();
+  }  
+
+  focusOrterSearchInput() {
+    document.getElementById('search-orter').getElementsByTagName("input")[0].focus();
   }
 
-  removeCriteria(profilkriterium) {
+  removeYrkenCriteria(profilkriterium) {
     const index = this.chosenYrken.indexOf(profilkriterium);
-    console.log(index);
-
     if (index > -1) {
       this.chosenYrken.splice(index, 1);
     }
-    clearTimeout(this.timeout);
+    clearTimeout(this.yrkenTimeout);
   }
 
-  focusSearch(event) {
-    this.val = undefined;
-    this.showCriteria = true;
+  removeOrterCriteria(profilkriterium) {
+    const index = this.chosenOrter.indexOf(profilkriterium);
+    if (index > -1) {
+      this.chosenOrter.splice(index, 1);
+    }
+    clearTimeout(this.orterTimeout);
   }
 
-  blurSearch(event) {
-    this.timeout = setTimeout(() => {
-      this.showCriteria = false;
-      // this.val = new Profilkriterium(4444, 'Exempel', 'Fritext');
+
+  focusYrkenSearch(event) {
+    this.valYrken = undefined;
+    this.showYrkenCriteria = true;
+  }
+
+  focusOrterSearch(event) {
+    this.valOrter = undefined;
+    this.showOrterCriteria = true;
+  }
+
+  blurYrkenSearch(event) {
+    this.yrkenTimeout = setTimeout(() => {
+      this.showYrkenCriteria = false;
+    }, 100);
+  }
+
+  blurOrterSearch(event) {
+    this.orterTimeout = setTimeout(() => {
+      this.showOrterCriteria = false;
     }, 100);
   }
 
   ngOnInit() {
+    this.pbMatchning.getNumberOfAvailableJobs().then((result) => {
+      this.antalLedigaJobb = this.util.formatNumberOfJobs(result.toString());
+    });
   }
 
 }

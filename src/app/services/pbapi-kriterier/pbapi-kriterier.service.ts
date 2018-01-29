@@ -39,6 +39,16 @@ export class PbapiKriterierService {
     });
   }
 
+  getJobbaIKriterier(filter: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const url = `${this.pbApi}/matchning/matchningskriterier?typer=kommuner&typer=lan&typer=lander&namnfilter=${filter}`;
+      this.httpClient.get(url).subscribe(data => {
+        const result = data as Array<IProfilkriterium>;
+        resolve(result);
+      });
+    })
+  }
+
   getKriterierForTypeAndFilter(type: string, filter: string): Promise<KriterieSearch> {
     return new Promise((resolve, reject) => {
       const url = `${this.pbApi}/matchning/matchningskriterierSynonym?typer=${type}&namnfilter=${filter}`;
