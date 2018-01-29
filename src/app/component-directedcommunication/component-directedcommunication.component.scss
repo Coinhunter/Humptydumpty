@@ -91,4 +91,26 @@
 }
 .my-profile-communication {
   padding-top: 40px;
+  img {
+    width: 100%;
+  }
+
+  @media only screen and (max-width : $screen-sm) {
+    padding-top: 0;
+
+    .row {
+      flex-flow: column-reverse;
+    }
+    .text {
+      width: calc(100% - 40px);
+      margin: 0 20px;
+      margin-top: -40px;
+      padding: 15px;
+      z-index: 1;
+      background: $white-base;
+    }
+    .image {
+      padding: 0;
+    }
+  }
 }
