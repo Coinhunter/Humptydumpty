@@ -27,6 +27,15 @@ describe('UtilService', () => {
     ]);
     expect(resultString).toEqual('https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/?KOMMUNER=3;7&LAN=1;4&LANDER=2&SPRAK=6;9&YRKEN=5;8');
   }));
+
+  it('should format number properly', inject([UtilService], (service: UtilService) => {
+    expect(service.formatNumberOfJobs("123456")).toEqual("123 456");
+    expect(service.formatNumberOfJobs("12345")).toEqual("12 345");
+    expect(service.formatNumberOfJobs("1234")).toEqual("1 234");
+    expect(service.formatNumberOfJobs("123")).toEqual("123");
+    expect(service.formatNumberOfJobs("12")).toEqual("12");
+    expect(service.formatNumberOfJobs("1")).toEqual("1");
+  }));
   
 
 });

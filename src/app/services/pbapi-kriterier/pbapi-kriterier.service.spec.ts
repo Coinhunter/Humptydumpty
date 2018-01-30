@@ -2,7 +2,7 @@ import { TestBed, inject, async } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { PbapiKriterierService } from './pbapi-kriterier.service';
-import { ProfilkriteriumTyper } from './ProfilkriteriumTyper';
+import { ProfilkriteriumTyper } from '../../models/ProfilkriteriumTyper';
 
 describe('PbapiKriterierService', () => {
   beforeEach(() => {

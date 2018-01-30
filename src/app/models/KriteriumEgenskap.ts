@@ -1,4 +1,5 @@
 export class KriteriumEgenskap {
-  varde: string;
-  typ: string;
+  constructor(
+    public varde:string,
+    public typ:string) {}
 };

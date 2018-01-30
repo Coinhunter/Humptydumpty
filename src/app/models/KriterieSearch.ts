@@ -3,11 +3,7 @@ import { SynonymSearchResultDTO } from './SynonymSearchResultDTO';
 
 
 export class KriterieSearch {
-    matchningskriteriumList: Array<Profilkriterium>;
-    synonymSearchResultDTO: SynonymSearchResultDTO;
-
-    constructor(matchningskriteriumList, synonymSearchResultDTO) { 
-        this.matchningskriteriumList = matchningskriteriumList;
-        this.synonymSearchResultDTO = synonymSearchResultDTO;
-    }
+    constructor(
+        public matchningskriteriumList: Array<Profilkriterium>, 
+        public synonymSearchResultDTO: SynonymSearchResultDTO) {}
 }

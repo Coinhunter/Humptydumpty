@@ -12,6 +12,12 @@ export class PbapiMatchningService {
   constructor(private httpClient: HttpClient) {
   }
 
+  getNumberOfAvailableJobs():Promise<string> {
+    const url = `${this.pbApi}/matchning/rekryteringsbehov/antal`;
+    return this.httpClient.get<string>(url).toPromise();
+  }
+  
+  
   getMatchingAds(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
     const searchCriteria = this.getSearchRequestBodyForCriteria(criteria, numberOfAdsPerSection, offset);
     const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov`;
@@ -19,11 +25,6 @@ export class PbapiMatchningService {
       .map(this.extractData)
       .catch(this.handleError)
       .toPromise();
-  }
-
-  getNumberOfAvailableJobs() {
-    const url = `${this.pbApi}/matchning/rekryteringsbehov/antal`;
-    return this.httpClient.get(url).toPromise();
   }
 
   getAd(id: string) {

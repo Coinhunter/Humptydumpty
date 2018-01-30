@@ -5,6 +5,5 @@ export class Profilkriterium {
         public varde:string, 
         public namn:string, 
         public typ:string, 
-        public egenskaper?:Array<KriteriumEgenskap>) {
-    }
+        public egenskaper?:Array<KriteriumEgenskap>) {}
 }

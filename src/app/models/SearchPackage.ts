@@ -1,16 +1,11 @@
 import { Profilkriterium } from "./Profilkriterium";
 
 export class SearchPackage {
-    namn: string;
-    imgUrl: string;
-    text: string;
-    kriterier: Array<Profilkriterium>;
     searchUrl: string;
 
-    constructor(namn, imgUrl, text, kriterier) { 
-        this.namn = namn;
-        this.imgUrl = imgUrl;
-        this.text = text;
-        this.kriterier = kriterier;
-    }
+    constructor(
+        public namn:string, 
+        public imgUrl:string, 
+        public text:string, 
+        public kriterier:Array<Profilkriterium>) {}
 }

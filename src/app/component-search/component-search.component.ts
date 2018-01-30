@@ -41,7 +41,7 @@ export class ComponentSearchComponent implements OnInit {
     this.yrkenResults = [];
     this.yrkenResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
 
-    this.pbKriterier.getKriterierForTypeAndFilter('YRKEN', event.query).then((data) => {
+    this.pbKriterier.getJobbaSomKriterier(event.query).subscribe((data) => {
       data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();
         this.yrkenResults.push(kriterium);
@@ -52,8 +52,8 @@ export class ComponentSearchComponent implements OnInit {
   searchOrter(event) {
     this.orterResults = [];
     this.orterResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
-    this.pbKriterier.getJobbaIKriterier(event.query).then((data) => {
-      data.slice(0,5).forEach((kriterium) => {
+    this.pbKriterier.getJobbaIKriterier(event.query).subscribe((data) => {
+      data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();
         this.orterResults.push(kriterium);
       });
