@@ -116,6 +116,7 @@
   .half-page-banner:last-child {
     .content {
       padding-left: $grid-gutter-width*2;
+      @media only screen and (max-width : $screen-sm) { padding-left: $grid-gutter-width; }
     }
   }
 }
