@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
-import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
+import { Profilkriterium } from '../../models/Profilkriterium';
 import { ProfilkriteriumTyper } from './ProfilkriteriumTyper';
 import { SynonymSearchResultDTO } from 'app/models/SynonymSearchResultDTO';
 import { KriterieSearch } from 'app/models/KriterieSearch';
@@ -22,7 +22,7 @@ export class PbapiKriterierService {
     return Promise.resolve(ProfilkriteriumTyper);
   }
 
-  getKriterierForType(type: string): Promise<Array<IProfilkriterium>> {
+  getKriterierForType(type: string): Promise<Array<Profilkriterium>> {
     const key = this.getKeyFromType(type);
     console.log(key);
 
@@ -32,7 +32,7 @@ export class PbapiKriterierService {
       } else {
         const url = `${this.pbApi}/matchning/matchningskriterier?typer=${type}`;
         this.httpClient.get(url).subscribe(data => {
-          const result = data as Array<IProfilkriterium>;
+          const result = data as Array<Profilkriterium>;
           resolve(result);
         });
       }
@@ -43,7 +43,7 @@ export class PbapiKriterierService {
     return new Promise((resolve, reject) => {
       const url = `${this.pbApi}/matchning/matchningskriterier?typer=kommuner&typer=lan&typer=lander&namnfilter=${filter}`;
       this.httpClient.get(url).subscribe(data => {
-        const result = data as Array<IProfilkriterium>;
+        const result = data as Array<Profilkriterium>;
         resolve(result);
       });
     })
@@ -63,7 +63,7 @@ export class PbapiKriterierService {
     const resultArray = [];
     result.forEach((element) => {
       //Profilkriterium
-      const kriterium: IProfilkriterium = element;
+      const kriterium: Profilkriterium = element;
       resultArray.push(kriterium);
     });
     return resultArray;

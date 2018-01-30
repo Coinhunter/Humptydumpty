@@ -5,7 +5,6 @@ import { PbapiMatchningService } from '../services/pbapi-matchning/pbapi-matchni
 import { UtilService } from '../services/util/util.service';
 
 import { Profilkriterium } from 'app/models/Profilkriterium';
-import { IProfilkriterium } from 'app/models/IProfilkriterium.interface';
 import { HttpClient } from '@angular/common/http';
 import { SynonymSearchResultDTO } from 'app/models/SynonymSearchResultDTO';
 
@@ -43,19 +42,16 @@ export class ComponentSearchComponent implements OnInit {
     this.yrkenResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
 
     this.pbKriterier.getKriterierForTypeAndFilter('YRKEN', event.query).then((data) => {
-            
       data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();
         this.yrkenResults.push(kriterium);
       });
-
     });
   }
 
   searchOrter(event) {
     this.orterResults = [];
     this.orterResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
-
     this.pbKriterier.getJobbaIKriterier(event.query).then((data) => {
       data.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
 import { SearchService } from '../search-result/search.service';
-import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
+import { Profilkriterium } from '../../models/Profilkriterium';
 
 @Injectable()
 export class PbapiMatchningService {
@@ -12,7 +12,7 @@ export class PbapiMatchningService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getMatchingAds(criteria: Array<IProfilkriterium>, numberOfAdsPerSection: number, offset: number) {
+  getMatchingAds(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
     const searchCriteria = this.getSearchRequestBodyForCriteria(criteria, numberOfAdsPerSection, offset);
     const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov`;
     return this.httpClient.post(url, searchCriteria)
@@ -29,11 +29,9 @@ export class PbapiMatchningService {
   getAd(id: string) {
     const url = `${this.pbApi}/matchning/matchandeRekryteringsbehov/${id}`;
     return this.httpClient.post(url, {}) // Consider inputting profile information here.. 
-      .catch(this.handleError)
-      .map(this.extractData);
-  } 
+  }
 
-  private getSearchRequestBodyForCriteria(criteria: Array<IProfilkriterium>, numberOfAdsPerSection: number, offset: number) {
+  private getSearchRequestBodyForCriteria(criteria: Array<Profilkriterium>, numberOfAdsPerSection: number, offset: number) {
     return {
       'matchningsprofil': {
         'profilkriterier': criteria

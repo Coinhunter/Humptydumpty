@@ -1,13 +1,10 @@
-import { IProfilkriterium } from '../models/IProfilkriterium.interface';
+import { KriteriumEgenskap } from "app/models/KriteriumEgenskap";
 
-export class Profilkriterium implements IProfilkriterium {
-    varde: string;
-    namn: string;
-    typ: string;
-
-    constructor(varde, namn, typ) { 
-        this.varde = varde;
-        this.namn = namn;
-        this.typ = typ;
+export class Profilkriterium {
+    constructor(
+        public varde:string, 
+        public namn:string, 
+        public typ:string, 
+        public egenskaper?:Array<KriteriumEgenskap>) {
     }
 }

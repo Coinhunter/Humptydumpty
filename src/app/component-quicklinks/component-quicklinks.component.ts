@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Profilkriterium } from '../models/Profilkriterium';
-import { UrlparserService } from '../services/urlparser/urlparser.service';
+import { UtilService } from '../services/util/util.service';
 
 @Component({
   selector: 'app-component-quicklinks',
@@ -9,7 +9,10 @@ import { UrlparserService } from '../services/urlparser/urlparser.service';
 })
 export class ComponentQuicklinksComponent implements OnInit {
 
-  urlParserService: UrlparserService = new UrlparserService();
+  constructor(private utilService: UtilService) { }
+
+  ngOnInit() {
+  }
 
   quicklinks = [
     {
@@ -17,15 +20,15 @@ export class ComponentQuicklinksComponent implements OnInit {
       items: [
         {
           name: 'Göteborg',
-          url: this.urlParserService.getUrlForCriteria([new Profilkriterium('1480', 'Göteborg', 'KOMMUN')]),
+          url: this.utilService.getUrlForCriteria([new Profilkriterium('1480', 'Göteborg', 'KOMMUN')]),
         },
         {
           name: 'Stockholm',
-          url: this.urlParserService.getUrlForCriteria([new Profilkriterium('0180', 'Stockholm', 'KOMMUN')]),
+          url: this.utilService.getUrlForCriteria([new Profilkriterium('0180', 'Stockholm', 'KOMMUN')]),
         },
         {
           name: 'Malmö',
-          url: this.urlParserService.getUrlForCriteria([new Profilkriterium('1280', 'Malmö', 'KOMMUN')]),
+          url: this.utilService.getUrlForCriteria([new Profilkriterium('1280', 'Malmö', 'KOMMUN')]),
         },
         /*
         {
@@ -41,7 +44,7 @@ export class ComponentQuicklinksComponent implements OnInit {
       items: [
         {
           name: 'Hotell & Restaurang',
-          url: this.urlParserService.getUrlForCriteria([
+          url: this.utilService.getUrlForCriteria([
             new Profilkriterium('5132', 'Bartendrar', 'YRKESGRUPP_ROLL'),
             new Profilkriterium('5131', 'Hovmästare och servitörer', 'YRKESGRUPP_ROLL'),
             new Profilkriterium('9413', 'Kafé- och konditoribiträden', 'YRKESGRUPP_ROLL'),
@@ -54,13 +57,13 @@ export class ComponentQuicklinksComponent implements OnInit {
         },
         {
           name: 'Administration',
-          url: this.urlParserService.getUrlForCriteria([
+          url: this.utilService.getUrlForCriteria([
             new Profilkriterium('1', 'Administration, ekonomi, juridik', 'YRKESOMRADE_ROLL'),           
           ]),
         },
         {
           name: 'Hälsa och Sjukvård',
-          url: this.urlParserService.getUrlForCriteria([
+          url: this.utilService.getUrlForCriteria([
             new Profilkriterium('5326', 'Ambulanssjukvårdare', 'yrkesgrupper'),
             new Profilkriterium('5325', 'Barnsköterskor', 'yrkesgrupper'),
             new Profilkriterium('5341', 'Skötare', 'yrkesgrupper'),
@@ -96,17 +99,12 @@ export class ComponentQuicklinksComponent implements OnInit {
         },
         {
           name: 'Data och IT',
-          url: this.urlParserService.getUrlForCriteria([
+          url: this.utilService.getUrlForCriteria([
             new Profilkriterium('3', 'Data/IT', 'YRKESOMRADE_ROLL'),
           ]),
         },                        
       ]
     }
   ];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -1,12 +1,12 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import {BrowserModule} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GlobalVariables } from '../../global';
 import { Observable } from 'rxjs';
-import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
+import { Profilkriterium } from '../../models/Profilkriterium';
 
 @NgModule({
   imports: [

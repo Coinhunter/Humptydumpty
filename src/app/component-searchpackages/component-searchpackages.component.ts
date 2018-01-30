@@ -1,27 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchPackage } from '../models/SearchPackage';
-import { UrlparserService } from '../services/urlparser/urlparser.service';
+import { UtilService } from '../services/util/util.service';
 import { Profilkriterium } from '../models/Profilkriterium';
 
 @Component({
   selector: 'app-component-searchpackages',
   templateUrl: './component-searchpackages.component.html',
-  styleUrls: ['./component-searchpackages.component.scss']
+  styleUrls: ['./component-searchpackages.component.scss'],
+  providers: [ UtilService ],
 })
 export class ComponentSearchpackagesComponent implements OnInit {
-
-  urlParser: UrlparserService = new UrlparserService();
   searchPacks: Array<SearchPackage>;
   heroPackage: SearchPackage;
   heroCompanionPackages: Array<SearchPackage>;
   foldoutPackages: Array<SearchPackage>;
 
-  constructor() {}
+  constructor(private utilService: UtilService) {}
 
   ngOnInit() {
     this.searchPacks = this.getJsonData();
     this.searchPacks.forEach((searchpackage) => {
-      searchpackage.searchUrl = this.urlParser.getUrlForCriteria(searchpackage.kriterier);
+      searchpackage.searchUrl = this.utilService.getUrlForCriteria(searchpackage.kriterier);
     });
     this.heroPackage = this.getHeroPackage();
     this.heroCompanionPackages = this.getHeroCompanionPackages();
@@ -42,7 +41,7 @@ export class ComponentSearchpackagesComponent implements OnInit {
 
   getSearchUrl(kriterier) {
     console.log(kriterier);
-    return this.urlParser.getUrlForCriteria(kriterier);
+    return this.utilService.getUrlForCriteria(kriterier);
   }
 
   getJsonData(): Array<SearchPackage> {

@@ -13,6 +13,7 @@ import { ComponentSearchComponent } from './component-search/component-search.co
 import { FormsModule } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/components/autocomplete/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
+import { UtilService } from 'app/services/util/util.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ComponentDirectedcommunicationComponent,
     ComponentSearchpackagesComponent,
     ComponentQuicklinksComponent,
-    ComponentSearchComponent,    
+    ComponentSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
-    GoogleAnalyticsEventsService
+    GoogleAnalyticsEventsService,
+    UtilService,
   ],
   bootstrap: [AppComponent]
 })

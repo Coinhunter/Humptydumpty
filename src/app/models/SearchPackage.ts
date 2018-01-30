@@ -1,5 +1,4 @@
 import { Profilkriterium } from "./Profilkriterium";
-import { UrlparserService } from '../services/urlparser/urlparser.service';
 
 export class SearchPackage {
     namn: string;
