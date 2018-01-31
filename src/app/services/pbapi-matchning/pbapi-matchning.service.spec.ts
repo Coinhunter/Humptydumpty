@@ -2,7 +2,7 @@ import { TestBed, inject, async } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { PbapiMatchningService } from './pbapi-matchning.service';
-import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
+import { Profilkriterium } from '../../models/Profilkriterium';
 
 describe('PbapiMatchningService', () => {
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('PbapiMatchningService', () => {
     });
   });
 
-  const criteria: Array<IProfilkriterium> = [
+  const criteria: Array<Profilkriterium> = [
     {
       'namn': 'Stockholm',
       'varde': '0180',
@@ -29,13 +29,13 @@ describe('PbapiMatchningService', () => {
   }));
 
   it('should return a number from the API when calling getNumberOfAds()', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
-    service.getNumberOfAvailableJobs().then((res) => {
+    service.getNumberOfAvailableJobs().subscribe((res) => {
       expect(res).toBeDefined();
     });
   })));
 
   it('should fill the contract for getMatchingAds', async(inject([PbapiMatchningService], (service: PbapiMatchningService) => {
-    service.getMatchingAds(criteria, 25, 0).then((res) => {
+    service.getMatchingAds(criteria, 25, 0).subscribe((res) => {
       expect(res).toBeDefined();
 
       expect(res.rekryteringsbehov).toBeDefined();

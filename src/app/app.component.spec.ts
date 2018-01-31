@@ -2,7 +2,6 @@ import { TestBed, async, inject } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { GoogleAnalyticsEventsService } from "./services/google-analytics-events/google-analytics-events.service";
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { ComponentDirectedcommunicationComponent } from './component-directedcommunication/component-directedcommunication.component';
@@ -24,13 +23,11 @@ describe('AppComponent', () => {
         ComponentQuicklinksComponent,
         ComponentSearchComponent,
       ],
-      providers: [
-        GoogleAnalyticsEventsService
-      ]      
+      providers: [ ]      
     }).compileComponents();
   }));
 
-  it('should create the app', inject([GoogleAnalyticsEventsService], (googleAnalyticsEventsService: GoogleAnalyticsEventsService) => {
+  it('should create the app', inject([], () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();

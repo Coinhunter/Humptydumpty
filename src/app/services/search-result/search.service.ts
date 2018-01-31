@@ -135,7 +135,7 @@ export class SearchService {
 
         var obsAds = this.pbapiMatchning
           .getMatchingAds(criteria, this.numberOfAdsPerSection, this.calculateOffsetForIndex(index))
-          .then((result) => {
+          .subscribe((result) => {
             this.numberOfAds = result.antalRekryteringsbehov;
             this.numberOfJobs = result.antalPlatser;
             this.resultContainerService.addResultForIndex(index, result.rekryteringsbehov);

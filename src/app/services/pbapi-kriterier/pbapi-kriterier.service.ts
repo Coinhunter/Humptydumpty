@@ -14,12 +14,6 @@ export class PbapiKriterierService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getKriterieTyper(): Promise<Array<string>> {
-    // This should probably be a backend-service, depends a litle on how it's implemented in matchning component.
-    // TODO: Implement an api-call to get this list.
-    return Promise.resolve(ProfilkriteriumTyper);
-  }
-
   getJobbaIKriterier(filter: string):Observable<KriterieSearch> {
     const url = `${this.pbApi}/matchning/matchningskriterier?typer=kommuner&typer=lan&typer=lander&namnfilter=${filter}`;
     return this.httpClient.get<KriterieSearch>(url);
@@ -28,5 +22,5 @@ export class PbapiKriterierService {
   getJobbaSomKriterier(filter: string) {
     const url = `${this.pbApi}/matchning/matchningskriterierSynonym?typer=yrken&typer=yrkesgrupper&typer=yrkesomraden&namnfilter=${filter}`;
     return this.httpClient.get<KriterieSearch>(url);
-  }
+  }  
 }

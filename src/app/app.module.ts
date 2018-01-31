@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { GoogleAnalyticsEventsService } from "./services/google-analytics-events/google-analytics-events.service";
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -31,7 +30,6 @@ import { UtilService } from 'app/services/util/util.service';
     HttpClientModule,
   ],
   providers: [
-    GoogleAnalyticsEventsService,
     UtilService,
   ],
   bootstrap: [AppComponent]

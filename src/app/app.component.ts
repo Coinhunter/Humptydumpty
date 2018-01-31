@@ -1,5 +1,4 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { GoogleAnalyticsEventsService } from './services/google-analytics-events/google-analytics-events.service';
 import { Router, NavigationEnd } from "@angular/router";
 
 import { ComponentDirectedcommunicationComponent } from './component-directedcommunication/component-directedcommunication.component';
@@ -16,7 +15,7 @@ declare var ga: Function;
 })
 
 export class AppComponent implements OnInit {
-  constructor(public router: Router, public googleAnalyticsEventsService: GoogleAnalyticsEventsService) {}
+  constructor(public router: Router) {}
 
   ngOnInit() {
     /*

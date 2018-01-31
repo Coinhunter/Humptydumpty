@@ -154,7 +154,7 @@ export class ComponentSearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pbMatchning.getNumberOfAvailableJobs().then((result) => {
+    this.pbMatchning.getNumberOfAvailableJobs().subscribe((result) => {
       this.antalLedigaJobb = this.util.formatNumberOfJobs(result.toString());
     });
   }
