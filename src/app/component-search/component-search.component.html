@@ -6,13 +6,13 @@
               <h1 class="welcome">Välkommen till Platsbanken</h1>
               <h1>Just nu finns det <span class="bold">{{ antalLedigaJobb }} </span>lediga jobb</h1>
               <p>Skriv vad du vill jobba med och var i Sverige du söker jobb. Du kan söka flera yrken samtidigt. Lägg till dina kompetenser.</p>
-            </div>    
+            </div>
             <div class="col-md-6">
               <img src="./assets/img/searchman.svg" class="searchman">
             </div>
           </div>
 
-          <div class="row searchlabels"> 
+          <div class="row searchlabels">
             <div class="col-md-12">
               <label class="pb-search-list-label-width"></label>
               <label class="pb-search-field-label-width">Jag vill jobba som...</label>
@@ -23,13 +23,65 @@
 
           <div class="row searchfields">
               <div class="col-md-12">
-                
+
                 <div style="position: relative;">
 
-                  <button class="pb-search-list-accordion" type="button" data-toggle="collapse" data-target="#valjFranLista" aria-expanded="false" aria-controls="valjFranLista">
+                  <button class="pb-search-list-accordion" type="button" (click)="showPickFromList = !showPickFromList" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
                     <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
-                  </button>                  
-
+                    <div class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
+                      <div class="backdrop"></div>
+                      <div class="lists row">
+                        <div class="col-6">
+                          <ul class="list list-1">
+                            <li>Bla 1</li>
+                            <li>Bla 2</li>
+                            <li>Bla 3</li>
+                            <li>Bla 4</li>
+                            <li>Bla 5</li>
+                            <li>Bla 6</li>
+                            <li>Bla 7</li>
+                            <li>Bla 8</li>
+                            <li>Bla 9</li>
+                            <li>Bla 10</li>
+                            <li>Bla 11</li>
+                            <li>Bla 12</li>
+                            <li>Bla 13</li>
+                            <li>Bla 14</li>
+                            <li>Bla 15</li>
+                            <li>Bla 16</li>
+                            <li>Bla 17</li>
+                            <li>Bla 18</li>
+                            <li>Bla 19</li>
+                            <li>Bla 20</li>
+                          </ul>
+                        </div>
+                        <div class="col-6">
+                          <ul class="list list-2">
+                            <li>Tja 1</li>
+                            <li>Tja 2</li>
+                            <li>Tja 3</li>
+                            <li>Tja 4</li>
+                            <li>Tja 5</li>
+                            <li>Tja 6</li>
+                            <li>Tja 7</li>
+                            <li>Tja 8</li>
+                            <li>Tja 9</li>
+                            <li>Tja 10</li>
+                            <li>Tja 11</li>
+                            <li>Tja 12</li>
+                            <li>Tja 13</li>
+                            <li>Tja 14</li>
+                            <li>Tja 15</li>
+                            <li>Tja 16</li>
+                            <li>Tja 17</li>
+                            <li>Tja 18</li>
+                            <li>Tja 19</li>
+                            <li>Tja 20</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
                   <!-- Yrken search : ) -->
                   <p-autoComplete
                     [(ngModel)]="valYrken"
@@ -51,12 +103,12 @@
                     </ng-template>
 
                   </p-autoComplete>
-                  
+
                   <div *ngIf="showYrkenCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
-                    <div *ngFor="let profilkriterium of chosenYrken" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }"> 
+                    <div *ngFor="let profilkriterium of chosenYrken" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
                       <div data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                           {{ profilkriterium.namn }}
-                          <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>    
+                          <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>
                       </div>
                     </div>
                   </div>
@@ -84,10 +136,10 @@
                   </p-autoComplete>
 
                   <div *ngIf="showOrterCriteria && chosenOrter.length > 0" id="chosenOrterCriteria">
-                    <div *ngFor="let profilkriterium of chosenOrter" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }"> 
+                    <div *ngFor="let profilkriterium of chosenOrter" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
                       <div data-toggle="tooltip" data-placement="top" title="Tooltip on top">
                         {{ profilkriterium.namn }}
-                        <i class="fa fa-close" (click)="removeOrterCriteria(profilkriterium)"></i>    
+                        <i class="fa fa-close" (click)="removeOrterCriteria(profilkriterium)"></i>
                       </div>
                     </div>
                   </div>
@@ -95,8 +147,8 @@
                   <button class="pb-search-button pb-search-button-width">
                     <p class="text-center">Sök</p>
                   </button>
-                  
-                </div>          
+
+                </div>
               </div>
           </div>
 
@@ -148,4 +200,3 @@
       </div>
     </div>
 </section>
-

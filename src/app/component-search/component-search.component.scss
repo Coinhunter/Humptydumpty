@@ -1,3 +1,4 @@
+@import '../../sass/variables.scss';
 @import '../../sass/color-variables.scss';
 
 .search {
@@ -70,30 +71,92 @@
                 display: inline-block;
                 height: 60px;
                 padding-bottom: 1px;
+                position: relative;
+                z-index: 30;
 
                 i.fa {
                     position: relative;
                     transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease;
                 }
+                &:hover {
+                    i.fa {
+                        background-color: transparent;
+                        //transform: rotate(-360deg);
+                        cursor: pointer;
+                        box-shadow: none;
+                    }
+                    p {
+                        color: $blue-base;
+                        -webkit-transition: color .2s ease-in-out;
+                        -moz-transition: color .2s ease-in-out;
+                          -o-transition: color .2s ease-in-out;
+                             transition: color .2s ease-in-out;
+                    }
+                }
+                &.open {
+                  background: $white-base;
+                  border-bottom-left-radius: 0px;
 
+                  &:after {
+                    content: "";
+                    position: absolute;
+                    width: calc(100% + 2px);
+                    height: 11px;
+                    bottom: -11px;
+                    left: -1px;
+                    z-index: 11;
+                    background: $white-base;
+                    border-right: 1px solid rgb(204, 204, 204);
+                    border-left: 1px solid rgb(204, 204, 204);
+                  }
+                }
             }
 
-            .pb-search-list-accordion:hover {
-                i.fa {
-                    background-color: transparent;
-                    transform: rotate(-360deg);
-                    cursor: pointer;
-                    box-shadow: none;
-                }
-                p {
-                    color: $blue-base;
-                    -webkit-transition: color .2s ease-in-out;
-                    -moz-transition: color .2s ease-in-out;
-                      -o-transition: color .2s ease-in-out;
-                         transition: color .2s ease-in-out;
-                }
-            }
+            #valj-fran-lista {
+              position: absolute;
+              top: calc(100% + 10px);
+              left: -1px;
+              background: $white-base;
 
+              &.closed {
+                display: none;
+              }
+
+              .lists {
+                background: $white-base;
+                position: absolute;
+                z-index: 1000000;
+                width: 1140px;
+                border: 1px solid rgb(204, 204, 204);
+                z-index: 10;
+                margin-left: 0;
+                margin-right: 0;
+
+                ul{
+                  display: inline-block;
+                }
+
+                > div {
+                  margin: $grid-gutter-width 0;
+                  &:last-child {
+                    border-left: 1px solid rgb(204, 204, 204);
+                  }
+                }
+              }
+
+              .backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                //background: $white-base;
+                background: $gray-40;
+                content: " ";
+                width: 100vw;
+                height: 100vh;
+                z-index: -1;
+                opacity: 0.5;
+              }
+            }
 
             .pb-search-field {
                 height: 60px;
@@ -171,8 +234,8 @@
     }
 
     .chosenYrkenContainer {
-        position:absolute; 
-        left:42%;        
+        position:absolute;
+        left:42%;
     }
 
     .chosenOrterContainer {
@@ -188,7 +251,7 @@
         z-index:2;
         padding-bottom: 10px;
         padding-right: 10px;
-    }    
+    }
 
     .chosenCriteriaTag {
         display: inline-block;
@@ -205,7 +268,7 @@
             cursor: pointer;
         }
     }
-    
+
     .fritextCriteriaTag {
         background-color: orange;
     }

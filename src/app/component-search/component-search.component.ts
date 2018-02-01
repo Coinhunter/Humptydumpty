@@ -19,6 +19,9 @@ export class ComponentSearchComponent implements OnInit {
 
   antalLedigaJobb: string;
 
+  // Toggle list popover
+  showPickFromList: boolean = false;
+
   // Yrken, yrkesgrupper, yrkesområden..
   showYrkenCriteria: boolean = false;
   valYrken: Profilkriterium;
@@ -108,7 +111,7 @@ export class ComponentSearchComponent implements OnInit {
 
   focusYrkenSearchInput() {
     document.getElementById('search-yrken').getElementsByTagName("input")[0].focus();
-  }  
+  }
 
   focusOrterSearchInput() {
     document.getElementById('search-orter').getElementsByTagName("input")[0].focus();
