@@ -54,3 +54,107 @@
     }
 
 }
+
+
+// Checkboxes
+.ui-chkbox-box {
+    box-shadow:none;
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;    
+    border: 1px solid black;
+    background: $white-base;
+
+    &.ui-state-default {
+        border-radius: 5px;
+        width: 24px;
+        height: 24px;
+        border: 1px solid black;
+    }
+
+    &.ui-state-active {
+        box-shadow:none;
+        border-radius: 5px;
+        width: 24px;
+        height: 24px;
+        color: black;
+        background: $white-base;
+        border: 1px solid black;
+    }
+
+    &.ui-state-focus {
+        box-shadow:none;
+        border-radius: 5px;
+        width: 24px;
+        height: 24px;
+        color: black;
+        background: $white-base;
+        border: 1px solid black;
+    }
+
+    &.ui-chkbox-box.ui-state-focus.ui-state-active {
+        border-radius: 5px;
+        width: 24px;
+        height: 24px;
+        background: $white-base;
+        border: 1px solid black;
+    }
+    
+}
+
+.ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+    color: black;
+    border-color: black;
+    background: $white-base;
+}
+
+.ui-chkbox {
+    .ui-chkbox-icon {
+        margin-top: 4px;
+    }    
+}
+
+.ui-chkbox-label {
+    display: inline;
+    margin-left: 5px;
+    font-size: 15px;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+
+// Global search button styling.
+
+.pb-search-button {
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(46, 172, 34);
+
+    display: inline-block;
+    width: 18%;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    background-color: rgb(46, 172, 34);
+    margin-left: -5px;
+    padding-bottom: 1px;
+    height: 60px;
+
+    p {
+        color: white;
+        font-size: 19px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+.pb-search-expand-button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 42%;
+    border-radius: 4px;
+}

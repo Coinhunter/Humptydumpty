@@ -53,7 +53,8 @@ export class ComponentSearchComponent implements OnInit {
     this.orterResults = [];
     this.orterResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
     this.pbKriterier.getJobbaIKriterier(event.query).subscribe((data) => {
-      data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
+      console.log(data);
+      data.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();
         this.orterResults.push(kriterium);
       });

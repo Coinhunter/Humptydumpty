@@ -1,0 +1,57 @@
+<div class="row row-eq-height">
+  <div class="col-md-7 expand-margin">
+    <div class="row row-checkboxes">
+      <div class="col-md-5">
+        <h3>Anställningsvillkor</h3>
+        <h4>Anställningstyp</h4>
+        <p><p-checkbox name="vanlig" value="1" label="Vanlig anställning" [(ngModel)]="anstallningsvillkor"></p-checkbox></p>
+        <p><p-checkbox name="sommarferie" value="2" label="Sommarjobb / feriejobb" [(ngModel)]="anstallningsvillkor"></p-checkbox></p>
+        <p><p-checkbox name="behov" value="4" label="Behovsanställning" [(ngModel)]="anstallningsvillkor"></p-checkbox></p>
+        <h4>Önskad omfattning</h4>
+        <p><p-checkbox name="heltid" value="Endast Heltid" label="Heltid" [(ngModel)]="omfattning"></p-checkbox></p>
+        <p><p-checkbox name="deltid" value="Endast Deltid" label="Deltid" [(ngModel)]="omfattning"></p-checkbox></p>
+      </div>
+      <div class="col-md-7">
+        <h3>Körkort</h3>
+        <div class="col-md-8 subcolumn no-gutter">
+          <h4>Moped, motorcykel och traktor</h4>
+          <p><p-checkbox name="am" value="16" label="AM" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="a1" value="2" label="A1" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="a2" value="17" label="A2" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="a" value="10" label="A" [(ngModel)]="korkort"></p-checkbox></p>        
+          <h4>Personbil</h4>
+          <p><p-checkbox name="b" value="3" label="B" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="be" value="6" label="BE" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="utökad b" value="18" label="Utökad B" [(ngModel)]="korkort"></p-checkbox></p>
+        </div>
+        <div class="col-md-4 subcolumn no-gutter">
+          <h4>Lastbil</h4>
+          <p><p-checkbox name="c" value="4" label="C" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="c1e" value="14" label="C1E" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="c1" value="12" label="C1" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="ce" value="7" label="CE" [(ngModel)]="korkort"></p-checkbox></p>
+          <h4>Buss</h4>
+          <p><p-checkbox name="d" value="5" label="D" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="d1e" value="15" label="D1E" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="d1" value="19" label="D1" [(ngModel)]="korkort"></p-checkbox></p>
+          <p><p-checkbox name="de" value="8" label="DE" [(ngModel)]="korkort"></p-checkbox></p>
+        </div>      
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="col-md-5 expand-margin">
+    <h3>Arbetslivserfarenhet</h3>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Skriv t.ex. 'Lärare i grundskolan'..">
+
+    <h3>Kompetenser</h3>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Skriv t.ex. 'Lärarlegitimation'..">
+
+    <button class="pb-search-button pb-search-button-width pull-right pb-search-expand-button">
+        <p class="text-center">Sök</p>
+    </button>
+    
+  </div>
+</div>

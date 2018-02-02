@@ -8,6 +8,7 @@ import { ComponentDirectedcommunicationComponent } from './component-directedcom
 import { ComponentSearchpackagesComponent } from './component-searchpackages/component-searchpackages.component';
 import { ComponentQuicklinksComponent } from './component-quicklinks/component-quicklinks.component';
 import { ComponentSearchComponent } from './component-search/component-search.component';
+import { ComponentSearchExpandComponent } from './component-search-expand/component-search-expand.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,6 +23,7 @@ describe('AppComponent', () => {
         ComponentSearchpackagesComponent,
         ComponentQuicklinksComponent,
         ComponentSearchComponent,
+        ComponentSearchExpandComponent
       ],
       providers: [ ]      
     }).compileComponents();

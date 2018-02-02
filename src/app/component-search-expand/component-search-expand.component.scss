@@ -1,0 +1,32 @@
+@import '../../sass/color-variables.scss';
+
+.expand-margin {
+    margin-bottom: 40px;
+}
+
+h3 {
+    color: $black-10;
+}
+
+h4 {
+    color: $black-10;
+    text-transform: none;
+    font-size: 15px;
+}
+
+.subcolumn {
+    h4:first-child {
+        margin-top: 11px;
+    }
+}
+
+.row-checkboxes {
+    h4 {
+        margin-bottom: 20px;
+    }
+}
+
+.no-gutter {
+    padding-left: 0px;
+    padding-right: 0px;
+}
