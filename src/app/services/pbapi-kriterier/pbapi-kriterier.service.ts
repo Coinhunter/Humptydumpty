@@ -34,12 +34,4 @@ export class PbapiKriterierService {
     return this.httpClient.get<Array<Profilkriterium>>(url);
   }
 
-  /*
-  getOmfattningKriterier():Observable<Array<any>> {
-    const url = `${this.pbApi}/matchning/matchningskriterier/anstallningstyper`;
-    return this.httpClient.get<Array<any>>(url);    
-  }
-  */
-  
-
 }
