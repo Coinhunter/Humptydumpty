@@ -11,8 +11,11 @@ import { ComponentSearchComponent } from './component-search/component-search.co
 
 import { FormsModule } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/components/autocomplete/autocomplete';
+import { CheckboxModule } from 'primeng/components/checkbox/checkbox';
+
 import { HttpClientModule } from '@angular/common/http';
 import { UtilService } from 'app/services/util/util.service';
+import { ComponentSearchExpandComponent } from './component-search-expand/component-search-expand.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,14 @@ import { UtilService } from 'app/services/util/util.service';
     ComponentSearchpackagesComponent,
     ComponentQuicklinksComponent,
     ComponentSearchComponent,
+    ComponentSearchExpandComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AutoCompleteModule,
+    CheckboxModule,
     HttpClientModule,
   ],
   providers: [

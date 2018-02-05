@@ -5,10 +5,10 @@ import { SearchService } from './search.service';
 import { PbapiMatchningService } from '../pbapi-matchning/pbapi-matchning.service';
 import { Http, Response } from '@angular/http';
 import { HttpModule } from '@angular/http';
-import { IProfilkriterium } from '../../models/IProfilkriterium.interface';
+import { Profilkriterium } from '../../models/Profilkriterium';
 
 const data = require('./datafixture.json');
-const criteria: Array<IProfilkriterium> = [
+const criteria: Array<Profilkriterium> = [
   {
     'namn': 'Stockholm',
     'varde': '0180',

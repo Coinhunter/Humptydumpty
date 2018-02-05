@@ -14,13 +14,24 @@ export class PbapiKriterierService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getJobbaIKriterier(filter: string):Observable<KriterieSearch> {
+  getJobbaIKriterier(filter: string):Observable<Array<Profilkriterium>> {
     const url = `${this.pbApi}/matchning/matchningskriterier?typer=kommuner&typer=lan&typer=lander&namnfilter=${filter}`;
+    return this.httpClient.get<Array<Profilkriterium>>(url);
+  }
+
+  getJobbaSomKriterier(filter: string):Observable<KriterieSearch> {
+    const url = `${this.pbApi}/matchning/matchningskriterierSynonym?typer=yrken&typer=yrkesgrupper&typer=yrkesomraden&namnfilter=${filter}`;
     return this.httpClient.get<KriterieSearch>(url);
   }
 
-  getJobbaSomKriterier(filter: string) {
-    const url = `${this.pbApi}/matchning/matchningskriterierSynonym?typer=yrken&typer=yrkesgrupper&typer=yrkesomraden&namnfilter=${filter}`;
-    return this.httpClient.get<KriterieSearch>(url);
-  }  
+  getKorkortKriterier():Observable<Array<any>> {
+    const url = `${this.pbApi}/matchning/matchningskriterier/korkort`;
+    return this.httpClient.get<Array<any>>(url);
+  }
+
+  getAnstallningstypKriterier():Observable<Array<Profilkriterium>> {
+    const url = `${this.pbApi}/matchning/matchningskriterier/anstallningstyper`;
+    return this.httpClient.get<Array<Profilkriterium>>(url);
+  }
+
 }
