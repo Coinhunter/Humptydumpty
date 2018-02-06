@@ -1,34 +1,40 @@
-<section class="quicklinks">
+<section class="quicklinks typography-v2">
   <div class="container">
     <div class="row">
-    
+
       <!-- Box for quicklinkcategories small -->
-      <div class="col-sm-12 col-md-6">
-        
+      <div class="col-sm-12 col-md-7">
+
         <!-- Headlines for the quicklink-categories -->
         <div class="row">
           <div class="col-md-6" *ngFor="let quicklinkcategory of quicklinks">
-            <h3 class="rubrik">{{ quicklinkcategory.headline }}</h3>            
+            <h3 class="rubrik">{{ quicklinkcategory.headline }}</h3>
           </div>
         </div>
 
         <!-- Lists with the quicklinks for respective headline-->
         <div class="row">
           <div class="col-md-6" *ngFor="let quicklinkcategory of quicklinks">
-              <ul *ngFor="let item of quicklinkcategory.items">
-                  <li><p><a href="{{ item.url }}">{{ item.name }}</a></p></li>
-              </ul>            
+              <ul>
+                  <li *ngFor="let item of quicklinkcategory.items"><p><a href="{{ item.url }}">{{ item.name }}</a></p></li>
+              </ul>
           </div>
         </div>
 
       </div>
 
       <!-- Box for hero element -->
-      <div class="col-sm-12 col-md-6" style="background-color:white; min-height: 100px;">
-        <h2>De snabbaste länkarna, snart i en ruta nära dig</h2>
-        <p>Bacon ipsum dolor amet frankfurter short ribs corned beef, meatloaf filet mignon doner landjaeger swine biltong chuck. Pork loin kielbasa rump, biltong tenderloin spare ribs buffalo doner beef pork belly porchetta prosciutto. Sausage venison prosciutto picanha brisket cupim spare ribs, cow pork chop tail sirloin. Landjaeger kielbasa venison spare ribs. Rump meatloaf flank, jowl tenderloin shank shoulder brisket leberkas strip steak ribeye biltong hamburger cow short ribs.</p>
+      <div class="col-sm-12 col-md-5 hero" style="background-color:white; min-height: 100px;">
+        <div class="row">
+          <h3 class="col-sm-9">Det här är en försmak på Platsbanken Beta</h3>
+          <div class="col-sm-3">
+            <img src="./assets/img/cherry.svg" alt="">
+          </div>
+        </div>
+        <p>Bacon ipsum dolor amet frankfurter short ribs corned beef, meatloaf filet mignon doner landjaeger swine biltong chuck. Allt är ett test, vi testar och försöker oss på nytt.</p>
+        <a class="chevron-link" href="https://www.arbetsformedlingen.se/Tjanster/Arbetssokande/Platsbanken/">Till vanliga Platsbanken</a>
       </div>
-    
+
     </div>
   </div>
 </section>

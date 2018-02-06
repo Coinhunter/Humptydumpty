@@ -2,25 +2,36 @@
 
 .quicklinks {
     background-color: white;
-    padding-top: 20px;
+    padding-top: 80px;
     padding-bottom: 20px;
 
-    ul { 
+    ul {
         list-style: none;
-        padding-left: 0; 
+        padding-left: 0;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .hero h3 {
+      font-weight: 600;
     }
     p {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        //margin-top: 0.5rem;
+        //margin-bottom: 0.5rem;
+        margin-bottom: 4px;
+    }
+    .hero p {
+      font-weight: 300;
     }
 
-    a {
+    ul a {
         color: $blue-base;
         text-decoration: none;
 
         // What it looks like in zeplin... ?
-        font-size: 18px;
-        font-weight: 300;        
+        font-size: 24px;
+        font-weight: 300;
     }
     a:hover {
         text-decoration: underline;
