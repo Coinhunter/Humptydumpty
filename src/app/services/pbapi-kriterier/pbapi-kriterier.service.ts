@@ -34,4 +34,8 @@ export class PbapiKriterierService {
     return this.httpClient.get<Array<Profilkriterium>>(url);
   }
 
+  getYrkesStruktur() {
+    return this.httpClient.get('./assets/yrken_all.json');
+  }
+
 }

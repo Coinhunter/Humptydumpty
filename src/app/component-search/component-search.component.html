@@ -26,63 +26,15 @@
 
                 <div style="position: relative;">
 
+                  <!-- Choose from list -->
                   <button class="pb-search-list-accordion" type="button" (click)="showPickFromList = !showPickFromList" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
                     <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
                     <div class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
                       <div class="backdrop"></div>
-                      <div class="lists row">
-                        <div class="col-6">
-                          <ul class="list list-1">
-                            <li *ngFor=""></li>
-                            <li>Bla 1</li>
-                            <li>Bla 2</li>
-                            <li>Bla 3</li>
-                            <li>Bla 4</li>
-                            <li>Bla 5</li>
-                            <li>Bla 6</li>
-                            <li>Bla 7</li>
-                            <li>Bla 8</li>
-                            <li>Bla 9</li>
-                            <li>Bla 10</li>
-                            <li>Bla 11</li>
-                            <li>Bla 12</li>
-                            <li>Bla 13</li>
-                            <li>Bla 14</li>
-                            <li>Bla 15</li>
-                            <li>Bla 16</li>
-                            <li>Bla 17</li>
-                            <li>Bla 18</li>
-                            <li>Bla 19</li>
-                            <li>Bla 20</li>
-                          </ul>
-                        </div>
-                        <div class="col-6">
-                          <ul class="list list-2">
-                            <li>Tja 1</li>
-                            <li>Tja 2</li>
-                            <li>Tja 3</li>
-                            <li>Tja 4</li>
-                            <li>Tja 5</li>
-                            <li>Tja 6</li>
-                            <li>Tja 7</li>
-                            <li>Tja 8</li>
-                            <li>Tja 9</li>
-                            <li>Tja 10</li>
-                            <li>Tja 11</li>
-                            <li>Tja 12</li>
-                            <li>Tja 13</li>
-                            <li>Tja 14</li>
-                            <li>Tja 15</li>
-                            <li>Tja 16</li>
-                            <li>Tja 17</li>
-                            <li>Tja 18</li>
-                            <li>Tja 19</li>
-                            <li>Tja 20</li>
-                          </ul>
-                        </div>
-                      </div>
+                      <app-component-valj-fran-lista></app-component-valj-fran-lista>
                     </div>
                   </button>
+
                   <!-- Yrken search : ) -->
                   <p-autoComplete
                     [(ngModel)]="valYrken"

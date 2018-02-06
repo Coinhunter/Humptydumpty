@@ -16,6 +16,7 @@ import { CheckboxModule } from 'primeng/components/checkbox/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { UtilService } from 'app/services/util/util.service';
 import { ComponentSearchExpandComponent } from './component-search-expand/component-search-expand.component';
+import { ComponentValjFranListaComponent } from './component-valj-fran-lista/component-valj-fran-lista.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ComponentSearchExpandComponent } from './component-search-expand/compon
     ComponentQuicklinksComponent,
     ComponentSearchComponent,
     ComponentSearchExpandComponent,
+    ComponentValjFranListaComponent,
   ],
   imports: [
     BrowserModule,
