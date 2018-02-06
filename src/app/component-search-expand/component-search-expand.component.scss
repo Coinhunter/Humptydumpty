@@ -1,7 +1,15 @@
+@import '../../sass/variables.scss';
 @import '../../sass/color-variables.scss';
 
 .expand-margin {
     margin-bottom: 60px;
+}
+
+.motorcycle-etc {
+  padding-right: $grid-gutter-width/2 !important;
+}
+.truck-bus {
+  padding-left: $grid-gutter-width/2 !important;
 }
 
 h3 {
