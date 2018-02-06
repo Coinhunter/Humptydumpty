@@ -3,7 +3,7 @@
 @import './variables';
 @import './mixins';
 @import './color-variables.scss';
-@import './bootstrap/bootstrap.min.css';
+@import './bootstrap/css/bootstrap.min.css';
 
 .pb-search {
     margin-left: -5px;
@@ -157,4 +157,11 @@
     right: 15px;
     width: 42%;
     border-radius: 4px;
+}
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
 }
