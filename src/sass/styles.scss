@@ -8,32 +8,39 @@
 .pb-search {
     margin-left: -5px;
     border-radius: 0px;
-    height: 60px;
-    width: 31%;
+    height: $search-list-height;
+    width: 33.3%;
     font-size: 19px;
-    
+
     .ui-corner-all {
         border-radius: 0px;
     }
 
     input {
         width: 100%;
-        height: 60px;
+        height: inherit;
     }
 
     .ui-inputtext {
         padding: 0px;
         padding-left: 15px;
     }
-    
+
     .ui-autocomplete-input-token {
         padding: 0px;
     }
-    
+
     .ui-autocomplete-panel .ui-autocomplete-list {
         padding: 0px;
     }
 
+    .ui-widget {
+      font-family: "Open sans", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      &::placeholder {
+        font-weight: 300;
+        font-family: 20px;
+      }
+    }
     .ui-widget-content {
         box-shadow: none;
     }
@@ -61,7 +68,7 @@
     box-shadow:none;
     border-radius: 5px;
     width: 24px;
-    height: 24px;    
+    height: 24px;
     border: 1px solid black;
     background: $white-base;
 
@@ -99,7 +106,7 @@
         background: $white-base;
         border: 1px solid black;
     }
-    
+
 }
 
 .ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
@@ -114,7 +121,7 @@
 .ui-chkbox {
     .ui-chkbox-icon {
         margin-top: 4px;
-    }    
+    }
 }
 
 .ui-chkbox-label {
@@ -135,18 +142,18 @@
     border: 1px solid rgb(46, 172, 34);
 
     display: inline-block;
-    width: 18%;
+    width: 15%;
     font-weight: normal;
     color: white;
     text-align: center;
-    background-color: rgb(46, 172, 34);
+    background-color: #00a748;
     margin-left: -5px;
-    padding-bottom: 1px;
-    height: 60px;
+    padding-bottom: 6px;
+    height: $search-list-height;
 
     p {
         color: white;
-        font-size: 19px;
+        font-size: 26px;
         margin-top: 0px;
         margin-bottom: 0px;
     }

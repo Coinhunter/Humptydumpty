@@ -15,8 +15,8 @@
           <div class="row searchlabels">
             <div class="col-md-12">
               <label class="pb-search-list-label-width"></label>
-              <label class="pb-search-field-label-width">Jag vill jobba som...</label>
-              <label class="pb-search-field-label-width">Jag vill jobba i...</label>
+              <label class="pb-search-field-label pb-search-field-label-width">Jag vill jobba som...</label>
+              <label class="pb-search-field-label pb-search-field-label-width">Jag vill jobba i...</label>
               <!-- <label class="pb-search-button-label-width"></label> -->
             </div>
           </div>
@@ -33,6 +33,7 @@
                       <div class="lists row">
                         <div class="col-6">
                           <ul class="list list-1">
+                            <li *ngFor=""></li>
                             <li>Bla 1</li>
                             <li>Bla 2</li>
                             <li>Bla 3</li>
@@ -144,7 +145,7 @@
                     </div>
                   </div>
 
-                  <button class="pb-search-button pb-search-button-width" (click)="searchButtonClick()">
+                  <button class="pb-search-button pb-search-button-width">
                     <p class="text-center">Sök</p>
                   </button>
 

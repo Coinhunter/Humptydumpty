@@ -16,8 +16,8 @@
                 width: auto;
                 display: block;
                 margin: auto;
-                max-height: 308px;
-                margin-top: 50px;
+                max-height: 388px;
+                margin-top: 10px;
             }
 
             h1:first-of-type {
@@ -42,11 +42,17 @@
 
         .searchlabels {
             .pb-search-list-label-width {
-                width: 20%;
+                width: 18.5%;
             }
             .pb-search-field-label-width {
-                width: 31%;
+                width: 32.8%;
             }
+            .pb-search-field-label {
+              font-size: 19px;
+              font-weight: 600;
+              color: #333333;
+            }
+
         }
 
         .searchfields {
@@ -54,7 +60,7 @@
             p {
                 margin-top: 0px;
                 margin-bottom: 0px;
-                font-size: 19px;
+                //font-size: 19px;
                 @media only screen and (max-width : 1200px) { font-size: 19px; }
                 @media only screen and (max-width : 992px) { font-size: 17px; }
                 @media only screen and (max-width : 768px) { font-size: 15px; }
@@ -67,19 +73,24 @@
                 border: 1px solid #ccc;
 
                 font-weight: normal;
-                color: #555555;
                 text-align: center;
-                background-color: #eeeeee;
-                width: 20%;
+                background-color: #f2f4f5;
+                width: 18%;
                 display: inline-block;
-                height: 60px;
+                height: $search-list-height;
                 padding-bottom: 1px;
                 position: relative;
                 z-index: 30;
 
+                p {
+                  font-size: 20px;
+                  color: #707579;
+                }
                 i.fa {
                     position: relative;
                     transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease;
+                    color: #707579;
+                    font-size: 24px;
                 }
                 &:hover {
                     i.fa {
@@ -182,7 +193,7 @@
             }
 
             .pb-search-field {
-                height: 60px;
+                height: $search-list-height;
                 width: 31%;
                 display: inline-block;
                 margin-left: -5px;
@@ -278,20 +289,22 @@
     }
 
     .search-expand-button {
-        height: 40px;
-        width: 250px;
+        height: 70px;
+        width: 310px;
         border-radius: 5px;
         border: 0px;
         background-color: $gray-10;
 
         position: absolute;
         right: 15px;
-        bottom: -20px;
+        bottom: -24px;
         z-index: 1;
 
         .search-expand-button-text {
-            color: rgb(46, 172, 34);
-            padding-top: 7px;
+            color: #009f36;
+            padding-top: 12px;
+            font-size: 20px;
+            font-weight: 600;
 
             i {
                 font-weight: bolder;
