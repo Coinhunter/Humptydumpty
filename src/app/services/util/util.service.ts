@@ -57,6 +57,12 @@ export class UtilService {
     url = url.slice(1, url.length - 1);
     url = '?' + url;
 
+    url = url.toUpperCase();
+
+    // I url-parsern används yrkesroll istället för yrke.
+    url = url.replace(/yrke/i, 'YRKESROLL');
+
+
     return GlobalVariables.PLATSBANKEN_URL + url;
   }
   

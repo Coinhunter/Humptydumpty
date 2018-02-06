@@ -7,13 +7,14 @@ import { UtilService } from '../services/util/util.service';
 import { Profilkriterium } from 'app/models/Profilkriterium';
 import { HttpClient } from '@angular/common/http';
 import { SynonymSearchResultDTO } from 'app/models/SynonymSearchResultDTO';
+import { SelectedCriteriaService } from 'app/services/selected-criteria/selected-criteria.service';
 
 
 @Component({
   selector: 'app-component-search',
   templateUrl: './component-search.component.html',
   styleUrls: ['./component-search.component.scss'],
-  providers: [ PbapiKriterierService, PbapiMatchningService, UtilService ],
+  providers: [ PbapiKriterierService, PbapiMatchningService ],
 })
 export class ComponentSearchComponent implements OnInit {
 
@@ -38,7 +39,8 @@ export class ComponentSearchComponent implements OnInit {
 
   constructor(private pbKriterier: PbapiKriterierService,
       private pbMatchning: PbapiMatchningService,
-      private util: UtilService) {}
+      private util: UtilService,
+      private selectedKriterier: SelectedCriteriaService) {}
 
   searchYrken(event) {
     this.yrkenResults = [];
@@ -74,6 +76,9 @@ export class ComponentSearchComponent implements OnInit {
       this.chosenYrken.push(new Profilkriterium(value.id, value.namn, value.typ));
     }
 
+    // Update service values.
+    this.selectedKriterier.setSelectedYrkesKriterier(this.chosenYrken);
+
     this.valYrken = undefined;
     this.focusYrkenSearchInput();
   }
@@ -88,6 +93,8 @@ export class ComponentSearchComponent implements OnInit {
       this.chosenOrter.push(new Profilkriterium(value.id, value.namn, value.typ));
     }
 
+    this.selectedKriterier.setSelectedPlatsKriterier(this.chosenOrter);
+
     this.valOrter = undefined;
     this.focusOrterSearchInput();
   }
@@ -99,6 +106,7 @@ export class ComponentSearchComponent implements OnInit {
       this.removeYrkenCriteria(this.chosenYrken[0]);
       this.focusYrkenSearchInput();
     }
+    this.selectedKriterier.setSelectedYrkesKriterier(this.chosenYrken);
   }
 
   removeFromChosenOrter() {
@@ -108,6 +116,7 @@ export class ComponentSearchComponent implements OnInit {
       this.removeYrkenCriteria(this.chosenOrter[0]);
       this.focusOrterSearchInput();
     }
+    this.selectedKriterier.setSelectedPlatsKriterier(this.chosenOrter);
   }
 
   focusYrkenSearchInput() {
@@ -161,6 +170,10 @@ export class ComponentSearchComponent implements OnInit {
     this.pbMatchning.getNumberOfAvailableJobs().subscribe((result) => {
       this.antalLedigaJobb = this.util.formatNumberOfJobs(result.toString());
     });
+  }
+
+  searchButtonClick() {
+    window.location.href = this.util.getUrlForCriteria(this.selectedKriterier.getSelectedKriterier());
   }
 
 }
