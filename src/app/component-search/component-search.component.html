@@ -29,7 +29,7 @@
                   <!-- Choose from list -->
                   <button class="pb-search-list-accordion" type="button" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
                     <p class="text-center" (click)="toggleShowPickFromList($event)">Välj från lista <i class="fa fa-angle-down"></i></p>
-                    <div class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
+                    <div *ngIf="showPickFromList" class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
                       <div class="backdrop"></div>
                       <app-component-valj-fran-lista></app-component-valj-fran-lista>
                     </div>
@@ -50,19 +50,19 @@
 
                     <ng-template let-valYrken pTemplate="item">
                       <div class="ui-helper-clearfix pb-search-suggestion">
-                        <span class="float-left">{{ valYrken.namn }}</span>
-                        <span class="float-right">{{ valYrken.typ }}</span>
+                        <span class="pull-left">{{ valYrken.namn }}</span>
+                        <span class="pull-right">{{ valYrken.typ }}</span>
                       </div>
                     </ng-template>
 
                   </p-autoComplete>
 
                   <div *ngIf="showYrkenCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
-                    <div *ngFor="let profilkriterium of chosenYrken" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
-                      <div data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                          {{ profilkriterium.namn }}
-                          <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>
-                      </div>
+                    <div *ngFor="let profilkriterium of chosenYrken" 
+                      class="chosenCriteriaTag" 
+                      [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
+                        {{ profilkriterium.namn }}
+                        <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>
                     </div>
                   </div>
 
@@ -81,19 +81,19 @@
 
                     <ng-template let-valOrter pTemplate="item">
                       <div class="ui-helper-clearfix pb-search-suggestion">
-                        <span class="float-left">{{ valOrter.namn }}</span>
-                        <span class="float-right">{{ valOrter.typ }}</span>
+                        <span class="pull-left">{{ valOrter.namn }}</span>
+                        <span class="pull-right">{{ valOrter.typ }}</span>
                       </div>
                     </ng-template>
 
                   </p-autoComplete>
 
                   <div *ngIf="showOrterCriteria && chosenOrter.length > 0" id="chosenOrterCriteria">
-                    <div *ngFor="let profilkriterium of chosenOrter" class="chosenCriteriaTag" [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
-                      <div data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                    <div *ngFor="let profilkriterium of chosenOrter" 
+                      class="chosenCriteriaTag" 
+                      [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
                         {{ profilkriterium.namn }}
                         <i class="fa fa-close" (click)="removeOrterCriteria(profilkriterium)"></i>
-                      </div>
                     </div>
                   </div>
 
@@ -108,29 +108,20 @@
           <div class="row chosen-criteria-tags">
             <div class="col-md-6">
               <div class="chosenYrkenContainer" *ngIf="chosenYrken.length > 0 && !showYrkenCriteria">
-                <div class="float-left active-yrken-pill">
+                <div class="float-left active-yrken-pill" (click)="removeFromChosenYrken()">
                   <span>{{ chosenYrken[0].namn }}</span>
                   <span class="active-yrken-pill-number" *ngIf="chosenYrken.length > 1">+{{ chosenYrken.length - 1 }}</span>
-                  <i class="fa fa-close" (click)="removeFromChosenYrken()"></i>
+                  <i class="fa fa-close"></i>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="chosenOrterContainer" *ngIf="chosenOrter.length > 0 && !showOrterCriteria">
-                <div class="float-left active-yrken-pill">
+                <div class="float-left active-yrken-pill" (click)="removeFromChosenOrter()">
                   <span>{{ chosenOrter[0].namn }}</span>
                   <span class="active-yrken-pill-number" *ngIf="chosenOrter.length > 1">+{{ chosenOrter.length - 1 }}</span>
-                  <i class="fa fa-close" (click)="removeFromChosenOrter()"></i>
+                  <i class="fa fa-close"></i>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="collapse" id="valjFranLista">
-                <h2>Darkness has come.</h2>
-                <p>And we are the only way out!</p>
               </div>
             </div>
           </div>

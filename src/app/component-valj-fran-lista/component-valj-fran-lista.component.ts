@@ -10,6 +10,8 @@ export class ComponentValjFranListaComponent implements OnInit {
 
   constructor(private pbKriterier: PbapiKriterierService) { }
 
+  loading:boolean = true;
+
   yrkesHierarki;
 
   yrkesMap;
@@ -24,9 +26,8 @@ export class ComponentValjFranListaComponent implements OnInit {
   ngOnInit() {
     this.pbKriterier.getYrkesStruktur().subscribe((data) => {
       this.yrkesHierarki = data;
+      this.loading = false;
     });
-
-
   }
 
   buildYrkesMap(data) {

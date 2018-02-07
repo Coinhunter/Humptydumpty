@@ -1,72 +1,81 @@
-<div class="lists row">
-  <div class="col-md-6">
-    <ul class="list">
-      <li *ngFor="let omrade of yrkesHierarki">        
-
-        <div class="clearfix omrade-wrapper">
-          <p-checkbox name="omraden"
-            class="pull-left lista-checkbox"
-            value="{{ omrade.id }}" 
-            label="{{ omrade.namn }}"
-            [(ngModel)]="yrkesOmradenCheckboxes">
-          </p-checkbox>
-          <a class="pull-right lista-button"
-            role="button" 
-            data-toggle="collapse" 
-            href="#omrade_{{ omrade.id }}" 
-            aria-expanded="false" 
-            aria-controls="collapseExample">
-            <i class="fa fa-angle-down js-rotate-if-collapsed"></i>
-          </a>
-        </div>
-
-        <div class="collapse" id="omrade_{{ omrade.id }}">
-          <div class="yrkesgruppcontainer">
-            <li *ngFor="let yrkesgrupp of omrade.yrkesgrupper">
-
-              <div class="clearfix yrkesgrupper-wrapper">
-                <p-checkbox name="yrkesgrupper"
-                  class="pull-left lista-checkbox"
-                  value="{{ yrkesgrupp.id }}" 
-                  label="{{ yrkesgrupp.namn }}" 
-                  [(ngModel)]="yrkesGrupperCheckboxes">
-                </p-checkbox>
-                <a class="pull-right lista-button"
-                  role="button" 
-                  data-toggle="collapse" 
-                  href="#yrkesgrupp_{{ yrkesgrupp.id }}" 
-                  aria-expanded="false" 
-                  aria-controls="collapseExample">
-                  <i class="fa fa-angle-down js-rotate-if-collapsed"></i>
-                </a>
-              </div>
-          
-              <div class="collapse" id="yrkesgrupp_{{ yrkesgrupp.id }}">
-                <div class="yrkescontainer">
-                  <li *ngFor="let yrke of yrkesgrupp.yrken">
-
-                    <div class="clearfix yrken-wrapper">
-                      <p-checkbox name="yrken"
-                        class="pull-left lista-checkbox"
-                        value="{{ yrke.id }}" 
-                        label="{{ yrke.namn }}" 
-                        [(ngModel)]="yrkenCheckboxes">
-                      </p-checkbox>
-                    </div>
-                    
-                  </li>
-                </div> <!-- yrkes-container -->
-              </div> <!-- collapse yrkesgrupp -->
-
-            </li> <!-- yrkesgrupp list -->
-          </div> <!-- yrkesgrupp-container -->
-        </div> <!-- collapse område -->
-      </li> <!-- områdes list -->
-    </ul>
+<div *ngIf="loading" class="lists" style="padding-bottom: 30px;">
+  <div class="loading-wrapper">
+      <div class="loading-indicator li-sm"></div>
   </div>
+  <p>Vänta lite, jag ska bara...</p>
+  <i>-Alfons Åberg</i>
+</div>
+<div *ngIf="!loading">
+  <div class="lists row">
+    <div class="col-md-6">
+      <ul class="list">
+        <li *ngFor="let omrade of yrkesHierarki">        
 
-  <div class="col-md-6" style="text-align: left;">
-    <h2>Här kommer du kunna välja plats från lista</h2>
-    <p>Det kommer nog bli jättebra tror vi, men vi har inte riktigt hunnit med det än.</p>
+          <div class="clearfix omrade-wrapper">
+            <p-checkbox name="omraden"
+              class="pull-left lista-checkbox"
+              value="{{ omrade.id }}" 
+              label="{{ omrade.namn }}"
+              [(ngModel)]="yrkesOmradenCheckboxes">
+            </p-checkbox>
+            <a class="pull-right lista-button"
+              role="button" 
+              data-toggle="collapse" 
+              href="#omrade_{{ omrade.id }}" 
+              aria-expanded="false" 
+              aria-controls="collapseExample">
+              <i class="fa fa-angle-down js-rotate-if-collapsed"></i>
+            </a>
+          </div>
+
+          <div class="collapse" id="omrade_{{ omrade.id }}">
+            <div class="yrkesgruppcontainer">
+              <li *ngFor="let yrkesgrupp of omrade.yrkesgrupper">
+
+                <div class="clearfix yrkesgrupper-wrapper">
+                  <p-checkbox name="yrkesgrupper"
+                    class="pull-left lista-checkbox"
+                    value="{{ yrkesgrupp.id }}" 
+                    label="{{ yrkesgrupp.namn }}" 
+                    [(ngModel)]="yrkesGrupperCheckboxes">
+                  </p-checkbox>
+                  <a class="pull-right lista-button"
+                    role="button" 
+                    data-toggle="collapse" 
+                    href="#yrkesgrupp_{{ yrkesgrupp.id }}" 
+                    aria-expanded="false" 
+                    aria-controls="collapseExample">
+                    <i class="fa fa-angle-down js-rotate-if-collapsed"></i>
+                  </a>
+                </div>
+            
+                <div class="collapse" id="yrkesgrupp_{{ yrkesgrupp.id }}">
+                  <div class="yrkescontainer">
+                    <li *ngFor="let yrke of yrkesgrupp.yrken">
+
+                      <div class="clearfix yrken-wrapper">
+                        <p-checkbox name="yrken"
+                          class="pull-left lista-checkbox"
+                          value="{{ yrke.id }}" 
+                          label="{{ yrke.namn }}" 
+                          [(ngModel)]="yrkenCheckboxes">
+                        </p-checkbox>
+                      </div>
+
+                    </li>
+                  </div> <!-- yrkes-container -->
+                </div> <!-- collapse yrkesgrupp -->
+
+              </li> <!-- yrkesgrupp list -->
+            </div> <!-- yrkesgrupp-container -->
+          </div> <!-- collapse område -->
+        </li> <!-- områdes list -->
+      </ul>
+    </div>
+
+    <div class="col-md-6" style="text-align: left;">
+      <h2>Här kommer du kunna välja plats från lista</h2>
+      <p>Det kommer nog bli jättebra tror vi, men vi har inte riktigt hunnit med det än.</p>
+    </div>
   </div>
 </div>
