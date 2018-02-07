@@ -62,7 +62,6 @@ export class ComponentSearchComponent implements OnInit {
     this.orterResults = [];
     this.orterResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
     this.pbKriterier.getJobbaIKriterier(event.query).subscribe((data) => {
-      console.log(data);
       data.slice(0,5).forEach((kriterium) => {
         kriterium.typ = kriterium.typ.toLowerCase();
         this.orterResults.push(kriterium);
@@ -104,22 +103,28 @@ export class ComponentSearchComponent implements OnInit {
   }
 
   removeFromChosenYrken() {
+    this.focusYrkenSearchInput();
+    /*
     if (this.chosenYrken.length > 1) {
       this.focusYrkenSearchInput();
     } else {
       this.removeYrkenCriteria(this.chosenYrken[0]);
       this.focusYrkenSearchInput();
     }
+    */
     this.selectedKriterier.setSelectedYrkesKriterier(this.chosenYrken);
   }
 
   removeFromChosenOrter() {
+    this.focusOrterSearchInput();
+    /*
     if (this.chosenOrter.length > 1) {
       this.focusOrterSearchInput();
     } else {
       this.removeYrkenCriteria(this.chosenOrter[0]);
       this.focusOrterSearchInput();
     }
+    */
     this.selectedKriterier.setSelectedPlatsKriterier(this.chosenOrter);
   }
 
