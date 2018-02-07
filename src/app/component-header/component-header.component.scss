@@ -1,0 +1,59 @@
+header {
+  border-bottom: 1px solid #e8edf0;
+}
+.logo__container {
+    padding-top: 26px;
+}
+.logo__img {
+    width: 280px;
+    height: 32px;
+}
+.rolemenu__container {
+    padding-top: 15px;
+    padding-left: 80px;
+    position: relative;
+    top: 1px;
+}
+.rolemenu__container .rolemenu__link.active {
+    border-bottom: 4px solid #32769c;
+    color: #141516;
+}
+.rolemenu__container li:first-child {
+    padding-right: 25px;
+}
+.header__content .navbar-nav > li {
+    float: left;
+}
+.header__content .navbar-nav > li > a {
+    line-height: 20px;
+}
+.rolemenu__container .rolemenu__link {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #717579;
+}
+.header-link .fa {
+    margin-right: 10px;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+.navbar-nav .header-link {
+    padding: 23px 16px;
+    color: #444;
+    font-size: 14px;
+    border-right: 1px solid #e8edf0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.header__content .navbar-nav > li > a {
+    line-height: 20px;
+}
+.navbar-nav li:first-child .header-link {
+    border-left: 1px solid #e8edf0;
+}
+.navbar-nav li:first-child .header-link {
+    border-left: 1px solid #e8edf0;
+}

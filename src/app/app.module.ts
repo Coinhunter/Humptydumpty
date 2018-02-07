@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UtilService } from 'app/services/util/util.service';
 import { ComponentSearchExpandComponent } from './component-search-expand/component-search-expand.component';
 import { ComponentValjFranListaComponent } from './component-valj-fran-lista/component-valj-fran-lista.component';
+import { ComponentHeaderComponent } from './component-header/component-header.component';
+import { ComponentFooterComponent } from './component-footer/component-footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ComponentValjFranListaComponent } from './component-valj-fran-lista/com
     ComponentSearchComponent,
     ComponentSearchExpandComponent,
     ComponentValjFranListaComponent,
+    ComponentHeaderComponent,
+    ComponentFooterComponent,
   ],
   imports: [
     BrowserModule,
