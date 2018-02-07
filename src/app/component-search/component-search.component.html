@@ -27,8 +27,8 @@
                 <div style="position: relative;">
 
                   <!-- Choose from list -->
-                  <button class="pb-search-list-accordion" type="button" (click)="showPickFromList = !showPickFromList" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
-                    <p class="text-center">Välj från lista <i class="fa fa-angle-down"></i></p>
+                  <button class="pb-search-list-accordion" type="button" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
+                    <p class="text-center" (click)="toggleShowPickFromList($event)">Välj från lista <i class="fa fa-angle-down"></i></p>
                     <div class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
                       <div class="backdrop"></div>
                       <app-component-valj-fran-lista></app-component-valj-fran-lista>

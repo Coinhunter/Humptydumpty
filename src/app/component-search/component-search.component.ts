@@ -42,6 +42,10 @@ export class ComponentSearchComponent implements OnInit {
       private util: UtilService,
       private selectedKriterier: SelectedCriteriaService) {}
 
+  toggleShowPickFromList($event) {
+    this.showPickFromList = !this.showPickFromList;
+  }
+
   searchYrken(event) {
     this.yrkenResults = [];
     this.yrkenResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
