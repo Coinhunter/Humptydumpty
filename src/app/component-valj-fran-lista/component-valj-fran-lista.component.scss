@@ -10,7 +10,6 @@
     z-index: 10;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: -6px;
 
     .list {
       float: left;
@@ -35,10 +34,7 @@
     }
 
     .omrade-wrapper {
-      display:inline-block;
-      width: 100%;
       padding-left: 10px;
-      margin-bottom: -6px;
     }
     .omrade-wrapper:hover {
       background-color: $gray-10;
@@ -50,21 +46,15 @@
     }
 
     .yrkesgrupper-wrapper {
-      display:inline-block;
-      width: 100%;
       padding-left: 20px;
-      margin-bottom: -6px;
     }
     .yrkesgrupper-wrapper:hover {
       background-color: $gray-10;
     }
 
     .yrken-wrapper {
-      display:inline-block;
-      width: 100%;
       padding-left: 30px;
       padding-bottom: 10px;
-      margin-bottom: -6px;
     }
     .yrken-wrapper:hover {
       background-color: $gray-30;
