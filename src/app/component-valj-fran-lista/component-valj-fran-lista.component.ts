@@ -24,11 +24,6 @@ export class ComponentValjFranListaComponent implements OnInit {
   ngOnInit() {
     this.pbKriterier.getYrkesStruktur().subscribe((data) => {
       this.yrkesHierarki = data;
-      console.log(this.yrkesHierarki);
-
-      //this.yrkesMap = this.buildYrkesMap(data);
-      //console.log(this.yrkesMap);
-
     });
 
 

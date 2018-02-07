@@ -1,7 +1,7 @@
 <div class="lists row">
   <div class="col-md-6">
     <ul class="list">
-      <li *ngFor="let omrade of yrkesHierarki" class="omrade">        
+      <li *ngFor="let omrade of yrkesHierarki">        
         <div class="row">
           <div class="col-md-12 omrade-col">
             <div class="omrade-wrapper">
@@ -9,7 +9,7 @@
               <p-checkbox name="omraden"
                 class="pull-left lista-checkbox"
                 value="{{ omrade.id }}" 
-                label="{{ omrade.namn }}" 
+                label="{{ omrade.namn }}"
                 [(ngModel)]="yrkesOmradenCheckboxes">
               </p-checkbox>
               
@@ -30,56 +30,60 @@
           <div class="col-md-12">
             <div class="collapse" id="omrade_{{ omrade.id }}">
 
-              <li *ngFor="let yrkesgrupp of omrade.yrkesgrupper">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="yrkesgrupper-wrapper">
+              <div class="yrkesgruppcontainer">
+                <li *ngFor="let yrkesgrupp of omrade.yrkesgrupper">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="yrkesgrupper-wrapper">
 
-                      <p-checkbox name="yrkesgrupper"
-                        class="pull-left lista-checkbox"
-                        value="{{ yrkesgrupp.id }}" 
-                        label="{{ yrkesgrupp.namn }}" 
-                        [(ngModel)]="yrkesGrupperCheckboxes">
-                      </p-checkbox>
+                        <p-checkbox name="yrkesgrupper"
+                          class="pull-left lista-checkbox"
+                          value="{{ yrkesgrupp.id }}" 
+                          label="{{ yrkesgrupp.namn }}" 
+                          [(ngModel)]="yrkesGrupperCheckboxes">
+                        </p-checkbox>
 
-                      <a class="pull-right lista-button"
-                        role="button" 
-                        data-toggle="collapse" 
-                        href="#yrkesgrupp_{{ yrkesgrupp.id }}" 
-                        aria-expanded="false" 
-                        aria-controls="collapseExample">
-                        <i class="fa fa-angle-down js-rotate-if-collapsed"></i>
-                      </a>
+                        <a class="pull-right lista-button"
+                          role="button" 
+                          data-toggle="collapse" 
+                          href="#yrkesgrupp_{{ yrkesgrupp.id }}" 
+                          aria-expanded="false" 
+                          aria-controls="collapseExample">
+                          <i class="fa fa-angle-down js-rotate-if-collapsed"></i>
+                        </a>
 
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="collapse" id="yrkesgrupp_{{ yrkesgrupp.id }}">
-
-                      <li *ngFor="let yrke of yrkesgrupp.yrken">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="yrken-wrapper">
-
-                              <p-checkbox name="yrken"
-                                class="pull-left lista-checkbox"
-                                value="{{ yrke.id }}" 
-                                label="{{ yrke.namn }}" 
-                                [(ngModel)]="yrkenCheckboxes">
-                              </p-checkbox>               
-
+                  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="collapse" id="yrkesgrupp_{{ yrkesgrupp.id }}">
+                        
+                        <div class="yrkescontainer">
+                          <li *ngFor="let yrke of yrkesgrupp.yrken">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="yrken-wrapper">
+  
+                                  <p-checkbox name="yrken"
+                                    class="pull-left lista-checkbox"
+                                    value="{{ yrke.id }}" 
+                                    label="{{ yrke.namn }}" 
+                                    [(ngModel)]="yrkenCheckboxes">
+                                  </p-checkbox>               
+  
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          </li>
                         </div>
-                      </li>
 
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
+                </li>
+              </div>
 
 
             </div>
@@ -90,28 +94,8 @@
     </ul>
   </div>
 
-  <div class="col-md-6">
-    <ul class="list">
-      <li>Tja 1</li>
-      <li>Tja 2</li>
-      <li>Tja 3</li>
-      <li>Tja 4</li>
-      <li>Tja 5</li>
-      <li>Tja 6</li>
-      <li>Tja 7</li>
-      <li>Tja 8</li>
-      <li>Tja 9</li>
-      <li>Tja 10</li>
-      <li>Tja 11</li>
-      <li>Tja 12</li>
-      <li>Tja 13</li>
-      <li>Tja 14</li>
-      <li>Tja 15</li>
-      <li>Tja 16</li>
-      <li>Tja 17</li>
-      <li>Tja 18</li>
-      <li>Tja 19</li>
-      <li>Tja 20</li>
-    </ul>
+  <div class="col-md-6" style="text-align: left;">
+    <h2>Här kommer du kunna välja plats från lista</h2>
+    <p>Det kommer nog bli jättebra tror vi, men vi har inte riktigt hunnit med det än.</p>
   </div>
 </div>

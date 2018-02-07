@@ -196,3 +196,11 @@ a.chevron-link {
     display: -ms-flexbox;
     display:         flex;
 }
+
+[data-toggle="collapse"][aria-expanded="true"] .js-rotate-if-collapsed {
+    -webkit-transform: rotate(180deg);
+    -moz-transform:    rotate(180deg);
+    -ms-transform:     rotate(180deg);
+    -o-transform:      rotate(180deg);
+    transform:         rotate(180deg);
+}

@@ -38,10 +38,12 @@
       display:inline-block;
       width: 100%;
       padding-left: 10px;
+      margin-bottom: -6px;
     }
     .omrade-wrapper:hover {
       background-color: $gray-10;
     }
+
     .omrade-wrapper:hover:first-of-type {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
@@ -50,7 +52,8 @@
     .yrkesgrupper-wrapper {
       display:inline-block;
       width: 100%;
-      padding-left: 20px;      
+      padding-left: 20px;
+      margin-bottom: -6px;
     }
     .yrkesgrupper-wrapper:hover {
       background-color: $gray-10;
@@ -60,10 +63,11 @@
       display:inline-block;
       width: 100%;
       padding-left: 30px;
-      padding-bottom: 10px; 
+      padding-bottom: 10px;
+      margin-bottom: -6px;
     }
     .yrken-wrapper:hover {
-      background-color: $gray-10;
+      background-color: $gray-30;
     }
 
     .omrade {
@@ -80,7 +84,19 @@
       font-size: 20px;
     }
     .lista-button:hover {
-      background-color: lightblue;
+      background-color: $blue-base;
+      i {
+        color: $white-base;
+      }
+    }
+
+    .yrkesgruppcontainer {
+      border-top: 1px rgb(204, 204, 204) solid;
+      border-bottom: 1px rgb(204, 204, 204) solid;
+    }
+
+    .yrkescontainer {
+      background-color: $gray-10;
     }
 
 }
