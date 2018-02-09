@@ -6,7 +6,7 @@
 
     .alwaysvisible {
         padding-top: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 70px;
 
         .introduction {
             margin-bottom: 40px;
@@ -212,8 +212,10 @@
     }
 
     .chosen-criteria-tags {
-        min-height: 50px;
+        //min-height: 50px;
+        height: 0;
         position: relative;
+        transform: translate(5px, -66px);
     }
 
     #chosenYrkenCriteria {
@@ -234,6 +236,7 @@
 
     .chosenOrterContainer {
         display: inline-block;
+        position: absolute;
     }
 
     #chosenOrterCriteria {

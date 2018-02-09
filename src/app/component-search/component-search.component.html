@@ -46,7 +46,7 @@
                     (onSelect)="yrkenAddValue($event)"
                     (onFocus)="focusYrkenSearch($event)"
                     (onBlur)="blurYrkenSearch($event)"
-                    placeholder="Skriv t.ex. 'Sandwhichman'..">
+                    placeholder="{{chosenYrken.length > 0 && !showYrkenCriteria ? '' : 'Skriv t.ex. \'Sandwhichman\'..'}}">
 
                     <ng-template let-valYrken pTemplate="item">
                       <div class="ui-helper-clearfix pb-search-suggestion">
@@ -58,8 +58,8 @@
                   </p-autoComplete>
 
                   <div *ngIf="showYrkenCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
-                    <div *ngFor="let profilkriterium of chosenYrken" 
-                      class="chosenCriteriaTag" 
+                    <div *ngFor="let profilkriterium of chosenYrken"
+                      class="chosenCriteriaTag"
                       [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
                         {{ profilkriterium.namn }}
                         <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>
@@ -77,7 +77,7 @@
                     (onSelect)="orterAddValue($event)"
                     (onFocus)="focusOrterSearch($event)"
                     (onBlur)="blurOrterSearch($event)"
-                    placeholder="Skriv t.ex. 'Västerås'..">
+                    placeholder="{{chosenOrter.length > 0 && !showOrterCriteria ? '' : 'Skriv t.ex. \'Västerås\'..'}}">
 
                     <ng-template let-valOrter pTemplate="item">
                       <div class="ui-helper-clearfix pb-search-suggestion">
@@ -89,8 +89,8 @@
                   </p-autoComplete>
 
                   <div *ngIf="showOrterCriteria && chosenOrter.length > 0" id="chosenOrterCriteria">
-                    <div *ngFor="let profilkriterium of chosenOrter" 
-                      class="chosenCriteriaTag" 
+                    <div *ngFor="let profilkriterium of chosenOrter"
+                      class="chosenCriteriaTag"
                       [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
                         {{ profilkriterium.namn }}
                         <i class="fa fa-close" (click)="removeOrterCriteria(profilkriterium)"></i>
