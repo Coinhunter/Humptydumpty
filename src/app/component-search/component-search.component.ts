@@ -29,6 +29,7 @@ export class ComponentSearchComponent implements OnInit {
   yrkenResults: Array<Profilkriterium>;
   chosenYrken: Array<Profilkriterium> = [];
   yrkenTimeout: any;
+  yrkenBlurTimeout: any;
 
   // Orter, kommun, länder..
   showOrterCriteria: boolean = false;
@@ -36,6 +37,7 @@ export class ComponentSearchComponent implements OnInit {
   orterResults: Array<Profilkriterium>;
   chosenOrter: Array<Profilkriterium> = [];
   orterTimeout: any;
+  orterBlurTimeout: any;
 
   constructor(private pbKriterier: PbapiKriterierService,
       private pbMatchning: PbapiMatchningService,
@@ -70,8 +72,13 @@ export class ComponentSearchComponent implements OnInit {
   }
 
   yrkenAddValue(value) {
+    this.yrkenPushChoosenValue(value);
+    this.valYrken = undefined;
+    this.focusYrkenSearchInput();
+  }
+  yrkenPushChoosenValue(value) {
     // Avoid adding the same thing multiple times.
-    var found = this.chosenYrken.find((profilkriterium) => {
+    const found = this.chosenYrken.find((profilkriterium) => {
       return profilkriterium.varde === value.id;
     });
 
@@ -81,14 +88,16 @@ export class ComponentSearchComponent implements OnInit {
 
     // Update service values.
     this.selectedKriterier.setSelectedYrkesKriterier(this.chosenYrken);
-
-    this.valYrken = undefined;
-    this.focusYrkenSearchInput();
   }
 
   orterAddValue(value) {
+    this.orterPushChoosenValue(value);
+    this.valOrter = undefined;
+    this.focusOrterSearchInput();
+  }
+  orterPushChoosenValue(value) {
     // Avoid adding the same thing multiple times.
-    var found = this.chosenOrter.find((profilkriterium) => {
+    const found = this.chosenOrter.find((profilkriterium) => {
       return profilkriterium.varde === value.id;
     });
 
@@ -98,8 +107,6 @@ export class ComponentSearchComponent implements OnInit {
 
     this.selectedKriterier.setSelectedPlatsKriterier(this.chosenOrter);
 
-    this.valOrter = undefined;
-    this.focusOrterSearchInput();
   }
 
   removeFromChosenYrken() {
@@ -137,6 +144,7 @@ export class ComponentSearchComponent implements OnInit {
   }
 
   removeYrkenCriteria(profilkriterium) {
+    console.log('Removing: ', profilkriterium)
     const index = this.chosenYrken.indexOf(profilkriterium);
     if (index > -1) {
       this.chosenYrken.splice(index, 1);
@@ -164,15 +172,44 @@ export class ComponentSearchComponent implements OnInit {
   }
 
   blurYrkenSearch(event) {
-    this.yrkenTimeout = setTimeout(() => {
-      this.showYrkenCriteria = false;
-    }, 100);
+    this.yrkenBlurTimeout = setTimeout(() => {
+      if (this.valYrken) {
+        const textValue = event.target.value;
+        console.log(event, textValue)
+
+        if (textValue) {
+          const input = {
+            id: textValue,
+            namn: textValue,
+            typ: 'fritext'
+          }
+          this.yrkenPushChoosenValue(input);
+        }
+      }
+      this.yrkenTimeout = setTimeout(() => {
+        this.showYrkenCriteria = false;
+      }, 100);
+    }, 200);
   }
 
   blurOrterSearch(event) {
-    this.orterTimeout = setTimeout(() => {
-      this.showOrterCriteria = false;
-    }, 100);
+    this.orterBlurTimeout = setTimeout(() => {
+      if (this.valOrter) {
+        const textValue = event.target.value;
+
+        if (textValue) {
+          const input = {
+            id: textValue,
+            namn: textValue,
+            typ: 'fritext'
+          }
+          this.orterPushChoosenValue(input);
+        }
+      }
+      this.orterTimeout = setTimeout(() => {
+        this.showOrterCriteria = false;
+      }, 100);
+    }, 200);
   }
 
   ngOnInit() {

@@ -4,6 +4,10 @@
 .search {
     background-color: $gray-10;
 
+    .fritextCriteriaTag {
+        background-color: orange !important;
+    }
+
     .alwaysvisible {
         padding-top: 20px;
         padding-bottom: 70px;
@@ -266,10 +270,6 @@
         i:hover {
             cursor: pointer;
         }
-    }
-
-    .fritextCriteriaTag {
-        background-color: orange;
     }
 
     .search-expand-button {

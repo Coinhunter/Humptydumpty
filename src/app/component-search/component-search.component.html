@@ -108,7 +108,7 @@
           <div class="row chosen-criteria-tags">
             <div class="col-md-6">
               <div class="chosenYrkenContainer" *ngIf="chosenYrken.length > 0 && !showYrkenCriteria">
-                <div class="float-left active-yrken-pill" (click)="removeFromChosenYrken()">
+                <div class="float-left active-yrken-pill" (click)="removeFromChosenYrken()" [ngClass]="{ fritextCriteriaTag: chosenYrken[0].typ === 'fritext' }">
                   <span>{{ chosenYrken[0].namn }}</span>
                   <span class="active-yrken-pill-number" *ngIf="chosenYrken.length > 1">+{{ chosenYrken.length - 1 }}</span>
                   <i class="fa fa-close"></i>
@@ -117,7 +117,7 @@
             </div>
             <div class="col-md-6">
               <div class="chosenOrterContainer" *ngIf="chosenOrter.length > 0 && !showOrterCriteria">
-                <div class="float-left active-yrken-pill" (click)="removeFromChosenOrter()">
+                <div class="float-left active-yrken-pill" (click)="removeFromChosenOrter()" [ngClass]="{ fritextCriteriaTag: chosenOrter[0].typ === 'fritext' }">
                   <span>{{ chosenOrter[0].namn }}</span>
                   <span class="active-yrken-pill-number" *ngIf="chosenOrter.length > 1">+{{ chosenOrter.length - 1 }}</span>
                   <i class="fa fa-close"></i>
