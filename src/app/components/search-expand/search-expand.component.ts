@@ -5,12 +5,12 @@ import { SelectedCriteriaService } from 'app/services/selected-criteria/selected
 import { UtilService } from 'app/services/util/util.service';
 
 @Component({
-  selector: 'app-component-search-expand',
-  templateUrl: './component-search-expand.component.html',
-  styleUrls: ['./component-search-expand.component.scss'],
+  selector: 'app-search-expand',
+  templateUrl: './search-expand.component.html',
+  styleUrls: ['./search-expand.component.scss'],
   providers: [ PbapiKriterierService ],
 })
-export class ComponentSearchExpandComponent implements OnInit {
+export class SearchExpandComponent implements OnInit {
 
   constructor(private selectedKriterier: SelectedCriteriaService, private util: UtilService) { }
 
