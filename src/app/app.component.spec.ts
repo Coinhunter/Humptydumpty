@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { DirectedcommunicationComponent } from './components/directedcommunication/directedcommunication.component';
-import { ComponentSearchpackagesComponent } from './components/component-searchpackages/component-searchpackages.component';
+import { SearchpackagesComponent } from './components/searchpackages/searchpackages.component';
 import { ComponentQuicklinksComponent } from './components/component-quicklinks/component-quicklinks.component';
 import { ComponentSearchComponent } from './components/component-search/component-search.component';
 import { ComponentSearchExpandComponent } from './components/component-search-expand/component-search-expand.component';
@@ -20,7 +20,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         DirectedcommunicationComponent,
-        ComponentSearchpackagesComponent,
+        SearchpackagesComponent,
         ComponentQuicklinksComponent,
         ComponentSearchComponent,
         ComponentSearchExpandComponent

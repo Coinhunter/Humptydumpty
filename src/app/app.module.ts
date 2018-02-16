@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DirectedcommunicationComponent } from './components/directedcommunication/directedcommunication.component';
-import { ComponentSearchpackagesComponent } from './components/component-searchpackages/component-searchpackages.component';
+import { SearchpackagesComponent } from './components/searchpackages/searchpackages.component';
 import { ComponentQuicklinksComponent } from './components/component-quicklinks/component-quicklinks.component';
 import { ComponentSearchComponent } from './components/component-search/component-search.component';
 
@@ -24,7 +24,7 @@ import { ComponentFooterComponent } from './components/component-footer/componen
   declarations: [
     AppComponent,
     DirectedcommunicationComponent,
-    ComponentSearchpackagesComponent,
+    SearchpackagesComponent,
     ComponentQuicklinksComponent,
     ComponentSearchComponent,
     ComponentSearchExpandComponent,

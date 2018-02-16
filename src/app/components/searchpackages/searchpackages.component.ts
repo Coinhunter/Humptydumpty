@@ -4,12 +4,12 @@ import { UtilService } from '../../services/util/util.service';
 import { Profilkriterium } from '../../models/Profilkriterium';
 
 @Component({
-  selector: 'app-component-searchpackages',
-  templateUrl: './component-searchpackages.component.html',
-  styleUrls: ['./component-searchpackages.component.scss'],
+  selector: 'app-searchpackages',
+  templateUrl: './searchpackages.component.html',
+  styleUrls: ['./searchpackages.component.scss'],
   providers: [ UtilService ],
 })
-export class ComponentSearchpackagesComponent implements OnInit {
+export class SearchpackagesComponent implements OnInit {
   searchPacks: Array<SearchPackage>;
   heroPackage: SearchPackage;
   heroCompanionPackages: Array<SearchPackage>;
