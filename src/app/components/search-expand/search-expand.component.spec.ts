@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComponentSearchExpandComponent } from './component-search-expand.component';
+import { SearchExpandComponent } from './search-expand.component';
 
-describe('ComponentSearchExpandComponent', () => {
-  let component: ComponentSearchExpandComponent;
-  let fixture: ComponentFixture<ComponentSearchExpandComponent>;
+describe('SearchExpandComponent', () => {
+  let component: SearchExpandComponent;
+  let fixture: ComponentFixture<SearchExpandComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComponentSearchExpandComponent ]
+      declarations: [ SearchExpandComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComponentSearchExpandComponent);
+    fixture = TestBed.createComponent(SearchExpandComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

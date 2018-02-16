@@ -3,11 +3,11 @@ import { Profilkriterium } from '../../models/Profilkriterium';
 import { UtilService } from '../../services/util/util.service';
 
 @Component({
-  selector: 'app-component-quicklinks',
-  templateUrl: './component-quicklinks.component.html',
-  styleUrls: ['./component-quicklinks.component.scss']
+  selector: 'app-quicklinks',
+  templateUrl: './quicklinks.component.html',
+  styleUrls: ['./quicklinks.component.scss']
 })
-export class ComponentQuicklinksComponent implements OnInit {
+export class QuicklinksComponent implements OnInit {
 
   constructor(private utilService: UtilService) { }
 

@@ -6,7 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { DirectedcommunicationComponent } from './components/directedcommunication/directedcommunication.component';
 import { SearchpackagesComponent } from './components/searchpackages/searchpackages.component';
-import { ComponentQuicklinksComponent } from './components/component-quicklinks/component-quicklinks.component';
+import { QuicklinksComponent } from './components/quicklinks/quicklinks.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchExpandComponent } from './components/search-expand/search-expand.component';
 
@@ -21,7 +21,7 @@ describe('AppComponent', () => {
         AppComponent,
         DirectedcommunicationComponent,
         SearchpackagesComponent,
-        ComponentQuicklinksComponent,
+        QuicklinksComponent,
         SearchComponent,
         SearchExpandComponent
       ],
