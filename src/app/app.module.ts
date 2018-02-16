@@ -16,7 +16,7 @@ import { CheckboxModule } from 'primeng/components/checkbox/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { UtilService } from 'app/services/util/util.service';
 import { ComponentSearchExpandComponent } from './components/component-search-expand/component-search-expand.component';
-import { ComponentValjFranListaComponent } from './components/component-valj-fran-lista/component-valj-fran-lista.component';
+import { ValjFranListaComponent } from './components/valj-fran-lista/valj-fran-lista.component';
 import { ComponentHeaderComponent } from './components/component-header/component-header.component';
 import { ComponentFooterComponent } from './components/component-footer/component-footer.component';
 
@@ -28,7 +28,7 @@ import { ComponentFooterComponent } from './components/component-footer/componen
     ComponentQuicklinksComponent,
     ComponentSearchComponent,
     ComponentSearchExpandComponent,
-    ComponentValjFranListaComponent,
+    ValjFranListaComponent,
     ComponentHeaderComponent,
     ComponentFooterComponent,
   ],
