@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { DirectedcommunicationComponent } from './components/directedcommunication/directedcommunication.component';
 import { SearchpackagesComponent } from './components/searchpackages/searchpackages.component';
 import { ComponentQuicklinksComponent } from './components/component-quicklinks/component-quicklinks.component';
-import { ComponentSearchComponent } from './components/component-search/component-search.component';
+import { SearchComponent } from './components/search/search.component';
 
 import { FormsModule } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/components/autocomplete/autocomplete';
@@ -26,7 +26,7 @@ import { ComponentFooterComponent } from './components/component-footer/componen
     DirectedcommunicationComponent,
     SearchpackagesComponent,
     ComponentQuicklinksComponent,
-    ComponentSearchComponent,
+    SearchComponent,
     SearchExpandComponent,
     ValjFranListaComponent,
     ComponentHeaderComponent,

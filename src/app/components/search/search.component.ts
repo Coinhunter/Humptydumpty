@@ -11,12 +11,12 @@ import { SelectedCriteriaService } from 'app/services/selected-criteria/selected
 
 
 @Component({
-  selector: 'app-component-search',
-  templateUrl: './component-search.component.html',
-  styleUrls: ['./component-search.component.scss'],
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
   providers: [ PbapiKriterierService, PbapiMatchningService ],
 })
-export class ComponentSearchComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   antalLedigaJobb: string;
 
