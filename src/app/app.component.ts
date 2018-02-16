@@ -18,7 +18,9 @@ declare var ga: Function;
 })
 
 export class AppComponent implements OnInit {
-  constructor(public router: Router) {}
+  constructor(
+    public router: Router
+  ) {}
 
   ngOnInit() {}
 }
