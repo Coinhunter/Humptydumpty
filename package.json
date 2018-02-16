@@ -29,7 +29,6 @@
     "@angular/platform-browser": "^5.2.1",
     "@angular/platform-browser-dynamic": "^5.2.1",
     "@angular/router": "^5.2.1",
-    "@types/google.analytics": "0.0.34",
     "core-js": "^2.5.0",
     "express": "^4.15.4",
     "primeng": "^5.2.0-rc.1",

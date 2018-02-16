@@ -4,7 +4,5 @@ interface NodeModule {
   id: string;
 }
 
-declare module "*.json" {
-  const value: any;
-  export default value;
-}
+/* Google Tag Manager */
+declare var dataLayer: Array<any>;

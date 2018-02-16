@@ -11,7 +11,7 @@ import { UtilService } from './services/util/util.service';
 declare var ga: Function;
 
 @Component({
-  selector: 'app-root',
+  selector: 'pb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [ SelectedCriteriaService, UtilService ]
