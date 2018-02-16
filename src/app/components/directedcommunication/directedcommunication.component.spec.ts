@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComponentDirectedcommunicationComponent } from './component-directedcommunication.component';
+import { DirectedcommunicationComponent } from './directedcommunication.component';
 
 describe('ComponentDirectedcommunicationComponent', () => {
-  let component: ComponentDirectedcommunicationComponent;
-  let fixture: ComponentFixture<ComponentDirectedcommunicationComponent>;
+  let component: DirectedcommunicationComponent;
+  let fixture: ComponentFixture<DirectedcommunicationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComponentDirectedcommunicationComponent ]
+      declarations: [ DirectedcommunicationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComponentDirectedcommunicationComponent);
+    fixture = TestBed.createComponent(DirectedcommunicationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

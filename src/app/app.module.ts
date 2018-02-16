@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ComponentDirectedcommunicationComponent } from './components/component-directedcommunication/component-directedcommunication.component';
+import { DirectedcommunicationComponent } from './components/directedcommunication/directedcommunication.component';
 import { ComponentSearchpackagesComponent } from './components/component-searchpackages/component-searchpackages.component';
 import { ComponentQuicklinksComponent } from './components/component-quicklinks/component-quicklinks.component';
 import { ComponentSearchComponent } from './components/component-search/component-search.component';
@@ -23,7 +23,7 @@ import { ComponentFooterComponent } from './components/component-footer/componen
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentDirectedcommunicationComponent,
+    DirectedcommunicationComponent,
     ComponentSearchpackagesComponent,
     ComponentQuicklinksComponent,
     ComponentSearchComponent,
