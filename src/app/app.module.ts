@@ -18,7 +18,7 @@ import { UtilService } from 'app/services/util/util.service';
 import { SearchExpandComponent } from './components/search-expand/search-expand.component';
 import { ValjFranListaComponent } from './components/valj-fran-lista/valj-fran-lista.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ComponentFooterComponent } from './components/component-footer/component-footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { ComponentFooterComponent } from './components/component-footer/componen
     SearchExpandComponent,
     ValjFranListaComponent,
     HeaderComponent,
-    ComponentFooterComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
