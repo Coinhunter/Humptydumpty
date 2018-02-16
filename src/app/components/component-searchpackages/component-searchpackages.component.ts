@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchPackage } from '../models/SearchPackage';
-import { UtilService } from '../services/util/util.service';
-import { Profilkriterium } from '../models/Profilkriterium';
+import { SearchPackage } from '../../models/SearchPackage';
+import { UtilService } from '../../services/util/util.service';
+import { Profilkriterium } from '../../models/Profilkriterium';
 
 @Component({
   selector: 'app-component-searchpackages',

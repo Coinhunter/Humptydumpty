@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Profilkriterium } from 'app/models/Profilkriterium';
-import { PbapiKriterierService } from '../services/pbapi-kriterier/pbapi-kriterier.service';
+import { PbapiKriterierService } from '../../services/pbapi-kriterier/pbapi-kriterier.service';
 import { SelectedCriteriaService } from 'app/services/selected-criteria/selected-criteria.service';
 import { UtilService } from 'app/services/util/util.service';
 

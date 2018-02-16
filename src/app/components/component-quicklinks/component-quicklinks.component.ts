@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Profilkriterium } from '../models/Profilkriterium';
-import { UtilService } from '../services/util/util.service';
+import { Profilkriterium } from '../../models/Profilkriterium';
+import { UtilService } from '../../services/util/util.service';
 
 @Component({
   selector: 'app-component-quicklinks',

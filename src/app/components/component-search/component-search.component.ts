@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PbapiKriterierService } from '../services/pbapi-kriterier/pbapi-kriterier.service';
-import { PbapiMatchningService } from '../services/pbapi-matchning/pbapi-matchning.service';
-import { UtilService } from '../services/util/util.service';
+import { PbapiKriterierService } from '../../services/pbapi-kriterier/pbapi-kriterier.service';
+import { PbapiMatchningService } from '../../services/pbapi-matchning/pbapi-matchning.service';
+import { UtilService } from '../../services/util/util.service';
 
 import { Profilkriterium } from 'app/models/Profilkriterium';
 import { HttpClient } from '@angular/common/http';
