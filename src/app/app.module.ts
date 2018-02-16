@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UtilService } from 'app/services/util/util.service';
 import { SearchExpandComponent } from './components/search-expand/search-expand.component';
 import { ValjFranListaComponent } from './components/valj-fran-lista/valj-fran-lista.component';
-import { ComponentHeaderComponent } from './components/component-header/component-header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ComponentFooterComponent } from './components/component-footer/component-footer.component';
 
 @NgModule({
@@ -29,7 +29,7 @@ import { ComponentFooterComponent } from './components/component-footer/componen
     SearchComponent,
     SearchExpandComponent,
     ValjFranListaComponent,
-    ComponentHeaderComponent,
+    HeaderComponent,
     ComponentFooterComponent,
   ],
   imports: [
