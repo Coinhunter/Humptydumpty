@@ -11,6 +11,7 @@ import { KriterieSearch } from 'app/models/KriterieSearch';
 @Injectable()
 export class PbapiKriterierService {
   private pbApi = GlobalVariables.PBAPI_URL;
+  private yrkesHierarki;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -35,7 +36,15 @@ export class PbapiKriterierService {
   }
 
   getYrkesStruktur() {
-    return this.httpClient.get('./assets/yrken_all.json');
+    return new Promise((resolve, reject) => {
+      if (this.yrkesHierarki) {
+        resolve(this.yrkesHierarki);
+      } else {
+        this.httpClient.get('./assets/yrken_all.json').subscribe((result) => {
+          this.yrkesHierarki = result;
+          resolve(result);
+        });
+      }  
+    });
   }
-
 }

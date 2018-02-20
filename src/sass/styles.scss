@@ -3,9 +3,13 @@
 @import './variables';
 @import './mixins';
 @import './color-variables.scss';
-@import './bootstrap/css/bootstrap.min.css';
 
 .pb {
+
+  :focus {
+    outline: none;
+  }
+  
   .pb-search {
     margin-left: -5px;
     border-radius: 0px;
@@ -197,7 +201,7 @@
     display:         flex;
   }
   
-  [data-toggle="collapse"][aria-expanded="true"] .js-rotate-if-collapsed {
+  .js-rotate {
     -webkit-transform: rotate(180deg);
     -moz-transform:    rotate(180deg);
     -ms-transform:     rotate(180deg);

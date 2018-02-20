@@ -45,6 +45,7 @@ export class SearchComponent implements OnInit {
       private selectedKriterier: SelectedCriteriaService) {}
 
   toggleShowPickFromList($event) {
+    console.log('clicked showPickFromList');
     this.showPickFromList = !this.showPickFromList;
   }
 
