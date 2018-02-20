@@ -19,6 +19,9 @@ import { SearchExpandComponent } from './components/search-expand/search-expand.
 import { ValjFranListaComponent } from './components/valj-fran-lista/valj-fran-lista.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SparadejobbComponent } from './components/sparadejobb/sparadejobb.component';
+import { SparadejobbService } from 'app/services/sparadejobb/sparadejobb.service';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ValjFranListaComponent,
     HeaderComponent,
     FooterComponent,
+    SparadejobbComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   providers: [
     UtilService,
+    SparadejobbService
   ],
   bootstrap: [AppComponent]
 })

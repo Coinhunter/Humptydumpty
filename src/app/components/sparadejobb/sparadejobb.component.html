@@ -1,0 +1,64 @@
+<div class="sparadejobb typography-v2">
+  <div class="container">
+    <h1>Sparade jobb</h1>
+
+    <div *ngIf="loading">
+      <div class="loading-wrapper">
+          <div class="loading-indicator li-sm"></div>
+      </div>     
+    </div>
+
+
+    <div *ngIf="!loading">
+
+      <div *ngIf="hasSavedJobs()">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 col-lg-8 no-padding forget-all">
+            <button *ngIf="!forgetAllPending" (click)="openForgetAllModal()" class="sparadejobb-btn pull-right">
+              Ta bort alla sparade jobb
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            <button *ngIf="forgetAllPending" class="sparadejobb-btn pull-right">
+              <span class="loading-indicator li-xxs pb-spinner pb-xxs-inline-spinner"></span>
+              <span>Tar bort alla jobb...</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="row" *ngFor="let sparatjobb of sparadejobb">
+          <div class="col-sm-12 col-md-10 col-lg-8">
+
+            <div class="jobb-outer-grid" [ngClass]="{ 'jobb-outer-grid-avslutad': sparatjobb.presentationStatus === 'AVSLUTAD' }">
+              <div class="jobb-inner-grid">
+                <div class="col-sm-2 no-padding" style="padding-right: 15px">
+                  <img *ngIf="sparatjobb.logotyp" class="logo" 
+                    [ngClass]="{ 'logo-avslutad': sparatjobb.presentationStatus === 'AVSLUTAD' }"
+                    [src]="sparatjobb.logotyp">
+                </div>
+                <div class="col-sm-7 no-padding">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div *ngIf="!hasSavedJobs()">
+        <div class="col-sm-8">
+          <h2>Inga sparade jobb än!</h2>
+          <p><a routerLink="/">Gå tillbaka till Platsbanken</a> och börja spara jobb redan idag för att enklare hålla koll på jobb du vill söka eller har sökt.</p>    
+        </div>
+        <div class="col-sm-4">
+          <div class="no-saved-jobs-imagewrapper">
+            <img src="/assets/img/moln-plant-svg" alt="Moln och kruka utan växt" class="no-saved-jobs-image">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
