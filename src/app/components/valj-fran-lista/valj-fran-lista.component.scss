@@ -5,11 +5,9 @@
     background: $white-base;
     position: absolute;
     z-index: 1000000;
-    width: 1140px;
+    width: 100%;
     border: 1px solid rgb(204, 204, 204);
     z-index: 10;
-    margin-left: 0;
-    margin-right: 0;
 
     .active-omrade {
       background-color: $gray-10;
@@ -36,18 +34,15 @@
 
     .checkbox input[type=checkbox]:not(:checked)+label.partially-checked:after {
       opacity: 1;
-      width: 13px;
+      width: 9px;
       height: 8px;
       background: transparent;
       border: 3px solid #3d3f40;
       border-top: none;
       border-right: none;
-
       border-left: none;
-      transform: rotate(0);
       top: 4px;
-      left: 4px;
-      width: 9px;
+      transform: rotate(0);
     }
 
     .list {
@@ -77,6 +72,12 @@
     }
     .omrade-wrapper:hover {
       background-color: $gray-10;
+      a {
+        background-color: $blue-base;
+      }
+      i {
+        color: $white-base;
+      }
     }
 
     .omrade-wrapper:hover:first-of-type {
@@ -85,15 +86,14 @@
     }
 
     .yrkesgrupper-wrapper {
-      padding-left: 20px;
+      padding-left: 25px;
     }
     .yrkesgrupper-wrapper:hover {
       background-color: $gray-10;
     }
 
     .yrken-wrapper {
-      padding-left: 30px;
-      padding-bottom: 10px;
+      padding-left: 40px;
     }
     .yrken-wrapper:hover {
       background-color: $gray-30;

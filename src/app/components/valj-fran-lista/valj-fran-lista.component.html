@@ -1,84 +1,86 @@
-<div *ngIf="loading" class="lists" style="padding-bottom: 30px;">
-  <div class="loading-wrapper">
-      <div class="loading-indicator li-sm"></div>
-  </div>
-  <p>Vänta lite, jag ska bara...</p>
-  <i>-Alfons Åberg</i>
-</div>
-<div *ngIf="!loading">
-  <div class="lists row">
-    <div class="col-md-6">
-      <ul class="list">
-        <li *ngFor="let omrade of yrkesHierarki">        
-
-          <div class="clearfix omrade-wrapper" [ngClass]="{ 'active-omrade': omrade.open }">
-            <div class="checkbox wrapped-checkbox">              
-                <input type="checkbox" 
-                  name="omraden" 
-                  [ngModel]="omrade.selected" 
-                  id="omrade_{{omrade.id}}" 
-                  (ngModelChange)="selectOmrade(omrade)"
-                  [ngClass]="{ 'partially-checked': omrade.partialSelect }">
-                <label class="" for="omrade_{{omrade.id}}"
-                  [ngClass]="{ 'partially-checked': omrade.partialSelect }">
-                    {{ omrade.namn }}
-                </label>
-            </div>
-            <a class="pull-right lista-button"
-              (click)="toggleOpen(omrade)">
-              <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': omrade.open }"></i>
-            </a>
-          </div>
-
-          <div id="omrade_{{ omrade.id }}">
-            <div class="yrkesgruppcontainer" *ngIf="omrade.open">
-              <li *ngFor="let yrkesgrupp of omrade.children">
-                <div class="clearfix yrkesgrupper-wrapper" [ngClass]="{ 'active-yrkesgrupp': yrkesgrupp.open }">
-                  <div class="checkbox wrapped-checkbox">              
-                      <input type="checkbox" 
-                        name="yrkesgrupper" 
-                        [ngModel]="yrkesgrupp.selected" 
-                        id="yrkesgrupp_{{yrkesgrupp.id}}" 
-                        (ngModelChange)="selectYrkesgrupp(omrade, yrkesgrupp)"
-                        [ngClass]="{ 'partially-checked': yrkesgrupp.partialSelect }">
-                      <label class="" for="yrkesgrupp_{{yrkesgrupp.id}}"
-                        [ngClass]="{ 'partially-checked': yrkesgrupp.partialSelect }">
-                          {{ yrkesgrupp.namn }}
-                      </label>
-                  </div>
-                  <a class="pull-right lista-button"
-                    (click)="toggleOpen(yrkesgrupp)">
-                    <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': yrkesgrupp.open }"></i>
-                  </a>
-                </div>
-            
-                <div id="yrkesgrupp_{{ yrkesgrupp.id }}">
-                  <div class="yrkescontainer" *ngIf="yrkesgrupp.open">
-                    <li *ngFor="let yrke of yrkesgrupp.children">
-                      <div class="clearfix yrken-wrapper">
-                        <div class="checkbox wrapped-checkbox">              
-                            <input type="checkbox" 
-                              name="yrken" 
-                              [ngModel]="yrke.selected" 
-                              id="yrke_{{yrke.id}}"
-                              (ngModelChange)="selectYrke(omrade, yrkesgrupp, yrke)">
-                            <label class="" for="yrke_{{yrke.id}}">{{ yrke.namn }}</label>      
-                        </div>
-                      </div>
-                    </li>
-                  </div> <!-- yrkes-container -->
-                </div> <!-- collapse yrkesgrupp -->
-
-              </li> <!-- yrkesgrupp list -->
-            </div> <!-- yrkesgrupp-container -->
-          </div> <!-- collapse område -->
-        </li> <!-- områdes list -->
-      </ul>
+<div class="container">
+  <div *ngIf="loading" class="lists" style="padding-bottom: 30px;">
+    <div class="loading-wrapper">
+        <div class="loading-indicator li-sm"></div>
     </div>
+    <p>Vänta lite, jag ska bara...</p>
+    <i>-Alfons Åberg</i>
+  </div>
+  <div *ngIf="!loading">
+    <div class="lists row">
+      <div class="col-md-6">
+        <ul class="list">
+          <li *ngFor="let omrade of yrkesHierarki">        
 
-    <div class="col-md-6" style="text-align: left;">
-      <h2>Här kommer du kunna välja plats från lista</h2>
-      <p>Det kommer nog bli jättebra tror vi, men vi har inte riktigt hunnit med det än.</p>
+            <div class="clearfix omrade-wrapper" [ngClass]="{ 'active-omrade': omrade.open }">
+              <div class="checkbox wrapped-checkbox">              
+                  <input type="checkbox" 
+                    name="omraden" 
+                    [ngModel]="omrade.selected" 
+                    id="omrade_{{omrade.id}}" 
+                    (ngModelChange)="selectOmrade(omrade)"
+                    [ngClass]="{ 'partially-checked': omrade.partialSelect }">
+                  <label class="" for="omrade_{{omrade.id}}"
+                    [ngClass]="{ 'partially-checked': omrade.partialSelect }">
+                      {{ omrade.namn }}
+                  </label>
+              </div>
+              <a class="pull-right lista-button"
+                (click)="toggleOpen(omrade)">
+                <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': omrade.open }"></i>
+              </a>
+            </div>
+
+            <div id="omrade_{{ omrade.id }}">
+              <div class="yrkesgruppcontainer" *ngIf="omrade.open">
+                <li *ngFor="let yrkesgrupp of omrade.children">
+                  <div class="clearfix yrkesgrupper-wrapper" [ngClass]="{ 'active-yrkesgrupp': yrkesgrupp.open }">
+                    <div class="checkbox wrapped-checkbox">              
+                        <input type="checkbox" 
+                          name="yrkesgrupper" 
+                          [ngModel]="yrkesgrupp.selected" 
+                          id="yrkesgrupp_{{yrkesgrupp.id}}" 
+                          (ngModelChange)="selectYrkesgrupp(omrade, yrkesgrupp)"
+                          [ngClass]="{ 'partially-checked': yrkesgrupp.partialSelect }">
+                        <label class="" for="yrkesgrupp_{{yrkesgrupp.id}}"
+                          [ngClass]="{ 'partially-checked': yrkesgrupp.partialSelect }">
+                            {{ yrkesgrupp.namn }}
+                        </label>
+                    </div>
+                    <a class="pull-right lista-button"
+                      (click)="toggleOpen(yrkesgrupp)">
+                      <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': yrkesgrupp.open }"></i>
+                    </a>
+                  </div>
+              
+                  <div id="yrkesgrupp_{{ yrkesgrupp.id }}">
+                    <div class="yrkescontainer" *ngIf="yrkesgrupp.open">
+                      <li *ngFor="let yrke of yrkesgrupp.children">
+                        <div class="clearfix yrken-wrapper">
+                          <div class="checkbox wrapped-checkbox">              
+                              <input type="checkbox" 
+                                name="yrken" 
+                                [ngModel]="yrke.selected" 
+                                id="yrke_{{yrke.id}}"
+                                (ngModelChange)="selectYrke(omrade, yrkesgrupp, yrke)">
+                              <label class="" for="yrke_{{yrke.id}}">{{ yrke.namn }}</label>      
+                          </div>
+                        </div>
+                      </li>
+                    </div> <!-- yrkes-container -->
+                  </div> <!-- collapse yrkesgrupp -->
+
+                </li> <!-- yrkesgrupp list -->
+              </div> <!-- yrkesgrupp-container -->
+            </div> <!-- collapse område -->
+          </li> <!-- områdes list -->
+        </ul>
+      </div>
+
+      <div class="col-md-6" style="text-align: left;">
+        <h2>Här kommer du kunna välja plats från lista</h2>
+        <p>Det kommer nog bli jättebra tror vi, men vi har inte riktigt hunnit med det än.</p>
+      </div>
     </div>
   </div>
 </div>

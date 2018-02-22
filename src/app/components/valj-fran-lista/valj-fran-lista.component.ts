@@ -24,31 +24,11 @@ export class ValjFranListaComponent implements OnInit {
 
   ngOnInit() {
     this.pbKriterier.getYrkesStruktur().then((data) => {
-      this.yrkesHierarki = this.buildHierarki(data);
+      this.yrkesHierarki = data;
       this.loading = false;
+    }, (error) => {
+      //console.log(error);
     });
-  }
-
-  buildHierarki(data) {
-    data.forEach((omrade) => {
-      omrade.selected = false;
-      omrade.partialSelect = false;
-      omrade.open = false;
-      omrade.yrkesgrupper.forEach((yrkesgrupp) => {
-        yrkesgrupp.selected = false;
-        yrkesgrupp.partialSelect = false;
-        yrkesgrupp.open = false;
-        yrkesgrupp.yrken.forEach((yrke) => {
-          yrke.partialSelect = false;
-          yrke.selected = false;
-        });
-        yrkesgrupp.children = yrkesgrupp.yrken;
-        delete yrkesgrupp.yrken;
-      });
-      omrade.children = omrade.yrkesgrupper;
-      delete omrade.yrkesgrupper;
-    });
-    return data;
   }
 
   toggleOpen(item) {
@@ -60,18 +40,11 @@ export class ValjFranListaComponent implements OnInit {
   selectOmrade(omrade) {
     omrade.selected = !omrade.selected;
     omrade.open = !omrade.open;
-    /*
-    omrade.children.forEach((yrkesgrupp) => {
-      yrkesgrupp.selected = omrade.selected;
-      yrkesgrupp.children.forEach((yrke) => {
-        yrke.selected = yrkesgrupp.selected;
-      });      
-    });
-    */
   }
 
   selectYrkesgrupp(omrade, yrkesgrupp) {
     yrkesgrupp.selected = !yrkesgrupp.selected;
+    yrkesgrupp.open = !yrkesgrupp.open;    
     this.partiallySelected(omrade);
   }
 
