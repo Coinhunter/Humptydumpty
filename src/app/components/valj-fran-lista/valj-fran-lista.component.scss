@@ -2,130 +2,27 @@
 @import '../../../sass/color-variables.scss';
 
 .lists {
-    background: $white-base;
-    position: absolute;
-    z-index: 1000000;
+  background: $white-base;
+  position: absolute;
+  z-index: 1000000;
+  width: 100%;
+  border: 1px solid rgb(204, 204, 204);
+  z-index: 10;
+
+  .list {
+    float: left;
+    border: 1px rgb(204, 204, 204) solid;
+    border-radius: 4px;
+    list-style-type: none;
     width: 100%;
-    border: 1px solid rgb(204, 204, 204);
-    z-index: 10;
+    padding-right: 0;
+    -webkit-padding-start: 0px;
+  }
 
-    .active-omrade {
-      background-color: $gray-10;
-      label {
-        font-weight: bold;
-      }
+  > div {
+    margin: $grid-gutter-width 0;
+    &:last-child {
+      border-left: 1px solid rgb(204, 204, 204);
     }
-    .active-omrade:first-of-type {
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-    }
-
-    .active-yrkesgrupp {
-      label {
-        font-weight: bold;
-      }
-    }
-
-    .checkbox {
-      width: 85%;
-      margin-top: 15px;
-      display: inline-block;
-    }
-
-    .checkbox input[type=checkbox]:not(:checked)+label.partially-checked:after {
-      opacity: 1;
-      width: 9px;
-      height: 8px;
-      background: transparent;
-      border: 3px solid #3d3f40;
-      border-top: none;
-      border-right: none;
-      border-left: none;
-      top: 4px;
-      transform: rotate(0);
-    }
-
-    .list {
-      float: left;
-      border: 1px rgb(204, 204, 204) solid;
-      border-radius: 4px;
-      list-style-type: none;
-      width: 100%;
-      padding-right: 0;
-      -webkit-padding-start: 0px;
-    }
-
-    li {
-      width: 100%;
-      text-align:left;
-    }
-
-    > div {
-      margin: $grid-gutter-width 0;
-      &:last-child {
-        border-left: 1px solid rgb(204, 204, 204);
-      }
-    }
-
-    .omrade-wrapper {
-      padding-left: 10px;
-    }
-    .omrade-wrapper:hover {
-      background-color: $gray-10;
-      a {
-        background-color: $blue-base;
-      }
-      i {
-        color: $white-base;
-      }
-    }
-
-    .omrade-wrapper:hover:first-of-type {
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-    }
-
-    .yrkesgrupper-wrapper {
-      padding-left: 25px;
-    }
-    .yrkesgrupper-wrapper:hover {
-      background-color: $gray-10;
-    }
-
-    .yrken-wrapper {
-      padding-left: 40px;
-    }
-    .yrken-wrapper:hover {
-      background-color: $gray-30;
-    }
-
-    .omrade {
-      width: 100%;
-    }
-
-    .lista-checkbox {
-      padding-top: 13px;
-    }
-
-    .lista-button {
-      padding: 10px 20px  ;
-      //background-color: lightblue;
-      font-size: 20px;
-    }
-    .lista-button:hover {
-      background-color: $blue-base;
-      i {
-        color: $white-base;
-      }
-    }
-
-    .yrkesgruppcontainer {
-      border-top: 1px rgb(204, 204, 204) solid;
-      border-bottom: 1px rgb(204, 204, 204) solid;
-    }
-
-    .yrkescontainer {
-      background-color: $gray-10;
-    }
-
+  }
 }

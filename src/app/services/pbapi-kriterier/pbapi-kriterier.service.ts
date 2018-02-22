@@ -12,6 +12,7 @@ import { KriterieSearch } from 'app/models/KriterieSearch';
 export class PbapiKriterierService {
   private pbApi = GlobalVariables.PBAPI_URL;
   private yrkesHierarki;
+  private platsHierarki;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -41,14 +42,31 @@ export class PbapiKriterierService {
         resolve(this.yrkesHierarki);
       } else {
         this.httpClient.get('./assets/yrken_all.json').subscribe((result) => {
-          this.yrkesHierarki = this.buildHierarki(result);
+          this.yrkesHierarki = this.buildYrkesHierarki(result);
           resolve(this.yrkesHierarki);
         });
       }  
     });
   }
 
-  buildHierarki(data) {
+  getPlatsStruktur() {
+    return new Promise((resolve, reject) => {
+      if (this.platsHierarki) {
+        resolve(this.platsHierarki)
+      } else {
+        this.httpClient.get('./assets/platser_all.json').subscribe((result) => {
+          this.platsHierarki = this.buildPlatsHierarki(result);
+          resolve(this.platsHierarki);
+        });
+      }
+    });
+  }
+
+  buildPlatsHierarki(data) {
+    return data;
+  }
+
+  buildYrkesHierarki(data) {
     data.forEach((omrade) => {
       omrade.selected = false;
       omrade.partialSelect = false;

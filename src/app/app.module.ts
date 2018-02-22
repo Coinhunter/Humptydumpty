@@ -21,6 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SparadejobbComponent } from './components/sparadejobb/sparadejobb.component';
 import { SparadejobbService } from 'app/services/sparadejobb/sparadejobb.service';
+import { ValjYrkeFranListaComponent } from './components/valj-yrke-fran-lista/valj-yrke-fran-lista.component';
+import { ValjPlatsFranListaComponent } from './components/valj-plats-fran-lista/valj-plats-fran-lista.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { SparadejobbService } from 'app/services/sparadejobb/sparadejobb.service
     HeaderComponent,
     FooterComponent,
     SparadejobbComponent,
+    ValjYrkeFranListaComponent,
+    ValjPlatsFranListaComponent,
   ],
   imports: [
     BrowserModule,
