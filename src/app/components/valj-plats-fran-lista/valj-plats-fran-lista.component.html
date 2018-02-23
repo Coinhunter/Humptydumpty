@@ -1,3 +1,70 @@
-<p>
-  valj-plats-fran-lista works!
-</p>
+<ul class="list">
+  <li *ngFor="let land of getPlatsHierarki()">
+    <div class="clearfix first-level-wrapper" [ngClass]="{ 'active-first-level': land.open }">
+      <div class="checkbox wrapped-checkbox">
+        <input type="checkbox" 
+          name="lander" 
+          [ngModel]="land.selected" 
+          id="land_{{land.id}}" 
+          (ngModelChange)="selectLand(land, platsHierarki)"
+          [ngClass]="{ 'partially-checked': land.partialSelect }">
+        <label class="" for="land_{{land.id}}"
+          [ngClass]="{ 'partially-checked': land.partialSelect }">
+            {{ land.namn }}
+        </label>
+      </div>
+      <a class="pull-right lista-button"
+        (click)="toggleOpen(land)"
+        *ngIf="land.children.length > 0">
+        <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': land.open }"></i>
+      </a>
+    </div>
+
+    <div id="land_{{ land.id }}">
+      <div class="second-level-container" *ngIf="land.open">
+        <li *ngFor="let lan of land.children">
+          <div class="clearfix second-level-wrapper" [ngClass]="{ 'active-second-level': lan.open }">
+            <div class="checkbox wrapped-checkbox">              
+              <input type="checkbox" 
+                name="lan" 
+                [ngModel]="lan.selected" 
+                id="lan_{{lan.id}}" 
+                (ngModelChange)="selectLan(land, lan)"
+                [ngClass]="{ 'partially-checked': lan.partialSelect }">
+              <label class="" for="lan_{{lan.id}}"
+                [ngClass]="{ 'partially-checked': lan.partialSelect }">
+                  {{ lan.namn }}
+              </label>
+            </div>
+            <a class="pull-right lista-button"
+              (click)="toggleOpen(lan)">
+              <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': lan.open }"></i>
+            </a>
+          </div>
+
+          <div id="lan_{{ lan.id }}">
+            <div class="third-level-container" *ngIf="lan.open">
+              <li *ngFor="let kommun of lan.children">
+                <div class="clearfix third-level-wrapper">
+                  <div class="checkbox wrapped-checkbox">              
+                    <input type="checkbox" 
+                      name="kommun" 
+                      [ngModel]="kommun.selected" 
+                      id="kommun_{{kommun.id}}"
+                      (ngModelChange)="selectKommun(land, lan, kommun)">
+                    <label class="" for="kommun_{{kommun.id}}">{{ kommun.namn }}</label>      
+                  </div>
+                </div>
+              </li>
+            </div> <!-- kommun-container -->
+          </div> <!-- collapse lan -->
+        </li> <!-- lan list -->
+      </div> <!-- lan-container -->
+    </div> <!-- collapse land -->
+  </li> <!-- land list -->
+</ul>
+<a class="" (click)="toggleVisaFler()">
+  <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': visaFler }"></i>
+  <span *ngIf="!visaFler">Visa fler ({{ antalFler }})</span>
+  <span *ngIf="visaFler">Visa färre</span>
+</a>

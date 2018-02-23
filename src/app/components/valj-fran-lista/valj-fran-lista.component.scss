@@ -6,23 +6,18 @@
   position: absolute;
   z-index: 1000000;
   width: 100%;
-  border: 1px solid rgb(204, 204, 204);
   z-index: 10;
 
-  .list {
-    float: left;
-    border: 1px rgb(204, 204, 204) solid;
-    border-radius: 4px;
-    list-style-type: none;
-    width: 100%;
-    padding-right: 0;
-    -webkit-padding-start: 0px;
+  h2 {
+    text-align: left;
   }
 
   > div {
     margin: $grid-gutter-width 0;
+    /*
     &:last-child {
       border-left: 1px solid rgb(204, 204, 204);
     }
-  }
+    */
+  }  
 }

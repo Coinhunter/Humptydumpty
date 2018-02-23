@@ -63,6 +63,25 @@ export class PbapiKriterierService {
   }
 
   buildPlatsHierarki(data) {
+    data.forEach((land) => {
+      land.selected = false;
+      land.partialSelect = false;
+      land.open = false;
+      land.lan = land.lan || [];
+      land.lan.forEach((l) => {
+        l.selected = false;
+        l.partialSelect = false;
+        l.open = false;
+        l.kommuner.forEach((kommun) => {
+          kommun.selected = false;
+          kommun.partialSelect = false;
+        });
+        l.children = l.kommuner;
+        delete l.kommuner;
+      });
+      land.children = land.lan;
+      delete land.lan;
+    });
     return data;
   }
 

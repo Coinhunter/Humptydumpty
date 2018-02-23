@@ -10,24 +10,13 @@ export class ValjYrkeFranListaComponent implements OnInit {
 
   constructor(private pbKriterier: PbapiKriterierService) { }
 
-  loading:boolean = true;
-
   yrkesHierarki;
-
-  yrkesMap;
-
-  yrkesOmradenCheckboxes:string[] = [];
-
-  //Dessa ska nog vara en del av yrkesHierarkiobjektet.. 
-  yrkesGrupperCheckboxes:string[] = [];
-  yrkenCheckboxes:string[] = [];
 
   ngOnInit() {
     this.pbKriterier.getYrkesStruktur().then((data) => {
       this.yrkesHierarki = data;
-      this.loading = false;
     }, (error) => {
-      //console.log(error);
+      // console.log(error);
     });
   }
 
