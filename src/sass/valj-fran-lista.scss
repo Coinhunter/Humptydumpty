@@ -87,6 +87,12 @@
   }
   .second-level-wrapper:hover {
     background-color: $gray-10;
+    a {
+      background-color: $blue-base;
+    }
+    i {
+      color: $white-base;
+    }    
   }
   .second-level-container {
     border-top: 1px rgb(204, 204, 204) solid;

@@ -2,11 +2,12 @@
 @import '../../../sass/color-variables.scss';
 
 .lists {
-  background: $white-base;
-  position: absolute;
+  position: relative;
   z-index: 1000000;
   width: 100%;
   z-index: 10;
+
+  margin-left: 0px;
 
   h2 {
     text-align: left;
@@ -14,10 +15,22 @@
 
   > div {
     margin: $grid-gutter-width 0;
-    /*
-    &:last-child {
-      border-left: 1px solid rgb(204, 204, 204);
-    }
-    */
-  }  
+  }
+}
+
+.specialcontainer {
+  width: 700px;
+
+  @media (min-width: 768px) { 
+    margin-right: 15px;
+    width: 735px;
+  }
+
+  @media (min-width: 992px) {
+    width: 940px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
 }

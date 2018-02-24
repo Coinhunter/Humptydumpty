@@ -8,16 +8,19 @@
 
 .pb {
 
+  .no-padding {
+    padding: 0px;
+  }
+
   :focus {
     outline: none;
   }
-  
+
   .pb-search {
-    margin-left: -5px;
     border-radius: 0px;
     height: $search-list-height;
-    width: 33.3%;
     font-size: 19px;
+    width: 100%;
 
     .ui-corner-all {
         border-radius: 0px;
@@ -51,8 +54,6 @@
     .ui-widget-content {
         box-shadow: none;
     }
-
-    .ui-autocomplete-list-item {}
 
     .ui-state-highlight {
         background-color: $gray-5;
@@ -163,7 +164,47 @@
   }
     
   // Global search button styling.
-  
+  .first-search-field-wrapper {
+    padding-right: 0px;
+    @media (min-width: 768px) { 
+      padding-left: 0px; 
+    }
+    @media (min-width: 992px) {
+      padding-left: 15px;
+    }  
+  }
+
+  .pb-search-btn-wrapper {
+    padding-left: 0px;
+    @media (min-width: 768px) { 
+      padding-right: 0px; 
+    }
+    @media (min-width: 992px) {
+      padding-right: 15px;
+    }
+  }
+
+  .pb-new-search-button {
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-width: 0px;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    background-color: #2d860a;
+
+    height: $search-list-height;
+    width: 100%;
+
+    p {
+      color: white;
+      font-size: 26px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+
   .pb-search-button {
     border-radius: 4px;
     border-top-left-radius: 0px;

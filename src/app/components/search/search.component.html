@@ -13,96 +13,103 @@
           </div>
 
           <div class="row searchlabels">
-            <div class="col-md-12">
-              <label class="pb-search-list-label-width"></label>
-              <label class="pb-search-field-label pb-search-field-label-width">Jag vill jobba som...</label>
-              <label class="pb-search-field-label pb-search-field-label-width">Jag vill jobba i...</label>
-              <!-- <label class="pb-search-button-label-width"></label> -->
+            <div class="col-md-2 first-search-field-wrapper"></div>
+            <div class="col-md-10 no-padding">
+              <div class="col-md-5 no-padding">
+                <label class="pb-search-field-label">Jag vill jobba som...</label>                
+              </div>
+              <div class="col-md-5 no-padding">
+                <label class="pb-search-field-label">Jag vill jobba i...</label>
+              </div>
+              <div class="col-md-2 pb-search-btn-wrapper"></div>
             </div>
           </div>
 
           <div class="row searchfields">
-              <div class="col-md-12">
-
-                <div style="position: relative;">
-
-                  <!-- Choose from list -->
-                  <button class="pb-search-list-accordion" type="button" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
-                    <p class="text-center" (click)="toggleShowPickFromList($event)">Välj från lista <i class="fa fa-angle-down"></i></p>
-                    <div *ngIf="showPickFromList" class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
-                      <div class="backdrop"></div>
-                      <app-valj-fran-lista></app-valj-fran-lista>
-                    </div>
-                  </button>
-
-                  <!-- Yrken search : ) -->
-                  <p-autoComplete
-                    [(ngModel)]="valYrken"
-                    [suggestions]="yrkenResults"
-                    (completeMethod)="searchYrken($event)"
-                    field="namn"
-                    id="search-yrken"
-                    styleClass="pb-search"
-                    (onSelect)="yrkenAddValue($event)"
-                    (onFocus)="focusYrkenSearch($event)"
-                    (onBlur)="blurYrkenSearch($event)"
-                    placeholder="{{chosenYrken.length > 0 && !showYrkenCriteria ? '' : 'Skriv t.ex. \'Sandwhichman\'..'}}">
-
-                    <ng-template let-valYrken pTemplate="item">
-                      <div class="ui-helper-clearfix pb-search-suggestion">
-                        <span class="pull-left">{{ valYrken.namn }}</span>
-                        <span class="pull-right">{{ valYrken.typ }}</span>
-                      </div>
-                    </ng-template>
-
-                  </p-autoComplete>
-
-                  <div *ngIf="showYrkenCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
-                    <div *ngFor="let profilkriterium of chosenYrken"
-                      class="chosenCriteriaTag"
-                      [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
-                        {{ profilkriterium.namn }}
-                        <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>
-                    </div>
-                  </div>
-
-                  <!-- Ort search -->
-                  <p-autoComplete
-                    [(ngModel)]="valOrter"
-                    [suggestions]="orterResults"
-                    (completeMethod)="searchOrter($event)"
-                    field="namn"
-                    id="search-orter"
-                    styleClass="pb-search"
-                    (onSelect)="orterAddValue($event)"
-                    (onFocus)="focusOrterSearch($event)"
-                    (onBlur)="blurOrterSearch($event)"
-                    placeholder="{{chosenOrter.length > 0 && !showOrterCriteria ? '' : 'Skriv t.ex. \'Västerås\'..'}}">
-
-                    <ng-template let-valOrter pTemplate="item">
-                      <div class="ui-helper-clearfix pb-search-suggestion">
-                        <span class="pull-left">{{ valOrter.namn }}</span>
-                        <span class="pull-right">{{ valOrter.typ }}</span>
-                      </div>
-                    </ng-template>
-
-                  </p-autoComplete>
-
-                  <div *ngIf="showOrterCriteria && chosenOrter.length > 0" id="chosenOrterCriteria">
-                    <div *ngFor="let profilkriterium of chosenOrter"
-                      class="chosenCriteriaTag"
-                      [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
-                        {{ profilkriterium.namn }}
-                        <i class="fa fa-close" (click)="removeOrterCriteria(profilkriterium)"></i>
-                    </div>
-                  </div>
-
-                  <button class="pb-search-button pb-search-button-width" (click)="searchButtonClick()">
-                    <p class="text-center">Sök</p>
-                  </button>
-
+            <div class="col-md-2 first-search-field-wrapper">
+              <!-- Choose from list -->
+              <button class="pb-search-list-accordion pb-list-button" type="button" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
+                <p class="text-center" (click)="toggleShowPickFromList($event)">Välj från lista <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': showPickFromList }"></i></p>
+                <div *ngIf="showPickFromList" class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
+                  <div class="backdrop"></div>
+                  <app-valj-fran-lista></app-valj-fran-lista>
                 </div>
+              </button>
+            </div>
+            <div class="col-md-10 no-padding">
+              <div class="col-md-5 no-padding">
+
+                <!-- Yrken search : ) -->
+                <p-autoComplete
+                  [(ngModel)]="valYrken"
+                  [suggestions]="yrkenResults"
+                  (completeMethod)="searchYrken($event)"
+                  field="namn"
+                  id="search-yrken"
+                  styleClass="pb-search"
+                  (onSelect)="yrkenAddValue($event)"
+                  (onFocus)="focusYrkenSearch($event)"
+                  (onBlur)="blurYrkenSearch($event)"
+                  placeholder="{{chosenYrken.length > 0 && !showYrkenCriteria ? '' : 'Skriv t.ex. \'Sandwhichman\'..'}}">
+
+                  <ng-template let-valYrken pTemplate="item">
+                    <div class="ui-helper-clearfix pb-search-suggestion">
+                      <span class="pull-left">{{ valYrken.namn }}</span>
+                      <span class="pull-right">{{ valYrken.typ }}</span>
+                    </div>
+                  </ng-template>
+
+                </p-autoComplete>
+
+                <div *ngIf="showYrkenCriteria && chosenYrken.length > 0" id="chosenYrkenCriteria">
+                  <div *ngFor="let profilkriterium of chosenYrken"
+                    class="chosenCriteriaTag"
+                    [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
+                      {{ profilkriterium.namn }}
+                      <i class="fa fa-close" (click)="removeYrkenCriteria(profilkriterium)"></i>
+                  </div>
+                </div>
+
               </div>
+              <div class="col-md-5 no-padding">
+                <!-- Ort search -->
+                <p-autoComplete
+                  [(ngModel)]="valOrter"
+                  [suggestions]="orterResults"
+                  (completeMethod)="searchOrter($event)"
+                  field="namn"
+                  id="search-orter"
+                  styleClass="pb-search"
+                  (onSelect)="orterAddValue($event)"
+                  (onFocus)="focusOrterSearch($event)"
+                  (onBlur)="blurOrterSearch($event)"
+                  placeholder="{{chosenOrter.length > 0 && !showOrterCriteria ? '' : 'Skriv t.ex. \'Västerås\'..'}}">
+
+                  <ng-template let-valOrter pTemplate="item">
+                    <div class="ui-helper-clearfix pb-search-suggestion">
+                      <span class="pull-left">{{ valOrter.namn }}</span>
+                      <span class="pull-right">{{ valOrter.typ }}</span>
+                    </div>
+                  </ng-template>
+
+                </p-autoComplete>
+
+                <div *ngIf="showOrterCriteria && chosenOrter.length > 0" id="chosenOrterCriteria">
+                  <div *ngFor="let profilkriterium of chosenOrter"
+                    class="chosenCriteriaTag"
+                    [ngClass]="{ fritextCriteriaTag: profilkriterium.typ === 'fritext' }">
+                      {{ profilkriterium.namn }}
+                      <i class="fa fa-close" (click)="removeOrterCriteria(profilkriterium)"></i>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-2 pb-search-btn-wrapper">
+                <button class="pb-new-search-button" (click)="searchButtonClick()">
+                  <p class="text-center">Sök</p>
+                </button>
+              </div>
+            </div>
           </div>
 
           <div class="row chosen-criteria-tags">
