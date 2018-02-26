@@ -14,6 +14,13 @@ export class SearchExpandComponent implements OnInit {
 
   constructor(private selectedKriterier: SelectedCriteriaService, private util: UtilService) { }
 
+  ingenErfarenhet = false;
+  heltid = false;
+  deltid = false;
+  behovsanstallning = false;
+  sommarferie = false;
+  vanligAnstallning = false;
+
   ngOnInit() {
   }
 
@@ -23,10 +30,6 @@ export class SearchExpandComponent implements OnInit {
     } else {
       this.selectedKriterier.removeFoldoutKriterie(new Profilkriterium(value, namn, type));
     }
-  }
-
-  searchButtonClick() {
-    window.location.href = this.util.getUrlForCriteria(this.selectedKriterier.getSelectedKriterier());
   }
 
 }

@@ -15,6 +15,7 @@
           <input type="checkbox" 
             name="anstallingstyp" 
             id="vanligAnstallning" 
+            [ngModel]="vanligAnstallning"
             (ngModelChange)="updateChosenCriteria($event, 'Vanlig anställning', 'ANSTALLNINGSTYP', '1')">
           <label for="vanligAnstallning">
             Vanlig anställning
@@ -24,7 +25,8 @@
         <div class="checkbox wrapped-checkbox">
           <input type="checkbox" 
             name="anstallingstyp" 
-            id="sommarferie" 
+            id="sommarferie"
+            [ngModel]="sommarferie"
             (ngModelChange)="updateChosenCriteria($event, 'Sommarjobb / feriejobb', 'ANSTALLNINGSTYP', '2')">
           <label for="sommarferie">
             Sommarjobb / feriejobb
@@ -34,7 +36,8 @@
         <div class="checkbox wrapped-checkbox">
           <input type="checkbox" 
             name="anstallingstyp" 
-            id="behovsanstallning" 
+            id="behovsanstallning"
+            [ngModel]="behovsanstallning"
             (ngModelChange)="updateChosenCriteria($event, 'Behovsanställning', 'ANSTALLNINGSTYP', '4')">
           <label for="behovsanstallning">
             Behovsanställning
@@ -47,7 +50,8 @@
         <div class="checkbox wrapped-checkbox">
           <input type="checkbox" 
             name="omfattning" 
-            id="heltid" 
+            id="heltid"
+            [ngModel]="heltid"
             (ngModelChange)="updateChosenCriteria($event, 'Endast Heltid', 'OMFATTNING', 'Endast Heltid')">
           <label for="heltid">
             Heltid
@@ -56,7 +60,8 @@
         <div class="checkbox wrapped-checkbox">
           <input type="checkbox" 
             name="omfattning" 
-            id="deltid" 
+            id="deltid"
+            [ngModel]="deltid"
             (ngModelChange)="updateChosenCriteria($event, 'Endast Deltid', 'OMFATTNING', 'Endast Deltid')">
           <label for="deltid">
             Deltid
@@ -68,7 +73,8 @@
         <div class="checkbox wrapped-checkbox">
           <input type="checkbox" 
             name="omfattning" 
-            id="ingenErfarenhet" 
+            id="ingenErfarenhet"
+            [ngModel]="ingenErfarenhet"
             (ngModelChange)="updateChosenCriteria($event, 'Ingen Erfarenhet', 'INGEN_EFTERFRAGAD_YRKESERFARENHET', '1')">
           <label for="ingenErfarenhet">
             Jobb utan krav på arbetslivserfarenhet.
