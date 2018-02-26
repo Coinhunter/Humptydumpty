@@ -1,56 +1,25 @@
 <div class="row row-eq-height">
-  <div class="col-md-7 expand-margin">
-    <div class="row row-checkboxes">
-      <div class="col-md-5">
+  <div class="col-md-12 expand-margin">
+
+    <div class="row">
+      <div class="col-md-12">
         <h3>Anställningsvillkor</h3>
+      </div>
+    </div>
+
+    <div class="row row-checkboxes">
+      <div class="col-md-4">
         <h4>Anställningstyp</h4>
         <p><p-checkbox name="vanlig" value="1" label="Vanlig anställning" (onChange)="updateChosenCriteria($event, 'Vanlig anställning', 'ANSTALLNINGSTYP', '1')"></p-checkbox></p>
         <p><p-checkbox name="sommarferie" value="2" label="Sommarjobb / feriejobb" (onChange)="updateChosenCriteria($event, 'Sommarjobb / feriejobb', 'ANSTALLNINGSTYP', '2')"></p-checkbox></p>
         <p><p-checkbox name="behov" value="4" label="Behovsanställning" (onChange)="updateChosenCriteria($event, 'Behovsanställning', 'ANSTALLNINGSTYP', '4')"></p-checkbox></p>
+      </div>
+      <div class="col-md-4">
         <h4>Önskad omfattning</h4>
         <p><p-checkbox name="heltid" value="Endast Heltid" label="Heltid" (onChange)="updateChosenCriteria($event, 'Endast Heltid', 'OMFATTNING', 'Endast Heltid')"></p-checkbox></p>
-        <p><p-checkbox name="deltid" value="Endast Deltid" label="Deltid" (onChange)="updateChosenCriteria($event, 'Endast Deltid', 'OMFATTNING', 'Endast Deltid')"></p-checkbox></p>
-      </div>
-      <div class="col-md-7 driver-licenses">
-        <h3>Körkort</h3>
-        <div class="col-md-6 subcolumn no-gutter motorcycle-etc">
-          <h4>Moped, motorcykel och traktor</h4>
-          <p><p-checkbox name="am" value="16" label="AM" (onChange)="updateChosenCriteria($event, 'AM', 'KORKORT', '16')"></p-checkbox></p>
-          <p><p-checkbox name="a1" value="2" label="A1" (onChange)="updateChosenCriteria($event, 'A1', 'KORKORT', '2')"></p-checkbox></p>
-          <p><p-checkbox name="a2" value="17" label="A2" (onChange)="updateChosenCriteria($event, 'A2', 'KORKORT', '17')"></p-checkbox></p>
-          <p><p-checkbox name="a" value="10" label="A" (onChange)="updateChosenCriteria($event, 'A', 'KORKORT', '10')"></p-checkbox></p>
-          <h4>Personbil</h4>
-          <p><p-checkbox name="b" value="3" label="B" (onChange)="updateChosenCriteria($event, 'B', 'KORKORT', '3')"></p-checkbox></p>
-          <p><p-checkbox name="be" value="6" label="BE" (onChange)="updateChosenCriteria($event, 'BE', 'KORKORT', '6')"></p-checkbox></p>
-          <p><p-checkbox name="utökad b" value="18" label="Utökad B" (onChange)="updateChosenCriteria($event, 'Utökad B', 'KORKORT', '18')"></p-checkbox></p>
-        </div>
-        <div class="col-md-6 subcolumn no-gutter truck-bus">
-          <h4>Lastbil</h4>
-          <p><p-checkbox name="c" value="4" label="C" (onChange)="updateChosenCriteria($event, 'C', 'KORKORT', '4')"></p-checkbox></p>
-          <p><p-checkbox name="c1e" value="14" label="C1E" (onChange)="updateChosenCriteria($event, 'C1E', 'KORKORT', '14')"></p-checkbox></p>
-          <p><p-checkbox name="c1" value="12" label="C1" (onChange)="updateChosenCriteria($event, 'C1', 'KORKORT', '12')"></p-checkbox></p>
-          <p><p-checkbox name="ce" value="7" label="CE" (onChange)="updateChosenCriteria($event, 'CE', 'KORKORT', '7')"></p-checkbox></p>
-          <h4>Buss</h4>
-          <p><p-checkbox name="d" value="5" label="D" (onChange)="updateChosenCriteria($event, 'D', 'KORKORT', '5')"></p-checkbox></p>
-          <p><p-checkbox name="d1e" value="15" label="D1E" (onChange)="updateChosenCriteria($event, 'D1E', 'KORKORT', '15')"></p-checkbox></p>
-          <p><p-checkbox name="d1" value="19" label="D1" (onChange)="updateChosenCriteria($event, 'D1', 'KORKORT', '19')"></p-checkbox></p>
-          <p><p-checkbox name="de" value="8" label="DE" (onChange)="updateChosenCriteria($event, 'DE', 'KORKORT', '8')"></p-checkbox></p>
-        </div>
+        <p><p-checkbox name="deltid" value="Endast Deltid" label="Deltid" (onChange)="updateChosenCriteria($event, 'Endast Deltid', 'OMFATTNING', 'Endast Deltid')"></p-checkbox></p>  
       </div>
     </div>
-
-  </div>
-
-  <div class="col-md-5 expand-margin">
-    <h3>Arbetslivserfarenhet</h3>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Skriv t.ex. 'Lärare i grundskolan'..">
-
-    <h3>Kompetenser</h3>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Skriv t.ex. 'Lärarlegitimation'..">
-
-    <button class="pb-search-button pb-search-button-width pull-right pb-search-expand-button" (click)="searchButtonClick()">
-        <p class="text-center">Sök</p>
-    </button>
   </div>
 
 </div>
