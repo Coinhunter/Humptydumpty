@@ -61,6 +61,14 @@ export class ValjYrkeFranListaComponent implements OnInit {
     // It is partially selected if one or more items are selected or partially selected but not all are selected.
     let selectedOrPartiallySelectedItems = selectedElements + partiallySelectedItems;
     omrade.partialSelect = selectedOrPartiallySelectedItems > 0 && selectedElements < omrade.children.length;
-  }  
+  }
+
+  isFirstInArray(item, array) {
+    return array[0].id == item.id;
+  }
+
+  isLastInArray(item, array) {
+    return array[array.length-1].id == item.id;
+  }
 
 }

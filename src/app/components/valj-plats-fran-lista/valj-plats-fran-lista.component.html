@@ -1,6 +1,8 @@
 <ul class="list">
   <li *ngFor="let land of getPlatsHierarki()">
-    <div class="clearfix first-level-wrapper" [ngClass]="{ 'active-first-level': land.open }">
+    <div class="clearfix first-level-wrapper" [ngClass]="{ 'active-first-level': land.open, 
+      'active-first-child': isFirstInArray(land, getPlatsHierarki()),
+      'hover-last-child': isLastInArray(land, getPlatsHierarki()) }">
       <div class="checkbox wrapped-checkbox">
         <input type="checkbox" 
           name="lander" 
@@ -15,6 +17,8 @@
       </div>
       <a class="pull-right lista-button"
         (click)="toggleOpen(land)"
+        [ngClass]="{ 'first-list-button': isFirstInArray(land, getPlatsHierarki()),
+          'last-list-button': isLastInArray(land, getPlatsHierarki()) }"
         *ngIf="land.children.length > 0">
         <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': land.open }"></i>
       </a>

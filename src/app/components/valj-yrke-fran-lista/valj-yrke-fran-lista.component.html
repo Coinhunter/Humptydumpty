@@ -1,7 +1,10 @@
 <ul class="list">
   <li *ngFor="let omrade of yrkesHierarki">
 
-    <div class="clearfix first-level-wrapper" [ngClass]="{ 'active-first-level': omrade.open }">
+    <div class="clearfix first-level-wrapper" [ngClass]="
+      { 'active-first-level': omrade.open, 
+      'active-first-child': isFirstInArray(omrade, yrkesHierarki),
+      'hover-last-child': isLastInArray(omrade, yrkesHierarki) }">
       <div class="checkbox wrapped-checkbox">              
           <input type="checkbox" 
             name="omraden" 
@@ -15,6 +18,8 @@
           </label>
       </div>
       <a class="pull-right lista-button"
+        [ngClass]="{ 'first-list-button': isFirstInArray(omrade, yrkesHierarki),
+          'last-list-button': isLastInArray(omrade, yrkesHierarki) }"
         (click)="toggleOpen(omrade)">
         <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': omrade.open }"></i>
       </a>

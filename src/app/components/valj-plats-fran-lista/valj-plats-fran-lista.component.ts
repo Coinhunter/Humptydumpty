@@ -30,11 +30,14 @@ export class ValjPlatsFranListaComponent implements OnInit {
   }
 
   getPlatsHierarki() {
-    if (this.visaFler) {
-      return this.platsHierarki;
-    } else {
-      return this.platsHierarki.slice(0, this.visaAntal);
+    if(this.platsHierarki) {
+      if (this.visaFler) {
+        return this.platsHierarki;
+      } else {
+        return this.platsHierarki.slice(0, this.visaAntal);
+      }
     }
+    return [];
   }
 
   toggleOpen(item) {
@@ -102,6 +105,14 @@ export class ValjPlatsFranListaComponent implements OnInit {
     // It is partially selected if one or more items are selected or partially selected but not all are selected.
     let selectedOrPartiallySelectedItems = selectedElements + partiallySelectedItems;
     land.partialSelect = selectedOrPartiallySelectedItems > 0 && selectedElements < land.children.length;
-  }   
+  }
+
+  isFirstInArray(item, array) {
+    return array[0].id == item.id;
+  }
+
+  isLastInArray(item, array) {
+    return array[array.length-1].id == item.id;
+  }  
 
 }

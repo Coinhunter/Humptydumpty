@@ -31,7 +31,7 @@
               <button class="pb-search-list-accordion pb-list-button" type="button" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
                 <p class="text-center" (click)="toggleShowPickFromList($event)">Välj från lista <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': showPickFromList }"></i></p>
                 <div *ngIf="showPickFromList" class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
-                  <div class="backdrop"></div>
+                  <div class="backdrop" (click)="toggleShowPickFromList($event)"></div>
                   <app-valj-fran-lista></app-valj-fran-lista>
                 </div>
               </button>

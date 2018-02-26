@@ -67,6 +67,10 @@ export class PbapiKriterierService {
       land.selected = false;
       land.partialSelect = false;
       land.open = false;
+      // Sverige ska vara öppet by default..
+      if (land.namn == 'Sverige') {
+        land.open = true;
+      }      
       land.lan = land.lan || [];
       land.lan.forEach((l) => {
         l.selected = false;

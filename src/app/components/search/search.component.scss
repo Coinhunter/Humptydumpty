@@ -45,6 +45,10 @@
         }
 
         .searchlabels {
+            @media (max-width: 992px) { 
+                display: none;
+            }
+
             .pb-search-field-label {
               padding-left: 15px;
               font-size: 19px;
@@ -71,7 +75,6 @@
                 border-radius: 4px;
                 border-top-right-radius: 0px;
                 border-bottom-right-radius: 0px;
-
                 border: 1px solid #ccc;
 
                 font-weight: normal;
@@ -171,7 +174,8 @@
               border-radius: 4px;
               border-top-left-radius: 0px;
 
-              @media (min-width: 768px) { 
+
+              @media (max-width: 992px) { 
                   border-top-right-radius: 0px;
               }
 
