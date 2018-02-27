@@ -6,7 +6,12 @@
 
 @import './valj-fran-lista.scss';
 
+html, body{
+  min-height: 100%;
+}
+
 .pb {
+  position: relative;
 
   .no-padding {
     padding: 0px;

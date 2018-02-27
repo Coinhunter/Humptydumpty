@@ -1,4 +1,4 @@
-<section class="search">
+<section class="search">  
     <div class="container">
       <div class="alwaysvisible">
           <div class="row introduction">
@@ -29,10 +29,16 @@
             <div class="col-md-2 first-search-field-wrapper">
               <!-- Choose from list -->
               <button class="pb-search-list-accordion pb-list-button" type="button" [ngClass]="{open: showPickFromList, closed: !showPickFromList}" aria-expanded="false" aria-controls="valjFranLista">
-                <p class="text-center" (click)="toggleShowPickFromList($event)">Välj från lista <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': showPickFromList }"></i></p>
+
                 <div *ngIf="showPickFromList" class="closed" id="valj-fran-lista" [ngClass]="{open: showPickFromList, closed: !showPickFromList}">
-                  <div class="backdrop" (click)="toggleShowPickFromList($event)"></div>
                   <app-valj-fran-lista></app-valj-fran-lista>
+                </div>
+
+                <div class="valj-fran-lista-button" (click)="toggleShowPickFromList($event)"  [ngClass]="{ 'pb-lift-up': showPickFromList }">
+                  <p class="text-center">
+                    Välj från lista 
+                    <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': showPickFromList }"></i>
+                  </p>
                 </div>
               </button>
             </div>

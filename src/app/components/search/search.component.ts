@@ -8,6 +8,7 @@ import { Profilkriterium } from 'app/models/Profilkriterium';
 import { HttpClient } from '@angular/common/http';
 import { SynonymSearchResultDTO } from 'app/models/SynonymSearchResultDTO';
 import { SelectedCriteriaService } from 'app/services/selected-criteria/selected-criteria.service';
+import { OverlayService } from 'app/services/overlay/overlay.service';
 
 
 @Component({
@@ -42,11 +43,30 @@ export class SearchComponent implements OnInit {
   constructor(private pbKriterier: PbapiKriterierService,
       private pbMatchning: PbapiMatchningService,
       private util: UtilService,
-      private selectedKriterier: SelectedCriteriaService) {}
+      private selectedKriterier: SelectedCriteriaService,
+      private overlay: OverlayService) {}
+
+  ngOnInit() {
+    this.pbMatchning.getNumberOfAvailableJobs().subscribe((result) => {
+      this.antalLedigaJobb = this.util.formatNumberOfJobs(result.toString());
+    });
+
+    // Subscribe to this topic to know when to close showPickFromList.
+    this.overlay.getOverlayStatus().asObservable().subscribe((current) => {
+      if (current.status == false && (current.target == 'all' || current.target == 'pickFromList')) {
+        this.showPickFromList = false;
+      }
+    });
+
+  }
 
   toggleShowPickFromList($event) {
-    console.log('clicked showPickFromList');
     this.showPickFromList = !this.showPickFromList;
+    if (this.showPickFromList) {
+      this.overlay.enableOverlay('pickFromList');
+    } else {
+      this.overlay.disableOverlay('pickFromList');
+    }
   }
 
   searchYrken(event) {
@@ -211,12 +231,6 @@ export class SearchComponent implements OnInit {
         this.showOrterCriteria = false;
       }, 100);
     }, 200);
-  }
-
-  ngOnInit() {
-    this.pbMatchning.getNumberOfAvailableJobs().subscribe((result) => {
-      this.antalLedigaJobb = this.util.formatNumberOfJobs(result.toString());
-    });
   }
 
   searchButtonClick() {

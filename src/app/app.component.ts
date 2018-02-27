@@ -7,6 +7,7 @@ import { QuicklinksComponent } from './components/quicklinks/quicklinks.componen
 import { SearchComponent } from './components/search/search.component';
 import { SelectedCriteriaService } from './services/selected-criteria/selected-criteria.service';
 import { UtilService } from './services/util/util.service'; 
+import { OverlayService } from 'app/services/overlay/overlay.service';
 
 declare var ga: Function;
 
@@ -14,13 +15,21 @@ declare var ga: Function;
   selector: 'pb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ SelectedCriteriaService, UtilService ]
+  providers: [ SelectedCriteriaService, UtilService, OverlayService ]
 })
 
 export class AppComponent implements OnInit {
-  constructor(
-    public router: Router
-  ) {}
+  constructor(public router: Router, private overlay: OverlayService) {}
 
-  ngOnInit() {}
+  showOverlay = false;
+
+  toggleOverlay($event) {
+    this.overlay.disableOverlay('all');
+  }
+
+  ngOnInit() {
+    this.overlay.getOverlayStatus().asObservable().subscribe((current) => {
+      this.showOverlay = current.status;
+    })
+  }
 }
