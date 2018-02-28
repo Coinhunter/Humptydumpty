@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { Overlay } from 'app/models/Overlay';
 
 @Injectable()
 export class OverlayService {
 
   constructor() { }
 
-  overlay = new Subject<object>();
+  overlay = new Subject<Overlay>();
 
   enableOverlay(target) {
-    this.overlay.next({ status: true, target });
+    this.overlay.next(new Overlay(true, target));
   }
 
   disableOverlay(target) {
-    this.overlay.next({ status: false, target });
+    this.overlay.next(new Overlay(false, target));
   }
 
-  getOverlayStatus():Subject<object>{
+  getOverlaySubject():Subject<Overlay>{
     return this.overlay;
   }
 

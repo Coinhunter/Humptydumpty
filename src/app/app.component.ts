@@ -28,8 +28,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.overlay.getOverlayStatus().asObservable().subscribe((current) => {
-      this.showOverlay = current.status;
+    this.overlay.getOverlaySubject().asObservable().subscribe((overlay) => {
+      this.showOverlay = overlay.varde;
     })
   }
 }

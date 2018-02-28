@@ -52,8 +52,8 @@ export class SearchComponent implements OnInit {
     });
 
     // Subscribe to this topic to know when to close showPickFromList.
-    this.overlay.getOverlayStatus().asObservable().subscribe((current) => {
-      if (current.status == false && (current.target == 'all' || current.target == 'pickFromList')) {
+    this.overlay.getOverlaySubject().asObservable().subscribe((current) => {
+      if (current.varde == false && (current.target == 'all' || current.target == 'pickFromList')) {
         this.showPickFromList = false;
       }
     });
