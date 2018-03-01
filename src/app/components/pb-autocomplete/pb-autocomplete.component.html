@@ -2,7 +2,7 @@
   <div class="input-tag-container" *ngIf="!inputInFocus && chosen.length > 0">
     <div class="tag-item tag-truncated" *ngIf="chosen.length === 1" [ngClass]="{'tag-text': chosen[0].typ.toLowerCase() === 'sök i annonstext'}">
         {{ chosen[0].namn }}
-        <i class="fa fa-close" (click)="removeYrkenCriteria(chosen[0])"></i>
+        <i class="fa fa-close" (click)="removeFromChosen(chosen[0])"></i>
     </div>
     <div class="tag-item tag-summarized" *ngIf="chosen.length > 1">
       {{ chosen[0].namn }}
@@ -33,7 +33,7 @@
   <div class="selected-tag-container" *ngIf="inputInFocus && chosen.length > 0">
     <div class="tag-item" *ngFor="let criteria of chosen" [ngClass]="{'tag-text': criteria.typ.toLowerCase() === fritextType}" >
       {{ criteria.namn }}
-      <i class="fa fa-close" (click)="removeYrkenCriteria(criteria)"></i>
+      <button (click)="removeFromChosen(criteria)" class="selected-criteria-btn"><i class="fa fa-close"></i></button>
     </div>
   </div>
 </div>

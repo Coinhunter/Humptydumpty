@@ -28,6 +28,7 @@ export class PbAutocompleteComponent implements OnInit {
   blurTimeout: any;
   inputValue: string;
   loadingResults: boolean;
+  addingValueInProgress = false;
 
   constructor(private pbKriterier: PbapiKriterierService,
     private selectedKriterier: SelectedCriteriaService) {
@@ -55,12 +56,24 @@ export class PbAutocompleteComponent implements OnInit {
     this.inputInFocus = true;
   }
   blur(event) {
-    this.inputInFocus = false;
+    console.log(event)
+    if (event.relatedTarget && event.relatedTarget.classList.contains('selected-criteria-btn')) {
+        this.focusInput();
+    } else {
+      this.inputInFocus = false;
+    }
   }
   addValue(value) {
     this.pushChoosenValue(value);
     this.val = undefined;
     this.focusInput();
+  }
+  removeFromChosen(profilkriterium) {
+    console.log('Removing: ', profilkriterium)
+    const index = this.chosen.indexOf(profilkriterium);
+    if (index > -1) {
+      this.chosen.splice(index, 1);
+    }
   }
   pushChoosenValue(value) {
     // Avoid adding the same thing multiple times.
@@ -78,6 +91,7 @@ export class PbAutocompleteComponent implements OnInit {
   focusInput() {
     this.val = undefined;
     this.showCriteria = true;
+    this.inputInFocus = true;
   }
   boldify(input: string, bold: string): string {
     const matchIndex = input.toLowerCase().indexOf(bold.toLowerCase());
