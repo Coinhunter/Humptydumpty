@@ -14,10 +14,13 @@ import { Profilkriterium } from 'app/models/Profilkriterium';
 export class PbAutocompleteComponent implements OnInit {
   @Input() suggestionsType: string;
   @Input() allowFritext?: string = 'false';
+  @Input() placeholder?: string = 'Sök...'
 
-  inputInFocus: boolean = false;
+  public fritextType = 'sök i annonstext';
 
-  showCriteria: boolean = false;
+  inputInFocus = false;
+
+  showCriteria = false;
   val: Profilkriterium;
   results: Array<Profilkriterium>;
   chosen: Array<Profilkriterium> = [];
@@ -39,13 +42,12 @@ export class PbAutocompleteComponent implements OnInit {
     this.results = new Array();
     this.inputValue = event.query;
     if (this.allowFritext === 'true') {
-      this.results.push(new Profilkriterium(event.query, event.query, 'sök i annonstext'));
+      this.results.push(new Profilkriterium(event.query, event.query, this.fritextType));
     }
-    // new Profilkriterium(event.query, event.query, 'fritext'));
-
     this.pbKriterier.getKriterierByType(this.suggestionsType, event.query).subscribe((data) => {
       data.matchningskriteriumList.slice(0, 12).forEach(kriterium => {
-          this.results.push(kriterium);
+        this.results.push(kriterium);
+          // this.results = [kriterium].concat([...this.results]);
       });
     })
   }

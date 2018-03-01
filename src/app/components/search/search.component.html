@@ -1,4 +1,4 @@
-<section class="search">  
+<section class="search">
     <div class="container">
       <div class="alwaysvisible">
           <div class="row introduction">
@@ -36,7 +36,7 @@
 
                 <div class="valj-fran-lista-button" (click)="toggleShowPickFromList($event)"  [ngClass]="{ 'pb-lift-up': showPickFromList }">
                   <p class="text-center">
-                    Välj från lista 
+                    Välj från lista
                     <i class="fa fa-angle-down" [ngClass]="{ 'js-rotate': showPickFromList }"></i>
                   </p>
                 </div>
@@ -46,12 +46,17 @@
               <div class="col-md-5 no-padding">
 
                 <!-- Yrken search : ) -->
-                <pb-autocomplete suggestionsType="yrke" allowFritext="true"></pb-autocomplete>
+                <pb-autocomplete suggestionsType="yrke" allowFritext="true" placeholder="Skriv t.ex. 'Lärare'"></pb-autocomplete>
 
               </div>
               <div class="col-md-5 no-padding">
                 <!-- Ort search -->
-                <pb-autocomplete suggestionsType="ort"></pb-autocomplete>
+                <!--
+                    PrimeNG (dependency) verkar ha problem med asynkrona resultat se: https://github.com/primefaces/primeng/issues/5030
+                    Men det funkar magiskt med ett extra element i arrayen (fritext),
+                    därför breakar det just nu om man gör en pb-autocomplete utan fritextalternativ
+                 -->
+                <pb-autocomplete suggestionsType="ort" allowFritext="true" placeholder="Skriv t.ex. 'Västerås'"></pb-autocomplete>
 
               </div>
               <div class="col-md-2 pb-search-btn-wrapper">

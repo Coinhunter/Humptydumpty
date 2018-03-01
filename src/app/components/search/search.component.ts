@@ -84,13 +84,6 @@ export class SearchComponent implements OnInit {
 
   searchOrter(event) {
     this.orterResults = [];
-    this.orterResults.push(new Profilkriterium(event.query, event.query, 'fritext'));
-    this.pbKriterier.getJobbaIKriterier(event.query).subscribe((data) => {
-      data.matchningskriteriumList.slice(0,5).forEach((kriterium) => {
-        kriterium.typ = kriterium.typ.toLowerCase();
-        this.orterResults.push(kriterium);
-      });
-    });
   }
 
   yrkenAddValue(value) {
