@@ -1,0 +1,45 @@
+<div class="pb-autocomplete">
+  <!-- Summarizing tag
+    tag-item - All styling, regular thingy
+    tag-truncated - Truncates the text
+    tag-summarized - Adds a pseudo element for displaying the number of tags
+    tag-text - Changes the background to "peach"
+  -->
+  <div class="input-tag-container" *ngIf="!inputInFocus && chosen.length > 0">
+    <div class="tag-item tag-truncated" *ngIf="chosen.length === 1" [ngClass]="{'tag-text': chosen[0].typ.toLowerCase() === 'sök i annonstext'}">
+        {{ chosen[0].namn }}
+        <i class="fa fa-close" (click)="removeYrkenCriteria(chosen[0])"></i>
+    </div>
+    <div class="tag-item tag-summarized" *ngIf="chosen.length > 1">
+      {{ chosen[0].namn }}
+      <span class="tag-pill-number">+{{ chosen.length - 1 }}</span>
+    </div>
+  </div>
+  <p-autoComplete
+    [(ngModel)]="val"
+    [suggestions]="results"
+    (completeMethod)="search($event)"
+    field="namn"
+    styleClass=""
+    (onSelect)="addValue($event)"
+    (onFocus)="focus($event)"
+    (onBlur)="blur($event)"
+    autoHighlight="true"
+    placeholder="{{chosen.length > 0 ? 'Skriv in fler': 'Skriv t.ex. \'Västerås\''}}">
+
+    <ng-template let-val pTemplate="item">
+      <div class="autocomplete-item">
+        <span class="pull-left autocomplete-result" [innerHtml]="boldify(val.namn, inputValue)"></span>
+        <span class="pull-right autocomplete-type">{{ val.typ | lowercase }}</span>
+      </div>
+    </ng-template>
+
+  </p-autoComplete>
+  <!-- List of tags, only visible if Summarizing tag not visible -->
+  <div class="selected-tag-container" *ngIf="inputInFocus && chosen.length > 0">
+    <div class="tag-item" *ngFor="let criteria of chosen" [ngClass]="{'tag-text': criteria.typ.toLowerCase() === 'sök i annonstext'}" >
+      {{ criteria.namn }}
+      <i class="fa fa-close" (click)="removeYrkenCriteria(criteria)"></i>
+    </div>
+  </div>
+</div>

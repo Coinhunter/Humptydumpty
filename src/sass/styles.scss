@@ -18,7 +18,90 @@ html, body{
   }
 
   :focus {
+    //outline: none;
+    outline: 2px solid $blue-80;
+    outline-offset: 2px;
+    outline-color: $blue-80;
+  }
+  input {
+    &:hover {
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $black-10;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: $black-10;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: $black-10;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        color: $black-10;
+      }
+    }
+    &:focus {
+      outline: 2px solid $blue-80;
+      outline-offset: 0px;
+      outline-color: $blue-80;
+      z-index: 1;
+      position: relative;
+    }
+  }
+  button:focus {
+    background: $blue-80;
+    border: 1px;
     outline: none;
+  }
+
+  .tag-item {
+    // Style for all tags
+    display: inline-block;
+    //padding: 5px 10px;
+    //border-radius: 15px;
+    background-color: $blue-30;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0 16px;
+    border-radius: 25px;
+    line-height: 33px;
+    height: 34px;
+
+    i {
+        width: 34px;
+        height: 34px;
+        margin-right: -12px;
+        text-align: center;
+        &:before {
+          line-height: 34px;
+        }
+    }
+    i:hover {
+      outline: 2px solid $blue-80;
+      outline-offset: -2px;
+    }
+
+    &.tag-truncated {
+
+    }
+    &.tag-summarized {
+      .tag-pill-number {
+        line-height: 24px;
+        display: inline-block;
+        text-align: center;
+        background: $blue-20;
+        padding: 0 8px;
+        margin-left: 4px;
+        margin-right: -10px;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 14px;
+      }
+      i {
+        display: none;
+      }
+    }
+    &.tag-text {
+      background-color: $orange-20;
+    }
   }
 
   .pb-search {
@@ -167,12 +250,12 @@ html, body{
     vertical-align: middle;
     font-weight: 600;
   }
-    
+
   // Global search button styling.
   .first-search-field-wrapper {
     padding-right: 0px;
-    @media (min-width: 768px) { 
-      padding-left: 0px; 
+    @media (min-width: 768px) {
+      padding-left: 0px;
     }
     @media (min-width: 992px) {
       padding-left: 15px;
@@ -181,8 +264,8 @@ html, body{
 
   .pb-search-btn-wrapper {
     padding-left: 0px;
-    @media (min-width: 768px) { 
-      padding-right: 0px; 
+    @media (min-width: 768px) {
+      padding-right: 0px;
     }
     @media (min-width: 992px) {
       padding-right: 15px;
@@ -214,7 +297,7 @@ html, body{
     border-radius: 4px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    border: 1px solid rgb(46, 172, 34);
+    border: none;
 
     display: inline-block;
     width: 15%;
@@ -241,15 +324,16 @@ html, body{
     width: 42%;
     border-radius: 4px;
   }
-  
+
   .row-eq-height {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
   }
-  
+
   .js-rotate {
+//  [data-toggle="collapse"][aria-expanded="true"] .js-rotate-if-collapsed {
     -webkit-transform: rotate(180deg);
     -moz-transform:    rotate(180deg);
     -ms-transform:     rotate(180deg);

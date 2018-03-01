@@ -45,7 +45,7 @@
         }
 
         .searchlabels {
-            @media (max-width: 992px) { 
+            @media (max-width: 992px) {
                 display: none;
             }
 
@@ -101,22 +101,22 @@
 
                 p {
                     font-size: 20px;
-                    @media only screen and (max-width : 1200px) { 
+                    @media only screen and (max-width : 1200px) {
                         font-size: 18px;
                         i {
                             font-size: 19px;
                         }
                     }
-                    @media only screen and (max-width : 992px) { 
-                        font-size: 17px; 
+                    @media only screen and (max-width : 992px) {
+                        font-size: 17px;
                         i {
                             font-size: 18px;
-                        }                    
+                        }
                     }
-                    @media only screen and (max-width : 768px) { 
-                        font-size: 15px; 
+                    @media only screen and (max-width : 768px) {
+                        font-size: 15px;
                         font-size: 16px;
-                    }                    
+                    }
                     color: #707579;
                 }
                 i.fa {
@@ -141,13 +141,13 @@
                 }
                 &.open {
                     background: $white-base;
-                    
+
                     border-right: 1px solid $white-base;
                     border-left: 1px solid $white-base;
 
                     border-top: 1px solid $white-base;
 
-                    border-bottom-left-radius: 0px;                    
+                    border-bottom-left-radius: 0px;
                     border-top-left-radius: 4px;
                     border-top-right-radius: 0px;
 
@@ -177,8 +177,7 @@
               border-radius: 4px;
               border-top-left-radius: 0px;
 
-
-              @media (max-width: 992px) { 
+              @media (max-width: 992px) {
                   border-top-right-radius: 0px;
               }
 
@@ -265,24 +264,6 @@
         z-index:2;
         padding-bottom: 10px;
         padding-right: 10px;
-    }
-
-    .chosenCriteriaTag {
-        display: inline-block;
-        //padding: 5px 10px;
-        //border-radius: 15px;
-        background-color: $blue-30;
-        margin-top: 10px;
-        margin-left: 10px;
-        padding: 10px 16px;
-        border-radius: 25px;
-
-        i {
-            margin-left: 6px;
-        }
-        i:hover {
-            cursor: pointer;
-        }
     }
 
     .search-expand-button {

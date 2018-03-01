@@ -10,7 +10,7 @@ import { KriterieSearch } from 'app/models/KriterieSearch';
 
 @Injectable()
 export class PbapiKriterierService {
-  private pbApi = GlobalVariables.PBAPI_URL;
+  pbApi = GlobalVariables.PBAPI_URL;
   private yrkesHierarki;
   private platsHierarki;
 
@@ -45,7 +45,7 @@ export class PbapiKriterierService {
           this.yrkesHierarki = this.buildYrkesHierarki(result);
           resolve(this.yrkesHierarki);
         });
-      }  
+      }
     });
   }
 
@@ -60,6 +60,23 @@ export class PbapiKriterierService {
         });
       }
     });
+  }
+  getKriterierByType(type: string, query: string): Observable<KriterieSearch> {
+    switch (type) {
+      case 'yrke':
+        return this.getJobbaSomKriterier(query);
+      case 'ort':
+        return new Observable(observer => {
+            this.getJobbaIKriterier(query).subscribe((data) => {
+              observer.next(new KriterieSearch(data, null));
+              observer.complete();
+            });
+        });
+      // case 'kompetens':
+      // case 'erfarenhet':
+      default:
+        break;
+    }
   }
 
   buildPlatsHierarki(data) {
@@ -110,5 +127,5 @@ export class PbapiKriterierService {
     });
     return data;
   }
-  
+
 }

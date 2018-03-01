@@ -23,6 +23,7 @@ import { SparadejobbComponent } from './components/sparadejobb/sparadejobb.compo
 import { SparadejobbService } from 'app/services/sparadejobb/sparadejobb.service';
 import { ValjYrkeFranListaComponent } from './components/valj-yrke-fran-lista/valj-yrke-fran-lista.component';
 import { ValjPlatsFranListaComponent } from './components/valj-plats-fran-lista/valj-plats-fran-lista.component';
+import { PbAutocompleteComponent } from './components/pb-autocomplete/pb-autocomplete.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ValjPlatsFranListaComponent } from './components/valj-plats-fran-lista/
     SparadejobbComponent,
     ValjYrkeFranListaComponent,
     ValjPlatsFranListaComponent,
+    PbAutocompleteComponent,
   ],
   imports: [
     BrowserModule,

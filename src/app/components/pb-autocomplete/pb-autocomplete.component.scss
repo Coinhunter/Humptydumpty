@@ -1,0 +1,128 @@
+@import '../../../sass/variables.scss';
+@import '../../../sass/color-variables.scss';
+
+// tag-item - All styling, regular thingy
+// tag-truncated - Truncates the text
+// tag-summarized - Adds a pseudo element for displaying the number of tags
+// tag-text - Changes the background to "peach"
+
+
+.pb-autocomplete {
+  // Style the fuck out of the input field
+  border: 1px solid $gray-35;
+  background: $white-base;
+  position: relative;
+  display: flex;
+  height: $search-list-height;
+
+  .input-tag-container {
+    display: inline-block;
+    padding: 17px 7px 17px 14px;
+    .tag-item {
+      margin: 0;
+    }
+  }
+  p-autocomplete {
+    display: inline-block;
+    flex-grow: 1;
+
+    .ui-autocomplete {
+      font-size: 19px;
+      width: 100%;
+      height: $search-list-height - 2px;
+    }
+
+    .ui-corner-all {
+        border-radius: 0px;
+    }
+
+    input {
+        width: 100%;
+        height: inherit;
+    }
+
+    .ui-inputtext {
+        padding: 0px;
+        padding-left: 15px;
+    }
+
+    .ui-autocomplete-input-token {
+        padding: 0px;
+    }
+
+    .ui-autocomplete-panel .ui-autocomplete-list {
+        padding: 0px;
+    }
+
+    .ui-widget {
+      font-family: "Open sans", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      &::placeholder {
+        font-weight: 300;
+        font-family: 20px;
+      }
+    }
+    .ui-widget-content {
+        box-shadow: none;
+    }
+
+    .ui-state-highlight {
+        background-color: $gray-5;
+        color: $black-10;
+    }
+
+    .pb-search-suggestion {
+        font-size: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+  }
+  .ui-autocomplete-input {
+    border: none;
+  }
+  .ui-autocomplete-panel {
+    overflow: visible;
+    max-height: none !important;
+    border: 1px solid $gray-35;
+    width: calc(100% + 4px) !important;
+    left: -2px !important;
+    top: 70px !important;
+    border-top: none !important;
+  }
+  .ui-autocomplete-items {
+    background-color: $white-base;
+  }
+  .ui-autocomplete-list-item {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0 18px;
+
+    &.ui-state-highlight {
+      background: $gray-10;
+    }
+
+    .autocomplete-result {
+      font-size: 16px;
+      line-height: 40px;
+    }
+    .autocomplete-type {
+      color: $gray-40;
+      font-size: 14px;
+      line-height: 40px;
+    }
+  }
+  .selected-tag-container {
+    position: absolute;
+    top: 70px;
+    left: -2px;
+    background: $white-base;
+    width: calc(100% + 4px);
+    z-index: 10;
+    padding: 0 0 10px 0;
+    border: 1px solid $gray-35;
+    border-top: none;
+  }
+}
