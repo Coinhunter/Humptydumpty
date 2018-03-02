@@ -16,7 +16,7 @@ export class PbAutocompleteComponent implements OnInit {
   @Input() allowFritext?: string = 'false';
   @Input() placeholder?: string = 'Sök...'
 
-  public fritextType = 'sök i annonstext';
+  public fritextType = 'fritext';
 
   inputInFocus = false;
 
@@ -78,7 +78,7 @@ export class PbAutocompleteComponent implements OnInit {
   pushChoosenValue(value) {
     // Avoid adding the same thing multiple times.
     const found = this.chosen.find((profilkriterium) => {
-      return profilkriterium.varde === value.id;
+      return this.allowFritext && !value.id ? false : profilkriterium.varde === value.id ;
     });
 
     if (!found) {
