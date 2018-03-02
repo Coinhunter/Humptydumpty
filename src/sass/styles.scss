@@ -69,17 +69,19 @@ html, body{
       line-height: 33px;
     }
 
+    button {
+      margin-right: -12px;
+    }
     i {
         flex-shrink: 0;
         width: 34px;
         height: 34px;
-        margin-right: -12px;
         text-align: center;
         &:before {
           line-height: 34px;
         }
     }
-    i:hover {
+    button:hover, button:focus {
       outline: 2px solid $blue-80;
       outline-offset: -2px;
     }
@@ -178,7 +180,7 @@ html, body{
         margin-bottom: 5px;
     }
   }
-    
+
   a.chevron-link {
     display: block;
     position: relative;
@@ -187,7 +189,7 @@ html, body{
     color: #06769f;
     text-decoration: none;
     line-height: 1.428571429;
-  
+
     &::before {
       position: absolute;
       content: "";
@@ -203,7 +205,7 @@ html, body{
       transform: translateX(4px);
     }
   }
-    
+
   // Checkboxes
   .ui-chkbox-box {
     box-shadow:none;
@@ -247,9 +249,9 @@ html, body{
       background: $white-base;
       border: 1px solid black;
     }
-  
+
   }
-    
+
   .ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
     border-radius: 5px;
     width: 24px;
@@ -258,13 +260,13 @@ html, body{
     border-color: black;
     background: $white-base;
   }
-  
+
   .ui-chkbox {
     .ui-chkbox-icon {
       margin-top: 4px;
     }
   }
-  
+
   .ui-chkbox-label {
     display: inline;
     margin-left: 5px;
@@ -338,7 +340,7 @@ html, body{
       margin-bottom: 0px;
     }
   }
-  
+
   .pb-search-expand-button {
     position: absolute;
     bottom: 15px;
@@ -363,4 +365,3 @@ html, body{
     transform:         rotate(180deg);
   }
 }
-
