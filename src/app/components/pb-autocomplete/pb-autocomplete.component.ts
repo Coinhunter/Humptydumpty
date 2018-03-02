@@ -22,7 +22,7 @@ export class PbAutocompleteComponent implements OnInit {
 
   showCriteria = false;
   val: Profilkriterium;
-  results: Array<Profilkriterium>;
+  suggestions: Array<Profilkriterium>;
   chosen: Array<Profilkriterium> = [];
   timeout: any;
   blurTimeout: any;
@@ -36,20 +36,23 @@ export class PbAutocompleteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.results = [];
+    this.suggestions = [];
   }
 
   search(event) {
-    this.results = new Array();
+    this.suggestions = new Array();
+
+    const results = [];
     this.inputValue = event.query;
     if (this.allowFritext === 'true') {
-      this.results.push(new Profilkriterium(event.query, event.query, this.fritextType));
+      this.suggestions.push(new Profilkriterium(event.query, event.query, this.fritextType));
     }
     this.pbKriterier.getKriterierByType(this.suggestionsType, event.query).subscribe((data) => {
       data.matchningskriteriumList.slice(0, 12).forEach(kriterium => {
-        this.results.push(kriterium);
+        results.push(kriterium);
           // this.results = [kriterium].concat([...this.results]);
       });
+      this.suggestions = this.suggestions.slice(0, 1).concat(results)
     })
   }
   focus(event) {
