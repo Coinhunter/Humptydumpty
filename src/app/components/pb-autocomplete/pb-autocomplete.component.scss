@@ -17,9 +17,11 @@
 
   .input-tag-container {
     display: inline-block;
+    max-width: 60%;
     padding: 17px 7px 17px 14px;
     .tag-item {
       margin: 0;
+      max-width: 100%;
     }
   }
   p-autocomplete {

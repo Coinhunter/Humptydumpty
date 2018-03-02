@@ -1,11 +1,11 @@
 <div class="pb-autocomplete">
   <div class="input-tag-container" *ngIf="!inputInFocus && chosen.length > 0">
     <div class="tag-item tag-truncated" *ngIf="chosen.length === 1" [ngClass]="{'tag-text': chosen[0].typ.toLowerCase() === 'sök i annonstext'}">
-        {{ chosen[0].namn }}
+        <span class="tag-namn">{{ chosen[0].namn }}</span>
         <i class="fa fa-close" (click)="removeFromChosen(chosen[0])"></i>
     </div>
-    <div class="tag-item tag-summarized" *ngIf="chosen.length > 1">
-      {{ chosen[0].namn }}
+    <div class="tag-item tag-summarized tag-truncated" *ngIf="chosen.length > 1">
+      <span class="tag-namn">{{ chosen[0].namn }}</span>
       <span class="tag-pill-number">+{{ chosen.length - 1 }}</span>
     </div>
   </div>
@@ -32,7 +32,7 @@
   <!-- List of tags, only visible if Summarizing tag not visible -->
   <div class="selected-tag-container" *ngIf="inputInFocus && chosen.length > 0">
     <div class="tag-item" *ngFor="let criteria of chosen" [ngClass]="{'tag-text': criteria.typ.toLowerCase() === fritextType}" >
-      {{ criteria.namn }}
+      <span class="tag-namn">{{ criteria.namn }}</span>
       <button (click)="removeFromChosen(criteria)" class="selected-criteria-btn"><i class="fa fa-close"></i></button>
     </div>
   </div>

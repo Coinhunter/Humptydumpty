@@ -65,7 +65,12 @@ html, body{
     line-height: 33px;
     height: 34px;
 
+    .tag-namn {
+      line-height: 33px;
+    }
+
     i {
+        flex-shrink: 0;
         width: 34px;
         height: 34px;
         margin-right: -12px;
@@ -80,16 +85,33 @@ html, body{
     }
 
     &.tag-truncated {
-
+      display: flex;
+      flex-flow: row nowrap;
+      .tag-namn {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
     &.tag-summarized {
+      display: flex;
+      flex-flow: row nowrap;
+      span {
+        display: inline-block;
+      }
+      .tag-namn {
+        flex: 1 100%;
+        line-height: 33px;
+        white-space: nowrap;
+      }
       .tag-pill-number {
         line-height: 24px;
-        display: inline-block;
+        height: 24px;
         text-align: center;
         background: $blue-20;
         padding: 0 8px;
         margin-left: 4px;
+        margin-top: 5px;
         margin-right: -10px;
         border-radius: 12px;
         font-weight: 800;
