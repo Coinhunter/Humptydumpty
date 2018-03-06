@@ -1,10 +1,10 @@
-import { HumptydumptyPage } from './app.po';
+import { PlatsbankenPage } from './app.po';
 
-describe('humptydumpty App', () => {
-  let page: HumptydumptyPage;
+describe('Platsbanken App', () => {
+  let page: PlatsbankenPage;
 
   beforeEach(() => {
-    page = new HumptydumptyPage();
+    page = new PlatsbankenPage();
   });
 
   it('should display welcome message', done => {
